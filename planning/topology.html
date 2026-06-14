@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>mcpgateway — topology</title>
+<style>
+  :root {
+    --color-text-primary: #1b1b1b;
+    --color-text-secondary: #6b6b6b;
+    --color-border-secondary: #c7c7c7;
+    --color-bg-secondary: rgba(127,127,127,0.06);
+    --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --color-text-primary: #ededed;
+      --color-text-secondary: #a3a3a3;
+      --color-border-secondary: #4a4a4a;
+      --color-bg-secondary: rgba(180,180,180,0.08);
+    }
+    body { background: #1a1a1a; }
+  }
+  body {
+    margin: 0; padding: 32px;
+    font-family: var(--font-sans);
+    background: #fafafa;
+    display: flex; flex-direction: column; align-items: center;
+  }
+  h1 { font-size: 18px; color: var(--color-text-primary); margin: 0 0 4px; }
+  p.sub { font-size: 13px; color: var(--color-text-secondary); margin: 0 0 24px; }
+  svg { max-width: 100%; height: auto; }
+</style>
+</head>
+<body>
+  <h1>MCP Gateway + Knowledge-Graph topology</h1>
+  <p class="sub">Claude Code → virtual KG layer → AgentCore Gateway → AFS (OBO) + Snowflake (PUR)</p>
+  <svg viewBox="0 0 800 560" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="t d">
+    <title id="t">MCP gateway and knowledge-graph topology</title>
+    <desc id="d">Claude Code calls a virtual knowledge-graph layer, which calls the AgentCore Gateway, which fans out to a custom AFS MCP using on-behalf-of user identity and a managed Snowflake MCP using a privileged service identity, over the AFS and Snowflake systems, with nCino as the identity spine.</desc>
+    <style>
+      .ink   { fill: var(--color-text-primary, #1b1b1b); }
+      .muted { fill: var(--color-text-secondary, #6b6b6b); }
+      .box   { fill: var(--color-bg-secondary, rgba(127,127,127,0.06)); stroke: var(--color-border-secondary, #c7c7c7); }
+      .obo   { stroke: #2e8b6b; }
+      .pur   { stroke: #c08230; }
+      .oboT  { fill: #2e8b6b; }
+      .purT  { fill: #c08230; }
+      .ln    { stroke: var(--color-border-secondary, #b9b9b9); }
+      text   { font-family: var(--font-sans, ui-sans-serif, system-ui, sans-serif); }
+      .h     { font-size: 14px; font-weight: 600; }
+      .s     { font-size: 11px; }
+      .lg    { font-size: 11px; }
+    </style>
+    <defs>
+      <marker id="aN" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="var(--color-border-secondary,#b9b9b9)"/></marker>
+      <marker id="aO" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#2e8b6b"/></marker>
+      <marker id="aP" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#c08230"/></marker>
+    </defs>
+
+    <rect class="box" x="300" y="24" width="200" height="48" rx="8"/>
+    <text class="ink h" x="400" y="46" text-anchor="middle">Claude Code</text>
+    <text class="muted s" x="400" y="62" text-anchor="middle">one connector</text>
+
+    <rect class="box" x="250" y="116" width="300" height="60" rx="8"/>
+    <text class="ink h" x="400" y="140" text-anchor="middle">Knowledge-Graph layer</text>
+    <text class="muted s" x="400" y="158" text-anchor="middle">holds keys, not data · virtual</text>
+
+    <rect class="box" x="596" y="120" width="178" height="52" rx="8"/>
+    <text class="ink h" x="685" y="142" text-anchor="middle">nCino / Salesforce</text>
+    <text class="muted s" x="685" y="159" text-anchor="middle">identity spine</text>
+
+    <rect class="box" x="250" y="216" width="300" height="58" rx="8"/>
+    <text class="ink h" x="400" y="240" text-anchor="middle">AgentCore Gateway</text>
+    <text class="muted s" x="400" y="257" text-anchor="middle">single endpoint · validates user JWT</text>
+
+    <rect class="box obo" x="70" y="322" width="240" height="66" rx="8" stroke-width="2"/>
+    <text class="ink h" x="190" y="346" text-anchor="middle">AFS MCP — custom</text>
+    <text class="oboT s" x="190" y="364" text-anchor="middle">OBO → forwards user identity</text>
+    <text class="muted s" x="190" y="379" text-anchor="middle">hosted on AgentCore Runtime</text>
+
+    <rect class="box pur" x="490" y="322" width="240" height="66" rx="8" stroke-width="2"/>
+    <text class="ink h" x="610" y="346" text-anchor="middle">Snowflake managed MCP</text>
+    <text class="purT s" x="610" y="364" text-anchor="middle">PUR → service identity</text>
+    <text class="muted s" x="610" y="379" text-anchor="middle">aggregating views, not raw rows</text>
+
+    <rect class="box" x="100" y="438" width="180" height="44" rx="8"/>
+    <text class="ink h" x="190" y="465" text-anchor="middle">AFS servicing</text>
+
+    <rect class="box" x="510" y="438" width="200" height="44" rx="8"/>
+    <text class="ink h" x="610" y="465" text-anchor="middle">Snowflake ≈ 1.5B rows</text>
+
+    <line class="ln" x1="400" y1="72"  x2="400" y2="112" marker-end="url(#aN)"/>
+    <line class="ln" x1="400" y1="176" x2="400" y2="212" marker-end="url(#aN)"/>
+    <line class="ln" x1="596" y1="146" x2="554" y2="146" marker-end="url(#aN)"/>
+    <text class="muted s" x="575" y="138" text-anchor="middle">anchors</text>
+
+    <path class="obo" fill="none" stroke-width="2" d="M330,266 C260,292 210,300 190,318" marker-end="url(#aO)"/>
+    <path class="pur" fill="none" stroke-width="2" d="M470,266 C540,292 590,300 610,318" marker-end="url(#aP)"/>
+
+    <line class="ln" x1="190" y1="388" x2="190" y2="434" marker-end="url(#aN)"/>
+    <line class="ln" x1="610" y1="388" x2="610" y2="434" marker-end="url(#aN)"/>
+
+    <line class="obo" x1="150" y1="516" x2="178" y2="516" stroke-width="3"/>
+    <text class="muted lg" x="184" y="520">OBO — user identity (AFS, we control it)</text>
+    <line class="pur" x1="150" y1="536" x2="178" y2="536" stroke-width="3"/>
+    <text class="muted lg" x="184" y="540">PUR — service identity (Snowflake managed)</text>
+  </svg>
+</body>
+</html>
