@@ -4,7 +4,25 @@ Concrete steps to stand up the end-to-end system. Do them in order; groups are m
 
 ---
 
-## A. Identity & accounts (Cognito)
+## A. Identity & accounts (Cognito) — ✅ DONE (2026-06-14)
+
+**Provisioned resources (account `111204669101`, region `us-east-1`):**
+
+| Resource | Value |
+|----------|-------|
+| User pool | `mcpgateway-users` → `us-east-1_Z1otWFj2I` |
+| Resource server | `https://mcpgateway/api` |
+| Scopes | `afs:read`, `snowflake:read` (full names prefixed: `https://mcpgateway/api/afs:read`, …) |
+| App client | `mcpgateway-client` → `7ktuvp7o0u0k21sn2rc0837g29` (has secret; `client_credentials` + `USER_PASSWORD_AUTH`) |
+| Employee A (RM) | user `employee-a`, group `ROLE_RM` |
+| Employee B (Analyst) | user `employee-b`, group `ROLE_ANALYST` |
+| JWKS URL | `https://cognito-idp.us-east-1.amazonaws.com/us-east-1_Z1otWFj2I/.well-known/jwks.json` |
+
+**Open items carried into Phase C:**
+- Both users are in `FORCE_CHANGE_PASSWORD` — set permanent passwords before Phase F validation.
+- **Group → scope translation is unresolved.** Membership in `ROLE_RM` / `ROLE_ANALYST` surfaces in the token's `cognito:groups` claim, but does **not** automatically put `afs:read` / `snowflake:read` scope strings in a user's access token. Decide in Phase C: (1) gateway authorizes off `cognito:groups`, or (2) add a Pre-Token-Generation Lambda that maps group → scopes. Nothing is broken; this is a deferred decision.
+
+---
 
 1. Confirm the AWS account + region, and that AgentCore, Neptune, and Cognito are all available there.
 2. Create the **Cognito user pool**.
@@ -16,17 +34,75 @@ Concrete steps to stand up the end-to-end system. Do them in order; groups are m
 
 ## B. Data sources reachable
 
-6. Confirm the **AFS MCP** is reachable as an **HTTPS endpoint** (existing deployment, or host on AgentCore Runtime). Record the URL.
-7. Confirm/enable the **Snowflake managed MCP**; record its endpoint + auth method.
-8. In **Snowflake**, create the two roles (`ROLE_RM`, `ROLE_ANALYST`) with differentiated data access, and create **aggregating views** (rolled-up financials per obligor — never the raw ~1.5B rows).
+**Snowflake access (prereq for 7–8) — ✅ established (2026-06-14):**
+- Account `SPTNHMV-XF37990`, user `DEVIN.BODEN`, role `SECURITYADMIN`, warehouse `CREDIT_MEMO_WH`.
+- `snow` CLI connection `mcpgateway` (config at `~/.snowflake/config.toml`).
+- Auth = **RSA key-pair** (`authenticator = SNOWFLAKE_JWT`, private key `~/.snowflake/rsa_key.p8`) — MFA/password no longer required for CLI. Public key registered on the user via `ALTER USER … SET RSA_PUBLIC_KEY`.
+- *Note:* the account login password is in this session's history and was briefly stored in config; rotate it when convenient. Key-pair auth does not depend on it.
+
+**AFS source:** repo at `https://github.com/Devinboden/AFS-mcp-v2` (currently deployed on Vercel; plan is to re-host on AgentCore Runtime for private networking + native OBO/audit).
+
+6. Confirm the **AFS MCP** is reachable as an **HTTPS endpoint** (existing deployment, or host on AgentCore Runtime). Record the URL. — ✅ DONE (2026-06-14, hosted on AgentCore Runtime)
+
+   **Hosted on AgentCore Runtime via CodeBuild (Option 1).**
+   - Source: `AFS-mcp-v2` (Next.js + mcp-handler). Adapted for AgentCore: shared handler factory `lib/afsMcpHandler.js` mounted at both `/api/mcp` (Vercel parity) and `/mcp` (AgentCore); `output: standalone`; `Dockerfile` (ARM64, **port 8000**, `AFS_FIXTURE_MODE=true`). Base image pulled from **ECR Public** (`public.ecr.aws/docker/library/node:24-slim`) to dodge Docker Hub rate limits.
+   - Deployed with the `agentcore` starter toolkit → CodeBuild builds ARM64 image, pushes to ECR, creates the runtime. Config in `AFS-mcp-v2/.bedrock_agentcore.yaml`.
+   - **Agent ARN:** `arn:aws:bedrock-agentcore:us-east-1:111204669101:runtime/afs_mcp-F82Tf5DI8Q`
+   - **MCP endpoint:** `https://bedrock-agentcore.us-east-1.amazonaws.com/runtimes/<url-encoded-ARN>/invocations?qualifier=DEFAULT`
+   - **Inbound auth:** Cognito JWT (customJWTAuthorizer; discoveryUrl = pool `us-east-1_Z1otWFj2I`, allowedClients = `7ktuvp7o0u0k21sn2rc0837g29`). Added a Cognito **domain** `mcpgateway-111204669101` to mint client-credentials tokens.
+   - **Verified end-to-end:** client-credentials JWT → `initialize` (200, serverInfo `afs-mcp-v2`) → `tools/list` returns all **9 tools** (jobs_by_officer, portfolio_by_officer, reserve_obligation_number, create_workpackage, loan_summary, revolver_utilization, payment_history, afs_show_officer_loans, afs_show_summary).
+   - **Gotchas hit & fixed:** (1) AgentCore MCP probes port **8000** not 8080; (2) Dockerfile `COPY public` failed — app has no `public/`; (3) Docker Hub 429 → use ECR Public base.
+   - *Still fixture mode* — flip `AFS_FIXTURE_MODE=false` + set `AFS_USERNAME`/`AFS_PASSWORD` for live AFS Vision. Vercel deployment remains unchanged at `/api/mcp`.
+7. Confirm/enable the **Snowflake managed MCP**; record its endpoint + auth method. — ✅ DONE (2026-06-14)
+
+   - Managed MCP is **enabled**; `SHOW MCP SERVERS IN ACCOUNT` returns two:
+     - **`PIEDMONT_MCP`** (`CREDIT_MEMO_DB.CREDIT_RISK`, owner SYSADMIN) — **the gateway target.** 6 credit tools: `find_obligor`, `list_facilities`, `get_risk_rating_trend`, `get_revolver_usage_trend`, `get_balance_trend`, `get_payment_history`. Tools are procedures running on `CREDIT_MEMO_WH` under the **caller's role**.
+     - `CLAUDE_MCP_SERVER` (`CLAUDE_MCP_DB.MCP`) — generic `SYSTEM_EXECUTE_SQL` (arbitrary SQL). **Do not expose via the gateway** (ungoverned).
+   - **Endpoint (PIEDMONT_MCP):** `https://SPTNHMV-XF37990.snowflakecomputing.com/api/v2/databases/CREDIT_MEMO_DB/schemas/CREDIT_RISK/mcp-servers/PIEDMONT_MCP`
+   - **Auth:** Snowflake OAuth / key-pair JWT / PAT bearer. For the gateway this is the **PUR** path — service identity mapped to the employee's Snowflake role (`ROLE_RM` / `ROLE_ANALYST`), which makes the Step-8 masking apply per-employee automatically.
+   - *Not yet done:* live HTTP reachability test against the endpoint (needs a bearer token; will happen when the gateway connects in Phase C, or can be curl-tested on request).
+8. In **Snowflake**, create the two roles (`ROLE_RM`, `ROLE_ANALYST`) with differentiated data access, and create **aggregating views** (rolled-up financials per obligor — never the raw ~1.5B rows). — ✅ DONE (2026-06-14)
+
+   **Built in `DEMO_CREDIT` (Enterprise edition confirmed):**
+   - Source data discovered in `DEMO_CREDIT` schemas (AFS, CDL, CIF, NCO, GFS, DEP, DFP, EFS). Grain = `OBLIGOR_NUMBER` (1,000 obligors).
+   - Roles `ROLE_RM`, `ROLE_ANALYST` created (mirror the Cognito groups); both granted to `DEVIN.BODEN` for testing.
+   - Curated schema **`DEMO_CREDIT.GATEWAY`** with 3 aggregating views (one row per obligor):
+     - `V_OBLIGOR_FINANCIAL_SUMMARY` — latest-statement financials + ratios (revenue, EBITDA, debt, debt/EBITDA, DSCR).
+     - `V_OBLIGOR_EXPOSURE_SUMMARY` — latest as-of-date exposure rolled up (commitment, outstanding, balance, utilization).
+     - `V_OBLIGOR_360` — spine + master + exposure + financials joined.
+   - **Differentiation = column-level masking** (locked choice). Masking policy `mask_exposure` nulls the exposure-dollar columns (`total_commitment`, `total_outstanding`, `total_current_balance`, `total_accrued_interest`) for everyone except `ROLE_RM`/admins. Verified: RM sees dollars, Analyst sees `NULL`; both see ratios.
+   - SQL scripts: `~/.snowflake/phaseB_core.sql`, `~/.snowflake/phaseB_masking.sql`.
 
 ## C. Gateway
 
-9. Create the **AgentCore Gateway** with an **inbound authorizer = the Cognito pool** (validates the user JWT).
-10. Add **target 1: AFS MCP** (MCP-server target).
-11. Add **target 2: Snowflake managed MCP** (MCP-server target).
+**Infra-as-code:** JSON configs live in [`infra/gateway/`](../infra/gateway/) (trust-policy, role-permissions, authorizer-config, protocol-config). Built with raw `aws bedrock-agentcore-control` (file://-based JSON) rather than the starter toolkit, for explicit control + reproducibility.
+
+9. Create the **AgentCore Gateway** with an **inbound authorizer = the Cognito pool** (validates the user JWT). — ✅ DONE (2026-06-15)
+
+   - **Gateway IAM role:** `arn:aws:iam::111204669101:role/mcpgateway-gw-role` (trust = `bedrock-agentcore.amazonaws.com` scoped by SourceAccount + gateway ARN; perms = InvokeAgentRuntime on AFS, workload-identity/token-vault, logs).
+   - **Gateway ARN:** `arn:aws:bedrock-agentcore:us-east-1:111204669101:gateway/mcpgateway-eerhmo8ymw` (id `mcpgateway-eerhmo8ymw`), status **READY**.
+   - **Gateway MCP URL:** `https://mcpgateway-eerhmo8ymw.gateway.bedrock-agentcore.us-east-1.amazonaws.com/mcp`
+   - **Inbound auth:** `CUSTOM_JWT` → Cognito pool `us-east-1_Z1otWFj2I` (discoveryUrl `.well-known/openid-configuration`, allowedClients `7ktuvp7o0u0k21sn2rc0837g29`). Same pool/client as the AFS runtime, so user + machine tokens both validate.
+   - **Protocol:** MCP with **`searchType: SEMANTIC`** (enables the gateway's semantic tool-search → satisfies E22).
+   - **Authorization decision (resolves the Group-A open item):** per-target A/B authz will use the gateway's **Policy Engine (Cedar)** in step 13, authorizing directly off the `cognito:groups` claim — **no Pre-Token-Generation Lambda needed.** (Authorizer also supports `allowedScopes`/`customClaims` if we later want scope-based gating.)
+> **⚠️ OBO finding + decision (2026-06-15) — revises locked decision #1 for AFS.**
+> An MCP-protocol gateway only accepts **MCP-server targets**, which **do not support token pass-through**; and AgentCore OBO **token-exchange** requires an IdP that implements RFC 8693 / RFC 7523 — **Cognito does neither**. So **true per-user OBO to AFS is not achievable on this stack.** Decision (goals: keep it in AWS > have an audit trail > restrict access): use a **service identity outbound to AFS** and capture **per-employee audit at the gateway** instead of inside AFS.
+> - **Authentication ≠ attribution.** AFS authenticates a *service* (the gateway); the *employee* identity is validated at the gateway inbound (Cognito JWT) and recorded in **gateway CloudWatch/CloudTrail logs** → that is the audit trail (replaces step-27 "AFS shows the human").
+> - **Access restriction** (Employee B blocked from AFS) is enforced at the gateway via **Cedar/`cognito:groups`** (step 13), independent of OBO.
+> - **Cognito is still required** — it is the inbound human-identity spine (who is calling → drives authz + audit). We just stop asking it to do the impossible token-exchange.
+
+10. Add **target 1: AFS MCP** (MCP-server target). — ✅ DONE (2026-06-15)
+
+    - **Outbound auth = OAuth client-credentials (service identity)** via AgentCore Identity OAuth2 credential provider **`afs-cognito-m2m`** (`arn:aws:bedrock-agentcore:us-east-1:111204669101:token-vault/default/oauth2credentialprovider/afs-cognito-m2m`) — Cognito app client `7ktuvp7o…`, `CLIENT_SECRET_BASIC`, scope `…/afs:read`. (Secret handled out-of-repo; never committed.)
+    - **Target** `afs` (id `Q5ICZU7W8K`), type `mcp.mcpServer`, endpoint = AFS runtime invocation URL (url-encoded ARN, `?qualifier=DEFAULT`), **listingMode DEFAULT** (semantic search disabled on the gateway, so DEFAULT static sync is used). Status **READY**, `tools/list` synced via the M2M token.
+    - Gateway role gained `secretsmanager:GetSecretValue` on `bedrock-agentcore-identity*` for the provider's stored secret.
+11. Add **target 2: Snowflake managed MCP** (MCP-server target). — ⛔ BLOCKED (2026-06-15): data-layer mismatch.
+
+    - **Finding:** the recorded target **`PIEDMONT_MCP`** reads `CREDIT_MEMO_DB.CREDIT_RISK`, but `ROLE_RM`/`ROLE_ANALYST` have **no grants** there and that schema has **no masking policy**. The Phase B A/B differentiation (masking) lives on **`DEMO_CREDIT.GATEWAY`** views — which `PIEDMONT_MCP` does not expose. Targeting `PIEDMONT_MCP` as-is would show **no per-employee differentiation**.
+    - **Decision needed before PAT wiring:** which Snowflake MCP/data does the gateway expose? (a) keep `PIEDMONT_MCP` and add role grants + masking on `CREDIT_MEMO_DB.CREDIT_RISK`; or (b) create a managed MCP over the already-masked `DEMO_CREDIT.GATEWAY` views and target that.
+    - Snowflake-side PAT groundwork (service user `SVC_GATEWAY`, grants, network policy, two role-restricted PATs) is unstarted pending this decision.
 12. Configure **AgentCore Identity** outbound credentials per target:
-    - AFS → **OBO** (forward/exchange the user token).
+    - AFS → ~~OBO~~ **service identity (client-credentials)** — see finding above; per-user audit at the gateway. ✅
     - Snowflake → **PUR**, mapping each employee to their Snowflake role (`ROLE_RM` / `ROLE_ANALYST`).
 13. Configure **scope → target authorization**: A reaches both targets; B reaches Snowflake only.
 14. Check **tool-name namespacing** (triple-underscore prefixes); preserve/alias names so agent references don't break.
@@ -52,3 +128,22 @@ Concrete steps to stand up the end-to-end system. Do them in order; groups are m
 25. Trigger the **fuzzy fallback**: a candidate lands in the review queue, stays out of results until approved, then joins.
 26. Confirm **virtual** behavior: no data copied into the graph; fresh hydration; aggregating views used (no raw 1.5B scan).
 27. Confirm **audit**: AFS shows the real user (OBO); document the Snowflake service-attribution asymmetry.
+
+## G. Client & model layer (Cowork on Bedrock)
+
+Goal: the human-facing surface is **Claude Cowork in the Claude Desktop app**, with **model inference served by Amazon Bedrock** (in-account, same account/region as the gateway) and **tools served by the AgentCore Gateway** from Group C. Model config and tools config are **separate concerns** — don't conflate them.
+
+28. In the **Bedrock console** (same account + region as the gateway, `us-east-1`), **Request model access** for the target Claude model and create/choose an **inference profile**. Grant the desktop principal `bedrock:InvokeModel*`.
+29. Install **Claude Desktop** (Windows x64) for each employee and sign in.
+30. **Point inference at Bedrock:** Developer → *Configure third-party inference* → **Amazon Bedrock** → auth via the AWS profile (`~/.aws`) → set **Model ID + inference profile**. For fleet rollout, push this via **MDM** (Jamf / Intune / Group Policy) instead of per-machine.
+31. **Add the AgentCore Gateway as an MCP connector** in Desktop (gateway/KG URL + **Employee A/B Cognito JWT** as bearer — reuse the pool `us-east-1_Z1otWFj2I` / client-credentials flow already stood up in B6). This is the *tools* path — distinct from the *model* config in step 30. **Do not** confuse the Bedrock "LLM gateway" (a model proxy) with the AgentCore Gateway (MCP/tools).
+32. Drive the workflows from the **Cowork tab**. Bedrock-mode limits to note: **Chat tab, Computer Use, and Skills Marketplace are disabled** (they need Anthropic-hosted inference); `/desktop` CLI handoff is unavailable on Bedrock.
+33. **(FINAL STEP — test only) Wire this Claude Code CLI into Bedrock.** `CLAUDE_CODE_USE_BEDROCK=1`, `AWS_REGION=us-east-1`, `ANTHROPIC_MODEL`=inference-profile id. **Cost rationale:** all build work in Groups A–F (and the Cowork wiring) is done on the **Claude Pro subscription** (included/"free" tokens). Flipping this CLI to Bedrock makes inference consume **paid Bedrock tokens**, so it is deliberately the **last action** and **test-only** — used to prove the end-to-end Bedrock inference path works, then reverted. Do **not** run the build on Bedrock.
+
+### Network posture (how "internal" this is)
+With Group G in place, all three outbound data paths stay under your control:
+- **Model inference** → only your configured **Bedrock region(s)** (in-account; can be VPC-private via PrivateLink).
+- **Tools / data (MCP)** → only the **AgentCore Gateway** and its approved targets (Cognito-JWT gated; AFS via OBO, Snowflake via PUR).
+- **To Anthropic** → only **aggregate telemetry** (token counts, model ID, error codes). No prompts, data, or tool payloads.
+
+Caveat — *not fully air-gapped*: the **Desktop app runs on the user's laptop** (Cowork reads/writes **local files**), and the aggregate telemetry above still leaves. "Internal" here means *the data plane stays inside your AWS boundary*, not *zero egress*. For headless/VPC-only with zero local surface, host the agent on **AgentCore Runtime** instead — but that drops the Cowork UX and weakens AFS OBO attribution (no human in the loop).

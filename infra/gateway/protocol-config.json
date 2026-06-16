@@ -1,0 +1,5 @@
+{
+  "mcp": {
+    "instructions": "Gateway fronting AFS (custom) and Snowflake (managed) MCP servers behind a single endpoint. Tools are namespaced per target."
+  }
+}
