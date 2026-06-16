@@ -98,12 +98,21 @@ Concrete steps to stand up the end-to-end system. Do them in order; groups are m
     - Gateway role gained `secretsmanager:GetSecretValue` on `bedrock-agentcore-identity*` for the provider's stored secret.
 11. Add **target 2: Snowflake managed MCP** (MCP-server target). — ⛔ BLOCKED (2026-06-15): data-layer mismatch.
 
-    - **Finding:** the recorded target **`PIEDMONT_MCP`** reads `CREDIT_MEMO_DB.CREDIT_RISK`, but `ROLE_RM`/`ROLE_ANALYST` have **no grants** there and that schema has **no masking policy**. The Phase B A/B differentiation (masking) lives on **`DEMO_CREDIT.GATEWAY`** views — which `PIEDMONT_MCP` does not expose. Targeting `PIEDMONT_MCP` as-is would show **no per-employee differentiation**.
-    - **Decision needed before PAT wiring:** which Snowflake MCP/data does the gateway expose? (a) keep `PIEDMONT_MCP` and add role grants + masking on `CREDIT_MEMO_DB.CREDIT_RISK`; or (b) create a managed MCP over the already-masked `DEMO_CREDIT.GATEWAY` views and target that.
-    - Snowflake-side PAT groundwork (service user `SVC_GATEWAY`, grants, network policy, two role-restricted PATs) is unstarted pending this decision.
-12. Configure **AgentCore Identity** outbound credentials per target:
-    - AFS → ~~OBO~~ **service identity (client-credentials)** — see finding above; per-user audit at the gateway. ✅
-    - Snowflake → **PUR**, mapping each employee to their Snowflake role (`ROLE_RM` / `ROLE_ANALYST`).
+    - **`PIEDMONT_MCP` = 6 stored procedures** in `CREDIT_MEMO_DB.CREDIT_RISK` (find_obligor, list_facilities, get_risk_rating_trend, get_revolver_usage_trend, get_balance_trend, get_payment_history) that read **raw `DEMO_CREDIT` source tables** (e.g. `DEMO_CREDIT.DEP.DEP_BAL_RECORD`, `DEMO_CREDIT.CIF.CIF_CSTMR_MSTR`).
+    - **Three gaps that block differentiation:**
+      1. **Access:** `ROLE_RM`/`ROLE_ANALYST` have grants only on `DEMO_CREDIT.GATEWAY` views + `CREDIT_MEMO_WH`; **no USAGE on `CREDIT_MEMO_DB`/`CREDIT_RISK`** → can't call the procedures.
+      2. **Data layer:** Phase B masking is on the `DEMO_CREDIT.GATEWAY.V_OBLIGOR_*` **views**; the procedures read the **unmasked raw source tables** instead.
+      3. **Rights model (decisive):** the procedures are **`EXECUTE AS OWNER`**, so masking evaluates `current_role()` as the *owner* (SYSADMIN), not the caller → **per-employee masking cannot differentiate through them** even if access + masking were added.
+    - **Consequence:** targeting `PIEDMONT_MCP` as-is yields identical, fully-unmasked results for both employees (or errors before grants) — no demo differentiation.
+    - **Decision (chosen): (a) rewrite the procedures.** Keeps the rich trend tools and makes differentiation real.
+    - **DONE (2026-06-15) — procedures rewritten + verified.** Code in [`infra/snowflake/`](../infra/snowflake/): `01-grants.sql` (roles get identical read access to the 6 source objects + EXECUTE on the procs + USAGE on the MCP server), `02-rewrite-procedures.sql` (all 6 changed to **`EXECUTE AS CALLER`**; dollar/exposure fields wrapped in `CASE WHEN CURRENT_ROLE()='ROLE_ANALYST' THEN NULL ELSE … END`). Baseline of the originals kept in `infra/snowflake/original/`.
+    - Differentiation mechanism = **in-procedure role logic** (not a masking policy) because the procs return VARIANT/JSON, which masking policies can't cover. `EXECUTE AS CALLER` makes `CURRENT_ROLE()` resolve to the calling employee's role.
+    - **Verified:** `get_balance_trend(847291)` → RM sees `start/end/min_balance, change` ($); Analyst sees only `pct_change`+`direction`. `get_risk_rating_trend` identical for both (no dollars). Masked tools: `list_facilities` (commitment), `get_revolver_usage_trend` (commitment/drawn/available), `get_balance_trend` ($ balances), `get_payment_history` (scheduled/paid $).
+    - **DONE (2026-06-15) — Snowflake targets live.** `infra/snowflake/03-service-user.sql` (service user `SVC_GATEWAY` TYPE=SERVICE, both roles, network policy `NP_GATEWAY_ALLOW_ALL`) + `04-create-pats-and-providers.sh` (two role-restricted PATs `PAT_RM`/`PAT_ANALYST` → API-key providers `snowflake-pat-rm`/`snowflake-pat-analyst`, secret-safe). Two gateway targets created, both **READY** (tools synced): **`snowflake-rm`** (`AM7Z1QQZEM`, ROLE_RM PAT) and **`snowflake-analyst`** (`CQ0SEYLRUL`, ROLE_ANALYST PAT), same `PIEDMONT_MCP` endpoint, PAT presented as `Authorization: Bearer`.
+    - **Topology note:** one Snowflake MCP → **two role-targets** (a gateway outbound credential is per-target, not per-user). Cedar (step 13) routes Employee A→`snowflake-rm`, Employee B→`snowflake-analyst`. Tools are namespaced per target (step 14).
+12. Configure **AgentCore Identity** outbound credentials per target: — ✅ DONE (2026-06-15)
+    - AFS → ~~OBO~~ **service identity (OAuth client-credentials)** — per-user audit at the gateway. ✅
+    - Snowflake → **PUR via two role-targets** (PAT per role): `snowflake-rm` (ROLE_RM), `snowflake-analyst` (ROLE_ANALYST). Procedures rewritten `EXECUTE AS CALLER` so the PAT's role drives the in-proc masking. ✅
 13. Configure **scope → target authorization**: A reaches both targets; B reaches Snowflake only.
 14. Check **tool-name namespacing** (triple-underscore prefixes); preserve/alias names so agent references don't break.
 

@@ -53,6 +53,9 @@ client of the Gateway; it is not yet built. This document covers Groups A–C.
 | AFS OAuth provider | `…:token-vault/default/oauth2credentialprovider/afs-cognito-m2m` |
 | AFS gateway target | `Q5ICZU7W8K` (`afs`) |
 | Snowflake MCP | `PIEDMONT_MCP` (`CREDIT_MEMO_DB.CREDIT_RISK`), account `SPTNHMV-XF37990` |
+| Snowflake service user | `SVC_GATEWAY` (TYPE=SERVICE; roles `ROLE_RM`+`ROLE_ANALYST`; network policy `NP_GATEWAY_ALLOW_ALL`) |
+| Snowflake PAT providers | `…/apikeycredentialprovider/snowflake-pat-rm`, `…/snowflake-pat-analyst` |
+| Snowflake gateway targets | `AM7Z1QQZEM` (`snowflake-rm`, ROLE_RM), `CQ0SEYLRUL` (`snowflake-analyst`, ROLE_ANALYST) |
 
 Infra-as-code for the Gateway lives in [`../infra/gateway/`](../infra/gateway/).
 
@@ -158,9 +161,31 @@ edition/claim gotchas. A PAT (→ API-key provider) bridges the same gap in one 
 - ✅ Fastest path to a working A/B Snowflake demo; tokens are revocable/expirable.
 - ⚠️ PATs are **long-lived bearer tokens** held in the AgentCore token vault (Secrets
   Manager) with **manual rotation**. Snowflake also **requires a network policy** on the
-  user before a PAT can be used.
+  user before a PAT can be used (demo uses a permissive `0.0.0.0/0` policy — restrict in prod).
 - 🔭 **Productionization follow-up:** replace PATs with **External OAuth (Cognito) +
   Snowflake user/role mapping**, or key-pair if/when the Gateway supports it.
+
+**Status: IMPLEMENTED (2026-06-15).** PAT presented as `Authorization: Bearer` (no token-type
+header needed). Both targets `READY`. Code: `infra/snowflake/03`–`04`, `infra/gateway/target-snowflake-*`.
+
+### 5.4 ADR-004 — Differentiation lives **inside the procedures** (EXECUTE AS CALLER)
+
+**Decision:** The 6 `PIEDMONT_MCP` procedures were rewritten from `EXECUTE AS OWNER` to
+**`EXECUTE AS CALLER`**, with dollar/exposure fields wrapped in
+`CASE WHEN CURRENT_ROLE()='ROLE_ANALYST' THEN NULL ELSE … END`.
+
+**Why not a masking policy (the Phase B mechanism):** the procedures return **VARIANT/JSON**
+(`OBJECT_CONSTRUCT`), and Snowflake masking policies apply to **columns**, not constructed
+JSON — so a policy can't reach these outputs. `EXECUTE AS OWNER` also made `CURRENT_ROLE()`
+resolve to the owner, defeating any role check. Switching to `EXECUTE AS CALLER` makes
+`CURRENT_ROLE()` the calling employee's role (the PAT is `ROLE_RESTRICTION`'d), so the
+in-procedure check differentiates. Both roles get identical *read access* (grants in
+`infra/snowflake/01-grants.sql`); only the *presentation* differs.
+
+**Verified:** `get_balance_trend(847291)` — RM sees `$` balances + change; Analyst sees only
+`pct_change`/`direction`. `get_risk_rating_trend` identical for both (no dollars). Masked
+tools: `list_facilities`, `get_revolver_usage_trend`, `get_balance_trend`, `get_payment_history`.
+Originals preserved in `infra/snowflake/original/`.
 
 ### 5.3 ADR-002 — Semantic search disabled
 
@@ -228,8 +253,8 @@ targets are live and a `tools/list` is captured through the Gateway data plane.
 
 ## 10. Open items / follow-ups
 
-- [ ] Snowflake: create two role PATs + API-key providers + two targets (ADR-003).
-- [ ] Cedar policy engine: author + attach policies; `LOG_ONLY` → `ENFORCE` (step 13).
-- [ ] Verify tool namespacing via a data-plane `tools/list` through the Gateway (step 14).
+- [x] Snowflake: two role PATs + API-key providers + two targets (ADR-003/004). ✅ 2026-06-15
+- [ ] Cedar policy engine: author + attach policies; A→`afs`+`snowflake-rm`, B→`snowflake-analyst` only; `LOG_ONLY` → `ENFORCE` (step 13).
+- [ ] Verify tool namespacing via a data-plane `tools/list` through the Gateway with an employee JWT (step 14) — note the two Snowflake targets produce two namespaced tool sets.
 - [ ] Set permanent passwords for `employee-a` / `employee-b` (carried from Group A).
-- [ ] Productionization: External-OAuth for Snowflake; scoped IAM principal; PAT rotation.
+- [ ] Productionization: External-OAuth for Snowflake; scoped IAM principal (not root); PAT rotation; restrict `NP_GATEWAY_ALLOW_ALL`.
