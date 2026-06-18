@@ -253,6 +253,10 @@ targets are live and a `tools/list` is captured through the Gateway data plane.
 
 ## 10. Open items / follow-ups
 
+- [x] **Data-plane verified for AFS** via `infra/gateway/smoke-test.py` (mint Cognito M2M token → MCP `initialize`/`tools/list`/`tools/call`). 21 namespaced tools (`<target>___<tool>`) — confirms C14. `afs___afs_show_summary` returns live data end-to-end. ✅ 2026-06-15
+- [x] **Invoke-time IAM fix:** gateway role needed `GetResourceOauth2Token`/`GetResourceApiKey`/`GetWorkloadAccessToken` on the **bare** `token-vault/default` ARN (not just `…/default/*`). Sync had worked because it runs as a different principal; live tool calls failed 403 until fixed. Surfaced by setting the gateway `exceptionLevel=DEBUG` (still on — return to default for prod; minor info-leak).
+- [ ] **Snowflake tool calls fail with `MCP Server tool error: Error parsing response`** (auth now OK). Investigate the PIEDMONT_MCP response shape vs gateway expectations. Does not affect AFS.
+- [ ] **Claude Desktop connectivity:** Desktop custom connectors use interactive OAuth; the Cognito app client is `client_credentials`-only with no callback URLs/hosted-UI and employees are in FORCE_CHANGE_PASSWORD. Need auth-code flow + callbacks + user passwords for Desktop to connect (CLI can use a static bearer today).
 - [x] Snowflake: two role PATs + API-key providers + two targets (ADR-003/004). ✅ 2026-06-15
 - [ ] Cedar policy engine: author + attach policies; A→`afs`+`snowflake-rm`, B→`snowflake-analyst` only; `LOG_ONLY` → `ENFORCE` (step 13).
 - [ ] Verify tool namespacing via a data-plane `tools/list` through the Gateway with an employee JWT (step 14) — note the two Snowflake targets produce two namespaced tool sets.
