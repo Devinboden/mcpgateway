@@ -23,8 +23,9 @@ TMP="$(mktemp)"; trap 'rm -f "$TMP"' EXIT
 if [ "$MODE" = "fixture" ]; then
   ENV_JSON='{"AFS_FIXTURE_MODE":"true"}'
 else
+  BASE_URL="${BASE_URL:-https://dd3.afsvision.us/webx/api/v1}"
   ENV_JSON=$(aws secretsmanager get-secret-value --secret-id "$SECRET_ID" --region "$REGION" --query SecretString --output text \
-    | python -c "import sys,json;c=json.load(sys.stdin);print(json.dumps({'AFS_FIXTURE_MODE':'false','AFS_USERNAME':c['AFS_USERNAME'],'AFS_PASSWORD':c['AFS_PASSWORD']}))")
+    | BASE_URL="$BASE_URL" python -c "import sys,json,os;c=json.load(sys.stdin);print(json.dumps({'AFS_FIXTURE_MODE':'false','AFS_USERNAME':c['AFS_USERNAME'],'AFS_PASSWORD':c['AFS_PASSWORD'],'AFS_BASE_URL':os.environ['BASE_URL']}))")
 fi
 
 # Inbound auth MUST be replayed or update-agent-runtime drops it (reverting to IAM and
