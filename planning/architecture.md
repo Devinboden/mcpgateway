@@ -42,7 +42,8 @@ client of the Gateway; it is not yet built. This document covers Groups A–C.
 | Component | Identifier |
 |---|---|
 | Cognito user pool | `us-east-1_Z1otWFj2I` (`mcpgateway-users`) |
-| Cognito app client | `7ktuvp7o0u0k21sn2rc0837g29` (secret; `client_credentials` + `USER_PASSWORD_AUTH`) |
+| Cognito app client (M2M) | `7ktuvp7o0u0k21sn2rc0837g29` (secret; `client_credentials`) — outbound to AFS, smoke test |
+| Cognito app client (interactive) | `4hkln2r3rlev6kom7jvrnsu7fv` (`mcpgateway-desktop`, public/PKCE, `authorization_code`) — Claude Desktop/Cowork login |
 | Cognito domain | `mcpgateway-111204669101` (token endpoint for M2M) |
 | Resource server / scopes | `https://mcpgateway/api` → `afs:read`, `snowflake:read` |
 | Employees | `employee-a` (group `ROLE_RM`), `employee-b` (group `ROLE_ANALYST`) |
@@ -93,6 +94,15 @@ user tokens (interactive) and machine tokens (M2M, see §5.1) validate against i
 This resolves the open "group ≠ scope" item from Group A: **we authorize off the group
 claim directly via Cedar — no Pre-Token-Generation Lambda needed.** (The authorizer also
 supports `allowedScopes` / `customClaims` if scope-based gating is ever preferred.)
+
+**Two token-acquisition paths (both validate at the same authorizer):**
+- **M2M** (`client_credentials`, confidential client `7ktuvp7o…`) — for the smoke test and the
+  gateway's own outbound-to-AFS credential.
+- **Interactive** (`authorization_code` + PKCE, public client `4hkln2r3rlev6kom7jvrnsu7fv`) — for
+  **Claude Desktop / Cowork**. The gateway exposes `.well-known/oauth-protected-resource` and 401s
+  with a `www-authenticate` pointer, so the Claude client auto-discovers Cognito; since Cognito has
+  no DCR, the **public client ID is supplied manually** in the connector's Advanced settings.
+  Setup + connect steps: [`../infra/cognito/README.md`](../infra/cognito/README.md).
 
 ---
 
