@@ -1,0 +1,8 @@
+{
+  "mcp": {
+    "mcpServer": {
+      "endpoint": "https://bedrock-agentcore.us-east-1.amazonaws.com/runtimes/arn%3Aaws%3Abedrock-agentcore%3Aus-east-1%3A111204669101%3Aruntime%2Fboom_mcp-fQUgkK4pjp/invocations?qualifier=DEFAULT",
+      "listingMode": "DEFAULT"
+    }
+  }
+}

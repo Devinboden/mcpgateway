@@ -21,15 +21,16 @@ Claude (Cowork / Code)
 │   • Inbound authN  : CUSTOM_JWT  → Cognito user pool         │
 │   • Inbound authZ  : Cedar policy engine ← cognito:groups    │
 │   • Audit          : per-employee access logs (CloudWatch)   │
-│   • Tool catalog   : namespaced per target                   │
+│   • Tool catalog   : namespaced per target  (afs___, boom___)│
 └───────────────┬───────────────────────────┬─────────────────┘
-   outbound: service identity   outbound: service identity (per role)
+   outbound: service identity (Cognito M2M, afs-cognito-m2m)
                 │                           │
                 ▼                           ▼
-        AFS MCP (custom,             Snowflake managed MCP
-        AgentCore Runtime)           (PIEDMONT_MCP)
-        OAuth client-creds           PAT per role:
-        (Cognito M2M token)          ROLE_RM / ROLE_ANALYST
+        AFS MCP (custom,             Boom MCP (custom,
+        AgentCore Runtime)           AgentCore Runtime)
+
+   Snowflake managed MCP — reached DIRECTLY (not via gateway),
+   with native user identity + RBAC/column-masking (ADR-005).
 ```
 
 The knowledge-graph layer (Group D) will sit *between* Claude and the Gateway as a
@@ -54,9 +55,9 @@ client of the Gateway; it is not yet built. This document covers Groups A–C.
 | AFS OAuth provider | `…:token-vault/default/oauth2credentialprovider/afs-cognito-m2m` |
 | AFS gateway target | `Q5ICZU7W8K` (`afs`) |
 | Snowflake MCP | `PIEDMONT_MCP` (`CREDIT_MEMO_DB.CREDIT_RISK`), account `SPTNHMV-XF37990` |
-| Snowflake service user | `SVC_GATEWAY` (TYPE=SERVICE; roles `ROLE_RM`+`ROLE_ANALYST`; network policy `NP_GATEWAY_ALLOW_ALL`) |
-| Snowflake PAT providers | `…/apikeycredentialprovider/snowflake-pat-rm`, `…/snowflake-pat-analyst` |
-| Snowflake gateway targets | `AM7Z1QQZEM` (`snowflake-rm`, ROLE_RM), `CQ0SEYLRUL` (`snowflake-analyst`, ROLE_ANALYST) |
+| Boom runtime | `arn:aws:bedrock-agentcore:us-east-1:111204669101:runtime/boom_mcp-fQUgkK4pjp` (`boom_mcp`) |
+| Boom gateway target | `VASU5DSO4U` (`boom`); outbound reuses `afs-cognito-m2m` (M2M) |
+| Snowflake | **reached directly** (ADR-005) — no gateway target. Procedures/masking/grants kept; `SVC_GATEWAY`/PATs/providers/targets retired. |
 
 Infra-as-code for the Gateway lives in [`../infra/gateway/`](../infra/gateway/).
 
@@ -222,6 +223,23 @@ per-user automatically.
 **Division of labor:** gateway = unification + governance for sources that lack their own (AFS, Boom);
 Snowflake = its own per-user governance, joined to the rest at the **KG layer** (KG → gateway for
 AFS/Boom, KG → Snowflake directly).
+
+**Boom deployment (`boom_mcp-fQUgkK4pjp`, READY 2026-06-21) — 5 gotchas, all fixed:**
+1. **`source_path`** — the toolkit derived it from the entrypoint dir (`src/`), so root `package.json`
+   never reached the build (`npm ci → ENOENT`). Fixed: set `source_path` to the repo root in
+   `.bedrock_agentcore.yaml` (AFS worked because its entrypoint was at root).
+2. **Docker Hub 429** — Boom's Dockerfile pulled `docker.io/.../node:22-slim`. Switched to
+   `public.ecr.aws/docker/library/node:22-slim`.
+3. **CodeBuild role ECR push** — the shared `…CodeBuild…` role lacked `ecr:InitiateLayerUpload` on the
+   new repo. Added `infra/boom/codebuild-ecr-policy.json` (push on `bedrock-agentcore-*`).
+4. **Runtime role ECR pull** — `CreateAgentRuntime` needs the `…Runtime…` role to pull the image
+   (`ecr:GetAuthorizationToken`/`BatchGetImage`/`GetDownloadUrlForLayer`). Added
+   `infra/boom/runtime-ecr-policy.json`.
+5. **Toolkit UTF-8 crash** — `agentcore configure/deploy` print emoji; run with `PYTHONUTF8=1`.
+
+Boom verified through the gateway: `tools/list` → 9 `boom___*` tools; `boom___boom_lookup_company`
+returns fixture data (Piedmont). Unlike Snowflake, gateway→Boom tool *calls* work cleanly (Boom's
+runtime is stateless and accepts the `Mcp-Session-Id` header natively).
 
 ### 5.3 ADR-002 — Semantic search disabled
 
