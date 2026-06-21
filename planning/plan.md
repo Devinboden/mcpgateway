@@ -128,8 +128,13 @@ Concrete steps to stand up the end-to-end system. Do them in order; groups are m
 > gateway (Cedar A/B applies) and the `cognito:groups` is mapped to the Snowflake role (masking applies)
 > — one identity, both paths. **Verified:** resolve Piedmont → hydrate joins Boom (gateway) + Snowflake
 > (direct); RM sees Snowflake `$`, Analyst masked; AFS link `pending-review` (surfaced, not faked).
-> Remaining: D-2 Neptune store · D-3 fuzzy matcher + review queue · D-4 deploy to Runtime + real
-> per-employee Snowflake broker + make the KG Claude's single connector.
+> **✅ D-4 DONE (2026-06-21) — KG deployed + real broker.** Real per-employee Snowflake broker
+> (PATs → SQL API, `kg/snowflake-employee-pats`). KG hosted on **AWS App Runner**
+> (`https://phsc3gpvqk.us-east-1.awsapprunner.com/mcp`) — *not* AgentCore Runtime, which strips the
+> token (ADR-006); on App Runner the KG validates the Cognito JWT itself, advertises OAuth discovery,
+> and forwards identity. x86 image built via CodeBuild. **Verified deployed:** RM sees `$`, Analyst
+> masked, AFS pending — one identity → gateway Cedar + Snowflake masking, in the cloud.
+> Remaining: **D-2** Neptune store · **D-3** fuzzy matcher + review queue.
 
 15. Provision the **Neptune cluster** (VPC, IAM auth).
 16. Define the **ontology**: `Obligor → Facility/Loan → Account → FinancialPeriod`, with **link-status** on edges.

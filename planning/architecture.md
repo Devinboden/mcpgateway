@@ -17,7 +17,16 @@ Claude (Cowork / Code)
         │  MCP over HTTPS, bearer = employee Cognito JWT
         ▼
 ┌─────────────────────────────────────────────────────────────┐
-│ AgentCore Gateway  (single MCP endpoint)                     │
+│ KG-MCP   (AWS App Runner — Claude's single connector)        │
+│   • validates the Cognito JWT, advertises OAuth discovery    │
+│   • resolve + virtual-hydrate; joins the sources below       │
+│   • forwards the employee identity to BOTH paths ↓           │
+└───────────────┬───────────────────────────┬─────────────────┘
+   forward employee JWT                map cognito:groups → role
+                ▼                           ▼
+┌──────────────────────────────────┐   Snowflake managed MCP
+│ AgentCore Gateway (single MCP)   │   (DIRECT, per-employee PAT;
+│   • Cognito JWT inbound          │    native RBAC/masking, ADR-005)
 │   • Inbound authN  : CUSTOM_JWT  → Cognito user pool         │
 │   • Inbound authZ  : Cedar policy engine ← cognito:groups    │
 │   • Audit          : per-employee access logs (CloudWatch)   │
@@ -33,8 +42,10 @@ Claude (Cowork / Code)
    with native user identity + RBAC/column-masking (ADR-005).
 ```
 
-The knowledge-graph layer (Group D) will sit *between* Claude and the Gateway as a
-client of the Gateway; it is not yet built. This document covers Groups A–C.
+The KG (Group D) sits **above** the gateway as its client — Claude's single connector. Hosting:
+KG on **App Runner** (it must forward the user token; AgentCore Runtime strips it — ADR-006),
+AFS/Boom on **AgentCore Runtime**, gateway = **AgentCore Gateway**, Snowflake **direct**. The KG
+itself lives in repo `Devinboden/kg-mcp`.
 
 ---
 
@@ -59,6 +70,8 @@ client of the Gateway; it is not yet built. This document covers Groups A–C.
 | Boom gateway target | `VASU5DSO4U` (`boom`); outbound reuses `afs-cognito-m2m` (M2M) |
 | Policy engine (Cedar) | `mcpgateway_authz-hfy2_5p_23` (ENFORCE) — A/B tool authz; policies in `infra/gateway/policies/` |
 | Snowflake direct users | `EMPLOYEE_A`(ROLE_RM)/`EMPLOYEE_B`(ROLE_ANALYST) |
+| **KG-MCP** | repo `Devinboden/kg-mcp`; deployed on **AWS App Runner** `https://phsc3gpvqk.us-east-1.awsapprunner.com/mcp` (x86 image `kg-mcp:v1` built via CodeBuild). Claude's single connector. |
+| KG broker secret | `kg/snowflake-employee-pats` (per-employee Snowflake PATs, keyed by cognito username) |
 | Snowflake | **reached directly** (ADR-005). OAuth integration `PIEDMONT_MCP_OAUTH` (redirect `claude.ai/api/mcp/auth_callback`); users `EMPLOYEE_A`(ROLE_RM)/`EMPLOYEE_B`(ROLE_ANALYST). Procedures/masking/grants kept; gateway plumbing retired. See `infra/snowflake/README.md`. |
 
 Infra-as-code for the Gateway lives in [`../infra/gateway/`](../infra/gateway/).
@@ -245,6 +258,33 @@ AFS/Boom, KG → Snowflake directly).
 Boom verified through the gateway: `tools/list` → 9 `boom___*` tools; `boom___boom_lookup_company`
 returns fixture data (Piedmont). Unlike Snowflake, gateway→Boom tool *calls* work cleanly (Boom's
 runtime is stateless and accepts the `Mcp-Session-Id` header natively).
+
+### 5.6 ADR-006 — KG hosts on **App Runner**, not AgentCore Runtime (token pass-through)
+
+**Decision (2026-06-21):** The KG-MCP server is deployed on **AWS App Runner** (a plain container
+service), **not** AgentCore Runtime. AFS/Boom stay on AgentCore Runtime.
+
+**Why:** The KG's whole job is **identity pass-through** — it must read the employee's JWT and
+forward it to the gateway (so Cedar A/B + audit apply) and map it for the Snowflake broker. But
+**AgentCore Runtime strips the inbound `Authorization` header** and replaces it with a *workload
+access token* (the AgentCore Identity model) — verified from the runtime logs (`hasBearer: false`;
+only `x-amzn-bedrock-agentcore-runtime-workload-accesstoken` arrives). The workload token is **not** a
+Cognito JWT, so the gateway rejects it, and converting it via AgentCore Identity OBO hits the same
+**Cognito-can't-token-exchange** wall (ADR-001). So a token-forwarding front door can't run on
+AgentCore Runtime with Cognito.
+
+**App Runner forwards headers**, so the KG gets the raw employee token. The KG then **validates the
+Cognito JWT itself** (jose + JWKS, allowedClients), advertises `.well-known/oauth-protected-resource`
++ a 401 challenge (Claude Desktop interactive login), and forwards the token downstream. *"On AWS"
+≠ "on AgentCore Runtime"* — App Runner is AWS; **Cedar stays in the gateway, nothing is lost.**
+
+**Build note:** App Runner needs **x86**; the AgentCore image is **arm64**. With no local Docker, the
+x86 image (`kg-mcp:v1`) is built in the cloud via a **CodeBuild** project (S3 source zip → ECR), then
+App Runner deploys it. Code/infra in `Devinboden/kg-mcp` (`infra/codebuild/`, `infra/apprunner/`).
+
+**Verified (deployed):** `kg_hydrate` through `https://phsc3gpvqk.us-east-1.awsapprunner.com/mcp` —
+RM sees Snowflake `$` + Boom; Analyst sees masked Snowflake + Boom; AFS link surfaced as pending.
+One employee identity drives the gateway (Cedar) **and** the Snowflake broker, end-to-end, in the cloud.
 
 ### 5.3 ADR-002 — Semantic search disabled
 
