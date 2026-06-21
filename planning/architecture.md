@@ -57,7 +57,7 @@ client of the Gateway; it is not yet built. This document covers Groups A–C.
 | Snowflake MCP | `PIEDMONT_MCP` (`CREDIT_MEMO_DB.CREDIT_RISK`), account `SPTNHMV-XF37990` |
 | Boom runtime | `arn:aws:bedrock-agentcore:us-east-1:111204669101:runtime/boom_mcp-fQUgkK4pjp` (`boom_mcp`) |
 | Boom gateway target | `VASU5DSO4U` (`boom`); outbound reuses `afs-cognito-m2m` (M2M) |
-| Snowflake | **reached directly** (ADR-005) — no gateway target. Procedures/masking/grants kept; `SVC_GATEWAY`/PATs/providers/targets retired. |
+| Snowflake | **reached directly** (ADR-005). OAuth integration `PIEDMONT_MCP_OAUTH` (redirect `claude.ai/api/mcp/auth_callback`); users `EMPLOYEE_A`(ROLE_RM)/`EMPLOYEE_B`(ROLE_ANALYST). Procedures/masking/grants kept; gateway plumbing retired. See `infra/snowflake/README.md`. |
 
 Infra-as-code for the Gateway lives in [`../infra/gateway/`](../infra/gateway/).
 
