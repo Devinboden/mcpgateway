@@ -57,6 +57,8 @@ client of the Gateway; it is not yet built. This document covers Groups A–C.
 | Snowflake MCP | `PIEDMONT_MCP` (`CREDIT_MEMO_DB.CREDIT_RISK`), account `SPTNHMV-XF37990` |
 | Boom runtime | `arn:aws:bedrock-agentcore:us-east-1:111204669101:runtime/boom_mcp-fQUgkK4pjp` (`boom_mcp`) |
 | Boom gateway target | `VASU5DSO4U` (`boom`); outbound reuses `afs-cognito-m2m` (M2M) |
+| Policy engine (Cedar) | `mcpgateway_authz-hfy2_5p_23` (ENFORCE) — A/B tool authz; policies in `infra/gateway/policies/` |
+| Snowflake direct users | `EMPLOYEE_A`(ROLE_RM)/`EMPLOYEE_B`(ROLE_ANALYST) |
 | Snowflake | **reached directly** (ADR-005). OAuth integration `PIEDMONT_MCP_OAUTH` (redirect `claude.ai/api/mcp/auth_callback`); users `EMPLOYEE_A`(ROLE_RM)/`EMPLOYEE_B`(ROLE_ANALYST). Procedures/masking/grants kept; gateway plumbing retired. See `infra/snowflake/README.md`. |
 
 Infra-as-code for the Gateway lives in [`../infra/gateway/`](../infra/gateway/).
@@ -86,11 +88,14 @@ user tokens (interactive) and machine tokens (M2M, see §5.1) validate against i
 
 - **AuthN:** Gateway `authorizerType = CUSTOM_JWT`, validating against the Cognito pool
   (`discoveryUrl` = pool `.well-known/openid-configuration`, `allowedClients` = app client).
-- **AuthZ (Group C step 13, planned):** Gateway **Cedar policy engine**, evaluating
-  `cognito:groups` to decide which targets/tools each employee may invoke:
-  - Employee A (`ROLE_RM`) → AFS target **and** Snowflake-RM target.
-  - Employee B (`ROLE_ANALYST`) → Snowflake-Analyst target **only** (blocked from AFS).
-  - Mode: validate in `LOG_ONLY`, then switch to `ENFORCE`.
+- **AuthZ (Group C step 13) — ✅ DONE (2026-06-21):** Gateway **Cedar policy engine**
+  (`mcpgateway_authz-hfy2_5p_23`, **ENFORCE**) evaluating `cognito:groups`:
+  - Employee A (`ROLE_RM`) → permit any tool (AFS + Boom).
+  - Employee B (`ROLE_ANALYST`) → permit, **but forbid all `afs___*` tools** (forbid overrides).
+  - **Verified:** RM → AFS ✅ + Boom ✅; Analyst → AFS 🚫 denied + Boom ✅. Policies + gotchas in
+    [`infra/gateway/policies/`](../infra/gateway/policies/). Cedar: principal `AgentCore::OAuthUser`,
+    claims-as-tags (`cognito:groups` is a **string** → `like "*ROLE_RM*"`, not `.contains`), action
+    `AgentCore::Action::"<target>___<tool>"`, resource = gateway ARN; default-deny.
 
 This resolves the open "group ≠ scope" item from Group A: **we authorize off the group
 claim directly via Cedar — no Pre-Token-Generation Lambda needed.** (The authorizer also
