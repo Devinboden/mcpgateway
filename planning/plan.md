@@ -160,6 +160,18 @@ Concrete steps to stand up the end-to-end system. Do them in order; groups are m
 26. Confirm **virtual** behavior: no data copied into the graph; fresh hydration; aggregating views used (no raw 1.5B scan).
 27. Confirm **audit**: AFS shows the real user (OBO); document the Snowflake service-attribution asymmetry.
 
+> **✅ Phase F VALIDATED (2026-06-21) — 17/17 automated checks.** Reproducible harness:
+> `kg-mcp/test/phase-f.py` (drives the deployed App Runner KG `https://phsc3gpvqk…/mcp` as both
+> employees via Cognito `USER_PASSWORD_AUTH`; resets the DynamoDB crosswalk before/after).
+> - **23** RM `employee-a`: `kg_resolve` Piedmont (DynamoDB) → `kg_hydrate` Boom ✅ + Snowflake `end_balance=$450,000` ✅; AFS correctly **withheld** pre-confirm (pending-review).
+> - **24** Analyst `employee-b`: Snowflake `$` **masked** (`end_balance=null`) but ratios/trend still returned — native role masking working.
+> - **25** Fuzzy fallback: candidate lands in the queue (`pending-review`, not auto-linked) → visible in `kg_review_queue` → stays **out** of hydration → `approve` → **joins** for RM. Durable in DynamoDB.
+> - **24b** A/B holds on the **confirmed** link: Analyst still **denied** AFS by gateway Cedar (`Tool Execution Denied … policy enforcement`).
+> - **26** Virtual: `_note`/`_provenance` show **live** fetch (Boom via gateway, Snowflake direct SQL API), aggregating summary (no raw 1.5B scan), nothing copied into the graph.
+> - **27** Snowflake attributed to the real employee via per-employee PAT; AFS/Boom user-identity enforced+audited **at the gateway** (Cedar principal), downstream AFS call is service identity (ADR-001). Asymmetry documented.
+>
+> Note: set `employee-b` to the demo password (`admin-set-user-password --permanent`) to satisfy the FORCE_CHANGE_PASSWORD prerequisite noted in B (line 22).
+
 ## G. Client & model layer (Cowork on Bedrock)
 
 Goal: the human-facing surface is **Claude Cowork in the Claude Desktop app**, with **model inference served by Amazon Bedrock** (in-account, same account/region as the gateway) and **tools served by the AgentCore Gateway** from Group C. Model config and tools config are **separate concerns** — don't conflate them.
