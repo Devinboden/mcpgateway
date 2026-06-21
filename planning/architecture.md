@@ -324,13 +324,44 @@ semantic search later would require auth-code providers on every target.
 
 | Hop | Authenticated as | Per-employee attribution source |
 |---|---|---|
-| Claude → Gateway | The **employee** (Cognito JWT) | The token itself (`sub`, `cognito:groups`) |
-| Gateway → AFS | The **service** (M2M token) | **Gateway** access logs (CloudWatch/CloudTrail) |
-| Gateway → Snowflake | The **service role** (PAT: RM/Analyst) | Gateway logs + Snowflake query history (by role) |
+| Claude → KG / Gateway | The **employee** (Cognito JWT) | The token itself (`sub`, `cognito:groups`) |
+| KG → Gateway → AFS/Boom | The **service** (M2M token) | **Gateway** access logs (CloudWatch/CloudTrail) |
+| KG → Snowflake (direct) | The **employee role** (per-employee PAT) | Snowflake query history (real user + role) |
 
 The single authoritative place that knows *employee → tool → timestamp* for **every** call
-is the **Gateway**. Downstream systems know *role* (Snowflake) or *service* (AFS). This
-asymmetry is intentional and documented.
+is the **Gateway** (for AFS/Boom) plus **Snowflake's own query history** (for the direct leg,
+which runs under the employee's role PAT). Downstream AFS knows *service*; Snowflake knows the
+*real employee*. This asymmetry is intentional and documented (ADR-001).
+
+### 6.1 Correlation IDs + structured audit logging (KG)
+
+The KG mints **one `traceId` per inbound MCP request** and threads it through the entire fan-out,
+so a single id stitches together what would otherwise be three disconnected log sources:
+
+```
+auth.ok        traceId=kg-… user=employee-a groups=[ROLE_RM]
+tool.call      traceId=kg-… tool=kg_hydrate user=employee-a
+hydrate.start  traceId=kg-… ncino=001bb…
+downstream.call traceId=kg-… target=gateway   tool=boom___boom_get_ratios ok=true ms=2386
+downstream.call traceId=kg-… target=snowflake tool=…GET_RISK_RATING_TREND  ok=true ms=3500 sf_query_id=01c5…
+hydrate.done   traceId=kg-… sources=[boom,snowflake]
+```
+
+- **Emission:** structured JSON, one object per line, to **stderr** (stdout is the stdio MCP
+  protocol channel) → CloudWatch → (prod) a SIEM. Implemented in `kg-mcp/src/audit.js`.
+- **Propagation:** the `traceId` is echoed to the client as the `X-Trace-Id` response header and
+  returned in the hydrate payload as `_trace`; it is forwarded downstream as `X-Trace-Id` +
+  a W3C `traceparent`, and set as Snowflake's **`QUERY_TAG`** so it lands in
+  `SNOWFLAKE.ACCOUNT_USAGE.QUERY_HISTORY` — closing the loop between the KG log and the actual
+  Snowflake session that ran *as the employee*. The Snowflake `statementHandle` is captured back
+  as `sf_query_id`.
+- **Events:** `auth.ok` / `auth.denied` (with reason), `tool.call` (per tool, user, latency,
+  error), `hydrate.start` / `hydrate.done`, `downstream.call` (target, tool, ok, latency, and a
+  `denied` flag when Cedar blocks a tool — e.g. the Analyst's AFS call).
+
+This is the **in-repo slice** of audit row 16. The remaining enterprise pieces — SIEM aggregation,
+a tamper-evident/WORM audit store, and multi-year retention/legal-hold — are platform work, tracked
+in §9/§10 and §11.
 
 ---
 
@@ -342,16 +373,24 @@ targets are live and a `tools/list` is captured through the Gateway data plane.
 
 ---
 
-## 8. Request lifecycle (end-to-end, target state)
+## 8. Request lifecycle (end-to-end, as-built)
 
 1. Employee signs into Cognito → receives JWT (carries `sub` + `cognito:groups`).
-2. Claude calls the Gateway MCP endpoint with `Authorization: Bearer <JWT>`.
-3. Gateway validates the JWT (CUSTOM_JWT) and logs the employee identity.
-4. Cedar evaluates `cognito:groups` → allow/deny the requested tool/target.
-5. Gateway mints/loads the **outbound** credential for the chosen target
-   (AFS: Cognito M2M; Snowflake: role PAT) and forwards the tool call.
-6. Target executes under the service/role identity; result returns through the Gateway.
-7. Gateway emits the per-employee audit record.
+2. Claude calls the **KG** MCP endpoint (App Runner) with `Authorization: Bearer <JWT>`.
+3. KG **validates the JWT itself** (jose/JWKS, issuer + allowedClients), **mints a `traceId`**,
+   and emits `auth.ok` (or `auth.denied`).
+4. `kg_hydrate` resolves the obligor (DynamoDB crosswalk) and fans out to its **confirmed** links:
+   - **AFS / Boom → the Gateway**, forwarding the employee JWT (+ `X-Trace-Id`/`traceparent`).
+     The Gateway validates the JWT and **Cedar** evaluates `cognito:groups` → allow/deny per tool;
+     allowed calls run under the target's **service** identity. (Analyst's AFS call is denied here.)
+   - **Snowflake → direct** via the SQL API using the employee's **role-restricted PAT** (from the
+     Secrets Manager broker), with `QUERY_TAG=traceId`. Native `EXECUTE AS CALLER` masking applies.
+5. Each leg emits a `downstream.call` audit event (target, tool, ok, latency, `denied`); the KG
+   joins the results into one virtual obligor view (nothing persisted) and emits `hydrate.done`.
+6. Response returns to Claude with `X-Trace-Id` + `_trace` for end-to-end correlation.
+
+> Note: this supersedes the earlier "Gateway → Snowflake" target state — Snowflake was moved **out**
+> of the gateway (ADR-005) and the **KG** is now the front door (ADR-006).
 
 ---
 
@@ -359,15 +398,23 @@ targets are live and a `tools/list` is captured through the Gateway data plane.
 
 - **Root credentials:** the AWS CLI is currently configured with **account root** access
   keys. Acceptable for this demo; replace with a scoped IAM principal before any real use.
+  *(Highest-priority "not enterprise" finding — see §11 row 13.)*
 - **Secret handling:** the Cognito app-client secret and Snowflake PATs are **never written
-  to the repo**. Scripts fetch/inject them via temp files outside the repo (no BOM) and
-  remove them immediately; the live secrets live only in the AgentCore token vault /
-  Secrets Manager.
-- **Rotation:** AFS M2M tokens are short-lived (auto). **Snowflake PATs are long-lived —
-  schedule rotation** (see ADR-003 follow-up).
-- **Gateway role scope:** `mcpgateway-gw-role` grants `InvokeAgentRuntime` on the AFS
-  runtime, workload-identity/token-vault reads, the provider secret, and logs. Tighten the
-  `secretsmanager` and `kms` scopes for production.
+  to the repo** (`.gitignore` covers `.env*`; seed data is synthetic). Live secrets live only in
+  the AgentCore token vault / Secrets Manager. **Exception:** the **live AFS** credential
+  (`AFS_USERNAME`/`AFS_PASSWORD`) is stored as a **plaintext runtime env var** on the AFS
+  AgentCore runtime — readable via `get-agent-runtime`. Move it into Secrets Manager + rotate
+  (see §11 row 9; AFS is genuinely live → real exposure, not just a smell).
+- **Rotation:** AFS M2M tokens are short-lived (auto). **Snowflake PATs are long-lived — schedule
+  rotation.** Note the broker (`kg-mcp/src/broker.js`) caches PATs in-process indefinitely; add a
+  TTL so a rotated PAT is picked up without a restart (§11 row 8).
+- **SQL safety:** Snowflake proc args are string-interpolated with `'`-escaping, not parameterized
+  binds. Low risk (proc args only) but move to binds (§11 row 10).
+- **Gateway role scope:** `mcpgateway-gw-role` is resource-scoped (specific AFS runtime ARN,
+  token-vault, policy-engine/gateway, provider secret prefix); only `logs`/`cloudwatch` are `*`.
+  Decent least-privilege; tighten the `secretsmanager`/`kms` scopes further for production.
+- **Audit (done):** correlation `traceId` + structured JSON audit logging across every hop
+  (§6.1). Remaining: SIEM aggregation + tamper-evident/WORM store + retention (§11 row 16).
 
 ---
 
@@ -375,12 +422,71 @@ targets are live and a `tools/list` is captured through the Gateway data plane.
 
 - [x] **Data-plane verified for AFS** via `infra/gateway/smoke-test.py` (mint Cognito M2M token → MCP `initialize`/`tools/list`/`tools/call`). 21 namespaced tools (`<target>___<tool>`) — confirms C14. `afs___afs_show_summary` returns live data end-to-end. ✅ 2026-06-15
 - [x] **Invoke-time IAM fix:** gateway role needed `GetResourceOauth2Token`/`GetResourceApiKey`/`GetWorkloadAccessToken` on the **bare** `token-vault/default` ARN (not just `…/default/*`). Sync had worked because it runs as a different principal; live tool calls failed 403 until fixed. Surfaced by setting the gateway `exceptionLevel=DEBUG` (still on — return to default for prod; minor info-leak).
-- [ ] **Snowflake tool calls fail with `MCP Server tool error: Error parsing response`** (auth now OK). Investigate the PIEDMONT_MCP response shape vs gateway expectations. Does not affect AFS.
-- [ ] **Claude Desktop connectivity:** Desktop custom connectors use interactive OAuth; the Cognito app client is `client_credentials`-only with no callback URLs/hosted-UI and employees are in FORCE_CHANGE_PASSWORD. Need auth-code flow + callbacks + user passwords for Desktop to connect (CLI can use a static bearer today).
+- [x] **Snowflake `Error parsing response` RESOLVED** by bypassing the managed MCP and calling the **SQL API** directly from the KG (the managed MCP couldn't serialize the procedures' VARIANT return). ADR-005. ✅
+- [x] **Claude Desktop / Cowork connectivity RESOLVED:** the **KG on App Runner** validates the JWT itself and advertises `.well-known/oauth-protected-resource` + a 401 challenge (interactive login). ADR-006. ✅
 - [x] Snowflake: two role PATs + API-key providers + two targets (ADR-003/004). ✅ 2026-06-15
-- [ ] Cedar policy engine: author + attach policies; A→`afs`+`snowflake-rm`, B→`snowflake-analyst` only; `LOG_ONLY` → `ENFORCE` (step 13).
-- [ ] Verify tool namespacing via a data-plane `tools/list` through the Gateway with an employee JWT (step 14) — note the two Snowflake targets produce two namespaced tool sets.
-- [ ] Set permanent passwords for `employee-a` / `employee-b` (carried from Group A).
-- [ ] Productionization: External-OAuth for Snowflake; scoped IAM principal (not root); PAT rotation; restrict `NP_GATEWAY_ALLOW_ALL`.
+- [x] **Cedar policy engine** authored + attached, mode `ENFORCE`; RM→all, Analyst→all-except-AFS (forbid-overrides). Verified in Phase F. ✅
+- [x] Tool-name namespacing verified via data-plane `tools/list` (C14). ✅
+- [x] **Permanent passwords** set for `employee-a` / `employee-b` (`Truist!Demo2026`). ✅ 2026-06-21
+- [x] **Audit slice (row 16):** correlation `traceId` + structured JSON logging across all hops (KG v4). ✅ 2026-06-21
+- [ ] Productionization (remaining): scoped IAM principal (not root); AFS cred → Secrets Manager + rotate; PAT rotation + broker TTL; Snowflake parameterized binds; SIEM + WORM audit store; network → VPC/PrivateLink. See **§11**.
 - [x] **AFS live mode** (`infra/afs/go-live.sh`) — ✅ DONE (2026-06-15). Flips `AFS_FIXTURE_MODE=false` + injects `AFS_USERNAME`/`AFS_PASSWORD` (from Secrets Manager `mcpgateway/afs-vision`) + **`AFS_BASE_URL=https://dd3.afsvision.us/webx/api/v1`** as runtime env vars (no image rebuild). Verified: `jobs_by_officer` returns real live workpackages ("…[live]"). The app (`lib/config.js`) reads `AFS_BASE_URL` (default was an unreachable placeholder → earlier `fetch failed`), `AFS_USERNAME`/`AFS_PASSWORD` (HTTP Basic), `AFS_FIXTURE_MODE`. Revert: `MODE=fixture bash infra/afs/go-live.sh`.
   - **Gotcha (fixed in the script):** `update-agent-runtime` is a full replace — omitting `authorizerConfiguration` **drops the runtime's Cognito JWT authorizer** (reverts to IAM), breaking the gateway's bearer-token calls (`Authorization error when sending message`). The script always replays the customJWTAuthorizer.
+
+---
+
+## 11. Enterprise-grade readiness audit (2026-06-21)
+
+A standing assessment of **what is vs. isn't enterprise/regulated-grade**, audited against the live
+artifacts (IAM, Cedar, auth config, runtime env, code) — not from memory. **Verdict: the
+*architecture* is enterprise-shaped; the gaps are *operational posture*, not design.** None of the
+red rows require re-architecting.
+
+### Already enterprise-shaped ✅
+| # | Dimension | Evidence |
+|---|---|---|
+| 1 | Authorization model | Cedar: default-deny + explicit permits + `forbid`-overrides, claims-as-tags, per-tool AFS enumeration |
+| 2 | Data minimization | Virtual hydration — KG stores keys/relationships only; financials fetched live, never persisted |
+| 3 | Token validation (KG) | `server.js` validates Cognito JWT (jose/JWKS), checks issuer + allowedClients, 401 challenge |
+| 4 | Resource-scoped service IAM | Gateway role → specific AFS runtime ARN; App Runner role → single DynamoDB table ARN |
+| 5 | Secrets in repo | `.gitignore` covers `.env*`; seed data synthetic; no PATs/keys committed |
+| 6 | Agent governance (SR 11-7) | DRAFT watermark, human-in-the-loop attestation, figure traceability |
+| 15a | Live systems of record | **AFS live** (`FIXTURE_MODE=false`, real AFS Vision), **Snowflake live** (per-employee PAT + masking) |
+| 16 | Correlation + structured audit | `traceId` across all hops, Snowflake `QUERY_TAG` join, structured JSON events (§6.1) — *done 2026-06-21* |
+
+### Partial ⚠️ (small code changes)
+| # | Dimension | Gap |
+|---|---|---|
+| 7 | Authz granularity | `permit-rm` grants `action` (any tool); enterprise wants per-tool least-privilege for the RM too |
+| 8 | Secret rotation | Snowflake PATs long-lived; broker caches in-process forever → add rotation + cache TTL |
+| 9 | Downstream cred handling | **Live AFS password in a plaintext runtime env var** → move to Secrets Manager + rotate |
+| 10 | SQL safety | Snowflake proc args string-interpolated, not parameterized binds |
+| 11 | End-user attribution (OBO) | AFS/Boom run under a service identity (Cognito can't RFC 8693) — user attributed at the gateway, not the resource |
+
+### Demo-grade ❌ (platform / org work)
+| # | Dimension | Gap |
+|---|---|---|
+| 12 | Network posture | Everything on **public endpoints** (App Runner/DynamoDB/Snowflake/Secrets over internet). Regulated target = VPC + PrivateLink everywhere. See §11.1. |
+| 13 | Build/deploy identity | **`sts get-caller-identity` → `:root`.** No IAM roles, no separation of duties. *Highest-priority finding.* |
+| 14 | Authentication strength | Cognito `USER_PASSWORD_AUTH`, shared demo password, no MFA, no enterprise IdP federation |
+| 15b | Real data sources | **Boom** runs on bundled data (no external creds) — not wired to a system of record |
+| 16b | Observability (rest) | No SIEM aggregation, no tamper-evident/WORM audit store, no multi-year retention/legal-hold |
+| 17 | Resilience / HA-DR | Single region, single instance, no WAF, no rate limiting, no DR |
+
+### 11.1 Network posture: demo vs. regulated target
+At a regulated bank the public endpoints are the biggest demo-ism. "VPC everything" operationalizes
+the real requirement: **no data/control traffic over the public internet, deny-by-default egress,
+private DNS, all on the AWS backbone / corporate network.** Component mapping: KG host → private
+subnets behind an internal ALB (or AgentCore in-account); DynamoDB/Neptune → VPC/PrivateLink
+endpoint; Snowflake → **PrivateLink to Snowflake**; Bedrock → PrivateLink (the SR 11-7 control that
+keeps inference in-boundary); Secrets/KMS → VPC endpoints; identity → enterprise IdP federated in;
+client→tools → Direct Connect / Transit Gateway, mTLS, egress proxy. Wrapped in a multi-account
+landing zone (Control Tower, SCPs, GuardDuty, flow logs). **The application architecture, authz
+model, and data-flow design carry over unchanged** — this is a platform/landing-zone project.
+
+### 11.2 Remediation priority
+1. **Kill root** (row 13) — IAM roles + permission boundaries, enterprise IdP + MFA (rows 13–14).
+2. **Network landing zone** (row 12) — private subnets + PrivateLink to Snowflake/DynamoDB/Bedrock/Secrets.
+3. **Data & secrets ops** (rows 8–11, 15b, 16b) — AFS cred → vault + rotation; per-call fetch + cache TTL; bind params; Boom go-live; SIEM + WORM audit; OBO via a token-exchange-capable IdP.
+
+Rows 7–11 are small in-repo code changes; rows 12–17 are platform/org work.
