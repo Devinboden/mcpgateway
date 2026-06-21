@@ -399,12 +399,14 @@ targets are live and a `tools/list` is captured through the Gateway data plane.
 - **Root credentials:** the AWS CLI is currently configured with **account root** access
   keys. Acceptable for this demo; replace with a scoped IAM principal before any real use.
   *(Highest-priority "not enterprise" finding — see §11 row 13.)*
-- **Secret handling:** the Cognito app-client secret and Snowflake PATs are **never written
-  to the repo** (`.gitignore` covers `.env*`; seed data is synthetic). Live secrets live only in
-  the AgentCore token vault / Secrets Manager. **Exception:** the **live AFS** credential
-  (`AFS_USERNAME`/`AFS_PASSWORD`) is stored as a **plaintext runtime env var** on the AFS
-  AgentCore runtime — readable via `get-agent-runtime`. Move it into Secrets Manager + rotate
-  (see §11 row 9; AFS is genuinely live → real exposure, not just a smell).
+- **Secret handling:** the Cognito app-client secret, Snowflake PATs, and the AFS credential are
+  **never written to the repo** (`.gitignore` covers `.env*`; seed data is synthetic). The
+  canonical AFS credential lives in **Secrets Manager** (`mcpgateway/afs-vision`). **Caveat:**
+  `infra/afs/go-live.sh` reads that secret and **materializes the plaintext value into the AFS
+  runtime's `environmentVariables`** at deploy time, so the deployed runtime config holds a
+  plaintext copy (readable via `get-agent-runtime`). Storage is correct; the gap is the
+  materialization — the runtime should fetch from Secrets Manager at startup via its execution
+  role instead (see §11 row 9).
 - **Rotation:** AFS M2M tokens are short-lived (auto). **Snowflake PATs are long-lived — schedule
   rotation.** Note the broker (`kg-mcp/src/broker.js`) caches PATs in-process indefinitely; add a
   TTL so a rotated PAT is picked up without a restart (§11 row 8).
@@ -429,7 +431,7 @@ targets are live and a `tools/list` is captured through the Gateway data plane.
 - [x] Tool-name namespacing verified via data-plane `tools/list` (C14). ✅
 - [x] **Permanent passwords** set for `employee-a` / `employee-b` (`Truist!Demo2026`). ✅ 2026-06-21
 - [x] **Audit slice (row 16):** correlation `traceId` + structured JSON logging across all hops (KG v4). ✅ 2026-06-21
-- [ ] Productionization (remaining): scoped IAM principal (not root); AFS cred → Secrets Manager + rotate; PAT rotation + broker TTL; Snowflake parameterized binds; SIEM + WORM audit store; network → VPC/PrivateLink. See **§11**.
+- [ ] Productionization (remaining): scoped IAM principal (not root); AFS cred fetched from Secrets Manager **at runtime** (not materialized into env vars) + rotate; PAT rotation + broker TTL; Snowflake parameterized binds; SIEM + WORM audit store; network → VPC/PrivateLink. See **§11**.
 - [x] **AFS live mode** (`infra/afs/go-live.sh`) — ✅ DONE (2026-06-15). Flips `AFS_FIXTURE_MODE=false` + injects `AFS_USERNAME`/`AFS_PASSWORD` (from Secrets Manager `mcpgateway/afs-vision`) + **`AFS_BASE_URL=https://dd3.afsvision.us/webx/api/v1`** as runtime env vars (no image rebuild). Verified: `jobs_by_officer` returns real live workpackages ("…[live]"). The app (`lib/config.js`) reads `AFS_BASE_URL` (default was an unreachable placeholder → earlier `fetch failed`), `AFS_USERNAME`/`AFS_PASSWORD` (HTTP Basic), `AFS_FIXTURE_MODE`. Revert: `MODE=fixture bash infra/afs/go-live.sh`.
   - **Gotcha (fixed in the script):** `update-agent-runtime` is a full replace — omitting `authorizerConfiguration` **drops the runtime's Cognito JWT authorizer** (reverts to IAM), breaking the gateway's bearer-token calls (`Authorization error when sending message`). The script always replays the customJWTAuthorizer.
 
@@ -459,7 +461,7 @@ red rows require re-architecting.
 |---|---|---|
 | 7 | Authz granularity | `permit-rm` grants `action` (any tool); enterprise wants per-tool least-privilege for the RM too |
 | 8 | Secret rotation | Snowflake PATs long-lived; broker caches in-process forever → add rotation + cache TTL |
-| 9 | Downstream cred handling | **Live AFS password in a plaintext runtime env var** → move to Secrets Manager + rotate |
+| 9 | Downstream cred handling | AFS credential **is** in Secrets Manager (`mcpgateway/afs-vision`), but `go-live.sh` **materializes the plaintext into the runtime's env vars** at deploy (readable via `get-agent-runtime`) → have the runtime fetch from the vault at startup via its execution role instead; add rotation |
 | 10 | SQL safety | Snowflake proc args string-interpolated, not parameterized binds |
 | 11 | End-user attribution (OBO) | AFS/Boom run under a service identity (Cognito can't RFC 8693) — user attributed at the gateway, not the resource |
 
