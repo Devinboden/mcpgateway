@@ -286,6 +286,27 @@ App Runner deploys it. Code/infra in `Devinboden/kg-mcp` (`infra/codebuild/`, `i
 RM sees Snowflake `$` + Boom; Analyst sees masked Snowflake + Boom; AFS link surfaced as pending.
 One employee identity drives the gateway (Cedar) **and** the Snowflake broker, end-to-end, in the cloud.
 
+### 5.7 ADR-007 — Crosswalk + review queue persist in **DynamoDB** (Neptune deferred for cost)
+
+**Decision (2026-06-21):** The KG's crosswalk (obligor → cross-system keys) and the human review
+queue persist in a single **DynamoDB** table `kg-crosswalk` (`PAY_PER_REQUEST`), behind the existing
+`Crosswalk` interface. **Neptune (D-2) is deferred** purely for cost.
+
+**Why DynamoDB now:** Neptune is **VPC-only** and carries a standing hourly cost even when idle; the
+demo needs durability, not graph traversal. DynamoDB is **pay-per-request (scale-to-zero)**, has a
+**public endpoint** (no VPC/NAT, so App Runner reaches it with just an IAM policy), and bills on the
+existing AWS account. One-key model: `pk=OBLIGOR#<ncino>` / `sk=META` holds the obligor + `links`
+map; `pk=CANDIDATE` / `sk=cand_<hex>` holds queue items. Approving a candidate does
+`UpdateItem … SET links.<system> = …` on the obligor item, so a confirmed link is **durable across
+restarts** — no in-memory state.
+
+**Verified (deployed, `kg-mcp:v3`):** resolve/hydrate read from the table; `kg_confirm_candidate
+approve` writes `links.afs.status = human-confirmed` (confirmed via `get-item`), and re-hydration
+then joins AFS for the RM while Cedar still denies it for the Analyst. Seed/reset via
+`scripts/seed-dynamo.mjs`. IAM: `kg-apprunner-instance-role` granted GetItem/PutItem/UpdateItem/
+Query/Scan on the table (`infra/apprunner/dynamodb-policy.json`). Neptune remains the documented
+later swap (same interface, no logic change).
+
 ### 5.3 ADR-002 — Semantic search disabled
 
 **Decision:** The Gateway runs **without** `searchType: SEMANTIC`.
