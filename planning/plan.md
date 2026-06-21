@@ -134,7 +134,11 @@ Concrete steps to stand up the end-to-end system. Do them in order; groups are m
 > token (ADR-006); on App Runner the KG validates the Cognito JWT itself, advertises OAuth discovery,
 > and forwards identity. x86 image built via CodeBuild. **Verified deployed:** RM sees `$`, Analyst
 > masked, AFS pending — one identity → gateway Cedar + Snowflake masking, in the cloud.
-> Remaining: **D-2** Neptune store · **D-3** fuzzy matcher + review queue.
+> **✅ D-3 DONE (2026-06-21) — fuzzy matcher + human review queue.** `kg_find_candidates` (token-Jaccard
+> name match, candidates only) → `kg_review_queue` → `kg_confirm_candidate` (approve→`human-confirmed`
+> joins; reject→never). Verified on the deployed KG: AFS candidate proposed → hydrate still withholds AFS
+> → human approves → AFS joins for RM, **denied for Analyst** (gateway Cedar still governs through the KG).
+> Queue is in-memory (demo); production = DynamoDB. Remaining: **D-2** Neptune (deferred — cost).
 
 15. Provision the **Neptune cluster** (VPC, IAM auth).
 16. Define the **ontology**: `Obligor → Facility/Loan → Account → FinancialPeriod`, with **link-status** on edges.
