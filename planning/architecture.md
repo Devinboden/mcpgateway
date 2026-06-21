@@ -333,6 +333,18 @@ is the **Gateway** (for AFS/Boom) plus **Snowflake's own query history** (for th
 which runs under the employee's role PAT). Downstream AFS knows *service*; Snowflake knows the
 *real employee*. This asymmetry is intentional and documented (ADR-001).
 
+### 6.0 Widget vs. data: the KG reads `structuredContent`
+
+`afs_show_summary` (and other MCP-UI tools) return an **interactive widget** the *host* renders
+client-side; the actual numbers ride in the result's **`structuredContent`** field, not the plain
+`text` content. The KG's gateway client originally read only `type:"text"`, so `kg_hydrate` joined
+the widget envelope (metadata) instead of the AFS summary. Fixed in `kg-mcp/src/mcpClient.js`
+(`McpClient.extractData`): preference order **`structuredContent` → text(JSON) → JSON `resource`
+block**, skipping widget HTML, and the chosen path is recorded as `shape` in the audit log.
+Verified live (KG v5): AFS hydrates full facilities/balances/collateral/past-due/revolver analytics
+with `shape:"structuredContent"`. Lesson: when fronting MCP-UI tools from a non-rendering consumer,
+always read `structuredContent`.
+
 ### 6.1 Correlation IDs + structured audit logging (KG)
 
 The KG mints **one `traceId` per inbound MCP request** and threads it through the entire fan-out,
