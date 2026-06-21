@@ -75,6 +75,9 @@ Concrete steps to stand up the end-to-end system. Do them in order; groups are m
 
 ## C. Gateway
 
+> **🔄 ARCHITECTURE REVISION (2026-06-21) — see [architecture.md ADR-005](architecture.md#55-adr-005--snowflake-moved-out-of-the-gateway-boom-moved-in).**
+> Snowflake was **removed from the gateway** (it's a governed MCP — reached **directly** for native per-user RBAC/masking). The gateway now fronts only the **custom/ungoverned** MCPs: **AFS** and **Boom** (`Noland-LAL/boom-mcp`, deployed to AgentCore Runtime like AFS). Steps 11–12's Snowflake-target work is **retired** (procedures/masking/grants kept for direct access; targets/PATs/`SVC_GATEWAY` deleted). KG → gateway (AFS, Boom) + KG → Snowflake directly.
+
 **Infra-as-code:** JSON configs live in [`infra/gateway/`](../infra/gateway/) (trust-policy, role-permissions, authorizer-config, protocol-config). Built with raw `aws bedrock-agentcore-control` (file://-based JSON) rather than the starter toolkit, for explicit control + reproducibility.
 
 9. Create the **AgentCore Gateway** with an **inbound authorizer = the Cognito pool** (validates the user JWT). — ✅ DONE (2026-06-15)

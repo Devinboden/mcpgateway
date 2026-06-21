@@ -1,0 +1,11 @@
+[
+  {
+    "credentialProviderType": "OAUTH",
+    "credentialProvider": {
+      "oauthCredentialProvider": {
+        "providerArn": "arn:aws:bedrock-agentcore:us-east-1:111204669101:token-vault/default/oauth2credentialprovider/afs-cognito-m2m",
+        "scopes": ["https://mcpgateway/api/afs:read"]
+      }
+    }
+  }
+]

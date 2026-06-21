@@ -11,11 +11,13 @@ See **[`planning/topology.html`](planning/topology.html)** for the diagram, and
 as-built architecture + decision record. In short:
 
 ```
-Claude Code  →  Knowledge-Graph layer  →  AgentCore Gateway  →  ┬─ AFS MCP (custom)        — service identity (M2M); audit at gateway
- (one connector)   (keys, not data)        (single endpoint)    └─ Snowflake managed MCP  — service identity per role (PAT: RM/Analyst)
-                                            inbound: Cognito JWT
-                                            authZ: Cedar ← cognito:groups
+Claude Code  →  Knowledge-Graph layer ─┬─ AgentCore Gateway ─┬─ AFS MCP (custom)   — service identity (M2M); audit at gateway
+ (one connector)   (keys, not data)     │  inbound: Cognito JWT └─ Boom MCP (custom) — service identity (M2M)
+                                        │  authZ: Cedar ← groups
+                                        └─ Snowflake managed MCP (DIRECT) — native user identity + RBAC/masking
 ```
+
+The gateway fronts the **custom / ungoverned** MCPs (AFS, Boom). **Snowflake is reached directly** — it is already a governed MCP, so it keeps native per-user identity + RBAC/column-masking instead of collapsing to a gateway service identity (see [architecture.md ADR-005](planning/architecture.md)).
 
 The knowledge graph is a **client of the gateway** (server to the agent, client to the gateway). nCino/Salesforce is the **identity spine** for entity resolution.
 

@@ -197,6 +197,32 @@ in-procedure check differentiates. Both roles get identical *read access* (grant
 tools: `list_facilities`, `get_revolver_usage_trend`, `get_balance_trend`, `get_payment_history`.
 Originals preserved in `infra/snowflake/original/`.
 
+### 5.5 ADR-005 — Snowflake moved **out** of the gateway; **Boom** moved in
+
+**Decision (2026-06-21):** The gateway fronts only **custom / ungoverned** MCPs — **AFS** and
+**Boom** (`Noland-LAL/boom-mcp`, a Next.js spreading-engine MCP, deployed to AgentCore Runtime
+the same way as AFS). **Snowflake is reached directly**, not through the gateway.
+
+**Why:** Building it through the gateway proved the mismatch — Snowflake's managed MCP is *already*
+a governed MCP (native RBAC, column-masking, query-history audit, rich identity). Forcing it through
+the gateway (a) collapsed per-user identity to a service credential (OBO wall), then (b) required a
+**two-target** RM/Analyst split, **PATs**, and **`EXECUTE AS CALLER`** rewrites just to re-create a
+role split Snowflake does natively, plus (c) a flaky proxy (`Error parsing response`). Every hard
+problem in the build came from putting Snowflake behind the gateway. Reached **directly** with the
+user's own identity (External-OAuth/SSO → Snowflake role), Snowflake's native masking differentiates
+per-user automatically.
+
+**Retained / retired:**
+- **Kept:** the `EXECUTE AS CALLER` procedures + masking + role grants (`infra/snowflake/01`,`02`) —
+  still correct for direct access; now `CURRENT_ROLE()` is the **real user's** role, not a PAT's.
+- **Retired:** 2 gateway targets, 2 PATs + API-key providers, `SVC_GATEWAY` service user, network
+  policy `NP_GATEWAY_ALLOW_ALL`. (`infra/gateway/target-snowflake-*`, `infra/snowflake/04` are now
+  historical.)
+
+**Division of labor:** gateway = unification + governance for sources that lack their own (AFS, Boom);
+Snowflake = its own per-user governance, joined to the rest at the **KG layer** (KG → gateway for
+AFS/Boom, KG → Snowflake directly).
+
 ### 5.3 ADR-002 — Semantic search disabled
 
 **Decision:** The Gateway runs **without** `searchType: SEMANTIC`.
