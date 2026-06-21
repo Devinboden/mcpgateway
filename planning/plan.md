@@ -121,6 +121,16 @@ Concrete steps to stand up the end-to-end system. Do them in order; groups are m
 
 ## D. Knowledge graph (Neptune, virtual)
 
+> **✅ D-1 DONE (2026-06-21) — KG-MCP server (`kg-mcp/`, separate Node project).** `kg_resolve`
+> (name → cross-system keys, status-filtered) + `kg_hydrate` (fan out to confirmed-linked systems,
+> join one obligor view). Crosswalk is a virtual seed (keys+relationships only) **behind an interface**
+> so Neptune drops in for D-2. **Identity flows through the KG:** the employee token is forwarded to the
+> gateway (Cedar A/B applies) and the `cognito:groups` is mapped to the Snowflake role (masking applies)
+> — one identity, both paths. **Verified:** resolve Piedmont → hydrate joins Boom (gateway) + Snowflake
+> (direct); RM sees Snowflake `$`, Analyst masked; AFS link `pending-review` (surfaced, not faked).
+> Remaining: D-2 Neptune store · D-3 fuzzy matcher + review queue · D-4 deploy to Runtime + real
+> per-employee Snowflake broker + make the KG Claude's single connector.
+
 15. Provision the **Neptune cluster** (VPC, IAM auth).
 16. Define the **ontology**: `Obligor → Facility/Loan → Account → FinancialPeriod`, with **link-status** on edges.
 17. Build the **deterministic crosswalk loader**; seed it (anchor = nCino Account ID) and load Piedmont.
