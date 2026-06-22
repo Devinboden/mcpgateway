@@ -278,6 +278,11 @@ Cognito JWT itself** (jose + JWKS, allowedClients), advertises `.well-known/oaut
 + a 401 challenge (Claude Desktop interactive login), and forwards the token downstream. *"On AWS"
 ≠ "on AgentCore Runtime"* — App Runner is AWS; **Cedar stays in the gateway, nothing is lost.**
 
+**Cleanup (2026-06-22):** the KG was briefly deployed to AgentCore Runtime (old task D-4) before the
+header-stripping problem was found; that orphaned runtime (`kg_mcp-ADMrNe5X38`) has been **deleted**.
+Only `afs_mcp` and `boom_mcp` remain on AgentCore Runtime. `src/agentcore.js` stays in the repo as an
+unused reference entrypoint. **Settled: the KG runs only on App Runner.**
+
 **Build note:** App Runner needs **x86**; the AgentCore image is **arm64**. With no local Docker, the
 x86 image (`kg-mcp:v1`) is built in the cloud via a **CodeBuild** project (S3 source zip → ECR), then
 App Runner deploys it. Code/infra in `Devinboden/kg-mcp` (`infra/codebuild/`, `infra/apprunner/`).
