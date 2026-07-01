@@ -16,7 +16,7 @@ SECRET_ID="${SECRET_ID:-mcpgateway/afs-vision}"
 
 # current immutable config to replay
 CFG=$(aws bedrock-agentcore-control get-agent-runtime --agent-runtime-id "$RID" --region "$REGION" --output json)
-URI=$(echo "$CFG"  | python -c "import sys,json;print(json.load(sys.stdin)['agentRuntimeArtifact']['containerConfiguration']['containerUri'])")
+URI="${IMAGE:-$(echo "$CFG"  | python -c "import sys,json;print(json.load(sys.stdin)['agentRuntimeArtifact']['containerConfiguration']['containerUri'])")}"
 ROLE=$(echo "$CFG" | python -c "import sys,json;print(json.load(sys.stdin)['roleArn'])")
 
 TMP="$(mktemp)"; trap 'rm -f "$TMP"' EXIT
