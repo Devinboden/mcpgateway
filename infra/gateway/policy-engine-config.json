@@ -1,0 +1,4 @@
+{
+  "arn": "arn:aws:bedrock-agentcore:us-east-1:111204669101:policy-engine/mcpgateway_authz-hfy2_5p_23",
+  "mode": "ENFORCE"
+}

@@ -1,0 +1,548 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Credit-Intelligence Platform — Architecture</title>
+<style>
+  :root{
+    --ground:#F6F7F9; --panel:#FFFFFF; --ink:#171A21; --muted:#5B6270; --line:#E3E6EC;
+    --accent:#4C3A82;        /* structural / brand */
+    --accent-soft:#EEEAF6;
+    --gov:#B4780A;           /* governance rail */
+    --gov-soft:#FBF2DE;
+    --managed:#1E6FB8; --openapi:#0E7490; --custom:#6B4BA3; --new:#1F7A3A;
+    --changed:#B4530A; --public:#8A909C; --private:#3A4150; --debt:#A8211B;
+    --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;
+    --sans:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    --shadow:0 1px 2px rgba(20,24,34,.05),0 4px 16px rgba(20,24,34,.06);
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0}
+  body{font-family:var(--sans);background:var(--ground);color:var(--ink);font-size:14px;line-height:1.5;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 20px 64px}
+
+  /* ---- header ---- */
+  header{position:sticky;top:0;z-index:30;background:rgba(246,247,249,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+  .hbar{max-width:1180px;margin:0 auto;padding:14px 20px 0;display:flex;flex-wrap:wrap;align-items:flex-end;gap:14px}
+  .brand{display:flex;align-items:center;gap:11px;margin-right:auto}
+  .mark{width:26px;height:26px;color:var(--accent);flex:0 0 auto}
+  .brand h1{font-size:15px;margin:0;font-weight:700;letter-spacing:-.01em;line-height:1.15}
+  .brand p{margin:0;font-size:11.5px;color:var(--muted)}
+  .controls{display:flex;gap:8px;align-items:center;flex-wrap:wrap;padding-bottom:12px}
+  .seg{display:inline-flex;border:1px solid var(--line);border-radius:8px;overflow:hidden;background:var(--panel)}
+  .seg button{appearance:none;border:0;background:transparent;padding:7px 11px;font:inherit;font-size:12px;font-weight:600;color:var(--muted);cursor:pointer}
+  .seg button[aria-pressed="true"]{background:var(--accent);color:#fff}
+  .toggle{appearance:none;border:1px solid var(--line);background:var(--panel);border-radius:8px;padding:7px 11px;font:inherit;font-size:12px;font-weight:600;color:var(--muted);cursor:pointer;display:inline-flex;align-items:center;gap:7px}
+  .toggle[aria-pressed="true"]{border-color:var(--gov);color:var(--gov);background:var(--gov-soft)}
+  .dot{width:8px;height:8px;border-radius:50%;background:currentColor;display:inline-block}
+
+  /* ---- tabs ---- */
+  .tabs{max-width:1180px;margin:0 auto;padding:0 20px;display:flex;gap:2px}
+  .tab{appearance:none;border:0;background:transparent;padding:11px 16px 13px;font:inherit;font-size:13px;font-weight:600;color:var(--muted);cursor:pointer;border-bottom:2.5px solid transparent;position:relative}
+  .tab .n{font-family:var(--mono);font-size:10.5px;color:var(--accent);opacity:.7;display:block;letter-spacing:.04em}
+  .tab[aria-selected="true"]{color:var(--ink);border-color:var(--accent)}
+  .tab:focus-visible,.node:focus-visible,.toggle:focus-visible,.seg button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+  /* ---- tier intro ---- */
+  .intro{padding:22px 0 6px;display:flex;gap:16px;align-items:baseline;flex-wrap:wrap}
+  .intro h2{font-size:20px;margin:0;font-weight:700;letter-spacing:-.02em;text-wrap:balance}
+  .intro .thesis{color:var(--muted);font-size:13.5px;max-width:62ch}
+  .intro .tag{font-family:var(--mono);font-size:11px;padding:3px 8px;border-radius:6px;background:var(--accent-soft);color:var(--accent);font-weight:600;white-space:nowrap}
+
+  /* ---- bands ---- */
+  .diagram{margin-top:10px;display:flex;flex-direction:column;gap:0}
+  .band{position:relative;padding:15px 0}
+  .band + .band::before{content:"";position:absolute;top:-1px;left:118px;width:22px;height:1px}
+  .band-label{font-family:var(--mono);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:700;margin-bottom:9px;display:flex;align-items:center;gap:8px}
+  .band-label .chip{font-size:9.5px;padding:1px 6px;border-radius:5px;background:var(--line);color:var(--muted);letter-spacing:.02em}
+  .band.rail{background:linear-gradient(0deg,var(--gov-soft),var(--gov-soft));border:1px solid #F0E4C6;border-radius:12px;padding:14px 16px;margin:6px 0}
+  .band.rail .band-label{color:var(--gov)}
+  .band.idrail{background:var(--accent-soft);border:1px solid #E1D9F1;border-radius:12px;padding:14px 16px;margin:6px 0}
+  .band.idrail .band-label{color:var(--accent)}
+  .row{display:flex;flex-wrap:wrap;gap:10px}
+
+  /* ---- nodes ---- */
+  .node{appearance:none;text-align:left;background:var(--panel);border:1px solid var(--line);border-radius:11px;padding:11px 13px;cursor:pointer;box-shadow:var(--shadow);min-width:186px;max-width:250px;flex:1 1 200px;transition:transform .08s ease,border-color .1s ease,box-shadow .1s ease;position:relative}
+  .node:hover{transform:translateY(-2px);border-color:var(--accent);box-shadow:0 6px 22px rgba(76,58,130,.14)}
+  .node .t{font-weight:700;font-size:13px;letter-spacing:-.01em;display:flex;align-items:center;gap:6px;padding-right:12px}
+  .node .svc{font-family:var(--mono);font-size:10.5px;color:var(--accent);margin-top:2px}
+  .node .s{font-size:11.5px;color:var(--muted);margin-top:5px;line-height:1.35}
+  .node .badges{display:flex;flex-wrap:wrap;gap:4px;margin-top:8px}
+  .node::after{content:"›";position:absolute;top:9px;right:11px;color:var(--muted);font-size:15px;opacity:0;transition:opacity .1s}
+  .node:hover::after{opacity:.6}
+  .node.gov{border-left:3px solid var(--gov)}
+  .b{font-family:var(--mono);font-size:9px;font-weight:700;letter-spacing:.03em;padding:2px 6px;border-radius:5px;text-transform:uppercase;color:#fff;line-height:1.35}
+  .b.managed{background:var(--managed)} .b.openapi{background:var(--openapi)} .b.custom{background:var(--custom)}
+  .b.new{background:var(--new)} .b.changed{background:var(--changed)} .b.public{background:var(--public)}
+  .b.private{background:var(--private)} .b.gov{background:var(--gov)} .b.debt{background:var(--debt)}
+  .b.ghost{background:transparent;color:var(--muted);border:1px solid var(--line)}
+
+  /* governance focus dim */
+  body.govfocus .node:not(.gov){opacity:.26;filter:saturate(.4)}
+  body.govfocus .band:not(.rail):not(.idrail) .band-label{opacity:.4}
+
+  /* ---- delta + risk ---- */
+  .cols{display:grid;grid-template-columns:1.3fr 1fr;gap:14px;margin-top:22px}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:15px 17px;box-shadow:var(--shadow)}
+  .card h3{margin:0 0 10px;font-size:12px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);font-weight:700;display:flex;align-items:center;gap:8px}
+  .card h3 .swatch{width:9px;height:9px;border-radius:2px}
+  .card ul{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:8px}
+  .card li{font-size:12.5px;display:flex;gap:9px;line-height:1.4}
+  .card li::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--accent);margin-top:6px;flex:0 0 auto}
+  .card.risk li::before{background:var(--changed)}
+
+  /* ---- comparison ---- */
+  .cmp{margin-top:26px}
+  .cmp h3{font-size:12px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);font-weight:700;margin:0 0 10px}
+  .tbl{overflow-x:auto;border:1px solid var(--line);border-radius:12px;background:var(--panel);box-shadow:var(--shadow)}
+  table{width:100%;border-collapse:collapse;font-size:12.5px;min-width:640px}
+  th,td{padding:9px 13px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+  thead th{font-size:10.5px;text-transform:uppercase;letter-spacing:.04em;color:var(--muted);font-weight:700;background:#FBFBFD}
+  th:first-child,td:first-child{font-weight:600}
+  tbody tr:last-child td{border-bottom:0}
+  td .hot{color:var(--new);font-weight:600}
+  .cur td:nth-child(2),.int td:nth-child(3),.pro td:nth-child(4){background:var(--accent-soft)}
+
+  /* ---- legend ---- */
+  .legend{display:flex;flex-wrap:wrap;gap:10px 16px;margin-top:20px;padding:13px 16px;background:var(--panel);border:1px solid var(--line);border-radius:12px;font-size:11.5px;color:var(--muted)}
+  .legend .g{display:flex;align-items:center;gap:6px}
+
+  /* ---- drawer ---- */
+  .backdrop{position:fixed;inset:0;background:rgba(20,24,34,.34);opacity:0;pointer-events:none;transition:opacity .16s;z-index:40}
+  .backdrop.on{opacity:1;pointer-events:auto}
+  .drawer{position:fixed;top:0;right:0;height:100%;width:min(440px,92vw);background:var(--panel);border-left:1px solid var(--line);box-shadow:-12px 0 40px rgba(20,24,34,.16);transform:translateX(100%);transition:transform .2s cubic-bezier(.4,0,.2,1);z-index:50;display:flex;flex-direction:column}
+  .drawer.on{transform:none}
+  .drawer .dh{padding:20px 22px 14px;border-bottom:1px solid var(--line)}
+  .drawer .dh .svc{font-family:var(--mono);font-size:11px;color:var(--accent);margin-bottom:5px}
+  .drawer .dh h4{margin:0;font-size:18px;letter-spacing:-.02em;text-wrap:balance}
+  .drawer .db{padding:18px 22px;overflow-y:auto;display:flex;flex-direction:column;gap:18px}
+  .drawer .sec .lab{font-size:10.5px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);font-weight:700;margin-bottom:7px}
+  .drawer .what{font-size:13.5px;line-height:1.5}
+  .drawer .db ul{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:7px}
+  .drawer .db li{font-size:12.5px;display:flex;gap:8px;line-height:1.45}
+  .drawer .db li::before{content:"";width:5px;height:5px;border-radius:50%;background:var(--accent);margin-top:6px;flex:0 0 auto}
+  .drawer .why{background:var(--accent-soft);border-radius:10px;padding:12px 14px;font-size:12.5px;line-height:1.5;border-left:3px solid var(--accent)}
+  .drawer .why.g{background:var(--gov-soft);border-color:var(--gov)}
+  .drawer .close{position:absolute;top:16px;right:16px;width:30px;height:30px;border-radius:8px;border:1px solid var(--line);background:var(--panel);cursor:pointer;font-size:16px;color:var(--muted);line-height:1}
+  .drawer .badges{display:flex;flex-wrap:wrap;gap:5px;margin-top:10px}
+
+  .foot{margin-top:30px;font-size:11px;color:var(--muted);text-align:center;line-height:1.6}
+
+  @media (max-width:720px){
+    .cols{grid-template-columns:1fr}
+    .node{min-width:150px}
+    .brand p{display:none}
+  }
+  @media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<header>
+  <div class="hbar">
+    <div class="brand">
+      <svg class="mark" viewBox="0 0 24 24" role="img" aria-label="Knowledge graph"><g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M6.6 7.4 10.8 15.4M17.4 8.4 13.2 15.6M7.6 6.2 16.4 6.9"/></g><g fill="currentColor"><circle cx="5" cy="6" r="2.3"/><circle cx="19" cy="7" r="2.3"/><circle cx="12" cy="17.5" r="2.3"/></g></svg>
+      <div><h1>Credit-Intelligence Platform</h1><p>AgentCore architecture · demo → POC → production</p></div>
+    </div>
+    <div class="controls">
+      <button class="toggle" id="govToggle" aria-pressed="false" title="Highlight only the governance & identity path"><span class="dot" style="color:var(--gov)"></span>Governance view</button>
+      <div class="seg" role="group" aria-label="Persona">
+        <button id="pRM" aria-pressed="true">RM</button>
+        <button id="pAN" aria-pressed="false">Analyst</button>
+      </div>
+    </div>
+  </div>
+  <div class="tabs" role="tablist" aria-label="Architecture tier">
+    <button class="tab" role="tab" aria-selected="true"  data-tier="current"><span class="n">TIER 01</span>Current</button>
+    <button class="tab" role="tab" aria-selected="false" data-tier="interim"><span class="n">TIER 02</span>Interim · Full POC</button>
+    <button class="tab" role="tab" aria-selected="false" data-tier="prod"><span class="n">TIER 03</span>Production</button>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="intro">
+    <h2 id="tierTitle"></h2>
+    <span class="tag" id="tierTag"></span>
+    <p class="thesis" id="tierThesis"></p>
+  </div>
+  <div id="personaNote" class="thesis" style="font-size:12px;margin:2px 0 0;color:var(--gov);display:none"></div>
+
+  <div class="diagram" id="diagram"></div>
+
+  <div class="cols">
+    <div class="card"><h3><span class="swatch" style="background:var(--new)"></span>What changed at this tier</h3><ul id="delta"></ul></div>
+    <div class="card risk"><h3><span class="swatch" style="background:var(--changed)"></span>Residual risks &amp; open items</h3><ul id="risk"></ul></div>
+  </div>
+
+  <div class="cmp">
+    <h3>Cross-tier comparison</h3>
+    <div class="tbl"><table id="cmpTable">
+      <thead><tr><th>Concern</th><th>Current</th><th>Interim</th><th>Production</th></tr></thead>
+      <tbody></tbody>
+    </table></div>
+  </div>
+
+  <div class="legend" id="legend"></div>
+
+  <p class="foot">Interactive architecture overview · click any component for specifics and the decision behind it.<br>Service names reviewed against AWS Bedrock AgentCore documentation (as of July 2026) · draft for internal review.</p>
+</main>
+
+<div class="backdrop" id="backdrop"></div>
+<aside class="drawer" id="drawer" role="dialog" aria-modal="true" aria-labelledby="dTitle">
+  <button class="close" id="dClose" aria-label="Close">✕</button>
+  <div class="dh"><div class="svc" id="dSvc"></div><h4 id="dTitle"></h4><div class="badges" id="dBadges"></div></div>
+  <div class="db">
+    <div class="sec"><div class="lab">What it is</div><div class="what" id="dWhat"></div></div>
+    <div class="sec"><div class="lab">Specifics</div><ul id="dSpecs"></ul></div>
+    <div class="sec"><div class="lab">Why this decision</div><div class="why" id="dWhy"></div></div>
+  </div>
+</aside>
+
+<script>
+/* ---------- content model ---------- */
+const B = (t)=>t; // badge helper passthrough
+const DATA = {
+  current: {
+    title:"Current — the working demo", tag:"AS-BUILT · PUBLIC",
+    thesis:"A governed semantic layer proving natural-language, cross-system credit intelligence — optimized for iteration speed.",
+    bands:[
+      {label:"Clients", nodes:[
+        {id:"cur-cowork", t:"Cowork / Claude Desktop", badges:["public"], s:"Connects to the KG via OAuth; renders widgets.",
+          what:"Anthropic's Claude client, connected to the KG as an MCP connector.",
+          specs:["OAuth connector to the KG front door","Renders the KG's MCP-App widgets (cards / table / chart)","No app to build — fastest path to a Claude UI"],
+          why:"Fastest route to a working Claude experience with widget rendering; validates the whole stack with zero client code."},
+        {id:"cur-webapp", t:"Custom webapp", svc:"kg-agent-app · App Runner", badges:["public","custom"], s:"Thin UI on the Claude Agent SDK.",
+          what:"A self-hosted Cowork alternative we fully control, built on the Claude Agent SDK.",
+          specs:["Agent SDK loop + curated tools + subagents","Bedrock inference (Haiku default; Sonnet/Opus)","Server-side identity injection via a role dropdown","Streaming, approvals, persisted history"],
+          why:"Owning the client lets us tune UX, wire approvals, and demo an in-account experience end to end."},
+        {id:"cur-bedrock", t:"Amazon Bedrock", badges:["public",{c:"ghost",l:"TEST ONLY"}], s:"Final, test-only inference path.",
+          what:"In-account model inference and embeddings.",
+          specs:["Serves the webapp's model calls","Titan embeddings for kg_search","Test-only per current guidance"],
+          why:"Build on Pro tokens day to day; Bedrock is the last-mile in-account validation, not the daily driver."},
+      ]},
+      {label:"Identity & auth", rail:"id", nodes:[
+        {id:"cur-cognito", t:"Amazon Cognito", svc:"user pool", badges:["gov"], gov:1, s:"Roles ROLE_RM / ROLE_ANALYST in the JWT.",
+          what:"The identity provider; the JWT's cognito:groups is the single source of role truth.",
+          specs:["Groups: ROLE_RM (full) / ROLE_ANALYST (read-only AFS)","JWT flows through every layer","KG validates it (jose + JWKS)"],
+          why:"One role signal, carried end to end, is what makes RM-vs-Analyst differentiation possible everywhere."},
+        {id:"cur-tokenfwd", t:"Token forwarding", badges:["gov","debt"], gov:1, s:"KG forwards the employee JWT downstream.",
+          what:"The KG passes the employee's raw token to the gateway and Snowflake.",
+          specs:["Gateway authorizes the USER, not the PATH","A JWT holder could reach the gateway directly","Known 'confused deputy' gap — closed in Production via OBO"],
+          why:"Simplest way to carry identity downstream for the demo; its blast-radius caveat is named and scheduled for the OBO fix."},
+      ]},
+      {label:"Front door", nodes:[
+        {id:"cur-kg", t:"KG MCP — front door", svc:"AWS App Runner", badges:["public","custom"], s:"~7 tools; serves its own widgets.",
+          what:"The single door clients connect to; a semantic layer over everything downstream.",
+          specs:["Tools: kg_search, kg_call, kg_resolve, kg_hydrate + kg_show_cards/table/chart","Validates Cognito JWT, advertises OAuth discovery","Serves MCP-App widgets the gateway can't (ui://kg/*)","Hides dozens of downstream tools behind kg_search/kg_call"],
+          why:"App Runner gives a standard, directly-connectable HTTPS/OAuth endpoint AND serves widget resources — an AgentCore Runtime endpoint is neither. Front-of-gateway keeps the client surface tiny."},
+      ]},
+      {label:"Gateway", nodes:[
+        {id:"cur-gw", t:"AgentCore Gateway", svc:"Amazon Bedrock AgentCore", badges:[{c:"ghost",l:"INTERNAL"}], s:"MCP multiplexer; only the KG calls it.",
+          what:"A governed multiplexer that fronts the custom MCP servers and aggregates their tools.",
+          specs:["Prefixes tool names (afs___, boom___)","DYNAMIC tools/list discovery","Only the KG talks to it (by convention today)","Refuses resources/read → KG serves widgets itself"],
+          why:"One governed choke point for tool authorization and discovery across downstream servers."},
+        {id:"cur-policy", t:"AgentCore Policy (Cedar)", badges:["gov"], gov:1, s:"Permit/forbid tools by role.",
+          what:"AgentCore's native Cedar-based authorization engine, evaluated per tool call at the gateway.",
+          specs:["permit-rm: all actions; permit-analyst: all…","forbid-analyst-afs: the 7 AFS write tools (forbid overrides)","Reads JWT claims via principal.getTag()","Actions can't be pattern-matched → writes enumerated by hand"],
+          why:"Declarative, first-class authorization at the gateway; the authoritative execution-time gate."},
+      ]},
+      {label:"Tools / MCP servers", nodes:[
+        {id:"cur-afs", t:"AFS MCP", svc:"AgentCore Runtime · PUBLIC", badges:["custom","public"], s:"24 tools; live AFS Vision.",
+          what:"Custom MCP wrapping the AFS Vision core-banking system.",
+          specs:["24 tools (read + 7 writes)","Live AFS Vision over HTTP Basic","Emits MCP-App widgets (summary, officer book)","Runtime networking = PUBLIC (default) today"],
+          why:"AgentCore Runtime gives a managed, isolated container behind the gateway with a Cognito JWT authorizer."},
+        {id:"cur-boom", t:"Boom MCP", svc:"AgentCore Runtime · PUBLIC", badges:["custom","public"], s:"9 tools; financial spreads.",
+          what:"Custom MCP for financial spreading and ratios.",
+          specs:["9 tools — company lookup, spreads, ratios","AgentCore Runtime behind the gateway"],
+          why:"Same managed-runtime pattern as AFS; spreads/ratios enrich the credit picture."},
+      ]},
+      {label:"Data & stores", nodes:[
+        {id:"cur-snow", t:"Snowflake — direct", svc:"SQL API", badges:["public","gov","debt"], gov:1, s:"6 procs; per-employee PAT → masking.",
+          what:"Reached directly (not via the gateway) so native masking applies on the employee's credential.",
+          specs:["CREDIT_MEMO_DB.CREDIT_RISK — 6 stored procedures","Per-employee PAT → native row/col masking","PAT handling is known debt (Prod: OAuth/keypair + vault)"],
+          why:"Going direct preserves per-role dynamic masking on the caller's own session; routing via the gateway would flatten identity."},
+        {id:"cur-ddb", t:"Amazon DynamoDB", badges:[], s:"Identity crosswalk (nCino spine).",
+          what:"The crosswalk: nCino account id → {AFS, Snowflake, Boom} keys + link status.",
+          specs:["Exact-key lookups — DynamoDB's sweet spot","Durable, low-ops reference data","No graph traversal needed yet"],
+          why:"For a flat exact-key crosswalk, DynamoDB is cheaper, faster and simpler than a graph DB."},
+        {id:"cur-secrets", t:"AWS Secrets Manager", badges:["debt"], s:"AFS creds (some plaintext env).",
+          what:"Central secret store for downstream credentials.",
+          specs:["Holds AFS Vision Basic creds","Today injected as plaintext runtime env (debt)","No rotation configured yet"],
+          why:"Right store; the request-time-fetch + rotation hardening is scheduled for Production."},
+      ]},
+      {label:"Governance & observability", rail:"gov", nodes:[
+        {id:"cur-g1", t:"Execution-time authz", badges:["gov"], gov:1, s:"AgentCore Policy (Cedar).",
+          what:"The authoritative gate — Cedar at the gateway.", specs:["Per-tool-call evaluation","RM full / Analyst read-only on AFS"], why:"Declarative, centrally-managed authorization is the backbone of the governance story."},
+        {id:"cur-g2", t:"Data-time masking", badges:["gov"], gov:1, s:"Snowflake native masking.",
+          what:"Row/column masking applied by Snowflake per the caller's role.", specs:["Native dynamic masking on the employee PAT","KG never sees unmasked data"], why:"Enforcing at the data layer means the platform can't leak what the role can't see."},
+        {id:"cur-g3", t:"Discovery-time filter", badges:["gov"], gov:1, s:"kg_search role filtering.",
+          what:"kg_search hides tools the role can't use before the model sees them.", specs:["Defense-in-depth, NOT a boundary","kg_call re-checks role server-side"], why:"Shrinks the model's attack surface; honestly framed as garnish, not the gate."},
+        {id:"cur-g4", t:"Audit trail", badges:["gov"], gov:1, s:"Structured events, traceId.",
+          what:"One structured event per call with correlation.", specs:["traceId, user, tool, outcome, latency","X-Trace-Id / traceparent propagation"], why:"Every hop is reconstructable from a single correlation id."},
+      ]},
+    ],
+    delta:["This is the baseline everything else evolves from.","Public networking; single-instance front door.","Two custom MCPs behind one gateway; Snowflake direct."],
+    risk:["Public networking on every endpoint — incl. AFS/Boom core-banking MCPs on public-default Runtime.","Confused-deputy token forwarding (gateway authorizes user, not path).","Masking only on the Snowflake leg.","Snowflake PAT + plaintext AFS env are known credential debt."],
+  },
+
+  interim: {
+    title:"Interim — the full POC", tag:"VPC · NEPTUNE · ALL SOURCES",
+    thesis:"Private by default in a VPC (managed SaaS connectors egress out, by exception), every data source unified behind one governed gateway, and a real graph brain.",
+    bands:[
+      {label:"Clients", nodes:[
+        {id:"int-clients", t:"Cowork · webapp · Bedrock", badges:["private"], s:"Now reach a private ingress.",
+          what:"Same three clients as today, now entering through a private network path.",
+          specs:["No change to the client experience","Traffic terminates inside the VPC boundary"],
+          why:"The client story stays stable while the substrate moves private — de-risks the migration."},
+      ]},
+      {label:"Identity & auth", rail:"id", nodes:[
+        {id:"int-cognito", t:"Amazon Cognito + Gateway JWT", badges:["gov"], gov:1, s:"Authz stays on; OBO deferred.",
+          what:"Cognito + gateway inbound JWT + Cedar remain fully on; only the OBO upgrade is deferred.",
+          specs:["'Light' means NO OBO yet — not no authz","Gateway inbound auth = OIDC/JWT (Cognito)","Cedar still evaluates RM/Analyst"],
+          why:"Authorization is already built and free to keep; the POC spends its effort on data breadth and the graph, not the auth upgrade."},
+      ]},
+      {label:"Front door", nodes:[
+        {id:"int-kg", t:"KG semantic layer", svc:"Amazon ECS / Fargate · VPC", badges:["changed","private"], s:"Same 7 tools, now in-VPC on Fargate.",
+          what:"The same semantic front door, relocated from App Runner to Fargate in private subnets.",
+          specs:["Same ~7-tool surface + widgets","Private subnets; controlled network placement","Widgets optionally served from S3 + CloudFront"],
+          why:"Fargate lets us own the network placement and security groups — the step App Runner can't take toward enterprise."},
+      ]},
+      {label:"Gateway", nodes:[
+        {id:"int-gw", t:"AgentCore Gateway — in VPC", svc:"all sources", badges:["changed",{c:"ghost",l:"INTERNAL"}], s:"Aggregates all five MCPs.",
+          what:"The one governed surface across every source — custom and third-party.",
+          specs:["Fronts AFS, Boom (custom) + Salesforce, CapIQ, IBIS, Snowflake (managed MCPs)","Targets: managed MCP passthrough · managed template · custom MCP","Every source inherits Cedar + tools/list"],
+          why:"Unifying every data source behind one governed, discoverable surface is the whole thesis of the POC."},
+        {id:"int-policy", t:"AgentCore Policy (Cedar)", badges:["gov"], gov:1, s:"Now spans connectors too.",
+          what:"Cedar authorization now covers the third-party connectors as well.",
+          specs:["Same permit/forbid model","Applies to managed + OpenAPI targets"],
+          why:"One policy engine over internal and external tools keeps governance uniform as sources multiply."},
+      ]},
+      {label:"Tools / MCP servers", nodes:[
+        {id:"int-afs", t:"AFS MCP", svc:"AgentCore Runtime · VPC", badges:["custom","private"], s:"Custom, now VPC-configured.",
+          what:"AFS custom MCP, now on VPC-configured Runtime.", specs:["ENIs into private subnets (min 2 AZs)","NAT for any egress","Same 24 tools"], why:"AgentCore Runtime VPC networking brings the custom MCPs inside the private boundary."},
+        {id:"int-boom", t:"Boom MCP", svc:"AgentCore Runtime · VPC", badges:["custom","private"], s:"Custom, now VPC-configured.",
+          what:"Boom custom MCP on VPC Runtime.", specs:["Private subnets","9 spreading tools"], why:"Same private-runtime treatment as AFS."},
+        {id:"int-sf", t:"Salesforce", svc:"Managed connector · gateway target", badges:["new","managed"], s:"Vendor-managed (OAuth2).",
+          what:"CRM attached via AgentCore's native 'Salesforce Lightning Platform' managed template.",
+          specs:["One of 16 native managed templates","Outbound OAuth2, vaulted","⚠ Console-only to configure; egresses to public SaaS — not a private path"],
+          why:"The RM's book of business in the same governed surface, with no code to maintain — but its public-SaaS egress is a documented exception to 'all private'."},
+        {id:"int-capiq", t:"S&P Capital IQ", svc:"Managed MCP · gateway target", badges:["new","managed"], s:"Vendor-provided managed MCP.",
+          what:"External company financials / comparables via S&P's managed MCP server, fronted by the gateway as an MCP target.",
+          specs:["Managed MCP server — we don't build or operate it","Attaches as a gateway MCP (passthrough) target","Outbound auth vaulted; inherits Cedar + tools/list"],
+          why:"Authoritative external financials with no MCP to maintain — the gateway fronts the vendor's managed MCP so it's governed like everything else."},
+        {id:"int-ibis", t:"IBIS World", svc:"Managed MCP · gateway target", badges:["new","managed"], s:"Vendor-provided managed MCP.",
+          what:"Industry research / benchmarks via IBIS World's managed MCP server, fronted by the gateway.",
+          specs:["Managed MCP server — no code to maintain","Gateway MCP (passthrough) target","Industry & sector risk context"],
+          why:"Sector/industry risk context with zero MCP maintenance; governed through the one gateway alongside every other source."},
+      ]},
+      {label:"Data & stores", nodes:[
+        {id:"int-neptune", t:"Amazon Neptune Database", badges:["new","changed"], s:"KG graph replaces DynamoDB.",
+          what:"The crosswalk becomes a real operational graph: entities, obligors, facilities and their cross-system relationships.",
+          specs:["Neptune DATABASE (operational, openCypher+Gremlin) — not Analytics","Multi-hop traversal: shared guarantors, entity resolution","IAM database auth + audit logs on; encrypted at rest","Hybrid: keep DynamoDB as the hot exact-key path"],
+          why:"Justified by traversal — resolving one entity across AFS ↔ Boom ↔ Salesforce ↔ CapIQ is a graph problem a flat crosswalk can't express. (If it were still exact-key only, DynamoDB would stay.)"},
+        {id:"int-snow", t:"Snowflake — managed MCP", svc:"gateway MCP target · PrivateLink", badges:["changed","managed","private","gov"], gov:1, s:"Now behind the gateway; masking via per-user identity.",
+          what:"Snowflake consumed through its managed MCP server, fronted by the gateway — no longer a direct SQL call.",
+          specs:["Managed Snowflake MCP as a gateway MCP target","Reached over AWS PrivateLink","Native masking preserved ONLY if the MCP carries the employee's identity","Per-employee credential today; OBO in Production"],
+          why:"Brings Snowflake under the same governed gateway as every other source. The trade vs 'direct': masking now depends on per-user identity flowing through the MCP (not a shared service account) — the thing to verify."},
+        {id:"int-vpc", t:"Amazon VPC + endpoints", badges:["new","private"], s:"Private subnets; PrivateLink endpoints.",
+          what:"The private network fabric everything now lives in.",
+          specs:["VPC interface endpoints: bedrock-agentcore, bedrock-runtime, Secrets Manager, KMS, CloudWatch","Gateway endpoint: S3 (DynamoDB retired with the move to Neptune)","SG segmentation; NAT egress allow-listed to connector SaaS domains only"],
+          why:"Private-by-default networking with AWS-API traffic kept off the NAT is the baseline a bank expects."},
+        {id:"int-secrets", t:"AWS Secrets Manager", badges:[], s:"All downstream creds centralized.",
+          what:"Central store for AFS, connector API keys, and Snowflake creds.", specs:["Centralized (no plaintext env)","Rotation comes in Production"], why:"Consolidating credentials is the prerequisite for rotation and least-privilege later."},
+      ]},
+      {label:"Governance & observability", rail:"gov", nodes:[
+        {id:"int-g1", t:"Cedar across all sources", badges:["gov"], gov:1, s:"Authz spans connectors.", what:"One policy engine over internal + external tools.", specs:["Managed + OpenAPI + custom all governed"], why:"Uniform authorization as the source count grows."},
+        {id:"int-g2", t:"VPC Flow Logs + CloudTrail", badges:["gov"], gov:1, s:"Network + API audit.", what:"Network and control-plane auditing inside the VPC.", specs:["VPC Flow Logs","CloudTrail (mgmt + data events)","CloudWatch"], why:"Private networking without logging isn't auditable; these come with the VPC move."},
+        {id:"int-g3", t:"Masking gap — flagged", badges:["gov","debt"], gov:1, s:"Non-Snowflake legs still unmasked.", what:"AFS / Boom / connector responses are not yet masked.", specs:["Only Snowflake masks today","AFS/Boom/CapIQ/IBIS/SF need KG- or interceptor-level redaction"], why:"Named now, enforced in Production via KG logic or Gateway Lambda interceptors — masking on all legs isn't free."},
+      ]},
+    ],
+    delta:["Everything moves into a VPC (private subnets).","DynamoDB → Amazon Neptune Database (real graph).","+ Salesforce, CapIQ, IBIS World & Snowflake as managed MCPs behind the gateway.","Only AFS & Boom remain custom; Snowflake moves from direct → managed MCP.","AWS-API traffic on PrivateLink endpoints, NAT only for SaaS egress."],
+    risk:["Managed Salesforce = public-SaaS egress + Console-only config — a documented exception to 'all private'.","Snowflake now behind the gateway — masking depends on the MCP carrying per-user identity (verify).","Auth still light — no OBO yet; masking on non-Snowflake legs still to build.","No production PII in this tier — real customer PII is the trigger to Production.","Single region."],
+  },
+
+  prod: {
+    title:"Production — hardened for a bank review", tag:"OBO · PRIVATE · ROTATED · AUDITED",
+    thesis:"What passes security & architecture review: private by default, path-attested identity, rotated secrets, governed on every leg, resilient and fully audited.",
+    bands:[
+      {label:"Exposed ingress", nodes:[
+        {id:"pro-waf", t:"AWS WAF → ALB / API Gateway", badges:["new","public"], s:"The ONLY public surface.",
+          what:"A single, hardened, auditable public ingress in front of the KG; everything else is private.",
+          specs:["WAF managed rules + rate limiting + Shield Advanced","ALB or Amazon API Gateway terminates TLS","Diagram labels exactly what is exposed vs private"],
+          why:"Minimize and harden the attack surface, and make exposure explicit and auditable — the first thing a reviewer looks for."},
+      ]},
+      {label:"Identity & auth", rail:"id", nodes:[
+        {id:"pro-sso", t:"Real SSO + IdP", svc:"Cognito ⟷ Entra/Okta", badges:["new","gov"], gov:1, s:"Federated, MFA, short-lived.",
+          what:"Cognito federated to the bank IdP; the webapp forwards the user's own token.",
+          specs:["Federated IdP (Entra ID / Okta), MFA","Short-lived tokens","No server-side token minting — kills the impersonation primitive"],
+          why:"Real identity, not a role dropdown; removes the demo's server-side 'mint any employee' path."},
+        {id:"pro-obo", t:"AgentCore Identity — OBO", badges:["new","gov"], gov:1, s:"Token exchange: actor=KG, subject=user.",
+          what:"On-behalf-of token exchange so the downstream call carries BOTH the KG workload identity and the user's identity.",
+          specs:["AgentCore OBO carries BOTH workload + user identity (verified AWS capability)","Gateway locked to accept ONLY the KG's client id","To confirm in our config: cognito:groups maps through so Cedar reads the role","Fallback if not: Cedar evaluates a KG-asserted role attribute"],
+          why:"Closes the confused-deputy gap — the gateway can finally authorize the PATH (KG-mediated) as well as the user. This is what makes the front door a real boundary."},
+        {id:"pro-rot", t:"Secrets rotation + vault", svc:"Secrets Manager · Identity token vault", badges:["new","gov"], gov:1, s:"No plaintext; retire PATs.",
+          what:"Automatic rotation for DB/API creds; OAuth tokens in the AgentCore Identity vault.",
+          specs:["Secrets Manager rotation on Snowflake keypair/OAuth + API keys","Retire per-employee PATs","AFS/connector creds fetched at request time","Token vault encrypted with KMS CMK"],
+          why:"Limits credential blast radius; a shared static credential for financial writes fails a bank review."},
+      ]},
+      {label:"Front door", nodes:[
+        {id:"pro-kg", t:"KG semantic layer", svc:"ECS / Fargate · multi-AZ · VPC", badges:["changed","private"], s:"≥2 AZ, autoscaled, no public path.",
+          what:"The front door, now multi-AZ and private.",
+          specs:["≥2 availability zones, autoscaled","Reached only via the WAF ingress","Serves widgets (S3/CloudFront option)"],
+          why:"Removes the single-instance SPOF and any public path to the front door."},
+      ]},
+      {label:"Gateway", nodes:[
+        {id:"pro-gw", t:"AgentCore Gateway + interceptors", badges:["changed",{c:"ghost",l:"KG-ONLY"}], s:"Locked to KG; Lambda interceptors.",
+          what:"Gateway that accepts only the KG's workload identity and runs Lambda interceptors for cross-cutting logic.",
+          specs:["Inbound accepts only the KG client id","Lambda interceptors: cross-leg masking / DLP","Per-request policy context injection"],
+          why:"Client-lockdown makes 'single front door' a real network+identity boundary; interceptors give a place to enforce masking the sources don't."},
+        {id:"pro-policy", t:"AgentCore Policy (Cedar) — default-deny", badges:["gov"], gov:1, s:"CI-manifest-driven, fail-closed.",
+          what:"Cedar inverted to default-deny, generated from one manifest in CI.",
+          specs:["Permit only enumerated reads; deny by default","Cedar + role tags + approval list generated from one source","CI test fails if a gateway tool is absent from the manifest"],
+          why:"Removes the fail-open, hand-maintained write list — new tools can't silently become writable."},
+      ]},
+      {label:"Tools / MCP servers", nodes:[
+        {id:"pro-afs", t:"AFS · Boom", svc:"AgentCore Runtime · VPC", badges:["custom","private","gov"], gov:1, s:"Per-actor attribution on writes.",
+          what:"Custom MCPs with per-actor write attribution.", specs:["OBO user claim written into every audit record","Financial writes traceable to a specific employee","VPC, private"], why:"Non-repudiation for financial writes is mandatory; the OBO user claim provides it."},
+        {id:"pro-conn", t:"Salesforce · CapIQ · IBIS", svc:"managed MCPs · gateway targets", badges:["managed","private"], s:"Governed; SaaS egress controlled.",
+          what:"The three external sources as managed MCPs, governed with egress controls.", specs:["Salesforce managed connector; CapIQ & IBIS managed MCP servers","SaaS egress via NAT + Network Firewall FQDN allow-list (egress DLP)","All fronted by the gateway, under Cedar + interceptor masking","No connector code for us to maintain"], why:"External data stays governed through the one gateway; the unavoidable SaaS egress is filtered, allow-listed and audited, not ignored."},
+      ]},
+      {label:"Data & stores", nodes:[
+        {id:"pro-snow", t:"Snowflake — managed MCP", svc:"gateway target · PrivateLink", badges:["managed","private","gov"], gov:1, s:"Masking via OBO per-user identity; PATs retired.",
+          what:"Snowflake managed MCP behind the gateway; masking driven by the employee identity carried in the OBO token.",
+          specs:["Managed Snowflake MCP as a gateway target, over PrivateLink","OBO carries the employee identity → Snowflake session role → native masking","No PATs — OAuth/keypair via Secrets Manager rotation","Governed by Cedar like every other source"],
+          why:"OBO is what makes 'Snowflake behind the gateway' safe: per-user identity reaches Snowflake, so native masking still holds while the weakest credential (PAT) is retired."},
+        {id:"pro-neptune", t:"Amazon Neptune Database", badges:["private"], s:"Multi-AZ, PITR, provenance.",
+          what:"The KG graph, made resilient.", specs:["Multi-AZ + point-in-time recovery","Link provenance (linked_by / when / evidence)","Deterministic-first entity resolution; candidates to human review","Encrypted at rest (KMS CMK) — crosswalk identities are sensitive"], why:"The join spine must be backed up and explainable — a bad link silently mislinks borrowers; never auto-merge on fuzzy match."},
+        {id:"pro-kms", t:"AWS KMS (CMK)", badges:["new","gov"], gov:1, s:"Customer-managed keys everywhere.",
+          what:"Customer-managed encryption across every store and log.", specs:["Per-domain CMKs (audit, secrets/vault, Neptune, Snowflake stage, DynamoDB)","Annual rotation; alarms on DisableKey / ScheduleKeyDeletion / PutKeyPolicy","Audit-log key policy denies delete even to admins (makes WORM real)"], why:"Per-domain keys isolate blast radius; key-tamper detection and an undeletable audit key are standard bank asks."},
+      ]},
+      {label:"Governance, audit & resilience", rail:"gov", nodes:[
+        {id:"pro-mask", t:"Masking on ALL legs", badges:["new","gov"], gov:1, s:"Snowflake + interceptor redaction.",
+          what:"Field governance across every source, not just Snowflake.", specs:["Snowflake native masking","KG- / Gateway-interceptor redaction for AFS/Boom/connectors","Per-role field allowlists"], why:"'Every hop is governed' must be true for all three sources — this makes the claim honest."},
+        {id:"pro-worm", t:"Immutable audit (WORM)", badges:["new","gov"], gov:1, s:"CloudTrail Lake + S3 Object Lock.",
+          what:"Tamper-proof audit with retention, plus model logging.", specs:["CloudTrail + CloudTrail Lake; defined retention per bank policy","S3 Object Lock (Compliance mode) for WORM","Gateway request + Cedar decision logs, correlated on traceId","Bedrock invocation logging + Guardrails; Snowflake query history exported"], why:"Regulated audit must be immutable, cover the model layer, and let you reconstruct any authorization decision — not just the KG hop."},
+        {id:"pro-mon", t:"GuardDuty · Config · Security Hub", badges:["new","gov"], gov:1, s:"Baseline security posture.",
+          what:"The expected AWS security-monitoring baseline.", specs:["GuardDuty threat detection","AWS Config (+ conformance packs)","Security Hub aggregation"], why:"A bank review expects these on by default across the account."},
+        {id:"pro-dr", t:"Multi-AZ + DR", badges:["new"], s:"RTO/RPO, cross-region snapshots.",
+          what:"Defined resilience posture.", specs:["Multi-AZ compute + Neptune","Documented RTO/RPO","Cross-region snapshots; WAF rate limiting"], why:"Availability and recovery targets are part of the architecture, not an afterthought."},
+      ]},
+    ],
+    delta:["OBO / token exchange + gateway locked to the KG client id.","Real SSO/MFA; server-side impersonation removed.","Secrets rotation; PATs retired; KMS CMK everywhere.","Masking on all legs; immutable WORM audit + Bedrock logging.","WAF ingress; multi-AZ + DR; explicit exposed-vs-private labeling."],
+    risk:["Third-party connector data-residency review (SaaS egress).","Ongoing Cedar policy change-control process.","Managed-Salesforce public-egress remains a documented exception.","Always-on multi-AZ + monitoring cost."],
+  },
+};
+
+const CMP = [
+  ["Networking","Public","VPC (private subnets)","VPC + PrivateLink, WAF ingress"],
+  ["KG compute","AWS App Runner","ECS / Fargate (VPC)","ECS / Fargate (multi-AZ)"],
+  ["KG store","DynamoDB crosswalk","Neptune Database (graph)","Neptune Database (multi-AZ, PITR)"],
+  ["Data sources","AFS, Boom (custom); Snowflake direct","+ Salesforce, CapIQ, IBIS, Snowflake as managed MCPs","same, all governed"],
+  ["MCP topology","2 custom behind gateway","2 custom + 4 managed MCPs behind gateway","all behind gateway, locked to KG"],
+  ["Snowflake access","direct SQL (per-user PAT)","managed MCP behind gateway","managed MCP; masking via OBO identity"],
+  ["Auth","token forwarding","light (JWT + Cedar)","SSO + OBO token exchange"],
+  ["Secrets","Secrets Mgr (some plaintext)","Secrets Mgr centralized","rotation, no plaintext, PATs retired"],
+  ["Masking","Snowflake only","Snowflake only","all legs (native + interceptor)"],
+  ["Audit","structured (KG)","+ VPC Flow Logs / CloudTrail","immutable WORM + Bedrock logging"],
+  ["Resilience","single instance","single region","multi-AZ + DR"],
+  ["Encryption","AWS-managed","AWS-managed","KMS CMK everywhere"],
+];
+
+const BADGE_LABEL = {managed:"Managed",openapi:"OpenAPI",custom:"Custom",new:"New",changed:"Changed",public:"Public",private:"Private",gov:"Governance",debt:"Debt"};
+
+/* ---------- render ---------- */
+const $ = (s)=>document.querySelector(s);
+let TIER = "current";
+
+function badgeHTML(b){
+  if(typeof b === "object") return `<span class="b ${b.c}">${b.l}</span>`;
+  return `<span class="b ${b}">${BADGE_LABEL[b]||b}</span>`;
+}
+function nodeHTML(n){
+  const badges = (n.badges||[]).map(badgeHTML).join("");
+  return `<button class="node${n.gov?' gov':''}" data-id="${n.id}">
+    <div class="t">${n.t}</div>
+    ${n.svc?`<div class="svc">${n.svc}</div>`:""}
+    ${n.s?`<div class="s">${n.s}</div>`:""}
+    ${badges?`<div class="badges">${badges}</div>`:""}
+  </button>`;
+}
+function renderTier(key){
+  TIER = key;
+  const d = DATA[key];
+  $("#tierTitle").textContent = d.title;
+  $("#tierTag").textContent = d.tag;
+  $("#tierThesis").textContent = d.thesis;
+  const dia = $("#diagram");
+  dia.innerHTML = d.bands.map(band=>{
+    const cls = band.rail==="gov" ? "band rail" : band.rail==="id" ? "band idrail" : "band";
+    const chip = band.rail ? `<span class="chip">cross-cutting</span>` : "";
+    return `<section class="${cls}"><div class="band-label">${band.label}${chip}</div>
+      <div class="row">${band.nodes.map(nodeHTML).join("")}</div></section>`;
+  }).join("");
+  $("#delta").innerHTML = d.delta.map(x=>`<li>${x}</li>`).join("");
+  $("#risk").innerHTML = d.risk.map(x=>`<li>${x}</li>`).join("");
+  // tabs
+  document.querySelectorAll(".tab").forEach(t=>t.setAttribute("aria-selected", t.dataset.tier===key));
+  // comparison highlight
+  const tb = $("#cmpTable tbody");
+  const hl = key==="current"?"cur":key==="interim"?"int":"pro";
+  tb.className = hl;
+  applyPersona();
+}
+function renderCmp(){
+  $("#cmpTable tbody").innerHTML = CMP.map(r=>`<tr><td>${r[0]}</td><td>${r[1]}</td><td>${r[2]}</td><td>${r[3]}</td></tr>`).join("");
+}
+function renderLegend(){
+  const items = [
+    ["custom","Custom MCP (our code — AFS, Boom)"],["managed","Managed MCP / connector (vendor-provided)"],
+    ["new","New at this tier"],["changed","Changed from prior"],["private","Private network"],["public","Public / exposed"],["gov","Governance / identity"],["debt","Known debt"]
+  ];
+  $("#legend").innerHTML = items.map(([c,l])=>`<span class="g"><span class="b ${c}">${BADGE_LABEL[c]||c}</span>${l}</span>`).join("");
+}
+
+/* ---------- drawer ---------- */
+function findNode(id){
+  for(const k in DATA){ for(const band of DATA[k].bands){ const n=band.nodes.find(x=>x.id===id); if(n) return n; } }
+  return null;
+}
+function openDrawer(id){
+  const n = findNode(id); if(!n) return;
+  $("#dTitle").textContent = n.t;
+  $("#dSvc").textContent = n.svc||"";
+  $("#dSvc").style.display = n.svc?"block":"none";
+  $("#dBadges").innerHTML = (n.badges||[]).map(badgeHTML).join("");
+  $("#dWhat").textContent = n.what||"";
+  $("#dSpecs").innerHTML = (n.specs||[]).map(x=>`<li>${x}</li>`).join("");
+  const why = $("#dWhy"); why.textContent = n.why||""; why.className = "why"+(n.gov?" g":"");
+  $("#backdrop").classList.add("on"); $("#drawer").classList.add("on");
+}
+function closeDrawer(){ $("#backdrop").classList.remove("on"); $("#drawer").classList.remove("on"); }
+
+/* ---------- persona ---------- */
+let persona = "rm";
+function applyPersona(){
+  const note = $("#personaNote");
+  if(persona==="an"){
+    note.style.display="block";
+    note.textContent = TIER==="prod"
+      ? "Viewing as Credit Analyst — AFS write tools denied; reads governed by default-deny Cedar (only permitted read tools are reachable)."
+      : "Viewing as Credit Analyst — AFS write tools are hidden at discovery and denied by Cedar; reads (AFS, Boom, Snowflake, connectors) are allowed.";
+  }
+  else { note.style.display="none"; }
+}
+
+/* ---------- wire ---------- */
+document.querySelectorAll(".tab").forEach(t=>t.addEventListener("click",()=>{ renderTier(t.dataset.tier); closeDrawer(); window.scrollTo({top:0,behavior:'smooth'}); }));
+$("#diagram").addEventListener("click",(e)=>{ const b=e.target.closest(".node"); if(b) openDrawer(b.dataset.id); });
+$("#dClose").addEventListener("click",closeDrawer);
+$("#backdrop").addEventListener("click",closeDrawer);
+document.addEventListener("keydown",(e)=>{ if(e.key==="Escape") closeDrawer(); });
+$("#govToggle").addEventListener("click",()=>{ const on=document.body.classList.toggle("govfocus"); $("#govToggle").setAttribute("aria-pressed",on); });
+$("#pRM").addEventListener("click",()=>{ persona="rm"; $("#pRM").setAttribute("aria-pressed",true); $("#pAN").setAttribute("aria-pressed",false); applyPersona(); });
+$("#pAN").addEventListener("click",()=>{ persona="an"; $("#pAN").setAttribute("aria-pressed",true); $("#pRM").setAttribute("aria-pressed",false); applyPersona(); });
+
+renderCmp(); renderLegend(); renderTier("current");
+</script>
+</body>
+</html>

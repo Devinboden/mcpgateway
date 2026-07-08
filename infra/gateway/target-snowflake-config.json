@@ -1,0 +1,8 @@
+{
+  "mcp": {
+    "mcpServer": {
+      "endpoint": "https://SPTNHMV-XF37990.snowflakecomputing.com/api/v2/databases/CREDIT_MEMO_DB/schemas/CREDIT_RISK/mcp-servers/PIEDMONT_MCP",
+      "listingMode": "DEFAULT"
+    }
+  }
+}

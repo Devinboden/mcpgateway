@@ -1,0 +1,77 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "InvokeAfsRuntime",
+      "Effect": "Allow",
+      "Action": [
+        "bedrock-agentcore:InvokeAgentRuntime"
+      ],
+      "Resource": [
+        "arn:aws:bedrock-agentcore:us-east-1:111204669101:runtime/afs_mcp-F82Tf5DI8Q",
+        "arn:aws:bedrock-agentcore:us-east-1:111204669101:runtime/afs_mcp-F82Tf5DI8Q/*"
+      ]
+    },
+    {
+      "Sid": "WorkloadIdentityAndTokenVault",
+      "Effect": "Allow",
+      "Action": [
+        "bedrock-agentcore:GetWorkloadAccessToken",
+        "bedrock-agentcore:GetWorkloadAccessTokenForJWT",
+        "bedrock-agentcore:GetResourceOauth2Token",
+        "bedrock-agentcore:GetResourceApiKey"
+      ],
+      "Resource": [
+        "arn:aws:bedrock-agentcore:us-east-1:111204669101:workload-identity-directory/default",
+        "arn:aws:bedrock-agentcore:us-east-1:111204669101:workload-identity-directory/default/workload-identity/*",
+        "arn:aws:bedrock-agentcore:us-east-1:111204669101:token-vault/default",
+        "arn:aws:bedrock-agentcore:us-east-1:111204669101:token-vault/default/*"
+      ]
+    },
+    {
+      "Sid": "PolicyEngineRead",
+      "Effect": "Allow",
+      "Action": [
+        "bedrock-agentcore:GetPolicyEngine",
+        "bedrock-agentcore:GetPolicyEngineSummary",
+        "bedrock-agentcore:GetPolicy",
+        "bedrock-agentcore:ListPolicies"
+      ],
+      "Resource": [
+        "arn:aws:bedrock-agentcore:us-east-1:111204669101:policy-engine/*"
+      ]
+    },
+    {
+      "Sid": "PolicyEngineAuthorize",
+      "Effect": "Allow",
+      "Action": [
+        "bedrock-agentcore:AuthorizeAction",
+        "bedrock-agentcore:PartiallyAuthorizeActions",
+        "bedrock-agentcore:BatchAuthorizeActions"
+      ],
+      "Resource": [
+        "arn:aws:bedrock-agentcore:us-east-1:111204669101:policy-engine/*",
+        "arn:aws:bedrock-agentcore:us-east-1:111204669101:gateway/*"
+      ]
+    },
+    {
+      "Sid": "OauthProviderSecret",
+      "Effect": "Allow",
+      "Action": [
+        "secretsmanager:GetSecretValue"
+      ],
+      "Resource": "arn:aws:secretsmanager:us-east-1:111204669101:secret:bedrock-agentcore-identity*"
+    },
+    {
+      "Sid": "Observability",
+      "Effect": "Allow",
+      "Action": [
+        "logs:CreateLogGroup",
+        "logs:CreateLogStream",
+        "logs:PutLogEvents",
+        "cloudwatch:PutMetricData"
+      ],
+      "Resource": "*"
+    }
+  ]
+}
