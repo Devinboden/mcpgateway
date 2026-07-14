@@ -1,0 +1,62 @@
+<!doctype html>
+<meta charset="utf-8" />
+<!--
+  Boom Intelligence — a SUBTLE drill-down card. Rendered when boom_explain_metric runs:
+  the agent narrates the read in chat AND this compact card renders the structured analysis
+  (drivers / trend / portfolio context / the read), mirroring Boom's Assistant (small visual + read).
+  Inline only. Self-contained: inline ext-apps bundle, fill via structuredContent.
+-->
+<style>
+  /*__BRAND__*/
+  *{box-sizing:border-box} html,body{margin:0}
+  body{font-family:var(--font);color:var(--body);background:var(--paper);font-size:13px;color-scheme:light dark}
+  .card{max-width:560px;margin:0 auto;padding:14px 16px}
+  .hd{display:flex;align-items:center;gap:8px}
+  .hd .lab{font-size:9.5px;font-weight:800;letter-spacing:.09em;text-transform:uppercase;color:var(--brand)}
+  .hd .dot{width:6px;height:6px;border-radius:50%;background:var(--brand)}
+  .hd .as{margin-left:auto;font-size:10px;color:var(--muted)}
+  h1{font-size:15px;font-weight:700;color:var(--navy);margin:8px 0 2px;line-height:1.25}
+  .metricline{font-size:11px;color:var(--muted);margin-bottom:6px}
+  .sec{font-size:9.5px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin:11px 0 4px}
+  ul{margin:0;padding-left:16px} li{margin:3px 0;line-height:1.42}
+  .kv{font-size:11.5px;line-height:1.5;color:var(--body)}
+  .read{margin-top:12px;padding:10px 12px;background:var(--tint);border-left:3px solid var(--brand);border-radius:0 6px 6px 0;font-size:12.5px;line-height:1.45;color:var(--brand)}
+  .read .rl{display:block;font-size:9px;font-weight:800;letter-spacing:.07em;text-transform:uppercase;margin-bottom:3px}
+  .foot{margin-top:12px;font-size:9.5px;color:var(--muted);border-top:1px solid var(--line);padding-top:8px;display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap}
+  .empty{padding:24px 16px;color:var(--muted);text-align:center}
+</style>
+<div id="root"><div class="empty">Loading analysis…</div></div>
+<script type="module">
+/*__EXT_APPS_BUNDLE__*/
+const { App } = globalThis.ExtApps;
+const esc=(s)=>String(s==null?"":s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
+let DATA=null, app=null;
+const ctx=()=>app?.getHostContext?.()||{};
+
+function render(){
+  const root=document.getElementById("root");
+  if(!DATA){ root.innerHTML='<div class="empty">No analysis available.</div>'; return; }
+  const d=DATA;
+  const drivers=(d.drivers||[]).map(x=>`<li>${esc(x)}</li>`).join("");
+  root.innerHTML=`
+    <div class="card">
+      <div class="hd"><span class="dot"></span><span class="lab">Boom Intelligence</span><span class="as">${esc(d.asOf||"")}</span></div>
+      <h1>${esc(d.headline||d.metric||"Drill-down")}</h1>
+      <div class="metricline">${esc(d.metric||"")}${d.value?` &middot; <b>${esc(d.value)}</b>`:""}${d.company?` &middot; ${esc(d.company)}`:""}</div>
+      ${drivers?`<div class="sec">What's driving it</div><ul>${drivers}</ul>`:""}
+      ${d.trend?`<div class="sec">Trend</div><div class="kv">${esc(d.trend)}</div>`:""}
+      ${d.portfolioContext?`<div class="sec">Portfolio context</div><div class="kv">${esc(d.portfolioContext)}</div>`:""}
+      ${d.read?`<div class="read"><span class="rl">The read</span>${esc(d.read)}</div>`:""}
+      <div class="foot"><span>Boom Intelligence (preview)</span><span class="acc-lockup" aria-label="Credit Memo Reinvented with Accenture">CREDIT MEMO REIN<svg class="v" viewBox="95.1 0 16.1 17" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><polygon fill="#A100FF" points="95.1,12 104.5,8.5 95.1,4.9 95.1,0 111.2,6.5 111.2,10.5 95.1,17"/></svg>ENTED</span></div>
+    </div>`;
+}
+
+(async()=>{
+  app=new App({name:"BoomMetric",version:"1.0.0"},{availableDisplayModes:["inline"]},{autoResize:true});
+  const theme=()=>{try{document.documentElement.classList.toggle("dark",ctx().theme==="dark")}catch{}};
+  app.ontoolresult=(result)=>{ try{ DATA=result?.structuredContent ?? JSON.parse(result.content[0].text); }catch{ DATA=null; } theme(); render(); };
+  app.onhostcontextchanged=()=>{ theme(); render(); };
+  await app.connect();
+  theme(); render();
+})();
+</script>

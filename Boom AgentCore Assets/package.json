@@ -1,0 +1,25 @@
+{
+  "name": "boom-mcp",
+  "version": "0.1.0",
+  "private": true,
+  "description": "MCP connector for the Boom spreading engine (api.boom.build) — raw IS/BS/CF line items by accountCode. Unified stdio + streamable-HTTP transports sharing one tool core.",
+  "type": "module",
+  "bin": {
+    "boom-mcp": "src/stdio.js"
+  },
+  "scripts": {
+    "start": "node src/stdio.js",
+    "test": "node test/smoke.mjs",
+    "dev": "next dev",
+    "build": "next build",
+    "serve": "next start"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "1.29.0",
+    "mcp-handler": "^1.1.0",
+    "next": "^15.1.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "zod": "^3.23.8"
+  }
+}
