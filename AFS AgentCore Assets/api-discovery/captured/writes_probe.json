@@ -1,0 +1,32 @@
+{
+  "_note": "Write-VALIDATION probing. Baseline is a valid call (idempotent on correlationId -> at most one reservation created, reused on re-run). Probes are deliberately malformed -> expected to be REJECTED with no data created. Run: probe.py --config writes_probe.json --allow-writes",
+  "baseUrl": "https://dd3.afsvision.us/webx/api/v1",
+  "endpoints": [
+    {
+      "name": "reserveNumber",
+      "method": "POST",
+      "path": "/reserveNumber",
+      "body": {
+        "correlationId": "DISC-RSV-001",
+        "bankId": "5",
+        "obligorNumber": "13",
+        "reserveType": 2,
+        "expirationDays": 30
+      },
+      "probes": [
+        { "name": "omit-correlationId", "expect": "is correlationId required? msg?", "mutate": { "removeFields": ["correlationId"] } },
+        { "name": "omit-bankId", "expect": "required?", "mutate": { "removeFields": ["bankId"] } },
+        { "name": "omit-obligorNumber", "expect": "required?", "mutate": { "removeFields": ["obligorNumber"] } },
+        { "name": "omit-reserveType", "expect": "required?", "mutate": { "removeFields": ["reserveType"] } },
+        { "name": "omit-expirationDays", "expect": "required?", "mutate": { "removeFields": ["expirationDays"] } },
+        { "name": "bad-reserveType-99", "expect": "enum? valid set?", "mutate": { "setFields": { "reserveType": 99 } } },
+        { "name": "reserveType-collateral-3", "expect": "3=collateral accepted?", "mutate": { "setFields": { "reserveType": 3, "correlationId": "DISC-RSV-COL3" } } },
+        { "name": "nonnumeric-reserveType", "expect": "type coercion / error?", "mutate": { "setFields": { "reserveType": "abc" } } },
+        { "name": "oversize-correlationId-20", "expect": "maxLen 15 enforced?", "mutate": { "setFields": { "correlationId": "ABCDEFGHIJKLMNOPQRST" } } },
+        { "name": "oversize-bankId-5", "expect": "maxLen 4 enforced?", "mutate": { "setFields": { "bankId": "99999" } } },
+        { "name": "nonexistent-obligor", "expect": "FK check? does obligor have to exist?", "mutate": { "setFields": { "obligorNumber": "9999999", "correlationId": "DISC-RSV-NOOBL" } } },
+        { "name": "negative-expirationDays", "expect": "range check?", "mutate": { "setFields": { "expirationDays": -5 } } }
+      ]
+    }
+  ]
+}

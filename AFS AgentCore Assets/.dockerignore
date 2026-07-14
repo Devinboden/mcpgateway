@@ -1,0 +1,16 @@
+# Keep secrets, junk, and dev-only discovery artifacts OUT of the AgentCore image.
+# The original AFS build shipped NO .dockerignore, so `COPY . .` baked in both .env.local
+# (AFS creds — a leak) and ~75 MB of api-discovery specs (waste). Creds come from AgentCore
+# runtime env / Secrets Manager at deploy time; the runtime needs only the picklist JSONs.
+node_modules
+.next
+.env
+.env.*
+!.env.example
+.git
+*.log
+# dev-only API-discovery bulk (not used at runtime)
+api-discovery/specs
+api-discovery/docs/field-model
+api-discovery/captured/read_samples
+api-discovery/tools

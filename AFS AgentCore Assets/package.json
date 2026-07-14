@@ -1,0 +1,22 @@
+{
+  "name": "afs-mcp-v2",
+  "version": "0.1.0",
+  "private": true,
+  "description": "AFS Vision MCP server (Next.js + mcp-handler) — jobs-by-officer, reserve obligation number, and enriched servicing data.",
+  "scripts": {
+    "build:widgets": "node scripts/build-widget.mjs",
+    "dev": "next dev",
+    "build": "node scripts/build-widget.mjs && next build",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "mcp-handler": "^1.0.1",
+    "next": "^15.1.6",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "zod": "^3.24.1"
+  },
+  "engines": {
+    "node": ">=18.18.0"
+  }
+}

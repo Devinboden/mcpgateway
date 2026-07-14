@@ -1,0 +1,800 @@
+{
+ "maturityInd": {
+  "refList": "APPL030",
+  "kind": "fixed",
+  "match": 0.667,
+  "fieldOpts": 3,
+  "refListOpts": 2
+ },
+ "assignmentUnit": {
+  "refList": "*ORG050",
+  "kind": "fixed",
+  "match": 1.0,
+  "fieldOpts": 16,
+  "refListOpts": 16
+ },
+ "serviceUnit": {
+  "refList": "*ORG060",
+  "kind": "fixed",
+  "match": 1.0,
+  "fieldOpts": 7,
+  "refListOpts": 7
+ },
+ "contactOfficer1": {
+  "refList": "*ORG402",
+  "kind": "fixed",
+  "match": 1.0,
+  "fieldOpts": 14,
+  "refListOpts": 14
+ },
+ "underwritingOfficer": {
+  "refList": "*ORG402",
+  "kind": "fixed",
+  "match": 1.0,
+  "fieldOpts": 14,
+  "refListOpts": 14
+ },
+ "securedCode": {
+  "refList": "ACCS203",
+  "kind": "fixed",
+  "match": 0.714,
+  "fieldOpts": 5,
+  "refListOpts": 7
+ },
+ "highlylevTrans": {
+  "refList": "CLRE464",
+  "kind": "fixed",
+  "match": 1.0,
+  "fieldOpts": 2,
+  "refListOpts": 2
+ },
+ "bankTaxCode": {
+  "refList": "CLRE242",
+  "kind": "fixed",
+  "match": 1.0,
+  "fieldOpts": 3,
+  "refListOpts": 3
+ },
+ "frequencyCode": {
+  "refList": "COBB212",
+  "kind": "fixed",
+  "match": 1.0,
+  "fieldOpts": 10,
+  "refListOpts": 10
+ },
+ "limitCode": {
+  "refList": "COBB203",
+  "kind": "fixed",
+  "match": 0.909,
+  "fieldOpts": 10,
+  "refListOpts": 11
+ },
+ "calendarCode": {
+  "refList": "COBB221",
+  "kind": "fixed",
+  "match": 1.0,
+  "fieldOpts": 3,
+  "refListOpts": 3
+ },
+ "sbaProgram": {
+  "refList": "Answers",
+  "kind": "fixed",
+  "match": 1.0,
+  "fieldOpts": 2,
+  "refListOpts": 2
+ },
+ "govrnmtContctPurpse": {
+  "refList": "CLRE464",
+  "kind": "fixed",
+  "match": 1.0,
+  "fieldOpts": 2,
+  "refListOpts": 2
+ },
+ "essentialGovernmentUse": {
+  "refList": "CLRE464",
+  "kind": "fixed",
+  "match": 1.0,
+  "fieldOpts": 2,
+  "refListOpts": 2
+ },
+ "derivitiveInd": {
+  "refList": "CLRE242",
+  "kind": "fixed",
+  "match": 1.0,
+  "fieldOpts": 3,
+  "refListOpts": 3
+ },
+ "prepayCode": {
+  "refList": "CLRE464",
+  "kind": "fixed",
+  "match": 0.667,
+  "fieldOpts": 3,
+  "refListOpts": 2
+ },
+ "billAloneCode": {
+  "refList": "APPL030",
+  "kind": "fixed",
+  "match": 0.667,
+  "fieldOpts": 3,
+  "refListOpts": 2
+ },
+ "lateChargeFormulaType": {
+  "refList": "COBB212",
+  "kind": "fixed",
+  "match": 0.625,
+  "fieldOpts": 16,
+  "refListOpts": 10
+ },
+ "permanentWaiveReason": {
+  "refList": "PRMS206",
+  "kind": "fixed",
+  "match": 0.8,
+  "fieldOpts": 4,
+  "refListOpts": 5
+ },
+ "prnBalPmntOrder": {
+  "refList": "ACCS203",
+  "kind": "fixed",
+  "match": 0.857,
+  "fieldOpts": 6,
+  "refListOpts": 7
+ },
+ "advAftrMatOpt": {
+  "refList": "CLRE242",
+  "kind": "fixed",
+  "match": 1.0,
+  "fieldOpts": 3,
+  "refListOpts": 3
+ },
+ "siteId": {
+  "refList": "CLRE464",
+  "kind": "fixed",
+  "match": 1.0,
+  "fieldOpts": 2,
+  "refListOpts": 2
+ },
+ "currencyCategory": {
+  "refList": "CLRE464",
+  "kind": "fixed",
+  "match": 1.0,
+  "fieldOpts": 2,
+  "refListOpts": 2
+ },
+ "prinRepayInd": {
+  "refList": "Answers",
+  "kind": "fixed",
+  "match": 1.0,
+  "fieldOpts": 2,
+  "refListOpts": 2
+ },
+ "poolEligibility": {
+  "refList": "CLRE242",
+  "kind": "fixed",
+  "match": 0.75,
+  "fieldOpts": 4,
+  "refListOpts": 3
+ },
+ "fallbackLang": {
+  "refList": "CLRE464",
+  "kind": "fixed",
+  "match": 1.0,
+  "fieldOpts": 2,
+  "refListOpts": 2
+ },
+ "recourse": {
+  "refList": "CLRE464",
+  "kind": "fixed",
+  "match": 1.0,
+  "fieldOpts": 2,
+  "refListOpts": 2
+ },
+ "craInd": {
+  "refList": "ACCS203",
+  "kind": "fixed",
+  "match": 0.714,
+  "fieldOpts": 5,
+  "refListOpts": 7
+ },
+ "closeOptionInd": {
+  "refList": "CLRE242",
+  "kind": "fixed",
+  "match": 1.0,
+  "fieldOpts": 3,
+  "refListOpts": 3
+ },
+ "autoWaiveInd": {
+  "refList": "CLRE464",
+  "kind": "fixed",
+  "match": 1.0,
+  "fieldOpts": 2,
+  "refListOpts": 2
+ },
+ "paidLoanEligibility": {
+  "refList": "SUPR215",
+  "kind": "fixed",
+  "match": 0.6,
+  "fieldOpts": 6,
+  "refListOpts": 10
+ },
+ "lobOverride": {
+  "refList": "CLRE464",
+  "kind": "fixed",
+  "match": 1.0,
+  "fieldOpts": 2,
+  "refListOpts": 2
+ },
+ "industryCode": {
+  "refList": "ACCS203",
+  "kind": "fixed",
+  "match": 0.857,
+  "fieldOpts": 6,
+  "refListOpts": 7
+ },
+ "overrideFASBCost": {
+  "refList": "APPL030",
+  "kind": "fixed",
+  "match": 1.0,
+  "fieldOpts": 2,
+  "refListOpts": 2
+ },
+ "onlineBankEligInd": {
+  "refList": "CLRE464",
+  "kind": "fixed",
+  "match": 1.0,
+  "fieldOpts": 2,
+  "refListOpts": 2
+ },
+ "jurisdictionCode": {
+  "refList": "CLRE464",
+  "kind": "fixed",
+  "match": 1.0,
+  "fieldOpts": 2,
+  "refListOpts": 2
+ },
+ "frozenFlag": {
+  "refList": "CLRE464",
+  "kind": "fixed",
+  "match": 1.0,
+  "fieldOpts": 2,
+  "refListOpts": 2
+ },
+ "formula": {
+  "refList": "ACCS203",
+  "kind": "fixed",
+  "match": 0.714,
+  "fieldOpts": 5,
+  "refListOpts": 7
+ },
+ "applicationCollected": {
+  "refList": "Answers",
+  "kind": "fixed",
+  "match": 1.0,
+  "fieldOpts": 2,
+  "refListOpts": 2
+ },
+ "orgLevels8": {
+  "refList": "*ORG050",
+  "kind": "fixed",
+  "match": 1.0,
+  "fieldOpts": 16,
+  "refListOpts": 16
+ },
+ "orgLevels9": {
+  "refList": "*ORG060",
+  "kind": "fixed",
+  "match": 1.0,
+  "fieldOpts": 7,
+  "refListOpts": 7
+ },
+ "orgLevels0": {
+  "refList": "*ORG001",
+  "kind": "fixed",
+  "match": 1.0,
+  "fieldOpts": 4,
+  "refListOpts": 4
+ },
+ "orgLevels1": {
+  "refList": "*ORG002",
+  "kind": "fixed",
+  "match": 1.0,
+  "fieldOpts": 68,
+  "refListOpts": 68
+ },
+ "orgLevels2": {
+  "refList": "*ORG003",
+  "kind": "fixed",
+  "match": 1.0,
+  "fieldOpts": 5,
+  "refListOpts": 5
+ },
+ "orgLevels10": {
+  "refList": "*ORG402",
+  "kind": "fixed",
+  "match": 1.0,
+  "fieldOpts": 14,
+  "refListOpts": 14
+ },
+ "orgLevels11": {
+  "refList": "*ORG402",
+  "kind": "fixed",
+  "match": 1.0,
+  "fieldOpts": 14,
+  "refListOpts": 14
+ },
+ "orgLevels12": {
+  "refList": "*ORG402",
+  "kind": "fixed",
+  "match": 1.0,
+  "fieldOpts": 14,
+  "refListOpts": 14
+ },
+ "orgLevels13": {
+  "refList": "*ORG402",
+  "kind": "fixed",
+  "match": 1.0,
+  "fieldOpts": 14,
+  "refListOpts": 14
+ },
+ "orgLevels14": {
+  "refList": "*ORG402",
+  "kind": "fixed",
+  "match": 1.0,
+  "fieldOpts": 14,
+  "refListOpts": 14
+ },
+ "orgLevels15": {
+  "refList": "*ORG402",
+  "kind": "fixed",
+  "match": 1.0,
+  "fieldOpts": 14,
+  "refListOpts": 14
+ },
+ "orgLevels16": {
+  "refList": "*ORG402",
+  "kind": "fixed",
+  "match": 1.0,
+  "fieldOpts": 14,
+  "refListOpts": 14
+ },
+ "orgLevels17": {
+  "refList": "*ORG402",
+  "kind": "fixed",
+  "match": 1.0,
+  "fieldOpts": 14,
+  "refListOpts": 14
+ },
+ "orgLevels18": {
+  "refList": "*ORG402",
+  "kind": "fixed",
+  "match": 1.0,
+  "fieldOpts": 14,
+  "refListOpts": 14
+ },
+ "orgLevels19": {
+  "refList": "*ORG402",
+  "kind": "fixed",
+  "match": 1.0,
+  "fieldOpts": 14,
+  "refListOpts": 14
+ },
+ "react-select-24-input": {
+  "refList": "Answers",
+  "kind": "fixed",
+  "match": 1.0,
+  "fieldOpts": 2,
+  "refListOpts": 2
+ },
+ "productStructure": {
+  "refList": "Product Structure",
+  "kind": "fixed",
+  "match": 1.0,
+  "fieldOpts": 3,
+  "refListOpts": 3
+ },
+ "letterOfCredit": {
+  "refList": "ilm/pl/LetterOfCreditType",
+  "kind": "dynamic",
+  "match": 1.0,
+  "fieldOpts": 2,
+  "refListOpts": 2
+ },
+ "application": {
+  "refList": "APPL030",
+  "kind": "fixed",
+  "match": 1.0,
+  "fieldOpts": 2,
+  "refListOpts": 2
+ },
+ "costCenter": {
+  "refList": "*ORG050",
+  "kind": "fixed",
+  "match": 1.0,
+  "fieldOpts": 16,
+  "refListOpts": 16
+ },
+ "partSyndi": {
+  "refList": "Answers",
+  "kind": "fixed",
+  "match": 1.0,
+  "fieldOpts": 2,
+  "refListOpts": 2
+ },
+ "submissionInd": {
+  "refList": "APPL030",
+  "kind": "fixed",
+  "match": 0.667,
+  "fieldOpts": 3,
+  "refListOpts": 2
+ },
+ "initiallPayableInd": {
+  "refList": "APPL030",
+  "kind": "fixed",
+  "match": 0.667,
+  "fieldOpts": 3,
+  "refListOpts": 2
+ },
+ "activeInProd": {
+  "refList": "CLRE464",
+  "kind": "fixed",
+  "match": 1.0,
+  "fieldOpts": 2,
+  "refListOpts": 2
+ },
+ "controllingInterest": {
+  "refList": "CLRE464",
+  "kind": "fixed",
+  "match": 1.0,
+  "fieldOpts": 2,
+  "refListOpts": 2
+ },
+ "country": {
+  "refList": "ADDR212",
+  "kind": "fixed",
+  "match": 1.0,
+  "fieldOpts": 265,
+  "refListOpts": 265
+ },
+ "crBurCode": {
+  "refList": "SUPR215",
+  "kind": "fixed",
+  "match": 1.0,
+  "fieldOpts": 10,
+  "refListOpts": 10
+ },
+ "currentOccupancyInd": {
+  "refList": "CLRE242",
+  "kind": "fixed",
+  "match": 1.0,
+  "fieldOpts": 3,
+  "refListOpts": 3
+ },
+ "expirationDateLimit": {
+  "refList": "COBB203",
+  "kind": "fixed",
+  "match": 0.909,
+  "fieldOpts": 10,
+  "refListOpts": 11
+ },
+ "hasAppraisalInfo": {
+  "refList": "Answers",
+  "kind": "fixed",
+  "match": 1.0,
+  "fieldOpts": 2,
+  "refListOpts": 2
+ },
+ "hasInspectionInfo": {
+  "refList": "Answers",
+  "kind": "fixed",
+  "match": 1.0,
+  "fieldOpts": 2,
+  "refListOpts": 2
+ },
+ "hasInsuranceInfo": {
+  "refList": "Answers",
+  "kind": "fixed",
+  "match": 1.0,
+  "fieldOpts": 2,
+  "refListOpts": 2
+ },
+ "hasLienInfo": {
+  "refList": "Answers",
+  "kind": "fixed",
+  "match": 1.0,
+  "fieldOpts": 2,
+  "refListOpts": 2
+ },
+ "hasTenantInfo": {
+  "refList": "Answers",
+  "kind": "fixed",
+  "match": 1.0,
+  "fieldOpts": 2,
+  "refListOpts": 2
+ },
+ "improvementAmountSource": {
+  "refList": "CLRE464",
+  "kind": "fixed",
+  "match": 1.0,
+  "fieldOpts": 2,
+  "refListOpts": 2
+ },
+ "infrastructureAccess": {
+  "refList": "CLRE464",
+  "kind": "fixed",
+  "match": 1.0,
+  "fieldOpts": 2,
+  "refListOpts": 2
+ },
+ "irrigated": {
+  "refList": "CLRE464",
+  "kind": "fixed",
+  "match": 1.0,
+  "fieldOpts": 2,
+  "refListOpts": 2
+ },
+ "isDataAccurate": {
+  "refList": "CLRE464",
+  "kind": "fixed",
+  "match": 1.0,
+  "fieldOpts": 2,
+  "refListOpts": 2
+ },
+ "landContamination": {
+  "refList": "CLRE464",
+  "kind": "fixed",
+  "match": 1.0,
+  "fieldOpts": 2,
+  "refListOpts": 2
+ },
+ "landUseRestriction": {
+  "refList": "CLRE464",
+  "kind": "fixed",
+  "match": 1.0,
+  "fieldOpts": 2,
+  "refListOpts": 2
+ },
+ "noiIndicator": {
+  "refList": "CLRE242",
+  "kind": "fixed",
+  "match": 1.0,
+  "fieldOpts": 3,
+  "refListOpts": 3
+ },
+ "ownershipInterest": {
+  "refList": "CLRE242",
+  "kind": "fixed",
+  "match": 1.0,
+  "fieldOpts": 3,
+  "refListOpts": 3
+ },
+ "pastDueNotice": {
+  "refList": "CLRE464",
+  "kind": "fixed",
+  "match": 1.0,
+  "fieldOpts": 2,
+  "refListOpts": 2
+ },
+ "pctAmtSelector": {
+  "refList": "APPL030",
+  "kind": "fixed",
+  "match": 1.0,
+  "fieldOpts": 2,
+  "refListOpts": 2
+ },
+ "primaryOccupancy": {
+  "refList": "CLRE245",
+  "kind": "fixed",
+  "match": 1.0,
+  "fieldOpts": 14,
+  "refListOpts": 14
+ },
+ "primaryState": {
+  "refList": "ADDR209",
+  "kind": "fixed",
+  "match": 1.0,
+  "fieldOpts": 82,
+  "refListOpts": 82
+ },
+ "propertyCategory": {
+  "refList": "CLRE203",
+  "kind": "fixed",
+  "match": 1.0,
+  "fieldOpts": 4,
+  "refListOpts": 4
+ },
+ "propertyType": {
+  "refList": "CLRE206",
+  "kind": "fixed",
+  "match": 1.0,
+  "fieldOpts": 4,
+  "refListOpts": 4
+ },
+ "release": {
+  "refList": "Answers",
+  "kind": "fixed",
+  "match": 1.0,
+  "fieldOpts": 2,
+  "refListOpts": 2
+ },
+ "safeKeepingCode": {
+  "refList": "CLRE464",
+  "kind": "fixed",
+  "match": 1.0,
+  "fieldOpts": 2,
+  "refListOpts": 2
+ },
+ "searchType": {
+  "refList": "APPL030",
+  "kind": "fixed",
+  "match": 1.0,
+  "fieldOpts": 2,
+  "refListOpts": 2
+ },
+ "state": {
+  "refList": "ADDR209",
+  "kind": "fixed",
+  "match": 1.0,
+  "fieldOpts": 82,
+  "refListOpts": 82
+ },
+ "supportType": {
+  "refList": "ilm/pl/GuaranteeSupportType",
+  "kind": "dynamic",
+  "match": 1.0,
+  "fieldOpts": 9,
+  "refListOpts": 9
+ },
+ "timeZone": {
+  "refList": "ADDR233",
+  "kind": "fixed",
+  "match": 1.0,
+  "fieldOpts": 25,
+  "refListOpts": 25
+ },
+ "waterRights": {
+  "refList": "CLRE464",
+  "kind": "fixed",
+  "match": 1.0,
+  "fieldOpts": 2,
+  "refListOpts": 2
+ },
+ "amtPctInd": {
+  "refList": "APPL030",
+  "kind": "fixed",
+  "match": 1.0,
+  "fieldOpts": 2,
+  "refListOpts": 2
+ },
+ "basis": {
+  "refList": "ACCS203",
+  "kind": "fixed",
+  "match": 1.0,
+  "fieldOpts": 7,
+  "refListOpts": 7
+ },
+ "calc1": {
+  "refList": "PRMS206",
+  "kind": "fixed",
+  "match": 1.0,
+  "fieldOpts": 5,
+  "refListOpts": 5
+ },
+ "ceyFeeInd": {
+  "refList": "CLRE464",
+  "kind": "fixed",
+  "match": 1.0,
+  "fieldOpts": 2,
+  "refListOpts": 2
+ },
+ "chargeType": {
+  "refList": "CHGH200",
+  "kind": "fixed",
+  "match": 1.0,
+  "fieldOpts": 11,
+  "refListOpts": 11
+ },
+ "earningType": {
+  "refList": "CHGH206",
+  "kind": "fixed",
+  "match": 1.0,
+  "fieldOpts": 9,
+  "refListOpts": 9
+ },
+ "feeTitleCode": {
+  "refList": "Fee+Title",
+  "kind": "fixed",
+  "match": 0.778,
+  "fieldOpts": 28,
+  "refListOpts": 36
+ },
+ "indicator": {
+  "refList": "CLRE464",
+  "kind": "fixed",
+  "match": 1.0,
+  "fieldOpts": 2,
+  "refListOpts": 2
+ },
+ "isTiers": {
+  "refList": "Answers",
+  "kind": "fixed",
+  "match": 1.0,
+  "fieldOpts": 2,
+  "refListOpts": 2
+ },
+ "methOfCollection": {
+  "refList": "REPY254",
+  "kind": "fixed",
+  "match": 0.9,
+  "fieldOpts": 9,
+  "refListOpts": 10
+ },
+ "paymentTypeCode": {
+  "refList": "Payment+Type+Code",
+  "kind": "fixed",
+  "match": 1.0,
+  "fieldOpts": 4,
+  "refListOpts": 4
+ },
+ "pricingMethod": {
+  "refList": "Pricing+Method",
+  "kind": "fixed",
+  "match": 1.0,
+  "fieldOpts": 2,
+  "refListOpts": 2
+ },
+ "pricingOption": {
+  "refList": "ilm/pl/PricingOption",
+  "kind": "dynamic",
+  "match": 1.0,
+  "fieldOpts": 2,
+  "refListOpts": 2
+ },
+ "ratingFrequency": {
+  "refList": "COBB212",
+  "kind": "fixed",
+  "match": 1.0,
+  "fieldOpts": 10,
+  "refListOpts": 10
+ },
+ "reasonCode": {
+  "refList": "RSKR203",
+  "kind": "fixed",
+  "match": 1.0,
+  "fieldOpts": 3,
+  "refListOpts": 3
+ },
+ "curtypeInt": {
+  "refList": "*CUR100",
+  "kind": "fixed",
+  "match": 1.0,
+  "fieldOpts": 46,
+  "refListOpts": 46
+ },
+ "curtypeYr1": {
+  "refList": "*CUR100",
+  "kind": "fixed",
+  "match": 1.0,
+  "fieldOpts": 46,
+  "refListOpts": 46
+ },
+ "curtypeYr2": {
+  "refList": "*CUR100",
+  "kind": "fixed",
+  "match": 1.0,
+  "fieldOpts": 46,
+  "refListOpts": 46
+ },
+ "curtypeYr3": {
+  "refList": "*CUR100",
+  "kind": "fixed",
+  "match": 1.0,
+  "fieldOpts": 46,
+  "refListOpts": 46
+ },
+ "indBusInd": {
+  "refList": "CLRE464",
+  "kind": "fixed",
+  "match": 1.0,
+  "fieldOpts": 2,
+  "refListOpts": 2
+ }
+}

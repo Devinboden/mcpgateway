@@ -1,0 +1,210 @@
+{
+ "paramFixes": [
+  {
+   "label": "names/list",
+   "path": "/names/list?search=Piedmont&organizationId=1&nameType=O&sortOrder=A",
+   "status": 400,
+   "fields": 0
+  },
+  {
+   "label": "phones/list",
+   "path": "/phones/list?nameId=46643&sortOrder=A",
+   "status": 400,
+   "fields": 0
+  },
+  {
+   "label": "phones/get",
+   "path": "/phones/get?nameId=46643&phoneSequence=1",
+   "status": 404,
+   "fields": 0
+  },
+  {
+   "label": "obligors/listAllByBank",
+   "path": "/obligors/listAllByBank?bank=5&sortOrder=A",
+   "status": 400,
+   "fields": 0
+  },
+  {
+   "label": "obligors/listByNameId",
+   "path": "/obligors/listByNameId/5?nameId=46643&sortOrder=A",
+   "status": 400,
+   "fields": 0
+  },
+  {
+   "label": "nameAddresses/listAlternateAddresses",
+   "path": "/nameAddresses/listAlternateAddresses?alternameNameId=46643&sortOrder=A",
+   "status": 400,
+   "fields": 0
+  },
+  {
+   "label": "apis/get",
+   "path": "/apis/get?apiName=DisburseFuture",
+   "status": 200,
+   "fields": 43
+  },
+  {
+   "label": "apis/list",
+   "path": "/apis/list?apiNameSearch=&sortOrder=A",
+   "status": 400,
+   "fields": 0
+  },
+  {
+   "label": "apis/listByCategory",
+   "path": "/apis/listByCategory?category=Payment&sortOrder=A",
+   "status": 400,
+   "fields": 0
+  },
+  {
+   "label": "offsetTranCtrl/list",
+   "path": "/offsetTranCtrl/list/5?offsetTrans=1&sortOrder=A",
+   "status": 400,
+   "fields": 0
+  },
+  {
+   "label": "financialHistory/list",
+   "path": "/financialHistory/list/30733?effectiveDate=2026-06-03&sortOrder=A",
+   "status": 400,
+   "fields": 0
+  },
+  {
+   "label": "holderofrecords/allDeals",
+   "path": "/holderofrecords/allDealsForASelectedHolderOfRecord?bankId=5&searchBy=C&customerId=46643&asOfDate=2026-06-25&inAdminRole=N",
+   "status": 400,
+   "fields": 0
+  },
+  {
+   "label": "holderofrecords/allHolders",
+   "path": "/holderofrecords/allHoldersofRecordinDeal?bankId=5&dealNo=34160&inAdminRole=N&asOfDate=2026-06-25",
+   "status": 400,
+   "fields": 0
+  },
+  {
+   "label": "names/getByObligor",
+   "path": "/names/getByObligor/5-34160",
+   "status": 200,
+   "fields": 92
+  },
+  {
+   "label": "listOblnByObg(it=L)",
+   "path": "/financialInstrument/listOblnByObg/5-34160?instrumentType=L&sortOrder=A",
+   "status": 400,
+   "fields": 0
+  },
+  {
+   "label": "listOblnByObg(it=C)",
+   "path": "/financialInstrument/listOblnByObg/5-34160?instrumentType=C&sortOrder=A",
+   "status": 400,
+   "fields": 0
+  },
+  {
+   "label": "listOblnByObg(it=F)",
+   "path": "/financialInstrument/listOblnByObg/5-34160?instrumentType=F&sortOrder=A",
+   "status": 400,
+   "fields": 0
+  },
+  {
+   "label": "listOblnByObg(it=B)",
+   "path": "/financialInstrument/listOblnByObg/5-34160?instrumentType=B&sortOrder=A",
+   "status": 400,
+   "fields": 0
+  },
+  {
+   "label": "listOblnByObg(it=none)",
+   "path": "/financialInstrument/listOblnByObg/5-34160?instrumentType=&sortOrder=A",
+   "status": 400,
+   "fields": 0
+  },
+  {
+   "label": "listOblnByObg(it=ALL)",
+   "path": "/financialInstrument/listOblnByObg/5-34160?instrumentType=ALL&sortOrder=A",
+   "status": 400,
+   "fields": 0
+  },
+  {
+   "label": "listOblnByObg(it=1)",
+   "path": "/financialInstrument/listOblnByObg/5-34160?instrumentType=1&sortOrder=A",
+   "status": 400,
+   "fields": 0
+  },
+  {
+   "label": "listOblnByObg(it=2)",
+   "path": "/financialInstrument/listOblnByObg/5-34160?instrumentType=2&sortOrder=A",
+   "status": 400,
+   "fields": 0
+  },
+  {
+   "label": "listOblnByObg(it=0)",
+   "path": "/financialInstrument/listOblnByObg/5-34160?instrumentType=0&sortOrder=A",
+   "status": 400,
+   "fields": 0
+  }
+ ],
+ "wpReads": [
+  {
+   "label": "wp/ObligorRoot",
+   "path": "/wp/ObligorRoot/28476",
+   "status": 400,
+   "fields": 0
+  },
+  {
+   "label": "wp/ObligationRoot",
+   "path": "/wp/ObligationRoot/28476",
+   "status": 400,
+   "fields": 0
+  },
+  {
+   "label": "wp/CollateralRoot",
+   "path": "/wp/CollateralRoot/32591",
+   "status": 400,
+   "fields": 0
+  },
+  {
+   "label": "wp/commercialPost",
+   "path": "/wp/commercialPost/32591",
+   "status": 200,
+   "fields": 1
+  },
+  {
+   "label": "wp/exceptionCollateral",
+   "path": "/wp/exceptionCollateral/32591",
+   "status": 400,
+   "fields": 0
+  },
+  {
+   "label": "wp/exceptionCovenants",
+   "path": "/wp/exceptionCovenants/32591",
+   "status": 400,
+   "fields": 0
+  },
+  {
+   "label": "wp/exceptionEntity",
+   "path": "/wp/exceptionEntity/32591",
+   "status": 400,
+   "fields": 0
+  },
+  {
+   "label": "wp/exceptionCreditPolicy",
+   "path": "/wp/exceptionCreditPolicy/32591",
+   "status": 400,
+   "fields": 0
+  },
+  {
+   "label": "wp/exceptionRequirements",
+   "path": "/wp/exceptionRequirements/32591",
+   "status": 400,
+   "fields": 0
+  },
+  {
+   "label": "wp/otherFinancials2",
+   "path": "/wp/otherFinancials2/32591",
+   "status": 400,
+   "fields": 0
+  },
+  {
+   "label": "wp/ExceptionType",
+   "path": "/wp/ExceptionType/32591",
+   "status": 400,
+   "fields": 0
+  }
+ ]
+}

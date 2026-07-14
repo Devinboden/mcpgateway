@@ -1,0 +1,2770 @@
+{
+  "_note": "ALL read services, no pattern param. Seed keys from build_endpoints.VARS.",
+  "baseUrl": "https://dd3.afsvision.us/webx/api/v1",
+  "endpoints": [
+    {
+      "name": "accrualSchedules__get",
+      "method": "GET",
+      "path": "/accrualSchedules/get/{obligationId}-{chargeCode}",
+      "query": {
+        "rowLimit": "5"
+      },
+      "pathParams": {
+        "obligationId": "24096",
+        "chargeCode": "1000"
+      }
+    },
+    {
+      "name": "accrualSchedules__getFullKey",
+      "method": "GET",
+      "path": "/accrualSchedules/getFullKey/{bank}-{obligor}-{obligation}-{chargeCode}",
+      "query": {
+        "rowLimit": "5"
+      },
+      "pathParams": {
+        "bank": "5",
+        "obligor": "13",
+        "obligation": "18",
+        "chargeCode": "1000"
+      }
+    },
+    {
+      "name": "accrualSchedules__list",
+      "method": "GET",
+      "path": "/accrualSchedules/list/{obligationId}-{chargeCode}",
+      "query": {
+        "rowLimit": "5"
+      },
+      "pathParams": {
+        "obligationId": "24096",
+        "chargeCode": "1000"
+      }
+    },
+    {
+      "name": "accrualSchedules__listFullKey",
+      "method": "GET",
+      "path": "/accrualSchedules/listFullKey/{bank}-{obligor}-{obligation}-{chargeCode}",
+      "query": {
+        "rowLimit": "5"
+      },
+      "pathParams": {
+        "bank": "5",
+        "obligor": "13",
+        "obligation": "18",
+        "chargeCode": "1000"
+      }
+    },
+    {
+      "name": "addresses__get",
+      "method": "GET",
+      "path": "/addresses/get/{addressId}",
+      "query": {
+        "rowLimit": "5"
+      },
+      "pathParams": {
+        "addressId": "8149"
+      }
+    },
+    {
+      "name": "addresses__getPrimaryAddrByNameId",
+      "method": "GET",
+      "path": "/addresses/getPrimaryAddrByNameId",
+      "query": {
+        "rowLimit": "5",
+        "nameId": "7866"
+      }
+    },
+    {
+      "name": "amortizationSchedCharge__get",
+      "method": "GET",
+      "path": "/amortizationSchedCharge/get/{obligationId}-{type}-{chargeCode}",
+      "query": {
+        "rowLimit": "5"
+      },
+      "pathParams": {
+        "obligationId": "24096",
+        "chargeCode": "1000"
+      },
+      "_missing_params": [
+        "type"
+      ]
+    },
+    {
+      "name": "amortizationSchedCharge__getFullKey",
+      "method": "GET",
+      "path": "/amortizationSchedCharge/getFullKey/{bank}-{obligor}-{obligation}-{type}-{chargeCode}",
+      "query": {
+        "rowLimit": "5"
+      },
+      "pathParams": {
+        "bank": "5",
+        "obligor": "13",
+        "obligation": "18",
+        "chargeCode": "1000"
+      },
+      "_missing_params": [
+        "type"
+      ]
+    },
+    {
+      "name": "amortizationSchedCharge__list",
+      "method": "GET",
+      "path": "/amortizationSchedCharge/list/{obligationId}-{type}",
+      "query": {
+        "rowLimit": "5"
+      },
+      "pathParams": {
+        "obligationId": "24096"
+      },
+      "_missing_params": [
+        "type"
+      ]
+    },
+    {
+      "name": "amortizationSchedCharge__listFullKey",
+      "method": "GET",
+      "path": "/amortizationSchedCharge/listFullKey/{bank}-{obligor}-{obligation}-{type}",
+      "query": {
+        "rowLimit": "5"
+      },
+      "pathParams": {
+        "bank": "5",
+        "obligor": "13",
+        "obligation": "18"
+      },
+      "_missing_params": [
+        "type"
+      ]
+    },
+    {
+      "name": "amortizationSchedule__get",
+      "method": "GET",
+      "path": "/amortizationSchedule/get/{obligationId}-{type}",
+      "query": {
+        "rowLimit": "5"
+      },
+      "pathParams": {
+        "obligationId": "24096"
+      },
+      "_missing_params": [
+        "type"
+      ]
+    },
+    {
+      "name": "amortizationSchedule__getFullKey",
+      "method": "GET",
+      "path": "/amortizationSchedule/getFullKey/{bank}-{obligor}-{obligation}-{type}",
+      "query": {
+        "rowLimit": "5"
+      },
+      "pathParams": {
+        "bank": "5",
+        "obligor": "13",
+        "obligation": "18"
+      },
+      "_missing_params": [
+        "type"
+      ]
+    },
+    {
+      "name": "amortizationSchedule__list",
+      "method": "GET",
+      "path": "/amortizationSchedule/list/{obligationId}-{type}",
+      "query": {
+        "rowLimit": "5"
+      },
+      "pathParams": {
+        "obligationId": "24096"
+      },
+      "_missing_params": [
+        "type"
+      ]
+    },
+    {
+      "name": "amortizationSchedule__listFullKey",
+      "method": "GET",
+      "path": "/amortizationSchedule/listFullKey/{bank}-{obligor}-{obligation}-{type}",
+      "query": {
+        "rowLimit": "5"
+      },
+      "pathParams": {
+        "bank": "5",
+        "obligor": "13",
+        "obligation": "18"
+      },
+      "_missing_params": [
+        "type"
+      ]
+    },
+    {
+      "name": "amortizationSchedule__listByOblnId",
+      "method": "GET",
+      "path": "/amortizationSchedule/listByOblnId/{obligationId}",
+      "query": {
+        "rowLimit": "5"
+      },
+      "pathParams": {
+        "obligationId": "24096"
+      }
+    },
+    {
+      "name": "apis__get",
+      "method": "GET",
+      "path": "/apis/get",
+      "query": {
+        "rowLimit": "5"
+      }
+    },
+    {
+      "name": "apis__list",
+      "method": "GET",
+      "path": "/apis/list",
+      "query": {
+        "rowLimit": "5"
+      }
+    },
+    {
+      "name": "apis__listByCategory",
+      "method": "GET",
+      "path": "/apis/listByCategory",
+      "query": {
+        "rowLimit": "5"
+      }
+    },
+    {
+      "name": "apis__listCategories",
+      "method": "GET",
+      "path": "/apis/listCategories",
+      "query": {
+        "rowLimit": "5"
+      }
+    },
+    {
+      "name": "assetSales__get",
+      "method": "GET",
+      "path": "/assetSales/get/{obligationId}",
+      "query": {
+        "rowLimit": "5"
+      },
+      "pathParams": {
+        "obligationId": "24096"
+      }
+    },
+    {
+      "name": "assetSales__getFullKey",
+      "method": "GET",
+      "path": "/assetSales/getFullKey/{bank}-{obligor}-{obligation}",
+      "query": {
+        "rowLimit": "5"
+      },
+      "pathParams": {
+        "bank": "5",
+        "obligor": "13",
+        "obligation": "18"
+      }
+    },
+    {
+      "name": "assetSales__list",
+      "method": "GET",
+      "path": "/assetSales/list/{obligationId}",
+      "query": {
+        "rowLimit": "5"
+      },
+      "pathParams": {
+        "obligationId": "24096"
+      }
+    },
+    {
+      "name": "assetSales__listFullKey",
+      "method": "GET",
+      "path": "/assetSales/listFullKey/{bank}-{obligor}-{obligation}",
+      "query": {
+        "rowLimit": "5"
+      },
+      "pathParams": {
+        "bank": "5",
+        "obligor": "13",
+        "obligation": "18"
+      }
+    },
+    {
+      "name": "balances__get",
+      "method": "GET",
+      "path": "/balances/get/{obligationId}-{balanceCode}",
+      "query": {
+        "rowLimit": "5"
+      },
+      "pathParams": {
+        "obligationId": "24096"
+      },
+      "_missing_params": [
+        "balanceCode"
+      ]
+    },
+    {
+      "name": "balances__getFullKey",
+      "method": "GET",
+      "path": "/balances/getFullKey/{bank}-{obligor}-{obligation}-{balanceCode}",
+      "query": {
+        "rowLimit": "5"
+      },
+      "pathParams": {
+        "bank": "5",
+        "obligor": "13",
+        "obligation": "18"
+      },
+      "_missing_params": [
+        "balanceCode"
+      ]
+    },
+    {
+      "name": "balances__list",
+      "method": "GET",
+      "path": "/balances/list/{obligationId}",
+      "query": {
+        "rowLimit": "5"
+      },
+      "pathParams": {
+        "obligationId": "24096"
+      }
+    },
+    {
+      "name": "balances__listFullKey",
+      "method": "GET",
+      "path": "/balances/listFullKey/{bank}-{obligor}-{obligation}",
+      "query": {
+        "rowLimit": "5"
+      },
+      "pathParams": {
+        "bank": "5",
+        "obligor": "13",
+        "obligation": "18"
+      }
+    },
+    {
+      "name": "banks__get",
+      "method": "GET",
+      "path": "/banks/get/{bank}",
+      "query": {
+        "rowLimit": "5"
+      },
+      "pathParams": {
+        "bank": "5"
+      }
+    },
+    {
+      "name": "banks__list",
+      "method": "GET",
+      "path": "/banks/list",
+      "query": {
+        "rowLimit": "5",
+        "organizationId": "1"
+      }
+    },
+    {
+      "name": "billingSchedules__get",
+      "method": "GET",
+      "path": "/billingSchedules/get/{obligationId}-{chargeCode}",
+      "query": {
+        "rowLimit": "5"
+      },
+      "pathParams": {
+        "obligationId": "24096",
+        "chargeCode": "1000"
+      }
+    },
+    {
+      "name": "billingSchedules__getFullKey",
+      "method": "GET",
+      "path": "/billingSchedules/getFullKey/{bank}-{obligor}-{obligation}-{chargeCode}",
+      "query": {
+        "rowLimit": "5"
+      },
+      "pathParams": {
+        "bank": "5",
+        "obligor": "13",
+        "obligation": "18",
+        "chargeCode": "1000"
+      }
+    },
+    {
+      "name": "billingSchedules__list",
+      "method": "GET",
+      "path": "/billingSchedules/list/{obligationId}-{chargeCode}",
+      "query": {
+        "rowLimit": "5"
+      },
+      "pathParams": {
+        "obligationId": "24096",
+        "chargeCode": "1000"
+      }
+    },
+    {
+      "name": "billingSchedules__listFullKey",
+      "method": "GET",
+      "path": "/billingSchedules/listFullKey/{bank}-{obligor}-{obligation}-{chargeCode}",
+      "query": {
+        "rowLimit": "5"
+      },
+      "pathParams": {
+        "bank": "5",
+        "obligor": "13",
+        "obligation": "18",
+        "chargeCode": "1000"
+      }
+    },
+    {
+      "name": "charges__get",
+      "method": "GET",
+      "path": "/charges/get/{obligationId}-{chargeCode}",
+      "query": {
+        "rowLimit": "5"
+      },
+      "pathParams": {
+        "obligationId": "24096",
+        "chargeCode": "1000"
+      }
+    },
+    {
+      "name": "charges__getFullKey",
+      "method": "GET",
+      "path": "/charges/getFullKey/{bank}-{obligor}-{obligation}-{chargeCode}",
+      "query": {
+        "rowLimit": "5"
+      },
+      "pathParams": {
+        "bank": "5",
+        "obligor": "13",
+        "obligation": "18",
+        "chargeCode": "1000"
+      }
+    },
+    {
+      "name": "charges__list",
+      "method": "GET",
+      "path": "/charges/list/{obligationId}",
+      "query": {
+        "rowLimit": "5"
+      },
+      "pathParams": {
+        "obligationId": "24096"
+      }
+    },
+    {
+      "name": "charges__listFullKey",
+      "method": "GET",
+      "path": "/charges/listFullKey/{bank}-{obligor}-{obligation}",
+      "query": {
+        "rowLimit": "5"
+      },
+      "pathParams": {
+        "bank": "5",
+        "obligor": "13",
+        "obligation": "18"
+      }
+    },
+    {
+      "name": "citizenships__get",
+      "method": "GET",
+      "path": "/citizenships/get/{nameId}-{sequence}",
+      "query": {
+        "rowLimit": "5"
+      },
+      "pathParams": {
+        "nameId": "7866"
+      },
+      "_missing_params": [
+        "sequence"
+      ]
+    },
+    {
+      "name": "citizenships__list",
+      "method": "GET",
+      "path": "/citizenships/list/{nameId}",
+      "query": {
+        "rowLimit": "5"
+      },
+      "pathParams": {
+        "nameId": "7866"
+      }
+    },
+    {
+      "name": "collateral__get",
+      "method": "GET",
+      "path": "/collateral/get/{bank}-{obligor}-{collateralItem}",
+      "query": {
+        "rowLimit": "5"
+      },
+      "pathParams": {
+        "bank": "5",
+        "obligor": "13",
+        "collateralItem": "18"
+      }
+    },
+    {
+      "name": "collateral__list",
+      "method": "GET",
+      "path": "/collateral/list/{bank}-{obligor}",
+      "query": {
+        "rowLimit": "5"
+      },
+      "pathParams": {
+        "bank": "5",
+        "obligor": "13"
+      }
+    },
+    {
+      "name": "collateralInsurance__get",
+      "method": "GET",
+      "path": "/collateralInsurance/get/{bank}-{obligor}-{collateralItem}-{sequence}",
+      "query": {
+        "rowLimit": "5"
+      },
+      "pathParams": {
+        "bank": "5",
+        "obligor": "13",
+        "collateralItem": "18"
+      },
+      "_missing_params": [
+        "sequence"
+      ]
+    },
+    {
+      "name": "collateralInsurance__list",
+      "method": "GET",
+      "path": "/collateralInsurance/list/{bank}-{obligor}-{collateralItem}",
+      "query": {
+        "rowLimit": "5"
+      },
+      "pathParams": {
+        "bank": "5",
+        "obligor": "13",
+        "collateralItem": "18"
+      }
+    },
+    {
+      "name": "collateralNegotiable__get",
+      "method": "GET",
+      "path": "/collateralNegotiable/get/{bank}-{obligor}-{collateralItem}",
+      "query": {
+        "rowLimit": "5"
+      },
+      "pathParams": {
+        "bank": "5",
+        "obligor": "13",
+        "collateralItem": "18"
+      }
+    },
+    {
+      "name": "collateralNegotiable__list",
+      "method": "GET",
+      "path": "/collateralNegotiable/list/{bank}-{obligor}",
+      "query": {
+        "rowLimit": "5"
+      },
+      "pathParams": {
+        "bank": "5",
+        "obligor": "13"
+      }
+    },
+    {
+      "name": "collBorrowingBase__get",
+      "method": "GET",
+      "path": "/collBorrowingBase/get/{bank}-{obligor}-{collateralItem}",
+      "query": {
+        "rowLimit": "5"
+      },
+      "pathParams": {
+        "bank": "5",
+        "obligor": "13",
+        "collateralItem": "18"
+      }
+    },
+    {
+      "name": "collFloodFilings__get",
+      "method": "GET",
+      "path": "/collFloodFilings/get/{bank}-{obligor}-{collateralItem}-{sequence}",
+      "query": {
+        "rowLimit": "5"
+      },
+      "pathParams": {
+        "bank": "5",
+        "obligor": "13",
+        "collateralItem": "18"
+      },
+      "_missing_params": [
+        "sequence"
+      ]
+    },
+    {
+      "name": "collFloodFilings__list",
+      "method": "GET",
+      "path": "/collFloodFilings/list/{bank}-{obligor}-{collateralItem}",
+      "query": {
+        "rowLimit": "5"
+      },
+      "pathParams": {
+        "bank": "5",
+        "obligor": "13",
+        "collateralItem": "18"
+      }
+    },
+    {
+      "name": "collNegotHistory__get",
+      "method": "GET",
+      "path": "/collNegotHistory/get/{bank}-{obligor}-{collateralItem}",
+      "query": {
+        "rowLimit": "5"
+      },
+      "pathParams": {
+        "bank": "5",
+        "obligor": "13",
+        "collateralItem": "18"
+      }
+    },
+    {
+      "name": "collNegotHistory__list",
+      "method": "GET",
+      "path": "/collNegotHistory/list/{bank}-{obligor}-{collateralItem}",
+      "query": {
+        "rowLimit": "5"
+      },
+      "pathParams": {
+        "bank": "5",
+        "obligor": "13",
+        "collateralItem": "18"
+      }
+    },
+    {
+      "name": "collNegotReprice__get",
+      "method": "GET",
+      "path": "/collNegotReprice/get/{bank}",
+      "query": {
+        "rowLimit": "5"
+      },
+      "pathParams": {
+        "bank": "5"
+      }
+    },
+    {
+      "name": "collNegotReprice__list",
+      "method": "GET",
+      "path": "/collNegotReprice/list/{bank}",
+      "query": {
+        "rowLimit": "5"
+      },
+      "pathParams": {
+        "bank": "5"
+      }
+    },
+    {
+      "name": "collRealEstate__get",
+      "method": "GET",
+      "path": "/collRealEstate/get/{bank}-{obligor}-{collateralItem}",
+      "query": {
+        "rowLimit": "5"
+      },
+      "pathParams": {
+        "bank": "5",
+        "obligor": "13",
+        "collateralItem": "18"
+      }
+    },
+    {
+      "name": "collRETenant__get",
+      "method": "GET",
+      "path": "/collRETenant/get/{bank}-{obligor}-{collateralItem}-{tenantSequence}",
+      "query": {
+        "rowLimit": "5"
+      },
+      "pathParams": {
+        "bank": "5",
+        "obligor": "13",
+        "collateralItem": "18"
+      },
+      "_missing_params": [
+        "tenantSequence"
+      ]
+    },
+    {
+      "name": "collRETenant__list",
+      "method": "GET",
+      "path": "/collRETenant/list/{bank}-{obligor}-{collateralItem}",
+      "query": {
+        "rowLimit": "5"
+      },
+      "pathParams": {
+        "bank": "5",
+        "obligor": "13",
+        "collateralItem": "18"
+      }
+    },
+    {
+      "name": "currentObligations__get",
+      "method": "GET",
+      "path": "/currentObligations/get/{obligationId}",
+      "query": {
+        "rowLimit": "5"
+      },
+      "pathParams": {
+        "obligationId": "24096"
+      }
+    },
+    {
+      "name": "currentObligations__getFullKey",
+      "method": "GET",
+      "path": "/currentObligations/getFullKey/{bank}-{obligor}-{obligation}",
+      "query": {
+        "rowLimit": "5"
+      },
+      "pathParams": {
+        "bank": "5",
+        "obligor": "13",
+        "obligation": "18"
+      }
+    },
+    {
+      "name": "customCollateral__get",
+      "method": "GET",
+      "path": "/customCollateral/get/{bank}-{obligor}-{collateralItem}",
+      "query": {
+        "rowLimit": "5"
+      },
+      "pathParams": {
+        "bank": "5",
+        "obligor": "13",
+        "collateralItem": "18"
+      }
+    },
+    {
+      "name": "customCollateral__list",
+      "method": "GET",
+      "path": "/customCollateral/list/{bank}-{obligor}-{collateralItem}",
+      "query": {
+        "rowLimit": "5"
+      },
+      "pathParams": {
+        "bank": "5",
+        "obligor": "13",
+        "collateralItem": "18"
+      }
+    },
+    {
+      "name": "customDeal__get",
+      "method": "GET",
+      "path": "/customDeal/get/{bank}-{dealId}",
+      "query": {
+        "rowLimit": "5"
+      },
+      "pathParams": {
+        "bank": "5"
+      },
+      "_missing_params": [
+        "dealId"
+      ]
+    },
+    {
+      "name": "customDeal__list",
+      "method": "GET",
+      "path": "/customDeal/list/{bank}-{dealId}",
+      "query": {
+        "rowLimit": "5"
+      },
+      "pathParams": {
+        "bank": "5"
+      },
+      "_missing_params": [
+        "dealId"
+      ]
+    },
+    {
+      "name": "customerIdentifications__get",
+      "method": "GET",
+      "path": "/customerIdentifications/get/{nameId}-{sequence}",
+      "query": {
+        "rowLimit": "5"
+      },
+      "pathParams": {
+        "nameId": "7866"
+      },
+      "_missing_params": [
+        "sequence"
+      ]
+    },
+    {
+      "name": "customerIdentifications__list",
+      "method": "GET",
+      "path": "/customerIdentifications/list/{nameId}",
+      "query": {
+        "rowLimit": "5"
+      },
+      "pathParams": {
+        "nameId": "7866"
+      }
+    },
+    {
+      "name": "customEscrow__get",
+      "method": "GET",
+      "path": "/customEscrow/get/{obligationId}",
+      "query": {
+        "rowLimit": "5"
+      },
+      "pathParams": {
+        "obligationId": "24096"
+      }
+    },
+    {
+      "name": "customEscrow__list",
+      "method": "GET",
+      "path": "/customEscrow/list/{obligationId}",
+      "query": {
+        "rowLimit": "5"
+      },
+      "pathParams": {
+        "obligationId": "24096"
+      }
+    },
+    {
+      "name": "customName__get",
+      "method": "GET",
+      "path": "/customName/get/{nameId}",
+      "query": {
+        "rowLimit": "5"
+      },
+      "pathParams": {
+        "nameId": "7866"
+      }
+    },
+    {
+      "name": "customName__list",
+      "method": "GET",
+      "path": "/customName/list/{nameId}",
+      "query": {
+        "rowLimit": "5"
+      },
+      "pathParams": {
+        "nameId": "7866"
+      }
+    },
+    {
+      "name": "customObligation__get",
+      "method": "GET",
+      "path": "/customObligation/get/{obligationId}",
+      "query": {
+        "rowLimit": "5"
+      },
+      "pathParams": {
+        "obligationId": "24096"
+      }
+    },
+    {
+      "name": "customObligation__list",
+      "method": "GET",
+      "path": "/customObligation/list/{obligationId}",
+      "query": {
+        "rowLimit": "5"
+      },
+      "pathParams": {
+        "obligationId": "24096"
+      }
+    },
+    {
+      "name": "customObligor__get",
+      "method": "GET",
+      "path": "/customObligor/get/{bank}-{obligor}",
+      "query": {
+        "rowLimit": "5"
+      },
+      "pathParams": {
+        "bank": "5",
+        "obligor": "13"
+      }
+    },
+    {
+      "name": "customObligor__list",
+      "method": "GET",
+      "path": "/customObligor/list/{bank}-{obligor}",
+      "query": {
+        "rowLimit": "5"
+      },
+      "pathParams": {
+        "bank": "5",
+        "obligor": "13"
+      }
+    },
+    {
+      "name": "customObligorApplication__get",
+      "method": "GET",
+      "path": "/customObligorApplication/get/{bank}-{obligor}-{application}",
+      "query": {
+        "rowLimit": "5"
+      },
+      "pathParams": {
+        "bank": "5",
+        "obligor": "13",
+        "application": "1"
+      }
+    },
+    {
+      "name": "customObligorApplication__list",
+      "method": "GET",
+      "path": "/customObligorApplication/list/{bank}-{obligor}-{application}",
+      "query": {
+        "rowLimit": "5"
+      },
+      "pathParams": {
+        "bank": "5",
+        "obligor": "13",
+        "application": "1"
+      }
+    },
+    {
+      "name": "depositInstructions__get",
+      "method": "GET",
+      "path": "/depositInstructions/get/{nameId}-{sequence}-{depositInstructionId}",
+      "query": {
+        "rowLimit": "5"
+      },
+      "pathParams": {
+        "nameId": "7866"
+      },
+      "_missing_params": [
+        "sequence",
+        "depositInstructionId"
+      ]
+    },
+    {
+      "name": "depositInstructions__list",
+      "method": "GET",
+      "path": "/depositInstructions/list/{nameId}-{sequence}",
+      "query": {
+        "rowLimit": "5"
+      },
+      "pathParams": {
+        "nameId": "7866"
+      },
+      "_missing_params": [
+        "sequence"
+      ]
+    },
+    {
+      "name": "exposure__listCustomer",
+      "method": "GET",
+      "path": "/exposure/listCustomer/{nameId}",
+      "query": {
+        "rowLimit": "5"
+      },
+      "pathParams": {
+        "nameId": "7866"
+      }
+    },
+    {
+      "name": "exposure__listObligor",
+      "method": "GET",
+      "path": "/exposure/listObligor/{bank}-{obligor}",
+      "query": {
+        "rowLimit": "5"
+      },
+      "pathParams": {
+        "bank": "5",
+        "obligor": "13"
+      }
+    },
+    {
+      "name": "financialHistory__get",
+      "method": "GET",
+      "path": "/financialHistory/get/{obligationId}",
+      "query": {
+        "rowLimit": "5"
+      },
+      "pathParams": {
+        "obligationId": "24096"
+      }
+    },
+    {
+      "name": "financialHistory__list",
+      "method": "GET",
+      "path": "/financialHistory/list/{obligationId}",
+      "query": {
+        "rowLimit": "5"
+      },
+      "pathParams": {
+        "obligationId": "24096"
+      }
+    },
+    {
+      "name": "financialHistory__numberOfDays",
+      "method": "GET",
+      "path": "/financialHistory/numberOfDays/{obligationId}",
+      "query": {
+        "rowLimit": "5"
+      },
+      "pathParams": {
+        "obligationId": "24096"
+      }
+    },
+    {
+      "name": "financialHistory__effectiveFrom",
+      "method": "GET",
+      "path": "/financialHistory/effectiveFrom/{obligationId}",
+      "query": {
+        "rowLimit": "5"
+      },
+      "pathParams": {
+        "obligationId": "24096"
+      }
+    },
+    {
+      "name": "financialHistory__listAllById",
+      "method": "GET",
+      "path": "/financialHistory/listAllById/{obligationId}",
+      "query": {
+        "rowLimit": "5"
+      },
+      "pathParams": {
+        "obligationId": "24096"
+      }
+    },
+    {
+      "name": "financialHistorySchedAct__get",
+      "method": "GET",
+      "path": "/financialHistorySchedAct/get/{obligationId}-{sequence}",
+      "query": {
+        "rowLimit": "5"
+      },
+      "pathParams": {
+        "obligationId": "24096"
+      },
+      "_missing_params": [
+        "sequence"
+      ]
+    },
+    {
+      "name": "financialHistorySchedAct__list",
+      "method": "GET",
+      "path": "/financialHistorySchedAct/list/{obligationId}",
+      "query": {
+        "rowLimit": "5"
+      },
+      "pathParams": {
+        "obligationId": "24096"
+      }
+    },
+    {
+      "name": "financialInstrument__get",
+      "method": "GET",
+      "path": "/financialInstrument/get/{financialInstrumentId}",
+      "query": {
+        "rowLimit": "5"
+      },
+      "pathParams": {
+        "financialInstrumentId": "24096"
+      }
+    },
+    {
+      "name": "financialInstrument__getFullKey",
+      "method": "GET",
+      "path": "/financialInstrument/getFullKey/{bank}-{obligor}-{application}-{fiNumber}",
+      "query": {
+        "rowLimit": "5"
+      },
+      "pathParams": {
+        "bank": "5",
+        "obligor": "13",
+        "application": "1",
+        "fiNumber": "42"
+      }
+    },
+    {
+      "name": "financialInstrument__listOblnByObg",
+      "method": "GET",
+      "path": "/financialInstrument/listOblnByObg/{bank}-{obligor}",
+      "query": {
+        "rowLimit": "5"
+      },
+      "pathParams": {
+        "bank": "5",
+        "obligor": "13"
+      }
+    },
+    {
+      "name": "financialInstrument__listOblnByObgAppl",
+      "method": "GET",
+      "path": "/financialInstrument/listOblnByObgAppl/{bank}-{obligor}-{application}",
+      "query": {
+        "rowLimit": "5"
+      },
+      "pathParams": {
+        "bank": "5",
+        "obligor": "13",
+        "application": "1"
+      }
+    },
+    {
+      "name": "financialInstrument__listAllByObligor",
+      "method": "GET",
+      "path": "/financialInstrument/listAllByObligor/{bank}-{obligor}",
+      "query": {
+        "rowLimit": "5"
+      },
+      "pathParams": {
+        "bank": "5",
+        "obligor": "13"
+      }
+    },
+    {
+      "name": "financialInstrument__listAllByObligorAppl",
+      "method": "GET",
+      "path": "/financialInstrument/listAllByObligorAppl/{bank}-{obligor}-{application}",
+      "query": {
+        "rowLimit": "5"
+      },
+      "pathParams": {
+        "bank": "5",
+        "obligor": "13",
+        "application": "1"
+      }
+    },
+    {
+      "name": "flatFees__get",
+      "method": "GET",
+      "path": "/flatFees/get/{obligationId}-{chargeCode}",
+      "query": {
+        "rowLimit": "5"
+      },
+      "pathParams": {
+        "obligationId": "24096",
+        "chargeCode": "1000"
+      }
+    },
+    {
+      "name": "flatFees__getFullKey",
+      "method": "GET",
+      "path": "/flatFees/getFullKey/{bank}-{obligor}-{obligation}-{chargeCode}",
+      "query": {
+        "rowLimit": "5"
+      },
+      "pathParams": {
+        "bank": "5",
+        "obligor": "13",
+        "obligation": "18",
+        "chargeCode": "1000"
+      }
+    },
+    {
+      "name": "flatFees__list",
+      "method": "GET",
+      "path": "/flatFees/list/{obligationId}",
+      "query": {
+        "rowLimit": "5"
+      },
+      "pathParams": {
+        "obligationId": "24096"
+      }
+    },
+    {
+      "name": "flatFees__listFullKey",
+      "method": "GET",
+      "path": "/flatFees/listFullKey/{bank}-{obligor}-{obligation}",
+      "query": {
+        "rowLimit": "5"
+      },
+      "pathParams": {
+        "bank": "5",
+        "obligor": "13",
+        "obligation": "18"
+      }
+    },
+    {
+      "name": "futureObligations__get",
+      "method": "GET",
+      "path": "/futureObligations/get/{obligationId}",
+      "query": {
+        "rowLimit": "5"
+      },
+      "pathParams": {
+        "obligationId": "24096"
+      }
+    },
+    {
+      "name": "futureObligations__getFullKey",
+      "method": "GET",
+      "path": "/futureObligations/getFullKey/{bank}-{obligor}-{obligation}",
+      "query": {
+        "rowLimit": "5"
+      },
+      "pathParams": {
+        "bank": "5",
+        "obligor": "13",
+        "obligation": "18"
+      }
+    },
+    {
+      "name": "invoiceLineItems__get",
+      "method": "GET",
+      "path": "/invoiceLineItems/get/{bank}-{billYear}-{invoiceNumber}-{obligation}-{chargeCode}-{chargeType}",
+      "query": {
+        "rowLimit": "5"
+      },
+      "pathParams": {
+        "bank": "5",
+        "billYear": "2026",
+        "invoiceNumber": "1",
+        "obligation": "18",
+        "chargeCode": "1000"
+      },
+      "_missing_params": [
+        "chargeType"
+      ]
+    },
+    {
+      "name": "invoiceLineItems__list",
+      "method": "GET",
+      "path": "/invoiceLineItems/list/{bank}-{billYear}-{invoiceNumber}-{obligation}-{chargeCode}",
+      "query": {
+        "rowLimit": "5"
+      },
+      "pathParams": {
+        "bank": "5",
+        "billYear": "2026",
+        "invoiceNumber": "1",
+        "obligation": "18",
+        "chargeCode": "1000"
+      }
+    },
+    {
+      "name": "invoiceLineItems__listByObligor",
+      "method": "GET",
+      "path": "/invoiceLineItems/listByObligor/{bank}-{obligor}",
+      "query": {
+        "rowLimit": "5"
+      },
+      "pathParams": {
+        "bank": "5",
+        "obligor": "13"
+      }
+    },
+    {
+      "name": "invoiceLineItems__listByObligation",
+      "method": "GET",
+      "path": "/invoiceLineItems/listByObligation/{bank}-{obligor}-{obligation}",
+      "query": {
+        "rowLimit": "5"
+      },
+      "pathParams": {
+        "bank": "5",
+        "obligor": "13",
+        "obligation": "18"
+      }
+    },
+    {
+      "name": "invoiceLineItems__listByInvoice",
+      "method": "GET",
+      "path": "/invoiceLineItems/listByInvoice/{bank}",
+      "query": {
+        "rowLimit": "5",
+        "billYear": "2026",
+        "invoiceNumber": "1"
+      },
+      "pathParams": {
+        "bank": "5"
+      }
+    },
+    {
+      "name": "invoiceLineItems__listByInvoiceObln",
+      "method": "GET",
+      "path": "/invoiceLineItems/listByInvoiceObln/{bank}",
+      "query": {
+        "rowLimit": "5",
+        "billYear": "2026",
+        "invoiceNumber": "1",
+        "obligation": "18"
+      },
+      "pathParams": {
+        "bank": "5"
+      }
+    },
+    {
+      "name": "invoices__get",
+      "method": "GET",
+      "path": "/invoices/get/{bank}-{billYear}-{invoiceNumber}",
+      "query": {
+        "rowLimit": "5"
+      },
+      "pathParams": {
+        "bank": "5",
+        "billYear": "2026",
+        "invoiceNumber": "1"
+      }
+    },
+    {
+      "name": "invoices__list",
+      "method": "GET",
+      "path": "/invoices/list/{bank}-{billYear}",
+      "query": {
+        "rowLimit": "5"
+      },
+      "pathParams": {
+        "bank": "5",
+        "billYear": "2026"
+      }
+    },
+    {
+      "name": "invoices__listbyobg",
+      "method": "GET",
+      "path": "/invoices/listbyobg/{bank}-{billYear}",
+      "query": {
+        "rowLimit": "5"
+      },
+      "pathParams": {
+        "bank": "5",
+        "billYear": "2026"
+      }
+    },
+    {
+      "name": "invoices__listAllByObligor",
+      "method": "GET",
+      "path": "/invoices/listAllByObligor/{bank}",
+      "query": {
+        "rowLimit": "5"
+      },
+      "pathParams": {
+        "bank": "5"
+      }
+    },
+    {
+      "name": "lateChargeControl__get",
+      "method": "GET",
+      "path": "/lateChargeControl/get/{bank}-{application}-{formulaType}",
+      "query": {
+        "rowLimit": "5"
+      },
+      "pathParams": {
+        "bank": "5",
+        "application": "1"
+      },
+      "_missing_params": [
+        "formulaType"
+      ]
+    },
+    {
+      "name": "lateChargeControl__list",
+      "method": "GET",
+      "path": "/lateChargeControl/list/{bank}-{application}",
+      "query": {
+        "rowLimit": "5"
+      },
+      "pathParams": {
+        "bank": "5",
+        "application": "1"
+      }
+    },
+    {
+      "name": "nameAddresses__get",
+      "method": "GET",
+      "path": "/nameAddresses/get/{nameId}-{sequence}",
+      "query": {
+        "rowLimit": "5"
+      },
+      "pathParams": {
+        "nameId": "7866"
+      },
+      "_missing_params": [
+        "sequence"
+      ]
+    },
+    {
+      "name": "nameAddresses__list",
+      "method": "GET",
+      "path": "/nameAddresses/list/{nameId}",
+      "query": {
+        "rowLimit": "5"
+      },
+      "pathParams": {
+        "nameId": "7866"
+      }
+    },
+    {
+      "name": "nameAddresses__listAlternateAddresses",
+      "method": "GET",
+      "path": "/nameAddresses/listAlternateAddresses",
+      "query": {
+        "rowLimit": "5"
+      }
+    },
+    {
+      "name": "names__get",
+      "method": "GET",
+      "path": "/names/get",
+      "query": {
+        "rowLimit": "5",
+        "nameId": "7866"
+      }
+    },
+    {
+      "name": "names__list",
+      "method": "GET",
+      "path": "/names/list",
+      "query": {
+        "rowLimit": "5",
+        "organizationId": "1"
+      }
+    },
+    {
+      "name": "names__listByTaxId",
+      "method": "GET",
+      "path": "/names/listByTaxId",
+      "query": {
+        "rowLimit": "5",
+        "organizationId": "1"
+      }
+    },
+    {
+      "name": "names__listBySSN",
+      "method": "GET",
+      "path": "/names/listBySSN",
+      "query": {
+        "rowLimit": "5",
+        "organizationId": "1"
+      }
+    },
+    {
+      "name": "names__getByObligor",
+      "method": "GET",
+      "path": "/names/getByObligor/{bank}-{obligor}",
+      "query": {
+        "rowLimit": "5"
+      },
+      "pathParams": {
+        "bank": "5",
+        "obligor": "13"
+      }
+    },
+    {
+      "name": "notePad__get",
+      "method": "GET",
+      "path": "/notePad/get/{notePadId}",
+      "query": {
+        "rowLimit": "5"
+      },
+      "_missing_params": [
+        "notePadId"
+      ]
+    },
+    {
+      "name": "obligations__get",
+      "method": "GET",
+      "path": "/obligations/get/{obligationId}",
+      "query": {
+        "rowLimit": "5"
+      },
+      "pathParams": {
+        "obligationId": "24096"
+      }
+    },
+    {
+      "name": "obligations__getFullKey",
+      "method": "GET",
+      "path": "/obligations/getFullKey/{bank}-{obligor}-{obligation}",
+      "query": {
+        "rowLimit": "5"
+      },
+      "pathParams": {
+        "bank": "5",
+        "obligor": "13",
+        "obligation": "18"
+      }
+    },
+    {
+      "name": "obligations__getFullKeyPayoff",
+      "method": "GET",
+      "path": "/obligations/getFullKeyPayoff/{bank}-{obligor}-{obligation}",
+      "query": {
+        "rowLimit": "5",
+        "payoffDate": "2026-06-25"
+      },
+      "pathParams": {
+        "bank": "5",
+        "obligor": "13",
+        "obligation": "18"
+      }
+    },
+    {
+      "name": "obligorApplications__get",
+      "method": "GET",
+      "path": "/obligorApplications/get/{bank}-{obligor}-{application}",
+      "query": {
+        "rowLimit": "5"
+      },
+      "pathParams": {
+        "bank": "5",
+        "obligor": "13",
+        "application": "1"
+      }
+    },
+    {
+      "name": "obligorApplications__list",
+      "method": "GET",
+      "path": "/obligorApplications/list/{bank}-{obligor}",
+      "query": {
+        "rowLimit": "5"
+      },
+      "pathParams": {
+        "bank": "5",
+        "obligor": "13"
+      }
+    },
+    {
+      "name": "obligorDDAInstructions__get",
+      "method": "GET",
+      "path": "/obligorDDAInstructions/get/{bank}-{obligor}-{sequence}",
+      "query": {
+        "rowLimit": "5"
+      },
+      "pathParams": {
+        "bank": "5",
+        "obligor": "13"
+      },
+      "_missing_params": [
+        "sequence"
+      ]
+    },
+    {
+      "name": "obligorDDAInstructions__list",
+      "method": "GET",
+      "path": "/obligorDDAInstructions/list/{bank}-{obligor}",
+      "query": {
+        "rowLimit": "5"
+      },
+      "pathParams": {
+        "bank": "5",
+        "obligor": "13"
+      }
+    },
+    {
+      "name": "obligors__get",
+      "method": "GET",
+      "path": "/obligors/get/{bank}-{obligor}",
+      "query": {
+        "rowLimit": "5"
+      },
+      "pathParams": {
+        "bank": "5",
+        "obligor": "13"
+      }
+    },
+    {
+      "name": "obligors__list",
+      "method": "GET",
+      "path": "/obligors/list/{nameId}",
+      "query": {
+        "rowLimit": "5"
+      },
+      "pathParams": {
+        "nameId": "7866"
+      }
+    },
+    {
+      "name": "obligors__listByNameId",
+      "method": "GET",
+      "path": "/obligors/listByNameId/{bank}",
+      "query": {
+        "rowLimit": "5",
+        "nameId": "7866"
+      },
+      "pathParams": {
+        "bank": "5"
+      }
+    },
+    {
+      "name": "obligors__listAllByBank",
+      "method": "GET",
+      "path": "/obligors/listAllByBank",
+      "query": {
+        "rowLimit": "5",
+        "bank": "5"
+      }
+    },
+    {
+      "name": "obligorWireInstructions__get",
+      "method": "GET",
+      "path": "/obligorWireInstructions/get/{bank}-{obligor}-{wireId}",
+      "query": {
+        "rowLimit": "5"
+      },
+      "pathParams": {
+        "bank": "5",
+        "obligor": "13"
+      },
+      "_missing_params": [
+        "wireId"
+      ]
+    },
+    {
+      "name": "obligorWireInstructions__list",
+      "method": "GET",
+      "path": "/obligorWireInstructions/list/{bank}-{obligor}",
+      "query": {
+        "rowLimit": "5"
+      },
+      "pathParams": {
+        "bank": "5",
+        "obligor": "13"
+      }
+    },
+    {
+      "name": "offsetTranCtrl__get",
+      "method": "GET",
+      "path": "/offsetTranCtrl/get/{bank}",
+      "query": {
+        "rowLimit": "5"
+      },
+      "pathParams": {
+        "bank": "5"
+      }
+    },
+    {
+      "name": "offsetTranCtrl__list",
+      "method": "GET",
+      "path": "/offsetTranCtrl/list/{bank}",
+      "query": {
+        "rowLimit": "5"
+      },
+      "pathParams": {
+        "bank": "5"
+      }
+    },
+    {
+      "name": "offsetTranCtrl__listByBank",
+      "method": "GET",
+      "path": "/offsetTranCtrl/listByBank/{bank}",
+      "query": {
+        "rowLimit": "5"
+      },
+      "pathParams": {
+        "bank": "5"
+      }
+    },
+    {
+      "name": "organizationLevels__get",
+      "method": "GET",
+      "path": "/organizationLevels/get/{orgLevelId}",
+      "query": {
+        "rowLimit": "5"
+      },
+      "pathParams": {
+        "orgLevelId": "37953"
+      }
+    },
+    {
+      "name": "orgLevelData__get",
+      "method": "GET",
+      "path": "/orgLevelData/get/{organizationId}-{bank}-{orgLevelType}-{orgLevelValue}",
+      "query": {
+        "rowLimit": "5"
+      },
+      "pathParams": {
+        "organizationId": "1",
+        "bank": "5"
+      },
+      "_missing_params": [
+        "orgLevelType",
+        "orgLevelValue"
+      ]
+    },
+    {
+      "name": "orgLevelData__list",
+      "method": "GET",
+      "path": "/orgLevelData/list/{organizationId}-{bank}-{orgLevelType}",
+      "query": {
+        "rowLimit": "5"
+      },
+      "pathParams": {
+        "organizationId": "1",
+        "bank": "5"
+      },
+      "_missing_params": [
+        "orgLevelType"
+      ]
+    },
+    {
+      "name": "orgLevelPointer__get",
+      "method": "GET",
+      "path": "/orgLevelPointer/get/{organizationId}-{bank}-{orgLevelType}-{orgLevelValue}-{orgLevelTypePointer}",
+      "query": {
+        "rowLimit": "5"
+      },
+      "pathParams": {
+        "organizationId": "1",
+        "bank": "5"
+      },
+      "_missing_params": [
+        "orgLevelType",
+        "orgLevelValue",
+        "orgLevelTypePointer"
+      ]
+    },
+    {
+      "name": "orgLevelPointer__list",
+      "method": "GET",
+      "path": "/orgLevelPointer/list/{organizationId}-{bank}-{orgLevelType}-{orgLevelValue}",
+      "query": {
+        "rowLimit": "5"
+      },
+      "pathParams": {
+        "organizationId": "1",
+        "bank": "5"
+      },
+      "_missing_params": [
+        "orgLevelType",
+        "orgLevelValue"
+      ]
+    },
+    {
+      "name": "pba__get",
+      "method": "GET",
+      "path": "/pba/get/{obligationId}-{balanceCode}-{assocPrincipalBalanceCode}-{sequence}",
+      "query": {
+        "rowLimit": "5"
+      },
+      "pathParams": {
+        "obligationId": "24096"
+      },
+      "_missing_params": [
+        "balanceCode",
+        "assocPrincipalBalanceCode",
+        "sequence"
+      ]
+    },
+    {
+      "name": "pba__getFullKey",
+      "method": "GET",
+      "path": "/pba/getFullKey/{bank}-{obligor}-{obligation}-{balanceCode}-{assocPrincipalBalanceCode}-{sequence}",
+      "query": {
+        "rowLimit": "5"
+      },
+      "pathParams": {
+        "bank": "5",
+        "obligor": "13",
+        "obligation": "18"
+      },
+      "_missing_params": [
+        "balanceCode",
+        "assocPrincipalBalanceCode",
+        "sequence"
+      ]
+    },
+    {
+      "name": "pba__list",
+      "method": "GET",
+      "path": "/pba/list/{obligationId}-{balanceCode}-{assocPrincipalBalanceCode}-{sequence}",
+      "query": {
+        "rowLimit": "5"
+      },
+      "pathParams": {
+        "obligationId": "24096"
+      },
+      "_missing_params": [
+        "balanceCode",
+        "assocPrincipalBalanceCode",
+        "sequence"
+      ]
+    },
+    {
+      "name": "pba__listFullKey",
+      "method": "GET",
+      "path": "/pba/listFullKey/{bank}-{obligor}-{obligation}-{balanceCode}-{assocPrincipalBalanceCode}-{sequence}",
+      "query": {
+        "rowLimit": "5"
+      },
+      "pathParams": {
+        "bank": "5",
+        "obligor": "13",
+        "obligation": "18"
+      },
+      "_missing_params": [
+        "balanceCode",
+        "assocPrincipalBalanceCode",
+        "sequence"
+      ]
+    },
+    {
+      "name": "pba__listByBalance",
+      "method": "GET",
+      "path": "/pba/listByBalance/{obligationId}-{balanceCode}-{assocPrincipalBalanceCode}-{sequence}",
+      "query": {
+        "rowLimit": "5"
+      },
+      "pathParams": {
+        "obligationId": "24096"
+      },
+      "_missing_params": [
+        "balanceCode",
+        "assocPrincipalBalanceCode",
+        "sequence"
+      ]
+    },
+    {
+      "name": "penaltyAmountCurrencies__get",
+      "method": "GET",
+      "path": "/penaltyAmountCurrencies/get/{bank}-{application}-{penaltyId}",
+      "query": {
+        "rowLimit": "5"
+      },
+      "pathParams": {
+        "bank": "5",
+        "application": "1"
+      },
+      "_missing_params": [
+        "penaltyId"
+      ]
+    },
+    {
+      "name": "penaltyAmountCurrencies__list",
+      "method": "GET",
+      "path": "/penaltyAmountCurrencies/list/{bank}-{application}-{penaltyId}",
+      "query": {
+        "rowLimit": "5"
+      },
+      "pathParams": {
+        "bank": "5",
+        "application": "1"
+      },
+      "_missing_params": [
+        "penaltyId"
+      ]
+    },
+    {
+      "name": "penaltyAmountIncrements__get",
+      "method": "GET",
+      "path": "/penaltyAmountIncrements/get/{bank}-{application}-{penaltyId}-{penaltyIncrement}",
+      "query": {
+        "rowLimit": "5"
+      },
+      "pathParams": {
+        "bank": "5",
+        "application": "1"
+      },
+      "_missing_params": [
+        "penaltyId",
+        "penaltyIncrement"
+      ]
+    },
+    {
+      "name": "penaltyAmountIncrements__list",
+      "method": "GET",
+      "path": "/penaltyAmountIncrements/list/{bank}-{application}-{penaltyId}",
+      "query": {
+        "rowLimit": "5"
+      },
+      "pathParams": {
+        "bank": "5",
+        "application": "1"
+      },
+      "_missing_params": [
+        "penaltyId"
+      ]
+    },
+    {
+      "name": "penaltyDefinitions__get",
+      "method": "GET",
+      "path": "/penaltyDefinitions/get/{bank}-{application}-{penaltyId}",
+      "query": {
+        "rowLimit": "5"
+      },
+      "pathParams": {
+        "bank": "5",
+        "application": "1"
+      },
+      "_missing_params": [
+        "penaltyId"
+      ]
+    },
+    {
+      "name": "penaltyDefinitions__list",
+      "method": "GET",
+      "path": "/penaltyDefinitions/list/{bank}-{application}",
+      "query": {
+        "rowLimit": "5"
+      },
+      "pathParams": {
+        "bank": "5",
+        "application": "1"
+      }
+    },
+    {
+      "name": "penaltyDefinitions__listAllByBank",
+      "method": "GET",
+      "path": "/penaltyDefinitions/listAllByBank/{bank}",
+      "query": {
+        "rowLimit": "5"
+      },
+      "pathParams": {
+        "bank": "5"
+      }
+    },
+    {
+      "name": "phones__get",
+      "method": "GET",
+      "path": "/phones/get",
+      "query": {
+        "rowLimit": "5",
+        "nameId": "7866"
+      }
+    },
+    {
+      "name": "phones__list",
+      "method": "GET",
+      "path": "/phones/list",
+      "query": {
+        "rowLimit": "5",
+        "nameId": "7866"
+      }
+    },
+    {
+      "name": "primeSchedules__get",
+      "method": "GET",
+      "path": "/primeSchedules/get/{obligationId}-{chargeCode}",
+      "query": {
+        "rowLimit": "5"
+      },
+      "pathParams": {
+        "obligationId": "24096",
+        "chargeCode": "1000"
+      }
+    },
+    {
+      "name": "primeSchedules__getFullKey",
+      "method": "GET",
+      "path": "/primeSchedules/getFullKey/{bank}-{obligor}-{obligation}-{chargeCode}",
+      "query": {
+        "rowLimit": "5"
+      },
+      "pathParams": {
+        "bank": "5",
+        "obligor": "13",
+        "obligation": "18",
+        "chargeCode": "1000"
+      }
+    },
+    {
+      "name": "primeSchedules__list",
+      "method": "GET",
+      "path": "/primeSchedules/list/{obligationId}-{chargeCode}",
+      "query": {
+        "rowLimit": "5"
+      },
+      "pathParams": {
+        "obligationId": "24096",
+        "chargeCode": "1000"
+      }
+    },
+    {
+      "name": "primeSchedules__listFullKey",
+      "method": "GET",
+      "path": "/primeSchedules/listFullKey/{bank}-{obligor}-{obligation}-{obligationId}",
+      "query": {
+        "rowLimit": "5"
+      },
+      "pathParams": {
+        "bank": "5",
+        "obligor": "13",
+        "obligation": "18",
+        "obligationId": "24096"
+      }
+    },
+    {
+      "name": "rateIndicative__get",
+      "method": "GET",
+      "path": "/rateIndicative/get/{bank}-{rateId}",
+      "query": {
+        "rowLimit": "5"
+      },
+      "pathParams": {
+        "bank": "5"
+      },
+      "_missing_params": [
+        "rateId"
+      ]
+    },
+    {
+      "name": "rateIndicative__list",
+      "method": "GET",
+      "path": "/rateIndicative/list/{bank}",
+      "query": {
+        "rowLimit": "5"
+      },
+      "pathParams": {
+        "bank": "5"
+      }
+    },
+    {
+      "name": "repaymentSchedules__get",
+      "method": "GET",
+      "path": "/repaymentSchedules/get/{obligationId}",
+      "query": {
+        "rowLimit": "5"
+      },
+      "pathParams": {
+        "obligationId": "24096"
+      }
+    },
+    {
+      "name": "repaymentSchedules__list",
+      "method": "GET",
+      "path": "/repaymentSchedules/list/{obligationId}",
+      "query": {
+        "rowLimit": "5"
+      },
+      "pathParams": {
+        "obligationId": "24096"
+      }
+    },
+    {
+      "name": "repaymentSchedules__listFullKey",
+      "method": "GET",
+      "path": "/repaymentSchedules/listFullKey/{bank}-{obligor}-{obligation}",
+      "query": {
+        "rowLimit": "5"
+      },
+      "pathParams": {
+        "bank": "5",
+        "obligor": "13",
+        "obligation": "18"
+      }
+    },
+    {
+      "name": "scheduledActivity__get",
+      "method": "GET",
+      "path": "/scheduledActivity/get/{dealId}-{obligationId}-{sequence}",
+      "query": {
+        "rowLimit": "5"
+      },
+      "pathParams": {
+        "obligationId": "24096"
+      },
+      "_missing_params": [
+        "dealId",
+        "sequence"
+      ]
+    },
+    {
+      "name": "scheduledActivity__list",
+      "method": "GET",
+      "path": "/scheduledActivity/list/{dealId}-{obligationId}",
+      "query": {
+        "rowLimit": "5"
+      },
+      "pathParams": {
+        "obligationId": "24096"
+      },
+      "_missing_params": [
+        "dealId"
+      ]
+    },
+    {
+      "name": "scheduledActivity__listByOblnId",
+      "method": "GET",
+      "path": "/scheduledActivity/listByOblnId/{obligationId}",
+      "query": {
+        "rowLimit": "5"
+      },
+      "pathParams": {
+        "obligationId": "24096"
+      }
+    },
+    {
+      "name": "supportReferences__get",
+      "method": "GET",
+      "path": "/supportReferences/get/{supportingBank}-{supportingObligor}-{supportingCollateralItem}-{supportedObligor}-{supportedAplication}-{supportedObligation}",
+      "query": {
+        "rowLimit": "5"
+      },
+      "pathParams": {
+        "supportingBank": "5",
+        "supportingObligor": "13",
+        "supportingCollateralItem": "1",
+        "supportedObligor": "13",
+        "supportedAplication": "1",
+        "supportedObligation": "42"
+      }
+    },
+    {
+      "name": "supportReferences__list",
+      "method": "GET",
+      "path": "/supportReferences/list/{supportingBank}-{supportingObligor}-{supportingCollateralItem}-{supportedObligor}-{supportedAplication}",
+      "query": {
+        "rowLimit": "5"
+      },
+      "pathParams": {
+        "supportingBank": "5",
+        "supportingObligor": "13",
+        "supportingCollateralItem": "1",
+        "supportedObligor": "13",
+        "supportedAplication": "1"
+      }
+    },
+    {
+      "name": "supportReferences__listIndObligorLiab",
+      "method": "GET",
+      "path": "/supportReferences/listIndObligorLiab/{supportingBank}-{supportingObligor}",
+      "query": {
+        "rowLimit": "5"
+      },
+      "pathParams": {
+        "supportingBank": "5",
+        "supportingObligor": "13"
+      }
+    },
+    {
+      "name": "supportReferences__listIndObligorSupp",
+      "method": "GET",
+      "path": "/supportReferences/listIndObligorSupp/{supportingBank}",
+      "query": {
+        "rowLimit": "5",
+        "supportedObligor": "13"
+      },
+      "pathParams": {
+        "supportingBank": "5"
+      }
+    },
+    {
+      "name": "supportReferences__listSupportedByItem",
+      "method": "GET",
+      "path": "/supportReferences/listSupportedByItem/{supportingBank}-{supportingObligor}-{supportingCollateralItem}",
+      "query": {
+        "rowLimit": "5"
+      },
+      "pathParams": {
+        "supportingBank": "5",
+        "supportingObligor": "13",
+        "supportingCollateralItem": "1"
+      }
+    },
+    {
+      "name": "supportReferences__listSupportingColl",
+      "method": "GET",
+      "path": "/supportReferences/listSupportingColl/{supportingBank}-{supportingObligor}",
+      "query": {
+        "rowLimit": "5",
+        "obligation": "18"
+      },
+      "pathParams": {
+        "supportingBank": "5",
+        "supportingObligor": "13"
+      }
+    },
+    {
+      "name": "supportReferences__listIndOblnSupport",
+      "method": "GET",
+      "path": "/supportReferences/listIndOblnSupport/{supportingBank}-{supportingObligor}",
+      "query": {
+        "rowLimit": "5"
+      },
+      "pathParams": {
+        "supportingBank": "5",
+        "supportingObligor": "13"
+      }
+    },
+    {
+      "name": "wireInstructions__get",
+      "method": "GET",
+      "path": "/wireInstructions/get/{nameId}-{sequence}-{wireId}",
+      "query": {
+        "rowLimit": "5"
+      },
+      "pathParams": {
+        "nameId": "7866"
+      },
+      "_missing_params": [
+        "sequence",
+        "wireId"
+      ]
+    },
+    {
+      "name": "wireInstructions__list",
+      "method": "GET",
+      "path": "/wireInstructions/list/{nameId}-{sequence}",
+      "query": {
+        "rowLimit": "5"
+      },
+      "pathParams": {
+        "nameId": "7866"
+      },
+      "_missing_params": [
+        "sequence"
+      ]
+    },
+    {
+      "name": "businessAutomation__schedules",
+      "method": "GET",
+      "path": "/businessAutomation/schedules",
+      "query": {
+        "rowLimit": "5"
+      }
+    },
+    {
+      "name": "businessAutomation__tasks",
+      "method": "GET",
+      "path": "/businessAutomation/tasks/{id}",
+      "query": {
+        "rowLimit": "5"
+      },
+      "_missing_params": [
+        "id"
+      ]
+    },
+    {
+      "name": "wp__addressMaintenance",
+      "method": "GET",
+      "path": "/wp/addressMaintenance/{id}",
+      "query": {
+        "rowLimit": "5"
+      },
+      "_missing_params": [
+        "id"
+      ]
+    },
+    {
+      "name": "wp__advances2",
+      "method": "GET",
+      "path": "/wp/advances2/{id}",
+      "query": {
+        "rowLimit": "5"
+      },
+      "_missing_params": [
+        "id"
+      ]
+    },
+    {
+      "name": "wp__alertType",
+      "method": "GET",
+      "path": "/wp/alertType/{id}",
+      "query": {
+        "rowLimit": "5"
+      },
+      "_missing_params": [
+        "id"
+      ]
+    },
+    {
+      "name": "wp__CollateralRoot",
+      "method": "GET",
+      "path": "/wp/CollateralRoot/{id}",
+      "query": {
+        "rowLimit": "5"
+      },
+      "_missing_params": [
+        "id"
+      ]
+    },
+    {
+      "name": "wp__commercialOrig",
+      "method": "GET",
+      "path": "/wp/commercialOrig/{id}",
+      "query": {
+        "rowLimit": "5"
+      },
+      "_missing_params": [
+        "id"
+      ]
+    },
+    {
+      "name": "wp__commercialPost",
+      "method": "GET",
+      "path": "/wp/commercialPost/{id}",
+      "query": {
+        "rowLimit": "5"
+      },
+      "_missing_params": [
+        "id"
+      ]
+    },
+    {
+      "name": "wp__ddaWireChanges",
+      "method": "GET",
+      "path": "/wp/ddaWireChanges/{id}",
+      "query": {
+        "rowLimit": "5"
+      },
+      "_missing_params": [
+        "id"
+      ]
+    },
+    {
+      "name": "doc__apicatalog",
+      "method": "GET",
+      "path": "/doc/apicatalog",
+      "query": {
+        "rowLimit": "5"
+      }
+    },
+    {
+      "name": "doc__apidoc",
+      "method": "GET",
+      "path": "/doc/apidoc",
+      "query": {
+        "rowLimit": "5"
+      }
+    },
+    {
+      "name": "employees",
+      "method": "GET",
+      "path": "/employees/{id}",
+      "query": {
+        "rowLimit": "5"
+      },
+      "_missing_params": [
+        "id"
+      ]
+    },
+    {
+      "name": "wp__exceptionCollateral",
+      "method": "GET",
+      "path": "/wp/exceptionCollateral/{id}",
+      "query": {
+        "rowLimit": "5"
+      },
+      "_missing_params": [
+        "id"
+      ]
+    },
+    {
+      "name": "wp__exceptionCovenants",
+      "method": "GET",
+      "path": "/wp/exceptionCovenants/{id}",
+      "query": {
+        "rowLimit": "5"
+      },
+      "_missing_params": [
+        "id"
+      ]
+    },
+    {
+      "name": "wp__exceptionCreditPolicy",
+      "method": "GET",
+      "path": "/wp/exceptionCreditPolicy/{id}",
+      "query": {
+        "rowLimit": "5"
+      },
+      "_missing_params": [
+        "id"
+      ]
+    },
+    {
+      "name": "wp__exceptionDocCollateral",
+      "method": "GET",
+      "path": "/wp/exceptionDocCollateral/{id}",
+      "query": {
+        "rowLimit": "5"
+      },
+      "_missing_params": [
+        "id"
+      ]
+    },
+    {
+      "name": "wp__exceptionEntity",
+      "method": "GET",
+      "path": "/wp/exceptionEntity/{id}",
+      "query": {
+        "rowLimit": "5"
+      },
+      "_missing_params": [
+        "id"
+      ]
+    },
+    {
+      "name": "wp__exceptionNoteLoan",
+      "method": "GET",
+      "path": "/wp/exceptionNoteLoan/{id}",
+      "query": {
+        "rowLimit": "5"
+      },
+      "_missing_params": [
+        "id"
+      ]
+    },
+    {
+      "name": "wp__exceptionProcessing",
+      "method": "GET",
+      "path": "/wp/exceptionProcessing/{id}",
+      "query": {
+        "rowLimit": "5"
+      },
+      "_missing_params": [
+        "id"
+      ]
+    },
+    {
+      "name": "wp__exceptionRequirements",
+      "method": "GET",
+      "path": "/wp/exceptionRequirements/{id}",
+      "query": {
+        "rowLimit": "5"
+      },
+      "_missing_params": [
+        "id"
+      ]
+    },
+    {
+      "name": "wp__exceptionReview",
+      "method": "GET",
+      "path": "/wp/exceptionReview/{id}",
+      "query": {
+        "rowLimit": "5"
+      },
+      "_missing_params": [
+        "id"
+      ]
+    },
+    {
+      "name": "exceptions__listExceptions",
+      "method": "GET",
+      "path": "/exceptions/listExceptions",
+      "query": {
+        "rowLimit": "5"
+      }
+    },
+    {
+      "name": "wp__ExceptionType",
+      "method": "GET",
+      "path": "/wp/ExceptionType/{id}",
+      "query": {
+        "rowLimit": "5"
+      },
+      "_missing_params": [
+        "id"
+      ]
+    },
+    {
+      "name": "wp__feeManagement",
+      "method": "GET",
+      "path": "/wp/feeManagement/{id}",
+      "query": {
+        "rowLimit": "5"
+      },
+      "_missing_params": [
+        "id"
+      ]
+    },
+    {
+      "name": "holderofrecords__allAdminsByEntityForASelectedHolderOfRecord",
+      "method": "GET",
+      "path": "/holderofrecords/allAdminsByEntityForASelectedHolderOfRecord",
+      "query": {
+        "rowLimit": "5"
+      }
+    },
+    {
+      "name": "holderofrecords__allDealsForASelectedHolderOfRecord",
+      "method": "GET",
+      "path": "/holderofrecords/allDealsForASelectedHolderOfRecord",
+      "query": {
+        "rowLimit": "5"
+      }
+    },
+    {
+      "name": "holderofrecords__allFundsByFundManager",
+      "method": "GET",
+      "path": "/holderofrecords/allFundsByFundManager",
+      "query": {
+        "rowLimit": "5"
+      }
+    },
+    {
+      "name": "holderofrecords__allHoldersofRecordinDeal",
+      "method": "GET",
+      "path": "/holderofrecords/allHoldersofRecordinDeal",
+      "query": {
+        "rowLimit": "5"
+      }
+    },
+    {
+      "name": "holderofrecords__beneficialOwnersForAFundWithinADeal",
+      "method": "GET",
+      "path": "/holderofrecords/beneficialOwnersForAFundWithinADeal",
+      "query": {
+        "rowLimit": "5"
+      }
+    },
+    {
+      "name": "jobs__listByOfficers",
+      "method": "GET",
+      "path": "/jobs/listByOfficers",
+      "query": {
+        "rowLimit": "5",
+        "officer1Code": "10111111"
+      }
+    },
+    {
+      "name": "jobs__joblistInquiry",
+      "method": "GET",
+      "path": "/jobs/joblistInquiry",
+      "query": {
+        "rowLimit": "5"
+      }
+    },
+    {
+      "name": "wp__nonFinancial",
+      "method": "GET",
+      "path": "/wp/nonFinancial/{id}",
+      "query": {
+        "rowLimit": "5"
+      },
+      "_missing_params": [
+        "id"
+      ]
+    },
+    {
+      "name": "wp__ObligationRoot",
+      "method": "GET",
+      "path": "/wp/ObligationRoot/{id}",
+      "query": {
+        "rowLimit": "5"
+      },
+      "_missing_params": [
+        "id"
+      ]
+    },
+    {
+      "name": "wp__ObligorRoot",
+      "method": "GET",
+      "path": "/wp/ObligorRoot/{id}",
+      "query": {
+        "rowLimit": "5"
+      },
+      "_missing_params": [
+        "id"
+      ]
+    },
+    {
+      "name": "wp__oblnRestructure",
+      "method": "GET",
+      "path": "/wp/oblnRestructure/{id}",
+      "query": {
+        "rowLimit": "5"
+      },
+      "_missing_params": [
+        "id"
+      ]
+    },
+    {
+      "name": "wp__otherFinancials2",
+      "method": "GET",
+      "path": "/wp/otherFinancials2/{id}",
+      "query": {
+        "rowLimit": "5"
+      },
+      "_missing_params": [
+        "id"
+      ]
+    },
+    {
+      "name": "wp__otherMaintenance",
+      "method": "GET",
+      "path": "/wp/otherMaintenance/{id}",
+      "query": {
+        "rowLimit": "5"
+      },
+      "_missing_params": [
+        "id"
+      ]
+    },
+    {
+      "name": "wp__payments2",
+      "method": "GET",
+      "path": "/wp/payments2/{id}",
+      "query": {
+        "rowLimit": "5"
+      },
+      "_missing_params": [
+        "id"
+      ]
+    },
+    {
+      "name": "ping",
+      "method": "GET",
+      "path": "/ping",
+      "query": {
+        "rowLimit": "5"
+      }
+    },
+    {
+      "name": "wp__QueueAdmin",
+      "method": "GET",
+      "path": "/wp/QueueAdmin/{id}",
+      "query": {
+        "rowLimit": "5"
+      },
+      "_missing_params": [
+        "id"
+      ]
+    },
+    {
+      "name": "wp__QueueGroupAdmin",
+      "method": "GET",
+      "path": "/wp/QueueGroupAdmin/{id}",
+      "query": {
+        "rowLimit": "5"
+      },
+      "_missing_params": [
+        "id"
+      ]
+    },
+    {
+      "name": "wp__repricing2",
+      "method": "GET",
+      "path": "/wp/repricing2/{id}",
+      "query": {
+        "rowLimit": "5"
+      },
+      "_missing_params": [
+        "id"
+      ]
+    },
+    {
+      "name": "wp__roleAdmin",
+      "method": "GET",
+      "path": "/wp/roleAdmin/{id}",
+      "query": {
+        "rowLimit": "5"
+      },
+      "_missing_params": [
+        "id"
+      ]
+    },
+    {
+      "name": "wp__syndiDealMaintenance",
+      "method": "GET",
+      "path": "/wp/syndiDealMaintenance/{id}",
+      "query": {
+        "rowLimit": "5"
+      },
+      "_missing_params": [
+        "id"
+      ]
+    },
+    {
+      "name": "wp__syndiDealPipeline",
+      "method": "GET",
+      "path": "/wp/syndiDealPipeline/{id}",
+      "query": {
+        "rowLimit": "5"
+      },
+      "_missing_params": [
+        "id"
+      ]
+    },
+    {
+      "name": "wp__syndiRepricing",
+      "method": "GET",
+      "path": "/wp/syndiRepricing/{id}",
+      "query": {
+        "rowLimit": "5"
+      },
+      "_missing_params": [
+        "id"
+      ]
+    },
+    {
+      "name": "up__listAlertTypes",
+      "method": "GET",
+      "path": "/up/listAlertTypes",
+      "query": {
+        "rowLimit": "5"
+      }
+    },
+    {
+      "name": "up__listContextGroups",
+      "method": "GET",
+      "path": "/up/listContextGroups",
+      "query": {
+        "rowLimit": "5"
+      }
+    },
+    {
+      "name": "up__listCreditAuthorityItems",
+      "method": "GET",
+      "path": "/up/listCreditAuthorityItems",
+      "query": {
+        "rowLimit": "5"
+      }
+    },
+    {
+      "name": "up__listLimitGroups",
+      "method": "GET",
+      "path": "/up/listLimitGroups",
+      "query": {
+        "rowLimit": "5",
+        "organizationId": "1"
+      }
+    },
+    {
+      "name": "up__listOverrideConditions",
+      "method": "GET",
+      "path": "/up/listOverrideConditions",
+      "query": {
+        "rowLimit": "5"
+      }
+    },
+    {
+      "name": "up__listQueueGroups",
+      "method": "GET",
+      "path": "/up/listQueueGroups",
+      "query": {
+        "rowLimit": "5"
+      }
+    },
+    {
+      "name": "up__listQueues",
+      "method": "GET",
+      "path": "/up/listQueues",
+      "query": {
+        "rowLimit": "5"
+      }
+    },
+    {
+      "name": "up__listRoles",
+      "method": "GET",
+      "path": "/up/listRoles",
+      "query": {
+        "rowLimit": "5"
+      }
+    },
+    {
+      "name": "up__listTeams",
+      "method": "GET",
+      "path": "/up/listTeams",
+      "query": {
+        "rowLimit": "5"
+      }
+    },
+    {
+      "name": "up__userProfileChangeHistory",
+      "method": "GET",
+      "path": "/up/userProfileChangeHistory",
+      "query": {
+        "rowLimit": "5"
+      }
+    },
+    {
+      "name": "up__userSearch",
+      "method": "GET",
+      "path": "/up/userSearch",
+      "query": {
+        "rowLimit": "5"
+      }
+    },
+    {
+      "name": "wp__userProfileAdmin",
+      "method": "GET",
+      "path": "/wp/userProfileAdmin/{id}",
+      "query": {
+        "rowLimit": "5"
+      },
+      "_missing_params": [
+        "id"
+      ]
+    }
+  ]
+}

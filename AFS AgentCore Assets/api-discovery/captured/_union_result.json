@@ -1,0 +1,20 @@
+{
+  "newly_resolved": [
+    "amortizationSchedule__listByOblnId",
+    "charges__get",
+    "charges__list",
+    "collBorrowingBase__get",
+    "currentObligations__get",
+    "flatFees__get",
+    "flatFees__getFullKey",
+    "flatFees__list",
+    "flatFees__listFullKey",
+    "futureObligations__getFullKey",
+    "invoiceLineItems__list",
+    "phones__list",
+    "supportReferences__listIndObligorLiab"
+  ],
+  "union_live": 63,
+  "perm": 47,
+  "total": 231
+}

@@ -1,0 +1,5 @@
+# Secrets and live data — never commit
+.env
+endpoints.json
+responses/
+*.local.json

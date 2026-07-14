@@ -1,0 +1,5520 @@
+[
+ {
+  "layer": "wf",
+  "path": "/businessAutomation/schedules",
+  "params": [],
+  "query": [],
+  "status": 204,
+  "urlTried": "/businessAutomation/schedules",
+  "fieldCount": 0,
+  "message": "",
+  "allTried": [
+   {
+    "url": "/businessAutomation/schedules",
+    "status": 204
+   }
+  ]
+ },
+ {
+  "layer": "wf",
+  "path": "/businessAutomation/tasks/{id}",
+  "params": [
+   "id"
+  ],
+  "query": [],
+  "status": 404,
+  "urlTried": "/businessAutomation/tasks/30733",
+  "fieldCount": 0,
+  "message": "",
+  "allTried": [
+   {
+    "url": "/businessAutomation/tasks/30733",
+    "status": 404
+   },
+   {
+    "url": "/businessAutomation/tasks/30745",
+    "status": 404
+   }
+  ]
+ },
+ {
+  "layer": "wf",
+  "path": "/wp/addressMaintenance/{id}",
+  "params": [
+   "id"
+  ],
+  "query": [],
+  "status": 400,
+  "urlTried": "/wp/addressMaintenance/32697",
+  "fieldCount": 1,
+  "message": "[error] =cannot retrieve data for root model: oid=9020000091937312, rootType=146, error=The model for a persistent reference is missing from",
+  "allTried": [
+   {
+    "url": "/wp/addressMaintenance/32697",
+    "status": 400
+   },
+   {
+    "url": "/wp/addressMaintenance/32689",
+    "status": 400
+   }
+  ]
+ },
+ {
+  "layer": "wf",
+  "path": "/wp/advances2/{id}",
+  "params": [
+   "id"
+  ],
+  "query": [],
+  "status": 400,
+  "urlTried": "/wp/advances2/32697",
+  "fieldCount": 1,
+  "message": "[error] =cannot retrieve data for root model: oid=9020000091937312, rootType=146, error=The model for a persistent reference is missing from",
+  "allTried": [
+   {
+    "url": "/wp/advances2/32697",
+    "status": 400
+   },
+   {
+    "url": "/wp/advances2/32689",
+    "status": 400
+   }
+  ]
+ },
+ {
+  "layer": "wf",
+  "path": "/wp/alertType/{id}",
+  "params": [
+   "id"
+  ],
+  "query": [],
+  "status": 400,
+  "urlTried": "/wp/alertType/32697",
+  "fieldCount": 1,
+  "message": "[error] =cannot retrieve data for root model: oid=32697, rootType=11, error=The model for a persistent reference is missing from the databas",
+  "allTried": [
+   {
+    "url": "/wp/alertType/32697",
+    "status": 400
+   },
+   {
+    "url": "/wp/alertType/32689",
+    "status": 400
+   }
+  ]
+ },
+ {
+  "layer": "wf",
+  "path": "/wp/CollateralRoot/{id}",
+  "params": [
+   "id"
+  ],
+  "query": [],
+  "status": 400,
+  "urlTried": "/wp/CollateralRoot/32697",
+  "fieldCount": 1,
+  "message": "[error] =cannot retrieve data for root model: oid=32697, rootType=213, error=The model for a persistent reference is missing from the databa",
+  "allTried": [
+   {
+    "url": "/wp/CollateralRoot/32697",
+    "status": 400
+   },
+   {
+    "url": "/wp/CollateralRoot/32689",
+    "status": 400
+   }
+  ]
+ },
+ {
+  "layer": "wf",
+  "path": "/wp/commercialOrig/{id}",
+  "params": [
+   "id"
+  ],
+  "query": [],
+  "status": 200,
+  "urlTried": "/wp/commercialOrig/32697",
+  "fieldCount": 74,
+  "message": "",
+  "allTried": [
+   {
+    "url": "/wp/commercialOrig/32697",
+    "status": 200
+   }
+  ]
+ },
+ {
+  "layer": "wf",
+  "path": "/wp/commercialPost/{id}",
+  "params": [
+   "id"
+  ],
+  "query": [],
+  "status": 404,
+  "urlTried": "/wp/commercialPost/32697",
+  "fieldCount": 0,
+  "message": "",
+  "allTried": [
+   {
+    "url": "/wp/commercialPost/32697",
+    "status": 404
+   },
+   {
+    "url": "/wp/commercialPost/32689",
+    "status": 404
+   }
+  ]
+ },
+ {
+  "layer": "wf",
+  "path": "/wp/ddaWireChanges/{id}",
+  "params": [
+   "id"
+  ],
+  "query": [],
+  "status": 403,
+  "urlTried": "/wp/ddaWireChanges/32697",
+  "fieldCount": 1,
+  "message": "[error] Access to this service is not permitted by the current user's permissions. Please consult your helpdesk if you feel that this is inc",
+  "allTried": [
+   {
+    "url": "/wp/ddaWireChanges/32697",
+    "status": 403
+   },
+   {
+    "url": "/wp/ddaWireChanges/32689",
+    "status": 403
+   }
+  ]
+ },
+ {
+  "layer": "wf",
+  "path": "/doc/apicatalog",
+  "params": [],
+  "query": [
+   "wfName",
+   "allowDup",
+   "afsInternal"
+  ],
+  "status": 406,
+  "urlTried": "/doc/apicatalog",
+  "fieldCount": 0,
+  "message": "HTTP 406",
+  "allTried": [
+   {
+    "url": "/doc/apicatalog",
+    "status": 406
+   }
+  ],
+  "pass2Url": "/doc/apicatalog?allowDup=N&afsInternal=N",
+  "pass2Status": 406
+ },
+ {
+  "layer": "wf",
+  "path": "/doc/apidoc",
+  "params": [],
+  "query": [
+   "tiers",
+   "components",
+   "format",
+   "appVersion",
+   "servers"
+  ],
+  "status": 200,
+  "urlTried": "/doc/apidoc",
+  "fieldCount": 0,
+  "message": "",
+  "allTried": [
+   {
+    "url": "/doc/apidoc",
+    "status": 200
+   }
+  ]
+ },
+ {
+  "layer": "wf",
+  "path": "/employees/{id}",
+  "params": [
+   "id"
+  ],
+  "query": [
+   "bankId"
+  ],
+  "status": 200,
+  "urlTried": "/employees/30733?bankId=5",
+  "fieldCount": 1,
+  "message": "",
+  "allTried": [
+   {
+    "url": "/employees/30733",
+    "status": 400
+   },
+   {
+    "url": "/employees/30745",
+    "status": 400
+   }
+  ]
+ },
+ {
+  "layer": "wf",
+  "path": "/wp/exceptionCollateral/{id}",
+  "params": [
+   "id"
+  ],
+  "query": [],
+  "status": 400,
+  "urlTried": "/wp/exceptionCollateral/32697",
+  "fieldCount": 1,
+  "message": "[error] =cannot retrieve data for root model: oid=32697, rootType=209, error=The model for a persistent reference is missing from the databa",
+  "allTried": [
+   {
+    "url": "/wp/exceptionCollateral/32697",
+    "status": 400
+   },
+   {
+    "url": "/wp/exceptionCollateral/32689",
+    "status": 400
+   }
+  ]
+ },
+ {
+  "layer": "wf",
+  "path": "/wp/exceptionCovenants/{id}",
+  "params": [
+   "id"
+  ],
+  "query": [],
+  "status": 400,
+  "urlTried": "/wp/exceptionCovenants/32697",
+  "fieldCount": 1,
+  "message": "[error] =cannot retrieve data for root model: oid=32697, rootType=209, error=The model for a persistent reference is missing from the databa",
+  "allTried": [
+   {
+    "url": "/wp/exceptionCovenants/32697",
+    "status": 400
+   },
+   {
+    "url": "/wp/exceptionCovenants/32689",
+    "status": 400
+   }
+  ]
+ },
+ {
+  "layer": "wf",
+  "path": "/wp/exceptionCreditPolicy/{id}",
+  "params": [
+   "id"
+  ],
+  "query": [],
+  "status": 400,
+  "urlTried": "/wp/exceptionCreditPolicy/32697",
+  "fieldCount": 1,
+  "message": "[error] =cannot retrieve data for root model: oid=32697, rootType=209, error=The model for a persistent reference is missing from the databa",
+  "allTried": [
+   {
+    "url": "/wp/exceptionCreditPolicy/32697",
+    "status": 400
+   },
+   {
+    "url": "/wp/exceptionCreditPolicy/32689",
+    "status": 400
+   }
+  ]
+ },
+ {
+  "layer": "wf",
+  "path": "/wp/exceptionDocCollateral/{id}",
+  "params": [
+   "id"
+  ],
+  "query": [],
+  "status": 400,
+  "urlTried": "/wp/exceptionDocCollateral/32697",
+  "fieldCount": 1,
+  "message": "[error] =cannot retrieve data for root model: oid=32697, rootType=209, error=The model for a persistent reference is missing from the databa",
+  "allTried": [
+   {
+    "url": "/wp/exceptionDocCollateral/32697",
+    "status": 400
+   },
+   {
+    "url": "/wp/exceptionDocCollateral/32689",
+    "status": 400
+   }
+  ]
+ },
+ {
+  "layer": "wf",
+  "path": "/wp/exceptionEntity/{id}",
+  "params": [
+   "id"
+  ],
+  "query": [],
+  "status": 400,
+  "urlTried": "/wp/exceptionEntity/32697",
+  "fieldCount": 1,
+  "message": "[error] =cannot retrieve data for root model: oid=32697, rootType=209, error=The model for a persistent reference is missing from the databa",
+  "allTried": [
+   {
+    "url": "/wp/exceptionEntity/32697",
+    "status": 400
+   },
+   {
+    "url": "/wp/exceptionEntity/32689",
+    "status": 400
+   }
+  ]
+ },
+ {
+  "layer": "wf",
+  "path": "/wp/exceptionNoteLoan/{id}",
+  "params": [
+   "id"
+  ],
+  "query": [],
+  "status": 400,
+  "urlTried": "/wp/exceptionNoteLoan/32697",
+  "fieldCount": 1,
+  "message": "[error] =cannot retrieve data for root model: oid=32697, rootType=209, error=The model for a persistent reference is missing from the databa",
+  "allTried": [
+   {
+    "url": "/wp/exceptionNoteLoan/32697",
+    "status": 400
+   },
+   {
+    "url": "/wp/exceptionNoteLoan/32689",
+    "status": 400
+   }
+  ]
+ },
+ {
+  "layer": "wf",
+  "path": "/wp/exceptionProcessing/{id}",
+  "params": [
+   "id"
+  ],
+  "query": [],
+  "status": 400,
+  "urlTried": "/wp/exceptionProcessing/32697",
+  "fieldCount": 1,
+  "message": "[error] =cannot retrieve data for root model: oid=32697, rootType=209, error=The model for a persistent reference is missing from the databa",
+  "allTried": [
+   {
+    "url": "/wp/exceptionProcessing/32697",
+    "status": 400
+   },
+   {
+    "url": "/wp/exceptionProcessing/32689",
+    "status": 400
+   }
+  ]
+ },
+ {
+  "layer": "wf",
+  "path": "/wp/exceptionRequirements/{id}",
+  "params": [
+   "id"
+  ],
+  "query": [],
+  "status": 400,
+  "urlTried": "/wp/exceptionRequirements/32697",
+  "fieldCount": 1,
+  "message": "[error] =cannot retrieve data for root model: oid=32697, rootType=209, error=The model for a persistent reference is missing from the databa",
+  "allTried": [
+   {
+    "url": "/wp/exceptionRequirements/32697",
+    "status": 400
+   },
+   {
+    "url": "/wp/exceptionRequirements/32689",
+    "status": 400
+   }
+  ]
+ },
+ {
+  "layer": "wf",
+  "path": "/wp/exceptionReview/{id}",
+  "params": [
+   "id"
+  ],
+  "query": [],
+  "status": 400,
+  "urlTried": "/wp/exceptionReview/32697",
+  "fieldCount": 1,
+  "message": "[error] =cannot retrieve data for root model: oid=32697, rootType=209, error=The model for a persistent reference is missing from the databa",
+  "allTried": [
+   {
+    "url": "/wp/exceptionReview/32697",
+    "status": 400
+   },
+   {
+    "url": "/wp/exceptionReview/32689",
+    "status": 400
+   }
+  ]
+ },
+ {
+  "layer": "wf",
+  "path": "/exceptions/listExceptions",
+  "params": [],
+  "query": [
+   "bankId",
+   "applicationId",
+   "obligorNumber",
+   "obligationNumber",
+   "classificationCode",
+   "subclassCode",
+   "officerId",
+   "secondaryOfficerId",
+   "statusCode",
+   "listLimitIndicator"
+  ],
+  "status": 200,
+  "urlTried": "/exceptions/listExceptions",
+  "fieldCount": 1,
+  "message": "",
+  "allTried": [
+   {
+    "url": "/exceptions/listExceptions",
+    "status": 200
+   }
+  ]
+ },
+ {
+  "layer": "wf",
+  "path": "/wp/ExceptionType/{id}",
+  "params": [
+   "id"
+  ],
+  "query": [],
+  "status": 400,
+  "urlTried": "/wp/ExceptionType/32697",
+  "fieldCount": 1,
+  "message": "[error] =cannot retrieve data for root model: oid=32697, rootType=208, error=The model for a persistent reference is missing from the databa",
+  "allTried": [
+   {
+    "url": "/wp/ExceptionType/32697",
+    "status": 400
+   },
+   {
+    "url": "/wp/ExceptionType/32689",
+    "status": 400
+   }
+  ]
+ },
+ {
+  "layer": "wf",
+  "path": "/wp/feeManagement/{id}",
+  "params": [
+   "id"
+  ],
+  "query": [],
+  "status": 403,
+  "urlTried": "/wp/feeManagement/32697",
+  "fieldCount": 1,
+  "message": "[error] Access to this service is not permitted by the current user's permissions. Please consult your helpdesk if you feel that this is inc",
+  "allTried": [
+   {
+    "url": "/wp/feeManagement/32697",
+    "status": 403
+   },
+   {
+    "url": "/wp/feeManagement/32689",
+    "status": 403
+   }
+  ]
+ },
+ {
+  "layer": "wf",
+  "path": "/holderofrecords/allAdminsByEntityForASelectedHolderOfRecord",
+  "params": [],
+  "query": [
+   "bankId",
+   "customerId",
+   "dealNo",
+   "obligorNo",
+   "asOfDate",
+   "inAdminRole"
+  ],
+  "status": 200,
+  "urlTried": "/holderofrecords/allAdminsByEntityForASelectedHolderOfRecord?bankId=5&customerId=46643&dealNo=34160&obligorNo=34160&asOfDate=2026-06-25&inAdminRole=N",
+  "fieldCount": 1,
+  "message": "",
+  "allTried": [
+   {
+    "url": "/holderofrecords/allAdminsByEntityForASelectedHolderOfRecord",
+    "status": 400
+   }
+  ]
+ },
+ {
+  "layer": "wf",
+  "path": "/holderofrecords/allDealsForASelectedHolderOfRecord",
+  "params": [],
+  "query": [
+   "bankId",
+   "searchBy",
+   "customerId",
+   "obligorNo",
+   "asOfDate",
+   "inAdminRole"
+  ],
+  "status": 400,
+  "urlTried": "/holderofrecords/allDealsForASelectedHolderOfRecord",
+  "fieldCount": 1,
+  "message": "[error] The following error was returned from the Servicing System: Method                                  Appeared To Fail In System AFSD3",
+  "allTried": [
+   {
+    "url": "/holderofrecords/allDealsForASelectedHolderOfRecord",
+    "status": 400
+   }
+  ],
+  "pass2Url": "/holderofrecords/allDealsForASelectedHolderOfRecord?bankId=5&searchBy=C&customerId=46643&obligorNo=34160&asOfDate=2026-06-25&inAdminRole=N",
+  "pass2Status": 400
+ },
+ {
+  "layer": "wf",
+  "path": "/holderofrecords/allFundsByFundManager",
+  "params": [],
+  "query": [
+   "bankId",
+   "customerId"
+  ],
+  "status": 400,
+  "urlTried": "/holderofrecords/allFundsByFundManager",
+  "fieldCount": 1,
+  "message": "HTTP 204",
+  "allTried": [
+   {
+    "url": "/holderofrecords/allFundsByFundManager",
+    "status": 400
+   }
+  ],
+  "pass2Url": "/holderofrecords/allFundsByFundManager?bankId=5&customerId=46643",
+  "pass2Status": 204
+ },
+ {
+  "layer": "wf",
+  "path": "/holderofrecords/allHoldersofRecordinDeal",
+  "params": [],
+  "query": [
+   "bankId",
+   "dealNo",
+   "inAdminRole",
+   "asOfDate"
+  ],
+  "status": 400,
+  "urlTried": "/holderofrecords/allHoldersofRecordinDeal",
+  "fieldCount": 1,
+  "message": "[error] The following error was returned from the Servicing System: Method                                  Appeared To Fail In System AFSD3",
+  "allTried": [
+   {
+    "url": "/holderofrecords/allHoldersofRecordinDeal",
+    "status": 400
+   }
+  ],
+  "pass2Url": "/holderofrecords/allHoldersofRecordinDeal?bankId=5&dealNo=34160&inAdminRole=N&asOfDate=2026-06-25",
+  "pass2Status": 400
+ },
+ {
+  "layer": "wf",
+  "path": "/holderofrecords/beneficialOwnersForAFundWithinADeal",
+  "params": [],
+  "query": [
+   "bankId",
+   "dealNo",
+   "obligorNo",
+   "obgrSeqNum",
+   "asOfDate"
+  ],
+  "status": 400,
+  "urlTried": "/holderofrecords/beneficialOwnersForAFundWithinADeal",
+  "fieldCount": 1,
+  "message": "HTTP 204",
+  "allTried": [
+   {
+    "url": "/holderofrecords/beneficialOwnersForAFundWithinADeal",
+    "status": 400
+   }
+  ],
+  "pass2Url": "/holderofrecords/beneficialOwnersForAFundWithinADeal?bankId=5&dealNo=34160&obligorNo=34160&obgrSeqNum=1&asOfDate=2026-06-25",
+  "pass2Status": 204
+ },
+ {
+  "layer": "wf",
+  "path": "/jobs/listByOfficers",
+  "params": [],
+  "query": [
+   "owner",
+   "officer1Code",
+   "officer2Code",
+   "originatedOnOrAfter",
+   "includeClosedWP",
+   "resultCount"
+  ],
+  "status": 204,
+  "urlTried": "/jobs/listByOfficers",
+  "fieldCount": 0,
+  "message": "[error] The value 'N' is invalid for the field 'closedInd' and cannot be read.",
+  "allTried": [
+   {
+    "url": "/jobs/listByOfficers",
+    "status": 204
+   }
+  ],
+  "pass2Url": "/jobs/listByOfficers?includeClosedWP=N&resultCount=25",
+  "pass2Status": 400
+ },
+ {
+  "layer": "wf",
+  "path": "/jobs/joblistInquiry",
+  "params": [],
+  "query": [
+   "queryName"
+  ],
+  "status": 200,
+  "urlTried": "/jobs/joblistInquiry",
+  "fieldCount": 25,
+  "message": "",
+  "allTried": [
+   {
+    "url": "/jobs/joblistInquiry",
+    "status": 200
+   }
+  ]
+ },
+ {
+  "layer": "wf",
+  "path": "/wp/nonFinancial/{id}",
+  "params": [
+   "id"
+  ],
+  "query": [],
+  "status": 403,
+  "urlTried": "/wp/nonFinancial/32697",
+  "fieldCount": 1,
+  "message": "[error] Access to this service is not permitted by the current user's permissions. Please consult your helpdesk if you feel that this is inc",
+  "allTried": [
+   {
+    "url": "/wp/nonFinancial/32697",
+    "status": 403
+   },
+   {
+    "url": "/wp/nonFinancial/32689",
+    "status": 403
+   }
+  ]
+ },
+ {
+  "layer": "wf",
+  "path": "/wp/ObligationRoot/{id}",
+  "params": [
+   "id"
+  ],
+  "query": [],
+  "status": 400,
+  "urlTried": "/wp/ObligationRoot/32697",
+  "fieldCount": 1,
+  "message": "[error] =cannot retrieve data for root model: oid=32697, rootType=212, error=The model for a persistent reference is missing from the databa",
+  "allTried": [
+   {
+    "url": "/wp/ObligationRoot/32697",
+    "status": 400
+   },
+   {
+    "url": "/wp/ObligationRoot/32689",
+    "status": 400
+   }
+  ]
+ },
+ {
+  "layer": "wf",
+  "path": "/wp/ObligorRoot/{id}",
+  "params": [
+   "id"
+  ],
+  "query": [],
+  "status": 400,
+  "urlTried": "/wp/ObligorRoot/32697",
+  "fieldCount": 1,
+  "message": "[error] =cannot retrieve data for root model: oid=32697, rootType=211, error=The model for a persistent reference is missing from the databa",
+  "allTried": [
+   {
+    "url": "/wp/ObligorRoot/32697",
+    "status": 400
+   },
+   {
+    "url": "/wp/ObligorRoot/32689",
+    "status": 400
+   }
+  ]
+ },
+ {
+  "layer": "wf",
+  "path": "/wp/oblnRestructure/{id}",
+  "params": [
+   "id"
+  ],
+  "query": [],
+  "status": 403,
+  "urlTried": "/wp/oblnRestructure/32697",
+  "fieldCount": 1,
+  "message": "[error] Access to this service is not permitted by the current user's permissions. Please consult your helpdesk if you feel that this is inc",
+  "allTried": [
+   {
+    "url": "/wp/oblnRestructure/32697",
+    "status": 403
+   },
+   {
+    "url": "/wp/oblnRestructure/32689",
+    "status": 403
+   }
+  ]
+ },
+ {
+  "layer": "wf",
+  "path": "/wp/otherFinancials2/{id}",
+  "params": [
+   "id"
+  ],
+  "query": [],
+  "status": 400,
+  "urlTried": "/wp/otherFinancials2/32697",
+  "fieldCount": 1,
+  "message": "[error] =cannot retrieve data for root model: oid=9020000091937312, rootType=146, error=The model for a persistent reference is missing from",
+  "allTried": [
+   {
+    "url": "/wp/otherFinancials2/32697",
+    "status": 400
+   },
+   {
+    "url": "/wp/otherFinancials2/32689",
+    "status": 400
+   }
+  ]
+ },
+ {
+  "layer": "wf",
+  "path": "/wp/otherMaintenance/{id}",
+  "params": [
+   "id"
+  ],
+  "query": [],
+  "status": 400,
+  "urlTried": "/wp/otherMaintenance/32697",
+  "fieldCount": 1,
+  "message": "[error] =cannot retrieve data for root model: oid=9020000091937312, rootType=146, error=The model for a persistent reference is missing from",
+  "allTried": [
+   {
+    "url": "/wp/otherMaintenance/32697",
+    "status": 400
+   },
+   {
+    "url": "/wp/otherMaintenance/32689",
+    "status": 400
+   }
+  ]
+ },
+ {
+  "layer": "wf",
+  "path": "/wp/payments2/{id}",
+  "params": [
+   "id"
+  ],
+  "query": [],
+  "status": 400,
+  "urlTried": "/wp/payments2/32697",
+  "fieldCount": 1,
+  "message": "[error] =cannot retrieve data for root model: oid=9020000091937312, rootType=146, error=The model for a persistent reference is missing from",
+  "allTried": [
+   {
+    "url": "/wp/payments2/32697",
+    "status": 400
+   },
+   {
+    "url": "/wp/payments2/32689",
+    "status": 400
+   }
+  ]
+ },
+ {
+  "layer": "wf",
+  "path": "/ping",
+  "params": [],
+  "query": [],
+  "status": 200,
+  "urlTried": "/ping",
+  "fieldCount": 1,
+  "message": "",
+  "allTried": [
+   {
+    "url": "/ping",
+    "status": 200
+   }
+  ]
+ },
+ {
+  "layer": "wf",
+  "path": "/wp/QueueAdmin/{id}",
+  "params": [
+   "id"
+  ],
+  "query": [],
+  "status": 400,
+  "urlTried": "/wp/QueueAdmin/32697",
+  "fieldCount": 1,
+  "message": "[error] =cannot retrieve data for root model: oid=32697, rootType=200, error=The model for a persistent reference is missing from the databa",
+  "allTried": [
+   {
+    "url": "/wp/QueueAdmin/32697",
+    "status": 400
+   },
+   {
+    "url": "/wp/QueueAdmin/32689",
+    "status": 400
+   }
+  ]
+ },
+ {
+  "layer": "wf",
+  "path": "/wp/QueueGroupAdmin/{id}",
+  "params": [
+   "id"
+  ],
+  "query": [],
+  "status": 400,
+  "urlTried": "/wp/QueueGroupAdmin/32697",
+  "fieldCount": 1,
+  "message": "[error] =cannot retrieve data for root model: oid=32697, rootType=201, error=The model for a persistent reference is missing from the databa",
+  "allTried": [
+   {
+    "url": "/wp/QueueGroupAdmin/32697",
+    "status": 400
+   },
+   {
+    "url": "/wp/QueueGroupAdmin/32689",
+    "status": 400
+   }
+  ]
+ },
+ {
+  "layer": "wf",
+  "path": "/wp/repricing2/{id}",
+  "params": [
+   "id"
+  ],
+  "query": [],
+  "status": 400,
+  "urlTried": "/wp/repricing2/32697",
+  "fieldCount": 1,
+  "message": "[error] =cannot retrieve data for root model: oid=9020000091937312, rootType=146, error=The model for a persistent reference is missing from",
+  "allTried": [
+   {
+    "url": "/wp/repricing2/32697",
+    "status": 400
+   },
+   {
+    "url": "/wp/repricing2/32689",
+    "status": 400
+   }
+  ]
+ },
+ {
+  "layer": "wf",
+  "path": "/wp/roleAdmin/{id}",
+  "params": [
+   "id"
+  ],
+  "query": [],
+  "status": 400,
+  "urlTried": "/wp/roleAdmin/32697",
+  "fieldCount": 1,
+  "message": "[error] =cannot retrieve data for root model: oid=32697, rootType=103, error=The model for a persistent reference is missing from the databa",
+  "allTried": [
+   {
+    "url": "/wp/roleAdmin/32697",
+    "status": 400
+   },
+   {
+    "url": "/wp/roleAdmin/32689",
+    "status": 400
+   }
+  ]
+ },
+ {
+  "layer": "wf",
+  "path": "/wp/syndiDealMaintenance/{id}",
+  "params": [
+   "id"
+  ],
+  "query": [],
+  "status": 400,
+  "urlTried": "/wp/syndiDealMaintenance/32697",
+  "fieldCount": 1,
+  "message": "[error] =cannot retrieve data for root model: oid=9020000091937312, rootType=49, error=The model for a persistent reference is missing from ",
+  "allTried": [
+   {
+    "url": "/wp/syndiDealMaintenance/32697",
+    "status": 400
+   },
+   {
+    "url": "/wp/syndiDealMaintenance/32689",
+    "status": 400
+   }
+  ]
+ },
+ {
+  "layer": "wf",
+  "path": "/wp/syndiDealPipeline/{id}",
+  "params": [
+   "id"
+  ],
+  "query": [],
+  "status": 403,
+  "urlTried": "/wp/syndiDealPipeline/32697",
+  "fieldCount": 1,
+  "message": "[error] Access to this service is not permitted by the current user's permissions. Please consult your helpdesk if you feel that this is inc",
+  "allTried": [
+   {
+    "url": "/wp/syndiDealPipeline/32697",
+    "status": 403
+   },
+   {
+    "url": "/wp/syndiDealPipeline/32689",
+    "status": 403
+   }
+  ]
+ },
+ {
+  "layer": "wf",
+  "path": "/wp/syndiRepricing/{id}",
+  "params": [
+   "id"
+  ],
+  "query": [],
+  "status": 400,
+  "urlTried": "/wp/syndiRepricing/32697",
+  "fieldCount": 1,
+  "message": "[error] =cannot retrieve data for root model: oid=9020000091937312, rootType=49, error=The model for a persistent reference is missing from ",
+  "allTried": [
+   {
+    "url": "/wp/syndiRepricing/32697",
+    "status": 400
+   },
+   {
+    "url": "/wp/syndiRepricing/32689",
+    "status": 400
+   }
+  ]
+ },
+ {
+  "layer": "wf",
+  "path": "/up/listAlertTypes",
+  "params": [],
+  "query": [],
+  "status": 200,
+  "urlTried": "/up/listAlertTypes",
+  "fieldCount": 2,
+  "message": "",
+  "allTried": [
+   {
+    "url": "/up/listAlertTypes",
+    "status": 200
+   }
+  ]
+ },
+ {
+  "layer": "wf",
+  "path": "/up/listContextGroups",
+  "params": [],
+  "query": [],
+  "status": 200,
+  "urlTried": "/up/listContextGroups",
+  "fieldCount": 2,
+  "message": "",
+  "allTried": [
+   {
+    "url": "/up/listContextGroups",
+    "status": 200
+   }
+  ]
+ },
+ {
+  "layer": "wf",
+  "path": "/up/listCreditAuthorityItems",
+  "params": [],
+  "query": [],
+  "status": 200,
+  "urlTried": "/up/listCreditAuthorityItems",
+  "fieldCount": 2,
+  "message": "",
+  "allTried": [
+   {
+    "url": "/up/listCreditAuthorityItems",
+    "status": 200
+   }
+  ]
+ },
+ {
+  "layer": "wf",
+  "path": "/up/listLimitGroups",
+  "params": [],
+  "query": [
+   "organizationId"
+  ],
+  "status": 200,
+  "urlTried": "/up/listLimitGroups?organizationId=1",
+  "fieldCount": 8,
+  "message": "",
+  "allTried": [
+   {
+    "url": "/up/listLimitGroups",
+    "status": 400
+   }
+  ]
+ },
+ {
+  "layer": "wf",
+  "path": "/up/listOverrideConditions",
+  "params": [],
+  "query": [
+   "bankId",
+   "applicationId"
+  ],
+  "status": 200,
+  "urlTried": "/up/listOverrideConditions?bankId=5&applicationId=1",
+  "fieldCount": 2,
+  "message": "",
+  "allTried": [
+   {
+    "url": "/up/listOverrideConditions",
+    "status": 400
+   }
+  ]
+ },
+ {
+  "layer": "wf",
+  "path": "/up/listQueueGroups",
+  "params": [],
+  "query": [],
+  "status": 200,
+  "urlTried": "/up/listQueueGroups",
+  "fieldCount": 2,
+  "message": "",
+  "allTried": [
+   {
+    "url": "/up/listQueueGroups",
+    "status": 200
+   }
+  ]
+ },
+ {
+  "layer": "wf",
+  "path": "/up/listQueues",
+  "params": [],
+  "query": [],
+  "status": 200,
+  "urlTried": "/up/listQueues",
+  "fieldCount": 2,
+  "message": "",
+  "allTried": [
+   {
+    "url": "/up/listQueues",
+    "status": 200
+   }
+  ]
+ },
+ {
+  "layer": "wf",
+  "path": "/up/listRoles",
+  "params": [],
+  "query": [],
+  "status": 200,
+  "urlTried": "/up/listRoles",
+  "fieldCount": 2,
+  "message": "",
+  "allTried": [
+   {
+    "url": "/up/listRoles",
+    "status": 200
+   }
+  ]
+ },
+ {
+  "layer": "wf",
+  "path": "/up/listTeams",
+  "params": [],
+  "query": [
+   "userOid"
+  ],
+  "status": 403,
+  "urlTried": "/up/listTeams",
+  "fieldCount": 1,
+  "message": "[error] Access to this service is not permitted by the current user's permissions. Please consult your helpdesk if you feel that this is inc",
+  "allTried": [
+   {
+    "url": "/up/listTeams",
+    "status": 403
+   }
+  ]
+ },
+ {
+  "layer": "wf",
+  "path": "/up/userProfileChangeHistory",
+  "params": [],
+  "query": [
+   "userName",
+   "updatedFromDate",
+   "updatedToDate",
+   "lastUpdatedDays",
+   "onOrAfterCreatedDate",
+   "lastCreatedDays",
+   "activateOrInactive"
+  ],
+  "status": 200,
+  "urlTried": "/up/userProfileChangeHistory",
+  "fieldCount": 7,
+  "message": "",
+  "allTried": [
+   {
+    "url": "/up/userProfileChangeHistory",
+    "status": 200
+   }
+  ]
+ },
+ {
+  "layer": "wf",
+  "path": "/up/userSearch",
+  "params": [],
+  "query": [
+   "searchUserId",
+   "lastNameStartsWith",
+   "showDeactivatedUsers",
+   "userEntitlementsList",
+   "userTypes",
+   "companyAffiliations",
+   "startAtOid"
+  ],
+  "status": 200,
+  "urlTried": "/up/userSearch",
+  "fieldCount": 2,
+  "message": "",
+  "allTried": [
+   {
+    "url": "/up/userSearch",
+    "status": 200
+   }
+  ]
+ },
+ {
+  "layer": "wf",
+  "path": "/wp/userProfileAdmin/{id}",
+  "params": [
+   "id"
+  ],
+  "query": [],
+  "status": 400,
+  "urlTried": "/wp/userProfileAdmin/32697",
+  "fieldCount": 1,
+  "message": "[error] =cannot retrieve data for root model: oid=32697, rootType=101, error=The model for a persistent reference is missing from the databa",
+  "allTried": [
+   {
+    "url": "/wp/userProfileAdmin/32697",
+    "status": 400
+   },
+   {
+    "url": "/wp/userProfileAdmin/32689",
+    "status": 400
+   }
+  ]
+ },
+ {
+  "layer": "svc",
+  "path": "/accrualSchedules/get/{obligationId}-{chargeCode}",
+  "params": [
+   "obligationId",
+   "chargeCode"
+  ],
+  "query": [
+   "effectiveDate"
+  ],
+  "status": 403,
+  "urlTried": "/accrualSchedules/get/30733-3000",
+  "fieldCount": 1,
+  "message": "[error] Access to this service is not permitted by the current user's permissions. Please consult your helpdesk if you feel that this is inc",
+  "allTried": [
+   {
+    "url": "/accrualSchedules/get/30733-3000",
+    "status": 403
+   },
+   {
+    "url": "/accrualSchedules/get/30733-1005",
+    "status": 403
+   },
+   {
+    "url": "/accrualSchedules/get/30745-3000",
+    "status": 403
+   },
+   {
+    "url": "/accrualSchedules/get/30745-1005",
+    "status": 403
+   }
+  ]
+ },
+ {
+  "layer": "svc",
+  "path": "/accrualSchedules/getFullKey/{bank}-{obligor}-{obligation}-{chargeCode}",
+  "params": [
+   "bank",
+   "obligor",
+   "obligation",
+   "chargeCode"
+  ],
+  "query": [
+   "effectiveDate"
+  ],
+  "status": 403,
+  "urlTried": "/accrualSchedules/getFullKey/5-34160-75-3000",
+  "fieldCount": 1,
+  "message": "[error] Access to this service is not permitted by the current user's permissions. Please consult your helpdesk if you feel that this is inc",
+  "allTried": [
+   {
+    "url": "/accrualSchedules/getFullKey/5-34160-75-3000",
+    "status": 403
+   },
+   {
+    "url": "/accrualSchedules/getFullKey/5-34160-75-1005",
+    "status": 403
+   },
+   {
+    "url": "/accrualSchedules/getFullKey/5-34160-83-3000",
+    "status": 403
+   },
+   {
+    "url": "/accrualSchedules/getFullKey/5-34160-83-1005",
+    "status": 403
+   },
+   {
+    "url": "/accrualSchedules/getFullKey/5-1136-18-3000",
+    "status": 403
+   },
+   {
+    "url": "/accrualSchedules/getFullKey/5-1136-18-1005",
+    "status": 403
+   }
+  ]
+ },
+ {
+  "layer": "svc",
+  "path": "/accrualSchedules/list/{obligationId}-{chargeCode}",
+  "params": [
+   "obligationId",
+   "chargeCode"
+  ],
+  "query": [
+   "sortOrder"
+  ],
+  "status": 403,
+  "urlTried": "/accrualSchedules/list/30733-3000",
+  "fieldCount": 1,
+  "message": "[error] Access to this service is not permitted by the current user's permissions. Please consult your helpdesk if you feel that this is inc",
+  "allTried": [
+   {
+    "url": "/accrualSchedules/list/30733-3000",
+    "status": 403
+   },
+   {
+    "url": "/accrualSchedules/list/30733-1005",
+    "status": 403
+   },
+   {
+    "url": "/accrualSchedules/list/30745-3000",
+    "status": 403
+   },
+   {
+    "url": "/accrualSchedules/list/30745-1005",
+    "status": 403
+   }
+  ]
+ },
+ {
+  "layer": "svc",
+  "path": "/accrualSchedules/listFullKey/{bank}-{obligor}-{obligation}-{chargeCode}",
+  "params": [
+   "bank",
+   "obligor",
+   "obligation",
+   "chargeCode"
+  ],
+  "query": [
+   "sortOrder"
+  ],
+  "status": 403,
+  "urlTried": "/accrualSchedules/listFullKey/5-34160-75-3000",
+  "fieldCount": 1,
+  "message": "[error] Access to this service is not permitted by the current user's permissions. Please consult your helpdesk if you feel that this is inc",
+  "allTried": [
+   {
+    "url": "/accrualSchedules/listFullKey/5-34160-75-3000",
+    "status": 403
+   },
+   {
+    "url": "/accrualSchedules/listFullKey/5-34160-75-1005",
+    "status": 403
+   },
+   {
+    "url": "/accrualSchedules/listFullKey/5-34160-83-3000",
+    "status": 403
+   },
+   {
+    "url": "/accrualSchedules/listFullKey/5-34160-83-1005",
+    "status": 403
+   },
+   {
+    "url": "/accrualSchedules/listFullKey/5-1136-18-3000",
+    "status": 403
+   },
+   {
+    "url": "/accrualSchedules/listFullKey/5-1136-18-1005",
+    "status": 403
+   }
+  ]
+ },
+ {
+  "layer": "svc",
+  "path": "/addresses/get/{addressId}",
+  "params": [
+   "addressId"
+  ],
+  "query": [],
+  "status": 200,
+  "urlTried": "/addresses/get/33024",
+  "fieldCount": 25,
+  "message": "",
+  "allTried": [
+   {
+    "url": "/addresses/get/33024",
+    "status": 200
+   }
+  ]
+ },
+ {
+  "layer": "svc",
+  "path": "/addresses/getPrimaryAddrByNameId",
+  "params": [],
+  "query": [
+   "nameId"
+  ],
+  "status": 200,
+  "urlTried": "/addresses/getPrimaryAddrByNameId?nameId=46643",
+  "fieldCount": 26,
+  "message": "",
+  "allTried": [
+   {
+    "url": "/addresses/getPrimaryAddrByNameId",
+    "status": 400
+   }
+  ]
+ },
+ {
+  "layer": "svc",
+  "path": "/amortizationSchedCharge/get/{obligationId}-{type}-{chargeCode}",
+  "params": [
+   "obligationId",
+   "type",
+   "chargeCode"
+  ],
+  "query": [
+   "amortizationDate"
+  ],
+  "status": "NO_KEY",
+  "note": "no harvested key available for path params",
+  "tried": []
+ },
+ {
+  "layer": "svc",
+  "path": "/amortizationSchedCharge/getFullKey/{bank}-{obligor}-{obligation}-{type}-{chargeCode}",
+  "params": [
+   "bank",
+   "obligor",
+   "obligation",
+   "type",
+   "chargeCode"
+  ],
+  "query": [
+   "amortizationDate"
+  ],
+  "status": "NO_KEY",
+  "note": "no harvested key available for path params",
+  "tried": []
+ },
+ {
+  "layer": "svc",
+  "path": "/amortizationSchedCharge/list/{obligationId}-{type}",
+  "params": [
+   "obligationId",
+   "type"
+  ],
+  "query": [
+   "amortizationDate",
+   "sortOrder"
+  ],
+  "status": "NO_KEY",
+  "note": "no harvested key available for path params",
+  "tried": []
+ },
+ {
+  "layer": "svc",
+  "path": "/amortizationSchedCharge/listFullKey/{bank}-{obligor}-{obligation}-{type}",
+  "params": [
+   "bank",
+   "obligor",
+   "obligation",
+   "type"
+  ],
+  "query": [
+   "amortizationDate",
+   "sortOrder"
+  ],
+  "status": "NO_KEY",
+  "note": "no harvested key available for path params",
+  "tried": []
+ },
+ {
+  "layer": "svc",
+  "path": "/amortizationSchedule/get/{obligationId}-{type}",
+  "params": [
+   "obligationId",
+   "type"
+  ],
+  "query": [
+   "amortizationDate"
+  ],
+  "status": "NO_KEY",
+  "note": "no harvested key available for path params",
+  "tried": []
+ },
+ {
+  "layer": "svc",
+  "path": "/amortizationSchedule/getFullKey/{bank}-{obligor}-{obligation}-{type}",
+  "params": [
+   "bank",
+   "obligor",
+   "obligation",
+   "type"
+  ],
+  "query": [
+   "amortizationDate"
+  ],
+  "status": "NO_KEY",
+  "note": "no harvested key available for path params",
+  "tried": []
+ },
+ {
+  "layer": "svc",
+  "path": "/amortizationSchedule/list/{obligationId}-{type}",
+  "params": [
+   "obligationId",
+   "type"
+  ],
+  "query": [
+   "sortOrder"
+  ],
+  "status": "NO_KEY",
+  "note": "no harvested key available for path params",
+  "tried": []
+ },
+ {
+  "layer": "svc",
+  "path": "/amortizationSchedule/listFullKey/{bank}-{obligor}-{obligation}-{type}",
+  "params": [
+   "bank",
+   "obligor",
+   "obligation",
+   "type"
+  ],
+  "query": [
+   "sortOrder"
+  ],
+  "status": "NO_KEY",
+  "note": "no harvested key available for path params",
+  "tried": []
+ },
+ {
+  "layer": "svc",
+  "path": "/amortizationSchedule/listByOblnId/{obligationId}",
+  "params": [
+   "obligationId"
+  ],
+  "query": [
+   "sortOrder"
+  ],
+  "status": 200,
+  "urlTried": "/amortizationSchedule/listByOblnId/30745",
+  "fieldCount": 6,
+  "message": "",
+  "allTried": [
+   {
+    "url": "/amortizationSchedule/listByOblnId/30733",
+    "status": 404
+   },
+   {
+    "url": "/amortizationSchedule/listByOblnId/30745",
+    "status": 200
+   }
+  ]
+ },
+ {
+  "layer": "svc",
+  "path": "/apis/get",
+  "params": [],
+  "query": [
+   "apiName"
+  ],
+  "status": 400,
+  "urlTried": "/apis/get",
+  "fieldCount": 1,
+  "message": "[error] HTTP 400 Bad Request",
+  "allTried": [
+   {
+    "url": "/apis/get",
+    "status": 400
+   }
+  ]
+ },
+ {
+  "layer": "svc",
+  "path": "/apis/list",
+  "params": [],
+  "query": [
+   "apiNameSearch",
+   "sortOrder"
+  ],
+  "status": 400,
+  "urlTried": "/apis/list",
+  "fieldCount": 1,
+  "message": "[error] HTTP 400 Bad Request",
+  "allTried": [
+   {
+    "url": "/apis/list",
+    "status": 400
+   }
+  ],
+  "pass2Url": "/apis/list?apiNameSearch=&sortOrder=A",
+  "pass2Status": 400
+ },
+ {
+  "layer": "svc",
+  "path": "/apis/listByCategory",
+  "params": [],
+  "query": [
+   "category",
+   "sortOrder"
+  ],
+  "status": 400,
+  "urlTried": "/apis/listByCategory",
+  "fieldCount": 1,
+  "message": "[error] HTTP 400 Bad Request",
+  "allTried": [
+   {
+    "url": "/apis/listByCategory",
+    "status": 400
+   }
+  ],
+  "pass2Url": "/apis/listByCategory?category=Payment&sortOrder=A",
+  "pass2Status": 400
+ },
+ {
+  "layer": "svc",
+  "path": "/apis/listCategories",
+  "params": [],
+  "query": [
+   "sortOrder"
+  ],
+  "status": 200,
+  "urlTried": "/apis/listCategories",
+  "fieldCount": 43,
+  "message": "",
+  "allTried": [
+   {
+    "url": "/apis/listCategories",
+    "status": 200
+   }
+  ]
+ },
+ {
+  "layer": "svc",
+  "path": "/assetSales/get/{obligationId}",
+  "params": [
+   "obligationId"
+  ],
+  "query": [
+   "effectiveDate"
+  ],
+  "status": 403,
+  "urlTried": "/assetSales/get/30733",
+  "fieldCount": 1,
+  "message": "[error] Access to this service is not permitted by the current user's permissions. Please consult your helpdesk if you feel that this is inc",
+  "allTried": [
+   {
+    "url": "/assetSales/get/30733",
+    "status": 403
+   },
+   {
+    "url": "/assetSales/get/30745",
+    "status": 403
+   }
+  ]
+ },
+ {
+  "layer": "svc",
+  "path": "/assetSales/getFullKey/{bank}-{obligor}-{obligation}",
+  "params": [
+   "bank",
+   "obligor",
+   "obligation"
+  ],
+  "query": [
+   "effectiveDate"
+  ],
+  "status": 403,
+  "urlTried": "/assetSales/getFullKey/5-34160-75",
+  "fieldCount": 1,
+  "message": "[error] Access to this service is not permitted by the current user's permissions. Please consult your helpdesk if you feel that this is inc",
+  "allTried": [
+   {
+    "url": "/assetSales/getFullKey/5-34160-75",
+    "status": 403
+   },
+   {
+    "url": "/assetSales/getFullKey/5-34160-83",
+    "status": 403
+   },
+   {
+    "url": "/assetSales/getFullKey/5-1136-18",
+    "status": 403
+   },
+   {
+    "url": "/assetSales/getFullKey/5-1136-26",
+    "status": 403
+   },
+   {
+    "url": "/assetSales/getFullKey/5-39-18",
+    "status": 403
+   },
+   {
+    "url": "/assetSales/getFullKey/5-39-26",
+    "status": 403
+   }
+  ]
+ },
+ {
+  "layer": "svc",
+  "path": "/assetSales/list/{obligationId}",
+  "params": [
+   "obligationId"
+  ],
+  "query": [
+   "sortOrder"
+  ],
+  "status": 403,
+  "urlTried": "/assetSales/list/30733",
+  "fieldCount": 1,
+  "message": "[error] Access to this service is not permitted by the current user's permissions. Please consult your helpdesk if you feel that this is inc",
+  "allTried": [
+   {
+    "url": "/assetSales/list/30733",
+    "status": 403
+   },
+   {
+    "url": "/assetSales/list/30745",
+    "status": 403
+   }
+  ]
+ },
+ {
+  "layer": "svc",
+  "path": "/assetSales/listFullKey/{bank}-{obligor}-{obligation}",
+  "params": [
+   "bank",
+   "obligor",
+   "obligation"
+  ],
+  "query": [
+   "sortOrder"
+  ],
+  "status": 403,
+  "urlTried": "/assetSales/listFullKey/5-34160-75",
+  "fieldCount": 1,
+  "message": "[error] Access to this service is not permitted by the current user's permissions. Please consult your helpdesk if you feel that this is inc",
+  "allTried": [
+   {
+    "url": "/assetSales/listFullKey/5-34160-75",
+    "status": 403
+   },
+   {
+    "url": "/assetSales/listFullKey/5-34160-83",
+    "status": 403
+   },
+   {
+    "url": "/assetSales/listFullKey/5-1136-18",
+    "status": 403
+   },
+   {
+    "url": "/assetSales/listFullKey/5-1136-26",
+    "status": 403
+   },
+   {
+    "url": "/assetSales/listFullKey/5-39-18",
+    "status": 403
+   },
+   {
+    "url": "/assetSales/listFullKey/5-39-26",
+    "status": 403
+   }
+  ]
+ },
+ {
+  "layer": "svc",
+  "path": "/balances/get/{obligationId}-{balanceCode}",
+  "params": [
+   "obligationId",
+   "balanceCode"
+  ],
+  "query": [],
+  "status": 200,
+  "urlTried": "/balances/get/30733-54",
+  "fieldCount": 69,
+  "message": "",
+  "allTried": [
+   {
+    "url": "/balances/get/30733-54",
+    "status": 200
+   }
+  ]
+ },
+ {
+  "layer": "svc",
+  "path": "/balances/getFullKey/{bank}-{obligor}-{obligation}-{balanceCode}",
+  "params": [
+   "bank",
+   "obligor",
+   "obligation",
+   "balanceCode"
+  ],
+  "query": [],
+  "status": 200,
+  "urlTried": "/balances/getFullKey/5-34160-75-54",
+  "fieldCount": 70,
+  "message": "",
+  "allTried": [
+   {
+    "url": "/balances/getFullKey/5-34160-75-54",
+    "status": 200
+   }
+  ]
+ },
+ {
+  "layer": "svc",
+  "path": "/balances/list/{obligationId}",
+  "params": [
+   "obligationId"
+  ],
+  "query": [
+   "sortOrder"
+  ],
+  "status": 200,
+  "urlTried": "/balances/list/30733",
+  "fieldCount": 70,
+  "message": "",
+  "allTried": [
+   {
+    "url": "/balances/list/30733",
+    "status": 200
+   }
+  ]
+ },
+ {
+  "layer": "svc",
+  "path": "/balances/listFullKey/{bank}-{obligor}-{obligation}",
+  "params": [
+   "bank",
+   "obligor",
+   "obligation"
+  ],
+  "query": [
+   "sortOrder"
+  ],
+  "status": 200,
+  "urlTried": "/balances/listFullKey/5-34160-75",
+  "fieldCount": 70,
+  "message": "",
+  "allTried": [
+   {
+    "url": "/balances/listFullKey/5-34160-75",
+    "status": 200
+   }
+  ]
+ },
+ {
+  "layer": "svc",
+  "path": "/banks/get/{bank}",
+  "params": [
+   "bank"
+  ],
+  "query": [],
+  "status": 403,
+  "urlTried": "/banks/get/5",
+  "fieldCount": 1,
+  "message": "[error] Access to this service is not permitted by the current user's permissions. Please consult your helpdesk if you feel that this is inc",
+  "allTried": [
+   {
+    "url": "/banks/get/5",
+    "status": 403
+   }
+  ]
+ },
+ {
+  "layer": "svc",
+  "path": "/banks/list",
+  "params": [],
+  "query": [
+   "organizationId",
+   "sortOrder"
+  ],
+  "status": 403,
+  "urlTried": "/banks/list",
+  "fieldCount": 1,
+  "message": "[error] Access to this service is not permitted by the current user's permissions. Please consult your helpdesk if you feel that this is inc",
+  "allTried": [
+   {
+    "url": "/banks/list",
+    "status": 403
+   }
+  ]
+ },
+ {
+  "layer": "svc",
+  "path": "/billingSchedules/get/{obligationId}-{chargeCode}",
+  "params": [
+   "obligationId",
+   "chargeCode"
+  ],
+  "query": [
+   "effectiveDate"
+  ],
+  "status": 403,
+  "urlTried": "/billingSchedules/get/30733-3000",
+  "fieldCount": 1,
+  "message": "[error] Access to this service is not permitted by the current user's permissions. Please consult your helpdesk if you feel that this is inc",
+  "allTried": [
+   {
+    "url": "/billingSchedules/get/30733-3000",
+    "status": 403
+   },
+   {
+    "url": "/billingSchedules/get/30733-1005",
+    "status": 403
+   },
+   {
+    "url": "/billingSchedules/get/30745-3000",
+    "status": 403
+   },
+   {
+    "url": "/billingSchedules/get/30745-1005",
+    "status": 403
+   }
+  ]
+ },
+ {
+  "layer": "svc",
+  "path": "/billingSchedules/getFullKey/{bank}-{obligor}-{obligation}-{chargeCode}",
+  "params": [
+   "bank",
+   "obligor",
+   "obligation",
+   "chargeCode"
+  ],
+  "query": [
+   "effectiveDate"
+  ],
+  "status": 403,
+  "urlTried": "/billingSchedules/getFullKey/5-34160-75-3000",
+  "fieldCount": 1,
+  "message": "[error] Access to this service is not permitted by the current user's permissions. Please consult your helpdesk if you feel that this is inc",
+  "allTried": [
+   {
+    "url": "/billingSchedules/getFullKey/5-34160-75-3000",
+    "status": 403
+   },
+   {
+    "url": "/billingSchedules/getFullKey/5-34160-75-1005",
+    "status": 403
+   },
+   {
+    "url": "/billingSchedules/getFullKey/5-34160-83-3000",
+    "status": 403
+   },
+   {
+    "url": "/billingSchedules/getFullKey/5-34160-83-1005",
+    "status": 403
+   },
+   {
+    "url": "/billingSchedules/getFullKey/5-1136-18-3000",
+    "status": 403
+   },
+   {
+    "url": "/billingSchedules/getFullKey/5-1136-18-1005",
+    "status": 403
+   }
+  ]
+ },
+ {
+  "layer": "svc",
+  "path": "/billingSchedules/list/{obligationId}-{chargeCode}",
+  "params": [
+   "obligationId",
+   "chargeCode"
+  ],
+  "query": [
+   "sortOrder"
+  ],
+  "status": 403,
+  "urlTried": "/billingSchedules/list/30733-3000",
+  "fieldCount": 1,
+  "message": "[error] Access to this service is not permitted by the current user's permissions. Please consult your helpdesk if you feel that this is inc",
+  "allTried": [
+   {
+    "url": "/billingSchedules/list/30733-3000",
+    "status": 403
+   },
+   {
+    "url": "/billingSchedules/list/30733-1005",
+    "status": 403
+   },
+   {
+    "url": "/billingSchedules/list/30745-3000",
+    "status": 403
+   },
+   {
+    "url": "/billingSchedules/list/30745-1005",
+    "status": 403
+   }
+  ]
+ },
+ {
+  "layer": "svc",
+  "path": "/billingSchedules/listFullKey/{bank}-{obligor}-{obligation}-{chargeCode}",
+  "params": [
+   "bank",
+   "obligor",
+   "obligation",
+   "chargeCode"
+  ],
+  "query": [
+   "sortOrder"
+  ],
+  "status": 403,
+  "urlTried": "/billingSchedules/listFullKey/5-34160-75-3000",
+  "fieldCount": 1,
+  "message": "[error] Access to this service is not permitted by the current user's permissions. Please consult your helpdesk if you feel that this is inc",
+  "allTried": [
+   {
+    "url": "/billingSchedules/listFullKey/5-34160-75-3000",
+    "status": 403
+   },
+   {
+    "url": "/billingSchedules/listFullKey/5-34160-75-1005",
+    "status": 403
+   },
+   {
+    "url": "/billingSchedules/listFullKey/5-34160-83-3000",
+    "status": 403
+   },
+   {
+    "url": "/billingSchedules/listFullKey/5-34160-83-1005",
+    "status": 403
+   },
+   {
+    "url": "/billingSchedules/listFullKey/5-1136-18-3000",
+    "status": 403
+   },
+   {
+    "url": "/billingSchedules/listFullKey/5-1136-18-1005",
+    "status": 403
+   }
+  ]
+ },
+ {
+  "layer": "svc",
+  "path": "/charges/get/{obligationId}-{chargeCode}",
+  "params": [
+   "obligationId",
+   "chargeCode"
+  ],
+  "query": [],
+  "status": 200,
+  "urlTried": "/charges/get/30733-3000",
+  "fieldCount": 125,
+  "message": "",
+  "allTried": [
+   {
+    "url": "/charges/get/30733-3000",
+    "status": 200
+   }
+  ]
+ },
+ {
+  "layer": "svc",
+  "path": "/charges/getFullKey/{bank}-{obligor}-{obligation}-{chargeCode}",
+  "params": [
+   "bank",
+   "obligor",
+   "obligation",
+   "chargeCode"
+  ],
+  "query": [],
+  "status": 200,
+  "urlTried": "/charges/getFullKey/5-34160-75-3000",
+  "fieldCount": 126,
+  "message": "",
+  "allTried": [
+   {
+    "url": "/charges/getFullKey/5-34160-75-3000",
+    "status": 200
+   }
+  ]
+ },
+ {
+  "layer": "svc",
+  "path": "/charges/list/{obligationId}",
+  "params": [
+   "obligationId"
+  ],
+  "query": [
+   "sortOrder"
+  ],
+  "status": 200,
+  "urlTried": "/charges/list/30733",
+  "fieldCount": 126,
+  "message": "",
+  "allTried": [
+   {
+    "url": "/charges/list/30733",
+    "status": 200
+   }
+  ]
+ },
+ {
+  "layer": "svc",
+  "path": "/charges/listFullKey/{bank}-{obligor}-{obligation}",
+  "params": [
+   "bank",
+   "obligor",
+   "obligation"
+  ],
+  "query": [
+   "sortOrder"
+  ],
+  "status": 200,
+  "urlTried": "/charges/listFullKey/5-34160-75",
+  "fieldCount": 126,
+  "message": "",
+  "allTried": [
+   {
+    "url": "/charges/listFullKey/5-34160-75",
+    "status": 200
+   }
+  ]
+ },
+ {
+  "layer": "svc",
+  "path": "/citizenships/get/{nameId}-{sequence}",
+  "params": [
+   "nameId",
+   "sequence"
+  ],
+  "query": [],
+  "status": 404,
+  "urlTried": "/citizenships/get/46643-1",
+  "fieldCount": 0,
+  "message": "",
+  "allTried": [
+   {
+    "url": "/citizenships/get/46643-1",
+    "status": 404
+   },
+   {
+    "url": "/citizenships/get/46643-0",
+    "status": 404
+   },
+   {
+    "url": "/citizenships/get/8093-1",
+    "status": 404
+   },
+   {
+    "url": "/citizenships/get/8093-0",
+    "status": 404
+   }
+  ]
+ },
+ {
+  "layer": "svc",
+  "path": "/citizenships/list/{nameId}",
+  "params": [
+   "nameId"
+  ],
+  "query": [
+   "sortOrder"
+  ],
+  "status": 404,
+  "urlTried": "/citizenships/list/46643",
+  "fieldCount": 0,
+  "message": "[error] HTTP 400 Bad Request",
+  "allTried": [
+   {
+    "url": "/citizenships/list/46643",
+    "status": 404
+   },
+   {
+    "url": "/citizenships/list/8093",
+    "status": 404
+   }
+  ],
+  "pass2Url": "/citizenships/list/46643?sortOrder=A",
+  "pass2Status": 400
+ },
+ {
+  "layer": "svc",
+  "path": "/collateral/get/{bank}-{obligor}-{collateralItem}",
+  "params": [
+   "bank",
+   "obligor",
+   "collateralItem"
+  ],
+  "query": [],
+  "status": 200,
+  "urlTried": "/collateral/get/5-34160-18",
+  "fieldCount": 84,
+  "message": "",
+  "allTried": [
+   {
+    "url": "/collateral/get/5-34160-18",
+    "status": 200
+   }
+  ]
+ },
+ {
+  "layer": "svc",
+  "path": "/collateral/list/{bank}-{obligor}",
+  "params": [
+   "bank",
+   "obligor"
+  ],
+  "query": [
+   "sortOrder"
+  ],
+  "status": 200,
+  "urlTried": "/collateral/list/5-34160",
+  "fieldCount": 85,
+  "message": "",
+  "allTried": [
+   {
+    "url": "/collateral/list/5-34160",
+    "status": 200
+   }
+  ]
+ },
+ {
+  "layer": "svc",
+  "path": "/collateralInsurance/get/{bank}-{obligor}-{collateralItem}-{sequence}",
+  "params": [
+   "bank",
+   "obligor",
+   "collateralItem",
+   "sequence"
+  ],
+  "query": [],
+  "status": 404,
+  "urlTried": "/collateralInsurance/get/5-34160-18-1",
+  "fieldCount": 0,
+  "message": "",
+  "allTried": [
+   {
+    "url": "/collateralInsurance/get/5-34160-18-1",
+    "status": 404
+   },
+   {
+    "url": "/collateralInsurance/get/5-34160-18-0",
+    "status": 404
+   },
+   {
+    "url": "/collateralInsurance/get/5-1136-18-1",
+    "status": 404
+   },
+   {
+    "url": "/collateralInsurance/get/5-1136-18-0",
+    "status": 404
+   },
+   {
+    "url": "/collateralInsurance/get/5-1136-26-1",
+    "status": 404
+   },
+   {
+    "url": "/collateralInsurance/get/5-1136-26-0",
+    "status": 404
+   }
+  ]
+ },
+ {
+  "layer": "svc",
+  "path": "/collateralInsurance/list/{bank}-{obligor}-{collateralItem}",
+  "params": [
+   "bank",
+   "obligor",
+   "collateralItem"
+  ],
+  "query": [
+   "sortOrder"
+  ],
+  "status": 404,
+  "urlTried": "/collateralInsurance/list/5-34160-18",
+  "fieldCount": 0,
+  "message": "[error] HTTP 400 Bad Request",
+  "allTried": [
+   {
+    "url": "/collateralInsurance/list/5-34160-18",
+    "status": 404
+   },
+   {
+    "url": "/collateralInsurance/list/5-1136-18",
+    "status": 404
+   },
+   {
+    "url": "/collateralInsurance/list/5-1136-26",
+    "status": 404
+   }
+  ],
+  "pass2Url": "/collateralInsurance/list/5-34160-18?sortOrder=A",
+  "pass2Status": 400
+ },
+ {
+  "layer": "svc",
+  "path": "/collateralNegotiable/get/{bank}-{obligor}-{collateralItem}",
+  "params": [
+   "bank",
+   "obligor",
+   "collateralItem"
+  ],
+  "query": [],
+  "status": 404,
+  "urlTried": "/collateralNegotiable/get/5-34160-18",
+  "fieldCount": 0,
+  "message": "",
+  "allTried": [
+   {
+    "url": "/collateralNegotiable/get/5-34160-18",
+    "status": 404
+   },
+   {
+    "url": "/collateralNegotiable/get/5-1136-18",
+    "status": 404
+   },
+   {
+    "url": "/collateralNegotiable/get/5-1136-26",
+    "status": 404
+   }
+  ]
+ },
+ {
+  "layer": "svc",
+  "path": "/collateralNegotiable/list/{bank}-{obligor}",
+  "params": [
+   "bank",
+   "obligor"
+  ],
+  "query": [
+   "sortOrder"
+  ],
+  "status": 404,
+  "urlTried": "/collateralNegotiable/list/5-34160",
+  "fieldCount": 0,
+  "message": "[error] HTTP 400 Bad Request",
+  "allTried": [
+   {
+    "url": "/collateralNegotiable/list/5-34160",
+    "status": 404
+   },
+   {
+    "url": "/collateralNegotiable/list/5-1136",
+    "status": 404
+   },
+   {
+    "url": "/collateralNegotiable/list/5-39",
+    "status": 404
+   },
+   {
+    "url": "/collateralNegotiable/list/5-34392",
+    "status": 404
+   }
+  ],
+  "pass2Url": "/collateralNegotiable/list/5-34160?sortOrder=A",
+  "pass2Status": 400
+ },
+ {
+  "layer": "svc",
+  "path": "/collBorrowingBase/get/{bank}-{obligor}-{collateralItem}",
+  "params": [
+   "bank",
+   "obligor",
+   "collateralItem"
+  ],
+  "query": [],
+  "status": 200,
+  "urlTried": "/collBorrowingBase/get/5-34160-18",
+  "fieldCount": 17,
+  "message": "",
+  "allTried": [
+   {
+    "url": "/collBorrowingBase/get/5-34160-18",
+    "status": 200
+   }
+  ]
+ },
+ {
+  "layer": "svc",
+  "path": "/collFloodFilings/get/{bank}-{obligor}-{collateralItem}-{sequence}",
+  "params": [
+   "bank",
+   "obligor",
+   "collateralItem",
+   "sequence"
+  ],
+  "query": [],
+  "status": 404,
+  "urlTried": "/collFloodFilings/get/5-34160-18-1",
+  "fieldCount": 0,
+  "message": "",
+  "allTried": [
+   {
+    "url": "/collFloodFilings/get/5-34160-18-1",
+    "status": 404
+   },
+   {
+    "url": "/collFloodFilings/get/5-34160-18-0",
+    "status": 404
+   },
+   {
+    "url": "/collFloodFilings/get/5-1136-18-1",
+    "status": 404
+   },
+   {
+    "url": "/collFloodFilings/get/5-1136-18-0",
+    "status": 404
+   },
+   {
+    "url": "/collFloodFilings/get/5-1136-26-1",
+    "status": 404
+   },
+   {
+    "url": "/collFloodFilings/get/5-1136-26-0",
+    "status": 404
+   }
+  ]
+ },
+ {
+  "layer": "svc",
+  "path": "/collFloodFilings/list/{bank}-{obligor}-{collateralItem}",
+  "params": [
+   "bank",
+   "obligor",
+   "collateralItem"
+  ],
+  "query": [
+   "sortOrder"
+  ],
+  "status": 404,
+  "urlTried": "/collFloodFilings/list/5-34160-18",
+  "fieldCount": 0,
+  "message": "[error] HTTP 400 Bad Request",
+  "allTried": [
+   {
+    "url": "/collFloodFilings/list/5-34160-18",
+    "status": 404
+   },
+   {
+    "url": "/collFloodFilings/list/5-1136-18",
+    "status": 404
+   },
+   {
+    "url": "/collFloodFilings/list/5-1136-26",
+    "status": 404
+   }
+  ],
+  "pass2Url": "/collFloodFilings/list/5-34160-18?sortOrder=A",
+  "pass2Status": 400
+ },
+ {
+  "layer": "svc",
+  "path": "/collNegotHistory/get/{bank}-{obligor}-{collateralItem}",
+  "params": [
+   "bank",
+   "obligor",
+   "collateralItem"
+  ],
+  "query": [
+   "timestamp"
+  ],
+  "status": 400,
+  "urlTried": "/collNegotHistory/get/5-34160-18",
+  "fieldCount": 1,
+  "message": "HTTP 404",
+  "allTried": [
+   {
+    "url": "/collNegotHistory/get/5-34160-18",
+    "status": 400
+   },
+   {
+    "url": "/collNegotHistory/get/5-1136-18",
+    "status": 400
+   },
+   {
+    "url": "/collNegotHistory/get/5-1136-26",
+    "status": 400
+   }
+  ],
+  "pass2Url": "/collNegotHistory/get/5-34160-18?timestamp=2026-06-03T12%3A28%3A17.088919%2B0000",
+  "pass2Status": 404
+ },
+ {
+  "layer": "svc",
+  "path": "/collNegotHistory/list/{bank}-{obligor}-{collateralItem}",
+  "params": [
+   "bank",
+   "obligor",
+   "collateralItem"
+  ],
+  "query": [
+   "sortOrder"
+  ],
+  "status": 404,
+  "urlTried": "/collNegotHistory/list/5-34160-18",
+  "fieldCount": 0,
+  "message": "[error] HTTP 400 Bad Request",
+  "allTried": [
+   {
+    "url": "/collNegotHistory/list/5-34160-18",
+    "status": 404
+   },
+   {
+    "url": "/collNegotHistory/list/5-1136-18",
+    "status": 404
+   },
+   {
+    "url": "/collNegotHistory/list/5-1136-26",
+    "status": 404
+   }
+  ],
+  "pass2Url": "/collNegotHistory/list/5-34160-18?sortOrder=A",
+  "pass2Status": 400
+ },
+ {
+  "layer": "svc",
+  "path": "/collNegotReprice/get/{bank}",
+  "params": [
+   "bank"
+  ],
+  "query": [
+   "cusipNumber"
+  ],
+  "status": 400,
+  "urlTried": "/collNegotReprice/get/5",
+  "fieldCount": 1,
+  "message": "HTTP 404",
+  "allTried": [
+   {
+    "url": "/collNegotReprice/get/5",
+    "status": 400
+   }
+  ],
+  "pass2Url": "/collNegotReprice/get/5?cusipNumber=",
+  "pass2Status": 404
+ },
+ {
+  "layer": "svc",
+  "path": "/collNegotReprice/list/{bank}",
+  "params": [
+   "bank"
+  ],
+  "query": [
+   "sortOrder"
+  ],
+  "status": 200,
+  "urlTried": "/collNegotReprice/list/5",
+  "fieldCount": 37,
+  "message": "",
+  "allTried": [
+   {
+    "url": "/collNegotReprice/list/5",
+    "status": 200
+   }
+  ]
+ },
+ {
+  "layer": "svc",
+  "path": "/collRealEstate/get/{bank}-{obligor}-{collateralItem}",
+  "params": [
+   "bank",
+   "obligor",
+   "collateralItem"
+  ],
+  "query": [],
+  "status": 200,
+  "urlTried": "/collRealEstate/get/5-34160-18",
+  "fieldCount": 86,
+  "message": "",
+  "allTried": [
+   {
+    "url": "/collRealEstate/get/5-34160-18",
+    "status": 200
+   }
+  ]
+ },
+ {
+  "layer": "svc",
+  "path": "/collRETenant/get/{bank}-{obligor}-{collateralItem}-{tenantSequence}",
+  "params": [
+   "bank",
+   "obligor",
+   "collateralItem",
+   "tenantSequence"
+  ],
+  "query": [],
+  "status": "NO_KEY",
+  "note": "no harvested key available for path params",
+  "tried": []
+ },
+ {
+  "layer": "svc",
+  "path": "/collRETenant/list/{bank}-{obligor}-{collateralItem}",
+  "params": [
+   "bank",
+   "obligor",
+   "collateralItem"
+  ],
+  "query": [
+   "sortOrder"
+  ],
+  "status": 404,
+  "urlTried": "/collRETenant/list/5-34160-18",
+  "fieldCount": 0,
+  "message": "[error] HTTP 400 Bad Request",
+  "allTried": [
+   {
+    "url": "/collRETenant/list/5-34160-18",
+    "status": 404
+   },
+   {
+    "url": "/collRETenant/list/5-1136-18",
+    "status": 404
+   },
+   {
+    "url": "/collRETenant/list/5-1136-26",
+    "status": 404
+   }
+  ],
+  "pass2Url": "/collRETenant/list/5-34160-18?sortOrder=A",
+  "pass2Status": 400
+ },
+ {
+  "layer": "svc",
+  "path": "/currentObligations/get/{obligationId}",
+  "params": [
+   "obligationId"
+  ],
+  "query": [],
+  "status": 200,
+  "urlTried": "/currentObligations/get/30745",
+  "fieldCount": 113,
+  "message": "",
+  "allTried": [
+   {
+    "url": "/currentObligations/get/30733",
+    "status": 404
+   },
+   {
+    "url": "/currentObligations/get/30745",
+    "status": 200
+   }
+  ]
+ },
+ {
+  "layer": "svc",
+  "path": "/currentObligations/getFullKey/{bank}-{obligor}-{obligation}",
+  "params": [
+   "bank",
+   "obligor",
+   "obligation"
+  ],
+  "query": [],
+  "status": 200,
+  "urlTried": "/currentObligations/getFullKey/5-34160-83",
+  "fieldCount": 114,
+  "message": "",
+  "allTried": [
+   {
+    "url": "/currentObligations/getFullKey/5-34160-75",
+    "status": 404
+   },
+   {
+    "url": "/currentObligations/getFullKey/5-34160-83",
+    "status": 200
+   }
+  ]
+ },
+ {
+  "layer": "svc",
+  "path": "/customCollateral/get/{bank}-{obligor}-{collateralItem}",
+  "params": [
+   "bank",
+   "obligor",
+   "collateralItem"
+  ],
+  "query": [
+   "fieldId"
+  ],
+  "status": 400,
+  "urlTried": "/customCollateral/get/5-34160-18",
+  "fieldCount": 1,
+  "message": "HTTP 404",
+  "allTried": [
+   {
+    "url": "/customCollateral/get/5-34160-18",
+    "status": 400
+   },
+   {
+    "url": "/customCollateral/get/5-1136-18",
+    "status": 400
+   },
+   {
+    "url": "/customCollateral/get/5-1136-26",
+    "status": 400
+   }
+  ],
+  "pass2Url": "/customCollateral/get/5-34160-18?fieldId=1",
+  "pass2Status": 404
+ },
+ {
+  "layer": "svc",
+  "path": "/customCollateral/list/{bank}-{obligor}-{collateralItem}",
+  "params": [
+   "bank",
+   "obligor",
+   "collateralItem"
+  ],
+  "query": [],
+  "status": 404,
+  "urlTried": "/customCollateral/list/5-34160-18",
+  "fieldCount": 0,
+  "message": "",
+  "allTried": [
+   {
+    "url": "/customCollateral/list/5-34160-18",
+    "status": 404
+   },
+   {
+    "url": "/customCollateral/list/5-1136-18",
+    "status": 404
+   },
+   {
+    "url": "/customCollateral/list/5-1136-26",
+    "status": 404
+   }
+  ]
+ },
+ {
+  "layer": "svc",
+  "path": "/customDeal/get/{bank}-{dealId}",
+  "params": [
+   "bank",
+   "dealId"
+  ],
+  "query": [
+   "fieldId"
+  ],
+  "status": 400,
+  "urlTried": "/customDeal/get/5-5",
+  "fieldCount": 1,
+  "message": "HTTP 404",
+  "allTried": [
+   {
+    "url": "/customDeal/get/5-5",
+    "status": 400
+   },
+   {
+    "url": "/customDeal/get/5-34160",
+    "status": 400
+   }
+  ],
+  "pass2Url": "/customDeal/get/5-5?fieldId=1",
+  "pass2Status": 404
+ },
+ {
+  "layer": "svc",
+  "path": "/customDeal/list/{bank}-{dealId}",
+  "params": [
+   "bank",
+   "dealId"
+  ],
+  "query": [
+   "sortOrder"
+  ],
+  "status": 404,
+  "urlTried": "/customDeal/list/5-5",
+  "fieldCount": 0,
+  "message": "[error] HTTP 400 Bad Request",
+  "allTried": [
+   {
+    "url": "/customDeal/list/5-5",
+    "status": 404
+   },
+   {
+    "url": "/customDeal/list/5-34160",
+    "status": 404
+   }
+  ],
+  "pass2Url": "/customDeal/list/5-5?sortOrder=A",
+  "pass2Status": 400
+ },
+ {
+  "layer": "svc",
+  "path": "/customerIdentifications/get/{nameId}-{sequence}",
+  "params": [
+   "nameId",
+   "sequence"
+  ],
+  "query": [],
+  "status": 404,
+  "urlTried": "/customerIdentifications/get/46643-1",
+  "fieldCount": 0,
+  "message": "",
+  "allTried": [
+   {
+    "url": "/customerIdentifications/get/46643-1",
+    "status": 404
+   },
+   {
+    "url": "/customerIdentifications/get/46643-0",
+    "status": 404
+   },
+   {
+    "url": "/customerIdentifications/get/8093-1",
+    "status": 404
+   },
+   {
+    "url": "/customerIdentifications/get/8093-0",
+    "status": 404
+   }
+  ]
+ },
+ {
+  "layer": "svc",
+  "path": "/customerIdentifications/list/{nameId}",
+  "params": [
+   "nameId"
+  ],
+  "query": [
+   "sortOrder"
+  ],
+  "status": 404,
+  "urlTried": "/customerIdentifications/list/46643",
+  "fieldCount": 0,
+  "message": "[error] HTTP 400 Bad Request",
+  "allTried": [
+   {
+    "url": "/customerIdentifications/list/46643",
+    "status": 404
+   },
+   {
+    "url": "/customerIdentifications/list/8093",
+    "status": 404
+   }
+  ],
+  "pass2Url": "/customerIdentifications/list/46643?sortOrder=A",
+  "pass2Status": 400
+ },
+ {
+  "layer": "svc",
+  "path": "/customEscrow/get/{obligationId}",
+  "params": [
+   "obligationId"
+  ],
+  "query": [
+   "fieldId"
+  ],
+  "status": 400,
+  "urlTried": "/customEscrow/get/30733",
+  "fieldCount": 1,
+  "message": "HTTP 404",
+  "allTried": [
+   {
+    "url": "/customEscrow/get/30733",
+    "status": 400
+   },
+   {
+    "url": "/customEscrow/get/30745",
+    "status": 400
+   }
+  ],
+  "pass2Url": "/customEscrow/get/30733?fieldId=1",
+  "pass2Status": 404
+ },
+ {
+  "layer": "svc",
+  "path": "/customEscrow/list/{obligationId}",
+  "params": [
+   "obligationId"
+  ],
+  "query": [
+   "sortOrder"
+  ],
+  "status": 404,
+  "urlTried": "/customEscrow/list/30733",
+  "fieldCount": 0,
+  "message": "[error] HTTP 400 Bad Request",
+  "allTried": [
+   {
+    "url": "/customEscrow/list/30733",
+    "status": 404
+   },
+   {
+    "url": "/customEscrow/list/30745",
+    "status": 404
+   }
+  ],
+  "pass2Url": "/customEscrow/list/30733?sortOrder=A",
+  "pass2Status": 400
+ },
+ {
+  "layer": "svc",
+  "path": "/customName/get/{nameId}",
+  "params": [
+   "nameId"
+  ],
+  "query": [
+   "fieldId"
+  ],
+  "status": 400,
+  "urlTried": "/customName/get/46643",
+  "fieldCount": 1,
+  "message": "HTTP 404",
+  "allTried": [
+   {
+    "url": "/customName/get/46643",
+    "status": 400
+   },
+   {
+    "url": "/customName/get/8093",
+    "status": 400
+   }
+  ],
+  "pass2Url": "/customName/get/46643?fieldId=1",
+  "pass2Status": 404
+ },
+ {
+  "layer": "svc",
+  "path": "/customName/list/{nameId}",
+  "params": [
+   "nameId"
+  ],
+  "query": [
+   "sortOrder"
+  ],
+  "status": 404,
+  "urlTried": "/customName/list/46643",
+  "fieldCount": 0,
+  "message": "[error] HTTP 400 Bad Request",
+  "allTried": [
+   {
+    "url": "/customName/list/46643",
+    "status": 404
+   },
+   {
+    "url": "/customName/list/8093",
+    "status": 404
+   }
+  ],
+  "pass2Url": "/customName/list/46643?sortOrder=A",
+  "pass2Status": 400
+ },
+ {
+  "layer": "svc",
+  "path": "/customObligation/get/{obligationId}",
+  "params": [
+   "obligationId"
+  ],
+  "query": [
+   "fieldId"
+  ],
+  "status": 400,
+  "urlTried": "/customObligation/get/30733",
+  "fieldCount": 1,
+  "message": "HTTP 404",
+  "allTried": [
+   {
+    "url": "/customObligation/get/30733",
+    "status": 400
+   },
+   {
+    "url": "/customObligation/get/30745",
+    "status": 400
+   }
+  ],
+  "pass2Url": "/customObligation/get/30733?fieldId=1",
+  "pass2Status": 404
+ },
+ {
+  "layer": "svc",
+  "path": "/customObligation/list/{obligationId}",
+  "params": [
+   "obligationId"
+  ],
+  "query": [
+   "sortOrder"
+  ],
+  "status": 404,
+  "urlTried": "/customObligation/list/30733",
+  "fieldCount": 0,
+  "message": "[error] HTTP 400 Bad Request",
+  "allTried": [
+   {
+    "url": "/customObligation/list/30733",
+    "status": 404
+   },
+   {
+    "url": "/customObligation/list/30745",
+    "status": 404
+   }
+  ],
+  "pass2Url": "/customObligation/list/30733?sortOrder=A",
+  "pass2Status": 400
+ },
+ {
+  "layer": "svc",
+  "path": "/customObligor/get/{bank}-{obligor}",
+  "params": [
+   "bank",
+   "obligor"
+  ],
+  "query": [
+   "fieldId"
+  ],
+  "status": 400,
+  "urlTried": "/customObligor/get/5-34160",
+  "fieldCount": 1,
+  "message": "HTTP 404",
+  "allTried": [
+   {
+    "url": "/customObligor/get/5-34160",
+    "status": 400
+   },
+   {
+    "url": "/customObligor/get/5-1136",
+    "status": 400
+   },
+   {
+    "url": "/customObligor/get/5-39",
+    "status": 400
+   },
+   {
+    "url": "/customObligor/get/5-34392",
+    "status": 400
+   }
+  ],
+  "pass2Url": "/customObligor/get/5-34160?fieldId=1",
+  "pass2Status": 404
+ },
+ {
+  "layer": "svc",
+  "path": "/customObligor/list/{bank}-{obligor}",
+  "params": [
+   "bank",
+   "obligor"
+  ],
+  "query": [
+   "sortOrder"
+  ],
+  "status": 404,
+  "urlTried": "/customObligor/list/5-34160",
+  "fieldCount": 0,
+  "message": "[error] HTTP 400 Bad Request",
+  "allTried": [
+   {
+    "url": "/customObligor/list/5-34160",
+    "status": 404
+   },
+   {
+    "url": "/customObligor/list/5-1136",
+    "status": 404
+   },
+   {
+    "url": "/customObligor/list/5-39",
+    "status": 404
+   },
+   {
+    "url": "/customObligor/list/5-34392",
+    "status": 404
+   }
+  ],
+  "pass2Url": "/customObligor/list/5-34160?sortOrder=A",
+  "pass2Status": 400
+ },
+ {
+  "layer": "svc",
+  "path": "/customObligorApplication/get/{bank}-{obligor}-{application}",
+  "params": [
+   "bank",
+   "obligor",
+   "application"
+  ],
+  "query": [
+   "fieldId"
+  ],
+  "status": 400,
+  "urlTried": "/customObligorApplication/get/5-34160-1",
+  "fieldCount": 1,
+  "message": "HTTP 404",
+  "allTried": [
+   {
+    "url": "/customObligorApplication/get/5-34160-1",
+    "status": 400
+   },
+   {
+    "url": "/customObligorApplication/get/5-1136-1",
+    "status": 400
+   },
+   {
+    "url": "/customObligorApplication/get/5-39-1",
+    "status": 400
+   }
+  ],
+  "pass2Url": "/customObligorApplication/get/5-34160-1?fieldId=1",
+  "pass2Status": 404
+ },
+ {
+  "layer": "svc",
+  "path": "/customObligorApplication/list/{bank}-{obligor}-{application}",
+  "params": [
+   "bank",
+   "obligor",
+   "application"
+  ],
+  "query": [
+   "sortOrder"
+  ],
+  "status": 404,
+  "urlTried": "/customObligorApplication/list/5-34160-1",
+  "fieldCount": 0,
+  "message": "[error] HTTP 400 Bad Request",
+  "allTried": [
+   {
+    "url": "/customObligorApplication/list/5-34160-1",
+    "status": 404
+   },
+   {
+    "url": "/customObligorApplication/list/5-1136-1",
+    "status": 404
+   },
+   {
+    "url": "/customObligorApplication/list/5-39-1",
+    "status": 404
+   }
+  ],
+  "pass2Url": "/customObligorApplication/list/5-34160-1?sortOrder=A",
+  "pass2Status": 400
+ },
+ {
+  "layer": "svc",
+  "path": "/depositInstructions/get/{nameId}-{sequence}-{depositInstructionId}",
+  "params": [
+   "nameId",
+   "sequence",
+   "depositInstructionId"
+  ],
+  "query": [],
+  "status": "NO_KEY",
+  "note": "no harvested key available for path params",
+  "tried": []
+ },
+ {
+  "layer": "svc",
+  "path": "/depositInstructions/list/{nameId}-{sequence}",
+  "params": [
+   "nameId",
+   "sequence"
+  ],
+  "query": [
+   "sortOrder"
+  ],
+  "status": 404,
+  "urlTried": "/depositInstructions/list/46643-1",
+  "fieldCount": 0,
+  "message": "[error] HTTP 400 Bad Request",
+  "allTried": [
+   {
+    "url": "/depositInstructions/list/46643-1",
+    "status": 404
+   },
+   {
+    "url": "/depositInstructions/list/46643-0",
+    "status": 404
+   },
+   {
+    "url": "/depositInstructions/list/8093-1",
+    "status": 404
+   },
+   {
+    "url": "/depositInstructions/list/8093-0",
+    "status": 404
+   }
+  ],
+  "pass2Url": "/depositInstructions/list/46643-1?sortOrder=A",
+  "pass2Status": 400
+ },
+ {
+  "layer": "svc",
+  "path": "/exposure/listCustomer/{nameId}",
+  "params": [
+   "nameId"
+  ],
+  "query": [],
+  "status": 200,
+  "urlTried": "/exposure/listCustomer/46643",
+  "fieldCount": 39,
+  "message": "",
+  "allTried": [
+   {
+    "url": "/exposure/listCustomer/46643",
+    "status": 200
+   }
+  ]
+ },
+ {
+  "layer": "svc",
+  "path": "/exposure/listObligor/{bank}-{obligor}",
+  "params": [
+   "bank",
+   "obligor"
+  ],
+  "query": [],
+  "status": 200,
+  "urlTried": "/exposure/listObligor/5-34160",
+  "fieldCount": 39,
+  "message": "",
+  "allTried": [
+   {
+    "url": "/exposure/listObligor/5-34160",
+    "status": 200
+   }
+  ]
+ },
+ {
+  "layer": "svc",
+  "path": "/financialHistory/get/{obligationId}",
+  "params": [
+   "obligationId"
+  ],
+  "query": [
+   "effectiveDate",
+   "timestamp",
+   "sequence"
+  ],
+  "status": 200,
+  "urlTried": "/financialHistory/get/30733?effectiveDate=2026-06-03&timestamp=2026-06-03T12%3A28%3A17.088919%2B0000&sequence=1",
+  "fieldCount": 56,
+  "message": "",
+  "allTried": [
+   {
+    "url": "/financialHistory/get/30733",
+    "status": 400
+   },
+   {
+    "url": "/financialHistory/get/30745",
+    "status": 400
+   }
+  ]
+ },
+ {
+  "layer": "svc",
+  "path": "/financialHistory/list/{obligationId}",
+  "params": [
+   "obligationId"
+  ],
+  "query": [
+   "effectiveDate",
+   "sortOrder"
+  ],
+  "status": 400,
+  "urlTried": "/financialHistory/list/30733",
+  "fieldCount": 1,
+  "message": "[error] HTTP 400 Bad Request",
+  "allTried": [
+   {
+    "url": "/financialHistory/list/30733",
+    "status": 400
+   },
+   {
+    "url": "/financialHistory/list/30745",
+    "status": 400
+   }
+  ],
+  "pass2Url": "/financialHistory/list/30733?effectiveDate=2026-06-03&sortOrder=A",
+  "pass2Status": 400
+ },
+ {
+  "layer": "svc",
+  "path": "/financialHistory/numberOfDays/{obligationId}",
+  "params": [
+   "obligationId"
+  ],
+  "query": [
+   "numberOfDays",
+   "sortOrder"
+  ],
+  "status": 200,
+  "urlTried": "/financialHistory/numberOfDays/30733?numberOfDays=90&sortOrder=A",
+  "fieldCount": 57,
+  "message": "",
+  "allTried": [
+   {
+    "url": "/financialHistory/numberOfDays/30733",
+    "status": 400
+   },
+   {
+    "url": "/financialHistory/numberOfDays/30745",
+    "status": 400
+   }
+  ]
+ },
+ {
+  "layer": "svc",
+  "path": "/financialHistory/effectiveFrom/{obligationId}",
+  "params": [
+   "obligationId"
+  ],
+  "query": [
+   "effectiveFrom",
+   "effectiveTo",
+   "sortOrder"
+  ],
+  "status": 200,
+  "urlTried": "/financialHistory/effectiveFrom/30733?effectiveFrom=2026-01-01&effectiveTo=2026-06-25&sortOrder=A",
+  "fieldCount": 57,
+  "message": "",
+  "allTried": [
+   {
+    "url": "/financialHistory/effectiveFrom/30733",
+    "status": 400
+   },
+   {
+    "url": "/financialHistory/effectiveFrom/30745",
+    "status": 400
+   }
+  ]
+ },
+ {
+  "layer": "svc",
+  "path": "/financialHistory/listAllById/{obligationId}",
+  "params": [
+   "obligationId"
+  ],
+  "query": [
+   "sortOrder"
+  ],
+  "status": 200,
+  "urlTried": "/financialHistory/listAllById/30733",
+  "fieldCount": 57,
+  "message": "",
+  "allTried": [
+   {
+    "url": "/financialHistory/listAllById/30733",
+    "status": 200
+   }
+  ]
+ },
+ {
+  "layer": "svc",
+  "path": "/financialHistorySchedAct/get/{obligationId}-{sequence}",
+  "params": [
+   "obligationId",
+   "sequence"
+  ],
+  "query": [
+   "effectivedate",
+   "timestamp"
+  ],
+  "status": 400,
+  "urlTried": "/financialHistorySchedAct/get/30733-1",
+  "fieldCount": 1,
+  "message": "HTTP 404",
+  "allTried": [
+   {
+    "url": "/financialHistorySchedAct/get/30733-1",
+    "status": 400
+   },
+   {
+    "url": "/financialHistorySchedAct/get/30733-0",
+    "status": 400
+   },
+   {
+    "url": "/financialHistorySchedAct/get/30745-1",
+    "status": 400
+   },
+   {
+    "url": "/financialHistorySchedAct/get/30745-0",
+    "status": 400
+   }
+  ],
+  "pass2Url": "/financialHistorySchedAct/get/30733-1?effectivedate=2026-06-03&timestamp=2026-06-03T12%3A28%3A17.088919%2B0000",
+  "pass2Status": 404
+ },
+ {
+  "layer": "svc",
+  "path": "/financialHistorySchedAct/list/{obligationId}",
+  "params": [
+   "obligationId"
+  ],
+  "query": [
+   "effectivedate",
+   "timestamp",
+   "sortOrder"
+  ],
+  "status": 400,
+  "urlTried": "/financialHistorySchedAct/list/30733",
+  "fieldCount": 1,
+  "message": "[error] HTTP 400 Bad Request",
+  "allTried": [
+   {
+    "url": "/financialHistorySchedAct/list/30733",
+    "status": 400
+   },
+   {
+    "url": "/financialHistorySchedAct/list/30745",
+    "status": 400
+   }
+  ],
+  "pass2Url": "/financialHistorySchedAct/list/30733?effectivedate=2026-06-03&timestamp=2026-06-03T12%3A28%3A17.088919%2B0000&sortOrder=A",
+  "pass2Status": 400
+ },
+ {
+  "layer": "svc",
+  "path": "/financialInstrument/get/{financialInstrumentId}",
+  "params": [
+   "financialInstrumentId"
+  ],
+  "query": [],
+  "status": 200,
+  "urlTried": "/financialInstrument/get/30733",
+  "fieldCount": 74,
+  "message": "",
+  "allTried": [
+   {
+    "url": "/financialInstrument/get/30733",
+    "status": 200
+   }
+  ]
+ },
+ {
+  "layer": "svc",
+  "path": "/financialInstrument/getFullKey/{bank}-{obligor}-{application}-{fiNumber}",
+  "params": [
+   "bank",
+   "obligor",
+   "application",
+   "fiNumber"
+  ],
+  "query": [],
+  "status": 200,
+  "urlTried": "/financialInstrument/getFullKey/5-34160-1-75",
+  "fieldCount": 75,
+  "message": "",
+  "allTried": [
+   {
+    "url": "/financialInstrument/getFullKey/5-34160-1-75",
+    "status": 200
+   }
+  ]
+ },
+ {
+  "layer": "svc",
+  "path": "/financialInstrument/listOblnByObg/{bank}-{obligor}",
+  "params": [
+   "bank",
+   "obligor"
+  ],
+  "query": [
+   "instrumentType",
+   "sortOrder",
+   "startAfter"
+  ],
+  "status": 400,
+  "urlTried": "/financialInstrument/listOblnByObg/5-34160",
+  "fieldCount": 1,
+  "message": "[error] HTTP 422 ",
+  "allTried": [
+   {
+    "url": "/financialInstrument/listOblnByObg/5-34160",
+    "status": 400
+   },
+   {
+    "url": "/financialInstrument/listOblnByObg/5-1136",
+    "status": 400
+   },
+   {
+    "url": "/financialInstrument/listOblnByObg/5-39",
+    "status": 400
+   },
+   {
+    "url": "/financialInstrument/listOblnByObg/5-34392",
+    "status": 400
+   }
+  ],
+  "pass2Url": "/financialInstrument/listOblnByObg/5-34160?instrumentType=C&sortOrder=A",
+  "pass2Status": 400
+ },
+ {
+  "layer": "svc",
+  "path": "/financialInstrument/listOblnByObgAppl/{bank}-{obligor}-{application}",
+  "params": [
+   "bank",
+   "obligor",
+   "application"
+  ],
+  "query": [
+   "instrumentType",
+   "sortOrder",
+   "startAfter"
+  ],
+  "status": 400,
+  "urlTried": "/financialInstrument/listOblnByObgAppl/5-34160-1",
+  "fieldCount": 1,
+  "message": "[error] HTTP 422 ",
+  "allTried": [
+   {
+    "url": "/financialInstrument/listOblnByObgAppl/5-34160-1",
+    "status": 400
+   },
+   {
+    "url": "/financialInstrument/listOblnByObgAppl/5-1136-1",
+    "status": 400
+   },
+   {
+    "url": "/financialInstrument/listOblnByObgAppl/5-39-1",
+    "status": 400
+   }
+  ],
+  "pass2Url": "/financialInstrument/listOblnByObgAppl/5-34160-1?instrumentType=C&sortOrder=A",
+  "pass2Status": 400
+ },
+ {
+  "layer": "svc",
+  "path": "/financialInstrument/listAllByObligor/{bank}-{obligor}",
+  "params": [
+   "bank",
+   "obligor"
+  ],
+  "query": [
+   "sortOrder",
+   "startAfter"
+  ],
+  "status": 200,
+  "urlTried": "/financialInstrument/listAllByObligor/5-34160",
+  "fieldCount": 75,
+  "message": "",
+  "allTried": [
+   {
+    "url": "/financialInstrument/listAllByObligor/5-34160",
+    "status": 200
+   }
+  ]
+ },
+ {
+  "layer": "svc",
+  "path": "/financialInstrument/listAllByObligorAppl/{bank}-{obligor}-{application}",
+  "params": [
+   "bank",
+   "obligor",
+   "application"
+  ],
+  "query": [
+   "sortOrder",
+   "startAfter"
+  ],
+  "status": 200,
+  "urlTried": "/financialInstrument/listAllByObligorAppl/5-34160-1",
+  "fieldCount": 75,
+  "message": "",
+  "allTried": [
+   {
+    "url": "/financialInstrument/listAllByObligorAppl/5-34160-1",
+    "status": 200
+   }
+  ]
+ },
+ {
+  "layer": "svc",
+  "path": "/flatFees/get/{obligationId}-{chargeCode}",
+  "params": [
+   "obligationId",
+   "chargeCode"
+  ],
+  "query": [],
+  "status": 200,
+  "urlTried": "/flatFees/get/30733-3000",
+  "fieldCount": 22,
+  "message": "",
+  "allTried": [
+   {
+    "url": "/flatFees/get/30733-3000",
+    "status": 200
+   }
+  ]
+ },
+ {
+  "layer": "svc",
+  "path": "/flatFees/getFullKey/{bank}-{obligor}-{obligation}-{chargeCode}",
+  "params": [
+   "bank",
+   "obligor",
+   "obligation",
+   "chargeCode"
+  ],
+  "query": [],
+  "status": 200,
+  "urlTried": "/flatFees/getFullKey/5-34160-75-3000",
+  "fieldCount": 23,
+  "message": "",
+  "allTried": [
+   {
+    "url": "/flatFees/getFullKey/5-34160-75-3000",
+    "status": 200
+   }
+  ]
+ },
+ {
+  "layer": "svc",
+  "path": "/flatFees/list/{obligationId}",
+  "params": [
+   "obligationId"
+  ],
+  "query": [
+   "sortOrder"
+  ],
+  "status": 200,
+  "urlTried": "/flatFees/list/30733",
+  "fieldCount": 23,
+  "message": "",
+  "allTried": [
+   {
+    "url": "/flatFees/list/30733",
+    "status": 200
+   }
+  ]
+ },
+ {
+  "layer": "svc",
+  "path": "/flatFees/listFullKey/{bank}-{obligor}-{obligation}",
+  "params": [
+   "bank",
+   "obligor",
+   "obligation"
+  ],
+  "query": [
+   "sortOrder"
+  ],
+  "status": 200,
+  "urlTried": "/flatFees/listFullKey/5-34160-75",
+  "fieldCount": 23,
+  "message": "",
+  "allTried": [
+   {
+    "url": "/flatFees/listFullKey/5-34160-75",
+    "status": 200
+   }
+  ]
+ },
+ {
+  "layer": "svc",
+  "path": "/futureObligations/get/{obligationId}",
+  "params": [
+   "obligationId"
+  ],
+  "query": [],
+  "status": 200,
+  "urlTried": "/futureObligations/get/30733",
+  "fieldCount": 26,
+  "message": "",
+  "allTried": [
+   {
+    "url": "/futureObligations/get/30733",
+    "status": 200
+   }
+  ]
+ },
+ {
+  "layer": "svc",
+  "path": "/futureObligations/getFullKey/{bank}-{obligor}-{obligation}",
+  "params": [
+   "bank",
+   "obligor",
+   "obligation"
+  ],
+  "query": [],
+  "status": 200,
+  "urlTried": "/futureObligations/getFullKey/5-34160-75",
+  "fieldCount": 27,
+  "message": "",
+  "allTried": [
+   {
+    "url": "/futureObligations/getFullKey/5-34160-75",
+    "status": 200
+   }
+  ]
+ },
+ {
+  "layer": "svc",
+  "path": "/invoiceLineItems/get/{bank}-{billYear}-{invoiceNumber}-{obligation}-{chargeCode}-{chargeType}",
+  "params": [
+   "bank",
+   "billYear",
+   "invoiceNumber",
+   "obligation",
+   "chargeCode",
+   "chargeType"
+  ],
+  "query": [],
+  "status": "NO_KEY",
+  "note": "no harvested key available for path params",
+  "tried": []
+ },
+ {
+  "layer": "svc",
+  "path": "/invoiceLineItems/list/{bank}-{billYear}-{invoiceNumber}-{obligation}-{chargeCode}",
+  "params": [
+   "bank",
+   "billYear",
+   "invoiceNumber",
+   "obligation",
+   "chargeCode"
+  ],
+  "query": [],
+  "status": 404,
+  "urlTried": "/invoiceLineItems/list/5-0-0-18-3000",
+  "fieldCount": 0,
+  "message": "",
+  "allTried": [
+   {
+    "url": "/invoiceLineItems/list/5-0-0-18-3000",
+    "status": 404
+   },
+   {
+    "url": "/invoiceLineItems/list/5-0-0-18-1005",
+    "status": 404
+   },
+   {
+    "url": "/invoiceLineItems/list/5-0-0-26-3000",
+    "status": 404
+   },
+   {
+    "url": "/invoiceLineItems/list/5-0-0-26-1005",
+    "status": 404
+   }
+  ]
+ },
+ {
+  "layer": "svc",
+  "path": "/invoiceLineItems/listByObligor/{bank}-{obligor}",
+  "params": [
+   "bank",
+   "obligor"
+  ],
+  "query": [
+   "paidOption"
+  ],
+  "status": 400,
+  "urlTried": "/invoiceLineItems/listByObligor/5-34160",
+  "fieldCount": 1,
+  "message": "[error] HTTP 422 ",
+  "allTried": [
+   {
+    "url": "/invoiceLineItems/listByObligor/5-34160",
+    "status": 400
+   },
+   {
+    "url": "/invoiceLineItems/listByObligor/5-1136",
+    "status": 400
+   },
+   {
+    "url": "/invoiceLineItems/listByObligor/5-39",
+    "status": 400
+   },
+   {
+    "url": "/invoiceLineItems/listByObligor/5-34392",
+    "status": 400
+   }
+  ],
+  "pass2Url": "/invoiceLineItems/listByObligor/5-34160?paidOption=A",
+  "pass2Status": 400
+ },
+ {
+  "layer": "svc",
+  "path": "/invoiceLineItems/listByObligation/{bank}-{obligor}-{obligation}",
+  "params": [
+   "bank",
+   "obligor",
+   "obligation"
+  ],
+  "query": [
+   "paidOption"
+  ],
+  "status": 400,
+  "urlTried": "/invoiceLineItems/listByObligation/5-34160-75",
+  "fieldCount": 1,
+  "message": "[error] HTTP 422 ",
+  "allTried": [
+   {
+    "url": "/invoiceLineItems/listByObligation/5-34160-75",
+    "status": 400
+   },
+   {
+    "url": "/invoiceLineItems/listByObligation/5-34160-83",
+    "status": 400
+   },
+   {
+    "url": "/invoiceLineItems/listByObligation/5-1136-18",
+    "status": 400
+   },
+   {
+    "url": "/invoiceLineItems/listByObligation/5-1136-26",
+    "status": 400
+   },
+   {
+    "url": "/invoiceLineItems/listByObligation/5-39-18",
+    "status": 400
+   },
+   {
+    "url": "/invoiceLineItems/listByObligation/5-39-26",
+    "status": 400
+   }
+  ],
+  "pass2Url": "/invoiceLineItems/listByObligation/5-34160-75?paidOption=A",
+  "pass2Status": 400
+ },
+ {
+  "layer": "svc",
+  "path": "/invoiceLineItems/listByInvoice/{bank}",
+  "params": [
+   "bank"
+  ],
+  "query": [
+   "billYear",
+   "invoiceNumber",
+   "paidOption"
+  ],
+  "status": 400,
+  "urlTried": "/invoiceLineItems/listByInvoice/5",
+  "fieldCount": 1,
+  "message": "[error] HTTP 422 ",
+  "allTried": [
+   {
+    "url": "/invoiceLineItems/listByInvoice/5",
+    "status": 400
+   }
+  ],
+  "pass2Url": "/invoiceLineItems/listByInvoice/5?billYear=2026&invoiceNumber=1&paidOption=A",
+  "pass2Status": 400
+ },
+ {
+  "layer": "svc",
+  "path": "/invoiceLineItems/listByInvoiceObln/{bank}",
+  "params": [
+   "bank"
+  ],
+  "query": [
+   "billYear",
+   "invoiceNumber",
+   "obligation",
+   "paidOption"
+  ],
+  "status": 400,
+  "urlTried": "/invoiceLineItems/listByInvoiceObln/5",
+  "fieldCount": 1,
+  "message": "[error] HTTP 422 ",
+  "allTried": [
+   {
+    "url": "/invoiceLineItems/listByInvoiceObln/5",
+    "status": 400
+   }
+  ],
+  "pass2Url": "/invoiceLineItems/listByInvoiceObln/5?billYear=2026&invoiceNumber=1&obligation=75&paidOption=A",
+  "pass2Status": 400
+ },
+ {
+  "layer": "svc",
+  "path": "/invoices/get/{bank}-{billYear}-{invoiceNumber}",
+  "params": [
+   "bank",
+   "billYear",
+   "invoiceNumber"
+  ],
+  "query": [],
+  "status": 404,
+  "urlTried": "/invoices/get/5-0-0",
+  "fieldCount": 0,
+  "message": "",
+  "allTried": [
+   {
+    "url": "/invoices/get/5-0-0",
+    "status": 404
+   }
+  ]
+ },
+ {
+  "layer": "svc",
+  "path": "/invoices/list/{bank}-{billYear}",
+  "params": [
+   "bank",
+   "billYear"
+  ],
+  "query": [
+   "sortOrder"
+  ],
+  "status": 404,
+  "urlTried": "/invoices/list/5-0",
+  "fieldCount": 0,
+  "message": "[error] HTTP 400 Bad Request",
+  "allTried": [
+   {
+    "url": "/invoices/list/5-0",
+    "status": 404
+   }
+  ],
+  "pass2Url": "/invoices/list/5-0?sortOrder=A",
+  "pass2Status": 400
+ },
+ {
+  "layer": "svc",
+  "path": "/invoices/listbyobg/{bank}-{billYear}",
+  "params": [
+   "bank",
+   "billYear"
+  ],
+  "query": [
+   "obg",
+   "sortOrder"
+  ],
+  "status": 400,
+  "urlTried": "/invoices/listbyobg/5-0",
+  "fieldCount": 1,
+  "message": "[error] HTTP 400 Bad Request",
+  "allTried": [
+   {
+    "url": "/invoices/listbyobg/5-0",
+    "status": 400
+   }
+  ],
+  "pass2Url": "/invoices/listbyobg/5-0?obg=34160&sortOrder=A",
+  "pass2Status": 400
+ },
+ {
+  "layer": "svc",
+  "path": "/invoices/listAllByObligor/{bank}",
+  "params": [
+   "bank"
+  ],
+  "query": [
+   "obg",
+   "sortOrder"
+  ],
+  "status": 400,
+  "urlTried": "/invoices/listAllByObligor/5",
+  "fieldCount": 1,
+  "message": "[error] HTTP 400 Bad Request",
+  "allTried": [
+   {
+    "url": "/invoices/listAllByObligor/5",
+    "status": 400
+   }
+  ],
+  "pass2Url": "/invoices/listAllByObligor/5?obg=34160&sortOrder=A",
+  "pass2Status": 400
+ },
+ {
+  "layer": "svc",
+  "path": "/lateChargeControl/get/{bank}-{application}-{formulaType}",
+  "params": [
+   "bank",
+   "application",
+   "formulaType"
+  ],
+  "query": [],
+  "status": "NO_KEY",
+  "note": "no harvested key available for path params",
+  "tried": []
+ },
+ {
+  "layer": "svc",
+  "path": "/lateChargeControl/list/{bank}-{application}",
+  "params": [
+   "bank",
+   "application"
+  ],
+  "query": [
+   "sortOrder"
+  ],
+  "status": 403,
+  "urlTried": "/lateChargeControl/list/5-1",
+  "fieldCount": 1,
+  "message": "[error] Access to this service is not permitted by the current user's permissions. Please consult your helpdesk if you feel that this is inc",
+  "allTried": [
+   {
+    "url": "/lateChargeControl/list/5-1",
+    "status": 403
+   },
+   {
+    "url": "/lateChargeControl/list/5-0",
+    "status": 403
+   }
+  ]
+ },
+ {
+  "layer": "svc",
+  "path": "/nameAddresses/get/{nameId}-{sequence}",
+  "params": [
+   "nameId",
+   "sequence"
+  ],
+  "query": [],
+  "status": 200,
+  "urlTried": "/nameAddresses/get/46643-0",
+  "fieldCount": 11,
+  "message": "",
+  "allTried": [
+   {
+    "url": "/nameAddresses/get/46643-1",
+    "status": 404
+   },
+   {
+    "url": "/nameAddresses/get/46643-0",
+    "status": 200
+   }
+  ]
+ },
+ {
+  "layer": "svc",
+  "path": "/nameAddresses/list/{nameId}",
+  "params": [
+   "nameId"
+  ],
+  "query": [
+   "sortOrder"
+  ],
+  "status": 200,
+  "urlTried": "/nameAddresses/list/46643",
+  "fieldCount": 12,
+  "message": "",
+  "allTried": [
+   {
+    "url": "/nameAddresses/list/46643",
+    "status": 200
+   }
+  ]
+ },
+ {
+  "layer": "svc",
+  "path": "/nameAddresses/listAlternateAddresses",
+  "params": [],
+  "query": [
+   "alternameNameId",
+   "sortOrder"
+  ],
+  "status": 400,
+  "urlTried": "/nameAddresses/listAlternateAddresses",
+  "fieldCount": 1,
+  "message": "[error] HTTP 400 Bad Request",
+  "allTried": [
+   {
+    "url": "/nameAddresses/listAlternateAddresses",
+    "status": 400
+   }
+  ],
+  "pass2Url": "/nameAddresses/listAlternateAddresses?alternameNameId=46643&sortOrder=A",
+  "pass2Status": 400
+ },
+ {
+  "layer": "svc",
+  "path": "/names/get",
+  "params": [],
+  "query": [
+   "nameId"
+  ],
+  "status": 200,
+  "urlTried": "/names/get?nameId=46643",
+  "fieldCount": 91,
+  "message": "",
+  "allTried": [
+   {
+    "url": "/names/get",
+    "status": 400
+   }
+  ]
+ },
+ {
+  "layer": "svc",
+  "path": "/names/list",
+  "params": [],
+  "query": [
+   "search",
+   "organizationId",
+   "nameType",
+   "sortOrder"
+  ],
+  "status": 400,
+  "urlTried": "/names/list",
+  "fieldCount": 1,
+  "message": "[error] HTTP 422 ",
+  "allTried": [
+   {
+    "url": "/names/list",
+    "status": 400
+   }
+  ],
+  "pass2Url": "/names/list?organizationId=1&nameType=O&sortOrder=A",
+  "pass2Status": 400
+ },
+ {
+  "layer": "svc",
+  "path": "/names/listByTaxId",
+  "params": [],
+  "query": [
+   "taxId",
+   "organizationId",
+   "nameType",
+   "sortOrder"
+  ],
+  "status": 400,
+  "urlTried": "/names/listByTaxId",
+  "fieldCount": 1,
+  "message": "[error] HTTP 422 ",
+  "allTried": [
+   {
+    "url": "/names/listByTaxId",
+    "status": 400
+   }
+  ],
+  "pass2Url": "/names/listByTaxId?organizationId=1&nameType=O&sortOrder=A",
+  "pass2Status": 400
+ },
+ {
+  "layer": "svc",
+  "path": "/names/listBySSN",
+  "params": [],
+  "query": [
+   "ssn",
+   "organizationId",
+   "nameType",
+   "sortOrder"
+  ],
+  "status": 400,
+  "urlTried": "/names/listBySSN",
+  "fieldCount": 1,
+  "message": "[error] HTTP 422 ",
+  "allTried": [
+   {
+    "url": "/names/listBySSN",
+    "status": 400
+   }
+  ],
+  "pass2Url": "/names/listBySSN?organizationId=1&nameType=O&sortOrder=A",
+  "pass2Status": 400
+ },
+ {
+  "layer": "svc",
+  "path": "/names/getByObligor/{bank}-{obligor}",
+  "params": [
+   "bank",
+   "obligor"
+  ],
+  "query": [],
+  "status": 200,
+  "urlTried": "/names/getByObligor/5-34160",
+  "fieldCount": 92,
+  "message": "",
+  "allTried": [
+   {
+    "url": "/names/getByObligor/5-34160",
+    "status": 200
+   }
+  ]
+ },
+ {
+  "layer": "svc",
+  "path": "/notePad/get/{notePadId}",
+  "params": [
+   "notePadId"
+  ],
+  "query": [],
+  "status": 403,
+  "urlTried": "/notePad/get/0",
+  "fieldCount": 1,
+  "message": "[error] Access to this service is not permitted by the current user's permissions. Please consult your helpdesk if you feel that this is inc",
+  "allTried": [
+   {
+    "url": "/notePad/get/0",
+    "status": 403
+   }
+  ]
+ },
+ {
+  "layer": "svc",
+  "path": "/obligations/get/{obligationId}",
+  "params": [
+   "obligationId"
+  ],
+  "query": [],
+  "status": 200,
+  "urlTried": "/obligations/get/30733",
+  "fieldCount": 295,
+  "message": "",
+  "allTried": [
+   {
+    "url": "/obligations/get/30733",
+    "status": 200
+   }
+  ]
+ },
+ {
+  "layer": "svc",
+  "path": "/obligations/getFullKey/{bank}-{obligor}-{obligation}",
+  "params": [
+   "bank",
+   "obligor",
+   "obligation"
+  ],
+  "query": [],
+  "status": 200,
+  "urlTried": "/obligations/getFullKey/5-34160-75",
+  "fieldCount": 296,
+  "message": "",
+  "allTried": [
+   {
+    "url": "/obligations/getFullKey/5-34160-75",
+    "status": 200
+   }
+  ]
+ },
+ {
+  "layer": "svc",
+  "path": "/obligations/getFullKeyPayoff/{bank}-{obligor}-{obligation}",
+  "params": [
+   "bank",
+   "obligor",
+   "obligation"
+  ],
+  "query": [
+   "payoffDate"
+  ],
+  "status": 200,
+  "urlTried": "/obligations/getFullKeyPayoff/5-34160-75?payoffDate=2026-06-25",
+  "fieldCount": 296,
+  "message": "",
+  "allTried": [
+   {
+    "url": "/obligations/getFullKeyPayoff/5-34160-75",
+    "status": 400
+   },
+   {
+    "url": "/obligations/getFullKeyPayoff/5-34160-83",
+    "status": 400
+   },
+   {
+    "url": "/obligations/getFullKeyPayoff/5-1136-18",
+    "status": 400
+   },
+   {
+    "url": "/obligations/getFullKeyPayoff/5-1136-26",
+    "status": 400
+   },
+   {
+    "url": "/obligations/getFullKeyPayoff/5-39-18",
+    "status": 400
+   },
+   {
+    "url": "/obligations/getFullKeyPayoff/5-39-26",
+    "status": 400
+   }
+  ]
+ },
+ {
+  "layer": "svc",
+  "path": "/obligorApplications/get/{bank}-{obligor}-{application}",
+  "params": [
+   "bank",
+   "obligor",
+   "application"
+  ],
+  "query": [],
+  "status": 403,
+  "urlTried": "/obligorApplications/get/5-34160-1",
+  "fieldCount": 1,
+  "message": "[error] Access to this service is not permitted by the current user's permissions. Please consult your helpdesk if you feel that this is inc",
+  "allTried": [
+   {
+    "url": "/obligorApplications/get/5-34160-1",
+    "status": 403
+   },
+   {
+    "url": "/obligorApplications/get/5-1136-1",
+    "status": 403
+   },
+   {
+    "url": "/obligorApplications/get/5-39-1",
+    "status": 403
+   }
+  ]
+ },
+ {
+  "layer": "svc",
+  "path": "/obligorApplications/list/{bank}-{obligor}",
+  "params": [
+   "bank",
+   "obligor"
+  ],
+  "query": [
+   "sortOrder"
+  ],
+  "status": 403,
+  "urlTried": "/obligorApplications/list/5-34160",
+  "fieldCount": 1,
+  "message": "[error] Access to this service is not permitted by the current user's permissions. Please consult your helpdesk if you feel that this is inc",
+  "allTried": [
+   {
+    "url": "/obligorApplications/list/5-34160",
+    "status": 403
+   },
+   {
+    "url": "/obligorApplications/list/5-1136",
+    "status": 403
+   },
+   {
+    "url": "/obligorApplications/list/5-39",
+    "status": 403
+   },
+   {
+    "url": "/obligorApplications/list/5-34392",
+    "status": 403
+   }
+  ]
+ },
+ {
+  "layer": "svc",
+  "path": "/obligorDDAInstructions/get/{bank}-{obligor}-{sequence}",
+  "params": [
+   "bank",
+   "obligor",
+   "sequence"
+  ],
+  "query": [],
+  "status": 403,
+  "urlTried": "/obligorDDAInstructions/get/5-34160-1",
+  "fieldCount": 1,
+  "message": "[error] Access to this service is not permitted by the current user's permissions. Please consult your helpdesk if you feel that this is inc",
+  "allTried": [
+   {
+    "url": "/obligorDDAInstructions/get/5-34160-1",
+    "status": 403
+   },
+   {
+    "url": "/obligorDDAInstructions/get/5-34160-0",
+    "status": 403
+   },
+   {
+    "url": "/obligorDDAInstructions/get/5-1136-1",
+    "status": 403
+   },
+   {
+    "url": "/obligorDDAInstructions/get/5-1136-0",
+    "status": 403
+   },
+   {
+    "url": "/obligorDDAInstructions/get/5-39-1",
+    "status": 403
+   },
+   {
+    "url": "/obligorDDAInstructions/get/5-39-0",
+    "status": 403
+   }
+  ]
+ },
+ {
+  "layer": "svc",
+  "path": "/obligorDDAInstructions/list/{bank}-{obligor}",
+  "params": [
+   "bank",
+   "obligor"
+  ],
+  "query": [
+   "sortOrder"
+  ],
+  "status": 403,
+  "urlTried": "/obligorDDAInstructions/list/5-34160",
+  "fieldCount": 1,
+  "message": "[error] Access to this service is not permitted by the current user's permissions. Please consult your helpdesk if you feel that this is inc",
+  "allTried": [
+   {
+    "url": "/obligorDDAInstructions/list/5-34160",
+    "status": 403
+   },
+   {
+    "url": "/obligorDDAInstructions/list/5-1136",
+    "status": 403
+   },
+   {
+    "url": "/obligorDDAInstructions/list/5-39",
+    "status": 403
+   },
+   {
+    "url": "/obligorDDAInstructions/list/5-34392",
+    "status": 403
+   }
+  ]
+ },
+ {
+  "layer": "svc",
+  "path": "/obligors/get/{bank}-{obligor}",
+  "params": [
+   "bank",
+   "obligor"
+  ],
+  "query": [],
+  "status": 200,
+  "urlTried": "/obligors/get/5-34160",
+  "fieldCount": 90,
+  "message": "",
+  "allTried": [
+   {
+    "url": "/obligors/get/5-34160",
+    "status": 200
+   }
+  ]
+ },
+ {
+  "layer": "svc",
+  "path": "/obligors/list/{nameId}",
+  "params": [
+   "nameId"
+  ],
+  "query": [
+   "sortOrder"
+  ],
+  "status": 200,
+  "urlTried": "/obligors/list/46643",
+  "fieldCount": 91,
+  "message": "",
+  "allTried": [
+   {
+    "url": "/obligors/list/46643",
+    "status": 200
+   }
+  ]
+ },
+ {
+  "layer": "svc",
+  "path": "/obligors/listByNameId/{bank}",
+  "params": [
+   "bank"
+  ],
+  "query": [
+   "nameId",
+   "sortOrder"
+  ],
+  "status": 400,
+  "urlTried": "/obligors/listByNameId/5",
+  "fieldCount": 1,
+  "message": "[error] HTTP 400 Bad Request",
+  "allTried": [
+   {
+    "url": "/obligors/listByNameId/5",
+    "status": 400
+   }
+  ],
+  "pass2Url": "/obligors/listByNameId/5?nameId=46643&sortOrder=A",
+  "pass2Status": 400
+ },
+ {
+  "layer": "svc",
+  "path": "/obligors/listAllByBank",
+  "params": [],
+  "query": [
+   "bank",
+   "sortOrder"
+  ],
+  "status": 400,
+  "urlTried": "/obligors/listAllByBank",
+  "fieldCount": 1,
+  "message": "[error] HTTP 413 Request Entity Too Large",
+  "allTried": [
+   {
+    "url": "/obligors/listAllByBank",
+    "status": 400
+   }
+  ],
+  "pass2Url": "/obligors/listAllByBank?bank=5&sortOrder=A",
+  "pass2Status": 400
+ },
+ {
+  "layer": "svc",
+  "path": "/obligorWireInstructions/get/{bank}-{obligor}-{wireId}",
+  "params": [
+   "bank",
+   "obligor",
+   "wireId"
+  ],
+  "query": [],
+  "status": "NO_KEY",
+  "note": "no harvested key available for path params",
+  "tried": []
+ },
+ {
+  "layer": "svc",
+  "path": "/obligorWireInstructions/list/{bank}-{obligor}",
+  "params": [
+   "bank",
+   "obligor"
+  ],
+  "query": [
+   "sortOrder"
+  ],
+  "status": 403,
+  "urlTried": "/obligorWireInstructions/list/5-34160",
+  "fieldCount": 1,
+  "message": "[error] Access to this service is not permitted by the current user's permissions. Please consult your helpdesk if you feel that this is inc",
+  "allTried": [
+   {
+    "url": "/obligorWireInstructions/list/5-34160",
+    "status": 403
+   },
+   {
+    "url": "/obligorWireInstructions/list/5-1136",
+    "status": 403
+   },
+   {
+    "url": "/obligorWireInstructions/list/5-39",
+    "status": 403
+   },
+   {
+    "url": "/obligorWireInstructions/list/5-34392",
+    "status": 403
+   }
+  ]
+ },
+ {
+  "layer": "svc",
+  "path": "/offsetTranCtrl/get/{bank}",
+  "params": [
+   "bank"
+  ],
+  "query": [
+   "offsetTrans",
+   "currencyCode"
+  ],
+  "status": 400,
+  "urlTried": "/offsetTranCtrl/get/5",
+  "fieldCount": 1,
+  "message": "HTTP 404",
+  "allTried": [
+   {
+    "url": "/offsetTranCtrl/get/5",
+    "status": 400
+   }
+  ],
+  "pass2Url": "/offsetTranCtrl/get/5?offsetTrans=1&currencyCode=USD",
+  "pass2Status": 404
+ },
+ {
+  "layer": "svc",
+  "path": "/offsetTranCtrl/list/{bank}",
+  "params": [
+   "bank"
+  ],
+  "query": [
+   "offsetTrans",
+   "sortOrder"
+  ],
+  "status": 400,
+  "urlTried": "/offsetTranCtrl/list/5",
+  "fieldCount": 1,
+  "message": "[error] HTTP 400 Bad Request",
+  "allTried": [
+   {
+    "url": "/offsetTranCtrl/list/5",
+    "status": 400
+   }
+  ],
+  "pass2Url": "/offsetTranCtrl/list/5?offsetTrans=1&sortOrder=A",
+  "pass2Status": 400
+ },
+ {
+  "layer": "svc",
+  "path": "/offsetTranCtrl/listByBank/{bank}",
+  "params": [
+   "bank"
+  ],
+  "query": [
+   "sortOrder"
+  ],
+  "status": 200,
+  "urlTried": "/offsetTranCtrl/listByBank/5",
+  "fieldCount": 20,
+  "message": "",
+  "allTried": [
+   {
+    "url": "/offsetTranCtrl/listByBank/5",
+    "status": 200
+   }
+  ]
+ },
+ {
+  "layer": "svc",
+  "path": "/organizationLevels/get/{orgLevelId}",
+  "params": [
+   "orgLevelId"
+  ],
+  "query": [],
+  "status": 200,
+  "urlTried": "/organizationLevels/get/51415",
+  "fieldCount": 71,
+  "message": "",
+  "allTried": [
+   {
+    "url": "/organizationLevels/get/51415",
+    "status": 200
+   }
+  ]
+ },
+ {
+  "layer": "svc",
+  "path": "/orgLevelData/get/{organizationId}-{bank}-{orgLevelType}-{orgLevelValue}",
+  "params": [
+   "organizationId",
+   "bank",
+   "orgLevelType",
+   "orgLevelValue"
+  ],
+  "query": [],
+  "status": "NO_KEY",
+  "note": "no harvested key available for path params",
+  "tried": []
+ },
+ {
+  "layer": "svc",
+  "path": "/orgLevelData/list/{organizationId}-{bank}-{orgLevelType}",
+  "params": [
+   "organizationId",
+   "bank",
+   "orgLevelType"
+  ],
+  "query": [
+   "sortOrder"
+  ],
+  "status": "NO_KEY",
+  "note": "no harvested key available for path params",
+  "tried": []
+ },
+ {
+  "layer": "svc",
+  "path": "/orgLevelPointer/get/{organizationId}-{bank}-{orgLevelType}-{orgLevelValue}-{orgLevelTypePointer}",
+  "params": [
+   "organizationId",
+   "bank",
+   "orgLevelType",
+   "orgLevelValue",
+   "orgLevelTypePointer"
+  ],
+  "query": [],
+  "status": "NO_KEY",
+  "note": "no harvested key available for path params",
+  "tried": []
+ },
+ {
+  "layer": "svc",
+  "path": "/orgLevelPointer/list/{organizationId}-{bank}-{orgLevelType}-{orgLevelValue}",
+  "params": [
+   "organizationId",
+   "bank",
+   "orgLevelType",
+   "orgLevelValue"
+  ],
+  "query": [
+   "sortOrder"
+  ],
+  "status": "NO_KEY",
+  "note": "no harvested key available for path params",
+  "tried": []
+ },
+ {
+  "layer": "svc",
+  "path": "/pba/get/{obligationId}-{balanceCode}-{assocPrincipalBalanceCode}-{sequence}",
+  "params": [
+   "obligationId",
+   "balanceCode",
+   "assocPrincipalBalanceCode",
+   "sequence"
+  ],
+  "query": [
+   "effectiveDate",
+   "postingSequence"
+  ],
+  "status": "NO_KEY",
+  "note": "no harvested key available for path params",
+  "tried": []
+ },
+ {
+  "layer": "svc",
+  "path": "/pba/getFullKey/{bank}-{obligor}-{obligation}-{balanceCode}-{assocPrincipalBalanceCode}-{sequence}",
+  "params": [
+   "bank",
+   "obligor",
+   "obligation",
+   "balanceCode",
+   "assocPrincipalBalanceCode",
+   "sequence"
+  ],
+  "query": [
+   "postingSequence",
+   "effectiveDate"
+  ],
+  "status": "NO_KEY",
+  "note": "no harvested key available for path params",
+  "tried": []
+ },
+ {
+  "layer": "svc",
+  "path": "/pba/list/{obligationId}-{balanceCode}-{assocPrincipalBalanceCode}-{sequence}",
+  "params": [
+   "obligationId",
+   "balanceCode",
+   "assocPrincipalBalanceCode",
+   "sequence"
+  ],
+  "query": [
+   "effectiveDate",
+   "sortOrder"
+  ],
+  "status": "NO_KEY",
+  "note": "no harvested key available for path params",
+  "tried": []
+ },
+ {
+  "layer": "svc",
+  "path": "/pba/listFullKey/{bank}-{obligor}-{obligation}-{balanceCode}-{assocPrincipalBalanceCode}-{sequence}",
+  "params": [
+   "bank",
+   "obligor",
+   "obligation",
+   "balanceCode",
+   "assocPrincipalBalanceCode",
+   "sequence"
+  ],
+  "query": [
+   "effectiveDate",
+   "sortOrder"
+  ],
+  "status": "NO_KEY",
+  "note": "no harvested key available for path params",
+  "tried": []
+ },
+ {
+  "layer": "svc",
+  "path": "/pba/listByBalance/{obligationId}-{balanceCode}-{assocPrincipalBalanceCode}-{sequence}",
+  "params": [
+   "obligationId",
+   "balanceCode",
+   "assocPrincipalBalanceCode",
+   "sequence"
+  ],
+  "query": [
+   "sortOrder"
+  ],
+  "status": "NO_KEY",
+  "note": "no harvested key available for path params",
+  "tried": []
+ },
+ {
+  "layer": "svc",
+  "path": "/penaltyAmountCurrencies/get/{bank}-{application}-{penaltyId}",
+  "params": [
+   "bank",
+   "application",
+   "penaltyId"
+  ],
+  "query": [
+   "currencyCode"
+  ],
+  "status": "NO_KEY",
+  "note": "no harvested key available for path params",
+  "tried": []
+ },
+ {
+  "layer": "svc",
+  "path": "/penaltyAmountCurrencies/list/{bank}-{application}-{penaltyId}",
+  "params": [
+   "bank",
+   "application",
+   "penaltyId"
+  ],
+  "query": [],
+  "status": "NO_KEY",
+  "note": "no harvested key available for path params",
+  "tried": []
+ },
+ {
+  "layer": "svc",
+  "path": "/penaltyAmountIncrements/get/{bank}-{application}-{penaltyId}-{penaltyIncrement}",
+  "params": [
+   "bank",
+   "application",
+   "penaltyId",
+   "penaltyIncrement"
+  ],
+  "query": [],
+  "status": "NO_KEY",
+  "note": "no harvested key available for path params",
+  "tried": []
+ },
+ {
+  "layer": "svc",
+  "path": "/penaltyAmountIncrements/list/{bank}-{application}-{penaltyId}",
+  "params": [
+   "bank",
+   "application",
+   "penaltyId"
+  ],
+  "query": [],
+  "status": "NO_KEY",
+  "note": "no harvested key available for path params",
+  "tried": []
+ },
+ {
+  "layer": "svc",
+  "path": "/penaltyDefinitions/get/{bank}-{application}-{penaltyId}",
+  "params": [
+   "bank",
+   "application",
+   "penaltyId"
+  ],
+  "query": [],
+  "status": "NO_KEY",
+  "note": "no harvested key available for path params",
+  "tried": []
+ },
+ {
+  "layer": "svc",
+  "path": "/penaltyDefinitions/list/{bank}-{application}",
+  "params": [
+   "bank",
+   "application"
+  ],
+  "query": [],
+  "status": 403,
+  "urlTried": "/penaltyDefinitions/list/5-1",
+  "fieldCount": 1,
+  "message": "[error] Access to this service is not permitted by the current user's permissions. Please consult your helpdesk if you feel that this is inc",
+  "allTried": [
+   {
+    "url": "/penaltyDefinitions/list/5-1",
+    "status": 403
+   },
+   {
+    "url": "/penaltyDefinitions/list/5-0",
+    "status": 403
+   }
+  ]
+ },
+ {
+  "layer": "svc",
+  "path": "/penaltyDefinitions/listAllByBank/{bank}",
+  "params": [
+   "bank"
+  ],
+  "query": [],
+  "status": 403,
+  "urlTried": "/penaltyDefinitions/listAllByBank/5",
+  "fieldCount": 1,
+  "message": "[error] Access to this service is not permitted by the current user's permissions. Please consult your helpdesk if you feel that this is inc",
+  "allTried": [
+   {
+    "url": "/penaltyDefinitions/listAllByBank/5",
+    "status": 403
+   }
+  ]
+ },
+ {
+  "layer": "svc",
+  "path": "/phones/get",
+  "params": [],
+  "query": [
+   "nameId",
+   "phoneSequence"
+  ],
+  "status": 400,
+  "urlTried": "/phones/get",
+  "fieldCount": 1,
+  "message": "HTTP 404",
+  "allTried": [
+   {
+    "url": "/phones/get",
+    "status": 400
+   }
+  ],
+  "pass2Url": "/phones/get?nameId=46643&phoneSequence=1",
+  "pass2Status": 404
+ },
+ {
+  "layer": "svc",
+  "path": "/phones/list",
+  "params": [],
+  "query": [
+   "nameId",
+   "sortOrder"
+  ],
+  "status": 400,
+  "urlTried": "/phones/list",
+  "fieldCount": 1,
+  "message": "[error] HTTP 400 Bad Request",
+  "allTried": [
+   {
+    "url": "/phones/list",
+    "status": 400
+   }
+  ],
+  "pass2Url": "/phones/list?nameId=46643&sortOrder=A",
+  "pass2Status": 400
+ },
+ {
+  "layer": "svc",
+  "path": "/primeSchedules/get/{obligationId}-{chargeCode}",
+  "params": [
+   "obligationId",
+   "chargeCode"
+  ],
+  "query": [
+   "effectiveDate"
+  ],
+  "status": 403,
+  "urlTried": "/primeSchedules/get/30733-3000",
+  "fieldCount": 1,
+  "message": "[error] Access to this service is not permitted by the current user's permissions. Please consult your helpdesk if you feel that this is inc",
+  "allTried": [
+   {
+    "url": "/primeSchedules/get/30733-3000",
+    "status": 403
+   },
+   {
+    "url": "/primeSchedules/get/30733-1005",
+    "status": 403
+   },
+   {
+    "url": "/primeSchedules/get/30745-3000",
+    "status": 403
+   },
+   {
+    "url": "/primeSchedules/get/30745-1005",
+    "status": 403
+   }
+  ]
+ },
+ {
+  "layer": "svc",
+  "path": "/primeSchedules/getFullKey/{bank}-{obligor}-{obligation}-{chargeCode}",
+  "params": [
+   "bank",
+   "obligor",
+   "obligation",
+   "chargeCode"
+  ],
+  "query": [
+   "effectiveDate"
+  ],
+  "status": 403,
+  "urlTried": "/primeSchedules/getFullKey/5-34160-75-3000",
+  "fieldCount": 1,
+  "message": "[error] Access to this service is not permitted by the current user's permissions. Please consult your helpdesk if you feel that this is inc",
+  "allTried": [
+   {
+    "url": "/primeSchedules/getFullKey/5-34160-75-3000",
+    "status": 403
+   },
+   {
+    "url": "/primeSchedules/getFullKey/5-34160-75-1005",
+    "status": 403
+   },
+   {
+    "url": "/primeSchedules/getFullKey/5-34160-83-3000",
+    "status": 403
+   },
+   {
+    "url": "/primeSchedules/getFullKey/5-34160-83-1005",
+    "status": 403
+   },
+   {
+    "url": "/primeSchedules/getFullKey/5-1136-18-3000",
+    "status": 403
+   },
+   {
+    "url": "/primeSchedules/getFullKey/5-1136-18-1005",
+    "status": 403
+   }
+  ]
+ },
+ {
+  "layer": "svc",
+  "path": "/primeSchedules/list/{obligationId}-{chargeCode}",
+  "params": [
+   "obligationId",
+   "chargeCode"
+  ],
+  "query": [
+   "sortOrder"
+  ],
+  "status": 403,
+  "urlTried": "/primeSchedules/list/30733-3000",
+  "fieldCount": 1,
+  "message": "[error] Access to this service is not permitted by the current user's permissions. Please consult your helpdesk if you feel that this is inc",
+  "allTried": [
+   {
+    "url": "/primeSchedules/list/30733-3000",
+    "status": 403
+   },
+   {
+    "url": "/primeSchedules/list/30733-1005",
+    "status": 403
+   },
+   {
+    "url": "/primeSchedules/list/30745-3000",
+    "status": 403
+   },
+   {
+    "url": "/primeSchedules/list/30745-1005",
+    "status": 403
+   }
+  ]
+ },
+ {
+  "layer": "svc",
+  "path": "/primeSchedules/listFullKey/{bank}-{obligor}-{obligation}-{obligationId}",
+  "params": [
+   "bank",
+   "obligor",
+   "obligation",
+   "obligationId"
+  ],
+  "query": [
+   "sortOrder"
+  ],
+  "status": 403,
+  "urlTried": "/primeSchedules/listFullKey/5-34160-75-30733",
+  "fieldCount": 1,
+  "message": "[error] Access to this service is not permitted by the current user's permissions. Please consult your helpdesk if you feel that this is inc",
+  "allTried": [
+   {
+    "url": "/primeSchedules/listFullKey/5-34160-75-30733",
+    "status": 403
+   },
+   {
+    "url": "/primeSchedules/listFullKey/5-34160-75-30745",
+    "status": 403
+   },
+   {
+    "url": "/primeSchedules/listFullKey/5-34160-83-30733",
+    "status": 403
+   },
+   {
+    "url": "/primeSchedules/listFullKey/5-34160-83-30745",
+    "status": 403
+   },
+   {
+    "url": "/primeSchedules/listFullKey/5-1136-18-24932",
+    "status": 403
+   },
+   {
+    "url": "/primeSchedules/listFullKey/5-1136-18-24935",
+    "status": 403
+   }
+  ]
+ },
+ {
+  "layer": "svc",
+  "path": "/rateIndicative/get/{bank}-{rateId}",
+  "params": [
+   "bank",
+   "rateId"
+  ],
+  "query": [],
+  "status": "NO_KEY",
+  "note": "no harvested key available for path params",
+  "tried": []
+ },
+ {
+  "layer": "svc",
+  "path": "/rateIndicative/list/{bank}",
+  "params": [
+   "bank"
+  ],
+  "query": [
+   "sortOrder"
+  ],
+  "status": 403,
+  "urlTried": "/rateIndicative/list/5",
+  "fieldCount": 1,
+  "message": "[error] Access to this service is not permitted by the current user's permissions. Please consult your helpdesk if you feel that this is inc",
+  "allTried": [
+   {
+    "url": "/rateIndicative/list/5",
+    "status": 403
+   }
+  ]
+ },
+ {
+  "layer": "svc",
+  "path": "/repaymentSchedules/get/{obligationId}",
+  "params": [
+   "obligationId"
+  ],
+  "query": [
+   "effectiveDate"
+  ],
+  "status": 403,
+  "urlTried": "/repaymentSchedules/get/30733",
+  "fieldCount": 1,
+  "message": "[error] Access to this service is not permitted by the current user's permissions. Please consult your helpdesk if you feel that this is inc",
+  "allTried": [
+   {
+    "url": "/repaymentSchedules/get/30733",
+    "status": 403
+   },
+   {
+    "url": "/repaymentSchedules/get/30745",
+    "status": 403
+   }
+  ]
+ },
+ {
+  "layer": "svc",
+  "path": "/repaymentSchedules/list/{obligationId}",
+  "params": [
+   "obligationId"
+  ],
+  "query": [
+   "sortOrder"
+  ],
+  "status": 403,
+  "urlTried": "/repaymentSchedules/list/30733",
+  "fieldCount": 1,
+  "message": "[error] Access to this service is not permitted by the current user's permissions. Please consult your helpdesk if you feel that this is inc",
+  "allTried": [
+   {
+    "url": "/repaymentSchedules/list/30733",
+    "status": 403
+   },
+   {
+    "url": "/repaymentSchedules/list/30745",
+    "status": 403
+   }
+  ]
+ },
+ {
+  "layer": "svc",
+  "path": "/repaymentSchedules/listFullKey/{bank}-{obligor}-{obligation}",
+  "params": [
+   "bank",
+   "obligor",
+   "obligation"
+  ],
+  "query": [
+   "sortOrder"
+  ],
+  "status": 403,
+  "urlTried": "/repaymentSchedules/listFullKey/5-34160-75",
+  "fieldCount": 1,
+  "message": "[error] Access to this service is not permitted by the current user's permissions. Please consult your helpdesk if you feel that this is inc",
+  "allTried": [
+   {
+    "url": "/repaymentSchedules/listFullKey/5-34160-75",
+    "status": 403
+   },
+   {
+    "url": "/repaymentSchedules/listFullKey/5-34160-83",
+    "status": 403
+   },
+   {
+    "url": "/repaymentSchedules/listFullKey/5-1136-18",
+    "status": 403
+   },
+   {
+    "url": "/repaymentSchedules/listFullKey/5-1136-26",
+    "status": 403
+   },
+   {
+    "url": "/repaymentSchedules/listFullKey/5-39-18",
+    "status": 403
+   },
+   {
+    "url": "/repaymentSchedules/listFullKey/5-39-26",
+    "status": 403
+   }
+  ]
+ },
+ {
+  "layer": "svc",
+  "path": "/scheduledActivity/get/{dealId}-{obligationId}-{sequence}",
+  "params": [
+   "dealId",
+   "obligationId",
+   "sequence"
+  ],
+  "query": [],
+  "status": 404,
+  "urlTried": "/scheduledActivity/get/5-30733-1",
+  "fieldCount": 0,
+  "message": "",
+  "allTried": [
+   {
+    "url": "/scheduledActivity/get/5-30733-1",
+    "status": 404
+   },
+   {
+    "url": "/scheduledActivity/get/5-30733-0",
+    "status": 404
+   },
+   {
+    "url": "/scheduledActivity/get/5-30745-1",
+    "status": 404
+   },
+   {
+    "url": "/scheduledActivity/get/5-30745-0",
+    "status": 404
+   },
+   {
+    "url": "/scheduledActivity/get/34160-30733-1",
+    "status": 404
+   },
+   {
+    "url": "/scheduledActivity/get/34160-30733-0",
+    "status": 404
+   }
+  ]
+ },
+ {
+  "layer": "svc",
+  "path": "/scheduledActivity/list/{dealId}-{obligationId}",
+  "params": [
+   "dealId",
+   "obligationId"
+  ],
+  "query": [
+   "sortOrder"
+  ],
+  "status": 404,
+  "urlTried": "/scheduledActivity/list/5-30733",
+  "fieldCount": 0,
+  "message": "[error] HTTP 400 Bad Request",
+  "allTried": [
+   {
+    "url": "/scheduledActivity/list/5-30733",
+    "status": 404
+   },
+   {
+    "url": "/scheduledActivity/list/5-30745",
+    "status": 404
+   },
+   {
+    "url": "/scheduledActivity/list/34160-30733",
+    "status": 404
+   },
+   {
+    "url": "/scheduledActivity/list/34160-30745",
+    "status": 404
+   }
+  ],
+  "pass2Url": "/scheduledActivity/list/5-30733?sortOrder=A",
+  "pass2Status": 400
+ },
+ {
+  "layer": "svc",
+  "path": "/scheduledActivity/listByOblnId/{obligationId}",
+  "params": [
+   "obligationId"
+  ],
+  "query": [
+   "sortOrder"
+  ],
+  "status": 404,
+  "urlTried": "/scheduledActivity/listByOblnId/30733",
+  "fieldCount": 0,
+  "message": "[error] HTTP 400 Bad Request",
+  "allTried": [
+   {
+    "url": "/scheduledActivity/listByOblnId/30733",
+    "status": 404
+   },
+   {
+    "url": "/scheduledActivity/listByOblnId/30745",
+    "status": 404
+   }
+  ],
+  "pass2Url": "/scheduledActivity/listByOblnId/30733?sortOrder=A",
+  "pass2Status": 400
+ },
+ {
+  "layer": "svc",
+  "path": "/supportReferences/get/{supportingBank}-{supportingObligor}-{supportingCollateralItem}-{supportedObligor}-{supportedAplication}-{supportedObligation}",
+  "params": [
+   "supportingBank",
+   "supportingObligor",
+   "supportingCollateralItem",
+   "supportedObligor",
+   "supportedAplication",
+   "supportedObligation"
+  ],
+  "query": [],
+  "status": 404,
+  "urlTried": "/supportReferences/get/5-34160-18-34160-1-18",
+  "fieldCount": 0,
+  "message": "",
+  "allTried": [
+   {
+    "url": "/supportReferences/get/5-34160-18-34160-1-18",
+    "status": 404
+   },
+   {
+    "url": "/supportReferences/get/5-34160-18-34160-1-26",
+    "status": 404
+   },
+   {
+    "url": "/supportReferences/get/5-34160-18-34160-0-18",
+    "status": 404
+   },
+   {
+    "url": "/supportReferences/get/5-34160-18-34160-0-26",
+    "status": 404
+   },
+   {
+    "url": "/supportReferences/get/5-34160-18-1136-1-18",
+    "status": 404
+   },
+   {
+    "url": "/supportReferences/get/5-34160-18-1136-1-26",
+    "status": 404
+   }
+  ]
+ },
+ {
+  "layer": "svc",
+  "path": "/supportReferences/list/{supportingBank}-{supportingObligor}-{supportingCollateralItem}-{supportedObligor}-{supportedAplication}",
+  "params": [
+   "supportingBank",
+   "supportingObligor",
+   "supportingCollateralItem",
+   "supportedObligor",
+   "supportedAplication"
+  ],
+  "query": [
+   "sortOrder"
+  ],
+  "status": 200,
+  "urlTried": "/supportReferences/list/5-34160-18-34160-1",
+  "fieldCount": 35,
+  "message": "",
+  "allTried": [
+   {
+    "url": "/supportReferences/list/5-34160-18-34160-1",
+    "status": 200
+   }
+  ]
+ },
+ {
+  "layer": "svc",
+  "path": "/supportReferences/listIndObligorLiab/{supportingBank}-{supportingObligor}",
+  "params": [
+   "supportingBank",
+   "supportingObligor"
+  ],
+  "query": [
+   "sortOrder"
+  ],
+  "status": 404,
+  "urlTried": "/supportReferences/listIndObligorLiab/5-34160",
+  "fieldCount": 0,
+  "message": "HTTP 404",
+  "allTried": [
+   {
+    "url": "/supportReferences/listIndObligorLiab/5-34160",
+    "status": 404
+   },
+   {
+    "url": "/supportReferences/listIndObligorLiab/5-1136",
+    "status": 404
+   }
+  ],
+  "pass2Url": "/supportReferences/listIndObligorLiab/5-34160?sortOrder=A",
+  "pass2Status": 404
+ },
+ {
+  "layer": "svc",
+  "path": "/supportReferences/listIndObligorSupp/{supportingBank}",
+  "params": [
+   "supportingBank"
+  ],
+  "query": [
+   "supportedObligor",
+   "sortOrder"
+  ],
+  "status": 400,
+  "urlTried": "/supportReferences/listIndObligorSupp/5",
+  "fieldCount": 1,
+  "message": "HTTP 404",
+  "allTried": [
+   {
+    "url": "/supportReferences/listIndObligorSupp/5",
+    "status": 400
+   }
+  ],
+  "pass2Url": "/supportReferences/listIndObligorSupp/5?supportedObligor=34160&sortOrder=A",
+  "pass2Status": 404
+ },
+ {
+  "layer": "svc",
+  "path": "/supportReferences/listSupportedByItem/{supportingBank}-{supportingObligor}-{supportingCollateralItem}",
+  "params": [
+   "supportingBank",
+   "supportingObligor",
+   "supportingCollateralItem"
+  ],
+  "query": [
+   "sortOrder"
+  ],
+  "status": 200,
+  "urlTried": "/supportReferences/listSupportedByItem/5-34160-18",
+  "fieldCount": 35,
+  "message": "",
+  "allTried": [
+   {
+    "url": "/supportReferences/listSupportedByItem/5-34160-18",
+    "status": 200
+   }
+  ]
+ },
+ {
+  "layer": "svc",
+  "path": "/supportReferences/listSupportingColl/{supportingBank}-{supportingObligor}",
+  "params": [
+   "supportingBank",
+   "supportingObligor"
+  ],
+  "query": [
+   "obligation",
+   "sortOrder"
+  ],
+  "status": 200,
+  "urlTried": "/supportReferences/listSupportingColl/5-34160?obligation=75&sortOrder=A",
+  "fieldCount": 35,
+  "message": "",
+  "allTried": [
+   {
+    "url": "/supportReferences/listSupportingColl/5-34160",
+    "status": 400
+   },
+   {
+    "url": "/supportReferences/listSupportingColl/5-1136",
+    "status": 400
+   }
+  ]
+ },
+ {
+  "layer": "svc",
+  "path": "/supportReferences/listIndOblnSupport/{supportingBank}-{supportingObligor}",
+  "params": [
+   "supportingBank",
+   "supportingObligor"
+  ],
+  "query": [
+   "supportObligation",
+   "sortOrder"
+  ],
+  "status": 400,
+  "urlTried": "/supportReferences/listIndOblnSupport/5-34160",
+  "fieldCount": 1,
+  "message": "HTTP 404",
+  "allTried": [
+   {
+    "url": "/supportReferences/listIndOblnSupport/5-34160",
+    "status": 400
+   },
+   {
+    "url": "/supportReferences/listIndOblnSupport/5-1136",
+    "status": 400
+   }
+  ],
+  "pass2Url": "/supportReferences/listIndOblnSupport/5-34160?supportObligation=75&sortOrder=A",
+  "pass2Status": 404
+ },
+ {
+  "layer": "svc",
+  "path": "/wireInstructions/get/{nameId}-{sequence}-{wireId}",
+  "params": [
+   "nameId",
+   "sequence",
+   "wireId"
+  ],
+  "query": [],
+  "status": "NO_KEY",
+  "note": "no harvested key available for path params",
+  "tried": []
+ },
+ {
+  "layer": "svc",
+  "path": "/wireInstructions/list/{nameId}-{sequence}",
+  "params": [
+   "nameId",
+   "sequence"
+  ],
+  "query": [
+   "sortOrder"
+  ],
+  "status": 404,
+  "urlTried": "/wireInstructions/list/46643-1",
+  "fieldCount": 0,
+  "message": "[error] HTTP 400 Bad Request",
+  "allTried": [
+   {
+    "url": "/wireInstructions/list/46643-1",
+    "status": 404
+   },
+   {
+    "url": "/wireInstructions/list/46643-0",
+    "status": 404
+   },
+   {
+    "url": "/wireInstructions/list/8093-1",
+    "status": 404
+   },
+   {
+    "url": "/wireInstructions/list/8093-0",
+    "status": 404
+   }
+  ],
+  "pass2Url": "/wireInstructions/list/46643-1?sortOrder=A",
+  "pass2Status": 400
+ }
+]

@@ -1,0 +1,156 @@
+<!doctype html>
+<meta charset="utf-8" />
+<!--
+  AFS Credit Memo — Summary widget. Progressive disclosure:
+    inline      → snapshot cards (borrower, commitment, outstanding, coverage, risk, utilization)
+    fullscreen  → all curated data (facilities, collateral, guaranties, risk) + revolver/payment/balance analytics
+  Truist-branded (brand.css). "View in AFS" deep-links into the AFSVision UI.
+  Fills via app.ontoolresult (structuredContent). Self-contained: inline ext-apps bundle.
+-->
+<style>
+  /*__BRAND__*/
+  *{box-sizing:border-box} html,body{margin:0}
+  body{font-family:var(--font);color:var(--body);background:var(--paper);font-size:13px;color-scheme:light dark}
+  #root{max-width:1100px;margin:0 auto}
+  .hd{display:flex;align-items:center;gap:10px;padding:12px 16px 8px}
+  .hd .mark{height:22px;width:22px;flex:0 0 auto;color:var(--truist)}
+  .hd h1{font-size:13px;font-weight:700;color:var(--truist);margin:0;flex:1;text-transform:uppercase;letter-spacing:.04em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .hd .as{font-size:10.5px;color:var(--muted);white-space:nowrap}
+  .btn{appearance:none;border:1px solid var(--slate);background:var(--off);color:var(--truist);border-radius:5px;height:26px;padding:0 10px;font:inherit;font-size:11px;font-weight:700;cursor:pointer;display:inline-flex;align-items:center;gap:5px;white-space:nowrap}
+  .btn svg{height:12px;width:12px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+  .grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;padding:4px 16px 14px}
+  @media (max-width:440px){ .grid{grid-template-columns:repeat(2,minmax(0,1fr))} }
+  .card{border:1px solid var(--line);border-left:3px solid var(--truist);border-radius:6px;padding:10px 12px;background:var(--tint)}
+  .card.pass{border-left-color:var(--pass);background:var(--pass-bg)}
+  .card.watch{border-left-color:var(--watch);background:var(--watch-bg)}
+  .card.breach{border-left-color:var(--breach);background:var(--breach-bg)}
+  .lab{font-size:10px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);font-weight:700}
+  .val{font-size:20px;font-weight:700;line-height:1.1;margin-top:3px;font-variant-numeric:tabular-nums;color:var(--truist)}
+  .card.pass .val{color:var(--pass)} .card.watch .val{color:var(--watch)} .card.breach .val{color:var(--breach)}
+  .sub{font-size:10.5px;color:var(--muted);margin-top:2px}
+  .sec{font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.04em;color:var(--navy);padding:14px 16px 4px}
+  .wrap{padding:0 16px 6px}
+  table{width:100%;border-collapse:collapse;font-size:11.5px}
+  th,td{padding:4px 8px;text-align:right;border-bottom:1px solid var(--line);font-variant-numeric:tabular-nums;white-space:nowrap}
+  th:first-child,td:first-child{text-align:left;white-space:normal}
+  thead th{color:var(--muted);font-size:9.5px;text-transform:uppercase;letter-spacing:.04em;font-weight:700;border-bottom:1px solid var(--slate)}
+  .row{display:flex;justify-content:space-between;font-size:12px;padding:4px 16px;border-bottom:1px solid var(--line)}
+  .amt{font-weight:700}
+  .analytics{display:grid;grid-template-columns:1fr 1fr;gap:12px;padding:4px 16px 8px}
+  @media (max-width:560px){ .analytics{grid-template-columns:1fr} }
+  .panel{border:1px solid var(--line);border-radius:6px;padding:10px 12px;background:var(--off)}
+  .panel .lab{margin-bottom:4px}
+  .panel .stat{font-size:11px;color:var(--muted);margin-top:4px}
+  .bars{display:flex;align-items:flex-end;gap:3px;height:46px;margin-top:6px}
+  .bars span{flex:1;background:var(--truist);border-radius:2px 2px 0 0;min-height:2px;opacity:.85}
+  .bars span.late{background:var(--watch)} .bars span.bad{background:var(--breach)}
+  .foot{padding:8px 16px 14px;font-size:10px;color:var(--muted);border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap}
+  .src{color:var(--truist);font-weight:600}
+  .empty{padding:26px 16px;color:var(--muted);text-align:center}
+</style>
+<div id="root"><div class="empty">Loading credit memo…</div></div>
+<script type="module">
+/*__EXT_APPS_BUNDLE__*/
+const { App } = globalThis.ExtApps;
+const esc=(s)=>String(s==null?"":s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
+const amt=(m)=>{ const v=m&&typeof m==="object"?m.amount:m; if(v==null) return "—";
+  const n=Number(v); if(!isFinite(n)) return String(v);
+  return Math.abs(n)>=1e6?`$${(n/1e6).toFixed(2)}MM`:Math.abs(n)>=1e3?`$${(n/1e3).toFixed(0)}K`:`$${n.toLocaleString()}`; };
+const num=(m)=> (m&&typeof m==="object")?Number(m.amount):Number(m);
+const ICON_EXPAND=`<svg viewBox="0 0 24 24"><path d="M4 14v6h6M20 10V4h-6M20 4l-7 7M4 20l7-7"/></svg>`;
+const ICON_COLLAPSE=`<svg viewBox="0 0 24 24"><path d="M10 20v-6H4M14 4v6h6M3 21l7-7M21 3l-7 7"/></svg>`;
+const ICON_LINK=`<svg viewBox="0 0 24 24"><path d="M14 4h6v6M20 4l-8 8M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg>`;
+const MARK=`<svg class="mark" viewBox="0 0 1564 1566" role="img" aria-label="Truist"><g transform="translate(0,1566) scale(0.1,-0.1)" fill="currentColor"><path d="M1156 15634 c-226 -31 -488 -133 -647 -253 -217 -164 -376 -413 -449 -704 -59 -234 -55 249 -55 -6857 0 -6207 1 -6551 18 -6656 24 -152 50 -249 102 -377 65 -162 132 -263 260 -392 164 -166 327 -260 565 -325 235 -65 -336 -60 6870 -60 5860 0 6564 2 6659 15 317 47 551 154 752 344 148 139 243 288 313 490 46 132 73 270 86 434 13 176 13 12902 0 13075 -30 391 -158 693 -386 912 -102 98 -174 150 -294 210 -160 80 -292 120 -482 145 -97 13 -948 15 -6662 14 -5444 -1 -6568 -4 -6650 -15z m13164 -4169 l0 -2875 -1985 0 -1985 0 0 1425 0 1425 -757 -2 -758 -3 0 -3605 0 -3605 758 -3 757 -2 0 1425 0 1425 1985 0 1985 0 0 -2875 0 -2875 -6500 0 -6500 0 0 2875 0 2875 1985 0 1985 0 0 -1425 0 -1425 760 0 760 0 0 3610 0 3610 -760 0 -760 0 0 -1425 0 -1425 -1985 0 -1985 0 0 2875 0 2875 6500 0 6500 0 0 -2875z"/></g></svg>`;
+
+let DATA=null, app=null, expanded=false;
+const ctx=()=>app?.getHostContext?.()||{};
+const isFull=()=>ctx().displayMode==="fullscreen";
+const canFull=()=>(ctx().availableDisplayModes||[]).includes("fullscreen");
+const showFull=()=>isFull()||expanded;
+function ask(text){ try{ app.sendMessage({role:"user",content:[{type:"text",text}]}); }catch{} }
+
+function snapshotCards(){
+  const s=DATA.summary||{};
+  const facs=s.facilities?.facilities||[];
+  const bals=s.balances?.balances||[];
+  const colls=s.collateral?.collateral||[];
+  const rg=s.risk_ratings?.ratings?.[0];
+  const pd=s.past_due?.past_due?.[0];
+  const rv=DATA.analytics?.revolver_usage||{};
+  const commitment=facs.reduce((a,f)=>a+(num(f.amount)||0),0);
+  const outstanding=facs.reduce((a,f)=>a+(num(f.current_outstanding)||0),0);
+  const collTot=colls.reduce((a,c)=>a+(num(c.current_value)||0),0);
+  const cov=commitment? Math.round(collTot/commitment*100)+"%" : "—";
+  const pdStatus = pd?.days_past_due>0 ? {v:`${pd.days_past_due} days PD`, k:"breach"} : (pd?.total_times_past_due>0 ? {v:`Current (${pd.total_times_past_due}× LOL)`, k:"watch"} : {v:"Current", k:"pass"});
+  const card=(lab,val,sub,k)=>`<div class="card ${k||''}"><div class="lab">${lab}</div><div class="val">${val}</div>${sub?`<div class="sub">${sub}</div>`:""}</div>`;
+  return [
+    card("Total commitment", amt({amount:commitment}), `${facs.length} facilities`),
+    card("Outstanding", amt({amount:outstanding})),
+    card("Collateral coverage", cov),
+    card("Past due", pdStatus.v, "", pdStatus.k),
+    card("Avg utilization", rv.average!=null?rv.average+"%":"—", rv.high!=null?`High ${rv.high}% · Low ${rv.low}%`:""),
+  ].join("");
+}
+
+function bars(vals, classify){
+  const max=Math.max(1,...vals.map(v=>Math.abs(v)||0));
+  return `<div class="bars">${vals.map(v=>`<span class="${classify?classify(v):''}" style="height:${Math.round((Math.abs(v)/max)*100)}%"></span>`).join("")}</div>`;
+}
+
+function fullSections(){
+  const s=DATA.summary||{};
+  const facs=s.facilities?.facilities||[];
+  const bals=s.balances?.balances||[];
+  const colls=s.collateral?.collateral||[];
+  const rv=DATA.analytics?.revolver_usage||{};
+  const ph=DATA.analytics?.payment_history||{};
+  const bt=DATA.analytics?.balance_trend||{};
+
+  const facTable=`<table><thead><tr><th>Facility</th><th>Type</th><th>Commitment</th><th>Outstanding</th><th>Maturity</th></tr></thead><tbody>${
+    facs.map(f=>`<tr><td>${esc(f.title)}</td><td>${esc(f.process_type||f.product_code||"")}</td><td>${amt(f.amount)}</td><td>${amt(f.current_outstanding)}</td><td>${esc(f.legal_maturity_date||"")}</td></tr>`).join("")||`<tr><td>—</td></tr>`}</tbody></table>`;
+
+  const collRows=colls.map(c=>`<div class="row"><span>${esc(c.type_description||c.type||"Collateral")}</span><span class="amt">${amt(c.current_value)}</span></div>`).join("")||`<div class="row"><span>—</span></div>`;
+
+  const utilBars = rv.months?.length ? bars(rv.months.map(m=>m.utilizationPct)) : "";
+  const balBars = bt.months?.length ? bars(bt.months.map(m=>num(m.balance))) : "";
+
+  return `
+    <div class="sec">Facilities</div><div class="wrap">${facTable}</div>
+    <div class="sec">Collateral · coverage</div>${collRows}
+    <div class="sec">Analytics</div>
+    <div class="analytics">
+      <div class="panel"><div class="lab">Revolver utilization (12-mo)</div>${utilBars}<div class="stat">High ${esc(rv.high)}% · Low ${esc(rv.low)}% · Avg ${esc(rv.average)}% · Months at $0: ${esc(rv.days_at_zero)}</div></div>
+      <div class="panel"><div class="lab">Payment history</div><div class="stat">${esc(ph.buckets?.["30_59"])}× 30-59 · ${esc(ph.buckets?.["60_89"])}× 60-89 · ${esc(ph.buckets?.["90_plus"])}× 90+</div><div class="stat">Current: ${esc(ph.current_days_past_due)} days PD · ${amt({amount:ph.current_past_due_amount})}</div></div>
+      <div class="panel"><div class="lab">Balance trend (12-mo)</div>${balBars}<div class="stat">Current ${amt({amount:bt.current})} of ${amt({amount:bt.commitment})}</div></div>
+    </div>`;
+}
+
+function render(){
+  const root=document.getElementById("root");
+  if(!DATA||!DATA.summary){ root.innerHTML='<div class="empty">No memo data.</div>'; return; }
+  const co=esc(DATA.borrower||"Borrower");
+  const full=showFull();
+  const head=`<div class="hd">${MARK}
+    <h1>${co} — ${full?"Credit Memo":"Summary"}</h1>
+    <span class="as">WP ${esc(DATA.wpId||"")}</span>
+    ${DATA.viewInAfsUrl?`<button class="btn" id="afs" type="button"><span>View in AFS</span>${ICON_LINK}</button>`:""}
+    <button class="btn" id="exp" type="button">${full?ICON_COLLAPSE:ICON_EXPAND}<span>${full?"Collapse":"Full Summary"}</span></button>
+  </div>`;
+  root.innerHTML=head+`<div class="grid">${snapshotCards()}</div>`+(full?fullSections():"")+
+    `<div class="foot"><span class="src">Source: AFS (${esc(DATA.source||"")})</span><span>${full?"Full curated summary + analytics":"Full Summary — all curated data"}</span></div>`;
+
+  const exp=root.querySelector("#exp");
+  if(exp) exp.addEventListener("click",()=>{ if(canFull()){ try{ app.requestDisplayMode({mode:isFull()?"inline":"fullscreen"}); return; }catch{} } expanded=!expanded; render(); });
+  const afs=root.querySelector("#afs");
+  if(afs) afs.addEventListener("click",()=>{ try{ app.openLink({url:DATA.viewInAfsUrl}); }catch{} });
+}
+
+(async()=>{
+  app=new App({name:"AfsCreditMemo",version:"1.0.0"},{availableDisplayModes:["inline","fullscreen"]},{autoResize:true});
+  const theme=()=>{try{document.documentElement.classList.toggle("dark",ctx().theme==="dark")}catch{}};
+  app.ontoolresult=(result)=>{ try{ DATA=result?.structuredContent ?? JSON.parse(result.content[0].text); }catch{ DATA=null; } theme(); render(); };
+  app.onhostcontextchanged=()=>{ theme(); render(); };
+  await app.connect();
+  theme(); render();
+})();
+</script>
