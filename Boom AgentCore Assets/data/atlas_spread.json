@@ -1,0 +1,522 @@
+{
+  "company": {
+    "_source": "BOOM-FIXTURE",
+    "id": "boomco_piedmont",
+    "externalUniqueId": "001bb00001DLtRMAA1",
+    "name": "Piedmont Precision Components, Inc.",
+    "fileIds": [
+      "bf_piedmont_fy2024"
+    ]
+  },
+  "files": {
+    "bf_piedmont_fy2024": {
+      "_source": "BOOM-FIXTURE",
+      "id": "bf_piedmont_fy2024",
+      "fileName": "Piedmont Precision Components — FY2024 Financials.xlsx",
+      "status": "completed",
+      "externalUniqueId": "001bb00001DLtRMAA1",
+      "statementEndDates": [
+        "2023-12-31",
+        "2025-12-31"
+      ],
+      "financialStatements": [
+        {
+          "statementType": "income_statement",
+          "endDate": "2025-12-31",
+          "periods": [
+            "FY2023",
+            "FY2024",
+            "FY2025"
+          ],
+          "validationStatus": "validated",
+          "lineItems": [
+            {
+              "name": "Sales Revenue",
+              "hierarchy": "line_item",
+              "accountCode": "sales_revenue",
+              "periodValues": {
+                "FY2023": 56000000,
+                "FY2024": 60000000,
+                "FY2025": 64500000
+              }
+            },
+            {
+              "name": "Cost Of Sales",
+              "hierarchy": "line_item",
+              "accountCode": "cost_of_sales",
+              "periodValues": {
+                "FY2023": 40800000,
+                "FY2024": 45400000,
+                "FY2025": 50600000
+              }
+            },
+            {
+              "name": "Gross Profit",
+              "hierarchy": "subtotal",
+              "accountCode": "gross_profit",
+              "periodValues": {
+                "FY2023": 15200000,
+                "FY2024": 14600000,
+                "FY2025": 13900000
+              }
+            },
+            {
+              "name": "Selling & Marketing Expense",
+              "hierarchy": "line_item",
+              "accountCode": "selling_marketing_expense",
+              "periodValues": {
+                "FY2023": 3300000,
+                "FY2024": 3500000,
+                "FY2025": 3700000
+              }
+            },
+            {
+              "name": "General And Admin Expenses",
+              "hierarchy": "line_item",
+              "accountCode": "general_and_admin_expenses",
+              "periodValues": {
+                "FY2023": 10800000,
+                "FY2024": 11000000,
+                "FY2025": 11200000
+              }
+            },
+            {
+              "name": "Total Operating Expenses",
+              "hierarchy": "subtotal",
+              "accountCode": "total_operating_expenses",
+              "periodValues": {
+                "FY2023": 14100000,
+                "FY2024": 14500000,
+                "FY2025": 14900000
+              }
+            },
+            {
+              "name": "Operating Profit",
+              "hierarchy": "subtotal",
+              "accountCode": "operating_profit",
+              "periodValues": {
+                "FY2023": 4400000,
+                "FY2024": 3600000,
+                "FY2025": 2700000
+              }
+            },
+            {
+              "name": "Depreciation Amortization",
+              "hierarchy": "line_item",
+              "accountCode": "depreciation_amortization",
+              "periodValues": {
+                "FY2023": 2000000,
+                "FY2024": 2200000,
+                "FY2025": 2400000
+              }
+            },
+            {
+              "name": "Adjusted EBITDA",
+              "hierarchy": "subtotal",
+              "accountCode": "adjusted_ebitda",
+              "periodValues": {
+                "FY2023": 6400000,
+                "FY2024": 5800000,
+                "FY2025": 5100000
+              }
+            },
+            {
+              "name": "Interest Expense",
+              "hierarchy": "line_item",
+              "accountCode": "interest_expense",
+              "periodValues": {
+                "FY2023": 950000,
+                "FY2024": 1010000,
+                "FY2025": 1080000
+              }
+            },
+            {
+              "name": "Pretax Income",
+              "hierarchy": "subtotal",
+              "accountCode": "pretax_income",
+              "periodValues": {
+                "FY2023": 3450000,
+                "FY2024": 2590000,
+                "FY2025": 1620000
+              }
+            },
+            {
+              "name": "Income Tax Expense",
+              "hierarchy": "line_item",
+              "accountCode": "income_tax_expense",
+              "periodValues": {
+                "FY2023": 725000,
+                "FY2024": 544000,
+                "FY2025": 340000
+              }
+            },
+            {
+              "name": "Net Income",
+              "hierarchy": "subtotal",
+              "accountCode": "net_income",
+              "periodValues": {
+                "FY2023": 2725000,
+                "FY2024": 2046000,
+                "FY2025": 1280000
+              }
+            }
+          ]
+        },
+        {
+          "statementType": "balance_sheet",
+          "endDate": "2025-12-31",
+          "periods": [
+            "FY2023",
+            "FY2024",
+            "FY2025"
+          ],
+          "validationStatus": "validated",
+          "lineItems": [
+            {
+              "name": "Cash And Equivalents",
+              "hierarchy": "line_item",
+              "accountCode": "cash_and_equivalents",
+              "periodValues": {
+                "FY2023": 3100000,
+                "FY2024": 3900000,
+                "FY2025": 4950000
+              }
+            },
+            {
+              "name": "Accounts Receivable",
+              "hierarchy": "line_item",
+              "accountCode": "accounts_receivable",
+              "periodValues": {
+                "FY2023": 7700000,
+                "FY2024": 8450000,
+                "FY2025": 9200000
+              }
+            },
+            {
+              "name": "Inventory",
+              "hierarchy": "line_item",
+              "accountCode": "inventory",
+              "periodValues": {
+                "FY2023": 9900000,
+                "FY2024": 10950000,
+                "FY2025": 12000000
+              }
+            },
+            {
+              "name": "Prepaid Expenses & Other Current Assets",
+              "hierarchy": "line_item",
+              "accountCode": "prepaid_and_other_current_assets",
+              "periodValues": {
+                "FY2023": 600000,
+                "FY2024": 700000,
+                "FY2025": 800000
+              }
+            },
+            {
+              "name": "Total Current Assets",
+              "hierarchy": "subtotal",
+              "accountCode": "total_current_assets",
+              "periodValues": {
+                "FY2023": 21300000,
+                "FY2024": 24000000,
+                "FY2025": 26950000
+              }
+            },
+            {
+              "name": "PP&E Net",
+              "hierarchy": "line_item",
+              "accountCode": "ppe_net",
+              "periodValues": {
+                "FY2023": 13800000,
+                "FY2024": 15600000,
+                "FY2025": 18500000
+              }
+            },
+            {
+              "name": "Operating Lease ROU & Other Long-Term Assets",
+              "hierarchy": "line_item",
+              "accountCode": "other_lt_assets",
+              "periodValues": {
+                "FY2023": 1000000,
+                "FY2024": 446000,
+                "FY2025": 1426000
+              }
+            },
+            {
+              "name": "Goodwill",
+              "hierarchy": "line_item",
+              "accountCode": "goodwill",
+              "periodValues": {
+                "FY2023": 0,
+                "FY2024": 0,
+                "FY2025": 0
+              }
+            },
+            {
+              "name": "Total Assets",
+              "hierarchy": "subtotal",
+              "accountCode": "total_assets",
+              "periodValues": {
+                "FY2023": 36100000,
+                "FY2024": 40046000,
+                "FY2025": 46876000
+              }
+            },
+            {
+              "name": "Accounts Payable",
+              "hierarchy": "line_item",
+              "accountCode": "accounts_payable",
+              "periodValues": {
+                "FY2023": 4000000,
+                "FY2024": 4400000,
+                "FY2025": 4800000
+              }
+            },
+            {
+              "name": "Accrued Expenses & Other Current Liabilities",
+              "hierarchy": "line_item",
+              "accountCode": "accrued_expenses",
+              "periodValues": {
+                "FY2023": 2200000,
+                "FY2024": 2400000,
+                "FY2025": 2600000
+              }
+            },
+            {
+              "name": "Current Portion LTD",
+              "hierarchy": "line_item",
+              "accountCode": "current_portion_ltd",
+              "periodValues": {
+                "FY2023": 4900000,
+                "FY2024": 5200000,
+                "FY2025": 5650000
+              }
+            },
+            {
+              "name": "Total Current Liabilities",
+              "hierarchy": "subtotal",
+              "accountCode": "total_current_liabilities",
+              "periodValues": {
+                "FY2023": 11100000,
+                "FY2024": 12000000,
+                "FY2025": 13050000
+              }
+            },
+            {
+              "name": "Long Term Debt",
+              "hierarchy": "line_item",
+              "accountCode": "long_term_debt",
+              "periodValues": {
+                "FY2023": 9000000,
+                "FY2024": 10000000,
+                "FY2025": 14500000
+              }
+            },
+            {
+              "name": "Total Debt",
+              "hierarchy": "subtotal",
+              "accountCode": "total_debt",
+              "periodValues": {
+                "FY2023": 13900000,
+                "FY2024": 15200000,
+                "FY2025": 20150000
+              }
+            },
+            {
+              "name": "Total Liabilities",
+              "hierarchy": "subtotal",
+              "accountCode": "total_liabilities",
+              "periodValues": {
+                "FY2023": 20100000,
+                "FY2024": 22000000,
+                "FY2025": 27550000
+              }
+            },
+            {
+              "name": "Total Equity",
+              "hierarchy": "subtotal",
+              "accountCode": "total_equity",
+              "periodValues": {
+                "FY2023": 16000000,
+                "FY2024": 18046000,
+                "FY2025": 19326000
+              }
+            }
+          ]
+        },
+        {
+          "statementType": "cash_flow_statement",
+          "endDate": "2025-12-31",
+          "periods": [
+            "FY2023",
+            "FY2024",
+            "FY2025"
+          ],
+          "validationStatus": "validated",
+          "lineItems": [
+            {
+              "name": "Net Income",
+              "hierarchy": "line_item",
+              "accountCode": "net_income_cf",
+              "periodValues": {
+                "FY2023": 2725000,
+                "FY2024": 2046000,
+                "FY2025": 1280000
+              }
+            },
+            {
+              "name": "Non-Cash Charges (D&A)",
+              "hierarchy": "line_item",
+              "accountCode": "dep_amort_cf",
+              "periodValues": {
+                "FY2023": 2000000,
+                "FY2024": 2200000,
+                "FY2025": 2400000
+              }
+            },
+            {
+              "name": "Stock Comp & Other Non-Cash",
+              "hierarchy": "line_item",
+              "accountCode": "stock_comp_other",
+              "periodValues": {
+                "FY2023": 150000,
+                "FY2024": 200000,
+                "FY2025": 250000
+              }
+            },
+            {
+              "name": "(Increase)/Decrease in Accounts Receivable",
+              "hierarchy": "line_item",
+              "accountCode": "change_ar",
+              "periodValues": {
+                "FY2023": -300000,
+                "FY2024": -750000,
+                "FY2025": -750000
+              }
+            },
+            {
+              "name": "(Increase)/Decrease in Inventory",
+              "hierarchy": "line_item",
+              "accountCode": "change_inventory",
+              "periodValues": {
+                "FY2023": -650000,
+                "FY2024": -1050000,
+                "FY2025": -1050000
+              }
+            },
+            {
+              "name": "Increase/(Decrease) in Payables & Accruals",
+              "hierarchy": "line_item",
+              "accountCode": "change_ap_accrued",
+              "periodValues": {
+                "FY2023": 875000,
+                "FY2024": 1554000,
+                "FY2025": 1470000
+              }
+            },
+            {
+              "name": "Operating Cash Flow",
+              "hierarchy": "subtotal",
+              "accountCode": "operating_cash_flow",
+              "periodValues": {
+                "FY2023": 4800000,
+                "FY2024": 4200000,
+                "FY2025": 3600000
+              }
+            },
+            {
+              "name": "Capital Expenditures",
+              "hierarchy": "line_item",
+              "accountCode": "capital_expenditures",
+              "periodValues": {
+                "FY2023": 2100000,
+                "FY2024": 2600000,
+                "FY2025": 5400000
+              }
+            },
+            {
+              "name": "Free Cash Flow",
+              "hierarchy": "subtotal",
+              "accountCode": "free_cash_flow",
+              "periodValues": {
+                "FY2023": 2700000,
+                "FY2024": 1600000,
+                "FY2025": -1800000
+              }
+            },
+            {
+              "name": "Proceeds from Long-Term Debt",
+              "hierarchy": "line_item",
+              "accountCode": "proceeds_lt_debt",
+              "periodValues": {
+                "FY2023": 1000000,
+                "FY2024": 1500000,
+                "FY2025": 5000000
+              }
+            },
+            {
+              "name": "Repayment of Debt",
+              "hierarchy": "line_item",
+              "accountCode": "repayment_debt",
+              "periodValues": {
+                "FY2023": -1200000,
+                "FY2024": -1700000,
+                "FY2025": -1500000
+              }
+            },
+            {
+              "name": "Dividends Paid",
+              "hierarchy": "line_item",
+              "accountCode": "dividends_paid",
+              "periodValues": {
+                "FY2023": -500000,
+                "FY2024": -600000,
+                "FY2025": -650000
+              }
+            },
+            {
+              "name": "Net Cash from Financing",
+              "hierarchy": "subtotal",
+              "accountCode": "net_financing",
+              "periodValues": {
+                "FY2023": -700000,
+                "FY2024": -800000,
+                "FY2025": 2850000
+              }
+            },
+            {
+              "name": "Net Change in Cash",
+              "hierarchy": "subtotal",
+              "accountCode": "net_change_cash",
+              "periodValues": {
+                "FY2023": 2000000,
+                "FY2024": 800000,
+                "FY2025": 1050000
+              }
+            },
+            {
+              "name": "Cash, Beginning of Period",
+              "hierarchy": "line_item",
+              "accountCode": "beginning_cash",
+              "periodValues": {
+                "FY2023": 1100000,
+                "FY2024": 3100000,
+                "FY2025": 3900000
+              }
+            },
+            {
+              "name": "Cash, End of Period",
+              "hierarchy": "subtotal",
+              "accountCode": "ending_cash",
+              "periodValues": {
+                "FY2023": 3100000,
+                "FY2024": 3900000,
+                "FY2025": 4950000
+              }
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

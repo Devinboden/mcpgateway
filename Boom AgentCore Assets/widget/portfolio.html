@@ -1,0 +1,70 @@
+<!doctype html>
+<meta charset="utf-8" />
+<!--
+  Boom Intelligence — portfolio benchmark table (PREVIEW). Rendered by boom_benchmark_portfolio:
+  ranks the book on a metric, highlights the borrower, flags outliers. Inline, self-contained.
+-->
+<style>
+  /*__BRAND__*/
+  *{box-sizing:border-box} html,body{margin:0}
+  body{font-family:var(--font);color:var(--body);background:var(--paper);font-size:13px;color-scheme:light dark}
+  .card{max-width:620px;margin:0 auto;padding:14px 16px}
+  .hd{display:flex;align-items:center;gap:8px}
+  .hd .dot{width:6px;height:6px;border-radius:50%;background:var(--brand)}
+  .hd .lab{font-size:9.5px;font-weight:800;letter-spacing:.09em;text-transform:uppercase;color:var(--brand)}
+  .hd .as{margin-left:auto;font-size:10px;color:var(--muted)}
+  h1{font-size:15px;font-weight:700;color:var(--navy);margin:8px 0 10px}
+  table{width:100%;border-collapse:collapse;font-size:12px}
+  th,td{padding:6px 8px;text-align:right;border-bottom:1px solid var(--line);white-space:nowrap;font-variant-numeric:tabular-nums}
+  th:first-child,td:first-child{text-align:left;white-space:normal;width:100%}
+  thead th{font-size:9.5px;text-transform:uppercase;letter-spacing:.04em;color:var(--muted);font-weight:700;border-bottom:1px solid var(--slate)}
+  tr.me td{background:var(--tint);font-weight:700;color:var(--brand)}
+  .flag{display:inline-block;font-size:8.5px;font-weight:800;letter-spacing:.02em;padding:1px 5px;border-radius:4px;margin-left:6px;vertical-align:middle;text-transform:uppercase}
+  .flag.margin{background:var(--breach-bg,#f6e2e1);color:var(--breach,#A8211B)}
+  .flag.watch{background:var(--watch-bg,#fbf0df);color:var(--watch,#B45309)}
+  .vs{color:var(--muted);font-size:11px}
+  .take{margin-top:12px}
+  .take .sec{font-size:9.5px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-bottom:4px}
+  .take ul{margin:0;padding-left:16px} .take li{margin:3px 0;line-height:1.42}
+  .foot{margin-top:12px;font-size:9.5px;color:var(--muted);border-top:1px solid var(--line);padding-top:8px;display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap}
+  .empty{padding:24px 16px;color:var(--muted);text-align:center}
+</style>
+<div id="root"><div class="empty">Loading benchmark…</div></div>
+<script type="module">
+/*__EXT_APPS_BUNDLE__*/
+const { App } = globalThis.ExtApps;
+const esc=(s)=>String(s==null?"":s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
+let DATA=null, app=null;
+const ctx=()=>app?.getHostContext?.()||{};
+
+function render(){
+  const root=document.getElementById("root");
+  if(!DATA||!DATA.rows){ root.innerHTML='<div class="empty">No benchmark available.</div>'; return; }
+  const d=DATA;
+  const rows=(d.rows||[]).map(r=>{
+    const flag=r.flag?`<span class="flag ${esc(r.flag)}">${esc(r.flag)}</span>`:"";
+    return `<tr class="${r.highlight?'me':''}"><td>${esc(r.name)}${flag}</td><td>${esc(r.value)}</td><td class="vs">${esc(r.vsBook||"")}</td></tr>`;
+  }).join("");
+  const takeaways=(d.takeaways||[]).map(t=>`<li>${esc(t)}</li>`).join("");
+  root.innerHTML=`
+    <div class="card">
+      <div class="hd"><span class="dot"></span><span class="lab">Portfolio Benchmark</span><span class="as">${esc(d.asOf||"")}</span></div>
+      <h1>${esc(d.title||"Portfolio benchmark")}</h1>
+      <table>
+        <thead><tr><th>Borrower</th><th>${esc(d.metric||"Metric")}</th><th>vs. book</th></tr></thead>
+        <tbody>${rows}</tbody>
+      </table>
+      ${takeaways?`<div class="take"><div class="sec">Key takeaways</div><ul>${takeaways}</ul></div>`:""}
+      <div class="foot"><span>Portfolio benchmark (preview) · Source: Boom</span><span class="acc-lockup" aria-label="Credit Memo Reinvented with Accenture">CREDIT MEMO REIN<svg class="v" viewBox="95.1 0 16.1 17" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><polygon fill="#A100FF" points="95.1,12 104.5,8.5 95.1,4.9 95.1,0 111.2,6.5 111.2,10.5 95.1,17"/></svg>ENTED</span></div>
+    </div>`;
+}
+
+(async()=>{
+  app=new App({name:"BoomPortfolio",version:"1.0.0"},{availableDisplayModes:["inline"]},{autoResize:true});
+  const theme=()=>{try{document.documentElement.classList.toggle("dark",ctx().theme==="dark")}catch{}};
+  app.ontoolresult=(result)=>{ try{ DATA=result?.structuredContent ?? JSON.parse(result.content[0].text); }catch{ DATA=null; } theme(); render(); };
+  app.onhostcontextchanged=()=>{ theme(); render(); };
+  await app.connect();
+  theme(); render();
+})();
+</script>

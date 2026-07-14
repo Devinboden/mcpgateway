@@ -1,0 +1,281 @@
+<!doctype html>
+<meta charset="utf-8" />
+<!--
+  Boom Financials — ONE interactive MCP-App widget. Progressive disclosure:
+    inline      → key-ratio cards + "Expand to full spread"
+    fullscreen  → ratios strip + tabbed BS/IS/CF statement tables
+  Same widget instance toggles between the two (requestDisplayMode); it keeps its
+  place in the conversation. Interactive: statement tabs, click a ratio or a line
+  item to ask Claude about it (app.sendMessage), open the live Boom UI (app.openLink).
+  Self-contained: inline bundle, no external fetches, fill via app.ontoolresult.
+-->
+<style>
+  /*__BRAND__*/
+  *{box-sizing:border-box} html,body{margin:0}
+  body{font-family:var(--font);color:var(--body);background:var(--paper);font-size:13px;color-scheme:light dark}
+  /* center the whole widget in a max-width column on wide (fullscreen) screens — no edge-to-edge
+     sprawl; header, ratio cards, tabs and the statement table all share this width and center */
+  #root{max-width:1200px;margin:0 auto}
+  .hd{display:flex;align-items:center;gap:10px;padding:12px 16px 8px}
+  .hd .mark{height:22px;width:22px;flex:0 0 auto;color:var(--brand)}
+  .hd h1{font-size:13px;font-weight:700;color:var(--brand);margin:0;flex:1;text-transform:uppercase;letter-spacing:.04em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .hd .as{font-size:10.5px;color:var(--muted);white-space:nowrap}
+  .btn{appearance:none;border:1px solid var(--slate);background:var(--off);color:var(--brand);border-radius:5px;height:26px;padding:0 10px;font:inherit;font-size:11px;font-weight:700;cursor:pointer;display:inline-flex;align-items:center;gap:5px;white-space:nowrap}
+  .btn[hidden]{display:none}
+  .btn svg{height:12px;width:12px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+  .btn svg.bmk{height:14px;width:14px;fill:#0018F5;stroke:none}
+  .btn svg.bmk path{fill:#0018F5;stroke:none}
+  .leg{display:flex;gap:12px;font-size:9.5px;color:var(--muted);padding:0 16px 6px}
+  .dot{display:inline-block;width:8px;height:8px;border-radius:2px;margin-right:3px;vertical-align:middle}
+  /* ratio cards */
+  /* 6 ratio cards → an even 3 × 2 grid (was auto-fit, which packed 4 then 2) */
+  .grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;padding:4px 16px 14px}
+  @media (max-width:440px){ .grid{grid-template-columns:repeat(2,minmax(0,1fr))} }
+  .card{border:1px solid var(--line);border-left:3px solid var(--brand);border-radius:6px;padding:10px 12px;background:var(--tint);cursor:pointer;transition:transform .06s}
+  .card:hover{transform:translateY(-1px);border-color:var(--brand)}
+  .card.pass{border-left-color:var(--pass);background:var(--pass-bg)}
+  .card.watch{border-left-color:var(--watch);background:var(--watch-bg)}
+  .card.breach{border-left-color:var(--breach);background:var(--breach-bg)}
+  .lab{font-size:10px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);font-weight:700}
+  .val{font-size:20px;font-weight:700;line-height:1.1;margin-top:3px;font-variant-numeric:tabular-nums;color:var(--brand)}
+  .card.pass .val{color:var(--pass)} .card.watch .val{color:var(--watch)} .card.breach .val{color:var(--breach)}
+  .sub{font-size:10.5px;color:var(--muted);margin-top:2px}
+  /* ratios strip (fullscreen) */
+  .strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(112px,1fr));gap:8px;padding:4px 16px 10px}
+  .chip{border:1px solid var(--line);border-top:2px solid var(--brand);border-radius:0 0 5px 5px;padding:6px 9px;background:var(--tint);cursor:pointer}
+  .chip:hover{border-color:var(--brand)}
+  .chip.pass{border-top-color:var(--pass)} .chip.watch{border-top-color:var(--watch)} .chip.breach{border-top-color:var(--breach)}
+  .chip .lab{font-size:9px} .chip .val{font-size:15px}
+  .chip.pass .val{color:var(--pass)} .chip.watch .val{color:var(--watch)} .chip.breach .val{color:var(--breach)}
+  /* tabs + table */
+  .tabs{display:flex;gap:4px;padding:0 16px;border-bottom:1px solid var(--line);flex-wrap:wrap}
+  .tab{padding:8px 12px;font-size:11.5px;font-weight:600;color:var(--muted);cursor:pointer;border:0;border-bottom:2px solid transparent;background:none}
+  .tab.on{color:var(--brand);border-bottom-color:var(--brand)}
+  .wrap{padding:2px 16px 14px}
+  table{width:100%;max-width:1120px;border-collapse:collapse;font-size:11.5px}
+  th,td{padding:2.5px 8px;text-align:right;border-bottom:1px solid var(--line);font-variant-numeric:tabular-nums;white-space:nowrap}
+  th:first-child,td:first-child{text-align:left;white-space:normal;width:100%}
+  thead th{position:sticky;top:0;background:var(--paper);color:var(--muted);font-size:9.5px;text-transform:uppercase;letter-spacing:.04em;font-weight:700;border-bottom:1px solid var(--slate)}
+  tbody tr[data-li]{cursor:pointer}
+  tbody tr[data-li]:hover td{background:var(--off)}
+  /* group-header row (Boom hierarchy === "header") */
+  tr.grp td{font-weight:700;color:var(--navy);background:var(--off);text-transform:uppercase;letter-spacing:.04em;font-size:9.5px;padding:5px 8px;border-bottom:1px solid var(--slate)}
+  /* clean whitespace BETWEEN sections via a dedicated spacer row (not padding inside the band) */
+  tr.spc td{height:14px;padding:0;border:0;background:var(--paper)}
+  /* table controls (delta toggle + units) — right-aligned in the tabs row */
+  .ctrls{margin-left:auto;display:flex;gap:8px;align-items:center}
+  /* controls live in their own right-aligned strip directly above the period columns (not in the tabs row) */
+  .ctrlbar{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:8px 16px 2px}
+  .unitcap{font-size:10px;color:var(--muted);font-style:italic;white-space:nowrap}
+  /* the table sizes to content (first col is greedy) and sits left-aligned; .stmt shrinks to that
+     width so the right-aligned .ctrlbar lands directly over the period columns, not the viewport edge */
+  .stmt{display:inline-block;max-width:100%;vertical-align:top}
+  .tgl{appearance:none;border:1px solid var(--line);background:var(--paper);color:var(--muted);font:inherit;font-size:10px;font-weight:700;padding:3px 8px;border-radius:5px;cursor:pointer;white-space:nowrap}
+  .tgl.on{background:var(--brand);color:#fff;border-color:var(--brand)}
+  .units{display:inline-flex;gap:0;border:1px solid var(--line);border-radius:5px;overflow:hidden}
+  .units button{appearance:none;border:0;background:var(--paper);color:var(--muted);font:inherit;font-size:10px;font-weight:700;padding:3px 8px;cursor:pointer}
+  .units button+button{border-left:1px solid var(--line)}
+  .units button.on{background:var(--brand);color:#fff}
+  td.delta{color:var(--muted);font-size:11px}
+  td.delta .ar{font-size:7.5px;vertical-align:middle;opacity:.7}
+  /* subtotal row: bold + a subtle row highlight + a single rule ABOVE (signals "these rows are being summed") */
+  tr.tot td{font-weight:700;background:var(--off);border-top:1px solid var(--slate)}
+  /* grand total (Total Assets / Total Liabilities & Equity / Net Income): single rule above + a DOUBLE rule below — the classic "final figure" mark */
+  tr.grand td{border-bottom:3px double var(--navy)}
+  /* mapped-account-code category badge */
+  .bdg{display:inline-block;min-width:22px;text-align:center;font-size:8.5px;font-weight:800;letter-spacing:.02em;padding:1px 4px;border-radius:4px;margin-right:7px;vertical-align:middle;font-family:ui-monospace,Menlo,monospace}
+  .bdg.asset{background:rgba(27,45,91,.10);color:var(--navy)}
+  .bdg.liab{background:var(--watch-bg);color:var(--watch)}
+  .bdg.eq{background:rgba(45,26,71,.12);color:var(--brand)}
+  .bdg.tot{background:var(--brand);color:#fff}
+  .nm{vertical-align:middle}
+  /* Boom-mapped account code — hidden until you hover the row (reliable CSS reveal, not a native tooltip) */
+  .code{color:var(--muted);font-size:9px;font-family:ui-monospace,Menlo,monospace;margin-left:8px;opacity:0;transition:opacity .08s}
+  tbody tr[data-li]:hover .code{opacity:.75}
+  .foot{padding:8px 16px 14px;font-size:10px;color:var(--muted);border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap}
+  .src{color:var(--brand);font-weight:600}
+  /* Accenture builder mark — "Credit Memo REIN>ENTED" lockup (these are Accenture-built accelerators, not official Boom products) */
+  .acc{display:flex;align-items:center;justify-content:flex-end;padding:0 16px 12px}
+  .empty{padding:26px 16px;color:var(--muted);text-align:center}
+</style>
+<div id="root"><div class="empty">Loading financials…</div></div>
+<script type="module">
+/*__EXT_APPS_BUNDLE__*/
+const { App } = globalThis.ExtApps;
+const esc=(s)=>String(s==null?"":s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
+const fmt=(n)=>(n==null||n==="")?"—":(typeof n==="number"?(Math.abs(n)>=1e6?`$${(n/1e6).toFixed(1)}M`:Math.abs(n)>=1e3?`$${(n/1e3).toFixed(0)}K`:`$${n.toLocaleString()}`):String(n));
+const niceType=(t)=>({income_statement:"Income Statement",balance_sheet:"Balance Sheet",cash_flow_statement:"Cash Flow"}[t]||t||"Statement");
+// derive a Boom-style category badge from the current section-header text
+const catOf=(sec)=>{ sec=(sec||"").toLowerCase();
+  if(/current asset/.test(sec)) return {b:"CA",k:"asset"};
+  if(/current liab/.test(sec)) return {b:"CL",k:"liab"};
+  if(/long.?term liab|non.?current liab/.test(sec)) return {b:"LTL",k:"liab"};
+  if(/non.?current asset|long.?term asset/.test(sec)) return {b:"LTA",k:"asset"};
+  if(/equity/.test(sec)) return {b:"EQ",k:"eq"};
+  if(/asset/.test(sec)) return {b:"A",k:"asset"};
+  if(/liab/.test(sec)) return {b:"L",k:"liab"};
+  return null; };
+const isTotalRow=(li)=>li.hierarchy==="total"||li.hierarchy==="subtotal"||/\btotal\b|gross (margin|profit)|net income|operating income|\bebit(da)?\b/i.test(li.name||"")||/(^|_)total/.test(li.accountCode||"");
+// grand totals — the balancing/final figures that get the DOUBLE underline. Everything else that's a total is a subtotal (single rule above).
+const GRAND=/^total assets|^total liabilities (and|&)|^net income|net (increase|decrease|change) in cash|^ending cash/i;
+const isGrand=(li)=>GRAND.test((li.name||"").trim());
+// disambiguate duplicate statement-type tab labels (a file can carry 2 income statements)
+const tabLabels=(sts)=>{ const seen={},tot={}; sts.forEach(s=>{const l=niceType(s.statementType);tot[l]=(tot[l]||0)+1;}); return sts.map(s=>{const l=niceType(s.statementType); if(tot[l]<2) return l; seen[l]=(seen[l]||0)+1; return `${l} ${seen[l]}`;}); };
+// Boom files can carry duplicate/partial statements (e.g. two income statements at different scales) — keep ONE per type: the richest.
+const dedupeStatements=(sts)=>{ const best={}; (sts||[]).forEach(s=>{ const t=s.statementType; if(!best[t]||(s.lineItems||[]).length>(best[t].lineItems||[]).length) best[t]=s; });
+  const order=["balance_sheet","income_statement","cash_flow_statement"];
+  return Object.values(best).sort((a,b)=>order.indexOf(a.statementType)-order.indexOf(b.statementType)); };
+// Viewer-controlled display units. DEFAULT 'full' = actual spread value (no scaling, no truncation).
+// 'k'/'m' are optional compact views the user can toggle to. This is the user's choice, not a silent transform.
+const UNITS={ full:{d:1,dp:2,suf:""}, k:{d:1e3,dp:1,suf:"K"}, m:{d:1e6,dp:2,suf:"M"} };
+const fmtU=(v)=>{ if(v==null||v==="") return "—"; if(typeof v!=="number"||!isFinite(v)) return String(v);
+  // negatives in parentheses — $(84), not $-84 (audited-statement convention)
+  const u=UNITS[unit]||UNITS.full, n=v/u.d, s=Math.abs(n).toLocaleString(undefined,{maximumFractionDigits:u.dp});
+  return n<0 ? `$(${s})${u.suf}` : `$${s}${u.suf}`; };
+// YoY change: latest period (index 0) vs prior (index 1). Directional only — no good/bad coloring (would imply a threshold).
+const fmtDelta=(vals)=>{ if(!Array.isArray(vals)||vals.length<2) return ""; const a=vals[0],b=vals[1];
+  if(typeof a!=="number"||typeof b!=="number"||!isFinite(a)||!isFinite(b)||b===0) return "—";
+  const p=(a-b)/Math.abs(b); const arr=p>0?'<span class="ar">▲</span>':p<0?'<span class="ar">▼</span>':"";
+  return `${arr}${arr?" ":""}${Math.abs(p*100).toFixed(1)}%`; };
+
+let DATA=null, app=null, active=0, VIEW=[], unit="full", delta=false, expanded=false;
+const ICON_EXPAND=`<svg viewBox="0 0 24 24"><path d="M4 14v6h6M20 10V4h-6M20 4l-7 7M4 20l7-7"/></svg>`;
+const ICON_COLLAPSE=`<svg viewBox="0 0 24 24"><path d="M10 20v-6H4M14 4v6h6M3 21l7-7M21 3l-7 7"/></svg>`;
+const ICON_LINK=`<svg viewBox="0 0 24 24"><path d="M14 4h6v6M20 4l-8 8M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg>`;
+// Boom chevron mark (from app/icon.svg) — kept in Boom blue as the vendor handoff glyph.
+const BOOM_MARK=`<svg class="bmk" viewBox="0 0 25 24" aria-hidden="true"><path d="M20.27 16.25l-2.03 2.03-6.08-6.09-6.08 6.09-2.03-2.03 8.11-8.12 8.11 8.12z"/><path d="M24.32 12.19l-2.15 2.15L12.16 4.3 2.15 14.34 0 12.19 12.16 0l12.16 12.19z"/><path d="M12.18 16.5l3.58 3.59-3.58 3.59-3.58-3.59 3.58-3.59z"/></svg>`;
+// Accenture builder mark — "Credit Memo REIN>ENTED" lockup (Graphik + official chevron). Appears at the bottom of every render.
+const ACC_CREDIT=`<div class="acc"><span class="acc-lockup" aria-label="Credit Memo Reinvented with Accenture">CREDIT MEMO REIN<svg class="v" viewBox="95.1 0 16.1 17" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><polygon fill="#A100FF" points="95.1,12 104.5,8.5 95.1,4.9 95.1,0 111.2,6.5 111.2,10.5 95.1,17"/></svg>ENTED</span></div>`;
+
+const ctx=()=>app?.getHostContext?.()||{};
+const isFull=()=>ctx().displayMode==="fullscreen";
+const canFull=()=>(ctx().availableDisplayModes||[]).includes("fullscreen");
+// "Show the spread" === host is fullscreen OR we expanded inline (fallback for hosts that don't grant fullscreen).
+const showFull=()=>isFull()||expanded;
+
+const MARK=`<svg class="mark" viewBox="0 0 24 24" role="img" aria-label="Accenture accelerator" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg>`;
+
+function ask(text){ try{ app.sendMessage({role:"user",content:[{type:"text",text}]}); }catch{} }
+
+// Scale the whole widget to the panel size. The layout is authored at a ~1200px baseline in hard px,
+// so on a large monitor it would otherwise sit in a small centered column. We apply a viewport-driven
+// CSS `zoom` to #root (zoom reflows — fonts, padding and the table column all grow uniformly and fill
+// the panel; transform:scale would leave the original box and create gaps).
+//
+// Reactive, NOT one-shot: the earlier version computed once at render — while the panel was still
+// inline-narrow — then never recomputed when the host expanded to fullscreen (no resize event fired),
+// so it stayed at 1×. We now drive it purely off the live viewport width (so it doesn't depend on the
+// host reporting a 'fullscreen' displayMode) and recompute on every panel size change via a
+// ResizeObserver + a few catch-up timers for async fullscreen transitions.
+function fitScale(){
+  const root=document.getElementById("root"); if(!root) return;
+  const w=window.innerWidth||document.documentElement.clientWidth||0;
+  // Narrow (inline ratio cards in the chat thread) → natural 1×; a roomy panel → scale up to fill it.
+  const z = w < 860 ? 1 : Math.max(1, Math.min(1.9, w/1180));
+  const next = z===1 ? "" : z.toFixed(3);
+  if(root.style.zoom !== next) root.style.zoom = next; // guard against ResizeObserver feedback
+}
+// A burst of re-fits over the following second — catches the panel at its FINAL width when the
+// inline→fullscreen transition (or initial mount) settles a beat after the event that triggered it.
+function scheduleFit(){ [0,80,200,400,800,1200].forEach((t)=>setTimeout(fitScale,t)); }
+// Wire the reactive fit ONCE (idempotent) — survives re-renders that replace #root's innards.
+let _fitWired=false;
+function wireFit(){
+  if(_fitWired) return; _fitWired=true;
+  window.addEventListener("resize", fitScale);
+  try{ new ResizeObserver(fitScale).observe(document.documentElement); }catch(e){}
+  scheduleFit();
+}
+
+function render(){
+  const root=document.getElementById("root");
+  if(!DATA||!DATA.ratios){ root.innerHTML='<div class="empty">No financials available.</div>'; return; }
+  const co=esc(DATA.company||"Borrower");
+  const full=showFull();
+
+  const ratioCards=(DATA.ratios||[]).map((r,i)=>
+    `<div class="card ${esc(r.status||'')}" data-ri="${i}" role="button" tabindex="0"><div class="lab">${esc(r.label)}</div><div class="val">${esc(r.value)}</div>${r.sub?`<div class="sub">${esc(r.sub)}</div>`:""}</div>`).join("");
+  const ratioChips=(DATA.ratios||[]).map((r,i)=>
+    `<div class="chip ${esc(r.status||'')}" data-ri="${i}" role="button" tabindex="0"><div class="lab">${esc(r.label)}</div><div class="val">${esc(r.value)}</div></div>`).join("");
+
+  const head=`
+    <div class="hd">${MARK}
+      <h1>${co} — ${full?"Financials":"Key Ratios"}</h1>
+      <span class="as">${esc(DATA.asOf||"")}</span>
+      ${DATA.panelUrl?`<button class="btn" id="live" type="button">${BOOM_MARK}<span>Open in Boom</span>${ICON_LINK}</button>`:""}
+      <button class="btn" id="exp" type="button">${full?ICON_COLLAPSE:ICON_EXPAND}<span>${full?"Collapse":"Full spread"}</span></button>
+    </div>`;
+
+  if(!full){
+    root.innerHTML=head+
+      `<div class="grid">${ratioCards}</div>
+       <div class="foot"><span class="src">Source: Boom (${esc(DATA.source||"live")})</span><span>Click a ratio to dig in · Full spread for statements</span></div>${ACC_CREDIT}`;
+  } else {
+    const sts=VIEW=dedupeStatements(DATA.statements); if(active>=sts.length) active=0;
+    const s=sts[active]||sts[0];
+    let tableHtml='<div class="empty">No statement detail returned.</div>';
+    if(s){
+      const cols=s.periods||[];
+      const span=cols.length+1+(delta?1:0);
+      let cat=null, firstGrp=true; const out=[]; // walk rows; track section + emit spacer rows BETWEEN sections
+      (s.lineItems||[]).forEach((li,ri)=>{
+        if(li.hierarchy==="header"){
+          if(!firstGrp) out.push(`<tr class="spc"><td colspan="${span}"></td></tr>`);
+          firstGrp=false; cat=catOf(li.name);
+          out.push(`<tr class="grp"><td colspan="${span}">${esc(li.name)}</td></tr>`); return;
+        }
+        const tot=isTotalRow(li), grand=tot&&isGrand(li);
+        // totals/subtotals carry NO badge — bold + row highlight + the rule above (and the double underline on grand) signal the hierarchy
+        const badge=tot?"":(cat?`<span class="bdg ${cat.k}">${cat.b}</span>`:"");
+        const cells=(li.values||[]).map(v=>`<td>${fmtU(v)}</td>`).join("");
+        const dcell=delta?`<td class="delta">${fmtDelta(li.values)}</td>`:"";
+        out.push(`<tr class="${tot?(grand?'tot grand':'tot'):''}" data-li="${ri}"><td${li.accountCode?` title="${esc(li.accountCode)}"`:""}>${badge}<span class="nm">${esc(li.name)}</span>${li.accountCode?`<span class="code">${esc(li.accountCode)}</span>`:""}</td>${cells}${dcell}</tr>`);
+      });
+      const rows=out.join("");
+      const labels=tabLabels(sts);
+      const tabs=sts.map((st,i)=>`<button class="tab ${i===active?'on':''}" data-i="${i}">${esc(labels[i])}</button>`).join("");
+      const units=`<div class="units" role="group" aria-label="Display units">${[["full","Full"],["k","K"],["m","M"]].map(([u,l])=>`<button data-u="${u}" class="${unit===u?'on':''}" type="button">${l}</button>`).join("")}</div>`;
+      const dtoggle=`<button class="tgl ${delta?'on':''}" id="dtoggle" type="button" title="Year-over-year % change">Δ YoY</button>`;
+      const ctrls=`<div class="ctrls">${dtoggle}${units}</div>`;
+      tableHtml=`<div class="tabs">${tabs}</div><div class="stmt"><div class="ctrlbar"><span class="unitcap">${unit==='m'?'$ in millions':unit==='k'?'$ in thousands':'$ (USD)'}</span>${ctrls}</div><div class="wrap"><table><thead><tr><th>Line item</th>${cols.map(c=>`<th>${esc(c)}</th>`).join("")}${delta?'<th>Δ YoY</th>':''}</tr></thead><tbody>${rows}</tbody></table></div></div>`;
+    }
+    root.innerHTML=head+`<div class="strip">${ratioChips}</div>${tableHtml}
+      <div class="foot"><span class="src">Source: Boom (${esc(DATA.source||"live")})</span><span>Click a row to ask Claude about that line</span></div>${ACC_CREDIT}`;
+  }
+
+  // wiring
+  const exp=root.querySelector("#exp");
+  if(exp) exp.addEventListener("click",()=>{
+    // Prefer real host fullscreen when offered; otherwise expand the tables inline in place.
+    if(canFull()){ try{ app.requestDisplayMode({mode:isFull()?"inline":"fullscreen"}); return; }catch{} }
+    expanded=!expanded; render();
+  });
+  const live=root.querySelector("#live");
+  if(live) live.addEventListener("click",()=>{ try{ app.openLink({url:DATA.panelUrl}); }catch{} });
+  root.querySelectorAll(".tab").forEach(b=>b.addEventListener("click",()=>{ active=+b.dataset.i; render(); }));
+  root.querySelectorAll(".units button").forEach(b=>b.addEventListener("click",()=>{ unit=b.dataset.u; render(); }));
+  const dtog=root.querySelector("#dtoggle"); if(dtog) dtog.addEventListener("click",()=>{ delta=!delta; render(); });
+  root.querySelectorAll("[data-ri]").forEach(el=>el.addEventListener("click",()=>{
+    const r=DATA.ratios[+el.dataset.ri]; if(r) ask(`What's driving ${r.label} (${r.value}) for ${DATA.company}? Use Boom's intelligence and give me the banker's read.`);
+  }));
+  root.querySelectorAll("tbody tr[data-li]").forEach(tr=>tr.addEventListener("click",()=>{
+    const s=VIEW[active]; const li=s&&s.lineItems[+tr.dataset.li];
+    if(li) ask(`What's driving "${li.name}" for ${DATA.company}? Use Boom's intelligence and give me the read.`);
+  }));
+
+  fitScale();
+}
+
+(async()=>{
+  // Declares both modes so the host will honor the Expand→fullscreen request (spec hard rule).
+  app=new App({name:"BoomFinancials",version:"1.0.0"},{availableDisplayModes:["inline","fullscreen"]},{autoResize:true});
+  const theme=()=>{try{document.documentElement.classList.toggle("dark",ctx().theme==="dark")}catch{}};
+  // Always opens INLINE (ratio cards). User clicks "Full spread" to expand to fullscreen.
+  // Host delivers the payload as structuredContent (ChatGPT) OR content[0].text (Claude/ext-apps) — accept either.
+  app.ontoolresult=(result)=>{ try{ DATA=result?.structuredContent ?? JSON.parse(result.content[0].text); }catch{ DATA=null; } active=0; theme(); render(); };
+  app.onhostcontextchanged=()=>{ theme(); render(); scheduleFit(); };
+  wireFit(); // reactive panel-fit: ResizeObserver + resize + catch-up timers
+  await app.connect();
+  theme(); render(); scheduleFit();
+})();
+</script>

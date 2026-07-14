@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 24" width="32" height="32" role="img" aria-label="Boom">
+  <rect x="-4" y="-4" width="33" height="32" rx="5" fill="#ffffff"/>
+  <path d="M20.27 16.25l-2.03 2.03-6.08-6.09-6.08 6.09-2.03-2.03 8.11-8.12 8.11 8.12z" fill="#0018F5"/>
+  <path d="M24.32 12.19l-2.15 2.15L12.16 4.3 2.15 14.34 0 12.19 12.16 0l12.16 12.19z" fill="#0018F5"/>
+  <path d="M12.18 16.5l3.58 3.59-3.58 3.59-3.58-3.59 3.58-3.59z" fill="#0018F5"/>
+</svg>
