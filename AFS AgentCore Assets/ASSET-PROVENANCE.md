@@ -80,6 +80,40 @@ IMAGE=<ECR>/bedrock-agentcore-afs_mcp:<tag> bash mcpgateway/infra/afs/go-live.sh
 
 ---
 
+## Credentials & configuration — where to store them (read this if launching your own)
+
+`lib/config.js` reads a small set of env vars. **Only two are secret:** `AFS_USERNAME` / `AFS_PASSWORD`.
+
+| Variable | Required | What it is |
+|---|---|---|
+| `AFS_USERNAME` / `AFS_PASSWORD` | **secret** | HTTP Basic credentials for your AFS Vision tenant |
+| `AFS_BASE_URL` | yes | Your AFS Vision REST base, e.g. `https://<tenant>.afsvision.us/webx/api/v1` |
+| `AFS_APP_CHANNEL` | optional | Trace tag echoed on each request (≤24 chars); default `AFS-MCP` |
+| `AFS_FIXTURE_MODE` | optional | `true` = serve the bundled sample loan with **no creds** (good first run); default `false` (live) |
+
+### Where to put them — by environment
+- **AgentCore Runtime (production): AWS Secrets Manager, injected as runtime env — never in the image.**
+  Create your own secret, then let `go-live.sh` read it and inject it at deploy time:
+  ```bash
+  aws secretsmanager create-secret --name <you>/afs-vision --region us-east-1 \
+    --secret-string '{"AFS_USERNAME":"...","AFS_PASSWORD":"..."}'
+  # go-live.sh reads SECRET_ID + BASE_URL and injects AFS_USERNAME/AFS_PASSWORD/AFS_BASE_URL as runtime env
+  SECRET_ID=<you>/afs-vision BASE_URL=https://<tenant>.afsvision.us/webx/api/v1 \
+    IMAGE=<ECR>/bedrock-agentcore-afs_mcp:<tag> bash mcpgateway/infra/afs/go-live.sh
+  ```
+- **Local dev / testing (`npm run dev`): `.env.local`** — copy `.env.example` → `.env.local` and fill
+  it in. It is gitignored **and** excluded from the image by `.dockerignore`. Never commit it.
+- **Vercel deployment:** set the same variables under **Project → Settings → Environment Variables**.
+
+### Golden rules
+- ❌ **Never commit credentials, and never bake them into the image.** The recovered original build did
+  exactly this (`.env.local` landed in an image layer) — the `.dockerignore` here prevents a repeat.
+- ✅ Credentials reach the runtime **only** via Secrets Manager → runtime env (through `go-live.sh`).
+- 🚀 **Zero-credential first run:** set `AFS_FIXTURE_MODE=true` to serve the bundled sample loan, then
+  switch to live once your AFS tenant creds are in Secrets Manager.
+
+---
+
 ## Security caveats (worth fixing on the real runtime)
 1. **`.env.local` (AFS Basic creds) was baked into the deployed image** — the original build lacked a
    `.dockerignore`, so `COPY . .` copied it into a layer. Anyone who can pull the image can read it.
