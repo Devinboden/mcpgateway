@@ -1,0 +1,56 @@
+{
+  "_comment": "Copy to endpoints.json and fill in. baseUrl + per-endpoint definitions. NEVER put credentials here — they come from API_USER / API_PASS env vars.",
+  "baseUrl": "https://sandbox.example.com",
+  "headers": {
+    "_comment": "optional extra headers sent on every call, e.g. a tenant id"
+  },
+  "endpoints": [
+    {
+      "name": "getCustomer",
+      "method": "GET",
+      "path": "/api/v1/customers/{id}",
+      "pathParams": { "id": "12345" },
+      "query": {},
+      "body": null,
+      "probes": [
+        {
+          "name": "missing-id",
+          "expect": "404 or validation error — documents required path param behavior",
+          "pathParams": { "id": "" }
+        },
+        {
+          "name": "bad-id-type",
+          "expect": "what happens with a non-numeric id?",
+          "pathParams": { "id": "not-a-number" }
+        }
+      ]
+    },
+    {
+      "name": "createCustomer",
+      "method": "POST",
+      "path": "/api/v1/customers",
+      "body": {
+        "name": "Test Co",
+        "taxId": "12-3456789",
+        "openDate": "2026-01-15"
+      },
+      "probes": [
+        {
+          "name": "missing-required-name",
+          "expect": "is name required? what error shape/message?",
+          "mutate": { "removeFields": ["name"] }
+        },
+        {
+          "name": "bad-date-format",
+          "expect": "accepted date format(s)?",
+          "mutate": { "setFields": { "openDate": "15/01/2026" } }
+        },
+        {
+          "name": "oversize-name",
+          "expect": "max length on name?",
+          "mutate": { "setFields": { "name": "X_REPEATED_TO_TEST_MAX_LENGTH" } }
+        }
+      ]
+    }
+  ]
+}

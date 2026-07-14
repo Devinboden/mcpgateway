@@ -1,0 +1,502 @@
+{
+  "_note": "All write operations \u2014 for the write-probing phase. Not probed here.",
+  "baseUrl": "https://dd3.afsvision.us/webx/api/v1",
+  "writes": [
+    {
+      "name": "businessAutomation__scheduleTask__post",
+      "method": "POST",
+      "path": "/businessAutomation/scheduleTask",
+      "pathTokens": [],
+      "bodySchema": "Wf-abe-api-ScheduleTaskRequest",
+      "summary": "Schedule Task"
+    },
+    {
+      "name": "wp__addressMaintenance__post",
+      "method": "POST",
+      "path": "/wp/addressMaintenance",
+      "pathTokens": [],
+      "bodySchema": "Wf-cbm-LoanAdminWorkPackage",
+      "summary": "Create a new Address Maintenance"
+    },
+    {
+      "name": "wp__addressMaintenance__put",
+      "method": "PUT",
+      "path": "/wp/addressMaintenance/{id}",
+      "pathTokens": [
+        "id"
+      ],
+      "bodySchema": "Wf-cbm-LoanAdminWorkPackage",
+      "summary": "Update an Address Maintenance"
+    },
+    {
+      "name": "wp__advances2__post",
+      "method": "POST",
+      "path": "/wp/advances2",
+      "pathTokens": [],
+      "bodySchema": "Wf-cbm-LoanAdminWorkPackage",
+      "summary": "Create a new Advance"
+    },
+    {
+      "name": "wp__advances2__put",
+      "method": "PUT",
+      "path": "/wp/advances2/{id}",
+      "pathTokens": [
+        "id"
+      ],
+      "bodySchema": "Wf-cbm-LoanAdminWorkPackage",
+      "summary": "Update an Advance"
+    },
+    {
+      "name": "async__route__post",
+      "method": "POST",
+      "path": "/async/route",
+      "pathTokens": [],
+      "bodySchema": "Wf-ws-autoroute-AutoRouteRequest",
+      "summary": "Async AutoRouting Workpackage"
+    },
+    {
+      "name": "async__wp__post",
+      "method": "POST",
+      "path": "/async/wp/{wfType}",
+      "pathTokens": [
+        "wfType"
+      ],
+      "bodySchema": "Wf-abe-api-AsyncWpBody",
+      "summary": "Async Create Workpackage"
+    },
+    {
+      "name": "updateCollateralBorrowingBase__post",
+      "method": "POST",
+      "path": "/updateCollateralBorrowingBase",
+      "pathTokens": [],
+      "bodySchema": "Wf-ws-servicing-UpdateCollatBorrowBaseRequest",
+      "summary": "Update Collateral Borrowing Base"
+    },
+    {
+      "name": "updateCurrentCollateralValue__post",
+      "method": "POST",
+      "path": "/updateCurrentCollateralValue",
+      "pathTokens": [],
+      "bodySchema": "Wf-ws-servicing-ServicingUpdateCollatCurValueRequest",
+      "summary": "Update Current Collateral Value"
+    },
+    {
+      "name": "wp__commercialOrig__post",
+      "method": "POST",
+      "path": "/wp/commercialOrig",
+      "pathTokens": [],
+      "bodySchema": "Wf-cbm-VisionOrigWorkPackage",
+      "summary": "Create a new Origination"
+    },
+    {
+      "name": "wp__commercialOrig__put",
+      "method": "PUT",
+      "path": "/wp/commercialOrig/{id}",
+      "pathTokens": [
+        "id"
+      ],
+      "bodySchema": "Wf-cbm-VisionOrigWorkPackage",
+      "summary": "Update an Origination"
+    },
+    {
+      "name": "wp__commercialPost__post",
+      "method": "POST",
+      "path": "/wp/commercialPost",
+      "pathTokens": [],
+      "bodySchema": "Wf-cbm-VisionOrigWorkPackage",
+      "summary": "Create a new Post Approval"
+    },
+    {
+      "name": "wp__commercialPost__put",
+      "method": "PUT",
+      "path": "/wp/commercialPost/{id}",
+      "pathTokens": [
+        "id"
+      ],
+      "bodySchema": "Wf-cbm-VisionOrigWorkPackage",
+      "summary": "Update a Post Approval"
+    },
+    {
+      "name": "wp__ddaWireChanges__post",
+      "method": "POST",
+      "path": "/wp/ddaWireChanges",
+      "pathTokens": [],
+      "bodySchema": "Wf-cbm-LoanAdminWorkPackage",
+      "summary": "Create a new DDA/Wire Instruction"
+    },
+    {
+      "name": "wp__ddaWireChanges__put",
+      "method": "PUT",
+      "path": "/wp/ddaWireChanges/{id}",
+      "pathTokens": [
+        "id"
+      ],
+      "bodySchema": "Wf-cbm-LoanAdminWorkPackage",
+      "summary": "Update a DDA/Wire Instruction"
+    },
+    {
+      "name": "employees__post",
+      "method": "POST",
+      "path": "/employees",
+      "pathTokens": [],
+      "bodySchema": "Wf-ws-employee-DefaultEmployeeRequest",
+      "summary": "Create Employee"
+    },
+    {
+      "name": "employees__put",
+      "method": "PUT",
+      "path": "/employees/{id}",
+      "pathTokens": [
+        "id"
+      ],
+      "bodySchema": "Wf-ws-employee-DefaultEmployeeRequest",
+      "summary": "Update Employee"
+    },
+    {
+      "name": "employees__delete",
+      "method": "DELETE",
+      "path": "/employees/{id}",
+      "pathTokens": [
+        "id"
+      ],
+      "bodySchema": null,
+      "summary": "Delete Employee"
+    },
+    {
+      "name": "exceptions__createException__post",
+      "method": "POST",
+      "path": "/exceptions/createException",
+      "pathTokens": [],
+      "bodySchema": "Wf-xom-ws-ExceptionInsert",
+      "summary": "Create Exception"
+    },
+    {
+      "name": "wp__feeManagement__post",
+      "method": "POST",
+      "path": "/wp/feeManagement",
+      "pathTokens": [],
+      "bodySchema": "Wf-cbm-LoanAdminWorkPackage",
+      "summary": "Create a new Fee Management"
+    },
+    {
+      "name": "wp__feeManagement__put",
+      "method": "PUT",
+      "path": "/wp/feeManagement/{id}",
+      "pathTokens": [
+        "id"
+      ],
+      "bodySchema": "Wf-cbm-LoanAdminWorkPackage",
+      "summary": "Update a Fee Management"
+    },
+    {
+      "name": "createFinancial__post",
+      "method": "POST",
+      "path": "/createFinancial",
+      "pathTokens": [],
+      "bodySchema": "Wf-ws-servicing-ServicingUpdateFinancialRequest",
+      "summary": "Create Financial"
+    },
+    {
+      "name": "createScheduledFinancial__post",
+      "method": "POST",
+      "path": "/createScheduledFinancial",
+      "pathTokens": [],
+      "bodySchema": "Wf-ws-servicing-ServicingUpdateSchedFinancialRequest",
+      "summary": "Create Schedule Financial Activity"
+    },
+    {
+      "name": "jobs__updateAssignment__post",
+      "method": "POST",
+      "path": "/jobs/updateAssignment",
+      "pathTokens": [],
+      "bodySchema": "Wf-ws-wpStatusUpdate-AssignmentUpdateRequest",
+      "summary": "Update Assignments"
+    },
+    {
+      "name": "jobs__updateStatus__post",
+      "method": "POST",
+      "path": "/jobs/updateStatus",
+      "pathTokens": [],
+      "bodySchema": "Wf-ws-wpStatusUpdate-StatusUpdateRequest",
+      "summary": "Update Status"
+    },
+    {
+      "name": "wp__nonFinancial__post",
+      "method": "POST",
+      "path": "/wp/nonFinancial",
+      "pathTokens": [],
+      "bodySchema": "Wf-cbm-LoanAdminWorkPackage",
+      "summary": "Create a new Non-Financial Maintenance"
+    },
+    {
+      "name": "wp__nonFinancial__put",
+      "method": "PUT",
+      "path": "/wp/nonFinancial/{id}",
+      "pathTokens": [
+        "id"
+      ],
+      "bodySchema": "Wf-cbm-LoanAdminWorkPackage",
+      "summary": "Update a Non-Financial Maintenance"
+    },
+    {
+      "name": "wp__oblnRestructure__post",
+      "method": "POST",
+      "path": "/wp/oblnRestructure",
+      "pathTokens": [],
+      "bodySchema": "Wf-cbm-LoanAdminWorkPackage",
+      "summary": "Create a new Obligation Hierarchy Restructure"
+    },
+    {
+      "name": "wp__oblnRestructure__put",
+      "method": "PUT",
+      "path": "/wp/oblnRestructure/{id}",
+      "pathTokens": [
+        "id"
+      ],
+      "bodySchema": "Wf-cbm-LoanAdminWorkPackage",
+      "summary": "Update an Obligation Hierarchy Restructure"
+    },
+    {
+      "name": "wp__otherFinancials2__post",
+      "method": "POST",
+      "path": "/wp/otherFinancials2",
+      "pathTokens": [],
+      "bodySchema": "Wf-cbm-LoanAdminWorkPackage",
+      "summary": "Create a new Other Financial"
+    },
+    {
+      "name": "wp__otherFinancials2__put",
+      "method": "PUT",
+      "path": "/wp/otherFinancials2/{id}",
+      "pathTokens": [
+        "id"
+      ],
+      "bodySchema": "Wf-cbm-LoanAdminWorkPackage",
+      "summary": "Update an Other Financial"
+    },
+    {
+      "name": "wp__otherMaintenance__post",
+      "method": "POST",
+      "path": "/wp/otherMaintenance",
+      "pathTokens": [],
+      "bodySchema": "Wf-cbm-LoanAdminWorkPackage",
+      "summary": "Create a new Other Maintenance"
+    },
+    {
+      "name": "wp__otherMaintenance__put",
+      "method": "PUT",
+      "path": "/wp/otherMaintenance/{id}",
+      "pathTokens": [
+        "id"
+      ],
+      "bodySchema": "Wf-cbm-LoanAdminWorkPackage",
+      "summary": "Update an Other Maintenance"
+    },
+    {
+      "name": "wp__payments2__post",
+      "method": "POST",
+      "path": "/wp/payments2",
+      "pathTokens": [],
+      "bodySchema": "Wf-cbm-LoanAdminWorkPackage",
+      "summary": "Create a new Payment"
+    },
+    {
+      "name": "wp__payments2__put",
+      "method": "PUT",
+      "path": "/wp/payments2/{id}",
+      "pathTokens": [
+        "id"
+      ],
+      "bodySchema": "Wf-cbm-LoanAdminWorkPackage",
+      "summary": "Update a Payment"
+    },
+    {
+      "name": "ping__echo__post",
+      "method": "POST",
+      "path": "/ping/echo",
+      "pathTokens": [],
+      "bodySchema": "Wf-rs-api-sample-PingData",
+      "summary": "Ping Data Echo"
+    },
+    {
+      "name": "wp__repricing2__post",
+      "method": "POST",
+      "path": "/wp/repricing2",
+      "pathTokens": [],
+      "bodySchema": "Wf-cbm-LoanAdminWorkPackage",
+      "summary": "Create a new Repricing"
+    },
+    {
+      "name": "wp__repricing2__put",
+      "method": "PUT",
+      "path": "/wp/repricing2/{id}",
+      "pathTokens": [
+        "id"
+      ],
+      "bodySchema": "Wf-cbm-LoanAdminWorkPackage",
+      "summary": "Update a Repricing"
+    },
+    {
+      "name": "reserveNumber__post",
+      "method": "POST",
+      "path": "/reserveNumber",
+      "pathTokens": [],
+      "bodySchema": "Wf-ws-reserveNumber-ReserveNumberRequest",
+      "summary": "Reserve Number"
+    },
+    {
+      "name": "createCustomer__post",
+      "method": "POST",
+      "path": "/createCustomer",
+      "pathTokens": [],
+      "bodySchema": "Wf-ws-reserveNumber-CreateCustomerRequest",
+      "summary": "Create Customer"
+    },
+    {
+      "name": "createObligor__post",
+      "method": "POST",
+      "path": "/createObligor",
+      "pathTokens": [],
+      "bodySchema": "Wf-ws-reserveNumber-CreateObligorRequest",
+      "summary": "Create Obligor"
+    },
+    {
+      "name": "route__post",
+      "method": "POST",
+      "path": "/route",
+      "pathTokens": [],
+      "bodySchema": "Wf-ws-autoroute-AutoRouteRequest",
+      "summary": "Route Workpackage"
+    },
+    {
+      "name": "wp__syndiDealMaintenance__post",
+      "method": "POST",
+      "path": "/wp/syndiDealMaintenance",
+      "pathTokens": [],
+      "bodySchema": "Wf-cbm-SyndiWorkPackage",
+      "summary": "Create a new Deal Maintenance"
+    },
+    {
+      "name": "wp__syndiDealMaintenance__put",
+      "method": "PUT",
+      "path": "/wp/syndiDealMaintenance/{id}",
+      "pathTokens": [
+        "id"
+      ],
+      "bodySchema": "Wf-cbm-SyndiWorkPackage",
+      "summary": "Update a Deal Maintenance"
+    },
+    {
+      "name": "wp__syndiDealPipeline__post",
+      "method": "POST",
+      "path": "/wp/syndiDealPipeline",
+      "pathTokens": [],
+      "bodySchema": "Wf-cbm-SyndiWorkPackage",
+      "summary": "Create a new Deal Pipeline"
+    },
+    {
+      "name": "wp__syndiDealPipeline__put",
+      "method": "PUT",
+      "path": "/wp/syndiDealPipeline/{id}",
+      "pathTokens": [
+        "id"
+      ],
+      "bodySchema": "Wf-cbm-SyndiWorkPackage",
+      "summary": "Update a Deal Pipeline"
+    },
+    {
+      "name": "wp__syndiRepricing__post",
+      "method": "POST",
+      "path": "/wp/syndiRepricing",
+      "pathTokens": [],
+      "bodySchema": "Wf-cbm-SyndiWorkPackage",
+      "summary": "Create a new Repricing"
+    },
+    {
+      "name": "wp__syndiRepricing__put",
+      "method": "PUT",
+      "path": "/wp/syndiRepricing/{id}",
+      "pathTokens": [
+        "id"
+      ],
+      "bodySchema": "Wf-cbm-SyndiWorkPackage",
+      "summary": "Update a Repricing"
+    },
+    {
+      "name": "taskProcessor__ddaAba__post",
+      "method": "POST",
+      "path": "/taskProcessor/ddaAba",
+      "pathTokens": [],
+      "bodySchema": null,
+      "summary": "ddaAba"
+    },
+    {
+      "name": "taskProcessor__exceptionRefresh__post",
+      "method": "POST",
+      "path": "/taskProcessor/exceptionRefresh",
+      "pathTokens": [],
+      "bodySchema": null,
+      "summary": "Refresh Batch Exceptions"
+    },
+    {
+      "name": "taskProcessor__extracts__post",
+      "method": "POST",
+      "path": "/taskProcessor/extracts",
+      "pathTokens": [],
+      "bodySchema": "Wf-ws-taskProcessor-TaskProcessorRequest",
+      "summary": "Extract Data"
+    },
+    {
+      "name": "taskProcessor__validValueImport__post",
+      "method": "POST",
+      "path": "/taskProcessor/validValueImport",
+      "pathTokens": [],
+      "bodySchema": null,
+      "summary": "Import Valid Values"
+    },
+    {
+      "name": "taskProcessor__wireAba__post",
+      "method": "POST",
+      "path": "/taskProcessor/wireAba",
+      "pathTokens": [],
+      "bodySchema": null,
+      "summary": "wireAba"
+    },
+    {
+      "name": "updateFedRefNumber__post",
+      "method": "POST",
+      "path": "/updateFedRefNumber",
+      "pathTokens": [],
+      "bodySchema": "Wf-ws-servicing-UpdateFedRefNumberRequest",
+      "summary": "Update Wire Fed Reference Number"
+    },
+    {
+      "name": "wp__userProfileAdmin__post",
+      "method": "POST",
+      "path": "/wp/userProfileAdmin",
+      "pathTokens": [],
+      "bodySchema": "Wf-up-UserProfile",
+      "summary": "Create a new User Profile Administration"
+    },
+    {
+      "name": "wp__userProfileAdmin__post",
+      "method": "POST",
+      "path": "/wp/userProfileAdmin/{id}",
+      "pathTokens": [
+        "id"
+      ],
+      "bodySchema": "Wf-up-UserProfile",
+      "summary": "Update a User Profile Administration, replacing lists"
+    },
+    {
+      "name": "wp__userProfileAdmin__put",
+      "method": "PUT",
+      "path": "/wp/userProfileAdmin/{id}",
+      "pathTokens": [
+        "id"
+      ],
+      "bodySchema": "Wf-up-UserProfile",
+      "summary": "Update a User Profile Administration"
+    }
+  ]
+}

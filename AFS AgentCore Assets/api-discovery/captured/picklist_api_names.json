@@ -1,0 +1,5972 @@
+{
+ "Product Structure": {
+  "plName": "Product Structure",
+  "kind": "fixed",
+  "n": 3,
+  "opts": [
+   [
+    "C",
+    "Standalone Loan"
+   ],
+   [
+    "F",
+    "Commitment"
+   ],
+   [
+    "L",
+    "Letter Of Credit"
+   ]
+  ]
+ },
+ "ilm/pl/RequestType": {
+  "plName": "ilm/pl/RequestType",
+  "kind": "dynamic",
+  "n": 7,
+  "opts": [
+   [
+    "AM",
+    "Amendment"
+   ],
+   [
+    "EX",
+    "Extension"
+   ],
+   [
+    "MO",
+    "Modification"
+   ],
+   [
+    "NA",
+    "New Approval"
+   ],
+   [
+    "RA",
+    "Reaffirmation"
+   ],
+   [
+    "RN",
+    "Renewal"
+   ],
+   [
+    "RV",
+    "Review"
+   ]
+  ]
+ },
+ "APPL030": {
+  "plName": "APPL030",
+  "kind": "fixed",
+  "n": 2,
+  "opts": [
+   [
+    "1",
+    "*Commercial Loan"
+   ],
+   [
+    "2",
+    "*OTHER LOANS"
+   ]
+  ]
+ },
+ "ilm/pl/LetterOfCreditType": {
+  "plName": "ilm/pl/LetterOfCreditType",
+  "kind": "dynamic",
+  "n": 2,
+  "opts": [
+   [
+    "C",
+    "Commercial"
+   ],
+   [
+    "S",
+    "Standby L/C"
+   ]
+  ]
+ },
+ "Answers": {
+  "plName": "Answers",
+  "kind": "fixed",
+  "n": 2,
+  "opts": [
+   [
+    "N",
+    "No"
+   ],
+   [
+    "Y",
+    "Yes"
+   ]
+  ]
+ },
+ "CLRE464": {
+  "plName": "CLRE464",
+  "kind": "fixed",
+  "n": 2,
+  "opts": [
+   [
+    "0",
+    "No"
+   ],
+   [
+    "1",
+    "Yes"
+   ]
+  ]
+ },
+ "CLRE245": {
+  "plName": "CLRE245",
+  "kind": "fixed",
+  "n": 14,
+  "opts": [
+   [
+    "0",
+    "Not Entered"
+   ],
+   [
+    "10",
+    "OO-Owner Occupied Residential-Primary"
+   ],
+   [
+    "11",
+    "OO-Owner Occupied Residential-Secondary"
+   ],
+   [
+    "12",
+    "OO-Owner Occupied Non-Residential"
+   ],
+   [
+    "14",
+    "NOO-Single Tenant-Non Credit"
+   ],
+   [
+    "15",
+    "NOO-Single Tenant-Credit"
+   ],
+   [
+    "20",
+    "NOO-Multitenant-Credit Anchored"
+   ],
+   [
+    "22",
+    "NOO-Multitenant-Non-Credit Anchored"
+   ],
+   [
+    "24",
+    "NOO-Multitenant-Non-Anchored"
+   ],
+   [
+    "30",
+    "NOO-Franchised"
+   ],
+   [
+    "32",
+    "NOO-Independent"
+   ],
+   [
+    "34",
+    "NOO-Residential"
+   ],
+   [
+    "40",
+    "Land"
+   ],
+   [
+    "99",
+    "Conversion Default"
+   ]
+  ]
+ },
+ "CLRE242": {
+  "plName": "CLRE242",
+  "kind": "fixed",
+  "n": 3,
+  "opts": [
+   [
+    "0",
+    "Not Entered"
+   ],
+   [
+    "1",
+    "Fee Simple"
+   ],
+   [
+    "2",
+    "Leasehold"
+   ]
+  ]
+ },
+ "CLRE461": {
+  "plName": "CLRE461",
+  "kind": "fixed",
+  "n": 2,
+  "opts": [
+   [
+    "0",
+    "No"
+   ],
+   [
+    "1",
+    "Yes"
+   ]
+  ]
+ },
+ "CLRE449": {
+  "plName": "CLRE449",
+  "kind": "fixed",
+  "n": 1,
+  "opts": [
+   [
+    "0",
+    "Not Entered"
+   ]
+  ]
+ },
+ "CLRE416": {
+  "plName": "CLRE416",
+  "kind": "fixed",
+  "n": 3,
+  "opts": [
+   [
+    "0",
+    "Not entered"
+   ],
+   [
+    "1",
+    "Applicable"
+   ],
+   [
+    "2",
+    "Not applicable"
+   ]
+  ]
+ },
+ "CLRE203": {
+  "plName": "CLRE203",
+  "kind": "fixed",
+  "n": 4,
+  "opts": [
+   [
+    "0",
+    "Not Entered"
+   ],
+   [
+    "1000",
+    "Building and Land"
+   ],
+   [
+    "2000",
+    "Building Only"
+   ],
+   [
+    "3000",
+    "Land"
+   ]
+  ]
+ },
+ "CLRE467": {
+  "plName": "CLRE467",
+  "kind": "fixed",
+  "n": 2,
+  "opts": [
+   [
+    "0",
+    "No"
+   ],
+   [
+    "1",
+    "Yes"
+   ]
+  ]
+ },
+ "CLRE215": {
+  "plName": "CLRE215",
+  "kind": "fixed",
+  "n": 1,
+  "opts": [
+   [
+    "0",
+    "Not Entered"
+   ]
+  ]
+ },
+ "CLRE452": {
+  "plName": "CLRE452",
+  "kind": "fixed",
+  "n": 2,
+  "opts": [
+   [
+    "0",
+    "No"
+   ],
+   [
+    "1",
+    "Yes"
+   ]
+  ]
+ },
+ "CLRE458": {
+  "plName": "CLRE458",
+  "kind": "fixed",
+  "n": 2,
+  "opts": [
+   [
+    "0",
+    "No"
+   ],
+   [
+    "1",
+    "Yes"
+   ]
+  ]
+ },
+ "CLRE401": {
+  "plName": "CLRE401",
+  "kind": "fixed",
+  "n": 3,
+  "opts": [
+   [
+    "0",
+    "Not entered"
+   ],
+   [
+    "1",
+    "Applicable"
+   ],
+   [
+    "2",
+    "Not applicable"
+   ]
+  ]
+ },
+ "Answers2": {
+  "plName": "Answers2",
+  "kind": "fixed",
+  "n": 2,
+  "opts": [
+   [
+    "0",
+    "No"
+   ],
+   [
+    "1",
+    "Yes"
+   ]
+  ]
+ },
+ "CLRE455": {
+  "plName": "CLRE455",
+  "kind": "fixed",
+  "n": 2,
+  "opts": [
+   [
+    "0",
+    "No"
+   ],
+   [
+    "1",
+    "Yes"
+   ]
+  ]
+ },
+ "CLRE206": {
+  "plName": "CLRE206",
+  "kind": "fixed",
+  "n": 4,
+  "opts": [
+   [
+    "0",
+    "Not Entered"
+   ],
+   [
+    "1101",
+    "Residential Buildings"
+   ],
+   [
+    "1201",
+    "Commercial Buildings"
+   ],
+   [
+    "1301",
+    "Land Only"
+   ]
+  ]
+ },
+ "CLRE218": {
+  "plName": "CLRE218",
+  "kind": "fixed",
+  "n": 1,
+  "opts": [
+   [
+    "0",
+    "Not Entered"
+   ]
+  ]
+ },
+ "CLRE470": {
+  "plName": "CLRE470",
+  "kind": "fixed",
+  "n": 2,
+  "opts": [
+   [
+    "0",
+    "Not Entered"
+   ],
+   [
+    "1",
+    "Hazard Insurance Policy"
+   ]
+  ]
+ },
+ "COLR353": {
+  "plName": "COLR353",
+  "kind": "fixed",
+  "n": 3,
+  "opts": [
+   [
+    "0",
+    "Not Entered"
+   ],
+   [
+    "1",
+    "Vault"
+   ],
+   [
+    "2",
+    "Branch"
+   ]
+  ]
+ },
+ "COLR299": {
+  "plName": "COLR299",
+  "kind": "fixed",
+  "n": 2,
+  "opts": [
+   [
+    "0",
+    "No"
+   ],
+   [
+    "1",
+    "Yes"
+   ]
+  ]
+ },
+ "COLR350": {
+  "plName": "COLR350",
+  "kind": "fixed",
+  "n": 3,
+  "opts": [
+   [
+    "0",
+    "Not Entered"
+   ],
+   [
+    "1",
+    "Vault"
+   ],
+   [
+    "2",
+    "Branch"
+   ]
+  ]
+ },
+ "CONL236": {
+  "plName": "CONL236",
+  "kind": "fixed",
+  "n": 1,
+  "opts": [
+   [
+    "0",
+    "Not Entered"
+   ]
+  ]
+ },
+ "CONL203": {
+  "plName": "CONL203",
+  "kind": "fixed",
+  "n": 2,
+  "opts": [
+   [
+    "0",
+    "No"
+   ],
+   [
+    "1",
+    "Yes"
+   ]
+  ]
+ },
+ "ADDR212": {
+  "plName": "ADDR212",
+  "kind": "fixed",
+  "n": 265,
+  "opts": [
+   [
+    "0",
+    "Not Entered"
+   ],
+   [
+    "1",
+    "UNITED STATES"
+   ],
+   [
+    "10",
+    "AFGHANISTAN"
+   ],
+   [
+    "15",
+    "AFRICAN ORGANIZATIONS"
+   ],
+   [
+    "20",
+    "ALAND ISLANDS"
+   ],
+   [
+    "30",
+    "ALBANIA"
+   ],
+   [
+    "40",
+    "ALGERIA"
+   ],
+   [
+    "50",
+    "AMERICAN SAMOA"
+   ],
+   [
+    "60",
+    "ANDORRA"
+   ],
+   [
+    "70",
+    "ANGOLA"
+   ],
+   [
+    "80",
+    "ANGUILLA"
+   ],
+   [
+    "90",
+    "ANTARCTICA"
+   ],
+   [
+    "100",
+    "ANTIGUA AND BARBUDA"
+   ],
+   [
+    "110",
+    "ARGENTINA"
+   ],
+   [
+    "120",
+    "ARMENIA"
+   ],
+   [
+    "130",
+    "ARUBA"
+   ],
+   [
+    "135",
+    "ASIAN ORGANIZATIONS"
+   ],
+   [
+    "140",
+    "AUSTRALIA"
+   ],
+   [
+    "150",
+    "AUSTRIA"
+   ],
+   [
+    "160",
+    "AZERBAIJAN"
+   ],
+   [
+    "180",
+    "BAHAMAS"
+   ],
+   [
+    "190",
+    "BAHRAIN"
+   ],
+   [
+    "200",
+    "BANGLADESH"
+   ],
+   [
+    "210",
+    "BARBADOS"
+   ],
+   [
+    "220",
+    "BELARUS"
+   ],
+   [
+    "230",
+    "BELGIUM"
+   ],
+   [
+    "240",
+    "BELIZE"
+   ],
+   [
+    "250",
+    "BENIN"
+   ],
+   [
+    "260",
+    "BERMUDA"
+   ],
+   [
+    "270",
+    "BHUTAN"
+   ],
+   [
+    "280",
+    "BOLIVIA, PLURINATIONAL STATE OF"
+   ],
+   [
+    "290",
+    "BONAIRE, SAINT EUSTATIUS AND SABA"
+   ],
+   [
+    "300",
+    "BOSNIA AND HERZEGOVINA"
+   ],
+   [
+    "310",
+    "BOTSWANA"
+   ],
+   [
+    "320",
+    "BOUVET ISLAND"
+   ],
+   [
+    "330",
+    "BRAZIL"
+   ],
+   [
+    "340",
+    "BRITISH INDIAN OCEAN TERRITORY"
+   ],
+   [
+    "350",
+    "BRUNEI DARUSSALAM"
+   ],
+   [
+    "360",
+    "BULGARIA"
+   ],
+   [
+    "370",
+    "BURKINA FASO"
+   ],
+   [
+    "380",
+    "BURUNDI"
+   ],
+   [
+    "400",
+    "CAMBODIA"
+   ],
+   [
+    "410",
+    "CAMEROON"
+   ],
+   [
+    "420",
+    "CANADA"
+   ],
+   [
+    "430",
+    "CAPE VERDE"
+   ],
+   [
+    "434",
+    "CARIBBEAN ORGANIZATIONS"
+   ],
+   [
+    "435",
+    "EASTERN CARIBBEAN CENTRAL BANK"
+   ],
+   [
+    "440",
+    "CAYMAN ISLANDS"
+   ],
+   [
+    "450",
+    "CENTRAL AFRICAN REPUBLIC"
+   ],
+   [
+    "455",
+    "BANK OF CENTRAL AFRICAN STATES (BEAC)"
+   ],
+   [
+    "460",
+    "CHAD"
+   ],
+   [
+    "470",
+    "CHILE"
+   ],
+   [
+    "480",
+    "CHINA"
+   ],
+   [
+    "490",
+    "CHRISTMAS ISLAND"
+   ],
+   [
+    "500",
+    "COCOS (KEELING) ISLANDS"
+   ],
+   [
+    "510",
+    "COLOMBIA"
+   ],
+   [
+    "520",
+    "COMOROS"
+   ],
+   [
+    "530",
+    "CONGO"
+   ],
+   [
+    "540",
+    "CONGO, THE DEMOCRATIC REPUBLIC OF THE"
+   ],
+   [
+    "550",
+    "COOK ISLANDS"
+   ],
+   [
+    "560",
+    "COSTA RICA"
+   ],
+   [
+    "570",
+    "COTE D'IVOIRE"
+   ],
+   [
+    "580",
+    "CROATIA"
+   ],
+   [
+    "590",
+    "CUBA"
+   ],
+   [
+    "600",
+    "CURACAO"
+   ],
+   [
+    "610",
+    "CYPRUS"
+   ],
+   [
+    "620",
+    "CZECH REPUBLIC"
+   ],
+   [
+    "640",
+    "DENMARK"
+   ],
+   [
+    "650",
+    "DJIBOUTI"
+   ],
+   [
+    "660",
+    "DOMINICA"
+   ],
+   [
+    "670",
+    "DOMINICAN REPUBLIC"
+   ],
+   [
+    "690",
+    "ECUADOR"
+   ],
+   [
+    "700",
+    "EGYPT"
+   ],
+   [
+    "710",
+    "EL SALVADOR"
+   ],
+   [
+    "720",
+    "EQUATORIAL GUINEA"
+   ],
+   [
+    "730",
+    "ERITREA"
+   ],
+   [
+    "740",
+    "ESTONIA"
+   ],
+   [
+    "750",
+    "ETHIOPIA"
+   ],
+   [
+    "755",
+    "EUROPEAN CENTRAL BANK"
+   ],
+   [
+    "760",
+    "EUROPEAN ORGANIZATIONS"
+   ],
+   [
+    "770",
+    "FALKLAND ISLANDS (MALVINAS)"
+   ],
+   [
+    "780",
+    "FAROE ISLANDS"
+   ],
+   [
+    "790",
+    "FIJI"
+   ],
+   [
+    "800",
+    "FINLAND"
+   ],
+   [
+    "810",
+    "FRANCE"
+   ],
+   [
+    "820",
+    "FRENCH GUIANA"
+   ],
+   [
+    "830",
+    "FRENCH POLYNESIA"
+   ],
+   [
+    "840",
+    "FRENCH SOUTHERN TERRITORIES"
+   ],
+   [
+    "860",
+    "GABON"
+   ],
+   [
+    "870",
+    "GAMBIA"
+   ],
+   [
+    "880",
+    "GEORGIA"
+   ],
+   [
+    "890",
+    "GERMANY"
+   ],
+   [
+    "900",
+    "GHANA"
+   ],
+   [
+    "910",
+    "GIBRALTAR"
+   ],
+   [
+    "920",
+    "GREECE"
+   ],
+   [
+    "930",
+    "GREENLAND"
+   ],
+   [
+    "940",
+    "GRENADA"
+   ],
+   [
+    "950",
+    "GUADELOUPE"
+   ],
+   [
+    "960",
+    "GUAM"
+   ],
+   [
+    "970",
+    "GUATEMALA"
+   ],
+   [
+    "980",
+    "GUERNSEY"
+   ],
+   [
+    "990",
+    "GUINEA"
+   ],
+   [
+    "1000",
+    "GUINEA-BISSAU"
+   ],
+   [
+    "1010",
+    "GUYANA"
+   ],
+   [
+    "1030",
+    "HAITI"
+   ],
+   [
+    "1040",
+    "HEARD ISLAND AND MCDONALD ISLANDS"
+   ],
+   [
+    "1050",
+    "HOLY SEE (VATICAN CITY STATE)"
+   ],
+   [
+    "1060",
+    "HONDURAS"
+   ],
+   [
+    "1070",
+    "HONG KONG"
+   ],
+   [
+    "1080",
+    "HUNGARY"
+   ],
+   [
+    "1100",
+    "ICELAND"
+   ],
+   [
+    "1105",
+    "INTERNATIONAL ORGANIZATIONS"
+   ],
+   [
+    "1110",
+    "INDIA"
+   ],
+   [
+    "1120",
+    "INDONESIA"
+   ],
+   [
+    "1125",
+    "BANK OF INTERNATIONAL SETTLEMENTS"
+   ],
+   [
+    "1130",
+    "IRAN, ISLAMIC REPUBLIC OF"
+   ],
+   [
+    "1140",
+    "IRAQ"
+   ],
+   [
+    "1150",
+    "IRELAND"
+   ],
+   [
+    "1160",
+    "ISLE OF MAN"
+   ],
+   [
+    "1170",
+    "ISRAEL"
+   ],
+   [
+    "1180",
+    "ITALY"
+   ],
+   [
+    "1200",
+    "JAMAICA"
+   ],
+   [
+    "1210",
+    "JAPAN"
+   ],
+   [
+    "1220",
+    "JERSEY"
+   ],
+   [
+    "1230",
+    "JORDAN"
+   ],
+   [
+    "1250",
+    "KAZAKHSTAN"
+   ],
+   [
+    "1260",
+    "KENYA"
+   ],
+   [
+    "1270",
+    "KIRIBATI"
+   ],
+   [
+    "1280",
+    "KOREA, DEMOCRATIC PEOPLE'S REPUBLIC OF"
+   ],
+   [
+    "1290",
+    "KOREA, REPUBLIC OF"
+   ],
+   [
+    "1295",
+    "KOSOVO"
+   ],
+   [
+    "1300",
+    "KUWAIT"
+   ],
+   [
+    "1310",
+    "KYRGYZSTAN"
+   ],
+   [
+    "1330",
+    "LAO PEOPLE'S DEMOCRATIC REPUBLIC"
+   ],
+   [
+    "1335",
+    "LATIN AMERICAN ORGANIZATIONS"
+   ],
+   [
+    "1340",
+    "LATVIA"
+   ],
+   [
+    "1350",
+    "LEBANON"
+   ],
+   [
+    "1360",
+    "LESOTHO"
+   ],
+   [
+    "1370",
+    "LIBERIA"
+   ],
+   [
+    "1380",
+    "LIBYAN ARAB JAMAHIRIYA"
+   ],
+   [
+    "1390",
+    "LIECHTENSTEIN"
+   ],
+   [
+    "1400",
+    "LITHUANIA"
+   ],
+   [
+    "1410",
+    "LUXEMBOURG"
+   ],
+   [
+    "1430",
+    "MACAO"
+   ],
+   [
+    "1440",
+    "MACEDONIA, THE FORMER YUGOSLAV REPUBLIC OF"
+   ],
+   [
+    "1450",
+    "MADAGASCAR"
+   ],
+   [
+    "1460",
+    "MALAWI"
+   ],
+   [
+    "1470",
+    "MALAYSIA"
+   ],
+   [
+    "1480",
+    "MALDIVES"
+   ],
+   [
+    "1490",
+    "MALI"
+   ],
+   [
+    "1500",
+    "MALTA"
+   ],
+   [
+    "1510",
+    "MARSHALL ISLANDS"
+   ],
+   [
+    "1520",
+    "MARTINIQUE"
+   ],
+   [
+    "1530",
+    "MAURITANIA"
+   ],
+   [
+    "1540",
+    "MAURITIUS"
+   ],
+   [
+    "1550",
+    "MAYOTTE"
+   ],
+   [
+    "1560",
+    "MEXICO"
+   ],
+   [
+    "1570",
+    "MICRONESIA, FEDERATED STATES OF"
+   ],
+   [
+    "1575",
+    "MIDDLE EASTERN ORGANIZATIONS"
+   ],
+   [
+    "1580",
+    "MOLDOVA, REPUBLIC OF"
+   ],
+   [
+    "1590",
+    "MONACO"
+   ],
+   [
+    "1600",
+    "MONGOLIA"
+   ],
+   [
+    "1610",
+    "MONTENEGRO"
+   ],
+   [
+    "1620",
+    "MONTSERRAT"
+   ],
+   [
+    "1630",
+    "MOROCCO"
+   ],
+   [
+    "1640",
+    "MOZAMBIQUE"
+   ],
+   [
+    "1650",
+    "MYANMAR"
+   ],
+   [
+    "1670",
+    "NAMIBIA"
+   ],
+   [
+    "1680",
+    "NAURU"
+   ],
+   [
+    "1690",
+    "NEPAL"
+   ],
+   [
+    "1700",
+    "NETHERLANDS"
+   ],
+   [
+    "1710",
+    "NEW CALEDONIA"
+   ],
+   [
+    "1720",
+    "NEW ZEALAND"
+   ],
+   [
+    "1730",
+    "NICARAGUA"
+   ],
+   [
+    "1740",
+    "NIGER"
+   ],
+   [
+    "1750",
+    "NIGERIA"
+   ],
+   [
+    "1760",
+    "NIUE"
+   ],
+   [
+    "1770",
+    "NORFOLK ISLAND"
+   ],
+   [
+    "1780",
+    "NORTHERN MARIANA ISLANDS"
+   ],
+   [
+    "1790",
+    "NORWAY"
+   ],
+   [
+    "1810",
+    "OMAN"
+   ],
+   [
+    "1830",
+    "PAKISTAN"
+   ],
+   [
+    "1840",
+    "PALAU"
+   ],
+   [
+    "1850",
+    "PALESTINIAN TERRITORY, OCCUPIED"
+   ],
+   [
+    "1860",
+    "PANAMA"
+   ],
+   [
+    "1870",
+    "PAPUA NEW GUINEA"
+   ],
+   [
+    "1880",
+    "PARAGUAY"
+   ],
+   [
+    "1890",
+    "PERU"
+   ],
+   [
+    "1900",
+    "PHILIPPINES"
+   ],
+   [
+    "1910",
+    "PITCAIRN"
+   ],
+   [
+    "1920",
+    "POLAND"
+   ],
+   [
+    "1930",
+    "PORTUGAL"
+   ],
+   [
+    "1940",
+    "PUERTO RICO"
+   ],
+   [
+    "1960",
+    "QATAR"
+   ],
+   [
+    "1980",
+    "REUNION"
+   ],
+   [
+    "1990",
+    "ROMANIA"
+   ],
+   [
+    "2000",
+    "RUSSIAN FEDERATION"
+   ],
+   [
+    "2010",
+    "RWANDA"
+   ],
+   [
+    "2030",
+    "SAINT BARTHELEMY"
+   ],
+   [
+    "2040",
+    "SAINT HELENA, ASCENSION AND TRISTAN DA CUNHA"
+   ],
+   [
+    "2050",
+    "SAINT KITTS AND NEVIS"
+   ],
+   [
+    "2060",
+    "SAINT LUCIA"
+   ],
+   [
+    "2070",
+    "SAINT MARTIN (FRENCH PART)"
+   ],
+   [
+    "2080",
+    "SAINT PIERRE AND MIQUELON"
+   ],
+   [
+    "2090",
+    "SAINT VINCENT AND THE GRENADINES"
+   ],
+   [
+    "2100",
+    "SAMOA"
+   ],
+   [
+    "2110",
+    "SAN MARINO"
+   ],
+   [
+    "2120",
+    "SAO TOME AND PRINCIPE"
+   ],
+   [
+    "2130",
+    "SAUDI ARABIA"
+   ],
+   [
+    "2140",
+    "SENEGAL"
+   ],
+   [
+    "2150",
+    "SERBIA"
+   ],
+   [
+    "2160",
+    "SEYCHELLES"
+   ],
+   [
+    "2170",
+    "SIERRA LEONE"
+   ],
+   [
+    "2180",
+    "SINGAPORE"
+   ],
+   [
+    "2190",
+    "SINT MAARTEN (DUTCH PART)"
+   ],
+   [
+    "2200",
+    "SLOVAKIA"
+   ],
+   [
+    "2210",
+    "SLOVENIA"
+   ],
+   [
+    "2220",
+    "SOLOMON ISLANDS"
+   ],
+   [
+    "2230",
+    "SOMALIA"
+   ],
+   [
+    "2240",
+    "SOUTH AFRICA"
+   ],
+   [
+    "2250",
+    "SOUTH GEORGIA AND THE SOUTH SANDWICH ISLANDS"
+   ],
+   [
+    "2260",
+    "SPAIN"
+   ],
+   [
+    "2270",
+    "SRI LANKA"
+   ],
+   [
+    "2280",
+    "SUDAN"
+   ],
+   [
+    "2285",
+    "SOUTH SUDAN"
+   ],
+   [
+    "2290",
+    "SURINAME"
+   ],
+   [
+    "2300",
+    "SVALBARD AND JAN MAYEN"
+   ],
+   [
+    "2310",
+    "SWAZILAND"
+   ],
+   [
+    "2320",
+    "SWEDEN"
+   ],
+   [
+    "2330",
+    "SWITZERLAND"
+   ],
+   [
+    "2340",
+    "SYRIAN ARAB REPUBLIC"
+   ],
+   [
+    "2360",
+    "TAIWAN, PROVINCE OF CHINA"
+   ],
+   [
+    "2370",
+    "TAJIKISTAN"
+   ],
+   [
+    "2380",
+    "TANZANIA, UNITED REPUBLIC OF"
+   ],
+   [
+    "2390",
+    "THAILAND"
+   ],
+   [
+    "2400",
+    "TIMOR-LESTE"
+   ],
+   [
+    "2410",
+    "TOGO"
+   ],
+   [
+    "2420",
+    "TOKELAU"
+   ],
+   [
+    "2430",
+    "TONGA"
+   ],
+   [
+    "2440",
+    "TRINIDAD AND TOBAGO"
+   ],
+   [
+    "2450",
+    "TUNISIA"
+   ],
+   [
+    "2460",
+    "TURKEY"
+   ],
+   [
+    "2470",
+    "TURKMENISTAN"
+   ],
+   [
+    "2480",
+    "TURKS AND CAICOS ISLANDS"
+   ],
+   [
+    "2490",
+    "TUVALU"
+   ],
+   [
+    "2510",
+    "UGANDA"
+   ],
+   [
+    "2520",
+    "UKRAINE"
+   ],
+   [
+    "2530",
+    "UNITED ARAB EMIRATES"
+   ],
+   [
+    "2540",
+    "UNITED KINGDOM"
+   ],
+   [
+    "2560",
+    "UNITED STATES MINOR OUTLYING ISLANDS"
+   ],
+   [
+    "2570",
+    "URUGUAY"
+   ],
+   [
+    "2580",
+    "UZBEKISTAN"
+   ],
+   [
+    "2600",
+    "VANUATU"
+   ],
+   [
+    "2620",
+    "VENEZUELA, BOLIVARIAN REPUBLIC OF"
+   ],
+   [
+    "2630",
+    "VIETNAM"
+   ],
+   [
+    "2640",
+    "VIRGIN ISLANDS, BRITISH"
+   ],
+   [
+    "2650",
+    "VIRGIN ISLANDS, U.S."
+   ],
+   [
+    "2670",
+    "WALLIS AND FUTUNA"
+   ],
+   [
+    "2675",
+    "CENTRAL BANK OF WEST AFRICAN STATES (BCEAO)"
+   ],
+   [
+    "2680",
+    "WESTERN SAHARA"
+   ],
+   [
+    "2685",
+    "WEST BANK AND GAZA"
+   ],
+   [
+    "2700",
+    "YEMEN"
+   ],
+   [
+    "2720",
+    "ZAMBIA"
+   ],
+   [
+    "2730",
+    "ZIMBABWE"
+   ],
+   [
+    "2740",
+    "NETHERLANDS ANTILIES"
+   ]
+  ]
+ },
+ "ADDR209": {
+  "plName": "ADDR209",
+  "kind": "fixed",
+  "n": 82,
+  "opts": [
+   [
+    "0",
+    "Not Entered"
+   ],
+   [
+    "1",
+    "Alabama"
+   ],
+   [
+    "2",
+    "Alaska"
+   ],
+   [
+    "3",
+    "Arizona"
+   ],
+   [
+    "4",
+    "Arkansas"
+   ],
+   [
+    "5",
+    "California"
+   ],
+   [
+    "6",
+    "Colorado"
+   ],
+   [
+    "7",
+    "Connecticut"
+   ],
+   [
+    "8",
+    "Delaware"
+   ],
+   [
+    "9",
+    "District of Columbia"
+   ],
+   [
+    "10",
+    "Florida"
+   ],
+   [
+    "11",
+    "Georgia"
+   ],
+   [
+    "12",
+    "Hawaii"
+   ],
+   [
+    "13",
+    "Idaho"
+   ],
+   [
+    "14",
+    "Illinois"
+   ],
+   [
+    "15",
+    "Indiana"
+   ],
+   [
+    "16",
+    "Iowa"
+   ],
+   [
+    "17",
+    "Kansas"
+   ],
+   [
+    "18",
+    "Kentucky"
+   ],
+   [
+    "19",
+    "Louisiana"
+   ],
+   [
+    "20",
+    "Maine"
+   ],
+   [
+    "21",
+    "Maryland"
+   ],
+   [
+    "22",
+    "Massachusetts"
+   ],
+   [
+    "23",
+    "Michigan"
+   ],
+   [
+    "24",
+    "Minnesota"
+   ],
+   [
+    "25",
+    "Mississippi"
+   ],
+   [
+    "26",
+    "Missouri"
+   ],
+   [
+    "27",
+    "Montana"
+   ],
+   [
+    "28",
+    "Nebraska"
+   ],
+   [
+    "29",
+    "Nevada"
+   ],
+   [
+    "30",
+    "New Hampshire"
+   ],
+   [
+    "31",
+    "New Jersey"
+   ],
+   [
+    "32",
+    "New Mexico"
+   ],
+   [
+    "33",
+    "New York"
+   ],
+   [
+    "34",
+    "North Carolina"
+   ],
+   [
+    "35",
+    "North Dakota"
+   ],
+   [
+    "36",
+    "Ohio"
+   ],
+   [
+    "37",
+    "Oklahoma"
+   ],
+   [
+    "38",
+    "Oregon"
+   ],
+   [
+    "39",
+    "Pennsylvania"
+   ],
+   [
+    "40",
+    "Rhode Island"
+   ],
+   [
+    "41",
+    "South Carolina"
+   ],
+   [
+    "42",
+    "South Dakota"
+   ],
+   [
+    "43",
+    "Tennessee"
+   ],
+   [
+    "44",
+    "Texas"
+   ],
+   [
+    "45",
+    "Utah"
+   ],
+   [
+    "46",
+    "Vermont"
+   ],
+   [
+    "47",
+    "Virginia"
+   ],
+   [
+    "48",
+    "Washington"
+   ],
+   [
+    "49",
+    "West Virginia"
+   ],
+   [
+    "50",
+    "Wisconsin"
+   ],
+   [
+    "51",
+    "Wyoming"
+   ],
+   [
+    "52",
+    "Guam"
+   ],
+   [
+    "53",
+    "Puerto Rico"
+   ],
+   [
+    "54",
+    "Virgin Islands (US)"
+   ],
+   [
+    "55",
+    "Alberta"
+   ],
+   [
+    "56",
+    "British Columbia"
+   ],
+   [
+    "57",
+    "Manitoba"
+   ],
+   [
+    "58",
+    "New Brunswick"
+   ],
+   [
+    "59",
+    "Newfoundland and Labrador"
+   ],
+   [
+    "60",
+    "Northwest Territories"
+   ],
+   [
+    "61",
+    "Nova Scotia"
+   ],
+   [
+    "62",
+    "Nunavut"
+   ],
+   [
+    "63",
+    "Ontario"
+   ],
+   [
+    "64",
+    "Prince Edward Island"
+   ],
+   [
+    "65",
+    "Quebec"
+   ],
+   [
+    "66",
+    "Saskatchewan"
+   ],
+   [
+    "67",
+    "Yukon"
+   ],
+   [
+    "99",
+    "Conversion Default"
+   ],
+   [
+    "100",
+    "AB"
+   ],
+   [
+    "101",
+    "BC"
+   ],
+   [
+    "102",
+    "MB"
+   ],
+   [
+    "103",
+    "NB"
+   ],
+   [
+    "104",
+    "NL"
+   ],
+   [
+    "105",
+    "NT"
+   ],
+   [
+    "106",
+    "NS"
+   ],
+   [
+    "107",
+    "NU"
+   ],
+   [
+    "108",
+    "ON"
+   ],
+   [
+    "109",
+    "PE"
+   ],
+   [
+    "110",
+    "QC"
+   ],
+   [
+    "111",
+    "SK"
+   ],
+   [
+    "112",
+    "YT"
+   ]
+  ]
+ },
+ "ADDR233": {
+  "plName": "ADDR233",
+  "kind": "fixed",
+  "n": 25,
+  "opts": [
+   [
+    "0",
+    "Not entered"
+   ],
+   [
+    "1",
+    "Greenwich Mean Time"
+   ],
+   [
+    "2",
+    "British - Europe"
+   ],
+   [
+    "3",
+    "Central - Europe"
+   ],
+   [
+    "4",
+    "Eastern - Europe"
+   ],
+   [
+    "5",
+    "Moskow - Europe"
+   ],
+   [
+    "6",
+    "Coordinated Universal Time"
+   ],
+   [
+    "7",
+    "Time Zone + 06"
+   ],
+   [
+    "8",
+    "Time Zone + 07"
+   ],
+   [
+    "9",
+    "Time Zone + 08"
+   ],
+   [
+    "10",
+    "Time Zone + 09"
+   ],
+   [
+    "11",
+    "Time Zone + 10"
+   ],
+   [
+    "12",
+    "Time Zone + 11"
+   ],
+   [
+    "13",
+    "Time Zone + 12"
+   ],
+   [
+    "14",
+    "Hawaii Aleutian - North America"
+   ],
+   [
+    "15",
+    "Hawaii"
+   ],
+   [
+    "16",
+    "Alaska - North America"
+   ],
+   [
+    "17",
+    "Pacific - North America"
+   ],
+   [
+    "18",
+    "Mountain - North America"
+   ],
+   [
+    "19",
+    "Central - North America"
+   ],
+   [
+    "20",
+    "Eastern - North America"
+   ],
+   [
+    "21",
+    "Atlantic - North America"
+   ],
+   [
+    "22",
+    "Newfoundland - North America"
+   ],
+   [
+    "23",
+    "Time Zone - 02"
+   ],
+   [
+    "24",
+    "Time Zone - 05"
+   ]
+  ]
+ },
+ "CLRE389": {
+  "plName": "CLRE389",
+  "kind": "fixed",
+  "n": 1,
+  "opts": [
+   [
+    "0",
+    "Not Entered"
+   ]
+  ]
+ },
+ "COBB203": {
+  "plName": "COBB203",
+  "kind": "fixed",
+  "n": 11,
+  "opts": [
+   [
+    "0",
+    "Not entered"
+   ],
+   [
+    "1",
+    "End of month (EOM)"
+   ],
+   [
+    "2",
+    "Business day EOM Else next business day"
+   ],
+   [
+    "3",
+    "Stay on Day"
+   ],
+   [
+    "4",
+    "Business day Else next business day"
+   ],
+   [
+    "5",
+    "Business day else next business day;same month"
+   ],
+   [
+    "6",
+    "Business Day EOM Else previous business day"
+   ],
+   [
+    "7",
+    "Business day Else previous business day"
+   ],
+   [
+    "8",
+    "Business Day Else Next Business Day - Stay On New Day"
+   ],
+   [
+    "9",
+    "Business Day Else Previous Business Day, - Stay on New Day"
+   ],
+   [
+    "15",
+    "Accrual Date plus 5 Business Days"
+   ]
+  ]
+ },
+ "COBB212": {
+  "plName": "COBB212",
+  "kind": "fixed",
+  "n": 10,
+  "opts": [
+   [
+    "0",
+    "Not entered"
+   ],
+   [
+    "1",
+    "Daily"
+   ],
+   [
+    "2",
+    "Weekly"
+   ],
+   [
+    "3",
+    "Semi-monthly"
+   ],
+   [
+    "4",
+    "Monthly"
+   ],
+   [
+    "5",
+    "Quarterly"
+   ],
+   [
+    "6",
+    "Annually"
+   ],
+   [
+    "7",
+    "Maturity"
+   ],
+   [
+    "8",
+    "One Time"
+   ],
+   [
+    "10",
+    "Semi-annual"
+   ]
+  ]
+ },
+ "COBB221": {
+  "plName": "COBB221",
+  "kind": "fixed",
+  "n": 3,
+  "opts": [
+   [
+    "1",
+    "*American Calendar"
+   ],
+   [
+    "2",
+    "*London Calendar"
+   ],
+   [
+    "5",
+    "*SOFR Calendar"
+   ]
+  ]
+ },
+ "COBB218": {
+  "plName": "COBB218",
+  "kind": "fixed",
+  "n": 11,
+  "opts": [
+   [
+    "0",
+    "Not entered"
+   ],
+   [
+    "1",
+    "End of month (EOM)"
+   ],
+   [
+    "2",
+    "Business day EOM Else next business day"
+   ],
+   [
+    "3",
+    "Stay on Day"
+   ],
+   [
+    "4",
+    "Business day Else next business day"
+   ],
+   [
+    "5",
+    "Business day else next business day;same month"
+   ],
+   [
+    "6",
+    "Business Day EOM Else previous business day"
+   ],
+   [
+    "7",
+    "Business day Else previous business day"
+   ],
+   [
+    "8",
+    "Business Day Else Next Business Day - Stay On New Day"
+   ],
+   [
+    "9",
+    "Business Day Else Previous Business Day, - Stay on New Day"
+   ],
+   [
+    "15",
+    "Accrual Date plus 5 Business Days"
+   ]
+  ]
+ },
+ "*ORG003": {
+  "plName": "*ORG003",
+  "kind": "fixed",
+  "n": 5,
+  "opts": [
+   [
+    "0",
+    "*Not Entered"
+   ],
+   [
+    "1550",
+    "*Commercial Lending"
+   ],
+   [
+    "2550",
+    "*Commercial Real Estate"
+   ],
+   [
+    "3550",
+    "*Corporate Lending"
+   ],
+   [
+    "4550",
+    "*SBA Lending"
+   ]
+  ]
+ },
+ "*ORG002": {
+  "plName": "*ORG002",
+  "kind": "fixed",
+  "n": 68,
+  "opts": [
+   [
+    "0",
+    "*Not Entered"
+   ],
+   [
+    "1",
+    "*Alabama"
+   ],
+   [
+    "2",
+    "*Alaska"
+   ],
+   [
+    "3",
+    "*Arizona"
+   ],
+   [
+    "4",
+    "*Arkansas"
+   ],
+   [
+    "5",
+    "*California"
+   ],
+   [
+    "6",
+    "*Colorado"
+   ],
+   [
+    "7",
+    "*Connecticut"
+   ],
+   [
+    "8",
+    "*Delaware"
+   ],
+   [
+    "9",
+    "*District of Columbia"
+   ],
+   [
+    "10",
+    "*Florida"
+   ],
+   [
+    "11",
+    "*Georgia"
+   ],
+   [
+    "12",
+    "*Hawaii"
+   ],
+   [
+    "13",
+    "*Idaho"
+   ],
+   [
+    "14",
+    "*Illinois"
+   ],
+   [
+    "15",
+    "*Indiana"
+   ],
+   [
+    "16",
+    "*Iowa"
+   ],
+   [
+    "17",
+    "*Kansas"
+   ],
+   [
+    "18",
+    "*Kentucky"
+   ],
+   [
+    "19",
+    "*Louisiana"
+   ],
+   [
+    "20",
+    "*Maine"
+   ],
+   [
+    "21",
+    "*Maryland"
+   ],
+   [
+    "22",
+    "*Massachusetts"
+   ],
+   [
+    "23",
+    "*Michigan"
+   ],
+   [
+    "24",
+    "*Minnesota"
+   ],
+   [
+    "25",
+    "*Mississippi"
+   ],
+   [
+    "26",
+    "*Missouri"
+   ],
+   [
+    "27",
+    "*Montana"
+   ],
+   [
+    "28",
+    "*Nebraska"
+   ],
+   [
+    "29",
+    "*Nevada"
+   ],
+   [
+    "30",
+    "*New Hampshire"
+   ],
+   [
+    "31",
+    "*New Jersey"
+   ],
+   [
+    "32",
+    "*New Mexico"
+   ],
+   [
+    "33",
+    "*New York"
+   ],
+   [
+    "34",
+    "*North Carolina"
+   ],
+   [
+    "35",
+    "*North Dakota"
+   ],
+   [
+    "36",
+    "*Ohio"
+   ],
+   [
+    "37",
+    "*Oklahoma"
+   ],
+   [
+    "38",
+    "*Oregon"
+   ],
+   [
+    "39",
+    "*Pennsylvania"
+   ],
+   [
+    "40",
+    "*Rhode Island"
+   ],
+   [
+    "41",
+    "*South Carolina"
+   ],
+   [
+    "42",
+    "*South Dakota"
+   ],
+   [
+    "43",
+    "*Tennessee"
+   ],
+   [
+    "44",
+    "*Texas"
+   ],
+   [
+    "45",
+    "*Utah"
+   ],
+   [
+    "46",
+    "*Vermont"
+   ],
+   [
+    "47",
+    "*Virginia"
+   ],
+   [
+    "48",
+    "*Washington"
+   ],
+   [
+    "49",
+    "*West Virginia"
+   ],
+   [
+    "50",
+    "*Wisconsin"
+   ],
+   [
+    "51",
+    "*Wyoming"
+   ],
+   [
+    "52",
+    "*Guam"
+   ],
+   [
+    "53",
+    "*Puerto Rico"
+   ],
+   [
+    "54",
+    "*Virgin Islands (US)"
+   ],
+   [
+    "55",
+    "*Alberta"
+   ],
+   [
+    "56",
+    "*British Columbia"
+   ],
+   [
+    "57",
+    "*Manitoba"
+   ],
+   [
+    "58",
+    "*New Brunswick"
+   ],
+   [
+    "59",
+    "*Newfoundland and Labrador"
+   ],
+   [
+    "60",
+    "*Northwest Territories"
+   ],
+   [
+    "61",
+    "*Nova Scotia"
+   ],
+   [
+    "62",
+    "*Nunavut"
+   ],
+   [
+    "63",
+    "*Ontario"
+   ],
+   [
+    "64",
+    "*Prince Edward Island"
+   ],
+   [
+    "65",
+    "*Quebec"
+   ],
+   [
+    "66",
+    "*Saskatchewan"
+   ],
+   [
+    "67",
+    "*Yukon"
+   ]
+  ]
+ },
+ "*ORG001": {
+  "plName": "*ORG001",
+  "kind": "fixed",
+  "n": 4,
+  "opts": [
+   [
+    "0",
+    "*Not Entered"
+   ],
+   [
+    "1100",
+    "*Eastern"
+   ],
+   [
+    "2200",
+    "*Central"
+   ],
+   [
+    "3300",
+    "*Western"
+   ]
+  ]
+ },
+ "*ORG402": {
+  "plName": "*ORG402",
+  "kind": "fixed",
+  "n": 14,
+  "opts": [
+   [
+    "0",
+    "*Not Entered"
+   ],
+   [
+    "10111111",
+    "Mary*Jones"
+   ],
+   [
+    "101111111",
+    "Theresa*Apatow"
+   ],
+   [
+    "102222222",
+    "Susan*Bartlett"
+   ],
+   [
+    "203333333",
+    "Frieda*Cortez"
+   ],
+   [
+    "205555555",
+    "Gary*Eugene"
+   ],
+   [
+    "310101010",
+    "Howard*Juno"
+   ],
+   [
+    "312121212",
+    "Debbie*Lyons"
+   ],
+   [
+    "415151515",
+    "Paula*Opher"
+   ],
+   [
+    "415151516",
+    "Tina *Curry"
+   ],
+   [
+    "520202020",
+    "Fred*Terrace"
+   ],
+   [
+    "525252525",
+    "Stanley*Yost"
+   ],
+   [
+    "626262626",
+    "Adam*Zelinski"
+   ],
+   [
+    "789789789",
+    "*Automation Officer"
+   ]
+  ]
+ },
+ "*ORG401": {
+  "plName": "*ORG401",
+  "kind": "fixed",
+  "n": 14,
+  "opts": [
+   [
+    "0",
+    "*Not Entered"
+   ],
+   [
+    "10111111",
+    "Mary*Jones"
+   ],
+   [
+    "101111111",
+    "Theresa*Apatow"
+   ],
+   [
+    "102222222",
+    "Susan*Bartlett"
+   ],
+   [
+    "203333333",
+    "Frieda*Cortez"
+   ],
+   [
+    "205555555",
+    "Gary*Eugene"
+   ],
+   [
+    "310101010",
+    "Howard*Juno"
+   ],
+   [
+    "312121212",
+    "Debbie*Lyons"
+   ],
+   [
+    "415151515",
+    "Paula*Opher"
+   ],
+   [
+    "415151516",
+    "Tina *Curry"
+   ],
+   [
+    "520202020",
+    "Fred*Terrace"
+   ],
+   [
+    "525252525",
+    "Stanley*Yost"
+   ],
+   [
+    "626262626",
+    "Adam*Zelinski"
+   ],
+   [
+    "789789789",
+    "*Automation Officer"
+   ]
+  ]
+ },
+ "*ORG406": {
+  "plName": "*ORG406",
+  "kind": "fixed",
+  "n": 14,
+  "opts": [
+   [
+    "0",
+    "Not Entered"
+   ],
+   [
+    "10111111",
+    "Mary*Jones"
+   ],
+   [
+    "101111111",
+    "Theresa*Apatow"
+   ],
+   [
+    "102222222",
+    "Susan*Bartlett"
+   ],
+   [
+    "203333333",
+    "Frieda*Cortez"
+   ],
+   [
+    "205555555",
+    "Gary*Eugene"
+   ],
+   [
+    "310101010",
+    "Howard*Juno"
+   ],
+   [
+    "312121212",
+    "Debbie*Lyons"
+   ],
+   [
+    "415151515",
+    "Paula*Opher"
+   ],
+   [
+    "415151516",
+    "Tina *Curry"
+   ],
+   [
+    "520202020",
+    "Fred*Terrace"
+   ],
+   [
+    "525252525",
+    "Stanley*Yost"
+   ],
+   [
+    "626262626",
+    "Adam*Zelinski"
+   ],
+   [
+    "789789789",
+    "*Automation Officer"
+   ]
+  ]
+ },
+ "*ORG405": {
+  "plName": "*ORG405",
+  "kind": "fixed",
+  "n": 14,
+  "opts": [
+   [
+    "0",
+    "*Not Entered"
+   ],
+   [
+    "10111111",
+    "Mary*Jones"
+   ],
+   [
+    "101111111",
+    "Theresa*Apatow"
+   ],
+   [
+    "102222222",
+    "Susan*Bartlett"
+   ],
+   [
+    "203333333",
+    "Frieda*Cortez"
+   ],
+   [
+    "205555555",
+    "Gary*Eugene"
+   ],
+   [
+    "310101010",
+    "Howard*Juno"
+   ],
+   [
+    "312121212",
+    "Debbie*Lyons"
+   ],
+   [
+    "415151515",
+    "Paula*Opher"
+   ],
+   [
+    "415151516",
+    "Tina *Curry"
+   ],
+   [
+    "520202020",
+    "Fred*Terrace"
+   ],
+   [
+    "525252525",
+    "Stanley*Yost"
+   ],
+   [
+    "626262626",
+    "Adam*Zelinski"
+   ],
+   [
+    "789789789",
+    "*Automation Officer"
+   ]
+  ]
+ },
+ "*ORG404": {
+  "plName": "*ORG404",
+  "kind": "fixed",
+  "n": 14,
+  "opts": [
+   [
+    "0",
+    "*Not Entered"
+   ],
+   [
+    "10111111",
+    "Mary*Jones"
+   ],
+   [
+    "101111111",
+    "Theresa*Apatow"
+   ],
+   [
+    "102222222",
+    "Susan*Bartlett"
+   ],
+   [
+    "203333333",
+    "Frieda*Cortez"
+   ],
+   [
+    "205555555",
+    "Gary*Eugene"
+   ],
+   [
+    "310101010",
+    "Howard*Juno"
+   ],
+   [
+    "312121212",
+    "Debbie*Lyons"
+   ],
+   [
+    "415151515",
+    "Paula*Opher"
+   ],
+   [
+    "415151516",
+    "Tina *Curry"
+   ],
+   [
+    "520202020",
+    "Fred*Terrace"
+   ],
+   [
+    "525252525",
+    "Stanley*Yost"
+   ],
+   [
+    "626262626",
+    "Adam*Zelinski"
+   ],
+   [
+    "789789789",
+    "*Automation Officer"
+   ]
+  ]
+ },
+ "*ORG403": {
+  "plName": "*ORG403",
+  "kind": "fixed",
+  "n": 14,
+  "opts": [
+   [
+    "0",
+    "*Not Entered"
+   ],
+   [
+    "10111111",
+    "Mary*Jones"
+   ],
+   [
+    "101111111",
+    "Theresa*Apatow"
+   ],
+   [
+    "102222222",
+    "Susan*Bartlett"
+   ],
+   [
+    "203333333",
+    "Frieda*Cortez"
+   ],
+   [
+    "205555555",
+    "Gary*Eugene"
+   ],
+   [
+    "310101010",
+    "Howard*Juno"
+   ],
+   [
+    "312121212",
+    "Debbie*Lyons"
+   ],
+   [
+    "415151515",
+    "Paula*Opher"
+   ],
+   [
+    "415151516",
+    "Tina *Curry"
+   ],
+   [
+    "520202020",
+    "Fred*Terrace"
+   ],
+   [
+    "525252525",
+    "Stanley*Yost"
+   ],
+   [
+    "626262626",
+    "Adam*Zelinski"
+   ],
+   [
+    "789789789",
+    "*Automation Officer"
+   ]
+  ]
+ },
+ "*ORG007": {
+  "plName": "*ORG007",
+  "kind": "fixed",
+  "n": 1,
+  "opts": [
+   [
+    "0",
+    "*Not Entered"
+   ]
+  ]
+ },
+ "*ORG410": {
+  "plName": "*ORG410",
+  "kind": "fixed",
+  "n": 14,
+  "opts": [
+   [
+    "0",
+    "Not Entered"
+   ],
+   [
+    "10111111",
+    "Mary*Jones"
+   ],
+   [
+    "101111111",
+    "Theresa*Apatow"
+   ],
+   [
+    "102222222",
+    "Susan*Bartlett"
+   ],
+   [
+    "203333333",
+    "Frieda*Cortez"
+   ],
+   [
+    "205555555",
+    "Gary*Eugene"
+   ],
+   [
+    "310101010",
+    "Howard*Juno"
+   ],
+   [
+    "312121212",
+    "Debbie*Lyons"
+   ],
+   [
+    "415151515",
+    "Paula*Opher"
+   ],
+   [
+    "415151516",
+    "Tina *Curry"
+   ],
+   [
+    "520202020",
+    "Fred*Terrace"
+   ],
+   [
+    "525252525",
+    "Stanley*Yost"
+   ],
+   [
+    "626262626",
+    "Adam*Zelinski"
+   ],
+   [
+    "789789789",
+    "*Automation Officer"
+   ]
+  ]
+ },
+ "*ORG006": {
+  "plName": "*ORG006",
+  "kind": "fixed",
+  "n": 1,
+  "opts": [
+   [
+    "0",
+    "*Not Entered"
+   ]
+  ]
+ },
+ "*ORG409": {
+  "plName": "*ORG409",
+  "kind": "fixed",
+  "n": 14,
+  "opts": [
+   [
+    "0",
+    "Not Entered"
+   ],
+   [
+    "10111111",
+    "Mary*Jones"
+   ],
+   [
+    "101111111",
+    "Theresa*Apatow"
+   ],
+   [
+    "102222222",
+    "Susan*Bartlett"
+   ],
+   [
+    "203333333",
+    "Frieda*Cortez"
+   ],
+   [
+    "205555555",
+    "Gary*Eugene"
+   ],
+   [
+    "310101010",
+    "Howard*Juno"
+   ],
+   [
+    "312121212",
+    "Debbie*Lyons"
+   ],
+   [
+    "415151515",
+    "Paula*Opher"
+   ],
+   [
+    "415151516",
+    "Tina *Curry"
+   ],
+   [
+    "520202020",
+    "Fred*Terrace"
+   ],
+   [
+    "525252525",
+    "Stanley*Yost"
+   ],
+   [
+    "626262626",
+    "Adam*Zelinski"
+   ],
+   [
+    "789789789",
+    "*Automation Officer"
+   ]
+  ]
+ },
+ "*ORG005": {
+  "plName": "*ORG005",
+  "kind": "fixed",
+  "n": 1,
+  "opts": [
+   [
+    "0",
+    "*Not Entered"
+   ]
+  ]
+ },
+ "*ORG408": {
+  "plName": "*ORG408",
+  "kind": "fixed",
+  "n": 14,
+  "opts": [
+   [
+    "0",
+    "Not Entered"
+   ],
+   [
+    "10111111",
+    "Mary*Jones"
+   ],
+   [
+    "101111111",
+    "Theresa*Apatow"
+   ],
+   [
+    "102222222",
+    "Susan*Bartlett"
+   ],
+   [
+    "203333333",
+    "Frieda*Cortez"
+   ],
+   [
+    "205555555",
+    "Gary*Eugene"
+   ],
+   [
+    "310101010",
+    "Howard*Juno"
+   ],
+   [
+    "312121212",
+    "Debbie*Lyons"
+   ],
+   [
+    "415151515",
+    "Paula*Opher"
+   ],
+   [
+    "415151516",
+    "Tina *Curry"
+   ],
+   [
+    "520202020",
+    "Fred*Terrace"
+   ],
+   [
+    "525252525",
+    "Stanley*Yost"
+   ],
+   [
+    "626262626",
+    "Adam*Zelinski"
+   ],
+   [
+    "789789789",
+    "*Automation Officer"
+   ]
+  ]
+ },
+ "*ORG004": {
+  "plName": "*ORG004",
+  "kind": "fixed",
+  "n": 1,
+  "opts": [
+   [
+    "0",
+    "*Not Entered"
+   ]
+  ]
+ },
+ "*ORG407": {
+  "plName": "*ORG407",
+  "kind": "fixed",
+  "n": 14,
+  "opts": [
+   [
+    "0",
+    "Not Entered"
+   ],
+   [
+    "10111111",
+    "Mary*Jones"
+   ],
+   [
+    "101111111",
+    "Theresa*Apatow"
+   ],
+   [
+    "102222222",
+    "Susan*Bartlett"
+   ],
+   [
+    "203333333",
+    "Frieda*Cortez"
+   ],
+   [
+    "205555555",
+    "Gary*Eugene"
+   ],
+   [
+    "310101010",
+    "Howard*Juno"
+   ],
+   [
+    "312121212",
+    "Debbie*Lyons"
+   ],
+   [
+    "415151515",
+    "Paula*Opher"
+   ],
+   [
+    "415151516",
+    "Tina *Curry"
+   ],
+   [
+    "520202020",
+    "Fred*Terrace"
+   ],
+   [
+    "525252525",
+    "Stanley*Yost"
+   ],
+   [
+    "626262626",
+    "Adam*Zelinski"
+   ],
+   [
+    "789789789",
+    "*Automation Officer"
+   ]
+  ]
+ },
+ "*ORG060": {
+  "plName": "*ORG060",
+  "kind": "fixed",
+  "n": 7,
+  "opts": [
+   [
+    "0",
+    "*Not Entered"
+   ],
+   [
+    "15",
+    "*Loan Services - CLCS"
+   ],
+   [
+    "1000",
+    "*Commercial Loan Services"
+   ],
+   [
+    "2000",
+    "*Specialty Assets Group"
+   ],
+   [
+    "5000",
+    "*Automation SU"
+   ],
+   [
+    "9800",
+    "*Inbound Interfaces"
+   ],
+   [
+    "9900",
+    "*System Generated Transactions"
+   ]
+  ]
+ },
+ "*ORG050": {
+  "plName": "*ORG050",
+  "kind": "fixed",
+  "n": 16,
+  "opts": [
+   [
+    "0",
+    "Not Entered"
+   ],
+   [
+    "1001500",
+    "*Commercial Lending- East"
+   ],
+   [
+    "1002500",
+    "*Commercial Lending- Central"
+   ],
+   [
+    "1003500",
+    "*Commercial Lending- West"
+   ],
+   [
+    "1007500",
+    "*Commercial Bank - UK"
+   ],
+   [
+    "2001500",
+    "*Commercial Real Estate- East"
+   ],
+   [
+    "2002500",
+    "*Commercial Real Estate- Central"
+   ],
+   [
+    "2003500",
+    "*Commercial Real Estate- West"
+   ],
+   [
+    "3001500",
+    "*Corporate Banking- East"
+   ],
+   [
+    "3002500",
+    "*Corporate Banking- Central"
+   ],
+   [
+    "3003500",
+    "*Corporate Banking- West"
+   ],
+   [
+    "4001500",
+    "*SBA Lending- East"
+   ],
+   [
+    "4002500",
+    "*SBA Lending- Central"
+   ],
+   [
+    "4003500",
+    "*SBA Lending- West"
+   ],
+   [
+    "5005500",
+    "*Automation AU"
+   ],
+   [
+    "5005999",
+    "*Offset Entries Only"
+   ]
+  ]
+ },
+ "*ORG008": {
+  "plName": "*ORG008",
+  "kind": "fixed",
+  "n": 1,
+  "opts": [
+   [
+    "0",
+    "*Not Entered"
+   ]
+  ]
+ },
+ "COLR311": {
+  "plName": "COLR311",
+  "kind": "fixed",
+  "n": 2,
+  "opts": [
+   [
+    "0",
+    "Not Entered"
+   ],
+   [
+    "1",
+    "Currency Tier 1"
+   ]
+  ]
+ },
+ "COLR263": {
+  "plName": "COLR263",
+  "kind": "fixed",
+  "n": 10,
+  "opts": [
+   [
+    "0",
+    "Not entered"
+   ],
+   [
+    "1",
+    "Daily"
+   ],
+   [
+    "2",
+    "Weekly"
+   ],
+   [
+    "3",
+    "Semi-monthly"
+   ],
+   [
+    "4",
+    "Monthly"
+   ],
+   [
+    "5",
+    "Quarterly"
+   ],
+   [
+    "6",
+    "Annually"
+   ],
+   [
+    "7",
+    "Maturity"
+   ],
+   [
+    "8",
+    "One Time"
+   ],
+   [
+    "10",
+    "Semi-annual"
+   ]
+  ]
+ },
+ "COLR269": {
+  "plName": "COLR269",
+  "kind": "fixed",
+  "n": 3,
+  "opts": [
+   [
+    "1",
+    "*American Calendar"
+   ],
+   [
+    "2",
+    "*London Calendar"
+   ],
+   [
+    "5",
+    "*SOFR Calendar"
+   ]
+  ]
+ },
+ "COLR308": {
+  "plName": "COLR308",
+  "kind": "fixed",
+  "n": 2,
+  "opts": [
+   [
+    "0",
+    "Not Entered"
+   ],
+   [
+    "1",
+    "Domestic"
+   ]
+  ]
+ },
+ "COLR260": {
+  "plName": "COLR260",
+  "kind": "fixed",
+  "n": 17,
+  "opts": [
+   [
+    "0",
+    "Not entered"
+   ],
+   [
+    "1",
+    "End of month (EOM)"
+   ],
+   [
+    "2",
+    "Business day EOM Else next business day"
+   ],
+   [
+    "3",
+    "Stay on Day"
+   ],
+   [
+    "4",
+    "Business day Else next business day"
+   ],
+   [
+    "5",
+    "Business day else next business day;same month"
+   ],
+   [
+    "6",
+    "Business Day EOM Else previous business day"
+   ],
+   [
+    "7",
+    "Business day Else previous business day"
+   ],
+   [
+    "8",
+    "Business Day Else Next Business Day - Stay On New Day"
+   ],
+   [
+    "9",
+    "Business Day Else Previous Business Day, - Stay on New Day"
+   ],
+   [
+    "10",
+    "Default to Bill Date"
+   ],
+   [
+    "11",
+    "Accrual Date plus 1 Business Day"
+   ],
+   [
+    "12",
+    "Accrual Date plus 2 Business Days"
+   ],
+   [
+    "13",
+    "Accrual Date plus 3 Business Days"
+   ],
+   [
+    "14",
+    "Accrual Date plus 4 Business Days"
+   ],
+   [
+    "15",
+    "Accrual Date plus 5 Business Days"
+   ],
+   [
+    "16",
+    "Default to Accrue to Date"
+   ]
+  ]
+ },
+ "Indirect+Search+By": {
+  "plName": "Indirect Search By",
+  "kind": "fixed",
+  "n": 2,
+  "opts": [
+   [
+    "1",
+    "Indirect Liabilities"
+   ],
+   [
+    "2",
+    "Indirect Supports"
+   ]
+  ]
+ },
+ "ilm/pl/GuaranteeSupportType": {
+  "plName": "ilm/pl/GuaranteeSupportType",
+  "kind": "dynamic",
+  "n": 9,
+  "opts": [
+   [
+    "0",
+    "Not Entered"
+   ],
+   [
+    "40",
+    "Co-Borrower"
+   ],
+   [
+    "44",
+    "Co-Maker"
+   ],
+   [
+    "48",
+    "Endorser"
+   ],
+   [
+    "52",
+    "Guarantor"
+   ],
+   [
+    "60",
+    "Authorized Signer"
+   ],
+   [
+    "65",
+    "Co-Owner of Collateral"
+   ],
+   [
+    "98",
+    "Type Not Classified Elsewhere"
+   ],
+   [
+    "99",
+    "Conversion Default"
+   ]
+  ]
+ },
+ "SUPR218": {
+  "plName": "SUPR218",
+  "kind": "fixed",
+  "n": 2,
+  "opts": [
+   [
+    "0",
+    "No"
+   ],
+   [
+    "1",
+    "Yes"
+   ]
+  ]
+ },
+ "Guarantee+Type+Selector": {
+  "plName": "Guarantee Type Selector",
+  "kind": "fixed",
+  "n": 2,
+  "opts": [
+   [
+    "1",
+    "Percent"
+   ],
+   [
+    "2",
+    "Amount"
+   ]
+  ]
+ },
+ "SUPR215": {
+  "plName": "SUPR215",
+  "kind": "fixed",
+  "n": 10,
+  "opts": [
+   [
+    "0",
+    "Not Entered"
+   ],
+   [
+    "1",
+    "Individual"
+   ],
+   [
+    "2",
+    "Joint contractual"
+   ],
+   [
+    "3",
+    "Authorized User"
+   ],
+   [
+    "5",
+    "Co-maker"
+   ],
+   [
+    "7",
+    "Association with account terminated"
+   ],
+   [
+    "8",
+    "Maker"
+   ],
+   [
+    "9",
+    "Business/Commercial"
+   ],
+   [
+    "11",
+    "Consumer Deceased -"
+   ],
+   [
+    "13",
+    "Delete Borrower"
+   ]
+  ]
+ },
+ "Pricing+Method": {
+  "plName": "Pricing Method",
+  "kind": "fixed",
+  "n": 2,
+  "opts": [
+   [
+    "N",
+    "Non-Tiered"
+   ],
+   [
+    "T",
+    "Tiered"
+   ]
+  ]
+ },
+ "ACCS203": {
+  "plName": "ACCS203",
+  "kind": "fixed",
+  "n": 7,
+  "opts": [
+   [
+    "0",
+    "Not Entered"
+   ],
+   [
+    "1",
+    "30/360"
+   ],
+   [
+    "2",
+    "30/365"
+   ],
+   [
+    "3",
+    "30/Actual"
+   ],
+   [
+    "4",
+    "Actual/360"
+   ],
+   [
+    "5",
+    "Actual/365"
+   ],
+   [
+    "6",
+    "Actual/Actual"
+   ]
+  ]
+ },
+ "CHGH206": {
+  "plName": "CHGH206",
+  "kind": "fixed",
+  "n": 9,
+  "opts": [
+   [
+    "0",
+    "Default (Accrue on whole balance or lump sum for Flat Fees)"
+   ],
+   [
+    "1",
+    "Accrue on whole balance"
+   ],
+   [
+    "2",
+    "Accrue at multiple rates, a rate for the dollar amount in a specific range"
+   ],
+   [
+    "3",
+    "Accrue by one rate, dependent on dollar range"
+   ],
+   [
+    "4",
+    "Accrue by multiple rates, a rate for each percentage of principal"
+   ],
+   [
+    "5",
+    "Straight Line Over Assessment Period"
+   ],
+   [
+    "6",
+    "Interest Method Accounting (IMA)"
+   ],
+   [
+    "7",
+    "Earned When Paid"
+   ],
+   [
+    "8",
+    "FASB Straight-line"
+   ]
+  ]
+ },
+ "PRMS206": {
+  "plName": "PRMS206",
+  "kind": "fixed",
+  "n": 5,
+  "opts": [
+   [
+    "0",
+    "Not entered"
+   ],
+   [
+    "1",
+    "Add"
+   ],
+   [
+    "2",
+    "Subtract"
+   ],
+   [
+    "3",
+    "Multiply"
+   ],
+   [
+    "5",
+    "Matrix"
+   ]
+  ]
+ },
+ "ilm/pl/PricingOption": {
+  "plName": "ilm/pl/PricingOption",
+  "kind": "dynamic",
+  "n": 2,
+  "opts": [
+   [
+    "0",
+    "Variable"
+   ],
+   [
+    "3",
+    "Fixed"
+   ]
+  ]
+ },
+ "Pricing+Type": {
+  "plName": "Pricing Type",
+  "kind": "fixed",
+  "n": 1,
+  "opts": [
+   [
+    "I",
+    "Interest"
+   ]
+  ]
+ },
+ "Payment+Type+Code": {
+  "plName": "Payment Type Code",
+  "kind": "fixed",
+  "n": 4,
+  "opts": [
+   [
+    "I",
+    "Interest"
+   ],
+   [
+    "P",
+    "Principal"
+   ],
+   [
+    "P&I",
+    "Principal&Interest"
+   ],
+   [
+    "P+I",
+    "Principal+Interest"
+   ]
+  ]
+ },
+ "ilm/pl/RepayType": {
+  "plName": "ilm/pl/RepayType",
+  "kind": "dynamic",
+  "n": 0,
+  "opts": []
+ },
+ "REPY239": {
+  "plName": "REPY239",
+  "kind": "fixed",
+  "n": 10,
+  "opts": [
+   [
+    "0",
+    "Not entered"
+   ],
+   [
+    "1",
+    "Daily"
+   ],
+   [
+    "2",
+    "Weekly"
+   ],
+   [
+    "3",
+    "Semi-monthly"
+   ],
+   [
+    "4",
+    "Monthly"
+   ],
+   [
+    "5",
+    "Quarterly"
+   ],
+   [
+    "6",
+    "Annually"
+   ],
+   [
+    "7",
+    "Maturity"
+   ],
+   [
+    "8",
+    "One Time"
+   ],
+   [
+    "10",
+    "Semi-annual"
+   ]
+  ]
+ },
+ "REPY236": {
+  "plName": "REPY236",
+  "kind": "fixed",
+  "n": 17,
+  "opts": [
+   [
+    "0",
+    "Not entered"
+   ],
+   [
+    "1",
+    "End of month (EOM)"
+   ],
+   [
+    "2",
+    "Business day EOM Else next business day"
+   ],
+   [
+    "3",
+    "Stay on Day"
+   ],
+   [
+    "4",
+    "Business day Else next business day"
+   ],
+   [
+    "5",
+    "Business day else next business day;same month"
+   ],
+   [
+    "6",
+    "Business Day EOM Else previous business day"
+   ],
+   [
+    "7",
+    "Business day Else previous business day"
+   ],
+   [
+    "8",
+    "Business Day Else Next Business Day - Stay On New Day"
+   ],
+   [
+    "9",
+    "Business Day Else Previous Business Day, - Stay on New Day"
+   ],
+   [
+    "10",
+    "Default to Bill Date"
+   ],
+   [
+    "11",
+    "Accrual Date plus 1 Business Day"
+   ],
+   [
+    "12",
+    "Accrual Date plus 2 Business Days"
+   ],
+   [
+    "13",
+    "Accrual Date plus 3 Business Days"
+   ],
+   [
+    "14",
+    "Accrual Date plus 4 Business Days"
+   ],
+   [
+    "15",
+    "Accrual Date plus 5 Business Days"
+   ],
+   [
+    "16",
+    "Default to Accrue to Date"
+   ]
+  ]
+ },
+ "REPY254": {
+  "plName": "REPY254",
+  "kind": "fixed",
+  "n": 10,
+  "opts": [
+   [
+    "0",
+    "Not Entered"
+   ],
+   [
+    "11",
+    "Mail"
+   ],
+   [
+    "12",
+    "Hold"
+   ],
+   [
+    "13",
+    "Email"
+   ],
+   [
+    "31",
+    "DDA- On Us"
+   ],
+   [
+    "32",
+    "DDA- Not On Us"
+   ],
+   [
+    "41",
+    "Savings- On Us"
+   ],
+   [
+    "42",
+    "Savings- Not On Us"
+   ],
+   [
+    "90",
+    "Auto Interest Reserve"
+   ],
+   [
+    "91",
+    "Manual Interest Reserve"
+   ]
+  ]
+ },
+ "Fee+Title": {
+  "plName": "Fee Title",
+  "kind": "fixed",
+  "n": 36,
+  "opts": [
+   [
+    "1",
+    "Upfront Contant Effective Yield Commercial Construction"
+   ],
+   [
+    "2",
+    "Upfront Constant Effective Yield Regular"
+   ],
+   [
+    "3",
+    "Upfront Commercial Construction"
+   ],
+   [
+    "4",
+    "Upfront Regular"
+   ],
+   [
+    "5",
+    "Legal"
+   ],
+   [
+    "6",
+    "Waiver of Covenant"
+   ],
+   [
+    "7",
+    "Environmental"
+   ],
+   [
+    "8",
+    "Pre-Pay Premium"
+   ],
+   [
+    "401",
+    "Unused Facility Fee"
+   ],
+   [
+    "402",
+    "Letter of Credit Commitment Fee"
+   ],
+   [
+    "403",
+    "Other Accrual  Fee"
+   ],
+   [
+    "501",
+    "Deposit for Searches"
+   ],
+   [
+    "502",
+    "Prepayment Fee"
+   ],
+   [
+    "503",
+    "Letter of Credit Issuance Fee"
+   ],
+   [
+    "504",
+    "Annual Review Fee"
+   ],
+   [
+    "505",
+    "Renewal Fee"
+   ],
+   [
+    "506",
+    "Commitment Fee"
+   ],
+   [
+    "507",
+    "Guarantee Fee"
+   ],
+   [
+    "508",
+    "Origination Fee"
+   ],
+   [
+    "509",
+    "Initial Application Fee"
+   ],
+   [
+    "510",
+    "Overdraft Fee"
+   ],
+   [
+    "511",
+    "Wire Fee"
+   ],
+   [
+    "512",
+    "Review / Monitoring Fee"
+   ],
+   [
+    "513",
+    "Rate Lock Fee"
+   ],
+   [
+    "514",
+    "CB Finders Fee"
+   ],
+   [
+    "515",
+    "Recovery of Appraisal Costs"
+   ],
+   [
+    "516",
+    "Recovery of Title Costs"
+   ],
+   [
+    "517",
+    "Recovery of Legal Costs"
+   ],
+   [
+    "518",
+    "Other Fee"
+   ],
+   [
+    "519",
+    "Participation Fee"
+   ],
+   [
+    "520",
+    "Syndication Fee"
+   ],
+   [
+    "521",
+    "Undercharge of Searches"
+   ],
+   [
+    "522",
+    "Late Charge"
+   ],
+   [
+    "590",
+    "FASB Cost"
+   ],
+   [
+    "593",
+    "Fixed Cost"
+   ],
+   [
+    "700",
+    "Cost of Funds"
+   ]
+  ]
+ },
+ "CHGH200": {
+  "plName": "CHGH200",
+  "kind": "fixed",
+  "n": 11,
+  "opts": [
+   [
+    "0",
+    "Not Entered"
+   ],
+   [
+    "1",
+    "Interest"
+   ],
+   [
+    "4",
+    "Accrual Fee"
+   ],
+   [
+    "5",
+    "Flat Fee"
+   ],
+   [
+    "7",
+    "Cost of Funds"
+   ],
+   [
+    "8",
+    "Escrow"
+   ],
+   [
+    "9",
+    "Late Charge"
+   ],
+   [
+    "10",
+    "Fixed Cost"
+   ],
+   [
+    "11",
+    "Trade Discount"
+   ],
+   [
+    "12",
+    "Trade Premium"
+   ],
+   [
+    "15",
+    "Prepayment Premium"
+   ]
+  ]
+ },
+ "PRMS200": {
+  "plName": "PRMS200",
+  "kind": "fixed",
+  "n": 52,
+  "opts": [
+   [
+    "00000000000000000001",
+    "*AFS Bank Prime Rate"
+   ],
+   [
+    "1",
+    "*AFS Bank Prime Rate"
+   ],
+   [
+    "00000000000000000002",
+    "*Fixed Rate"
+   ],
+   [
+    "2",
+    "*Fixed Rate"
+   ],
+   [
+    "00000000000000000003",
+    "*LIBOR"
+   ],
+   [
+    "3",
+    "*LIBOR"
+   ],
+   [
+    "00000000000000000004",
+    "*Manual Fixed Rate"
+   ],
+   [
+    "4",
+    "*Manual Fixed Rate"
+   ],
+   [
+    "00000000000000000005",
+    "*Wall Street Journal Prime Rate"
+   ],
+   [
+    "5",
+    "*Wall Street Journal Prime Rate"
+   ],
+   [
+    "00000000000000000006",
+    "*Manual Floating Rate"
+   ],
+   [
+    "6",
+    "*Manual Floating Rate"
+   ],
+   [
+    "00000000000000000007",
+    "*1 Month LIBOR"
+   ],
+   [
+    "7",
+    "*1 Month LIBOR"
+   ],
+   [
+    "00000000000000000008",
+    "*1 Month LIBOR Rounded upto nearest 16th"
+   ],
+   [
+    "8",
+    "*1 Month LIBOR Rounded upto nearest 16th"
+   ],
+   [
+    "00000000000000000009",
+    "*1 Month LIBOR - 2 Days Lookback"
+   ],
+   [
+    "9",
+    "*1 Month LIBOR - 2 Days Lookback"
+   ],
+   [
+    "00000000000000000010",
+    "*1 Mo LIBOR, Rd Up 1/16-2 Days Lookback"
+   ],
+   [
+    "10",
+    "*1 Mo LIBOR, Rd Up 1/16-2 Days Lookback"
+   ],
+   [
+    "00000000000000000011",
+    "*London - 1 Month LIBOR - 2 Day Lookback"
+   ],
+   [
+    "11",
+    "*London - 1 Month LIBOR - 2 Day Lookback"
+   ],
+   [
+    "00000000000000000012",
+    "*London - LIBOR Market Index (LMI)"
+   ],
+   [
+    "12",
+    "*London - LIBOR Market Index (LMI)"
+   ],
+   [
+    "00000000000000000013",
+    "*1 Month LIBOR - 2 Day Lookback UK"
+   ],
+   [
+    "13",
+    "*1 Month LIBOR - 2 Day Lookback UK"
+   ],
+   [
+    "00000000000000000014",
+    "*SBA FTA Servicing Fee - SYSTEM ASSIGNED"
+   ],
+   [
+    "14",
+    "*SBA FTA Servicing Fee - SYSTEM ASSIGNED"
+   ],
+   [
+    "00000000000000000015",
+    "*Rate Matrix"
+   ],
+   [
+    "15",
+    "*Rate Matrix"
+   ],
+   [
+    "00000000000000000030",
+    "*SOFR Index"
+   ],
+   [
+    "30",
+    "*SOFR Index"
+   ],
+   [
+    "00000000000000000031",
+    "*30-Day Average SOFR"
+   ],
+   [
+    "31",
+    "*30-Day Average SOFR"
+   ],
+   [
+    "00000000000000000032",
+    "*90-Day Average SOFR"
+   ],
+   [
+    "32",
+    "*90-Day Average SOFR"
+   ],
+   [
+    "00000000000000000033",
+    "*180-Day Average SOFR"
+   ],
+   [
+    "33",
+    "*180-Day Average SOFR"
+   ],
+   [
+    "00000000000000000034",
+    "*SOFR Daily Rate"
+   ],
+   [
+    "34",
+    "*SOFR Daily Rate"
+   ],
+   [
+    "00000000000000000035",
+    "*SOFR Rate"
+   ],
+   [
+    "35",
+    "*SOFR Rate"
+   ],
+   [
+    "00000000000000000036",
+    "*FTA Servicing Fee"
+   ],
+   [
+    "36",
+    "*FTA Servicing Fee"
+   ],
+   [
+    "37",
+    "*SOFR Accurate Rates"
+   ],
+   [
+    "38",
+    "*1 year rate"
+   ],
+   [
+    "39",
+    "*2- Year Treasury Rate"
+   ],
+   [
+    "40",
+    "*3 Year Rate"
+   ],
+   [
+    "41",
+    "*30 Year Rate"
+   ],
+   [
+    "42",
+    "*10 Year Rate"
+   ],
+   [
+    "43",
+    "*20 Year Rate"
+   ],
+   [
+    "44",
+    "*5 Year Rate"
+   ]
+  ]
+ },
+ "RSKR209": {
+  "plName": "RSKR209",
+  "kind": "fixed",
+  "n": 2,
+  "opts": [
+   [
+    "0",
+    "Amount"
+   ],
+   [
+    "1",
+    "Percent"
+   ]
+  ]
+ },
+ "RSKR203": {
+  "plName": "RSKR203",
+  "kind": "fixed",
+  "n": 3,
+  "opts": [
+   [
+    "0",
+    "Not Entered"
+   ],
+   [
+    "10",
+    "Amount owed on accounts is too high"
+   ],
+   [
+    "11",
+    "Level of delinquency on accounts"
+   ]
+  ]
+ },
+ "RSKR215": {
+  "plName": "RSKR215",
+  "kind": "fixed",
+  "n": 10,
+  "opts": [
+   [
+    "0",
+    "Not entered"
+   ],
+   [
+    "1",
+    "Daily"
+   ],
+   [
+    "2",
+    "Weekly"
+   ],
+   [
+    "3",
+    "Semi-monthly"
+   ],
+   [
+    "4",
+    "Monthly"
+   ],
+   [
+    "5",
+    "Quarterly"
+   ],
+   [
+    "6",
+    "Annually"
+   ],
+   [
+    "7",
+    "Maturity"
+   ],
+   [
+    "8",
+    "One Time"
+   ],
+   [
+    "10",
+    "Semi-annual"
+   ]
+  ]
+ },
+ "*CUR100": {
+  "plName": "*CUR100",
+  "kind": "fixed",
+  "n": 46,
+  "opts": [
+   [
+    "AED",
+    "United Arab Emirates, Dirhams"
+   ],
+   [
+    "ALL",
+    "Lek"
+   ],
+   [
+    "ARS",
+    "Argentina Peso"
+   ],
+   [
+    "AUD",
+    "Australian Dollar"
+   ],
+   [
+    "BHD",
+    "Bahraini Dinar"
+   ],
+   [
+    "BRL",
+    "Brazilian Real"
+   ],
+   [
+    "CAD",
+    "Canadian Dollar"
+   ],
+   [
+    "CHF",
+    "Switzerland, Francs"
+   ],
+   [
+    "CNY",
+    "Yuan Renminbi"
+   ],
+   [
+    "CZK",
+    "Czech Koruna"
+   ],
+   [
+    "DEM",
+    "Deutsch Marcs (for testing 1 decimal place)"
+   ],
+   [
+    "DKK",
+    "Denmark, Kroner"
+   ],
+   [
+    "DOP",
+    "Dominican Republic, Pesos"
+   ],
+   [
+    "DZD",
+    "Algerian Dinar"
+   ],
+   [
+    "EUR",
+    "Euro"
+   ],
+   [
+    "FRF",
+    "French Franc (for testing of 3 decimal place"
+   ],
+   [
+    "GBP",
+    "Pound Sterling"
+   ],
+   [
+    "HKD",
+    "Hong Kong Dollar"
+   ],
+   [
+    "HUF",
+    "Hungary, Forint"
+   ],
+   [
+    "IDR",
+    "Indonesia, Rupiahs"
+   ],
+   [
+    "ILS",
+    "Israel, New Shekels"
+   ],
+   [
+    "INR",
+    "India, Rupees"
+   ],
+   [
+    "JPY",
+    "Japan, Yen"
+   ],
+   [
+    "KRW",
+    "Korea (South), Won"
+   ],
+   [
+    "KWD",
+    "Kuwaiti Dinar"
+   ],
+   [
+    "LTL",
+    "Lithuanian Litas"
+   ],
+   [
+    "MAD",
+    "Moroccan Dirham"
+   ],
+   [
+    "MOP",
+    "Pataca"
+   ],
+   [
+    "MXN",
+    "Mexico, Pesos"
+   ],
+   [
+    "MYR",
+    "Malaysian Ringgit"
+   ],
+   [
+    "NOK",
+    "Norway, Krone"
+   ],
+   [
+    "NZD",
+    "New Zealand, Dollars"
+   ],
+   [
+    "OMR",
+    "Rial Omani"
+   ],
+   [
+    "PHP",
+    "Philippines, Pesos"
+   ],
+   [
+    "PKR",
+    "Pakistan, Rupees"
+   ],
+   [
+    "PLN",
+    "Zloty"
+   ],
+   [
+    "QAR",
+    "Qatari Rial"
+   ],
+   [
+    "RON",
+    "New Leu"
+   ],
+   [
+    "RUB",
+    "Russian Ruble"
+   ],
+   [
+    "SAR",
+    "Saudi Arabia, Riyals"
+   ],
+   [
+    "SEK",
+    "Swedish Krona"
+   ],
+   [
+    "SGD",
+    "Singapore Dollar"
+   ],
+   [
+    "THB",
+    "Thailand, Baht"
+   ],
+   [
+    "TRY",
+    "New Turkish Lira"
+   ],
+   [
+    "USD",
+    "United States Dollars"
+   ],
+   [
+    "ZAR",
+    "South Africa Rand"
+   ]
+  ]
+ },
+ "Individual+Or+Business": {
+  "plName": "Individual Or Business",
+  "kind": "fixed",
+  "n": 2,
+  "opts": [
+   [
+    "0",
+    "Individual"
+   ],
+   [
+    "1",
+    "Business"
+   ]
+  ]
+ },
+ "up/SystemUsers": {
+  "plName": "up/SystemUsers",
+  "kind": "dynamic",
+  "n": 326,
+  "opts": [
+   [
+    "232",
+    "afsd4alt, afsd4alt (afsd4alt)"
+   ],
+   [
+    "231",
+    "afsd4ext, afsd4ext (afsd4ext)"
+   ],
+   [
+    "233",
+    "afsd4me0, afsd4me0 (afsd4me0)"
+   ],
+   [
+    "235",
+    "afsd4tst, afsd4tst (afsd4tst)"
+   ],
+   [
+    "234",
+    "afsd4upd, afsd4upd (afsd4upd)"
+   ],
+   [
+    "181",
+    "AFSDD342, AFSDD342 (AFSDD342)"
+   ],
+   [
+    "182",
+    "AFSDD343, AFSDD343 (AFSDD343)"
+   ],
+   [
+    "183",
+    "AFSDD344, AFSDD344 (AFSDD344)"
+   ],
+   [
+    "184",
+    "AFSDD345, AFSDD345 (AFSDD345)"
+   ],
+   [
+    "185",
+    "AFSDD346, AFSDD346 (AFSDD346)"
+   ],
+   [
+    "186",
+    "AFSDD347, AFSDD347 (AFSDD347)"
+   ],
+   [
+    "187",
+    "AFSDD348, AFSDD348 (AFSDD348)"
+   ],
+   [
+    "188",
+    "AFSDD349, AFSDD349 (AFSDD349)"
+   ],
+   [
+    "189",
+    "AFSDD350, AFSDD350 (AFSDD350)"
+   ],
+   [
+    "190",
+    "AFSDD351, AFSDD351 (AFSDD351)"
+   ],
+   [
+    "191",
+    "AFSDD352, AFSDD352 (AFSDD352)"
+   ],
+   [
+    "192",
+    "AFSDD353, AFSDD353 (AFSDD353)"
+   ],
+   [
+    "193",
+    "AFSDD354, AFSDD354 (AFSDD354)"
+   ],
+   [
+    "314",
+    "AFSDD355, AFSDD355 (AFSDD355)"
+   ],
+   [
+    "315",
+    "AFSDD356, AFSDD356 (AFSDD356)"
+   ],
+   [
+    "317",
+    "AFSDD357, AFSDD357 (AFSDD357)"
+   ],
+   [
+    "318",
+    "AFSDD358, AFSDD358 (AFSDD358)"
+   ],
+   [
+    "319",
+    "AFSDD359, AFSDD359 (AFSDD359)"
+   ],
+   [
+    "320",
+    "AFSDD360, AFSDD360 (AFSDD360)"
+   ],
+   [
+    "321",
+    "AFSDD361, AFSDD361 (AFSDD361)"
+   ],
+   [
+    "322",
+    "AFSDD362, AFSDD362 (AFSDD362)"
+   ],
+   [
+    "323",
+    "AFSDD363, AFSDD363 (AFSDD363)"
+   ],
+   [
+    "324",
+    "AFSDD364, AFSDD364 (AFSDD364)"
+   ],
+   [
+    "325",
+    "AFSDD365, AFSDD365 (AFSDD365)"
+   ],
+   [
+    "326",
+    "AFSDD366, AFSDD366 (AFSDD366)"
+   ],
+   [
+    "229",
+    "AFSDD370, AFSDD370 (AFSDD370)"
+   ],
+   [
+    "230",
+    "AFSDD371, AFSDD371 (AFSDD371)"
+   ],
+   [
+    "246",
+    "AFSDD372, AFSDD372 (AFSDD372)"
+   ],
+   [
+    "247",
+    "AFSDD373, AFSDD373 (AFSDD373)"
+   ],
+   [
+    "248",
+    "AFSDD374, AFSDD374 (AFSDD374)"
+   ],
+   [
+    "249",
+    "AFSDD375, AFSDD375 (AFSDD375)"
+   ],
+   [
+    "250",
+    "AFSDD376, AFSDD376 (AFSDD376)"
+   ],
+   [
+    "251",
+    "AFSDD377, AFSDD377 (AFSDD377)"
+   ],
+   [
+    "252",
+    "AFSDD378, AFSDD378 (AFSDD378)"
+   ],
+   [
+    "253",
+    "AFSDD379, AFSDD379 (AFSDD379)"
+   ],
+   [
+    "254",
+    "AFSDD380, AFSDD380 (AFSDD380)"
+   ],
+   [
+    "255",
+    "AFSDD381, AFSDD381 (AFSDD381)"
+   ],
+   [
+    "256",
+    "AFSDD382, AFSDD382 (AFSDD382)"
+   ],
+   [
+    "257",
+    "AFSDD383, AFSDD383 (AFSDD383)"
+   ],
+   [
+    "258",
+    "AFSDD384, AFSDD384 (AFSDD384)"
+   ],
+   [
+    "259",
+    "AFSDD385, AFSDD385 (AFSDD385)"
+   ],
+   [
+    "260",
+    "AFSDD386, AFSDD386 (AFSDD386)"
+   ],
+   [
+    "261",
+    "AFSDD387, AFSDD387 (AFSDD387)"
+   ],
+   [
+    "262",
+    "AFSDD388, AFSDD388 (AFSDD388)"
+   ],
+   [
+    "263",
+    "AFSDD389, AFSDD389 (AFSDD389)"
+   ],
+   [
+    "264",
+    "AFSDD390, AFSDD390 (AFSDD390)"
+   ],
+   [
+    "265",
+    "AFSDD391, AFSDD391 (AFSDD391)"
+   ],
+   [
+    "266",
+    "AFSDD392, AFSDD392 (AFSDD392)"
+   ],
+   [
+    "267",
+    "AFSDD393, AFSDD393 (AFSDD393)"
+   ],
+   [
+    "268",
+    "AFSDD394, AFSDD394 (AFSDD394)"
+   ],
+   [
+    "269",
+    "AFSDD395, AFSDD395 (AFSDD395)"
+   ],
+   [
+    "270",
+    "AFSDD396, AFSDD396 (AFSDD396)"
+   ],
+   [
+    "281",
+    "AFSKP301, AFSKP301 (AFSKP301)"
+   ],
+   [
+    "282",
+    "AFSKP302, AFSKP302 (AFSKP302)"
+   ],
+   [
+    "283",
+    "AFSKP303, AFSKP303 (AFSKP303)"
+   ],
+   [
+    "284",
+    "AFSKP304, AFSKP304 (AFSKP304)"
+   ],
+   [
+    "285",
+    "AFSKP305, AFSKP305 (AFSKP305)"
+   ],
+   [
+    "286",
+    "AFSKP306, AFSKP306 (AFSKP306)"
+   ],
+   [
+    "287",
+    "AFSKP307, AFSKP307 (AFSKP307)"
+   ],
+   [
+    "288",
+    "AFSKP308, AFSKP308 (AFSKP308)"
+   ],
+   [
+    "289",
+    "AFSKP309, AFSKP309 (AFSKP309)"
+   ],
+   [
+    "290",
+    "AFSKP310, AFSKP310 (AFSKP310)"
+   ],
+   [
+    "117",
+    "Alert Processing ID, Alert Processing ID (afsd1alt)"
+   ],
+   [
+    "151",
+    "Alert Processing ID, Alert Processing ID (afsd2alt)"
+   ],
+   [
+    "3",
+    "Alert ProcessingID, Alert ProcessingID (afsd3alt)"
+   ],
+   [
+    "14",
+    "Amin, Dipali (damin)"
+   ],
+   [
+    "165",
+    "Approver, Automation (AutoAppr)"
+   ],
+   [
+    "15",
+    "Bagga, Sapna (sbagga)"
+   ],
+   [
+    "7",
+    "Baker, Jennifer (jbaker)"
+   ],
+   [
+    "219",
+    "Baldyga, Stacey (sbaldyga)"
+   ],
+   [
+    "299",
+    "Barkatki, Manas (mbarkatk)"
+   ],
+   [
+    "31",
+    "Batchelor, Al (abatchel)"
+   ],
+   [
+    "120",
+    "Batch ProcessingID, Batch ProcessingID (AFSD1EX)"
+   ],
+   [
+    "152",
+    "Batch Processing ID, Batch Processing ID (afsd2ext)"
+   ],
+   [
+    "59",
+    "BBC, ABC (ABC)"
+   ],
+   [
+    "276",
+    "Brown, Jerry (jbrown)"
+   ],
+   [
+    "277",
+    "Brown, Jerry (jtbrown)"
+   ],
+   [
+    "147",
+    "Burkhardt, Drew (aburkhar)"
+   ],
+   [
+    "214",
+    "Butryn, Bill (bbutryn)"
+   ],
+   [
+    "305",
+    "Calle, Julio (jcalle)"
+   ],
+   [
+    "313",
+    "Carney, Olivia (ocarney)"
+   ],
+   [
+    "213",
+    "Carr, Tod (tcarr)"
+   ],
+   [
+    "274",
+    "Castro, Arnelito (acastro)"
+   ],
+   [
+    "105",
+    "Clark, Sharon (sclark)"
+   ],
+   [
+    "12",
+    "Cooper, Jerry (jcooper)"
+   ],
+   [
+    "272",
+    "Crescenzo, Sam (screscen)"
+   ],
+   [
+    "107",
+    "Cruise, Joseph (jcruise)"
+   ],
+   [
+    "108",
+    "Curry, Tina (tcurry)"
+   ],
+   [
+    "309",
+    "Desmarais, Heather (hdesmara)"
+   ],
+   [
+    "225",
+    "Dietric, Leanna (ldietric)"
+   ],
+   [
+    "156",
+    "Divvela, Synthetic TranID (AFSDD2M0)"
+   ],
+   [
+    "159",
+    "Divvela, Synthetic TranID 1 (AFSDD3M0)"
+   ],
+   [
+    "160",
+    "Divvela, Synthetic TranID 2 (AFSDD3M1)"
+   ],
+   [
+    "209",
+    "Doyle, Michael (mdoyle)"
+   ],
+   [
+    "13",
+    "Dubil, John (jdubil)"
+   ],
+   [
+    "296",
+    "Durga Mahanthi, Durga Venkatesh (ddurgama)"
+   ],
+   [
+    "9",
+    "Extract ProcessingID, Extract ProcessingID (afsd3ext)"
+   ],
+   [
+    "1",
+    "FIRST_USER_LNAME, FIRST_USER_FNAME (buildaut)"
+   ],
+   [
+    "146",
+    "Flowers, Jason (jflowers)"
+   ],
+   [
+    "312",
+    "Flynn, Jennifer (jflynn)"
+   ],
+   [
+    "6",
+    "Forteza, Robert (rforteza)"
+   ],
+   [
+    "63",
+    "Foster, Elizabeth (ZNSOWJME)"
+   ],
+   [
+    "241",
+    "Friedman, Ben (bfriedma)"
+   ],
+   [
+    "308",
+    "Gandoori, Sindhuja (sgandoor)"
+   ],
+   [
+    "244",
+    "Gavin, Fran (fgavin)"
+   ],
+   [
+    "174",
+    "Generic, AFS DD3 Event (AFSDD335)"
+   ],
+   [
+    "178",
+    "Generic, API (AFSDD339)"
+   ],
+   [
+    "179",
+    "Generic, API (AFSDD340)"
+   ],
+   [
+    "175",
+    "Generic, Generic (AFSDD336)"
+   ],
+   [
+    "176",
+    "Generic, Generic (AFSDD337)"
+   ],
+   [
+    "177",
+    "Generic, Generic (AFSDD338)"
+   ],
+   [
+    "180",
+    "Generic, Generic (AFSDD341)"
+   ],
+   [
+    "173",
+    "Generic Account, Generic (AFSDD334)"
+   ],
+   [
+    "166",
+    "Generic Account, Test (AFSDD327)"
+   ],
+   [
+    "167",
+    "Generic Account, Test (AFSDD328)"
+   ],
+   [
+    "168",
+    "Generic Account, Test (AFSDD329)"
+   ],
+   [
+    "169",
+    "Generic Account, Test (AFSDD330)"
+   ],
+   [
+    "170",
+    "Generic Account, Test (AFSDD331)"
+   ],
+   [
+    "171",
+    "Generic Account, Test (AFSDD332)"
+   ],
+   [
+    "172",
+    "Generic Account, Test (AFSDD333)"
+   ],
+   [
+    "92",
+    "Grace, Randy (rgrace)"
+   ],
+   [
+    "245",
+    "Greene, John (jgreene)"
+   ],
+   [
+    "242",
+    "Griffin, Frank (fgriffin)"
+   ],
+   [
+    "221",
+    "Gupta, Leena (lgupta)"
+   ],
+   [
+    "21",
+    "Harris, Mike (mharris)"
+   ],
+   [
+    "90",
+    "Horshaw, Anthony (ahorshaw)"
+   ],
+   [
+    "121",
+    "ID1, AFS DD1 Event (AFSDD101)"
+   ],
+   [
+    "36",
+    "ID1, AFS DD3 Event (AFSDD301)"
+   ],
+   [
+    "122",
+    "ID2, AFS DD1 Event (AFSDD102)"
+   ],
+   [
+    "37",
+    "ID2, AFS DD3 Event (AFSDD302)"
+   ],
+   [
+    "123",
+    "ID3, AFS DD1 Event (AFSDD103)"
+   ],
+   [
+    "38",
+    "ID3, AFS DD3 Event (AFSDD303)"
+   ],
+   [
+    "124",
+    "ID4, AFS DD1 Event (AFSDD104)"
+   ],
+   [
+    "39",
+    "ID4, AFS DD3 Event (AFSDD304)"
+   ],
+   [
+    "125",
+    "ID5, AFS DD1 Event (AFSDD105)"
+   ],
+   [
+    "40",
+    "ID5, AFS DD3 Event (AFSDD305)"
+   ],
+   [
+    "126",
+    "ID6, AFS DD1 Event (AFSDD106)"
+   ],
+   [
+    "41",
+    "ID6, AFS DD3 Event (AFSDD306)"
+   ],
+   [
+    "127",
+    "ID7, AFS DD1 Event (AFSDD107)"
+   ],
+   [
+    "42",
+    "ID7, AFS DD3 Event (AFSDD307)"
+   ],
+   [
+    "128",
+    "ID8, AFS DD1 Event (AFSDD108)"
+   ],
+   [
+    "43",
+    "ID8, AFS DD3 Event (AFSDD308)"
+   ],
+   [
+    "129",
+    "ID9, AFS DD1 Event (AFSDD109)"
+   ],
+   [
+    "44",
+    "ID9, AFS DD3 Event (AFSDD309)"
+   ],
+   [
+    "130",
+    "ID10, AFS DD1 Event (AFSDD110)"
+   ],
+   [
+    "45",
+    "ID10, AFS DD3 Event (AFSDD310)"
+   ],
+   [
+    "131",
+    "ID11, AFS DD1 Event (AFSDD111)"
+   ],
+   [
+    "46",
+    "ID11, AFS DD3 Event (AFSDD311)"
+   ],
+   [
+    "132",
+    "ID12, AFS DD1 Event (AFSDD112)"
+   ],
+   [
+    "47",
+    "ID12, AFS DD3 Event (AFSDD312)"
+   ],
+   [
+    "133",
+    "ID13, AFS DD1 Event (AFSDD113)"
+   ],
+   [
+    "48",
+    "ID13, AFS DD3 Event (AFSDD313)"
+   ],
+   [
+    "134",
+    "ID14, AFS DD1 Event (AFSDD114)"
+   ],
+   [
+    "49",
+    "ID14, AFS DD3 Event (AFSDD314)"
+   ],
+   [
+    "135",
+    "ID15, AFS DD1 Event (AFSDD115)"
+   ],
+   [
+    "50",
+    "ID15, AFS DD3 Event (AFSDD315)"
+   ],
+   [
+    "136",
+    "ID16, AFS DD1 Event (AFSDD116)"
+   ],
+   [
+    "93",
+    "ID16, AFS DD3 Event (AFSDD316)"
+   ],
+   [
+    "137",
+    "ID17, AFS DD1 Event (AFSDD117)"
+   ],
+   [
+    "94",
+    "ID17, AFS DD3 Event (AFSDD317)"
+   ],
+   [
+    "138",
+    "ID18, AFS DD1 Event (AFSDD118)"
+   ],
+   [
+    "95",
+    "ID18, AFS DD3 Event (AFSDD318)"
+   ],
+   [
+    "139",
+    "ID19, AFS DD1 Event (AFSDD119)"
+   ],
+   [
+    "96",
+    "ID19, AFS DD3 Event (AFSDD319)"
+   ],
+   [
+    "140",
+    "ID20, AFS DD1 Event (AFSDD120)"
+   ],
+   [
+    "97",
+    "ID20, AFS DD3 Event (AFSDD320)"
+   ],
+   [
+    "141",
+    "ID21, AFS DD1 Event (AFSDD121)"
+   ],
+   [
+    "98",
+    "ID21, AFS DD3 Event (AFSDD321)"
+   ],
+   [
+    "142",
+    "ID22, AFS DD1 Event (AFSDD122)"
+   ],
+   [
+    "99",
+    "ID22, AFS DD3 Event (AFSDD322)"
+   ],
+   [
+    "143",
+    "ID23, AFS DD1 Event (AFSDD123)"
+   ],
+   [
+    "100",
+    "ID23, AFS DD3 Event (AFSDD323)"
+   ],
+   [
+    "144",
+    "ID24, AFS DD1 Event (AFSDD124)"
+   ],
+   [
+    "101",
+    "ID24, AFS DD3 Event (AFSDD324)"
+   ],
+   [
+    "145",
+    "ID25, AFS DD1 Event (AFSDD125)"
+   ],
+   [
+    "102",
+    "ID25, AFS DD3 Event (AFSDD325)"
+   ],
+   [
+    "164",
+    "ID26, AFS DD3 Event (AFSDD326)"
+   ],
+   [
+    "195",
+    "ID60, AFS DD3 (AFSDD360)"
+   ],
+   [
+    "196",
+    "ID61, AFS DD3 (AFSDD361)"
+   ],
+   [
+    "197",
+    "ID62, AFS DD3 (AFSDD362)"
+   ],
+   [
+    "198",
+    "ID63, AFS DD3 (AFSDD363)"
+   ],
+   [
+    "199",
+    "ID64, AFS DD3 (AFSDD364)"
+   ],
+   [
+    "200",
+    "ID65, AFS DD3 (AFSDD365)"
+   ],
+   [
+    "201",
+    "ID66, AFS DD3 (AFSDD366)"
+   ],
+   [
+    "202",
+    "ID67, AFS DD3 (AFSDD367)"
+   ],
+   [
+    "203",
+    "ID68, AFS DD3 (AFSDD368)"
+   ],
+   [
+    "204",
+    "ID69, AFS DD3 (AFSDD369)"
+   ],
+   [
+    "16",
+    "Jadhav, Manju (mjadhav)"
+   ],
+   [
+    "310",
+    "Jakkam, Srinivasa (sjakkam)"
+   ],
+   [
+    "275",
+    "Jatko-Webb, Janet (jjatkowe)"
+   ],
+   [
+    "298",
+    "Jellapuram, Kushsmitha (kjellapu)"
+   ],
+   [
+    "23",
+    "Jones, Rasul (rjones)"
+   ],
+   [
+    "302",
+    "Kale, Sangeetha (skale)"
+   ],
+   [
+    "311",
+    "Kaminski, Chris (ckaminsk)"
+   ],
+   [
+    "205",
+    "Kerns, Esther (ekerns)"
+   ],
+   [
+    "280",
+    "Kinder, Ryan (rkinder)"
+   ],
+   [
+    "240",
+    "Klein, Rich (rklein)"
+   ],
+   [
+    "25",
+    "Kobetich, Randall (rkobetic)"
+   ],
+   [
+    "91",
+    "Kohlbrenner, Michael (mkohlbre)"
+   ],
+   [
+    "222",
+    "Kontur, Barbara (bkontur)"
+   ],
+   [
+    "295",
+    "Kothala, Chinmayi (ckothala)"
+   ],
+   [
+    "301",
+    "Kukkala, Pullarao (pkukkala)"
+   ],
+   [
+    "89",
+    "Kull, Michael (mkull)"
+   ],
+   [
+    "237",
+    "Lalla, Jon (jlalla)"
+   ],
+   [
+    "62",
+    "Leverkuhn, Adrian (NJSOIWEI)"
+   ],
+   [
+    "83",
+    "Lewis, Ange (alewis)"
+   ],
+   [
+    "215",
+    "Luciano, Jillian (jluciano)"
+   ],
+   [
+    "278",
+    "Malla, Bhavishya (bmalla)"
+   ],
+   [
+    "65",
+    "Mark~s, Francine (UIEEENMS)"
+   ],
+   [
+    "206",
+    "Martindell, Amy (amartind)"
+   ],
+   [
+    "8",
+    "Mathews, Nicole (nmathews)"
+   ],
+   [
+    "22",
+    "McCarry, Scott (smccarry)"
+   ],
+   [
+    "148",
+    "McCormick, Rich (rmccormi)"
+   ],
+   [
+    "103",
+    "McGuire, Chris (cmcguire)"
+   ],
+   [
+    "228",
+    "McKee, Bernie (bmckee)"
+   ],
+   [
+    "84",
+    "Mead, James (jmead)"
+   ],
+   [
+    "4",
+    "Minder, Carmina (cminder)"
+   ],
+   [
+    "303",
+    "Moyer, Alyssa (amoyer)"
+   ],
+   [
+    "88",
+    "Mulholland, Pete (pmulholl)"
+   ],
+   [
+    "316",
+    "Murray, Jean (jmurray)"
+   ],
+   [
+    "211",
+    "Nalamada, Praveena (pnalamad)"
+   ],
+   [
+    "28",
+    "Natale, Biagio (bnatale)"
+   ],
+   [
+    "207",
+    "Niatas, Joann (jniatas)"
+   ],
+   [
+    "273",
+    "Nowaki, Adrienne (ANOWAKI)"
+   ],
+   [
+    "226",
+    "Oakes, Ed (eoakes)"
+   ],
+   [
+    "304",
+    "Obenski, Bob (robenski)"
+   ],
+   [
+    "24",
+    "Oddo, Jennifer (joddo)"
+   ],
+   [
+    "227",
+    "Oliva, Mario (moliva)"
+   ],
+   [
+    "307",
+    "Pak, Vanessa (vpak)"
+   ],
+   [
+    "239",
+    "Parham, Chris (cparham)"
+   ],
+   [
+    "115",
+    "Parham, Jill (AFSJCP)"
+   ],
+   [
+    "116",
+    "Parham, Jill (jparham)"
+   ],
+   [
+    "54",
+    "Pasquella, Gus (dpasquel)"
+   ],
+   [
+    "162",
+    "Pennypacker, Mike (mpennypa)"
+   ],
+   [
+    "58",
+    "Petti, Lindsay (lpetti)"
+   ],
+   [
+    "158",
+    "Pham, Thanh (tpham)"
+   ],
+   [
+    "2",
+    "PIke, Karisa (kpike)"
+   ],
+   [
+    "53",
+    "Pilla, Anthony (apilla)"
+   ],
+   [
+    "32",
+    "Pivnicny, Rich (rpivnicn)"
+   ],
+   [
+    "60",
+    "POC1, Regions (RFCPOC1)"
+   ],
+   [
+    "66",
+    "POC2, Trust1 (trust1)"
+   ],
+   [
+    "67",
+    "POC2, Trust2 (trust2)"
+   ],
+   [
+    "68",
+    "POC2, Trust3 (trust3)"
+   ],
+   [
+    "163",
+    "Potti, Roja (rpotti)"
+   ],
+   [
+    "293",
+    "r7appsec, r7appsec (r7appsec)"
+   ],
+   [
+    "194",
+    "Raj, Porkodi (praj)"
+   ],
+   [
+    "292",
+    "Rapid7sec, Rapid7sec (rapid7se)"
+   ],
+   [
+    "216",
+    "Reed, Jo (jreed)"
+   ],
+   [
+    "27",
+    "Richey, Kendrick (krichey)"
+   ],
+   [
+    "220",
+    "Rivera, Alex (arivera)"
+   ],
+   [
+    "224",
+    "Rivera, Brandon (brivera)"
+   ],
+   [
+    "306",
+    "Ross, Stan (sross)"
+   ],
+   [
+    "210",
+    "Roth, Andrew (aroth)"
+   ],
+   [
+    "104",
+    "Saracino, Carolyn (csaracin)"
+   ],
+   [
+    "208",
+    "Sathyavan, Binoy (bsathyav)"
+   ],
+   [
+    "271",
+    "Schassberger, Cathy (cschassb)"
+   ],
+   [
+    "110",
+    "Schembs, Timothy (tschembs)"
+   ],
+   [
+    "30",
+    "Scura, Ben (bscura)"
+   ],
+   [
+    "236",
+    "Scura, George (gscura)"
+   ],
+   [
+    "238",
+    "Senske, Jack (jsenske)"
+   ],
+   [
+    "297",
+    "Shaik, Jeelani (jshaik)"
+   ],
+   [
+    "155",
+    "Shapiro, Eileen (eshapiro)"
+   ],
+   [
+    "161",
+    "Shrivastava, Anurag (ashrivas)"
+   ],
+   [
+    "85",
+    "Skorada, Mike (mskoroda)"
+   ],
+   [
+    "106",
+    "Smith, Mona (msmith)"
+   ],
+   [
+    "64",
+    "Smi{th}, John (OESMFWQM)"
+   ],
+   [
+    "294",
+    "Snyder, Dean (dsnyder)"
+   ],
+   [
+    "11",
+    "Spohn, Jerry (jspohn)"
+   ],
+   [
+    "5",
+    "Stanton, Andrew (astanton)"
+   ],
+   [
+    "26",
+    "Stephenson, Tom (tstephen)"
+   ],
+   [
+    "223",
+    "Sweeney, Daniel (dsweeney)"
+   ],
+   [
+    "118",
+    "Synthetic TranID, Synthetic TranID (AFSDD1M0)"
+   ],
+   [
+    "34",
+    "Synthetic TranID 1, Synthetic TranID 1 (AFSDD3M0)"
+   ],
+   [
+    "35",
+    "Synthetic TranID 2, Synthetic TranID 2 (AFSDD3M1)"
+   ],
+   [
+    "300",
+    "Tammali, Naveen (ntammali)"
+   ],
+   [
+    "18",
+    "Taney, Bobby (artaney)"
+   ],
+   [
+    "150",
+    "Taney, Bobby (btaney)"
+   ],
+   [
+    "61",
+    "Tennessen, Jeff (n4bn4)"
+   ],
+   [
+    "109",
+    "Testing, Automated (AutoUser)"
+   ],
+   [
+    "17",
+    "Thaker, Shailesh (sthaker)"
+   ],
+   [
+    "113",
+    "Theibault, Kevin (AFSKCT)"
+   ],
+   [
+    "114",
+    "Theibault, Kevin (ktheibau)"
+   ],
+   [
+    "218",
+    "Totaro, Patty (ptotaro)"
+   ],
+   [
+    "212",
+    "Turner, Ray (rturner)"
+   ],
+   [
+    "153",
+    "UPD ProcessingID,, UPD ProcessingID, (afsd2upd)"
+   ],
+   [
+    "119",
+    "UPD ProcessingID, UPD ProcessingID (afsd1upd)"
+   ],
+   [
+    "10",
+    "UPD ProcessingID, UPD ProcessingID (afsd3upd)"
+   ],
+   [
+    "55",
+    "VA Account 1, VA Account 1 (AFSVA6)"
+   ],
+   [
+    "51",
+    "VA Account 1, VA Account 1 (AFSVV6)"
+   ],
+   [
+    "56",
+    "VA Account 2, VA Account 2 (AFSVA7)"
+   ],
+   [
+    "52",
+    "VA Account2, VA Account2 (AFSVV7)"
+   ],
+   [
+    "111",
+    "VA Account13, VA Account13 (AFSVA13)"
+   ],
+   [
+    "112",
+    "VA Account14, VA Account14 (AFSVA14)"
+   ],
+   [
+    "86",
+    "Valdes, Oscar (ovaldes)"
+   ],
+   [
+    "217",
+    "Varghese, Jancy (jvarghes)"
+   ],
+   [
+    "291",
+    "Viars, Tyler (tviars)"
+   ],
+   [
+    "87",
+    "Walker, Matthew (mwalker)"
+   ],
+   [
+    "57",
+    "Wambua, Charles (cwambua)"
+   ],
+   [
+    "20",
+    "Ward, Brian (bward)"
+   ],
+   [
+    "149",
+    "Web ServicesID, Web ServicesID (afsd1ws)"
+   ],
+   [
+    "154",
+    "WebServices ID, WebServices ID (afsd2ws)"
+   ],
+   [
+    "29",
+    "Web ServicesID, Web ServicesID (afsd3ws)"
+   ],
+   [
+    "33",
+    "Welsh, Jessica (jwelsh)"
+   ],
+   [
+    "279",
+    "Wentzel, Austin (awentzel)"
+   ],
+   [
+    "243",
+    "White, Thomas (twhite)"
+   ],
+   [
+    "19",
+    "Wise, Derrick (dwise)"
+   ],
+   [
+    "157",
+    "Young, Scott (syoung)"
+   ],
+   [
+    "69",
+    "ارفان, جامال (OWMMDJFU)"
+   ],
+   [
+    "75",
+    "الهازرد, ابدول (BPLBIGFP)"
+   ],
+   [
+    "73",
+    "الهازرد, ابدول (CEPGNPXV)"
+   ],
+   [
+    "70",
+    "الهازرد, ابدول (CQDKWSBD)"
+   ],
+   [
+    "79",
+    "الهازرد, ابدول (DMYHIKDN)"
+   ],
+   [
+    "82",
+    "الهازرد, ابدول (DTJDAQGE)"
+   ],
+   [
+    "77",
+    "الهازرد, ابدول (EOUBAJRQ)"
+   ],
+   [
+    "81",
+    "الهازرد, ابدول (GYWNVKIM)"
+   ],
+   [
+    "78",
+    "الهازرد, ابدول (HGRIVDYQ)"
+   ],
+   [
+    "76",
+    "الهازرد, ابدول (IRKYURIF)"
+   ],
+   [
+    "71",
+    "الهازرد, ابدول (PENAOQSS)"
+   ],
+   [
+    "74",
+    "الهازرد, ابدول (RPCIEXTK)"
+   ],
+   [
+    "72",
+    "الهازرد, ابدول (UIBCCCRS)"
+   ],
+   [
+    "80",
+    "الهازرد, ابدول (VHEXAKQS)"
+   ]
+  ]
+ }
+}

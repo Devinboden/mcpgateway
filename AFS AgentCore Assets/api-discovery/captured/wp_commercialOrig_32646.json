@@ -1,0 +1,2838 @@
+{
+ "oid": 9020000091710878,
+ "id": "32646",
+ "parties": [
+  {
+   "oid": 9020000091710893,
+   "xoid": "PTY1",
+   "names": [
+    {
+     "oid": 9020000091711331,
+     "primaryInd": true,
+     "fullName": "*Mickey Mouse Pizza",
+     "type": "1"
+    },
+    {
+     "oid": 9020000091711332,
+     "primaryInd": false
+    }
+   ],
+   "addresses": [
+    {
+     "oid": 9020000091711102,
+     "number": "8382",
+     "category": "1",
+     "categoryLit": "Primary Customer Address",
+     "cbAddressInd": "0",
+     "cbResidenceCode": "0",
+     "city": "Monroe",
+     "contactName": {
+      "oid": 9020000091711334,
+      "primaryInd": false,
+      "fullName": "*Mickey Mouse Pizza"
+     },
+     "country": "0",
+     "countryLit": "Not Entered",
+     "email": {
+      "oid": 9020000091711333,
+      "primaryInd": false
+     },
+     "primaryInd": true,
+     "recordCode": "0",
+     "state": "23",
+     "stateLit": "Michigan",
+     "street1": "5555 Test",
+     "timeZone": "0",
+     "timeZoneLit": "Not entered",
+     "type": "1",
+     "zip": "48117"
+    }
+   ],
+   "shortName": "Mickey Mouse Pi",
+   "obligors": [
+    {
+     "oid": 9020000091710929,
+     "xoid": "OBG1",
+     "obligorNumber": "1136",
+     "orgLevels": [
+      {
+       "oid": 9020000091711114,
+       "type": "1",
+       "value": "1100",
+       "valueLit": "*Eastern"
+      },
+      {
+       "oid": 9020000091711115,
+       "type": "2",
+       "value": "23",
+       "valueLit": "*Michigan"
+      },
+      {
+       "oid": 9020000091711116,
+       "type": "3"
+      },
+      {
+       "oid": 9020000091711117,
+       "type": "4"
+      },
+      {
+       "oid": 9020000091711118,
+       "type": "5"
+      },
+      {
+       "oid": 9020000091711119,
+       "type": "6"
+      },
+      {
+       "oid": 9020000091711120,
+       "type": "7"
+      },
+      {
+       "oid": 9020000091711121,
+       "type": "8"
+      },
+      {
+       "oid": 9020000091711112,
+       "type": "50",
+       "value": "1001500",
+       "valueLit": "*Commercial Lending- East"
+      },
+      {
+       "oid": 9020000091711113,
+       "type": "60",
+       "value": "1000",
+       "valueLit": "*Commercial Loan Services"
+      },
+      {
+       "oid": 9020000091711122,
+       "type": "201",
+       "value": "10111111",
+       "valueLit": "Mary*Jones"
+      },
+      {
+       "oid": 9020000091711123,
+       "type": "202"
+      },
+      {
+       "oid": 9020000091711124,
+       "type": "203"
+      },
+      {
+       "oid": 9020000091711125,
+       "type": "204"
+      },
+      {
+       "oid": 9020000091711126,
+       "type": "205"
+      },
+      {
+       "oid": 9020000091711127,
+       "type": "206"
+      },
+      {
+       "oid": 9020000091711128,
+       "type": "207"
+      },
+      {
+       "oid": 9020000091711129,
+       "type": "208"
+      },
+      {
+       "oid": 9020000091711130,
+       "type": "209"
+      },
+      {
+       "oid": 9020000091711131,
+       "type": "210"
+      }
+     ],
+     "fxInfo": {
+      "oid": 9020000091711108,
+      "currencyCategory": "1",
+      "currencyCategoryLit": "Currency Tier 1",
+      "currencyCode": "USD",
+      "currencyCodeLit": "United States Dollars",
+      "fxSettlemntLimitCur": "USD",
+      "profitLossItdCur": "USD",
+      "profitLossMtdCur": "USD",
+      "profitLossPtdCur": "USD",
+      "profitLossQtdCur": "USD",
+      "profitLossYtdCur": "USD",
+      "siteId": "1",
+      "siteIdLit": "Domestic"
+     },
+     "finStmt": {
+      "oid": 9020000091711109,
+      "finanStatmntFrequency": "0",
+      "stmtType": "0",
+      "stmtTypeLit": "Not Entered",
+      "suppressBilling": "0",
+      "suppressBillingLit": "No"
+     },
+     "geographicInfo": {
+      "oid": 9020000091711111,
+      "geographicInd": "0",
+      "geographicIndLit": "Not Entered"
+     },
+     "obgrAppls": [
+      {
+       "oid": 9020000091710991,
+       "appl": "1",
+       "asContTp": "0",
+       "asExpStrAmt": 0.0,
+       "asExpStrAmtCur": "USD",
+       "asExpStrCd": "0",
+       "bank": "5",
+       "colMon": "0",
+       "colTimes": "0",
+       "creditBureau": {
+        "oid": 9020000091711361,
+        "highestPrinBalAmtCur": "USD",
+        "pastDueAmtCur": "USD",
+        "ratingScore": 0
+       },
+       "currColSt": "0",
+       "ddaAmountCur": "USD",
+       "ddaBankTransitNumber": "0",
+       "federalReserveCode": "0",
+       "fxInfo": {
+        "oid": 9020000091711363,
+        "currencyCategory": "1",
+        "currencyCode": "USD",
+        "fxSettlemntLimitCur": "USD",
+        "profitLossItdCur": "USD",
+        "profitLossMtdCur": "USD",
+        "profitLossPtdCur": "USD",
+        "profitLossQtdCur": "USD",
+        "profitLossYtdCur": "USD",
+        "siteId": "1"
+       },
+       "naics": {
+        "oid": 9020000091711360,
+        "creditNaics": 0,
+        "naics": "0"
+       },
+       "nextStatementDtcalendarCode": 1,
+       "nextStatementDtfrequencyCode": 0,
+       "nextStatementDtincrement": 0,
+       "nextStatementDtlimitCode": 0,
+       "notepad": {
+        "oid": 9020000091711365,
+        "notepadId": "0"
+       },
+       "obgrNumber": "1136",
+       "obgrShortName": "Mickey Mouse Pi",
+       "obgrType": "120",
+       "objectStatus": "0",
+       "orgLevelPnter": "39353",
+       "orgLevels": [
+        {
+         "oid": 9020000091710960,
+         "value": "1100"
+        },
+        {
+         "oid": 9020000091710961,
+         "value": "23"
+        },
+        {
+         "oid": 9020000091710962,
+         "value": "0"
+        },
+        {
+         "oid": 9020000091710963,
+         "value": "0"
+        },
+        {
+         "oid": 9020000091710964,
+         "value": "0"
+        },
+        {
+         "oid": 9020000091710965,
+         "value": "0"
+        },
+        {
+         "oid": 9020000091710966,
+         "value": "0"
+        },
+        {
+         "oid": 9020000091710967,
+         "value": "0"
+        },
+        {
+         "oid": 9020000091710968,
+         "value": "2001500"
+        },
+        {
+         "oid": 9020000091710969,
+         "value": "1000"
+        },
+        {
+         "oid": 9020000091710970,
+         "value": "0"
+        },
+        {
+         "oid": 9020000091710971,
+         "value": "0"
+        },
+        {
+         "oid": 9020000091710972,
+         "value": "0"
+        },
+        {
+         "oid": 9020000091710973,
+         "value": "0"
+        },
+        {
+         "oid": 9020000091710974,
+         "value": "0"
+        },
+        {
+         "oid": 9020000091710975,
+         "value": "0"
+        },
+        {
+         "oid": 9020000091710976,
+         "value": "0"
+        },
+        {
+         "oid": 9020000091710977,
+         "value": "0"
+        },
+        {
+         "oid": 9020000091710978,
+         "value": "0"
+        },
+        {
+         "oid": 9020000091710979,
+         "value": "0"
+        }
+       ],
+       "prevColSt": "0",
+       "salesVolume": 0.0,
+       "salesVolumeCur": "USD",
+       "sicCode": "0",
+       "specialTypeInd": "0",
+       "stmtType": "0"
+      }
+     ],
+     "notes": {
+      "oid": 9020000091711367,
+      "listModified": false,
+      "noteHeaderId": 0
+     },
+     "riskRatingInfo": {
+      "oid": 9020000091711368,
+      "ratings": [
+       {
+        "oid": 9020000091711369,
+        "amountTotalCur": "USD",
+        "balType": "0",
+        "curTypeCur": "USD",
+        "pctAmtInd": "1",
+        "ratingDate": "2018-07-19",
+        "ratingFrequency": 0,
+        "reasonCode": "0",
+        "splitRatings": [
+         {
+          "oid": 9020000091711370,
+          "amount": 0.0,
+          "amountCur": "USD",
+          "percent": 100.0,
+          "priority": 1,
+          "rating": "0"
+         }
+        ],
+        "type": "10"
+       }
+      ]
+     },
+     "isEntityAcctInstructions": "N",
+     "isEntityAcctInstructionsLit": "No",
+     "isEntityWireInstructions": "N",
+     "isEntityWireInstructionsLit": "No",
+     "isEntityAcctNumberHistory": "N",
+     "isEntityAcctNumberHistoryLit": "No",
+     "isEntityKeyManagement": "N",
+     "isEntityKeyManagementLit": "No",
+     "isEntityRatingLossMetrics": "Y",
+     "isEntityRatingLossMetricsLit": "Yes",
+     "isEntityObligorScores": "N",
+     "isEntityObligorScoresLit": "No",
+     "isEntityTicklers": "N",
+     "isEntityTicklersLit": "No",
+     "isEntityUserNotes": "N",
+     "isEntityUserNotesLit": "No",
+     "bank": "5",
+     "bankAssociationCode": "0",
+     "bankAssociationCodeLit": "Not entered",
+     "bankTax": "0",
+     "bankTaxLit": "Not Entered",
+     "baseCurrCode": "USD",
+     "censusTract": 0.0,
+     "checkOption": "0",
+     "checkOptionLit": "Not Entered",
+     "collectStatus": "0",
+     "craBusinessType": "0",
+     "craBusinessTypeLit": "Not Entered",
+     "creditBureau": {
+      "oid": 9020000091711153,
+      "highestPrinBalAmtCur": "USD",
+      "pastDueAmtCur": "USD"
+     },
+     "dateOpened": "2021-02-16",
+     "disbursementTapeFormat": "0",
+     "disbursementTapeFormatLit": "Not entered",
+     "exposure": {
+      "oid": 9020000091711344,
+      "actual": {
+       "oid": 9020000091711345,
+       "currentAggregateCur": "USD",
+       "currentDirectCur": "USD",
+       "currentIndirectCur": "USD",
+       "currentNetAggregateCur": "USD",
+       "currentParticipatedDirectCur": "USD",
+       "futureAggregateCur": "USD",
+       "futureDirectCur": "USD",
+       "futureIndirectCur": "USD",
+       "futureNetAggregateCur": "USD",
+       "futureParticipatedDirectCur": "USD",
+       "totalAggregateCur": "USD",
+       "totalDirectCur": "USD",
+       "totalIndirectCur": "USD",
+       "totalNetAggregateCur": "USD",
+       "totalParticipatedDirectCur": "USD"
+      },
+      "baseEquiv": {
+       "oid": 9020000091711346,
+       "currentAggregateCur": "USD",
+       "currentDirectCur": "USD",
+       "currentIndirectCur": "USD",
+       "currentNetAggregateCur": "USD",
+       "currentParticipatedDirectCur": "USD",
+       "futureAggregateCur": "USD",
+       "futureDirectCur": "USD",
+       "futureIndirectCur": "USD",
+       "futureNetAggregateCur": "USD",
+       "futureParticipatedDirectCur": "USD",
+       "totalAggregateCur": "USD",
+       "totalDirectCur": "USD",
+       "totalIndirectCur": "USD",
+       "totalNetAggregateCur": "USD",
+       "totalParticipatedDirectCur": "USD"
+      }
+     },
+     "exposureSummary": {
+      "oid": 9020000091711147,
+      "currTypeCur": "USD",
+      "currTypeCurLit": "United States Dollars",
+      "totalAdjustmentsCur": "USD",
+      "totalAggregateDebtCur": "USD",
+      "totalCurrentDirectExposureCur": "USD",
+      "totalDebtExcludedCur": "USD",
+      "totalFutureDirectExposureCur": "USD",
+      "totalIndirectExposureCur": "USD",
+      "totalNewRequestCur": "USD",
+      "totalParticipatedExposureCur": "USD",
+      "totalRequestedCur": "USD"
+     },
+     "financialAnalysisSmry": {
+      "oid": 9020000091711349,
+      "incomeStmtSmrys": [
+       {
+        "oid": 9020000091711350,
+        "accountsReceivableCur": "USD",
+        "cashAndEquivalentCur": "USD",
+        "curtypeCur": "USD",
+        "ebtdaCur": "USD",
+        "netCashAfterOptCur": "USD",
+        "netProfitAfterTaxCur": "USD",
+        "otherLiabCur": "USD",
+        "realEstateDebtCur": "USD",
+        "realEstateOwnedCur": "USD",
+        "salesCur": "USD",
+        "totFixAssetsCur": "USD",
+        "totIntangiblesCur": "USD",
+        "totNetWorthCur": "USD",
+        "totNonCurrLiabCur": "USD",
+        "totalAssetsCur": "USD",
+        "totalCurrentAssetsCur": "USD",
+        "totalCurrentLiabilitiesCur": "USD"
+       },
+       {
+        "oid": 9020000091711351,
+        "accountsReceivableCur": "USD",
+        "cashAndEquivalentCur": "USD",
+        "curtypeCur": "USD",
+        "ebtdaCur": "USD",
+        "netCashAfterOptCur": "USD",
+        "netProfitAfterTaxCur": "USD",
+        "otherLiabCur": "USD",
+        "realEstateDebtCur": "USD",
+        "realEstateOwnedCur": "USD",
+        "salesCur": "USD",
+        "totFixAssetsCur": "USD",
+        "totIntangiblesCur": "USD",
+        "totNetWorthCur": "USD",
+        "totNonCurrLiabCur": "USD",
+        "totalAssetsCur": "USD",
+        "totalCurrentAssetsCur": "USD",
+        "totalCurrentLiabilitiesCur": "USD"
+       },
+       {
+        "oid": 9020000091711352,
+        "accountsReceivableCur": "USD",
+        "cashAndEquivalentCur": "USD",
+        "curtypeCur": "USD",
+        "ebtdaCur": "USD",
+        "netCashAfterOptCur": "USD",
+        "netProfitAfterTaxCur": "USD",
+        "otherLiabCur": "USD",
+        "realEstateDebtCur": "USD",
+        "realEstateOwnedCur": "USD",
+        "salesCur": "USD",
+        "totFixAssetsCur": "USD",
+        "totIntangiblesCur": "USD",
+        "totNetWorthCur": "USD",
+        "totNonCurrLiabCur": "USD",
+        "totalAssetsCur": "USD",
+        "totalCurrentAssetsCur": "USD",
+        "totalCurrentLiabilitiesCur": "USD"
+       },
+       {
+        "oid": 9020000091711353,
+        "accountsReceivableCur": "USD",
+        "cashAndEquivalentCur": "USD",
+        "curtypeCur": "USD",
+        "ebtdaCur": "USD",
+        "netCashAfterOptCur": "USD",
+        "netProfitAfterTaxCur": "USD",
+        "otherLiabCur": "USD",
+        "realEstateDebtCur": "USD",
+        "realEstateOwnedCur": "USD",
+        "salesCur": "USD",
+        "totFixAssetsCur": "USD",
+        "totIntangiblesCur": "USD",
+        "totNetWorthCur": "USD",
+        "totNonCurrLiabCur": "USD",
+        "totalAssetsCur": "USD",
+        "totalCurrentAssetsCur": "USD",
+        "totalCurrentLiabilitiesCur": "USD"
+       }
+      ]
+     },
+     "highRiskInd": "0",
+     "highRiskIndLit": "No",
+     "highlyLeveragedTran": "0",
+     "highlyLeveragedTranLit": "Not Entered",
+     "ilmId": "8093",
+     "income": 0.0,
+     "incomeCur": "USD",
+     "nextStatementDtcalendarCode": 1,
+     "nextStatementDtcalendarCodeLit": "*American Calendar",
+     "nextStatementDtincrement": 0,
+     "notepad": {
+      "oid": 9020000091711347,
+      "notepadId": "0"
+     },
+     "obgrTax": "0",
+     "obgrTaxLit": "Not Entered",
+     "obgrTotal": {
+      "oid": 9020000091711336,
+      "commitmentBalance": 15849995.0,
+      "commitmentBalanceCur": "USD",
+      "currencyCode": "USD",
+      "currentInsuredCur": "USD",
+      "currentOutstanding": 3049995.0,
+      "currentOutstandingCur": "USD",
+      "currentSecuredCur": "USD",
+      "currentUnsecuredCur": "USD",
+      "feesOutstanding": 0.0,
+      "feesOutstandingCur": "USD",
+      "grossBookBalanceCur": "USD",
+      "interestOutstanding": 257594.29,
+      "interestOutstandingCur": "USD",
+      "lateChargesOutstanding": 0.0,
+      "lateChargesOutstandingCur": "USD",
+      "netBookBalanceCur": "USD",
+      "originalCommitment": 2000000.0,
+      "originalCommitmentCur": "USD",
+      "unusedBalance": 10450000.0,
+      "unusedBalanceCur": "USD"
+     },
+     "objectStatus": "2",
+     "obligations": [
+      {
+       "oid": 9020000091710993
+      },
+      {
+       "oid": 9020000091711037
+      }
+     ],
+     "obligorCFData": [
+      {
+       "oid": 9020000091711132,
+       "id": "@BCI001",
+       "valueCur": "USD"
+      }
+     ],
+     "oldObgrNumber": "0",
+     "orgLvlPntr": "39348",
+     "ownedObligations": [
+      {
+       "oid": 9020000091711393
+      },
+      {
+       "oid": 9020000091711422
+      }
+     ],
+     "party": {
+      "oid": 9020000091710893
+     },
+     "performExposure": "Y",
+     "performExposureLit": "Yes",
+     "portfolioTrackingCd": "0",
+     "portfolioTrackingCdLit": "Not Entered",
+     "regOInd": "0",
+     "regOIndLit": "Not Entered",
+     "regWInd": "0",
+     "regWIndLit": "Not Entered",
+     "salesVolume": 0.0,
+     "salesVolumeCur": "USD",
+     "shortName": "Mickey Mouse Pi",
+     "smsaCode": 0,
+     "smsaCodeLit": "Not Entered",
+     "specialPurposeEntryFlg": "0",
+     "specialPurposeEntryFlgLit": "No",
+     "statusCode": "0",
+     "statusCodeLit": "Not Entered",
+     "stockExchange": "0",
+     "stockExchangeLit": "Not Entered",
+     "type": "120",
+     "typeLit": "Limited Liability Company",
+     "userField1": "0",
+     "wasHdmaCompliant": true
+    }
+   ],
+   "extSystemInfo": {
+    "oid": 9020000091711372,
+    "relationshipName": "test"
+   },
+   "taxId": "089898989",
+   "gender": "0",
+   "genderLit": "Not Entered",
+   "race1": "0",
+   "race1Lit": "Not Entered",
+   "race2": "0",
+   "race2Lit": "Not Entered",
+   "race3": "0",
+   "race3Lit": "Not Entered",
+   "race4": "0",
+   "race4Lit": "Not Entered",
+   "race5": "0",
+   "race5Lit": "Not Entered",
+   "privacyCode": "0",
+   "privacyCodeLit": "No",
+   "languageId": "0",
+   "languageIdLit": "Not Entered",
+   "classCode": "0",
+   "classCodeLit": "Not Entered",
+   "contactName": {
+    "oid": 9020000091711332
+   },
+   "dunsNumber": "0",
+   "wireEnabledInd": false,
+   "additionalInfo": {
+    "oid": 9020000091711105,
+    "actServiceMbr": "0",
+    "actServiceMbrLit": "No",
+    "covenantSup": "0",
+    "covenantSupLit": "No",
+    "infoSharingOptIn": "0",
+    "infoSharingOptInLit": "No",
+    "marketAffilOptIn": "0",
+    "marketAffilOptInLit": "No",
+    "screenedResult": "0"
+   },
+   "citizenship": {
+    "oid": 9020000091711103,
+    "assetSize": 0.0,
+    "assetSizeCur": "USD",
+    "checkFrequencycalendarCode": 1,
+    "checkFrequencycalendarCodeLit": "*American Calendar",
+    "checkFrequencyfrequencyCode": 0,
+    "checkFrequencyfrequencyCodeLit": "Not entered",
+    "checkFrequencyincrement": 0,
+    "checkFrequencylimitCode": 0,
+    "checkFrequencylimitCodeLit": "Not entered",
+    "checkResult": "0",
+    "checkResultLit": "Not Entered",
+    "country": "0",
+    "countryLit": "Not Entered",
+    "sourceChecked": "0",
+    "sourceCheckedLit": "Not Entered",
+    "state": "0",
+    "stateLit": "Not Entered",
+    "tinType": "0",
+    "tinTypeLit": "Not Entered",
+    "usCitizenInd": "0",
+    "usCitizenIndLit": "Not Entered"
+   },
+   "orgLevels": [
+    {
+     "oid": 9020000091710897,
+     "value": "1100",
+     "valueLit": "*Eastern"
+    },
+    {
+     "oid": 9020000091710898,
+     "value": "23",
+     "valueLit": "*Michigan"
+    },
+    {
+     "oid": 9020000091710905,
+     "value": "1001500",
+     "valueLit": "*Commercial Lending- East"
+    },
+    {
+     "oid": 9020000091710906,
+     "value": "1000",
+     "valueLit": "*Commercial Loan Services"
+    },
+    {
+     "oid": 9020000091710907,
+     "value": "10111111",
+     "valueLit": "Mary*Jones"
+    }
+   ],
+   "emails": [
+    {
+     "oid": 9020000091711374,
+     "primaryInd": true
+    }
+   ],
+   "salesVolume": 0.0,
+   "salesVolumeCur": "USD",
+   "notes": {
+    "oid": 9020000091711376,
+    "listModified": false,
+    "noteHeaderId": 0
+   },
+   "isCustomerAlternateAddress": "N",
+   "isCustomerAlternateAddressLit": "No",
+   "isCustomerAlternateContacts": "N",
+   "isCustomerAlternateContactsLit": "No",
+   "isCustomerRelManagement": "N",
+   "isCustomerRelManagementLit": "No",
+   "isCustomerAcctInstructions": "N",
+   "isCustomerAcctInstructionsLit": "No",
+   "isCustomerWireInstructions": "N",
+   "isCustomerWireInstructionsLit": "No",
+   "isCustomerPayFrequency": "N",
+   "isCustomerPayFrequencyLit": "No",
+   "isCustomerServicerAuthNumber": "N",
+   "isCustomerServicerAuthNumberLit": "No",
+   "isCustomerUserNotes": "N",
+   "isCustomerUserNotesLit": "No",
+   "isCustomerOrgLevelsReq": "Y",
+   "isCustomerOrgLevelsReqLit": "Yes",
+   "billingAddresses": [
+    {
+     "oid": 9020000091711102
+    }
+   ],
+   "customerCFData": [
+    {
+     "oid": 9020000091711107,
+     "id": "@NAM002",
+     "valueCur": "USD"
+    }
+   ],
+   "customerComplianceInfo": {
+    "oid": 9020000091711142,
+    "personalIncomeCur": "USD"
+   },
+   "dateOpened": "2021-02-16",
+   "definition": "0",
+   "exposure": {
+    "oid": 9020000091711320,
+    "baseEquiv": {
+     "oid": 9020000091711321,
+     "currentAggregateCur": "USD",
+     "currentDirectCur": "USD",
+     "currentIndirectCur": "USD",
+     "currentNetAggregateCur": "USD",
+     "currentParticipatedDirectCur": "USD",
+     "futureAggregateCur": "USD",
+     "futureDirectCur": "USD",
+     "futureIndirectCur": "USD",
+     "futureNetAggregateCur": "USD",
+     "futureParticipatedDirectCur": "USD",
+     "totalAggregateCur": "USD",
+     "totalDirectCur": "USD",
+     "totalIndirectCur": "USD",
+     "totalNetAggregateCur": "USD",
+     "totalParticipatedDirectCur": "USD"
+    }
+   },
+   "exposureSummary": {
+    "oid": 9020000091711149,
+    "currTypeCur": "USD",
+    "currTypeCurLit": "United States Dollars",
+    "totalAdjustmentsCur": "USD",
+    "totalAggregateDebtCur": "USD",
+    "totalCurrentDirectExposureCur": "USD",
+    "totalDebtExcludedCur": "USD",
+    "totalFutureDirectExposureCur": "USD",
+    "totalIndirectExposureCur": "USD",
+    "totalNewRequestCur": "USD",
+    "totalParticipatedExposureCur": "USD",
+    "totalRequestedCur": "USD"
+   },
+   "ilmId": "8093",
+   "notepad": {
+    "oid": 9020000091711322,
+    "notepadId": "0"
+   },
+   "objectStatus": "0",
+   "obligorEnabled": "1",
+   "obligorRequired": "Y",
+   "obligorRequiredLit": "Yes",
+   "orgId": "1",
+   "percentOwnership": 0.0,
+   "performExposure": "Y",
+   "primaryId": "8093",
+   "primaryName": "Mickey Mouse Pizza",
+   "roleId": "0",
+   "searchName": "MICKEY MOUSE PIZZA",
+   "type": "1"
+  }
+ ],
+ "deal": {
+  "oid": 9020000091710881,
+  "requests": [
+   {
+    "oid": 9020000091710992,
+    "xoid": "REQ1",
+    "type": "NA",
+    "typeLit": "New Approval",
+    "borrower": {
+     "oid": 9020000091710929
+    },
+    "amountCur": "USD",
+    "product": {
+     "oid": 9020000091711133,
+     "productStructure": "F",
+     "productStructureLit": "Commitment",
+     "code": "200",
+     "codeLit": "AFS products"
+    },
+    "application": "1",
+    "applicationLit": "*Commercial Loan",
+    "includeEscrow": "N",
+    "obligations": [
+     {
+      "oid": 9020000091710993,
+      "xoid": "OBL1",
+      "owners": [
+       {
+        "oid": 9020000091711393,
+        "isPrimaryOwner": true,
+        "obligation": {
+         "oid": 9020000091710993
+        },
+        "owner": {
+         "oid": 9020000091710929
+        }
+       }
+      ],
+      "orgLevels": [
+       {
+        "oid": 9020000091711015,
+        "value": "1100"
+       },
+       {
+        "oid": 9020000091711016,
+        "value": "23"
+       },
+       {
+        "oid": 9020000091711017,
+        "value": "0"
+       },
+       {
+        "oid": 9020000091711023,
+        "value": "1001500"
+       },
+       {
+        "oid": 9020000091711024,
+        "value": "1000"
+       },
+       {
+        "oid": 9020000091711025,
+        "value": "10111111"
+       },
+       {
+        "oid": 9020000091711026,
+        "value": "0"
+       }
+      ],
+      "effectiveDate": "2024-06-12",
+      "OrigBalanceCur": "USD",
+      "SBAInfo": {
+       "oid": 9020000091711398,
+       "approvalAmountCur": "USD",
+       "approvalOfficeParty": {
+        "oid": 9020000091711399,
+        "names": [
+         {
+          "oid": 9020000091711400,
+          "primaryInd": true
+         }
+        ],
+        "addresses": [
+         {
+          "oid": 9020000091711401,
+          "email": {
+           "oid": 9020000091711402,
+           "primaryInd": false
+          },
+          "primaryInd": true
+         }
+        ],
+        "wireEnabledInd": false,
+        "salesVolumeCur": "USD"
+       }
+      },
+      "actualLTV": 0.0,
+      "adjustmentCur": "USD",
+      "autoWaiveOverPaymentCur": "USD",
+      "autoWaiveShortPaymentCur": "USD",
+      "availableBalanceCur": "USD",
+      "borrowingBaseCur": "USD",
+      "capReserveValueCur": "USD",
+      "collAvailabilityCur": "USD",
+      "collValueCur": "USD",
+      "commitmentBalanceCur": "USD",
+      "commitmentLevel": "H",
+      "cpRefreshInd": false,
+      "currentInfo": {
+       "oid": 9020000091711397,
+       "curBalCur": "USD",
+       "curBalEqvCur": "USD",
+       "curCloseAmtCur": "USD",
+       "curCloseTolerAmtCur": "USD",
+       "finCloseWvAmtCur": "USD",
+       "marketValueCur": "USD",
+       "matTolerAmtCur": "USD",
+       "orgCurBalEqvCur": "USD",
+       "orgOrgCurBalEqvCur": "USD",
+       "origCurBalCur": "USD",
+       "origOrgDicAmtCur": "USD",
+       "origOrgDscAmEqvCur": "USD",
+       "origOrigCurBalCur": "USD",
+       "prinBldNotPdCur": "USD",
+       "prinPastDueCur": "USD",
+       "prinPdNotBldCur": "USD",
+       "totCapAmtCur": "USD",
+       "valuationAllowCur": "USD",
+       "valuationAmtCur": "USD"
+      },
+      "currentOutstandingCur": "USD",
+      "futureInfo": {
+       "oid": 9020000091711395,
+       "availabilityCur": "USD",
+       "availabilityEqvCur": "USD",
+       "comtBal": 2000000.0,
+       "comtBalCur": "USD",
+       "comtBalEqvCur": "USD",
+       "orgOrgComtBalEqvCur": "USD",
+       "origComtBalCur": "USD",
+       "origComtBalEqvCur": "USD",
+       "origOrigComtBalCur": "USD",
+       "unusedComtBalCur": "USD",
+       "unusedComtBalEqvCur": "USD",
+       "usedComtBalCur": "USD",
+       "usedComtBalEqvCur": "USD"
+      },
+      "highLevelTakeDown": false,
+      "incomeCur": "USD",
+      "legalMaturityDate": "2029-06-12",
+      "letterCreditType": "N",
+      "maturityInd": "1",
+      "modifyReqRow": false,
+      "newBalanceCur": "USD",
+      "obligationType": "3040",
+      "oblnCategory": "F",
+      "originalLTV": 0.0,
+      "partBought": {
+       "oid": 9020000091711394,
+       "soldAmtCur": "USD",
+       "swinglineAvailBalCur": "USD",
+       "swinglineCommitBalCur": "USD"
+      },
+      "productCode": "200",
+      "reallocationAmtCur": "USD",
+      "reallocationInd": false,
+      "recordkeepingData": {
+       "oid": 9020000091711403,
+       "cashEqutyB4BankfundngCur": "USD",
+       "deferredEquityCur": "USD",
+       "frontedExposureCur": "USD",
+       "globalcommitmentCur": "USD",
+       "lcCapAmountCur": "USD",
+       "permanentCashInjectdCur": "USD",
+       "totalyEquityRequiredCur": "USD"
+      },
+      "regulatoryData": {
+       "oid": 9020000091711404,
+       "fairAdjCommitDrawnCur": "USD",
+       "fairAdjCommitExpoCur": "USD"
+      },
+      "remianingReallocationAmtCur": "USD",
+      "renModExtendInd": false,
+      "securedCode": "1",
+      "shortName": "Term Loan",
+      "takeDownRow": false,
+      "title": "Highest Level",
+      "totalBalanceAmountCur": "USD"
+     }
+    ],
+    "partSyncInd": "N",
+    "partSyncIndLit": "No",
+    "syndiPartType": "R",
+    "actualLTV": 0.0,
+    "cashEqutyB4BankfundngCur": "USD",
+    "commitmentBalanceCur": "USD",
+    "currentOutstandingCur": "USD",
+    "deferredEquityCur": "USD",
+    "earlyDecision": false,
+    "effectiveDate": "2024-06-12",
+    "hasAccessSyndiDl": false,
+    "initialApplAmtCur": "USD",
+    "isSBAObgn": "N",
+    "isSBAObgnLit": "No",
+    "legalMaturityDate": "2029-06-12",
+    "maturityInd": "1",
+    "naicsCode": "0",
+    "orgLevels": [
+     {
+      "oid": 9020000091711002,
+      "value": "1001500",
+      "valueLit": "*Commercial Lending- East"
+     },
+     {
+      "oid": 9020000091711003,
+      "value": "1000",
+      "valueLit": "*Commercial Loan Services"
+     },
+     {
+      "oid": 9020000091711004,
+      "value": "10111111",
+      "valueLit": "Mary*Jones"
+     }
+    ],
+    "origData": {
+     "oid": 9020000091711135,
+     "advisedGuideType": "A",
+     "obligationType": "3040",
+     "revolvingType": "N",
+     "revolvingTypeLit": "Non-Revolving",
+     "securedCode": "1"
+    },
+    "originalLTV": 0.0,
+    "permanentCashInjectdCur": "USD",
+    "reqObligation": {
+     "oid": 9020000091711380,
+     "OrigBalanceCur": "USD",
+     "adjustmentCur": "USD",
+     "autoWaiveOverPaymentCur": "USD",
+     "autoWaiveShortPaymentCur": "USD",
+     "availableBalanceCur": "USD",
+     "borrowingBaseCur": "USD",
+     "capReserveValueCur": "USD",
+     "collAvailabilityCur": "USD",
+     "collValueCur": "USD",
+     "commitmentBalanceCur": "USD",
+     "cpRefreshInd": false,
+     "currentOutstandingCur": "USD",
+     "highLevelTakeDown": false,
+     "incomeCur": "USD",
+     "modifyReqRow": false,
+     "newBalanceCur": "USD",
+     "reallocationAmtCur": "USD",
+     "reallocationInd": false,
+     "remianingReallocationAmtCur": "USD",
+     "renModExtendInd": false,
+     "takeDownRow": false,
+     "totalBalanceAmountCur": "USD"
+    },
+    "requestCompliance": {
+     "oid": 9020000091711144,
+     "discountPointsCur": "USD",
+     "lenderCreditsCur": "USD",
+     "originationChargesCur": "USD",
+     "recordId": 2,
+     "totalLoanCostsCur": "USD",
+     "totalLoanPointNFeesCur": "USD"
+    },
+    "sourcestage": "applicationStage",
+    "title": "New Approval",
+    "totalyEquityRequiredCur": "USD"
+   },
+   {
+    "oid": 9020000091711036,
+    "xoid": "REQ2",
+    "type": "NA",
+    "typeLit": "New Approval",
+    "borrower": {
+     "oid": 9020000091710929
+    },
+    "amountCur": "USD",
+    "product": {
+     "oid": 9020000091711134,
+     "productStructure": "F",
+     "productStructureLit": "Commitment",
+     "code": "200",
+     "codeLit": "AFS products"
+    },
+    "application": "1",
+    "applicationLit": "*Commercial Loan",
+    "includeEscrow": "N",
+    "obligations": [
+     {
+      "oid": 9020000091711037,
+      "xoid": "OBL2",
+      "owners": [
+       {
+        "oid": 9020000091711422,
+        "isPrimaryOwner": true,
+        "obligation": {
+         "oid": 9020000091711037
+        },
+        "owner": {
+         "oid": 9020000091710929
+        }
+       }
+      ],
+      "orgLevels": [
+       {
+        "oid": 9020000091711059,
+        "value": "1100"
+       },
+       {
+        "oid": 9020000091711060,
+        "value": "23"
+       },
+       {
+        "oid": 9020000091711061,
+        "value": "0"
+       },
+       {
+        "oid": 9020000091711067,
+        "value": "1001500"
+       },
+       {
+        "oid": 9020000091711068,
+        "value": "1000"
+       },
+       {
+        "oid": 9020000091711069,
+        "value": "10111111"
+       },
+       {
+        "oid": 9020000091711070,
+        "value": "0"
+       }
+      ],
+      "effectiveDate": "2024-06-12",
+      "OrigBalanceCur": "USD",
+      "SBAInfo": {
+       "oid": 9020000091711427,
+       "approvalAmountCur": "USD",
+       "approvalOfficeParty": {
+        "oid": 9020000091711428,
+        "names": [
+         {
+          "oid": 9020000091711429,
+          "primaryInd": true
+         }
+        ],
+        "addresses": [
+         {
+          "oid": 9020000091711430,
+          "email": {
+           "oid": 9020000091711431,
+           "primaryInd": false
+          },
+          "primaryInd": true
+         }
+        ],
+        "wireEnabledInd": false,
+        "salesVolumeCur": "USD"
+       }
+      },
+      "actualLTV": 0.0,
+      "adjustmentCur": "USD",
+      "autoWaiveOverPaymentCur": "USD",
+      "autoWaiveShortPaymentCur": "USD",
+      "availableBalanceCur": "USD",
+      "borrowingBaseCur": "USD",
+      "capReserveValueCur": "USD",
+      "collAvailabilityCur": "USD",
+      "collValueCur": "USD",
+      "commitmentBalanceCur": "USD",
+      "commitmentLevel": "H",
+      "cpRefreshInd": false,
+      "currentInfo": {
+       "oid": 9020000091711426,
+       "curBalCur": "USD",
+       "curBalEqvCur": "USD",
+       "curCloseAmtCur": "USD",
+       "curCloseTolerAmtCur": "USD",
+       "finCloseWvAmtCur": "USD",
+       "marketValueCur": "USD",
+       "matTolerAmtCur": "USD",
+       "orgCurBalEqvCur": "USD",
+       "orgOrgCurBalEqvCur": "USD",
+       "origCurBalCur": "USD",
+       "origOrgDicAmtCur": "USD",
+       "origOrgDscAmEqvCur": "USD",
+       "origOrigCurBalCur": "USD",
+       "prinBldNotPdCur": "USD",
+       "prinPastDueCur": "USD",
+       "prinPdNotBldCur": "USD",
+       "totCapAmtCur": "USD",
+       "valuationAllowCur": "USD",
+       "valuationAmtCur": "USD"
+      },
+      "currentOutstandingCur": "USD",
+      "futureInfo": {
+       "oid": 9020000091711424,
+       "availabilityCur": "USD",
+       "availabilityEqvCur": "USD",
+       "comtBal": 3000000.0,
+       "comtBalCur": "USD",
+       "comtBalEqvCur": "USD",
+       "orgOrgComtBalEqvCur": "USD",
+       "origComtBalCur": "USD",
+       "origComtBalEqvCur": "USD",
+       "origOrigComtBalCur": "USD",
+       "unusedComtBalCur": "USD",
+       "unusedComtBalEqvCur": "USD",
+       "usedComtBalCur": "USD",
+       "usedComtBalEqvCur": "USD"
+      },
+      "highLevelTakeDown": false,
+      "incomeCur": "USD",
+      "legalMaturityDate": "2029-06-12",
+      "letterCreditType": "N",
+      "maturityInd": "1",
+      "modifyReqRow": false,
+      "newBalanceCur": "USD",
+      "obligationType": "3040",
+      "oblnCategory": "F",
+      "originalLTV": 0.0,
+      "partBought": {
+       "oid": 9020000091711423,
+       "soldAmtCur": "USD",
+       "swinglineAvailBalCur": "USD",
+       "swinglineCommitBalCur": "USD"
+      },
+      "productCode": "200",
+      "reallocationAmtCur": "USD",
+      "reallocationInd": false,
+      "recordkeepingData": {
+       "oid": 9020000091711432,
+       "cashEqutyB4BankfundngCur": "USD",
+       "deferredEquityCur": "USD",
+       "frontedExposureCur": "USD",
+       "globalcommitmentCur": "USD",
+       "lcCapAmountCur": "USD",
+       "permanentCashInjectdCur": "USD",
+       "totalyEquityRequiredCur": "USD"
+      },
+      "regulatoryData": {
+       "oid": 9020000091711433,
+       "fairAdjCommitDrawnCur": "USD",
+       "fairAdjCommitExpoCur": "USD"
+      },
+      "remianingReallocationAmtCur": "USD",
+      "renModExtendInd": false,
+      "securedCode": "1",
+      "shortName": "Revolving LOC",
+      "takeDownRow": false,
+      "title": "Highest Level",
+      "totalBalanceAmountCur": "USD"
+     }
+    ],
+    "partSyncInd": "N",
+    "partSyncIndLit": "No",
+    "syndiPartType": "R",
+    "actualLTV": 0.0,
+    "cashEqutyB4BankfundngCur": "USD",
+    "commitmentBalanceCur": "USD",
+    "currentOutstandingCur": "USD",
+    "deferredEquityCur": "USD",
+    "earlyDecision": false,
+    "effectiveDate": "2024-06-12",
+    "hasAccessSyndiDl": false,
+    "initialApplAmtCur": "USD",
+    "isSBAObgn": "N",
+    "isSBAObgnLit": "No",
+    "legalMaturityDate": "2029-06-12",
+    "maturityInd": "1",
+    "naicsCode": "0",
+    "orgLevels": [
+     {
+      "oid": 9020000091711046,
+      "value": "1001500",
+      "valueLit": "*Commercial Lending- East"
+     },
+     {
+      "oid": 9020000091711047,
+      "value": "1000",
+      "valueLit": "*Commercial Loan Services"
+     },
+     {
+      "oid": 9020000091711048,
+      "value": "10111111",
+      "valueLit": "Mary*Jones"
+     }
+    ],
+    "origData": {
+     "oid": 9020000091711136,
+     "advisedGuideType": "A",
+     "obligationType": "3040",
+     "revolvingType": "R",
+     "revolvingTypeLit": "Revolving",
+     "securedCode": "1"
+    },
+    "originalLTV": 0.0,
+    "permanentCashInjectdCur": "USD",
+    "reqObligation": {
+     "oid": 9020000091711409,
+     "OrigBalanceCur": "USD",
+     "adjustmentCur": "USD",
+     "autoWaiveOverPaymentCur": "USD",
+     "autoWaiveShortPaymentCur": "USD",
+     "availableBalanceCur": "USD",
+     "borrowingBaseCur": "USD",
+     "capReserveValueCur": "USD",
+     "collAvailabilityCur": "USD",
+     "collValueCur": "USD",
+     "commitmentBalanceCur": "USD",
+     "cpRefreshInd": false,
+     "currentOutstandingCur": "USD",
+     "highLevelTakeDown": false,
+     "incomeCur": "USD",
+     "modifyReqRow": false,
+     "newBalanceCur": "USD",
+     "reallocationAmtCur": "USD",
+     "reallocationInd": false,
+     "remianingReallocationAmtCur": "USD",
+     "renModExtendInd": false,
+     "takeDownRow": false,
+     "totalBalanceAmountCur": "USD"
+    },
+    "requestCompliance": {
+     "oid": 9020000091711145,
+     "discountPointsCur": "USD",
+     "lenderCreditsCur": "USD",
+     "originationChargesCur": "USD",
+     "recordId": 2,
+     "totalLoanCostsCur": "USD",
+     "totalLoanPointNFeesCur": "USD"
+    },
+    "sourcestage": "applicationStage",
+    "title": "New Approval",
+    "totalyEquityRequiredCur": "USD"
+   }
+  ],
+  "applicationCollected": "Y",
+  "applicationCollectedLit": "Yes",
+  "custExpCurrCode": "USD",
+  "custExpCurrCodeLit": "United States Dollars",
+  "exposureSummary": {
+   "oid": 9020000091711151,
+   "currTypeCur": "USD",
+   "currTypeCurLit": "United States Dollars",
+   "totalAdjustmentsCur": "USD",
+   "totalAggregateDebtCur": "USD",
+   "totalCurrentDirectExposureCur": "USD",
+   "totalDebtExcludedCur": "USD",
+   "totalFutureDirectExposureCur": "USD",
+   "totalIndirectExposureCur": "USD",
+   "totalNewRequestCur": "USD",
+   "totalParticipatedExposureCur": "USD",
+   "totalRequestedCur": "USD"
+  }
+ },
+ "currentWPEntries": [
+  {
+   "oid": 9020000091711316,
+   "custIlmId": "8093",
+   "customerName": "*Mickey Mouse Pizza",
+   "description": "Origination — API staged (1136)",
+   "obligorBank": "5",
+   "obligorNumber": "1136",
+   "originatedDt": "2026-06-12T15:51:32.697+0000",
+   "originatorOid": 36,
+   "qualifierId": 9020000091710993,
+   "rootType": 57,
+   "stage": "oip",
+   "stageId": 25,
+   "wfType": 5701,
+   "wpId": "32646"
+  },
+  {
+   "oid": 9020000091711317,
+   "custIlmId": "8093",
+   "customerName": "*Mickey Mouse Pizza",
+   "description": "Origination — API staged (1136)",
+   "obligorBank": "5",
+   "obligorNumber": "1136",
+   "originatedDt": "2026-06-12T15:51:32.697+0000",
+   "originatorOid": 36,
+   "qualifierId": 9020000091711037,
+   "rootType": 57,
+   "stage": "oip",
+   "stageId": 25,
+   "wfType": 5701,
+   "wpId": "32646"
+  }
+ ],
+ "relatedWorkpackages": [
+  {
+   "custIlmId": "8093",
+   "customerName": "*Mickey Mouse Pizza",
+   "description": "Post Approval",
+   "fcltyTopLvlOblgtnKeys": [
+    {
+     "value": "8093~5~1136~"
+    }
+   ],
+   "obligationKeys": [
+    {
+     "value": "8093~5~1136~~75"
+    }
+   ],
+   "obligationNumber": "75",
+   "obligorBank": "5",
+   "obligorKeys": [
+    {
+     "value": "8093~5~1136"
+    },
+    {
+     "value": "8093~5~1136"
+    },
+    {
+     "value": "8093~5~1136"
+    }
+   ],
+   "obligorNumber": "1136",
+   "originatedDt": "2021-05-19T22:36:08.503+0000",
+   "originatorOid": 42,
+   "qualifierId": 9020000004247221,
+   "relationshipType": "Obligor",
+   "rootType": 57,
+   "stage": "oip",
+   "stageId": 5,
+   "wfType": 5702,
+   "workpackageOid": 9020000004246729,
+   "wpId": "730"
+  },
+  {
+   "custIlmId": "8093",
+   "customerName": "*Mickey Mouse Pizza",
+   "description": "Payments",
+   "fcltyTopLvlOblgtnKeys": [
+    {
+     "value": "8093~5~1136~59"
+    }
+   ],
+   "fcltyTopLvlOblgtnNumber": "59",
+   "obligationKeys": [
+    {
+     "value": "8093~5~1136~59~59"
+    }
+   ],
+   "obligationNumber": "59",
+   "obligorBank": "5",
+   "obligorKeys": [
+    {
+     "value": "8093~5~1136"
+    },
+    {
+     "value": "8093~5~1136"
+    },
+    {
+     "value": "8093~5~1136"
+    }
+   ],
+   "obligorNumber": "1136",
+   "originatedDt": "2021-05-19T14:54:25.578+0000",
+   "originatorOid": 44,
+   "qualifierId": 9020000004233293,
+   "relationshipType": "Obligor",
+   "rootType": 146,
+   "stage": "oip",
+   "stageId": 14,
+   "wfType": 14611,
+   "workpackageOid": 9020000004233074,
+   "wpId": "716"
+  },
+  {
+   "custIlmId": "8093",
+   "customerName": "*Mickey Mouse Pizza",
+   "description": "Post Approval",
+   "fcltyTopLvlOblgtnKeys": [
+    {
+     "value": "8093~5~1136~"
+    }
+   ],
+   "fcltyTopLvlOblgtnNumber": "",
+   "obligationKeys": [
+    {
+     "value": "8093~5~1136~~"
+    }
+   ],
+   "obligationNumber": "",
+   "obligorBank": "5",
+   "obligorKeys": [
+    {
+     "value": "8093~5~1136"
+    },
+    {
+     "value": "8093~5~1136"
+    },
+    {
+     "value": "8093~5~1136"
+    },
+    {
+     "value": "8093~5~1136"
+    },
+    {
+     "value": "8093~5~1136"
+    }
+   ],
+   "obligorNumber": "1136",
+   "originatedDt": "2021-05-19T14:03:53.163+0000",
+   "originatorOid": 44,
+   "qualifierId": 9020000004226822,
+   "relationshipType": "Obligor",
+   "rootType": 57,
+   "stage": "oip",
+   "stageId": 4,
+   "wfType": 5702,
+   "workpackageOid": 9020000004225212,
+   "wpId": "712"
+  },
+  {
+   "custIlmId": "8093",
+   "customerName": "*Mickey Mouse Pizza",
+   "description": "Other Financials",
+   "fcltyTopLvlOblgtnKeys": [
+    {
+     "value": "8093~5~1136~"
+    }
+   ],
+   "obligationKeys": [
+    {
+     "value": "8093~5~1136~~"
+    }
+   ],
+   "obligorBank": "5",
+   "obligorKeys": [
+    {
+     "value": "8093~5~1136"
+    },
+    {
+     "value": "8093~5~1136"
+    },
+    {
+     "value": "8093~5~1136"
+    }
+   ],
+   "obligorNumber": "1136",
+   "originatedDt": "2021-05-18T17:33:04.499+0000",
+   "originatorOid": 42,
+   "qualifierId": 9020000004206924,
+   "relationshipType": "Obligor",
+   "rootType": 146,
+   "stage": "oip",
+   "stageId": 14,
+   "wfType": 14609,
+   "workpackageOid": 9020000004206924,
+   "wpId": "700"
+  },
+  {
+   "custIlmId": "8093",
+   "customerName": "*Mickey Mouse Pizza",
+   "description": "Other Financials",
+   "fcltyTopLvlOblgtnKeys": [
+    {
+     "value": "8093~5~1136~"
+    }
+   ],
+   "obligationKeys": [
+    {
+     "value": "8093~5~1136~~"
+    }
+   ],
+   "obligorBank": "5",
+   "obligorKeys": [
+    {
+     "value": "8093~5~1136"
+    },
+    {
+     "value": "8093~5~1136"
+    },
+    {
+     "value": "8093~5~1136"
+    }
+   ],
+   "obligorNumber": "1136",
+   "originatedDt": "2021-05-18T17:32:24.059+0000",
+   "originatorOid": 42,
+   "qualifierId": 9020000004206743,
+   "relationshipType": "Obligor",
+   "rootType": 146,
+   "stage": "oip",
+   "stageId": 14,
+   "wfType": 14609,
+   "workpackageOid": 9020000004206743,
+   "wpId": "699"
+  },
+  {
+   "custIlmId": "8093",
+   "customerName": "*Mickey Mouse Pizza",
+   "description": "Post Approval",
+   "fcltyTopLvlOblgtnKeys": [
+    {
+     "value": "8093~5~1136~59"
+    }
+   ],
+   "fcltyTopLvlOblgtnNumber": "59",
+   "obligationKeys": [
+    {
+     "value": "8093~5~1136~59~59"
+    }
+   ],
+   "obligationNumber": "59",
+   "obligorBank": "5",
+   "obligorKeys": [
+    {
+     "value": "8093~5~1136"
+    },
+    {
+     "value": "8093~5~1136"
+    },
+    {
+     "value": "8093~5~1136"
+    }
+   ],
+   "obligorNumber": "1136",
+   "originatedDt": "2021-05-18T17:04:39.598+0000",
+   "originatorOid": 44,
+   "qualifierId": 9020000004203339,
+   "relationshipType": "Obligor",
+   "rootType": 57,
+   "stage": "oip",
+   "stageId": 4,
+   "wfType": 5702,
+   "workpackageOid": 9020000004202668,
+   "wpId": "693"
+  },
+  {
+   "custIlmId": "8093",
+   "customerName": "*Mickey Mouse Pizza",
+   "description": "Payments",
+   "fcltyTopLvlOblgtnKeys": [
+    {
+     "value": "8093~5~1136~67"
+    }
+   ],
+   "fcltyTopLvlOblgtnNumber": "67",
+   "obligationKeys": [
+    {
+     "value": "8093~5~1136~67~67"
+    }
+   ],
+   "obligationNumber": "67",
+   "obligorBank": "5",
+   "obligorKeys": [
+    {
+     "value": "8093~5~1136"
+    },
+    {
+     "value": "8093~5~1136"
+    },
+    {
+     "value": "8093~5~1136"
+    }
+   ],
+   "obligorNumber": "1136",
+   "originatedDt": "2021-05-18T15:44:24.319+0000",
+   "originatorOid": 44,
+   "qualifierId": 9020000004201347,
+   "relationshipType": "Obligor",
+   "rootType": 146,
+   "stage": "oip",
+   "stageId": 14,
+   "wfType": 14611,
+   "workpackageOid": 9020000004201160,
+   "wpId": "691"
+  },
+  {
+   "custIlmId": "8093",
+   "customerName": "*Mickey Mouse Pizza",
+   "description": "Payments",
+   "fcltyTopLvlOblgtnKeys": [
+    {
+     "value": "8093~5~1136~"
+    }
+   ],
+   "obligationKeys": [
+    {
+     "value": "8093~5~1136~~"
+    }
+   ],
+   "obligorBank": "5",
+   "obligorKeys": [
+    {
+     "value": "8093~5~1136"
+    },
+    {
+     "value": "8093~5~1136"
+    },
+    {
+     "value": "8093~5~1136"
+    }
+   ],
+   "obligorNumber": "1136",
+   "originatedDt": "2021-05-18T15:37:25.711+0000",
+   "originatorOid": 42,
+   "qualifierId": 9020000004196933,
+   "relationshipType": "Obligor",
+   "rootType": 146,
+   "stage": "oip",
+   "stageId": 14,
+   "wfType": 14611,
+   "workpackageOid": 9020000004196933,
+   "wpId": "690"
+  },
+  {
+   "custIlmId": "8093",
+   "customerName": "*Mickey Mouse Pizza",
+   "description": "Other Maintenance",
+   "fcltyTopLvlOblgtnKeys": [
+    {
+     "value": "8093~5~1136~67"
+    }
+   ],
+   "fcltyTopLvlOblgtnNumber": "67",
+   "obligationKeys": [
+    {
+     "value": "8093~5~1136~67~67"
+    }
+   ],
+   "obligationNumber": "67",
+   "obligorBank": "5",
+   "obligorKeys": [
+    {
+     "value": "8093~5~1136"
+    },
+    {
+     "value": "8093~5~1136"
+    },
+    {
+     "value": "8093~5~1136"
+    }
+   ],
+   "obligorNumber": "1136",
+   "originatedDt": "2021-05-18T14:57:31.186+0000",
+   "originatorOid": 42,
+   "qualifierId": 9020000004191107,
+   "relationshipType": "Obligor",
+   "rootType": 146,
+   "stage": "oip",
+   "stageId": 14,
+   "wfType": 14610,
+   "workpackageOid": 9020000004190767,
+   "wpId": "688"
+  },
+  {
+   "custIlmId": "8093",
+   "customerName": "*Mickey Mouse Pizza",
+   "description": "Other Financials",
+   "fcltyTopLvlOblgtnKeys": [
+    {
+     "value": "8093~5~1136~"
+    }
+   ],
+   "obligationKeys": [
+    {
+     "value": "8093~5~1136~~"
+    }
+   ],
+   "obligorBank": "5",
+   "obligorKeys": [
+    {
+     "value": "8093~5~1136"
+    },
+    {
+     "value": "8093~5~1136"
+    },
+    {
+     "value": "8093~5~1136"
+    }
+   ],
+   "obligorNumber": "1136",
+   "originatedDt": "2021-05-18T14:56:57.847+0000",
+   "originatorOid": 42,
+   "qualifierId": 9020000004190688,
+   "relationshipType": "Obligor",
+   "rootType": 146,
+   "stage": "oip",
+   "stageId": 14,
+   "wfType": 14609,
+   "workpackageOid": 9020000004190688,
+   "wpId": "692"
+  },
+  {
+   "custIlmId": "8093",
+   "customerName": "*Mickey Mouse Pizza",
+   "description": "Advances",
+   "fcltyTopLvlOblgtnKeys": [
+    {
+     "value": "8093~5~1136~"
+    }
+   ],
+   "obligationKeys": [
+    {
+     "value": "8093~5~1136~~"
+    }
+   ],
+   "obligorBank": "5",
+   "obligorKeys": [
+    {
+     "value": "8093~5~1136"
+    },
+    {
+     "value": "8093~5~1136"
+    },
+    {
+     "value": "8093~5~1136"
+    }
+   ],
+   "obligorNumber": "1136",
+   "originatedDt": "2021-05-17T14:50:47.970+0000",
+   "originatorOid": 42,
+   "qualifierId": 9020000004178521,
+   "relationshipType": "Obligor",
+   "rootType": 146,
+   "stage": "oip",
+   "stageId": 14,
+   "wfType": 14614,
+   "workpackageOid": 9020000004178521,
+   "wpId": "678"
+  },
+  {
+   "custIlmId": "8093",
+   "customerName": "*Mickey Mouse Pizza",
+   "description": "Other Maintenance",
+   "fcltyTopLvlOblgtnKeys": [
+    {
+     "value": "8093~5~1136~"
+    }
+   ],
+   "obligationKeys": [
+    {
+     "value": "8093~5~1136~~"
+    }
+   ],
+   "obligorBank": "5",
+   "obligorKeys": [
+    {
+     "value": "8093~5~1136"
+    },
+    {
+     "value": "8093~5~1136"
+    },
+    {
+     "value": "8093~5~1136"
+    }
+   ],
+   "obligorNumber": "1136",
+   "originatedDt": "2021-05-13T18:41:00.564+0000",
+   "originatorOid": 42,
+   "qualifierId": 9020000004141159,
+   "relationshipType": "Obligor",
+   "rootType": 146,
+   "stage": "oip",
+   "stageId": 14,
+   "wfType": 14610,
+   "workpackageOid": 9020000004141159,
+   "wpId": "671"
+  },
+  {
+   "custIlmId": "8093",
+   "customerName": "*Mickey Mouse Pizza",
+   "description": "Post Approval",
+   "fcltyTopLvlOblgtnKeys": [
+    {
+     "value": "8093~5~1136~34"
+    }
+   ],
+   "fcltyTopLvlOblgtnNumber": "34",
+   "obligationKeys": [
+    {
+     "value": "8093~5~1136~34~34"
+    }
+   ],
+   "obligationNumber": "34",
+   "obligorBank": "5",
+   "obligorKeys": [
+    {
+     "value": "8093~5~1136"
+    },
+    {
+     "value": "8093~5~1136"
+    },
+    {
+     "value": "8093~5~1136"
+    }
+   ],
+   "obligorNumber": "1136",
+   "originatedDt": "2021-04-29T14:52:52.907+0000",
+   "originatorOid": 44,
+   "qualifierId": 9020000003934633,
+   "relationshipType": "Obligor",
+   "rootType": 57,
+   "stage": "oip",
+   "stageId": 3,
+   "wfType": 5702,
+   "workpackageOid": 9020000003934057,
+   "wpId": "522"
+  },
+  {
+   "custIlmId": "8093",
+   "customerName": "*Mickey Mouse Pizza",
+   "description": "Post Approval",
+   "fcltyTopLvlOblgtnKeys": [
+    {
+     "value": "8093~5~1136~59"
+    }
+   ],
+   "fcltyTopLvlOblgtnNumber": "59",
+   "obligationKeys": [
+    {
+     "value": "8093~5~1136~59~59"
+    }
+   ],
+   "obligationNumber": "59",
+   "obligorBank": "5",
+   "obligorKeys": [
+    {
+     "value": "8093~5~1136"
+    },
+    {
+     "value": "8093~5~1136"
+    },
+    {
+     "value": "8093~5~1136"
+    }
+   ],
+   "obligorNumber": "1136",
+   "originatedDt": "2021-04-24T18:39:23.120+0000",
+   "originatorOid": 44,
+   "qualifierId": 9020000003861139,
+   "relationshipType": "Obligor",
+   "rootType": 57,
+   "stage": "oip",
+   "stageId": 4,
+   "wfType": 5702,
+   "workpackageOid": 9020000003860211,
+   "wpId": "504"
+  },
+  {
+   "custIlmId": "8093",
+   "customerName": "*Mickey Mouse Pizza",
+   "description": "Other Maintenance",
+   "fcltyTopLvlOblgtnKeys": [
+    {
+     "value": "8093~5~1136~59"
+    }
+   ],
+   "fcltyTopLvlOblgtnNumber": "59",
+   "obligationKeys": [
+    {
+     "value": "8093~5~1136~59~59"
+    }
+   ],
+   "obligationNumber": "59",
+   "obligorBank": "5",
+   "obligorKeys": [
+    {
+     "value": "8093~5~1136"
+    },
+    {
+     "value": "8093~5~1136"
+    },
+    {
+     "value": "8093~5~1136"
+    }
+   ],
+   "obligorNumber": "1136",
+   "originatedDt": "2021-04-24T18:38:11.447+0000",
+   "originatorOid": 44,
+   "qualifierId": 9020000003860206,
+   "relationshipType": "Obligor",
+   "rootType": 146,
+   "stage": "oip",
+   "stageId": 14,
+   "wfType": 14610,
+   "workpackageOid": 9020000003860045,
+   "wpId": "503"
+  },
+  {
+   "custIlmId": "8093",
+   "customerName": "*Mickey Mouse Pizza",
+   "description": "Other Financials",
+   "fcltyTopLvlOblgtnKeys": [
+    {
+     "value": "8093~5~1136~"
+    }
+   ],
+   "obligationKeys": [
+    {
+     "value": "8093~5~1136~~"
+    }
+   ],
+   "obligorBank": "5",
+   "obligorKeys": [
+    {
+     "value": "8093~5~1136"
+    },
+    {
+     "value": "8093~5~1136"
+    },
+    {
+     "value": "8093~5~1136"
+    }
+   ],
+   "obligorNumber": "1136",
+   "originatedDt": "2021-04-24T18:34:32.694+0000",
+   "originatorOid": 44,
+   "qualifierId": 9020000003859972,
+   "relationshipType": "Obligor",
+   "rootType": 146,
+   "stage": "oip",
+   "stageId": 14,
+   "wfType": 14609,
+   "workpackageOid": 9020000003859972,
+   "wpId": "505"
+  },
+  {
+   "custIlmId": "8093",
+   "customerName": "*Mickey Mouse Pizza",
+   "description": "Post Approval",
+   "fcltyTopLvlOblgtnKeys": [
+    {
+     "value": "8093~5~1136~67"
+    }
+   ],
+   "fcltyTopLvlOblgtnNumber": "67",
+   "obligationKeys": [
+    {
+     "value": "8093~5~1136~67~67"
+    }
+   ],
+   "obligationNumber": "67",
+   "obligorBank": "5",
+   "obligorKeys": [
+    {
+     "value": "8093~5~1136"
+    },
+    {
+     "value": "8093~5~1136"
+    },
+    {
+     "value": "8093~5~1136"
+    }
+   ],
+   "obligorNumber": "1136",
+   "originatedDt": "2021-04-13T18:13:52.385+0000",
+   "originatorOid": 44,
+   "qualifierId": 9020000003691623,
+   "relationshipType": "Obligor",
+   "rootType": 57,
+   "stage": "oip",
+   "stageId": 24,
+   "wfType": 5702,
+   "workpackageOid": 9020000003691030,
+   "wpId": "450"
+  },
+  {
+   "custIlmId": "8093",
+   "customerName": "*Mickey Mouse Pizza",
+   "description": "Other Financials",
+   "fcltyTopLvlOblgtnKeys": [
+    {
+     "value": "8093~5~1136~59"
+    }
+   ],
+   "fcltyTopLvlOblgtnNumber": "59",
+   "obligationKeys": [
+    {
+     "value": "8093~5~1136~59~59"
+    }
+   ],
+   "obligationNumber": "59",
+   "obligorBank": "5",
+   "obligorKeys": [
+    {
+     "value": "8093~5~1136"
+    },
+    {
+     "value": "8093~5~1136"
+    },
+    {
+     "value": "8093~5~1136"
+    }
+   ],
+   "obligorNumber": "1136",
+   "originatedDt": "2021-04-09T20:07:01.803+0000",
+   "originatorOid": 44,
+   "qualifierId": 9020000003628059,
+   "relationshipType": "Obligor",
+   "rootType": 146,
+   "stage": "oip",
+   "stageId": 22,
+   "wfType": 14609,
+   "workpackageOid": 9020000003627893,
+   "wpId": "430"
+  },
+  {
+   "custIlmId": "8093",
+   "customerName": "*Mickey Mouse Pizza",
+   "description": "Other Financials",
+   "fcltyTopLvlOblgtnKeys": [
+    {
+     "value": "8093~5~1136~"
+    }
+   ],
+   "obligationKeys": [
+    {
+     "value": "8093~5~1136~~"
+    }
+   ],
+   "obligorBank": "5",
+   "obligorKeys": [
+    {
+     "value": "8093~5~1136"
+    },
+    {
+     "value": "8093~5~1136"
+    },
+    {
+     "value": "8093~5~1136"
+    }
+   ],
+   "obligorNumber": "1136",
+   "originatedDt": "2021-04-09T18:58:42.694+0000",
+   "originatorOid": 42,
+   "qualifierId": 9020000003618140,
+   "relationshipType": "Obligor",
+   "rootType": 146,
+   "stage": "oip",
+   "stageId": 14,
+   "wfType": 14609,
+   "workpackageOid": 9020000003618140,
+   "wpId": "426"
+  },
+  {
+   "custIlmId": "8093",
+   "customerName": "*Mickey Mouse Pizza",
+   "description": "Post Approval",
+   "fcltyTopLvlOblgtnKeys": [
+    {
+     "value": "8093~5~1136~18"
+    }
+   ],
+   "fcltyTopLvlOblgtnNumber": "18",
+   "obligationKeys": [
+    {
+     "value": "8093~5~1136~18~18"
+    }
+   ],
+   "obligationNumber": "18",
+   "obligorBank": "5",
+   "obligorKeys": [
+    {
+     "value": "8093~5~1136"
+    },
+    {
+     "value": "8093~5~1136"
+    },
+    {
+     "value": "8093~5~1136"
+    }
+   ],
+   "obligorNumber": "1136",
+   "originatedDt": "2021-04-09T18:52:34.542+0000",
+   "originatorOid": 42,
+   "qualifierId": 9020000003618134,
+   "relationshipType": "Obligor",
+   "rootType": 57,
+   "stage": "oip",
+   "stageId": 4,
+   "wfType": 5702,
+   "workpackageOid": 9020000003617360,
+   "wpId": "425"
+  },
+  {
+   "custIlmId": "8093",
+   "customerName": "*Mickey Mouse Pizza",
+   "description": "Post Approval",
+   "fcltyTopLvlOblgtnKeys": [
+    {
+     "value": "8093~5~1136~18"
+    }
+   ],
+   "fcltyTopLvlOblgtnNumber": "18",
+   "obligationKeys": [
+    {
+     "value": "8093~5~1136~18~18"
+    }
+   ],
+   "obligationNumber": "18",
+   "obligorBank": "5",
+   "obligorKeys": [
+    {
+     "value": "8093~5~1136"
+    },
+    {
+     "value": "8093~5~1136"
+    },
+    {
+     "value": "8093~5~1136"
+    }
+   ],
+   "obligorNumber": "1136",
+   "originatedDt": "2021-04-09T18:13:41.181+0000",
+   "originatorOid": 42,
+   "qualifierId": 9020000003615122,
+   "relationshipType": "Obligor",
+   "rootType": 57,
+   "stage": "oip",
+   "stageId": 24,
+   "wfType": 5702,
+   "workpackageOid": 9020000003614444,
+   "wpId": "419"
+  },
+  {
+   "custIlmId": "8093",
+   "customerName": "*Mickey Mouse Pizza",
+   "description": "Post Approval",
+   "fcltyTopLvlOblgtnKeys": [
+    {
+     "value": "8093~5~1136~"
+    }
+   ],
+   "obligationKeys": [
+    {
+     "value": "8093~5~1136~~"
+    }
+   ],
+   "obligorBank": "5",
+   "obligorKeys": [
+    {
+     "value": "8093~5~1136"
+    },
+    {
+     "value": "8093~5~1136"
+    },
+    {
+     "value": "8093~5~1136"
+    }
+   ],
+   "obligorNumber": "1136",
+   "originatedDt": "2021-03-30T01:47:38.428+0000",
+   "originatorOid": 42,
+   "qualifierId": 9020000003463171,
+   "relationshipType": "Obligor",
+   "rootType": 57,
+   "stage": "oip",
+   "stageId": 3,
+   "wfType": 5702,
+   "workpackageOid": 9020000003462717,
+   "wpId": "398"
+  },
+  {
+   "custIlmId": "8093",
+   "customerName": "*Mickey Mouse Pizza",
+   "description": "Post Approval",
+   "fcltyTopLvlOblgtnKeys": [
+    {
+     "value": "8093~5~1136~34"
+    }
+   ],
+   "fcltyTopLvlOblgtnNumber": "34",
+   "obligationKeys": [
+    {
+     "value": "8093~5~1136~34~34"
+    }
+   ],
+   "obligationNumber": "34",
+   "obligorBank": "5",
+   "obligorKeys": [
+    {
+     "value": "8093~5~1136"
+    },
+    {
+     "value": "8093~5~1136"
+    },
+    {
+     "value": "8093~5~1136"
+    }
+   ],
+   "obligorNumber": "1136",
+   "originatedDt": "2021-03-29T16:06:56.586+0000",
+   "originatorOid": 42,
+   "qualifierId": 9020000003454031,
+   "relationshipType": "Obligor",
+   "rootType": 57,
+   "stage": "oip",
+   "stageId": 24,
+   "wfType": 5702,
+   "workpackageOid": 9020000003453504,
+   "wpId": "397"
+  },
+  {
+   "custIlmId": "8093",
+   "customerName": "*Mickey Mouse Pizza",
+   "description": "Post Approval",
+   "fcltyTopLvlOblgtnKeys": [
+    {
+     "value": "8093~5~1136~18"
+    }
+   ],
+   "fcltyTopLvlOblgtnNumber": "18",
+   "obligationKeys": [
+    {
+     "value": "8093~5~1136~18~18"
+    }
+   ],
+   "obligationNumber": "18",
+   "obligorBank": "5",
+   "obligorKeys": [
+    {
+     "value": "8093~5~1136"
+    },
+    {
+     "value": "8093~5~1136"
+    },
+    {
+     "value": "8093~5~1136"
+    }
+   ],
+   "obligorNumber": "1136",
+   "originatedDt": "2021-03-29T15:26:45.974+0000",
+   "originatorOid": 42,
+   "qualifierId": 9020000003451768,
+   "relationshipType": "Obligor",
+   "rootType": 57,
+   "stage": "oip",
+   "stageId": 24,
+   "wfType": 5702,
+   "workpackageOid": 9020000003450923,
+   "wpId": "396"
+  },
+  {
+   "custIlmId": "8093",
+   "customerName": "*Mickey Mouse Pizza",
+   "description": "Post Approval",
+   "fcltyTopLvlOblgtnKeys": [
+    {
+     "value": "8093~5~1136~59"
+    }
+   ],
+   "fcltyTopLvlOblgtnNumber": "",
+   "obligationKeys": [
+    {
+     "value": "8093~5~1136~59~59"
+    }
+   ],
+   "obligationNumber": "",
+   "obligorBank": "5",
+   "obligorKeys": [
+    {
+     "value": "8093~5~1136"
+    },
+    {
+     "value": "8093~5~1136"
+    },
+    {
+     "value": "8093~5~1136"
+    },
+    {
+     "value": "8093~5~1136"
+    },
+    {
+     "value": "8093~5~1136"
+    }
+   ],
+   "obligorNumber": "1136",
+   "originatedDt": "2021-03-24T21:44:49.504+0000",
+   "originatorOid": 47,
+   "qualifierId": 9020000003380223,
+   "relationshipType": "Obligor",
+   "rootType": 57,
+   "stage": "oip",
+   "stageId": 99999999,
+   "wfType": 5702,
+   "workpackageOid": 9020000003377350,
+   "wpId": "395"
+  },
+  {
+   "custIlmId": "8093",
+   "customerName": "*Mickey Mouse Pizza",
+   "description": "Charge Offs",
+   "fcltyTopLvlOblgtnKeys": [
+    {
+     "value": "8093~5~1136~18"
+    }
+   ],
+   "fcltyTopLvlOblgtnNumber": "18",
+   "obligationKeys": [
+    {
+     "value": "8093~5~1136~18~26"
+    }
+   ],
+   "obligationNumber": "26",
+   "obligorBank": "5",
+   "obligorKeys": [
+    {
+     "value": "8093~5~1136"
+    },
+    {
+     "value": "8093~5~1136"
+    },
+    {
+     "value": "8093~5~1136"
+    }
+   ],
+   "obligorNumber": "1136",
+   "originatedDt": "2021-03-17T19:45:21.360+0000",
+   "originatorOid": 47,
+   "qualifierId": 9020000003255410,
+   "relationshipType": "Obligor",
+   "rootType": 146,
+   "stage": "oip",
+   "stageId": 14,
+   "wfType": 14603,
+   "workpackageOid": 9020000003255314,
+   "wpId": "367"
+  },
+  {
+   "custIlmId": "8093",
+   "customerName": "*Mickey Mouse Pizza",
+   "description": "Post Approval",
+   "fcltyTopLvlOblgtnKeys": [
+    {
+     "value": "8093~5~1136~18"
+    }
+   ],
+   "fcltyTopLvlOblgtnNumber": "18",
+   "obligationKeys": [
+    {
+     "value": "8093~5~1136~18~18"
+    }
+   ],
+   "obligationNumber": "18",
+   "obligorBank": "5",
+   "obligorKeys": [
+    {
+     "value": "8093~5~1136"
+    },
+    {
+     "value": "8093~5~1136"
+    },
+    {
+     "value": "8093~5~1136"
+    }
+   ],
+   "obligorNumber": "1136",
+   "originatedDt": "2021-03-17T19:34:19.555+0000",
+   "originatorOid": 47,
+   "qualifierId": 9020000003257319,
+   "relationshipType": "Obligor",
+   "rootType": 57,
+   "stage": "oip",
+   "stageId": 4,
+   "wfType": 5702,
+   "workpackageOid": 9020000003253435,
+   "wpId": "366"
+  },
+  {
+   "custIlmId": "8093",
+   "customerName": "*Mickey Mouse Pizza",
+   "description": "Advances",
+   "fcltyTopLvlOblgtnKeys": [
+    {
+     "value": "8093~5~1136~"
+    }
+   ],
+   "obligationKeys": [
+    {
+     "value": "8093~5~1136~~"
+    }
+   ],
+   "obligorBank": "5",
+   "obligorKeys": [
+    {
+     "value": "8093~5~1136"
+    },
+    {
+     "value": "8093~5~1136"
+    },
+    {
+     "value": "8093~5~1136"
+    }
+   ],
+   "obligorNumber": "1136",
+   "originatedDt": "2021-03-12T15:09:15.321+0000",
+   "originatorOid": 44,
+   "qualifierId": 9020000003181355,
+   "relationshipType": "Obligor",
+   "rootType": 146,
+   "stage": "oip",
+   "stageId": 22,
+   "wfType": 14614,
+   "workpackageOid": 9020000003181355,
+   "wpId": "361"
+  },
+  {
+   "custIlmId": "8093",
+   "customerName": "*Mickey Mouse Pizza",
+   "description": "Payments",
+   "fcltyTopLvlOblgtnKeys": [
+    {
+     "value": "8093~5~1136~18"
+    }
+   ],
+   "fcltyTopLvlOblgtnNumber": "18",
+   "obligationKeys": [
+    {
+     "value": "8093~5~1136~18~26"
+    }
+   ],
+   "obligationNumber": "26",
+   "obligorBank": "5",
+   "obligorKeys": [
+    {
+     "value": "8093~5~1136"
+    },
+    {
+     "value": "8093~5~1136"
+    },
+    {
+     "value": "8093~5~1136"
+    }
+   ],
+   "obligorNumber": "1136",
+   "originatedDt": "2021-03-12T13:25:34.556+0000",
+   "originatorOid": 44,
+   "qualifierId": 9020000003179054,
+   "relationshipType": "Obligor",
+   "rootType": 146,
+   "stage": "oip",
+   "stageId": 14,
+   "wfType": 14611,
+   "workpackageOid": 9020000003178669,
+   "wpId": "360"
+  },
+  {
+   "custIlmId": "8093",
+   "customerName": "*Mickey Mouse Pizza",
+   "description": "Advances",
+   "fcltyTopLvlOblgtnKeys": [
+    {
+     "value": "8093~5~1136~"
+    }
+   ],
+   "obligationKeys": [
+    {
+     "value": "8093~5~1136~~"
+    }
+   ],
+   "obligorBank": "5",
+   "obligorKeys": [
+    {
+     "value": "8093~5~1136"
+    },
+    {
+     "value": "8093~5~1136"
+    },
+    {
+     "value": "8093~5~1136"
+    }
+   ],
+   "obligorNumber": "1136",
+   "originatedDt": "2021-03-11T13:06:39.410+0000",
+   "originatorOid": 44,
+   "qualifierId": 9020000003162596,
+   "relationshipType": "Obligor",
+   "rootType": 146,
+   "stage": "oip",
+   "stageId": 14,
+   "wfType": 14614,
+   "workpackageOid": 9020000003162596,
+   "wpId": "354"
+  },
+  {
+   "custIlmId": "8093",
+   "customerName": "*Mickey Mouse Pizza",
+   "description": "Post Approval",
+   "fcltyTopLvlOblgtnKeys": [
+    {
+     "value": "8093~5~1136~"
+    }
+   ],
+   "obligationKeys": [
+    {
+     "value": "8093~5~1136~~"
+    }
+   ],
+   "obligorBank": "5",
+   "obligorKeys": [
+    {
+     "value": "8093~5~1136"
+    },
+    {
+     "value": "8093~5~1136"
+    },
+    {
+     "value": "8093~5~1136"
+    }
+   ],
+   "obligorNumber": "1136",
+   "originatedDt": "2021-02-24T21:03:14.386+0000",
+   "originatorOid": 46,
+   "qualifierId": 9020000003805237,
+   "relationshipType": "Obligor",
+   "rootType": 57,
+   "stage": "oip",
+   "stageId": 4,
+   "wfType": 5702,
+   "workpackageOid": 9020000002915673,
+   "wpId": "285"
+  }
+ ],
+ "relatedWPCount": {
+  "customerRelationCount": 31,
+  "facilityRelationCount": 0,
+  "lastRelatedDt": "2026-06-12T17:35:30.485+0000",
+  "obligationRelationCount": 0,
+  "obligorRelationCount": 31,
+  "workpackageOid": 9020000091710878
+ },
+ "bank": {
+  "organizationId": "1",
+  "bankName": "*AFS Bank",
+  "bankNumber": "5",
+  "baseCurrency": "USD",
+  "collatItemOpt": "1",
+  "collatUnitOpt": "0",
+  "currencyOpt": 2,
+  "defaultServUnit": "9900",
+  "glEffectDtOpt": "0",
+  "glOffsetOpt": "1",
+  "masterAppl": "1",
+  "mixedOffsets": "1",
+  "nextWorkDt": "2026-06-25",
+  "obligationOpt": "1",
+  "obligorOpt": "4",
+  "procCalId": "1",
+  "realTimeAccrBe": "1",
+  "triangulation": "0"
+ },
+ "comment": {
+  "oid": 9020000091711377,
+  "multiple": false,
+  "rtf": false
+ },
+ "defaultOrg": "1",
+ "description": "Origination — API staged (1136)",
+ "jobListEntry": {
+  "oid": 9020000091711314,
+  "appId": "1",
+  "bankId": "5",
+  "costCenterId": "1001500",
+  "customerName": "*Mickey Mouse Pizza",
+  "description": "Origination — API staged (1136)",
+  "hasAttachments": false,
+  "id": "32646",
+  "inStageCount": 1,
+  "incompleteRouting": false,
+  "isSegDutyViolated": false,
+  "lastUpdated": "2026-06-12T17:35:30.159+0000",
+  "lastUpdatedByUser": 36,
+  "lastViewedById": 36,
+  "lastViewedTime": "2026-06-25T18:17:01.841+0000",
+  "mgrCostCenterId": "1001500",
+  "obligorNumber": "1136",
+  "officerId": "10111111",
+  "originatedDt": "2026-06-12T15:51:32.697+0000",
+  "originatorOid": 36,
+  "rootTypeId": 57,
+  "routingType": "1",
+  "slaMetCount": 0,
+  "slaMissedCount": 0,
+  "stage": "oip",
+  "taxId": "089898989",
+  "units": [
+   {
+    "oid": 9020000091713228,
+    "assignmentUnit": "1001500",
+    "inStageCount": 1,
+    "inStageSince": "2026-06-12T15:51:32.701+0000",
+    "isNewWork": false,
+    "isSegDutyViolated": false,
+    "obligor": "1136",
+    "officerId": "10111111",
+    "ownerId": 36,
+    "queueId": 9020000000000012,
+    "routingType": "1",
+    "stageId": 25,
+    "unitDescription": "Origination",
+    "unitOid": 9020000091710890,
+    "unitStatus": "a"
+   }
+  ],
+  "wfType": 5701
+ },
+ "lastViewedById": 36,
+ "lastViewedTime": "2026-06-25T18:17:01.841+0000",
+ "lender": {
+  "oid": 9020000091711082,
+  "orgLevels": [
+   {
+    "oid": 9020000091711081,
+    "value": "1001500",
+    "valueLit": "*Commercial Lending- East"
+   },
+   {
+    "oid": 9020000091711084,
+    "value": "10111111",
+    "valueLit": "Mary*Jones"
+   }
+  ]
+ },
+ "masterAppl": "1",
+ "masterBankNum": "5",
+ "milestones": [
+  {
+   "oid": 9020000091711262,
+   "entries": [
+    {
+     "oid": 9020000091711263,
+     "idleTime": {
+      "oid": 9020000091711265,
+      "elapsedTime": 19070
+     },
+     "queueId": 9020000000000012,
+     "sodOverrideInd": false,
+     "totalTime": {
+      "oid": 9020000091711264,
+      "endTime": "2026-06-12T15:51:51.771+0000",
+      "startTime": "2026-06-12T15:51:32.701+0000"
+     },
+     "userId": 36
+    },
+    {
+     "oid": 9020000091712230,
+     "editTime": {
+      "oid": 9020000091712232,
+      "elapsedTime": 2433683
+     },
+     "idleTime": {
+      "oid": 9020000091712233,
+      "elapsedTime": 3784703,
+      "startTime": "2026-06-12T17:35:30.161+0000"
+     },
+     "queueId": 9020000000000012,
+     "sodOverrideInd": false,
+     "status": "edited",
+     "totalTime": {
+      "oid": 9020000091712231,
+      "startTime": "2026-06-12T15:51:51.771+0000"
+     },
+     "userId": 36
+    }
+   ],
+   "inStageCount": 1,
+   "milestoneTypeName": "applicationStage",
+   "originalUnitDesc": "Origination",
+   "routingType": "1",
+   "state": "i",
+   "totalTime": {
+    "oid": 9020000091711266,
+    "startTime": "2026-06-12T15:51:32.701+0000"
+   }
+  }
+ ],
+ "obligations": [
+  {
+   "oid": 9020000091710993
+  },
+  {
+   "oid": 9020000091711037
+  }
+ ],
+ "originatedDt": "2026-06-12T15:51:32.697+0000",
+ "originatorOid": 36,
+ "primaryBorrower": {
+  "oid": 9020000091710929
+ },
+ "readOnly": true,
+ "readyToBook": "0",
+ "rootType": 57,
+ "units": [
+  {
+   "oid": 9020000091710890,
+   "description": "Origination",
+   "inStageCount": 1,
+   "inStageSince": "2026-06-12T15:51:32.701+0000",
+   "incompleteRouting": false,
+   "milestones": [
+    {
+     "oid": 9020000091711262
+    }
+   ],
+   "name": "commercialOrigUnit",
+   "ownerId": 36,
+   "queueId": 9020000000000012,
+   "routingType": "1",
+   "stage": "applicationStage",
+   "stageId": 25,
+   "state": "open",
+   "status": "a",
+   "type": "commercialOrigUnit",
+   "typeId": 20,
+   "unitEntry": {
+    "oid": 9020000091713228
+   },
+   "units": "ilm/orig/Units",
+   "wumNodes": [
+    {
+     "oid": 9020000091711198
+    }
+   ]
+  }
+ ],
+ "updateDate": "2026-06-12T17:35:30.110+0000",
+ "updateUserId": 36,
+ "updatedDt": "2026-06-12",
+ "wfType": 5701
+}

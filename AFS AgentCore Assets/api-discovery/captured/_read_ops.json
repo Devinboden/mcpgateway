@@ -1,0 +1,3299 @@
+[
+ {
+  "layer": "wf",
+  "path": "/businessAutomation/schedules",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [],
+  "queryParams": [],
+  "opId": "Wf-abe:/getSchedules:get",
+  "summary": "Get Schedules",
+  "spec": "OpenApi-abe.json"
+ },
+ {
+  "layer": "wf",
+  "path": "/businessAutomation/tasks/{id}",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [
+   "id"
+  ],
+  "queryParams": [],
+  "opId": "Wf-abe:/getTask:get",
+  "summary": "Get Task",
+  "spec": "OpenApi-abe.json"
+ },
+ {
+  "layer": "wf",
+  "path": "/wp/addressMaintenance/{id}",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [
+   "id"
+  ],
+  "queryParams": [],
+  "opId": "Wf-addressMaintenance:/addressMaintenanceById:get",
+  "summary": "Retrieve an Address Maintenance by ID",
+  "spec": "OpenApi-addressMaintenance.json"
+ },
+ {
+  "layer": "wf",
+  "path": "/wp/advances2/{id}",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [
+   "id"
+  ],
+  "queryParams": [],
+  "opId": "Wf-advances2:/advances2ById:get",
+  "summary": "Retrieve an Advance by ID",
+  "spec": "OpenApi-advances2.json"
+ },
+ {
+  "layer": "wf",
+  "path": "/wp/alertType/{id}",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [
+   "id"
+  ],
+  "queryParams": [],
+  "opId": "Wf-alertType:/alertTypeById:get",
+  "summary": "Retrieve an Alert Type by ID",
+  "spec": "OpenApi-alertType.json"
+ },
+ {
+  "layer": "wf",
+  "path": "/wp/CollateralRoot/{id}",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [
+   "id"
+  ],
+  "queryParams": [],
+  "opId": "Wf-CollateralRoot:/CollateralRootById:get",
+  "summary": "Retrieve an Exception Collateral by ID",
+  "spec": "OpenApi-CollateralRoot.json"
+ },
+ {
+  "layer": "wf",
+  "path": "/wp/commercialOrig/{id}",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [
+   "id"
+  ],
+  "queryParams": [],
+  "opId": "Wf-commercialOrig:/commercialOrigById:get",
+  "summary": "Retrieve an Origination by ID",
+  "spec": "OpenApi-commercialOrig.json"
+ },
+ {
+  "layer": "wf",
+  "path": "/wp/commercialPost/{id}",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [
+   "id"
+  ],
+  "queryParams": [],
+  "opId": "Wf-commercialPost:/commercialPostById:get",
+  "summary": "Retrieve a Post Approval by ID",
+  "spec": "OpenApi-commercialPost.json"
+ },
+ {
+  "layer": "wf",
+  "path": "/wp/ddaWireChanges/{id}",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [
+   "id"
+  ],
+  "queryParams": [],
+  "opId": "Wf-ddaWireChanges:/ddaWireChangesById:get",
+  "summary": "Retrieve a DDA/Wire Instruction by ID",
+  "spec": "OpenApi-ddaWireChanges.json"
+ },
+ {
+  "layer": "wf",
+  "path": "/doc/apicatalog",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [],
+  "queryParams": [
+   "wfName",
+   "allowDup",
+   "afsInternal"
+  ],
+  "opId": "Wf-doc:/apicatalog:get",
+  "summary": "",
+  "spec": "OpenApi-doc.json"
+ },
+ {
+  "layer": "wf",
+  "path": "/doc/apidoc",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [],
+  "queryParams": [
+   "tiers",
+   "components",
+   "format",
+   "appVersion",
+   "servers"
+  ],
+  "opId": "Wf-doc:/apidoc:get",
+  "summary": "OpenAPI documentation",
+  "spec": "OpenApi-doc.json"
+ },
+ {
+  "layer": "wf",
+  "path": "/employees/{id}",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [
+   "id"
+  ],
+  "queryParams": [
+   "bankId"
+  ],
+  "opId": "Wf-employees:/getEmployee:get",
+  "summary": "Get Employee",
+  "spec": "OpenApi-employees.json"
+ },
+ {
+  "layer": "wf",
+  "path": "/wp/exceptionCollateral/{id}",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [
+   "id"
+  ],
+  "queryParams": [],
+  "opId": "Wf-exceptionCollateral:/exceptionCollateralById:get",
+  "summary": "Retrieve a Monitoring Items - Collateral by ID",
+  "spec": "OpenApi-exceptionCollateral.json"
+ },
+ {
+  "layer": "wf",
+  "path": "/wp/exceptionCovenants/{id}",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [
+   "id"
+  ],
+  "queryParams": [],
+  "opId": "Wf-exceptionCovenants:/exceptionCovenantsById:get",
+  "summary": "Retrieve a Monitoring Items - Covenant by ID",
+  "spec": "OpenApi-exceptionCovenants.json"
+ },
+ {
+  "layer": "wf",
+  "path": "/wp/exceptionCreditPolicy/{id}",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [
+   "id"
+  ],
+  "queryParams": [],
+  "opId": "Wf-exceptionCreditPolicy:/exceptionCreditPolicyById:get",
+  "summary": "Retrieve a Policy Exceptions - Credit Policy by ID",
+  "spec": "OpenApi-exceptionCreditPolicy.json"
+ },
+ {
+  "layer": "wf",
+  "path": "/wp/exceptionDocCollateral/{id}",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [
+   "id"
+  ],
+  "queryParams": [],
+  "opId": "Wf-exceptionDocCollateral:/exceptionDocCollateralById:get",
+  "summary": "Retrieve a Documentation Exceptions - Collateral by ID",
+  "spec": "OpenApi-exceptionDocCollateral.json"
+ },
+ {
+  "layer": "wf",
+  "path": "/wp/exceptionEntity/{id}",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [
+   "id"
+  ],
+  "queryParams": [],
+  "opId": "Wf-exceptionEntity:/exceptionEntityById:get",
+  "summary": "Retrieve a Documentation Exceptions - Entity by ID",
+  "spec": "OpenApi-exceptionEntity.json"
+ },
+ {
+  "layer": "wf",
+  "path": "/wp/exceptionNoteLoan/{id}",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [
+   "id"
+  ],
+  "queryParams": [],
+  "opId": "Wf-exceptionNoteLoan:/exceptionNoteLoanById:get",
+  "summary": "Retrieve a Documentation Exceptions - Note/Loan by ID",
+  "spec": "OpenApi-exceptionNoteLoan.json"
+ },
+ {
+  "layer": "wf",
+  "path": "/wp/exceptionProcessing/{id}",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [
+   "id"
+  ],
+  "queryParams": [],
+  "opId": "Wf-exceptionProcessing:/exceptionProcessingById:get",
+  "summary": "Retrieve a Processing Exceptions - Processing by ID",
+  "spec": "OpenApi-exceptionProcessing.json"
+ },
+ {
+  "layer": "wf",
+  "path": "/wp/exceptionRequirements/{id}",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [
+   "id"
+  ],
+  "queryParams": [],
+  "opId": "Wf-exceptionRequirements:/exceptionRequirementsById:get",
+  "summary": "Retrieve a Monitoring Items - Requirement by ID",
+  "spec": "OpenApi-exceptionRequirements.json"
+ },
+ {
+  "layer": "wf",
+  "path": "/wp/exceptionReview/{id}",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [
+   "id"
+  ],
+  "queryParams": [],
+  "opId": "Wf-exceptionReview:/exceptionReviewById:get",
+  "summary": "Retrieve a Monitoring Items - Review by ID",
+  "spec": "OpenApi-exceptionReview.json"
+ },
+ {
+  "layer": "wf",
+  "path": "/exceptions/listExceptions",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [],
+  "queryParams": [
+   "bankId",
+   "applicationId",
+   "obligorNumber",
+   "obligationNumber",
+   "classificationCode",
+   "subclassCode",
+   "officerId",
+   "secondaryOfficerId",
+   "statusCode",
+   "listLimitIndicator"
+  ],
+  "opId": "Wf-exceptions:/listExceptions:get",
+  "summary": "List Exceptions",
+  "spec": "OpenApi-exceptions.json"
+ },
+ {
+  "layer": "wf",
+  "path": "/wp/ExceptionType/{id}",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [
+   "id"
+  ],
+  "queryParams": [],
+  "opId": "Wf-ExceptionType:/ExceptionTypeById:get",
+  "summary": "Retrieve an Exception Type by ID",
+  "spec": "OpenApi-ExceptionType.json"
+ },
+ {
+  "layer": "wf",
+  "path": "/wp/feeManagement/{id}",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [
+   "id"
+  ],
+  "queryParams": [],
+  "opId": "Wf-feeManagement:/feeManagementById:get",
+  "summary": "Retrieve a Fee Management by ID",
+  "spec": "OpenApi-feeManagement.json"
+ },
+ {
+  "layer": "wf",
+  "path": "/holderofrecords/allAdminsByEntityForASelectedHolderOfRecord",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [],
+  "queryParams": [
+   "bankId",
+   "customerId",
+   "dealNo",
+   "obligorNo",
+   "asOfDate",
+   "inAdminRole"
+  ],
+  "opId": "Wf-holderofrecords:/allAdminsByEntityForASelectedHolderOfRecord:get",
+  "summary": "All Administrators by Entity",
+  "spec": "OpenApi-holderofrecords.json"
+ },
+ {
+  "layer": "wf",
+  "path": "/holderofrecords/allDealsForASelectedHolderOfRecord",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [],
+  "queryParams": [
+   "bankId",
+   "searchBy",
+   "customerId",
+   "obligorNo",
+   "asOfDate",
+   "inAdminRole"
+  ],
+  "opId": "Wf-holderofrecords:/allDealsForASelectedHolderOfRecord:get",
+  "summary": "All Deals for a Selected Holder of Record",
+  "spec": "OpenApi-holderofrecords.json"
+ },
+ {
+  "layer": "wf",
+  "path": "/holderofrecords/allFundsByFundManager",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [],
+  "queryParams": [
+   "bankId",
+   "customerId"
+  ],
+  "opId": "Wf-holderofrecords:/allFundsByFundManager:get",
+  "summary": "All Funds By Fund Manager",
+  "spec": "OpenApi-holderofrecords.json"
+ },
+ {
+  "layer": "wf",
+  "path": "/holderofrecords/allHoldersofRecordinDeal",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [],
+  "queryParams": [
+   "bankId",
+   "dealNo",
+   "inAdminRole",
+   "asOfDate"
+  ],
+  "opId": "Wf-holderofrecords:/allHoldersofRecordinDeal:get",
+  "summary": "All Holders of Record in a Deal",
+  "spec": "OpenApi-holderofrecords.json"
+ },
+ {
+  "layer": "wf",
+  "path": "/holderofrecords/beneficialOwnersForAFundWithinADeal",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [],
+  "queryParams": [
+   "bankId",
+   "dealNo",
+   "obligorNo",
+   "obgrSeqNum",
+   "asOfDate"
+  ],
+  "opId": "Wf-holderofrecords:/beneficialOwnersForAFundWithinADeal:get",
+  "summary": "Beneficial Owners for a Fund within Deal",
+  "spec": "OpenApi-holderofrecords.json"
+ },
+ {
+  "layer": "wf",
+  "path": "/jobs/listByOfficers",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [],
+  "queryParams": [
+   "owner",
+   "officer1Code",
+   "officer2Code",
+   "originatedOnOrAfter",
+   "includeClosedWP",
+   "resultCount"
+  ],
+  "opId": "Wf-jobs:/listByOfficers:get",
+  "summary": "List Workpackages by officers",
+  "spec": "OpenApi-jobs.json"
+ },
+ {
+  "layer": "wf",
+  "path": "/jobs/joblistInquiry",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [],
+  "queryParams": [
+   "queryName"
+  ],
+  "opId": "Wf-jobs:/joblistInquiry:get",
+  "summary": "List Workpackages",
+  "spec": "OpenApi-jobs.json"
+ },
+ {
+  "layer": "wf",
+  "path": "/wp/nonFinancial/{id}",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [
+   "id"
+  ],
+  "queryParams": [],
+  "opId": "Wf-nonFinancial:/nonFinancialById:get",
+  "summary": "Retrieve a Non-Financial Maintenance by ID",
+  "spec": "OpenApi-nonFinancial.json"
+ },
+ {
+  "layer": "wf",
+  "path": "/wp/ObligationRoot/{id}",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [
+   "id"
+  ],
+  "queryParams": [],
+  "opId": "Wf-ObligationRoot:/ObligationRootById:get",
+  "summary": "Retrieve an Exception Obligation by ID",
+  "spec": "OpenApi-ObligationRoot.json"
+ },
+ {
+  "layer": "wf",
+  "path": "/wp/ObligorRoot/{id}",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [
+   "id"
+  ],
+  "queryParams": [],
+  "opId": "Wf-ObligorRoot:/ObligorRootById:get",
+  "summary": "Retrieve an Exception Obligor by ID",
+  "spec": "OpenApi-ObligorRoot.json"
+ },
+ {
+  "layer": "wf",
+  "path": "/wp/oblnRestructure/{id}",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [
+   "id"
+  ],
+  "queryParams": [],
+  "opId": "Wf-oblnRestructure:/oblnRestructureById:get",
+  "summary": "Retrieve an Obligation Hierarchy Restructure by ID",
+  "spec": "OpenApi-oblnRestructure.json"
+ },
+ {
+  "layer": "wf",
+  "path": "/wp/otherFinancials2/{id}",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [
+   "id"
+  ],
+  "queryParams": [],
+  "opId": "Wf-otherFinancials2:/otherFinancials2ById:get",
+  "summary": "Retrieve an Other Financial by ID",
+  "spec": "OpenApi-otherFinancials2.json"
+ },
+ {
+  "layer": "wf",
+  "path": "/wp/otherMaintenance/{id}",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [
+   "id"
+  ],
+  "queryParams": [],
+  "opId": "Wf-otherMaintenance:/otherMaintenanceById:get",
+  "summary": "Retrieve an Other Maintenance by ID",
+  "spec": "OpenApi-otherMaintenance.json"
+ },
+ {
+  "layer": "wf",
+  "path": "/wp/payments2/{id}",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [
+   "id"
+  ],
+  "queryParams": [],
+  "opId": "Wf-payments2:/payments2ById:get",
+  "summary": "Retrieve a Payment by ID",
+  "spec": "OpenApi-payments2.json"
+ },
+ {
+  "layer": "wf",
+  "path": "/ping",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [],
+  "queryParams": [],
+  "opId": "Wf-ping:/ping:get",
+  "summary": "Ping",
+  "spec": "OpenApi-ping.json"
+ },
+ {
+  "layer": "wf",
+  "path": "/wp/QueueAdmin/{id}",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [
+   "id"
+  ],
+  "queryParams": [],
+  "opId": "Wf-QueueAdmin:/QueueAdminById:get",
+  "summary": "Retrieve a Queue by ID",
+  "spec": "OpenApi-QueueAdmin.json"
+ },
+ {
+  "layer": "wf",
+  "path": "/wp/QueueGroupAdmin/{id}",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [
+   "id"
+  ],
+  "queryParams": [],
+  "opId": "Wf-QueueGroupAdmin:/QueueGroupAdminById:get",
+  "summary": "Retrieve a Queue Group by ID",
+  "spec": "OpenApi-QueueGroupAdmin.json"
+ },
+ {
+  "layer": "wf",
+  "path": "/wp/repricing2/{id}",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [
+   "id"
+  ],
+  "queryParams": [],
+  "opId": "Wf-repricing2:/repricing2ById:get",
+  "summary": "Retrieve a Repricing by ID",
+  "spec": "OpenApi-repricing2.json"
+ },
+ {
+  "layer": "wf",
+  "path": "/wp/roleAdmin/{id}",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [
+   "id"
+  ],
+  "queryParams": [],
+  "opId": "Wf-roleAdmin:/roleAdminById:get",
+  "summary": "Retrieve a Role Administration by ID",
+  "spec": "OpenApi-roleAdmin.json"
+ },
+ {
+  "layer": "wf",
+  "path": "/wp/syndiDealMaintenance/{id}",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [
+   "id"
+  ],
+  "queryParams": [],
+  "opId": "Wf-syndiDealMaintenance:/syndiDealMaintenanceById:get",
+  "summary": "Retrieve a Deal Maintenance by ID",
+  "spec": "OpenApi-syndiDealMaintenance.json"
+ },
+ {
+  "layer": "wf",
+  "path": "/wp/syndiDealPipeline/{id}",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [
+   "id"
+  ],
+  "queryParams": [],
+  "opId": "Wf-syndiDealPipeline:/syndiDealPipelineById:get",
+  "summary": "Retrieve a Deal Pipeline by ID",
+  "spec": "OpenApi-syndiDealPipeline.json"
+ },
+ {
+  "layer": "wf",
+  "path": "/wp/syndiRepricing/{id}",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [
+   "id"
+  ],
+  "queryParams": [],
+  "opId": "Wf-syndiRepricing:/syndiRepricingById:get",
+  "summary": "Retrieve a Repricing by ID",
+  "spec": "OpenApi-syndiRepricing.json"
+ },
+ {
+  "layer": "wf",
+  "path": "/up/listAlertTypes",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [],
+  "queryParams": [],
+  "opId": "Wf-up:/listAlertTypes:get",
+  "summary": "List Alert Types",
+  "spec": "OpenApi-up.json"
+ },
+ {
+  "layer": "wf",
+  "path": "/up/listContextGroups",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [],
+  "queryParams": [],
+  "opId": "Wf-up:/listContextGroups:get",
+  "summary": "List Context Groups",
+  "spec": "OpenApi-up.json"
+ },
+ {
+  "layer": "wf",
+  "path": "/up/listCreditAuthorityItems",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [],
+  "queryParams": [],
+  "opId": "Wf-up:/listCreditAuthorityItems:get",
+  "summary": "List Credit Authority Items",
+  "spec": "OpenApi-up.json"
+ },
+ {
+  "layer": "wf",
+  "path": "/up/listLimitGroups",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [],
+  "queryParams": [
+   "organizationId"
+  ],
+  "opId": "Wf-up:/listLimitGroups:get",
+  "summary": "List Limit Groups",
+  "spec": "OpenApi-up.json"
+ },
+ {
+  "layer": "wf",
+  "path": "/up/listOverrideConditions",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [],
+  "queryParams": [
+   "bankId",
+   "applicationId"
+  ],
+  "opId": "Wf-up:/listOverrideConditions:get",
+  "summary": "List Override Conditions",
+  "spec": "OpenApi-up.json"
+ },
+ {
+  "layer": "wf",
+  "path": "/up/listQueueGroups",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [],
+  "queryParams": [],
+  "opId": "Wf-up:/listQueueGroups:get",
+  "summary": "List Queue Groups",
+  "spec": "OpenApi-up.json"
+ },
+ {
+  "layer": "wf",
+  "path": "/up/listQueues",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [],
+  "queryParams": [],
+  "opId": "Wf-up:/listQueues:get",
+  "summary": "List Queues",
+  "spec": "OpenApi-up.json"
+ },
+ {
+  "layer": "wf",
+  "path": "/up/listRoles",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [],
+  "queryParams": [],
+  "opId": "Wf-up:/listRoles:get",
+  "summary": "List Roles",
+  "spec": "OpenApi-up.json"
+ },
+ {
+  "layer": "wf",
+  "path": "/up/listTeams",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [],
+  "queryParams": [
+   "userOid"
+  ],
+  "opId": "Wf-up:/listTeams:get",
+  "summary": "List Teams",
+  "spec": "OpenApi-up.json"
+ },
+ {
+  "layer": "wf",
+  "path": "/up/userProfileChangeHistory",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [],
+  "queryParams": [
+   "userName",
+   "updatedFromDate",
+   "updatedToDate",
+   "lastUpdatedDays",
+   "onOrAfterCreatedDate",
+   "lastCreatedDays",
+   "activateOrInactive"
+  ],
+  "opId": "Wf-up:/userProfileChangeHistory:get",
+  "summary": "User Profile Change History",
+  "spec": "OpenApi-up.json"
+ },
+ {
+  "layer": "wf",
+  "path": "/up/userSearch",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [],
+  "queryParams": [
+   "searchUserId",
+   "lastNameStartsWith",
+   "showDeactivatedUsers",
+   "userEntitlementsList",
+   "userTypes",
+   "companyAffiliations",
+   "startAtOid"
+  ],
+  "opId": "Wf-up:/userSearch:get",
+  "summary": "Search Users",
+  "spec": "OpenApi-up.json"
+ },
+ {
+  "layer": "wf",
+  "path": "/wp/userProfileAdmin/{id}",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [
+   "id"
+  ],
+  "queryParams": [],
+  "opId": "Wf-userProfileAdmin:/userProfileAdminById:get",
+  "summary": "Retrieve a User Profile Administration by ID",
+  "spec": "OpenApi-userProfileAdmin.json"
+ },
+ {
+  "layer": "svc",
+  "path": "/accrualSchedules/get/{obligationId}-{chargeCode}",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [
+   "obligationId",
+   "chargeCode"
+  ],
+  "queryParams": [
+   "effectiveDate"
+  ],
+  "opId": "Svc-accrualSchedules:/get:get",
+  "summary": "Retrieves an Accrual Schedule",
+  "spec": "OpenApi-accrualSchedules.json"
+ },
+ {
+  "layer": "svc",
+  "path": "/accrualSchedules/getFullKey/{bank}-{obligor}-{obligation}-{chargeCode}",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [
+   "bank",
+   "obligor",
+   "obligation",
+   "chargeCode"
+  ],
+  "queryParams": [
+   "effectiveDate"
+  ],
+  "opId": "Svc-accrualSchedules:/getFullKey:get",
+  "summary": "Retrieves an Accrual Schedule",
+  "spec": "OpenApi-accrualSchedules.json"
+ },
+ {
+  "layer": "svc",
+  "path": "/accrualSchedules/list/{obligationId}-{chargeCode}",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [
+   "obligationId",
+   "chargeCode"
+  ],
+  "queryParams": [
+   "sortOrder"
+  ],
+  "opId": "Svc-accrualSchedules:/list:get",
+  "summary": "Lists Accrual Schedules",
+  "spec": "OpenApi-accrualSchedules.json"
+ },
+ {
+  "layer": "svc",
+  "path": "/accrualSchedules/listFullKey/{bank}-{obligor}-{obligation}-{chargeCode}",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [
+   "bank",
+   "obligor",
+   "obligation",
+   "chargeCode"
+  ],
+  "queryParams": [
+   "sortOrder"
+  ],
+  "opId": "Svc-accrualSchedules:/listFullKey:get",
+  "summary": "Lists Accrual Schedules",
+  "spec": "OpenApi-accrualSchedules.json"
+ },
+ {
+  "layer": "svc",
+  "path": "/addresses/get/{addressId}",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [
+   "addressId"
+  ],
+  "queryParams": [],
+  "opId": "Svc-addresses:/get:get",
+  "summary": "Retrieves an Address information",
+  "spec": "OpenApi-addresses.json"
+ },
+ {
+  "layer": "svc",
+  "path": "/addresses/getPrimaryAddrByNameId",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [],
+  "queryParams": [
+   "nameId"
+  ],
+  "opId": "Svc-addresses:/getPrimaryAddrByNameId:get",
+  "summary": "Retrieves an Address information",
+  "spec": "OpenApi-addresses.json"
+ },
+ {
+  "layer": "svc",
+  "path": "/amortizationSchedCharge/get/{obligationId}-{type}-{chargeCode}",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [
+   "obligationId",
+   "type",
+   "chargeCode"
+  ],
+  "queryParams": [
+   "amortizationDate"
+  ],
+  "opId": "Svc-amortizationSchedCharge:/get:get",
+  "summary": "Retrieves an Amortization Schedule Charge",
+  "spec": "OpenApi-amortizationSchedCharge.json"
+ },
+ {
+  "layer": "svc",
+  "path": "/amortizationSchedCharge/getFullKey/{bank}-{obligor}-{obligation}-{type}-{chargeCode}",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [
+   "bank",
+   "obligor",
+   "obligation",
+   "type",
+   "chargeCode"
+  ],
+  "queryParams": [
+   "amortizationDate"
+  ],
+  "opId": "Svc-amortizationSchedCharge:/getFullKey:get",
+  "summary": "Retrieves an Amortization Schedule Charge",
+  "spec": "OpenApi-amortizationSchedCharge.json"
+ },
+ {
+  "layer": "svc",
+  "path": "/amortizationSchedCharge/list/{obligationId}-{type}",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [
+   "obligationId",
+   "type"
+  ],
+  "queryParams": [
+   "amortizationDate",
+   "sortOrder"
+  ],
+  "opId": "Svc-amortizationSchedCharge:/list:get",
+  "summary": "Lists Amortization Schedule Charges",
+  "spec": "OpenApi-amortizationSchedCharge.json"
+ },
+ {
+  "layer": "svc",
+  "path": "/amortizationSchedCharge/listFullKey/{bank}-{obligor}-{obligation}-{type}",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [
+   "bank",
+   "obligor",
+   "obligation",
+   "type"
+  ],
+  "queryParams": [
+   "amortizationDate",
+   "sortOrder"
+  ],
+  "opId": "Svc-amortizationSchedCharge:/listFullKey:get",
+  "summary": "Lists Amortization Schedule Charges",
+  "spec": "OpenApi-amortizationSchedCharge.json"
+ },
+ {
+  "layer": "svc",
+  "path": "/amortizationSchedule/get/{obligationId}-{type}",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [
+   "obligationId",
+   "type"
+  ],
+  "queryParams": [
+   "amortizationDate"
+  ],
+  "opId": "Svc-amortizationSchedule:/get:get",
+  "summary": "Retrieves an Amortization Schedule",
+  "spec": "OpenApi-amortizationSchedule.json"
+ },
+ {
+  "layer": "svc",
+  "path": "/amortizationSchedule/getFullKey/{bank}-{obligor}-{obligation}-{type}",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [
+   "bank",
+   "obligor",
+   "obligation",
+   "type"
+  ],
+  "queryParams": [
+   "amortizationDate"
+  ],
+  "opId": "Svc-amortizationSchedule:/getFullKey:get",
+  "summary": "Retrieves an Amortization Schedule",
+  "spec": "OpenApi-amortizationSchedule.json"
+ },
+ {
+  "layer": "svc",
+  "path": "/amortizationSchedule/list/{obligationId}-{type}",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [
+   "obligationId",
+   "type"
+  ],
+  "queryParams": [
+   "sortOrder"
+  ],
+  "opId": "Svc-amortizationSchedule:/list:get",
+  "summary": "Lists Amortization Schedules",
+  "spec": "OpenApi-amortizationSchedule.json"
+ },
+ {
+  "layer": "svc",
+  "path": "/amortizationSchedule/listFullKey/{bank}-{obligor}-{obligation}-{type}",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [
+   "bank",
+   "obligor",
+   "obligation",
+   "type"
+  ],
+  "queryParams": [
+   "sortOrder"
+  ],
+  "opId": "Svc-amortizationSchedule:/listFullKey:get",
+  "summary": "Lists Amortization Schedules",
+  "spec": "OpenApi-amortizationSchedule.json"
+ },
+ {
+  "layer": "svc",
+  "path": "/amortizationSchedule/listByOblnId/{obligationId}",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [
+   "obligationId"
+  ],
+  "queryParams": [
+   "sortOrder"
+  ],
+  "opId": "Svc-amortizationSchedule:/listByOblnId:get",
+  "summary": "Lists Amortization Schedules",
+  "spec": "OpenApi-amortizationSchedule.json"
+ },
+ {
+  "layer": "svc",
+  "path": "/apis/get",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [],
+  "queryParams": [
+   "apiName"
+  ],
+  "opId": "Svc-apis:/get:get",
+  "summary": "Retrieves a Financial Transaction Api",
+  "spec": "OpenApi-apis.json"
+ },
+ {
+  "layer": "svc",
+  "path": "/apis/list",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [],
+  "queryParams": [
+   "apiNameSearch",
+   "sortOrder"
+  ],
+  "opId": "Svc-apis:/list:get",
+  "summary": "Lists Financial Transaction Apis",
+  "spec": "OpenApi-apis.json"
+ },
+ {
+  "layer": "svc",
+  "path": "/apis/listByCategory",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [],
+  "queryParams": [
+   "category",
+   "sortOrder"
+  ],
+  "opId": "Svc-apis:/listByCategory:get",
+  "summary": "Lists Financial Transaction Apis",
+  "spec": "OpenApi-apis.json"
+ },
+ {
+  "layer": "svc",
+  "path": "/apis/listCategories",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [],
+  "queryParams": [
+   "sortOrder"
+  ],
+  "opId": "Svc-apis:/listCategories:get",
+  "summary": "Lists Financial Transaction Apis",
+  "spec": "OpenApi-apis.json"
+ },
+ {
+  "layer": "svc",
+  "path": "/assetSales/get/{obligationId}",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [
+   "obligationId"
+  ],
+  "queryParams": [
+   "effectiveDate"
+  ],
+  "opId": "Svc-assetSales:/get:get",
+  "summary": "Retrieves an assetSale",
+  "spec": "OpenApi-assetSales.json"
+ },
+ {
+  "layer": "svc",
+  "path": "/assetSales/getFullKey/{bank}-{obligor}-{obligation}",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [
+   "bank",
+   "obligor",
+   "obligation"
+  ],
+  "queryParams": [
+   "effectiveDate"
+  ],
+  "opId": "Svc-assetSales:/getFullKey:get",
+  "summary": "Retrieves an assetSale",
+  "spec": "OpenApi-assetSales.json"
+ },
+ {
+  "layer": "svc",
+  "path": "/assetSales/list/{obligationId}",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [
+   "obligationId"
+  ],
+  "queryParams": [
+   "sortOrder"
+  ],
+  "opId": "Svc-assetSales:/list:get",
+  "summary": "Lists assetSales",
+  "spec": "OpenApi-assetSales.json"
+ },
+ {
+  "layer": "svc",
+  "path": "/assetSales/listFullKey/{bank}-{obligor}-{obligation}",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [
+   "bank",
+   "obligor",
+   "obligation"
+  ],
+  "queryParams": [
+   "sortOrder"
+  ],
+  "opId": "Svc-assetSales:/listFullKey:get",
+  "summary": "Lists assetSales",
+  "spec": "OpenApi-assetSales.json"
+ },
+ {
+  "layer": "svc",
+  "path": "/balances/get/{obligationId}-{balanceCode}",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [
+   "obligationId",
+   "balanceCode"
+  ],
+  "queryParams": [],
+  "opId": "Svc-balances:/get:get",
+  "summary": "Retrieves a Balance Information",
+  "spec": "OpenApi-balances.json"
+ },
+ {
+  "layer": "svc",
+  "path": "/balances/getFullKey/{bank}-{obligor}-{obligation}-{balanceCode}",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [
+   "bank",
+   "obligor",
+   "obligation",
+   "balanceCode"
+  ],
+  "queryParams": [],
+  "opId": "Svc-balances:/getFullKey:get",
+  "summary": "Retrieves a Balance Information",
+  "spec": "OpenApi-balances.json"
+ },
+ {
+  "layer": "svc",
+  "path": "/balances/list/{obligationId}",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [
+   "obligationId"
+  ],
+  "queryParams": [
+   "sortOrder"
+  ],
+  "opId": "Svc-balances:/list:get",
+  "summary": "Lists Balance Informations",
+  "spec": "OpenApi-balances.json"
+ },
+ {
+  "layer": "svc",
+  "path": "/balances/listFullKey/{bank}-{obligor}-{obligation}",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [
+   "bank",
+   "obligor",
+   "obligation"
+  ],
+  "queryParams": [
+   "sortOrder"
+  ],
+  "opId": "Svc-balances:/listFullKey:get",
+  "summary": "Lists Balance Informations",
+  "spec": "OpenApi-balances.json"
+ },
+ {
+  "layer": "svc",
+  "path": "/banks/get/{bank}",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [
+   "bank"
+  ],
+  "queryParams": [],
+  "opId": "Svc-banks:/get:get",
+  "summary": "Retrieves a Bank",
+  "spec": "OpenApi-banks.json"
+ },
+ {
+  "layer": "svc",
+  "path": "/banks/list",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [],
+  "queryParams": [
+   "organizationId",
+   "sortOrder"
+  ],
+  "opId": "Svc-banks:/list:get",
+  "summary": "Lists Banks",
+  "spec": "OpenApi-banks.json"
+ },
+ {
+  "layer": "svc",
+  "path": "/billingSchedules/get/{obligationId}-{chargeCode}",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [
+   "obligationId",
+   "chargeCode"
+  ],
+  "queryParams": [
+   "effectiveDate"
+  ],
+  "opId": "Svc-billingSchedules:/get:get",
+  "summary": "Retrieves a Billing Schedule",
+  "spec": "OpenApi-billingSchedules.json"
+ },
+ {
+  "layer": "svc",
+  "path": "/billingSchedules/getFullKey/{bank}-{obligor}-{obligation}-{chargeCode}",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [
+   "bank",
+   "obligor",
+   "obligation",
+   "chargeCode"
+  ],
+  "queryParams": [
+   "effectiveDate"
+  ],
+  "opId": "Svc-billingSchedules:/getFullKey:get",
+  "summary": "Retrieves a Billing Schedule",
+  "spec": "OpenApi-billingSchedules.json"
+ },
+ {
+  "layer": "svc",
+  "path": "/billingSchedules/list/{obligationId}-{chargeCode}",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [
+   "obligationId",
+   "chargeCode"
+  ],
+  "queryParams": [
+   "sortOrder"
+  ],
+  "opId": "Svc-billingSchedules:/list:get",
+  "summary": "Lists Billing Schedules",
+  "spec": "OpenApi-billingSchedules.json"
+ },
+ {
+  "layer": "svc",
+  "path": "/billingSchedules/listFullKey/{bank}-{obligor}-{obligation}-{chargeCode}",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [
+   "bank",
+   "obligor",
+   "obligation",
+   "chargeCode"
+  ],
+  "queryParams": [
+   "sortOrder"
+  ],
+  "opId": "Svc-billingSchedules:/listFullKey:get",
+  "summary": "Lists Billing Schedules",
+  "spec": "OpenApi-billingSchedules.json"
+ },
+ {
+  "layer": "svc",
+  "path": "/charges/get/{obligationId}-{chargeCode}",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [
+   "obligationId",
+   "chargeCode"
+  ],
+  "queryParams": [],
+  "opId": "Svc-charges:/get:get",
+  "summary": "Retrieves a Charge",
+  "spec": "OpenApi-charges.json"
+ },
+ {
+  "layer": "svc",
+  "path": "/charges/getFullKey/{bank}-{obligor}-{obligation}-{chargeCode}",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [
+   "bank",
+   "obligor",
+   "obligation",
+   "chargeCode"
+  ],
+  "queryParams": [],
+  "opId": "Svc-charges:/getFullKey:get",
+  "summary": "Retrieves a Charge",
+  "spec": "OpenApi-charges.json"
+ },
+ {
+  "layer": "svc",
+  "path": "/charges/list/{obligationId}",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [
+   "obligationId"
+  ],
+  "queryParams": [
+   "sortOrder"
+  ],
+  "opId": "Svc-charges:/list:get",
+  "summary": "Lists Charges",
+  "spec": "OpenApi-charges.json"
+ },
+ {
+  "layer": "svc",
+  "path": "/charges/listFullKey/{bank}-{obligor}-{obligation}",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [
+   "bank",
+   "obligor",
+   "obligation"
+  ],
+  "queryParams": [
+   "sortOrder"
+  ],
+  "opId": "Svc-charges:/listFullKey:get",
+  "summary": "Lists Charges",
+  "spec": "OpenApi-charges.json"
+ },
+ {
+  "layer": "svc",
+  "path": "/citizenships/get/{nameId}-{sequence}",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [
+   "nameId",
+   "sequence"
+  ],
+  "queryParams": [],
+  "opId": "Svc-citizenships:/get:get",
+  "summary": "Retrieves a Citizenship Information",
+  "spec": "OpenApi-citizenships.json"
+ },
+ {
+  "layer": "svc",
+  "path": "/citizenships/list/{nameId}",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [
+   "nameId"
+  ],
+  "queryParams": [
+   "sortOrder"
+  ],
+  "opId": "Svc-citizenships:/list:get",
+  "summary": "Lists Citizenship Informations",
+  "spec": "OpenApi-citizenships.json"
+ },
+ {
+  "layer": "svc",
+  "path": "/collateral/get/{bank}-{obligor}-{collateralItem}",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [
+   "bank",
+   "obligor",
+   "collateralItem"
+  ],
+  "queryParams": [],
+  "opId": "Svc-collateral:/get:get",
+  "summary": "Retrieves a Collateral",
+  "spec": "OpenApi-collateral.json"
+ },
+ {
+  "layer": "svc",
+  "path": "/collateral/list/{bank}-{obligor}",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [
+   "bank",
+   "obligor"
+  ],
+  "queryParams": [
+   "sortOrder"
+  ],
+  "opId": "Svc-collateral:/list:get",
+  "summary": "Lists Collaterals",
+  "spec": "OpenApi-collateral.json"
+ },
+ {
+  "layer": "svc",
+  "path": "/collateralInsurance/get/{bank}-{obligor}-{collateralItem}-{sequence}",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [
+   "bank",
+   "obligor",
+   "collateralItem",
+   "sequence"
+  ],
+  "queryParams": [],
+  "opId": "Svc-collateralInsurance:/get:get",
+  "summary": "Retrieves a Collateral Insurance",
+  "spec": "OpenApi-collateralInsurance.json"
+ },
+ {
+  "layer": "svc",
+  "path": "/collateralInsurance/list/{bank}-{obligor}-{collateralItem}",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [
+   "bank",
+   "obligor",
+   "collateralItem"
+  ],
+  "queryParams": [
+   "sortOrder"
+  ],
+  "opId": "Svc-collateralInsurance:/list:get",
+  "summary": "Lists Collateral Insurances",
+  "spec": "OpenApi-collateralInsurance.json"
+ },
+ {
+  "layer": "svc",
+  "path": "/collateralNegotiable/get/{bank}-{obligor}-{collateralItem}",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [
+   "bank",
+   "obligor",
+   "collateralItem"
+  ],
+  "queryParams": [],
+  "opId": "Svc-collateralNegotiable:/get:get",
+  "summary": "Retrieves a Collateral Negotiable",
+  "spec": "OpenApi-collateralNegotiable.json"
+ },
+ {
+  "layer": "svc",
+  "path": "/collateralNegotiable/list/{bank}-{obligor}",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [
+   "bank",
+   "obligor"
+  ],
+  "queryParams": [
+   "sortOrder"
+  ],
+  "opId": "Svc-collateralNegotiable:/list:get",
+  "summary": "Lists Collateral Negotiables",
+  "spec": "OpenApi-collateralNegotiable.json"
+ },
+ {
+  "layer": "svc",
+  "path": "/collBorrowingBase/get/{bank}-{obligor}-{collateralItem}",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [
+   "bank",
+   "obligor",
+   "collateralItem"
+  ],
+  "queryParams": [],
+  "opId": "Svc-collBorrowingBase:/get:get",
+  "summary": "Retrieves a Collateral Borrowing Base",
+  "spec": "OpenApi-collBorrowingBase.json"
+ },
+ {
+  "layer": "svc",
+  "path": "/collFloodFilings/get/{bank}-{obligor}-{collateralItem}-{sequence}",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [
+   "bank",
+   "obligor",
+   "collateralItem",
+   "sequence"
+  ],
+  "queryParams": [],
+  "opId": "Svc-collFloodFilings:/get:get",
+  "summary": "Retrieves a Collateral Flood Filing",
+  "spec": "OpenApi-collFloodFilings.json"
+ },
+ {
+  "layer": "svc",
+  "path": "/collFloodFilings/list/{bank}-{obligor}-{collateralItem}",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [
+   "bank",
+   "obligor",
+   "collateralItem"
+  ],
+  "queryParams": [
+   "sortOrder"
+  ],
+  "opId": "Svc-collFloodFilings:/list:get",
+  "summary": "Lists Collateral Flood Filings",
+  "spec": "OpenApi-collFloodFilings.json"
+ },
+ {
+  "layer": "svc",
+  "path": "/collNegotHistory/get/{bank}-{obligor}-{collateralItem}",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [
+   "bank",
+   "obligor",
+   "collateralItem"
+  ],
+  "queryParams": [
+   "timestamp"
+  ],
+  "opId": "Svc-collNegotHistory:/get:get",
+  "summary": "Retrieves a Collateral Negotiable History",
+  "spec": "OpenApi-collNegotHistory.json"
+ },
+ {
+  "layer": "svc",
+  "path": "/collNegotHistory/list/{bank}-{obligor}-{collateralItem}",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [
+   "bank",
+   "obligor",
+   "collateralItem"
+  ],
+  "queryParams": [
+   "sortOrder"
+  ],
+  "opId": "Svc-collNegotHistory:/list:get",
+  "summary": "Lists Collateral Negotiable Histories",
+  "spec": "OpenApi-collNegotHistory.json"
+ },
+ {
+  "layer": "svc",
+  "path": "/collNegotReprice/get/{bank}",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [
+   "bank"
+  ],
+  "queryParams": [
+   "cusipNumber"
+  ],
+  "opId": "Svc-collNegotReprice:/get:get",
+  "summary": "Retrieves a Collateral Negotiable Repricing",
+  "spec": "OpenApi-collNegotReprice.json"
+ },
+ {
+  "layer": "svc",
+  "path": "/collNegotReprice/list/{bank}",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [
+   "bank"
+  ],
+  "queryParams": [
+   "sortOrder"
+  ],
+  "opId": "Svc-collNegotReprice:/list:get",
+  "summary": "Lists Collateral Negotiable Repricings",
+  "spec": "OpenApi-collNegotReprice.json"
+ },
+ {
+  "layer": "svc",
+  "path": "/collRealEstate/get/{bank}-{obligor}-{collateralItem}",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [
+   "bank",
+   "obligor",
+   "collateralItem"
+  ],
+  "queryParams": [],
+  "opId": "Svc-collRealEstate:/get:get",
+  "summary": "Retrieves a Collateral Real Estate",
+  "spec": "OpenApi-collRealEstate.json"
+ },
+ {
+  "layer": "svc",
+  "path": "/collRETenant/get/{bank}-{obligor}-{collateralItem}-{tenantSequence}",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [
+   "bank",
+   "obligor",
+   "collateralItem",
+   "tenantSequence"
+  ],
+  "queryParams": [],
+  "opId": "Svc-collRETenant:/get:get",
+  "summary": "Retrieves a Collateral Real Estate Tenant",
+  "spec": "OpenApi-collRETenant.json"
+ },
+ {
+  "layer": "svc",
+  "path": "/collRETenant/list/{bank}-{obligor}-{collateralItem}",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [
+   "bank",
+   "obligor",
+   "collateralItem"
+  ],
+  "queryParams": [
+   "sortOrder"
+  ],
+  "opId": "Svc-collRETenant:/list:get",
+  "summary": "Lists Collateral Real Estate Tenants",
+  "spec": "OpenApi-collRETenant.json"
+ },
+ {
+  "layer": "svc",
+  "path": "/currentObligations/get/{obligationId}",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [
+   "obligationId"
+  ],
+  "queryParams": [],
+  "opId": "Svc-currentObligations:/get:get",
+  "summary": "Retrieves a Current Obligation Information",
+  "spec": "OpenApi-currentObligations.json"
+ },
+ {
+  "layer": "svc",
+  "path": "/currentObligations/getFullKey/{bank}-{obligor}-{obligation}",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [
+   "bank",
+   "obligor",
+   "obligation"
+  ],
+  "queryParams": [],
+  "opId": "Svc-currentObligations:/getFullKey:get",
+  "summary": "Retrieves a Current Obligation Information",
+  "spec": "OpenApi-currentObligations.json"
+ },
+ {
+  "layer": "svc",
+  "path": "/customCollateral/get/{bank}-{obligor}-{collateralItem}",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [
+   "bank",
+   "obligor",
+   "collateralItem"
+  ],
+  "queryParams": [
+   "fieldId"
+  ],
+  "opId": "Svc-customCollateral:/get:get",
+  "summary": "Retrieves a Custom Collateral Field",
+  "spec": "OpenApi-customCollateral.json"
+ },
+ {
+  "layer": "svc",
+  "path": "/customCollateral/list/{bank}-{obligor}-{collateralItem}",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [
+   "bank",
+   "obligor",
+   "collateralItem"
+  ],
+  "queryParams": [],
+  "opId": "Svc-customCollateral:/list:get",
+  "summary": "Lists Custom Collateral Fields",
+  "spec": "OpenApi-customCollateral.json"
+ },
+ {
+  "layer": "svc",
+  "path": "/customDeal/get/{bank}-{dealId}",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [
+   "bank",
+   "dealId"
+  ],
+  "queryParams": [
+   "fieldId"
+  ],
+  "opId": "Svc-customDeal:/get:get",
+  "summary": "Retrieves a Custom Deal Field",
+  "spec": "OpenApi-customDeal.json"
+ },
+ {
+  "layer": "svc",
+  "path": "/customDeal/list/{bank}-{dealId}",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [
+   "bank",
+   "dealId"
+  ],
+  "queryParams": [
+   "sortOrder"
+  ],
+  "opId": "Svc-customDeal:/list:get",
+  "summary": "Lists Custom Deal Fields",
+  "spec": "OpenApi-customDeal.json"
+ },
+ {
+  "layer": "svc",
+  "path": "/customerIdentifications/get/{nameId}-{sequence}",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [
+   "nameId",
+   "sequence"
+  ],
+  "queryParams": [],
+  "opId": "Svc-customerIdentifications:/get:get",
+  "summary": "Retrieves a Customer Identification Information",
+  "spec": "OpenApi-customerIdentifications.json"
+ },
+ {
+  "layer": "svc",
+  "path": "/customerIdentifications/list/{nameId}",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [
+   "nameId"
+  ],
+  "queryParams": [
+   "sortOrder"
+  ],
+  "opId": "Svc-customerIdentifications:/list:get",
+  "summary": "Lists Customer Identification Informations",
+  "spec": "OpenApi-customerIdentifications.json"
+ },
+ {
+  "layer": "svc",
+  "path": "/customEscrow/get/{obligationId}",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [
+   "obligationId"
+  ],
+  "queryParams": [
+   "fieldId"
+  ],
+  "opId": "Svc-customEscrow:/get:get",
+  "summary": "Retrieves a Custom Escrow Field",
+  "spec": "OpenApi-customEscrow.json"
+ },
+ {
+  "layer": "svc",
+  "path": "/customEscrow/list/{obligationId}",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [
+   "obligationId"
+  ],
+  "queryParams": [
+   "sortOrder"
+  ],
+  "opId": "Svc-customEscrow:/list:get",
+  "summary": "Lists Custom Escrow Fields",
+  "spec": "OpenApi-customEscrow.json"
+ },
+ {
+  "layer": "svc",
+  "path": "/customName/get/{nameId}",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [
+   "nameId"
+  ],
+  "queryParams": [
+   "fieldId"
+  ],
+  "opId": "Svc-customName:/get:get",
+  "summary": "Retrieves a Custom Customer Field",
+  "spec": "OpenApi-customName.json"
+ },
+ {
+  "layer": "svc",
+  "path": "/customName/list/{nameId}",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [
+   "nameId"
+  ],
+  "queryParams": [
+   "sortOrder"
+  ],
+  "opId": "Svc-customName:/list:get",
+  "summary": "Lists Custom Customer Fields",
+  "spec": "OpenApi-customName.json"
+ },
+ {
+  "layer": "svc",
+  "path": "/customObligation/get/{obligationId}",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [
+   "obligationId"
+  ],
+  "queryParams": [
+   "fieldId"
+  ],
+  "opId": "Svc-customObligation:/get:get",
+  "summary": "Retrieves a Custom Obligation Field",
+  "spec": "OpenApi-customObligation.json"
+ },
+ {
+  "layer": "svc",
+  "path": "/customObligation/list/{obligationId}",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [
+   "obligationId"
+  ],
+  "queryParams": [
+   "sortOrder"
+  ],
+  "opId": "Svc-customObligation:/list:get",
+  "summary": "Lists Custom Obligation Fields",
+  "spec": "OpenApi-customObligation.json"
+ },
+ {
+  "layer": "svc",
+  "path": "/customObligor/get/{bank}-{obligor}",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [
+   "bank",
+   "obligor"
+  ],
+  "queryParams": [
+   "fieldId"
+  ],
+  "opId": "Svc-customObligor:/get:get",
+  "summary": "Retrieves a Custom Obligor Field",
+  "spec": "OpenApi-customObligor.json"
+ },
+ {
+  "layer": "svc",
+  "path": "/customObligor/list/{bank}-{obligor}",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [
+   "bank",
+   "obligor"
+  ],
+  "queryParams": [
+   "sortOrder"
+  ],
+  "opId": "Svc-customObligor:/list:get",
+  "summary": "Lists Custom Obligor Fields",
+  "spec": "OpenApi-customObligor.json"
+ },
+ {
+  "layer": "svc",
+  "path": "/customObligorApplication/get/{bank}-{obligor}-{application}",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [
+   "bank",
+   "obligor",
+   "application"
+  ],
+  "queryParams": [
+   "fieldId"
+  ],
+  "opId": "Svc-customObligorApplication:/get:get",
+  "summary": "Retrieves a Custom Obligor Application Field",
+  "spec": "OpenApi-customObligorApplication.json"
+ },
+ {
+  "layer": "svc",
+  "path": "/customObligorApplication/list/{bank}-{obligor}-{application}",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [
+   "bank",
+   "obligor",
+   "application"
+  ],
+  "queryParams": [
+   "sortOrder"
+  ],
+  "opId": "Svc-customObligorApplication:/list:get",
+  "summary": "Lists Custom Obligor Application Fields",
+  "spec": "OpenApi-customObligorApplication.json"
+ },
+ {
+  "layer": "svc",
+  "path": "/depositInstructions/get/{nameId}-{sequence}-{depositInstructionId}",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [
+   "nameId",
+   "sequence",
+   "depositInstructionId"
+  ],
+  "queryParams": [],
+  "opId": "Svc-depositInstructions:/get:get",
+  "summary": "Retrieves a Deposit Instruction",
+  "spec": "OpenApi-depositInstructions.json"
+ },
+ {
+  "layer": "svc",
+  "path": "/depositInstructions/list/{nameId}-{sequence}",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [
+   "nameId",
+   "sequence"
+  ],
+  "queryParams": [
+   "sortOrder"
+  ],
+  "opId": "Svc-depositInstructions:/list:get",
+  "summary": "Lists Deposit Instructions",
+  "spec": "OpenApi-depositInstructions.json"
+ },
+ {
+  "layer": "svc",
+  "path": "/exposure/listCustomer/{nameId}",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [
+   "nameId"
+  ],
+  "queryParams": [],
+  "opId": "Svc-exposure:/listCustomer:get",
+  "summary": "Lists Exposures",
+  "spec": "OpenApi-exposure.json"
+ },
+ {
+  "layer": "svc",
+  "path": "/exposure/listObligor/{bank}-{obligor}",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [
+   "bank",
+   "obligor"
+  ],
+  "queryParams": [],
+  "opId": "Svc-exposure:/listObligor:get",
+  "summary": "Lists Exposures",
+  "spec": "OpenApi-exposure.json"
+ },
+ {
+  "layer": "svc",
+  "path": "/financialHistory/get/{obligationId}",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [
+   "obligationId"
+  ],
+  "queryParams": [
+   "effectiveDate",
+   "timestamp",
+   "sequence"
+  ],
+  "opId": "Svc-financialHistory:/get:get",
+  "summary": "Retrieves a Financial Transaction History",
+  "spec": "OpenApi-financialHistory.json"
+ },
+ {
+  "layer": "svc",
+  "path": "/financialHistory/list/{obligationId}",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [
+   "obligationId"
+  ],
+  "queryParams": [
+   "effectiveDate",
+   "sortOrder"
+  ],
+  "opId": "Svc-financialHistory:/list:get",
+  "summary": "Lists Financial Transaction Histories",
+  "spec": "OpenApi-financialHistory.json"
+ },
+ {
+  "layer": "svc",
+  "path": "/financialHistory/numberOfDays/{obligationId}",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [
+   "obligationId"
+  ],
+  "queryParams": [
+   "numberOfDays",
+   "sortOrder"
+  ],
+  "opId": "Svc-financialHistory:/numberOfDays:get",
+  "summary": "",
+  "spec": "OpenApi-financialHistory.json"
+ },
+ {
+  "layer": "svc",
+  "path": "/financialHistory/effectiveFrom/{obligationId}",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [
+   "obligationId"
+  ],
+  "queryParams": [
+   "effectiveFrom",
+   "effectiveTo",
+   "sortOrder"
+  ],
+  "opId": "Svc-financialHistory:/effectiveFrom:get",
+  "summary": "",
+  "spec": "OpenApi-financialHistory.json"
+ },
+ {
+  "layer": "svc",
+  "path": "/financialHistory/listAllById/{obligationId}",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [
+   "obligationId"
+  ],
+  "queryParams": [
+   "sortOrder"
+  ],
+  "opId": "Svc-financialHistory:/listAllById:get",
+  "summary": "Lists Financial Transaction Histories",
+  "spec": "OpenApi-financialHistory.json"
+ },
+ {
+  "layer": "svc",
+  "path": "/financialHistorySchedAct/get/{obligationId}-{sequence}",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [
+   "obligationId",
+   "sequence"
+  ],
+  "queryParams": [
+   "effectivedate",
+   "timestamp"
+  ],
+  "opId": "Svc-financialHistorySchedAct:/get:get",
+  "summary": "Retrieves a Financial History Scheduled Activity",
+  "spec": "OpenApi-financialHistorySchedAct.json"
+ },
+ {
+  "layer": "svc",
+  "path": "/financialHistorySchedAct/list/{obligationId}",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [
+   "obligationId"
+  ],
+  "queryParams": [
+   "effectivedate",
+   "timestamp",
+   "sortOrder"
+  ],
+  "opId": "Svc-financialHistorySchedAct:/list:get",
+  "summary": "Lists Financial History Scheduled Activities",
+  "spec": "OpenApi-financialHistorySchedAct.json"
+ },
+ {
+  "layer": "svc",
+  "path": "/financialInstrument/get/{financialInstrumentId}",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [
+   "financialInstrumentId"
+  ],
+  "queryParams": [],
+  "opId": "Svc-financialInstrument:/get:get",
+  "summary": "Retrieves a Financial Instrument",
+  "spec": "OpenApi-financialInstrument.json"
+ },
+ {
+  "layer": "svc",
+  "path": "/financialInstrument/getFullKey/{bank}-{obligor}-{application}-{fiNumber}",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [
+   "bank",
+   "obligor",
+   "application",
+   "fiNumber"
+  ],
+  "queryParams": [],
+  "opId": "Svc-financialInstrument:/getFullKey:get",
+  "summary": "Retrieves a Financial Instrument",
+  "spec": "OpenApi-financialInstrument.json"
+ },
+ {
+  "layer": "svc",
+  "path": "/financialInstrument/listOblnByObg/{bank}-{obligor}",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [
+   "bank",
+   "obligor"
+  ],
+  "queryParams": [
+   "instrumentType",
+   "sortOrder",
+   "startAfter"
+  ],
+  "opId": "Svc-financialInstrument:/listOblnByObg:get",
+  "summary": "Lists Financial Instruments",
+  "spec": "OpenApi-financialInstrument.json"
+ },
+ {
+  "layer": "svc",
+  "path": "/financialInstrument/listOblnByObgAppl/{bank}-{obligor}-{application}",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [
+   "bank",
+   "obligor",
+   "application"
+  ],
+  "queryParams": [
+   "instrumentType",
+   "sortOrder",
+   "startAfter"
+  ],
+  "opId": "Svc-financialInstrument:/listOblnByObgAppl:get",
+  "summary": "Lists Financial Instruments",
+  "spec": "OpenApi-financialInstrument.json"
+ },
+ {
+  "layer": "svc",
+  "path": "/financialInstrument/listAllByObligor/{bank}-{obligor}",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [
+   "bank",
+   "obligor"
+  ],
+  "queryParams": [
+   "sortOrder",
+   "startAfter"
+  ],
+  "opId": "Svc-financialInstrument:/listAllByObligor:get",
+  "summary": "Lists Financial Instruments",
+  "spec": "OpenApi-financialInstrument.json"
+ },
+ {
+  "layer": "svc",
+  "path": "/financialInstrument/listAllByObligorAppl/{bank}-{obligor}-{application}",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [
+   "bank",
+   "obligor",
+   "application"
+  ],
+  "queryParams": [
+   "sortOrder",
+   "startAfter"
+  ],
+  "opId": "Svc-financialInstrument:/listAllByObligorAppl:get",
+  "summary": "Lists Financial Instruments",
+  "spec": "OpenApi-financialInstrument.json"
+ },
+ {
+  "layer": "svc",
+  "path": "/flatFees/get/{obligationId}-{chargeCode}",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [
+   "obligationId",
+   "chargeCode"
+  ],
+  "queryParams": [],
+  "opId": "Svc-flatFees:/get:get",
+  "summary": "Retrieves a Flat Fee",
+  "spec": "OpenApi-flatFees.json"
+ },
+ {
+  "layer": "svc",
+  "path": "/flatFees/getFullKey/{bank}-{obligor}-{obligation}-{chargeCode}",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [
+   "bank",
+   "obligor",
+   "obligation",
+   "chargeCode"
+  ],
+  "queryParams": [],
+  "opId": "Svc-flatFees:/getFullKey:get",
+  "summary": "Retrieves a Flat Fee",
+  "spec": "OpenApi-flatFees.json"
+ },
+ {
+  "layer": "svc",
+  "path": "/flatFees/list/{obligationId}",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [
+   "obligationId"
+  ],
+  "queryParams": [
+   "sortOrder"
+  ],
+  "opId": "Svc-flatFees:/list:get",
+  "summary": "Lists Flat Fees",
+  "spec": "OpenApi-flatFees.json"
+ },
+ {
+  "layer": "svc",
+  "path": "/flatFees/listFullKey/{bank}-{obligor}-{obligation}",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [
+   "bank",
+   "obligor",
+   "obligation"
+  ],
+  "queryParams": [
+   "sortOrder"
+  ],
+  "opId": "Svc-flatFees:/listFullKey:get",
+  "summary": "Lists Flat Fees",
+  "spec": "OpenApi-flatFees.json"
+ },
+ {
+  "layer": "svc",
+  "path": "/futureObligations/get/{obligationId}",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [
+   "obligationId"
+  ],
+  "queryParams": [],
+  "opId": "Svc-futureObligations:/get:get",
+  "summary": "Retrieves a Future Obligation Information",
+  "spec": "OpenApi-futureObligations.json"
+ },
+ {
+  "layer": "svc",
+  "path": "/futureObligations/getFullKey/{bank}-{obligor}-{obligation}",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [
+   "bank",
+   "obligor",
+   "obligation"
+  ],
+  "queryParams": [],
+  "opId": "Svc-futureObligations:/getFullKey:get",
+  "summary": "Retrieves a Future Obligation Information",
+  "spec": "OpenApi-futureObligations.json"
+ },
+ {
+  "layer": "svc",
+  "path": "/invoiceLineItems/get/{bank}-{billYear}-{invoiceNumber}-{obligation}-{chargeCode}-{chargeType}",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [
+   "bank",
+   "billYear",
+   "invoiceNumber",
+   "obligation",
+   "chargeCode",
+   "chargeType"
+  ],
+  "queryParams": [],
+  "opId": "Svc-invoiceLineItems:/get:get",
+  "summary": "Retrieves an Invoice Line Item",
+  "spec": "OpenApi-invoiceLineItems.json"
+ },
+ {
+  "layer": "svc",
+  "path": "/invoiceLineItems/list/{bank}-{billYear}-{invoiceNumber}-{obligation}-{chargeCode}",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [
+   "bank",
+   "billYear",
+   "invoiceNumber",
+   "obligation",
+   "chargeCode"
+  ],
+  "queryParams": [],
+  "opId": "Svc-invoiceLineItems:/list:get",
+  "summary": "Lists Invoice Line Items",
+  "spec": "OpenApi-invoiceLineItems.json"
+ },
+ {
+  "layer": "svc",
+  "path": "/invoiceLineItems/listByObligor/{bank}-{obligor}",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [
+   "bank",
+   "obligor"
+  ],
+  "queryParams": [
+   "paidOption"
+  ],
+  "opId": "Svc-invoiceLineItems:/listByObligor:get",
+  "summary": "Lists Invoice Line Items",
+  "spec": "OpenApi-invoiceLineItems.json"
+ },
+ {
+  "layer": "svc",
+  "path": "/invoiceLineItems/listByObligation/{bank}-{obligor}-{obligation}",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [
+   "bank",
+   "obligor",
+   "obligation"
+  ],
+  "queryParams": [
+   "paidOption"
+  ],
+  "opId": "Svc-invoiceLineItems:/listByObligation:get",
+  "summary": "Lists Invoice Line Items",
+  "spec": "OpenApi-invoiceLineItems.json"
+ },
+ {
+  "layer": "svc",
+  "path": "/invoiceLineItems/listByInvoice/{bank}",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [
+   "bank"
+  ],
+  "queryParams": [
+   "billYear",
+   "invoiceNumber",
+   "paidOption"
+  ],
+  "opId": "Svc-invoiceLineItems:/listByInvoice:get",
+  "summary": "Lists Invoice Line Items",
+  "spec": "OpenApi-invoiceLineItems.json"
+ },
+ {
+  "layer": "svc",
+  "path": "/invoiceLineItems/listByInvoiceObln/{bank}",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [
+   "bank"
+  ],
+  "queryParams": [
+   "billYear",
+   "invoiceNumber",
+   "obligation",
+   "paidOption"
+  ],
+  "opId": "Svc-invoiceLineItems:/listByInvoiceObln:get",
+  "summary": "Lists Invoice Line Items",
+  "spec": "OpenApi-invoiceLineItems.json"
+ },
+ {
+  "layer": "svc",
+  "path": "/invoices/get/{bank}-{billYear}-{invoiceNumber}",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [
+   "bank",
+   "billYear",
+   "invoiceNumber"
+  ],
+  "queryParams": [],
+  "opId": "Svc-invoices:/get:get",
+  "summary": "Retrieves an Invoice Information",
+  "spec": "OpenApi-invoices.json"
+ },
+ {
+  "layer": "svc",
+  "path": "/invoices/list/{bank}-{billYear}",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [
+   "bank",
+   "billYear"
+  ],
+  "queryParams": [
+   "sortOrder"
+  ],
+  "opId": "Svc-invoices:/list:get",
+  "summary": "Lists Invoice Informations",
+  "spec": "OpenApi-invoices.json"
+ },
+ {
+  "layer": "svc",
+  "path": "/invoices/listbyobg/{bank}-{billYear}",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [
+   "bank",
+   "billYear"
+  ],
+  "queryParams": [
+   "obg",
+   "sortOrder"
+  ],
+  "opId": "Svc-invoices:/listbyobg:get",
+  "summary": "Lists Invoice Informations",
+  "spec": "OpenApi-invoices.json"
+ },
+ {
+  "layer": "svc",
+  "path": "/invoices/listAllByObligor/{bank}",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [
+   "bank"
+  ],
+  "queryParams": [
+   "obg",
+   "sortOrder"
+  ],
+  "opId": "Svc-invoices:/listAllByObligor:get",
+  "summary": "Lists Invoice Informations",
+  "spec": "OpenApi-invoices.json"
+ },
+ {
+  "layer": "svc",
+  "path": "/lateChargeControl/get/{bank}-{application}-{formulaType}",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [
+   "bank",
+   "application",
+   "formulaType"
+  ],
+  "queryParams": [],
+  "opId": "Svc-lateChargeControl:/get:get",
+  "summary": "Retrieves a Late Charge Control",
+  "spec": "OpenApi-lateChargeControl.json"
+ },
+ {
+  "layer": "svc",
+  "path": "/lateChargeControl/list/{bank}-{application}",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [
+   "bank",
+   "application"
+  ],
+  "queryParams": [
+   "sortOrder"
+  ],
+  "opId": "Svc-lateChargeControl:/list:get",
+  "summary": "Lists Late Charge Controls",
+  "spec": "OpenApi-lateChargeControl.json"
+ },
+ {
+  "layer": "svc",
+  "path": "/nameAddresses/get/{nameId}-{sequence}",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [
+   "nameId",
+   "sequence"
+  ],
+  "queryParams": [],
+  "opId": "Svc-nameAddresses:/get:get",
+  "summary": "Retrieves a Name Address",
+  "spec": "OpenApi-nameAddresses.json"
+ },
+ {
+  "layer": "svc",
+  "path": "/nameAddresses/list/{nameId}",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [
+   "nameId"
+  ],
+  "queryParams": [
+   "sortOrder"
+  ],
+  "opId": "Svc-nameAddresses:/list:get",
+  "summary": "Lists Name Addresses",
+  "spec": "OpenApi-nameAddresses.json"
+ },
+ {
+  "layer": "svc",
+  "path": "/nameAddresses/listAlternateAddresses",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [],
+  "queryParams": [
+   "alternameNameId",
+   "sortOrder"
+  ],
+  "opId": "Svc-nameAddresses:/listAlternateAddresses:get",
+  "summary": "Lists Name Addresses",
+  "spec": "OpenApi-nameAddresses.json"
+ },
+ {
+  "layer": "svc",
+  "path": "/names/get",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [],
+  "queryParams": [
+   "nameId"
+  ],
+  "opId": "Svc-names:/get:get",
+  "summary": "Retrieves a Name",
+  "spec": "OpenApi-names.json"
+ },
+ {
+  "layer": "svc",
+  "path": "/names/list",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [],
+  "queryParams": [
+   "search",
+   "organizationId",
+   "nameType",
+   "sortOrder"
+  ],
+  "opId": "Svc-names:/list:get",
+  "summary": "Lists Names",
+  "spec": "OpenApi-names.json"
+ },
+ {
+  "layer": "svc",
+  "path": "/names/listByTaxId",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [],
+  "queryParams": [
+   "taxId",
+   "organizationId",
+   "nameType",
+   "sortOrder"
+  ],
+  "opId": "Svc-names:/listByTaxId:get",
+  "summary": "Lists Names",
+  "spec": "OpenApi-names.json"
+ },
+ {
+  "layer": "svc",
+  "path": "/names/listBySSN",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [],
+  "queryParams": [
+   "ssn",
+   "organizationId",
+   "nameType",
+   "sortOrder"
+  ],
+  "opId": "Svc-names:/listBySSN:get",
+  "summary": "Lists Names",
+  "spec": "OpenApi-names.json"
+ },
+ {
+  "layer": "svc",
+  "path": "/names/getByObligor/{bank}-{obligor}",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [
+   "bank",
+   "obligor"
+  ],
+  "queryParams": [],
+  "opId": "Svc-names:/getByObligor:get",
+  "summary": "Retrieves a Name",
+  "spec": "OpenApi-names.json"
+ },
+ {
+  "layer": "svc",
+  "path": "/notePad/get/{notePadId}",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [
+   "notePadId"
+  ],
+  "queryParams": [],
+  "opId": "Svc-notePad:/get:get",
+  "summary": "Retrieves a notePad",
+  "spec": "OpenApi-notePad.json"
+ },
+ {
+  "layer": "svc",
+  "path": "/obligations/get/{obligationId}",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [
+   "obligationId"
+  ],
+  "queryParams": [],
+  "opId": "Svc-obligations:/get:get",
+  "summary": "Retrieves an Obligation",
+  "spec": "OpenApi-obligations.json"
+ },
+ {
+  "layer": "svc",
+  "path": "/obligations/getFullKey/{bank}-{obligor}-{obligation}",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [
+   "bank",
+   "obligor",
+   "obligation"
+  ],
+  "queryParams": [],
+  "opId": "Svc-obligations:/getFullKey:get",
+  "summary": "Retrieves an Obligation",
+  "spec": "OpenApi-obligations.json"
+ },
+ {
+  "layer": "svc",
+  "path": "/obligations/getFullKeyPayoff/{bank}-{obligor}-{obligation}",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [
+   "bank",
+   "obligor",
+   "obligation"
+  ],
+  "queryParams": [
+   "payoffDate"
+  ],
+  "opId": "Svc-obligations:/getFullKeyPayoff:get",
+  "summary": "Retrieves an Obligation",
+  "spec": "OpenApi-obligations.json"
+ },
+ {
+  "layer": "svc",
+  "path": "/obligorApplications/get/{bank}-{obligor}-{application}",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [
+   "bank",
+   "obligor",
+   "application"
+  ],
+  "queryParams": [],
+  "opId": "Svc-obligorApplications:/get:get",
+  "summary": "Retrieves an Obligor Application",
+  "spec": "OpenApi-obligorApplications.json"
+ },
+ {
+  "layer": "svc",
+  "path": "/obligorApplications/list/{bank}-{obligor}",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [
+   "bank",
+   "obligor"
+  ],
+  "queryParams": [
+   "sortOrder"
+  ],
+  "opId": "Svc-obligorApplications:/list:get",
+  "summary": "Lists Obligor Applications",
+  "spec": "OpenApi-obligorApplications.json"
+ },
+ {
+  "layer": "svc",
+  "path": "/obligorDDAInstructions/get/{bank}-{obligor}-{sequence}",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [
+   "bank",
+   "obligor",
+   "sequence"
+  ],
+  "queryParams": [],
+  "opId": "Svc-obligorDDAInstructions:/get:get",
+  "summary": "Retrieves an Obligor DDA Instruction",
+  "spec": "OpenApi-obligorDDAInstructions.json"
+ },
+ {
+  "layer": "svc",
+  "path": "/obligorDDAInstructions/list/{bank}-{obligor}",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [
+   "bank",
+   "obligor"
+  ],
+  "queryParams": [
+   "sortOrder"
+  ],
+  "opId": "Svc-obligorDDAInstructions:/list:get",
+  "summary": "Lists Obligor DDA Instructions",
+  "spec": "OpenApi-obligorDDAInstructions.json"
+ },
+ {
+  "layer": "svc",
+  "path": "/obligors/get/{bank}-{obligor}",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [
+   "bank",
+   "obligor"
+  ],
+  "queryParams": [],
+  "opId": "Svc-obligors:/get:get",
+  "summary": "Retrieves an Obligor",
+  "spec": "OpenApi-obligors.json"
+ },
+ {
+  "layer": "svc",
+  "path": "/obligors/list/{nameId}",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [
+   "nameId"
+  ],
+  "queryParams": [
+   "sortOrder"
+  ],
+  "opId": "Svc-obligors:/list:get",
+  "summary": "Lists Obligors",
+  "spec": "OpenApi-obligors.json"
+ },
+ {
+  "layer": "svc",
+  "path": "/obligors/listByNameId/{bank}",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [
+   "bank"
+  ],
+  "queryParams": [
+   "nameId",
+   "sortOrder"
+  ],
+  "opId": "Svc-obligors:/listByNameId:get",
+  "summary": "Lists Obligors",
+  "spec": "OpenApi-obligors.json"
+ },
+ {
+  "layer": "svc",
+  "path": "/obligors/listAllByBank",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [],
+  "queryParams": [
+   "bank",
+   "sortOrder"
+  ],
+  "opId": "Svc-obligors:/listAllByBank:get",
+  "summary": "Lists Obligors",
+  "spec": "OpenApi-obligors.json"
+ },
+ {
+  "layer": "svc",
+  "path": "/obligorWireInstructions/get/{bank}-{obligor}-{wireId}",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [
+   "bank",
+   "obligor",
+   "wireId"
+  ],
+  "queryParams": [],
+  "opId": "Svc-obligorWireInstructions:/get:get",
+  "summary": "Retrieves an Obligor Wire Instruction",
+  "spec": "OpenApi-obligorWireInstructions.json"
+ },
+ {
+  "layer": "svc",
+  "path": "/obligorWireInstructions/list/{bank}-{obligor}",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [
+   "bank",
+   "obligor"
+  ],
+  "queryParams": [
+   "sortOrder"
+  ],
+  "opId": "Svc-obligorWireInstructions:/list:get",
+  "summary": "Lists Obligor Wire Instructions",
+  "spec": "OpenApi-obligorWireInstructions.json"
+ },
+ {
+  "layer": "svc",
+  "path": "/offsetTranCtrl/get/{bank}",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [
+   "bank"
+  ],
+  "queryParams": [
+   "offsetTrans",
+   "currencyCode"
+  ],
+  "opId": "Svc-offsetTranCtrl:/get:get",
+  "summary": "Retrieves an Offset Transaction Control",
+  "spec": "OpenApi-offsetTranCtrl.json"
+ },
+ {
+  "layer": "svc",
+  "path": "/offsetTranCtrl/list/{bank}",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [
+   "bank"
+  ],
+  "queryParams": [
+   "offsetTrans",
+   "sortOrder"
+  ],
+  "opId": "Svc-offsetTranCtrl:/list:get",
+  "summary": "Lists Offset Transaction Controls",
+  "spec": "OpenApi-offsetTranCtrl.json"
+ },
+ {
+  "layer": "svc",
+  "path": "/offsetTranCtrl/listByBank/{bank}",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [
+   "bank"
+  ],
+  "queryParams": [
+   "sortOrder"
+  ],
+  "opId": "Svc-offsetTranCtrl:/listByBank:get",
+  "summary": "Lists Offset Transaction Controls",
+  "spec": "OpenApi-offsetTranCtrl.json"
+ },
+ {
+  "layer": "svc",
+  "path": "/organizationLevels/get/{orgLevelId}",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [
+   "orgLevelId"
+  ],
+  "queryParams": [],
+  "opId": "Svc-organizationLevels:/get:get",
+  "summary": "Retrieves an Organization Levels Pivot",
+  "spec": "OpenApi-organizationLevels.json"
+ },
+ {
+  "layer": "svc",
+  "path": "/orgLevelData/get/{organizationId}-{bank}-{orgLevelType}-{orgLevelValue}",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [
+   "organizationId",
+   "bank",
+   "orgLevelType",
+   "orgLevelValue"
+  ],
+  "queryParams": [],
+  "opId": "Svc-orgLevelData:/get:get",
+  "summary": "Retrieves an Org Level Data",
+  "spec": "OpenApi-orgLevelData.json"
+ },
+ {
+  "layer": "svc",
+  "path": "/orgLevelData/list/{organizationId}-{bank}-{orgLevelType}",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [
+   "organizationId",
+   "bank",
+   "orgLevelType"
+  ],
+  "queryParams": [
+   "sortOrder"
+  ],
+  "opId": "Svc-orgLevelData:/list:get",
+  "summary": "Lists Org Level Data",
+  "spec": "OpenApi-orgLevelData.json"
+ },
+ {
+  "layer": "svc",
+  "path": "/orgLevelPointer/get/{organizationId}-{bank}-{orgLevelType}-{orgLevelValue}-{orgLevelTypePointer}",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [
+   "organizationId",
+   "bank",
+   "orgLevelType",
+   "orgLevelValue",
+   "orgLevelTypePointer"
+  ],
+  "queryParams": [],
+  "opId": "Svc-orgLevelPointer:/get:get",
+  "summary": "Retrieves an Organization Level Pointer",
+  "spec": "OpenApi-orgLevelPointer.json"
+ },
+ {
+  "layer": "svc",
+  "path": "/orgLevelPointer/list/{organizationId}-{bank}-{orgLevelType}-{orgLevelValue}",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [
+   "organizationId",
+   "bank",
+   "orgLevelType",
+   "orgLevelValue"
+  ],
+  "queryParams": [
+   "sortOrder"
+  ],
+  "opId": "Svc-orgLevelPointer:/list:get",
+  "summary": "Lists Organization Level Pointers",
+  "spec": "OpenApi-orgLevelPointer.json"
+ },
+ {
+  "layer": "svc",
+  "path": "/pba/get/{obligationId}-{balanceCode}-{assocPrincipalBalanceCode}-{sequence}",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [
+   "obligationId",
+   "balanceCode",
+   "assocPrincipalBalanceCode",
+   "sequence"
+  ],
+  "queryParams": [
+   "effectiveDate",
+   "postingSequence"
+  ],
+  "opId": "Svc-pba:/get:get",
+  "summary": "Retrieves a PBA",
+  "spec": "OpenApi-pba.json"
+ },
+ {
+  "layer": "svc",
+  "path": "/pba/getFullKey/{bank}-{obligor}-{obligation}-{balanceCode}-{assocPrincipalBalanceCode}-{sequence}",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [
+   "bank",
+   "obligor",
+   "obligation",
+   "balanceCode",
+   "assocPrincipalBalanceCode",
+   "sequence"
+  ],
+  "queryParams": [
+   "postingSequence",
+   "effectiveDate"
+  ],
+  "opId": "Svc-pba:/getFullKey:get",
+  "summary": "Retrieves a PBA",
+  "spec": "OpenApi-pba.json"
+ },
+ {
+  "layer": "svc",
+  "path": "/pba/list/{obligationId}-{balanceCode}-{assocPrincipalBalanceCode}-{sequence}",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [
+   "obligationId",
+   "balanceCode",
+   "assocPrincipalBalanceCode",
+   "sequence"
+  ],
+  "queryParams": [
+   "effectiveDate",
+   "sortOrder"
+  ],
+  "opId": "Svc-pba:/list:get",
+  "summary": "Lists PBAS",
+  "spec": "OpenApi-pba.json"
+ },
+ {
+  "layer": "svc",
+  "path": "/pba/listFullKey/{bank}-{obligor}-{obligation}-{balanceCode}-{assocPrincipalBalanceCode}-{sequence}",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [
+   "bank",
+   "obligor",
+   "obligation",
+   "balanceCode",
+   "assocPrincipalBalanceCode",
+   "sequence"
+  ],
+  "queryParams": [
+   "effectiveDate",
+   "sortOrder"
+  ],
+  "opId": "Svc-pba:/listFullKey:get",
+  "summary": "Lists PBAS",
+  "spec": "OpenApi-pba.json"
+ },
+ {
+  "layer": "svc",
+  "path": "/pba/listByBalance/{obligationId}-{balanceCode}-{assocPrincipalBalanceCode}-{sequence}",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [
+   "obligationId",
+   "balanceCode",
+   "assocPrincipalBalanceCode",
+   "sequence"
+  ],
+  "queryParams": [
+   "sortOrder"
+  ],
+  "opId": "Svc-pba:/listByBalance:get",
+  "summary": "Lists PBAS",
+  "spec": "OpenApi-pba.json"
+ },
+ {
+  "layer": "svc",
+  "path": "/penaltyAmountCurrencies/get/{bank}-{application}-{penaltyId}",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [
+   "bank",
+   "application",
+   "penaltyId"
+  ],
+  "queryParams": [
+   "currencyCode"
+  ],
+  "opId": "Svc-penaltyAmountCurrencies:/get:get",
+  "summary": "Retrieves a Penatly Amount Currency",
+  "spec": "OpenApi-penaltyAmountCurrencies.json"
+ },
+ {
+  "layer": "svc",
+  "path": "/penaltyAmountCurrencies/list/{bank}-{application}-{penaltyId}",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [
+   "bank",
+   "application",
+   "penaltyId"
+  ],
+  "queryParams": [],
+  "opId": "Svc-penaltyAmountCurrencies:/list:get",
+  "summary": "Lists Penatly Amount Currencies",
+  "spec": "OpenApi-penaltyAmountCurrencies.json"
+ },
+ {
+  "layer": "svc",
+  "path": "/penaltyAmountIncrements/get/{bank}-{application}-{penaltyId}-{penaltyIncrement}",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [
+   "bank",
+   "application",
+   "penaltyId",
+   "penaltyIncrement"
+  ],
+  "queryParams": [],
+  "opId": "Svc-penaltyAmountIncrements:/get:get",
+  "summary": "Retrieves a Penalty Amount Increment",
+  "spec": "OpenApi-penaltyAmountIncrements.json"
+ },
+ {
+  "layer": "svc",
+  "path": "/penaltyAmountIncrements/list/{bank}-{application}-{penaltyId}",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [
+   "bank",
+   "application",
+   "penaltyId"
+  ],
+  "queryParams": [],
+  "opId": "Svc-penaltyAmountIncrements:/list:get",
+  "summary": "Lists Penalty Amount Increments",
+  "spec": "OpenApi-penaltyAmountIncrements.json"
+ },
+ {
+  "layer": "svc",
+  "path": "/penaltyDefinitions/get/{bank}-{application}-{penaltyId}",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [
+   "bank",
+   "application",
+   "penaltyId"
+  ],
+  "queryParams": [],
+  "opId": "Svc-penaltyDefinitions:/get:get",
+  "summary": "Retrieves a Penalty Definition",
+  "spec": "OpenApi-penaltyDefinitions.json"
+ },
+ {
+  "layer": "svc",
+  "path": "/penaltyDefinitions/list/{bank}-{application}",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [
+   "bank",
+   "application"
+  ],
+  "queryParams": [],
+  "opId": "Svc-penaltyDefinitions:/list:get",
+  "summary": "Lists Penalty Definitions",
+  "spec": "OpenApi-penaltyDefinitions.json"
+ },
+ {
+  "layer": "svc",
+  "path": "/penaltyDefinitions/listAllByBank/{bank}",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [
+   "bank"
+  ],
+  "queryParams": [],
+  "opId": "Svc-penaltyDefinitions:/listAllByBank:get",
+  "summary": "Lists Penalty Definitions",
+  "spec": "OpenApi-penaltyDefinitions.json"
+ },
+ {
+  "layer": "svc",
+  "path": "/phones/get",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [],
+  "queryParams": [
+   "nameId",
+   "phoneSequence"
+  ],
+  "opId": "Svc-phones:/get:get",
+  "summary": "Retrieves a Phone Numbers for all Customer",
+  "spec": "OpenApi-phones.json"
+ },
+ {
+  "layer": "svc",
+  "path": "/phones/list",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [],
+  "queryParams": [
+   "nameId",
+   "sortOrder"
+  ],
+  "opId": "Svc-phones:/list:get",
+  "summary": "Lists Phone Numbers for all Customers",
+  "spec": "OpenApi-phones.json"
+ },
+ {
+  "layer": "svc",
+  "path": "/primeSchedules/get/{obligationId}-{chargeCode}",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [
+   "obligationId",
+   "chargeCode"
+  ],
+  "queryParams": [
+   "effectiveDate"
+  ],
+  "opId": "Svc-primeSchedules:/get:get",
+  "summary": "Retrieves a Prime Schedule",
+  "spec": "OpenApi-primeSchedules.json"
+ },
+ {
+  "layer": "svc",
+  "path": "/primeSchedules/getFullKey/{bank}-{obligor}-{obligation}-{chargeCode}",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [
+   "bank",
+   "obligor",
+   "obligation",
+   "chargeCode"
+  ],
+  "queryParams": [
+   "effectiveDate"
+  ],
+  "opId": "Svc-primeSchedules:/getFullKey:get",
+  "summary": "Retrieves a Prime Schedule",
+  "spec": "OpenApi-primeSchedules.json"
+ },
+ {
+  "layer": "svc",
+  "path": "/primeSchedules/list/{obligationId}-{chargeCode}",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [
+   "obligationId",
+   "chargeCode"
+  ],
+  "queryParams": [
+   "sortOrder"
+  ],
+  "opId": "Svc-primeSchedules:/list:get",
+  "summary": "Lists Prime Schedules",
+  "spec": "OpenApi-primeSchedules.json"
+ },
+ {
+  "layer": "svc",
+  "path": "/primeSchedules/listFullKey/{bank}-{obligor}-{obligation}-{obligationId}",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [
+   "bank",
+   "obligor",
+   "obligation",
+   "obligationId"
+  ],
+  "queryParams": [
+   "sortOrder"
+  ],
+  "opId": "Svc-primeSchedules:/listFullKey:get",
+  "summary": "Lists Prime Schedules",
+  "spec": "OpenApi-primeSchedules.json"
+ },
+ {
+  "layer": "svc",
+  "path": "/rateIndicative/get/{bank}-{rateId}",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [
+   "bank",
+   "rateId"
+  ],
+  "queryParams": [],
+  "opId": "Svc-rateIndicative:/get:get",
+  "summary": "Retrieves a Rate Indicative",
+  "spec": "OpenApi-rateIndicative.json"
+ },
+ {
+  "layer": "svc",
+  "path": "/rateIndicative/list/{bank}",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [
+   "bank"
+  ],
+  "queryParams": [
+   "sortOrder"
+  ],
+  "opId": "Svc-rateIndicative:/list:get",
+  "summary": "Lists Rate Indicatives",
+  "spec": "OpenApi-rateIndicative.json"
+ },
+ {
+  "layer": "svc",
+  "path": "/repaymentSchedules/get/{obligationId}",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [
+   "obligationId"
+  ],
+  "queryParams": [
+   "effectiveDate"
+  ],
+  "opId": "Svc-repaymentSchedules:/get:get",
+  "summary": "Retrieves a Repayment Schedule",
+  "spec": "OpenApi-repaymentSchedules.json"
+ },
+ {
+  "layer": "svc",
+  "path": "/repaymentSchedules/list/{obligationId}",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [
+   "obligationId"
+  ],
+  "queryParams": [
+   "sortOrder"
+  ],
+  "opId": "Svc-repaymentSchedules:/list:get",
+  "summary": "Lists Repayment Schedules",
+  "spec": "OpenApi-repaymentSchedules.json"
+ },
+ {
+  "layer": "svc",
+  "path": "/repaymentSchedules/listFullKey/{bank}-{obligor}-{obligation}",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [
+   "bank",
+   "obligor",
+   "obligation"
+  ],
+  "queryParams": [
+   "sortOrder"
+  ],
+  "opId": "Svc-repaymentSchedules:/listFullKey:get",
+  "summary": "Lists Repayment Schedules",
+  "spec": "OpenApi-repaymentSchedules.json"
+ },
+ {
+  "layer": "svc",
+  "path": "/scheduledActivity/get/{dealId}-{obligationId}-{sequence}",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [
+   "dealId",
+   "obligationId",
+   "sequence"
+  ],
+  "queryParams": [],
+  "opId": "Svc-scheduledActivity:/get:get",
+  "summary": "Retrieves a Scheduled Activity",
+  "spec": "OpenApi-scheduledActivity.json"
+ },
+ {
+  "layer": "svc",
+  "path": "/scheduledActivity/list/{dealId}-{obligationId}",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [
+   "dealId",
+   "obligationId"
+  ],
+  "queryParams": [
+   "sortOrder"
+  ],
+  "opId": "Svc-scheduledActivity:/list:get",
+  "summary": "Lists Scheduled Activities",
+  "spec": "OpenApi-scheduledActivity.json"
+ },
+ {
+  "layer": "svc",
+  "path": "/scheduledActivity/listByOblnId/{obligationId}",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [
+   "obligationId"
+  ],
+  "queryParams": [
+   "sortOrder"
+  ],
+  "opId": "Svc-scheduledActivity:/listByOblnId:get",
+  "summary": "Lists Scheduled Activities",
+  "spec": "OpenApi-scheduledActivity.json"
+ },
+ {
+  "layer": "svc",
+  "path": "/supportReferences/get/{supportingBank}-{supportingObligor}-{supportingCollateralItem}-{supportedObligor}-{supportedAplication}-{supportedObligation}",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [
+   "supportingBank",
+   "supportingObligor",
+   "supportingCollateralItem",
+   "supportedObligor",
+   "supportedAplication",
+   "supportedObligation"
+  ],
+  "queryParams": [],
+  "opId": "Svc-supportReferences:/get:get",
+  "summary": "Retrieves a Support Reference",
+  "spec": "OpenApi-supportReferences.json"
+ },
+ {
+  "layer": "svc",
+  "path": "/supportReferences/list/{supportingBank}-{supportingObligor}-{supportingCollateralItem}-{supportedObligor}-{supportedAplication}",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [
+   "supportingBank",
+   "supportingObligor",
+   "supportingCollateralItem",
+   "supportedObligor",
+   "supportedAplication"
+  ],
+  "queryParams": [
+   "sortOrder"
+  ],
+  "opId": "Svc-supportReferences:/list:get",
+  "summary": "Lists Support References",
+  "spec": "OpenApi-supportReferences.json"
+ },
+ {
+  "layer": "svc",
+  "path": "/supportReferences/listIndObligorLiab/{supportingBank}-{supportingObligor}",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [
+   "supportingBank",
+   "supportingObligor"
+  ],
+  "queryParams": [
+   "sortOrder"
+  ],
+  "opId": "Svc-supportReferences:/listIndObligorLiab:get",
+  "summary": "Lists Support References",
+  "spec": "OpenApi-supportReferences.json"
+ },
+ {
+  "layer": "svc",
+  "path": "/supportReferences/listIndObligorSupp/{supportingBank}",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [
+   "supportingBank"
+  ],
+  "queryParams": [
+   "supportedObligor",
+   "sortOrder"
+  ],
+  "opId": "Svc-supportReferences:/listIndObligorSupp:get",
+  "summary": "Lists Support References",
+  "spec": "OpenApi-supportReferences.json"
+ },
+ {
+  "layer": "svc",
+  "path": "/supportReferences/listSupportedByItem/{supportingBank}-{supportingObligor}-{supportingCollateralItem}",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [
+   "supportingBank",
+   "supportingObligor",
+   "supportingCollateralItem"
+  ],
+  "queryParams": [
+   "sortOrder"
+  ],
+  "opId": "Svc-supportReferences:/listSupportedByItem:get",
+  "summary": "Lists Support References",
+  "spec": "OpenApi-supportReferences.json"
+ },
+ {
+  "layer": "svc",
+  "path": "/supportReferences/listSupportingColl/{supportingBank}-{supportingObligor}",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [
+   "supportingBank",
+   "supportingObligor"
+  ],
+  "queryParams": [
+   "obligation",
+   "sortOrder"
+  ],
+  "opId": "Svc-supportReferences:/listSupportingColl:get",
+  "summary": "Lists Support References",
+  "spec": "OpenApi-supportReferences.json"
+ },
+ {
+  "layer": "svc",
+  "path": "/supportReferences/listIndOblnSupport/{supportingBank}-{supportingObligor}",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [
+   "supportingBank",
+   "supportingObligor"
+  ],
+  "queryParams": [
+   "supportObligation",
+   "sortOrder"
+  ],
+  "opId": "Svc-supportReferences:/listIndOblnSupport:get",
+  "summary": "Lists Support References",
+  "spec": "OpenApi-supportReferences.json"
+ },
+ {
+  "layer": "svc",
+  "path": "/wireInstructions/get/{nameId}-{sequence}-{wireId}",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [
+   "nameId",
+   "sequence",
+   "wireId"
+  ],
+  "queryParams": [],
+  "opId": "Svc-wireInstructions:/get:get",
+  "summary": "Retrieves a Wire Instruction",
+  "spec": "OpenApi-wireInstructions.json"
+ },
+ {
+  "layer": "svc",
+  "path": "/wireInstructions/list/{nameId}-{sequence}",
+  "base": "https://afsvision.client.com/afsroot/api/v1",
+  "pathParams": [
+   "nameId",
+   "sequence"
+  ],
+  "queryParams": [
+   "sortOrder"
+  ],
+  "opId": "Svc-wireInstructions:/list:get",
+  "summary": "Lists Wire Instructions",
+  "spec": "OpenApi-wireInstructions.json"
+ }
+]

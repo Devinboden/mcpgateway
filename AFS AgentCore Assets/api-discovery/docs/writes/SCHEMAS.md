@@ -1,0 +1,2932 @@
+# Write request schemas  `[spec]` (required fields **bold**)
+
+Field model for every write op (depth-2 into required nested objects). Live behavior: see [INDEX.md](INDEX.md) (empty-body sweep) and [reserveNumber.md](reserveNumber.md) (deep validation matrix).
+
+
+### `POST /businessAutomation/scheduleTask`  · 🛑 stateful/destructive
+_Schedule Task_
+Body `Wf-abe-api-ScheduleTaskRequest`:
+- `scheduleId` — integer int64
+- `scheduledTs` — string date-time
+
+### `POST /wp/addressMaintenance`  · create
+_Create a new Address Maintenance_
+Body `Wf-cbm-LoanAdminWorkPackage`:
+- `oid` — integer int64
+- `xoid` — string ≤19
+- `objectStatus` — string ≤1
+- `rootType` — integer int32
+- `wfType` — integer int32
+- `idalias` — integer int32
+- `updateUserId` — integer int64
+- `updateDate` — string date-time
+- `units` — array → `Wf-wum-Unit`
+- `readOnly` — boolean
+- `lockUserId` — integer int64
+- `lockedSinceTime` — string date-time
+- `attachments` — array → `Wf-wum-Attachment`
+- `cmAttachments` — array → `Wf-cm-Attachment`
+- `inStageSinceDate` — string date
+- `milestones` — array → `Wf-wum-Milestone`
+- `lastViewedTime` — string date-time
+- `lastViewedById` — integer int64
+- `closedDt` — string date-time
+- `copyDate` — string date
+- `copyUser` — integer ≤8 int64
+- `fromId` — string ≤15
+- `originalId` — string ≤15
+- `fromWp` — integer int64
+- `originalWp` — integer int64
+- `loadErrors` — array → `Wf-wum-LoadError`
+- `subType` — string ≤40
+- `wpSource` — string ≤40
+- `taskId` — integer int64
+- `parentTaskId` — integer int64
+- `eventNm` — string ≤255
+- `parentEventNm` — string ≤255
+- `eventFields` — object → `Wf-common-NameValuePairList`
+- `id` — string ≤15
+- `description` — string ≤255
+- `defaultOrg` — string ≤9
+- `masterBankNum` — string ≤4
+- `masterAppl` — string ≤4
+- `bank` — object → `Wf-cbm-Bank`
+- `originatorOid` — integer int64
+- `originatedDt` — string date-time
+- `updatedDt` — string date
+- `jobListEntry` — object → `Wf-jl-WorkPackageEntry`
+- `crossReferenceNumber` — string ≤25
+- `readyToBook` — string ≤1
+- `currentWPEntries` — array → `Wf-common-RelatedWorkpackage`
+- `relatedWorkpackages` — array → `Wf-common-RelatedWorkpackage`
+- `relatedWPCount` — object → `Wf-jl-RelatedWorkpackageCount`
+- `organizationId` — string ≤9
+- `bankId` — string ≤4
+- `parties` — array → `Wf-cbm-Party`
+- `comment` — object → `Wf-cbm-Comment`
+- `tmpOffsetEntry` — object → `Wf-cbm-OffsetEntry`
+- `customer` — object → `Common-Ref`
+- `requestComplete` — string ≤1
+- `readyToExecute` — string ≤1
+- `backOfficeComments` — object → `Wf-cbm-CommentText`
+- `addressMaintenance` — object → `Wf-cbm-la-AddressMaintenance`
+- `obligorNumber` — string ≤10
+- `approver` — integer int64
+- `approverUserName` — string
+
+### `PUT /wp/addressMaintenance/{id}`  · 🛑 stateful/destructive
+_Update an Address Maintenance_
+Body `Wf-cbm-LoanAdminWorkPackage`:
+- `oid` — integer int64
+- `xoid` — string ≤19
+- `objectStatus` — string ≤1
+- `rootType` — integer int32
+- `wfType` — integer int32
+- `idalias` — integer int32
+- `updateUserId` — integer int64
+- `updateDate` — string date-time
+- `units` — array → `Wf-wum-Unit`
+- `readOnly` — boolean
+- `lockUserId` — integer int64
+- `lockedSinceTime` — string date-time
+- `attachments` — array → `Wf-wum-Attachment`
+- `cmAttachments` — array → `Wf-cm-Attachment`
+- `inStageSinceDate` — string date
+- `milestones` — array → `Wf-wum-Milestone`
+- `lastViewedTime` — string date-time
+- `lastViewedById` — integer int64
+- `closedDt` — string date-time
+- `copyDate` — string date
+- `copyUser` — integer ≤8 int64
+- `fromId` — string ≤15
+- `originalId` — string ≤15
+- `fromWp` — integer int64
+- `originalWp` — integer int64
+- `loadErrors` — array → `Wf-wum-LoadError`
+- `subType` — string ≤40
+- `wpSource` — string ≤40
+- `taskId` — integer int64
+- `parentTaskId` — integer int64
+- `eventNm` — string ≤255
+- `parentEventNm` — string ≤255
+- `eventFields` — object → `Wf-common-NameValuePairList`
+- `id` — string ≤15
+- `description` — string ≤255
+- `defaultOrg` — string ≤9
+- `masterBankNum` — string ≤4
+- `masterAppl` — string ≤4
+- `bank` — object → `Wf-cbm-Bank`
+- `originatorOid` — integer int64
+- `originatedDt` — string date-time
+- `updatedDt` — string date
+- `jobListEntry` — object → `Wf-jl-WorkPackageEntry`
+- `crossReferenceNumber` — string ≤25
+- `readyToBook` — string ≤1
+- `currentWPEntries` — array → `Wf-common-RelatedWorkpackage`
+- `relatedWorkpackages` — array → `Wf-common-RelatedWorkpackage`
+- `relatedWPCount` — object → `Wf-jl-RelatedWorkpackageCount`
+- `organizationId` — string ≤9
+- `bankId` — string ≤4
+- `parties` — array → `Wf-cbm-Party`
+- `comment` — object → `Wf-cbm-Comment`
+- `tmpOffsetEntry` — object → `Wf-cbm-OffsetEntry`
+- `customer` — object → `Common-Ref`
+- `requestComplete` — string ≤1
+- `readyToExecute` — string ≤1
+- `backOfficeComments` — object → `Wf-cbm-CommentText`
+- `addressMaintenance` — object → `Wf-cbm-la-AddressMaintenance`
+- `obligorNumber` — string ≤10
+- `approver` — integer int64
+- `approverUserName` — string
+
+### `POST /wp/advances2`  · create
+_Create a new Advance_
+Body `Wf-cbm-LoanAdminWorkPackage`:
+- `oid` — integer int64
+- `xoid` — string ≤19
+- `objectStatus` — string ≤1
+- `rootType` — integer int32
+- `wfType` — integer int32
+- `idalias` — integer int32
+- `updateUserId` — integer int64
+- `updateDate` — string date-time
+- `units` — array → `Wf-wum-Unit`
+- `readOnly` — boolean
+- `lockUserId` — integer int64
+- `lockedSinceTime` — string date-time
+- `attachments` — array → `Wf-wum-Attachment`
+- `cmAttachments` — array → `Wf-cm-Attachment`
+- `inStageSinceDate` — string date
+- `milestones` — array → `Wf-wum-Milestone`
+- `lastViewedTime` — string date-time
+- `lastViewedById` — integer int64
+- `closedDt` — string date-time
+- `copyDate` — string date
+- `copyUser` — integer ≤8 int64
+- `fromId` — string ≤15
+- `originalId` — string ≤15
+- `fromWp` — integer int64
+- `originalWp` — integer int64
+- `loadErrors` — array → `Wf-wum-LoadError`
+- `subType` — string ≤40
+- `wpSource` — string ≤40
+- `taskId` — integer int64
+- `parentTaskId` — integer int64
+- `eventNm` — string ≤255
+- `parentEventNm` — string ≤255
+- `eventFields` — object → `Wf-common-NameValuePairList`
+- `id` — string ≤15
+- `description` — string ≤255
+- `defaultOrg` — string ≤9
+- `masterBankNum` — string ≤4
+- `masterAppl` — string ≤4
+- `cusip` — array → `Wf-cbm-Cusip`
+- `bank` — object → `Wf-cbm-Bank`
+- `originatorOid` — integer int64
+- `originatedDt` — string date-time
+- `updatedDt` — string date
+- `jobListEntry` — object → `Wf-jl-WorkPackageEntry`
+- `crossReferenceNumber` — string ≤25
+- `readyToBook` — string ≤1
+- `currentWPEntries` — array → `Wf-common-RelatedWorkpackage`
+- `relatedWorkpackages` — array → `Wf-common-RelatedWorkpackage`
+- `relatedWPCount` — object → `Wf-jl-RelatedWorkpackageCount`
+- `cmnApprover` — array → `Wf-common-Approver`
+- `organizationId` — string ≤9
+- `bankId` — string ≤4
+- `parties` — array → `Wf-cbm-Party`
+- `obligations` — array → `Common-Ref`
+- `comment` — object → `Wf-cbm-Comment`
+- `primaryBorrower` — object → `Common-Ref`
+- `tmpOffsetEntry` — object → `Wf-cbm-OffsetEntry`
+- `customer` — object → `Common-Ref`
+- `obligor` — object → `Common-Ref`
+- `obligation` — object → `Wf-cbm-Obligation`
+- `requestComplete` — string ≤1
+- `readyToExecute` — string ≤1
+- `backOfficeComments` — object → `Wf-cbm-CommentText`
+- `financials` — array → `Wf-cbm-FinancialTransaction`
+- `financialObligations` — array → `Wf-cbm-Obligation`
+- `obligorNumber` — string ≤10
+- `finOffTotInd` — string ≤4
+- `txnLastRunDate` — string date
+- `txnIndChangeDate` — string date
+- `finChangeDate` — string date
+- `approver` — integer int64
+- `approverUserName` — string
+
+### `PUT /wp/advances2/{id}`  · 🛑 stateful/destructive
+_Update an Advance_
+Body `Wf-cbm-LoanAdminWorkPackage`:
+- `oid` — integer int64
+- `xoid` — string ≤19
+- `objectStatus` — string ≤1
+- `rootType` — integer int32
+- `wfType` — integer int32
+- `idalias` — integer int32
+- `updateUserId` — integer int64
+- `updateDate` — string date-time
+- `units` — array → `Wf-wum-Unit`
+- `readOnly` — boolean
+- `lockUserId` — integer int64
+- `lockedSinceTime` — string date-time
+- `attachments` — array → `Wf-wum-Attachment`
+- `cmAttachments` — array → `Wf-cm-Attachment`
+- `inStageSinceDate` — string date
+- `milestones` — array → `Wf-wum-Milestone`
+- `lastViewedTime` — string date-time
+- `lastViewedById` — integer int64
+- `closedDt` — string date-time
+- `copyDate` — string date
+- `copyUser` — integer ≤8 int64
+- `fromId` — string ≤15
+- `originalId` — string ≤15
+- `fromWp` — integer int64
+- `originalWp` — integer int64
+- `loadErrors` — array → `Wf-wum-LoadError`
+- `subType` — string ≤40
+- `wpSource` — string ≤40
+- `taskId` — integer int64
+- `parentTaskId` — integer int64
+- `eventNm` — string ≤255
+- `parentEventNm` — string ≤255
+- `eventFields` — object → `Wf-common-NameValuePairList`
+- `id` — string ≤15
+- `description` — string ≤255
+- `defaultOrg` — string ≤9
+- `masterBankNum` — string ≤4
+- `masterAppl` — string ≤4
+- `cusip` — array → `Wf-cbm-Cusip`
+- `bank` — object → `Wf-cbm-Bank`
+- `originatorOid` — integer int64
+- `originatedDt` — string date-time
+- `updatedDt` — string date
+- `jobListEntry` — object → `Wf-jl-WorkPackageEntry`
+- `crossReferenceNumber` — string ≤25
+- `readyToBook` — string ≤1
+- `currentWPEntries` — array → `Wf-common-RelatedWorkpackage`
+- `relatedWorkpackages` — array → `Wf-common-RelatedWorkpackage`
+- `relatedWPCount` — object → `Wf-jl-RelatedWorkpackageCount`
+- `cmnApprover` — array → `Wf-common-Approver`
+- `organizationId` — string ≤9
+- `bankId` — string ≤4
+- `parties` — array → `Wf-cbm-Party`
+- `obligations` — array → `Common-Ref`
+- `comment` — object → `Wf-cbm-Comment`
+- `primaryBorrower` — object → `Common-Ref`
+- `tmpOffsetEntry` — object → `Wf-cbm-OffsetEntry`
+- `customer` — object → `Common-Ref`
+- `obligor` — object → `Common-Ref`
+- `obligation` — object → `Wf-cbm-Obligation`
+- `requestComplete` — string ≤1
+- `readyToExecute` — string ≤1
+- `backOfficeComments` — object → `Wf-cbm-CommentText`
+- `financials` — array → `Wf-cbm-FinancialTransaction`
+- `financialObligations` — array → `Wf-cbm-Obligation`
+- `obligorNumber` — string ≤10
+- `finOffTotInd` — string ≤4
+- `txnLastRunDate` — string date
+- `txnIndChangeDate` — string date
+- `finChangeDate` — string date
+- `approver` — integer int64
+- `approverUserName` — string
+
+### `POST /async/route`  · 🛑 stateful/destructive
+_Async AutoRouting Workpackage_
+Body `Wf-ws-autoroute-AutoRouteRequest`:
+- `autoRoutingFlags` — object → `Wf-ws-autoroute-Flags`
+- **`workpackage`** — object → `Wf-ws-autoroute-WpRoutingFields`
+  - **`id`** — string ≤15
+  - `targetStage` — string ≤50
+  - `owner` — string ≤13
+  - `queue` — string ≤50
+  - `targetDate` — string date-time
+- `units` — array → `Wf-ws-autoroute-UnitRoutingFields`
+
+### `POST /async/wp/{wfType}`  · 🛑 stateful/destructive
+_Async Create Workpackage_
+Body `Wf-abe-api-AsyncWpBody`:
+- (empty schema)
+
+### `POST /updateCollateralBorrowingBase`  · 🛑 stateful/destructive
+_Update Collateral Borrowing Base_
+Body `Wf-ws-servicing-UpdateCollatBorrowBaseRequest`:
+- **`bank`** — string ≤4
+- **`obligorNumber`** — string ≤10
+- **`itemNumber`** — string ≤9
+- `numberOfUnits` — number double
+- `advancePercentage` — number double
+- `bBAsOfDatedate` — string date
+- `bBAsOfDateincrement` — integer ≤4 int32
+- `bBAsOfDatefrequencyCode` — integer ≤4 int32
+- `bBAsOfDatelimitCode` — integer ≤4 int32
+- `bBAsOfDatecalendarCode` — integer ≤9 int64
+- `bBAsOfDateunlimitedDate` — string ≤10
+- `bBReceivedDate` — string date
+- `daysToSubmit` — string ≤4
+
+### `POST /updateCurrentCollateralValue`  · 🛑 stateful/destructive
+_Update Current Collateral Value_
+Body `Wf-ws-servicing-ServicingUpdateCollatCurValueRequest`:
+- **`bank`** — string ≤4
+- **`obligorNumber`** — string ≤10
+- **`itemNumber`** — string ≤9
+- `currentValueCur` — string ≤3
+- **`currentValue`** — number double
+
+### `POST /wp/commercialOrig`  · create
+_Create a new Origination_
+Body `Wf-cbm-VisionOrigWorkPackage`:
+- `oid` — integer int64
+- `xoid` — string ≤19
+- `objectStatus` — string ≤1
+- `rootType` — integer int32
+- `wfType` — integer int32
+- `idalias` — integer int32
+- `updateUserId` — integer int64
+- `updateDate` — string date-time
+- `units` — array → `Wf-wum-Unit`
+- `readOnly` — boolean
+- `lockUserId` — integer int64
+- `lockedSinceTime` — string date-time
+- `attachments` — array → `Wf-wum-Attachment`
+- `cmAttachments` — array → `Wf-cm-Attachment`
+- `inStageSinceDate` — string date
+- `milestones` — array → `Wf-wum-Milestone`
+- `lastViewedTime` — string date-time
+- `lastViewedById` — integer int64
+- `closedDt` — string date-time
+- `copyDate` — string date
+- `copyUser` — integer ≤8 int64
+- `fromId` — string ≤15
+- `originalId` — string ≤15
+- `fromWp` — integer int64
+- `originalWp` — integer int64
+- `loadErrors` — array → `Wf-wum-LoadError`
+- `subType` — string ≤40
+- `wpSource` — string ≤40
+- `taskId` — integer int64
+- `parentTaskId` — integer int64
+- `eventNm` — string ≤255
+- `parentEventNm` — string ≤255
+- `eventFields` — object → `Wf-common-NameValuePairList`
+- `id` — string ≤15
+- `description` — string ≤255
+- `defaultOrg` — string ≤9
+- `masterBankNum` — string ≤4
+- `masterAppl` — string ≤4
+- `cusip` — array → `Wf-cbm-Cusip`
+- `bank` — object → `Wf-cbm-Bank`
+- `originatorOid` — integer int64
+- `originatedDt` — string date-time
+- `updatedDt` — string date
+- `jobListEntry` — object → `Wf-jl-WorkPackageEntry`
+- `crossReferenceNumber` — string ≤25
+- `readyToBook` — string ≤1
+- `exceptionManagement` — object → `Wf-xom-wf-ExceptionManagement`
+- `currentWPEntries` — array → `Wf-common-RelatedWorkpackage`
+- `relatedWorkpackages` — array → `Wf-common-RelatedWorkpackage`
+- `relatedWPCount` — object → `Wf-jl-RelatedWorkpackageCount`
+- `underWriting` — object → `Wf-cbm-Underwriting`
+- `cmnApprover` — array → `Wf-common-Approver`
+- `organizationId` — string ≤9
+- `bankId` — string ≤4
+- `parties` — array → `Wf-cbm-Party`
+- `obligations` — array → `Common-Ref`
+- `collateralItems` — array → `Wf-cbm-Collateral`
+- `comment` — object → `Wf-cbm-Comment`
+- `lender` — object → `Wf-cbm-Lender`
+- `collatGuarantees` — array → `Wf-cbm-CollateralGuarantee`
+- `primaryBorrower` — object → `Common-Ref`
+- `deal` — object → `Wf-cbm-Deal`
+- `guarantees` — array → `Wf-cbm-Guarantee`
+- `tmpOffsetEntry` — object → `Wf-cbm-OffsetEntry`
+
+### `PUT /wp/commercialOrig/{id}`  · 🛑 stateful/destructive
+_Update an Origination_
+Body `Wf-cbm-VisionOrigWorkPackage`:
+- `oid` — integer int64
+- `xoid` — string ≤19
+- `objectStatus` — string ≤1
+- `rootType` — integer int32
+- `wfType` — integer int32
+- `idalias` — integer int32
+- `updateUserId` — integer int64
+- `updateDate` — string date-time
+- `units` — array → `Wf-wum-Unit`
+- `readOnly` — boolean
+- `lockUserId` — integer int64
+- `lockedSinceTime` — string date-time
+- `attachments` — array → `Wf-wum-Attachment`
+- `cmAttachments` — array → `Wf-cm-Attachment`
+- `inStageSinceDate` — string date
+- `milestones` — array → `Wf-wum-Milestone`
+- `lastViewedTime` — string date-time
+- `lastViewedById` — integer int64
+- `closedDt` — string date-time
+- `copyDate` — string date
+- `copyUser` — integer ≤8 int64
+- `fromId` — string ≤15
+- `originalId` — string ≤15
+- `fromWp` — integer int64
+- `originalWp` — integer int64
+- `loadErrors` — array → `Wf-wum-LoadError`
+- `subType` — string ≤40
+- `wpSource` — string ≤40
+- `taskId` — integer int64
+- `parentTaskId` — integer int64
+- `eventNm` — string ≤255
+- `parentEventNm` — string ≤255
+- `eventFields` — object → `Wf-common-NameValuePairList`
+- `id` — string ≤15
+- `description` — string ≤255
+- `defaultOrg` — string ≤9
+- `masterBankNum` — string ≤4
+- `masterAppl` — string ≤4
+- `cusip` — array → `Wf-cbm-Cusip`
+- `bank` — object → `Wf-cbm-Bank`
+- `originatorOid` — integer int64
+- `originatedDt` — string date-time
+- `updatedDt` — string date
+- `jobListEntry` — object → `Wf-jl-WorkPackageEntry`
+- `crossReferenceNumber` — string ≤25
+- `readyToBook` — string ≤1
+- `exceptionManagement` — object → `Wf-xom-wf-ExceptionManagement`
+- `currentWPEntries` — array → `Wf-common-RelatedWorkpackage`
+- `relatedWorkpackages` — array → `Wf-common-RelatedWorkpackage`
+- `relatedWPCount` — object → `Wf-jl-RelatedWorkpackageCount`
+- `underWriting` — object → `Wf-cbm-Underwriting`
+- `cmnApprover` — array → `Wf-common-Approver`
+- `organizationId` — string ≤9
+- `bankId` — string ≤4
+- `parties` — array → `Wf-cbm-Party`
+- `obligations` — array → `Common-Ref`
+- `collateralItems` — array → `Wf-cbm-Collateral`
+- `comment` — object → `Wf-cbm-Comment`
+- `lender` — object → `Wf-cbm-Lender`
+- `collatGuarantees` — array → `Wf-cbm-CollateralGuarantee`
+- `primaryBorrower` — object → `Common-Ref`
+- `deal` — object → `Wf-cbm-Deal`
+- `guarantees` — array → `Wf-cbm-Guarantee`
+- `tmpOffsetEntry` — object → `Wf-cbm-OffsetEntry`
+
+### `POST /wp/commercialPost`  · create
+_Create a new Post Approval_
+Body `Wf-cbm-VisionOrigWorkPackage`:
+- `oid` — integer int64
+- `xoid` — string ≤19
+- `objectStatus` — string ≤1
+- `rootType` — integer int32
+- `wfType` — integer int32
+- `idalias` — integer int32
+- `updateUserId` — integer int64
+- `updateDate` — string date-time
+- `units` — array → `Wf-wum-Unit`
+- `readOnly` — boolean
+- `lockUserId` — integer int64
+- `lockedSinceTime` — string date-time
+- `attachments` — array → `Wf-wum-Attachment`
+- `cmAttachments` — array → `Wf-cm-Attachment`
+- `inStageSinceDate` — string date
+- `milestones` — array → `Wf-wum-Milestone`
+- `lastViewedTime` — string date-time
+- `lastViewedById` — integer int64
+- `closedDt` — string date-time
+- `copyDate` — string date
+- `copyUser` — integer ≤8 int64
+- `fromId` — string ≤15
+- `originalId` — string ≤15
+- `fromWp` — integer int64
+- `originalWp` — integer int64
+- `loadErrors` — array → `Wf-wum-LoadError`
+- `subType` — string ≤40
+- `wpSource` — string ≤40
+- `taskId` — integer int64
+- `parentTaskId` — integer int64
+- `eventNm` — string ≤255
+- `parentEventNm` — string ≤255
+- `eventFields` — object → `Wf-common-NameValuePairList`
+- `id` — string ≤15
+- `description` — string ≤255
+- `defaultOrg` — string ≤9
+- `masterBankNum` — string ≤4
+- `masterAppl` — string ≤4
+- `cusip` — array → `Wf-cbm-Cusip`
+- `bank` — object → `Wf-cbm-Bank`
+- `originatorOid` — integer int64
+- `originatedDt` — string date-time
+- `updatedDt` — string date
+- `jobListEntry` — object → `Wf-jl-WorkPackageEntry`
+- `crossReferenceNumber` — string ≤25
+- `readyToBook` — string ≤1
+- `exceptionManagement` — object → `Wf-xom-wf-ExceptionManagement`
+- `currentWPEntries` — array → `Wf-common-RelatedWorkpackage`
+- `relatedWorkpackages` — array → `Wf-common-RelatedWorkpackage`
+- `relatedWPCount` — object → `Wf-jl-RelatedWorkpackageCount`
+- `underWriting` — object → `Wf-cbm-Underwriting`
+- `cmnApprover` — array → `Wf-common-Approver`
+- `organizationId` — string ≤9
+- `bankId` — string ≤4
+- `parties` — array → `Wf-cbm-Party`
+- `obligations` — array → `Common-Ref`
+- `collateralItems` — array → `Wf-cbm-Collateral`
+- `comment` — object → `Wf-cbm-Comment`
+- `lender` — object → `Wf-cbm-Lender`
+- `collatGuarantees` — array → `Wf-cbm-CollateralGuarantee`
+- `primaryBorrower` — object → `Common-Ref`
+- `deal` — object → `Wf-cbm-Deal`
+- `guarantees` — array → `Wf-cbm-Guarantee`
+- `tmpOffsetEntry` — object → `Wf-cbm-OffsetEntry`
+
+### `PUT /wp/commercialPost/{id}`  · 🛑 stateful/destructive
+_Update a Post Approval_
+Body `Wf-cbm-VisionOrigWorkPackage`:
+- `oid` — integer int64
+- `xoid` — string ≤19
+- `objectStatus` — string ≤1
+- `rootType` — integer int32
+- `wfType` — integer int32
+- `idalias` — integer int32
+- `updateUserId` — integer int64
+- `updateDate` — string date-time
+- `units` — array → `Wf-wum-Unit`
+- `readOnly` — boolean
+- `lockUserId` — integer int64
+- `lockedSinceTime` — string date-time
+- `attachments` — array → `Wf-wum-Attachment`
+- `cmAttachments` — array → `Wf-cm-Attachment`
+- `inStageSinceDate` — string date
+- `milestones` — array → `Wf-wum-Milestone`
+- `lastViewedTime` — string date-time
+- `lastViewedById` — integer int64
+- `closedDt` — string date-time
+- `copyDate` — string date
+- `copyUser` — integer ≤8 int64
+- `fromId` — string ≤15
+- `originalId` — string ≤15
+- `fromWp` — integer int64
+- `originalWp` — integer int64
+- `loadErrors` — array → `Wf-wum-LoadError`
+- `subType` — string ≤40
+- `wpSource` — string ≤40
+- `taskId` — integer int64
+- `parentTaskId` — integer int64
+- `eventNm` — string ≤255
+- `parentEventNm` — string ≤255
+- `eventFields` — object → `Wf-common-NameValuePairList`
+- `id` — string ≤15
+- `description` — string ≤255
+- `defaultOrg` — string ≤9
+- `masterBankNum` — string ≤4
+- `masterAppl` — string ≤4
+- `cusip` — array → `Wf-cbm-Cusip`
+- `bank` — object → `Wf-cbm-Bank`
+- `originatorOid` — integer int64
+- `originatedDt` — string date-time
+- `updatedDt` — string date
+- `jobListEntry` — object → `Wf-jl-WorkPackageEntry`
+- `crossReferenceNumber` — string ≤25
+- `readyToBook` — string ≤1
+- `exceptionManagement` — object → `Wf-xom-wf-ExceptionManagement`
+- `currentWPEntries` — array → `Wf-common-RelatedWorkpackage`
+- `relatedWorkpackages` — array → `Wf-common-RelatedWorkpackage`
+- `relatedWPCount` — object → `Wf-jl-RelatedWorkpackageCount`
+- `underWriting` — object → `Wf-cbm-Underwriting`
+- `cmnApprover` — array → `Wf-common-Approver`
+- `organizationId` — string ≤9
+- `bankId` — string ≤4
+- `parties` — array → `Wf-cbm-Party`
+- `obligations` — array → `Common-Ref`
+- `collateralItems` — array → `Wf-cbm-Collateral`
+- `comment` — object → `Wf-cbm-Comment`
+- `lender` — object → `Wf-cbm-Lender`
+- `collatGuarantees` — array → `Wf-cbm-CollateralGuarantee`
+- `primaryBorrower` — object → `Common-Ref`
+- `deal` — object → `Wf-cbm-Deal`
+- `guarantees` — array → `Wf-cbm-Guarantee`
+- `tmpOffsetEntry` — object → `Wf-cbm-OffsetEntry`
+
+### `POST /wp/ddaWireChanges`  · create
+_Create a new DDA/Wire Instruction_
+Body `Wf-cbm-LoanAdminWorkPackage`:
+- `oid` — integer int64
+- `xoid` — string ≤19
+- `objectStatus` — string ≤1
+- `rootType` — integer int32
+- `wfType` — integer int32
+- `idalias` — integer int32
+- `updateUserId` — integer int64
+- `updateDate` — string date-time
+- `units` — array → `Wf-wum-Unit`
+- `readOnly` — boolean
+- `lockUserId` — integer int64
+- `lockedSinceTime` — string date-time
+- `attachments` — array → `Wf-wum-Attachment`
+- `cmAttachments` — array → `Wf-cm-Attachment`
+- `inStageSinceDate` — string date
+- `milestones` — array → `Wf-wum-Milestone`
+- `lastViewedTime` — string date-time
+- `lastViewedById` — integer int64
+- `closedDt` — string date-time
+- `copyDate` — string date
+- `copyUser` — integer ≤8 int64
+- `fromId` — string ≤15
+- `originalId` — string ≤15
+- `fromWp` — integer int64
+- `originalWp` — integer int64
+- `loadErrors` — array → `Wf-wum-LoadError`
+- `subType` — string ≤40
+- `wpSource` — string ≤40
+- `taskId` — integer int64
+- `parentTaskId` — integer int64
+- `eventNm` — string ≤255
+- `parentEventNm` — string ≤255
+- `eventFields` — object → `Wf-common-NameValuePairList`
+- `id` — string ≤15
+- `description` — string ≤255
+- `defaultOrg` — string ≤9
+- `masterBankNum` — string ≤4
+- `masterAppl` — string ≤4
+- `cusip` — array → `Wf-cbm-Cusip`
+- `bank` — object → `Wf-cbm-Bank`
+- `originatorOid` — integer int64
+- `originatedDt` — string date-time
+- `updatedDt` — string date
+- `jobListEntry` — object → `Wf-jl-WorkPackageEntry`
+- `crossReferenceNumber` — string ≤25
+- `readyToBook` — string ≤1
+- `exceptionManagement` — object → `Wf-xom-wf-ExceptionManagement`
+- `currentWPEntries` — array → `Wf-common-RelatedWorkpackage`
+- `relatedWorkpackages` — array → `Wf-common-RelatedWorkpackage`
+- `relatedWPCount` — object → `Wf-jl-RelatedWorkpackageCount`
+- `underWriting` — object → `Wf-cbm-Underwriting`
+- `cmnApprover` — array → `Wf-common-Approver`
+- `organizationId` — string ≤9
+- `bankId` — string ≤4
+- `parties` — array → `Wf-cbm-Party`
+- `obligations` — array → `Common-Ref`
+- `collateralItems` — array → `Wf-cbm-Collateral`
+- `comment` — object → `Wf-cbm-Comment`
+- `lender` — object → `Wf-cbm-Lender`
+- `collatGuarantees` — array → `Wf-cbm-CollateralGuarantee`
+- `primaryBorrower` — object → `Common-Ref`
+- `deal` — object → `Wf-cbm-Deal`
+- `guarantees` — array → `Wf-cbm-Guarantee`
+- `tmpOffsetEntry` — object → `Wf-cbm-OffsetEntry`
+- `customer` — object → `Common-Ref`
+- `obligor` — object → `Common-Ref`
+- `obligation` — object → `Wf-cbm-Obligation`
+- `requestComplete` — string ≤1
+- `readyToExecute` — string ≤1
+- `backOfficeComments` — object → `Wf-cbm-CommentText`
+- `obligorNumber` — string ≤10
+- `finOffTotInd` — string ≤4
+- `txnLastRunDate` — string date
+- `txnIndChangeDate` — string date
+- `finChangeDate` — string date
+- `approver` — integer int64
+- `approverUserName` — string
+- `ddaWireInstructions` — object → `Wf-cbm-la-DDAWireInstructions`
+
+### `PUT /wp/ddaWireChanges/{id}`  · 🛑 stateful/destructive
+_Update a DDA/Wire Instruction_
+Body `Wf-cbm-LoanAdminWorkPackage`:
+- `oid` — integer int64
+- `xoid` — string ≤19
+- `objectStatus` — string ≤1
+- `rootType` — integer int32
+- `wfType` — integer int32
+- `idalias` — integer int32
+- `updateUserId` — integer int64
+- `updateDate` — string date-time
+- `units` — array → `Wf-wum-Unit`
+- `readOnly` — boolean
+- `lockUserId` — integer int64
+- `lockedSinceTime` — string date-time
+- `attachments` — array → `Wf-wum-Attachment`
+- `cmAttachments` — array → `Wf-cm-Attachment`
+- `inStageSinceDate` — string date
+- `milestones` — array → `Wf-wum-Milestone`
+- `lastViewedTime` — string date-time
+- `lastViewedById` — integer int64
+- `closedDt` — string date-time
+- `copyDate` — string date
+- `copyUser` — integer ≤8 int64
+- `fromId` — string ≤15
+- `originalId` — string ≤15
+- `fromWp` — integer int64
+- `originalWp` — integer int64
+- `loadErrors` — array → `Wf-wum-LoadError`
+- `subType` — string ≤40
+- `wpSource` — string ≤40
+- `taskId` — integer int64
+- `parentTaskId` — integer int64
+- `eventNm` — string ≤255
+- `parentEventNm` — string ≤255
+- `eventFields` — object → `Wf-common-NameValuePairList`
+- `id` — string ≤15
+- `description` — string ≤255
+- `defaultOrg` — string ≤9
+- `masterBankNum` — string ≤4
+- `masterAppl` — string ≤4
+- `cusip` — array → `Wf-cbm-Cusip`
+- `bank` — object → `Wf-cbm-Bank`
+- `originatorOid` — integer int64
+- `originatedDt` — string date-time
+- `updatedDt` — string date
+- `jobListEntry` — object → `Wf-jl-WorkPackageEntry`
+- `crossReferenceNumber` — string ≤25
+- `readyToBook` — string ≤1
+- `exceptionManagement` — object → `Wf-xom-wf-ExceptionManagement`
+- `currentWPEntries` — array → `Wf-common-RelatedWorkpackage`
+- `relatedWorkpackages` — array → `Wf-common-RelatedWorkpackage`
+- `relatedWPCount` — object → `Wf-jl-RelatedWorkpackageCount`
+- `underWriting` — object → `Wf-cbm-Underwriting`
+- `cmnApprover` — array → `Wf-common-Approver`
+- `organizationId` — string ≤9
+- `bankId` — string ≤4
+- `parties` — array → `Wf-cbm-Party`
+- `obligations` — array → `Common-Ref`
+- `collateralItems` — array → `Wf-cbm-Collateral`
+- `comment` — object → `Wf-cbm-Comment`
+- `lender` — object → `Wf-cbm-Lender`
+- `collatGuarantees` — array → `Wf-cbm-CollateralGuarantee`
+- `primaryBorrower` — object → `Common-Ref`
+- `deal` — object → `Wf-cbm-Deal`
+- `guarantees` — array → `Wf-cbm-Guarantee`
+- `tmpOffsetEntry` — object → `Wf-cbm-OffsetEntry`
+- `customer` — object → `Common-Ref`
+- `obligor` — object → `Common-Ref`
+- `obligation` — object → `Wf-cbm-Obligation`
+- `requestComplete` — string ≤1
+- `readyToExecute` — string ≤1
+- `backOfficeComments` — object → `Wf-cbm-CommentText`
+- `obligorNumber` — string ≤10
+- `finOffTotInd` — string ≤4
+- `txnLastRunDate` — string date
+- `txnIndChangeDate` — string date
+- `finChangeDate` — string date
+- `approver` — integer int64
+- `approverUserName` — string
+- `ddaWireInstructions` — object → `Wf-cbm-la-DDAWireInstructions`
+
+### `POST /employees`  · create
+_Create Employee_
+Body `Wf-ws-employee-DefaultEmployeeRequest`:
+- **`bankId`** — string ≤4
+- `orgLevelCode` — integer ≤4 int32
+- **`orgLevelId`** — string ≤12
+- `party` — object → `Wf-adm-Party`
+- `roles` — array → `Wf-adm-OrgLevelDefinition`
+- **`organizationId`** — string ≤9
+
+### `PUT /employees/{id}`  · 🛑 stateful/destructive
+_Update Employee_
+Body `Wf-ws-employee-DefaultEmployeeRequest`:
+- **`bankId`** — string ≤4
+- `orgLevelCode` — integer ≤4 int32
+- **`orgLevelId`** — string ≤12
+- `party` — object → `Wf-adm-Party`
+- `roles` — array → `Wf-adm-OrgLevelDefinition`
+- **`organizationId`** — string ≤9
+
+### `DELETE /employees/{id}`  · 🛑 stateful/destructive
+_Delete Employee_
+- (no request body schema)
+
+### `POST /exceptions/createException`  · create
+_Create Exception_
+Body `Wf-xom-ws-ExceptionInsert`:
+- `response` — object → `Wf-xom-ws-Response`
+- `bankId` — integer int32
+- `applicationId` — integer int32
+- `organizationId` — integer int32
+- `id` — string ≤15
+- `obligorNumber` — string ≤10
+- `originalExtId` — string ≤50
+- `exceptionTypeId` — string ≤15
+- `subclass` — string ≤6
+- `et` — object → `Common-Ref`
+- `assignedToUserId` — string ≤8
+- `statusCode` — string ≤1
+- `teamMemberCode` — string ≤3
+- `advanceRate` — number double
+- `specialInstructions` — string ≤1500
+- `measurementDescription` — string ≤250
+- `trackingItems` — array → `Wf-xom-Tracking`
+- `officerId` — string ≤12
+- `secondaryOfficerId` — string ≤12
+- `assignmentUnitCode` — string ≤12
+- `entities` — array → `Wf-xom-ws-Obligor`
+- `obligations` — array → `Wf-xom-ws-Obligation`
+- `collateralItems` — array → `Wf-xom-ws-Collateral`
+- `milestones` — array → `Wf-xom-Milestone`
+- `userRoot` — object → `Common-Ref`
+
+### `POST /wp/feeManagement`  · create
+_Create a new Fee Management_
+Body `Wf-cbm-LoanAdminWorkPackage`:
+- `oid` — integer int64
+- `xoid` — string ≤19
+- `objectStatus` — string ≤1
+- `rootType` — integer int32
+- `wfType` — integer int32
+- `idalias` — integer int32
+- `updateUserId` — integer int64
+- `updateDate` — string date-time
+- `units` — array → `Wf-wum-Unit`
+- `readOnly` — boolean
+- `lockUserId` — integer int64
+- `lockedSinceTime` — string date-time
+- `attachments` — array → `Wf-wum-Attachment`
+- `cmAttachments` — array → `Wf-cm-Attachment`
+- `inStageSinceDate` — string date
+- `milestones` — array → `Wf-wum-Milestone`
+- `lastViewedTime` — string date-time
+- `lastViewedById` — integer int64
+- `closedDt` — string date-time
+- `copyDate` — string date
+- `copyUser` — integer ≤8 int64
+- `fromId` — string ≤15
+- `originalId` — string ≤15
+- `fromWp` — integer int64
+- `originalWp` — integer int64
+- `loadErrors` — array → `Wf-wum-LoadError`
+- `subType` — string ≤40
+- `wpSource` — string ≤40
+- `taskId` — integer int64
+- `parentTaskId` — integer int64
+- `eventNm` — string ≤255
+- `parentEventNm` — string ≤255
+- `eventFields` — object → `Wf-common-NameValuePairList`
+- `id` — string ≤15
+- `description` — string ≤255
+- `defaultOrg` — string ≤9
+- `masterBankNum` — string ≤4
+- `masterAppl` — string ≤4
+- `cusip` — array → `Wf-cbm-Cusip`
+- `bank` — object → `Wf-cbm-Bank`
+- `originatorOid` — integer int64
+- `originatedDt` — string date-time
+- `updatedDt` — string date
+- `jobListEntry` — object → `Wf-jl-WorkPackageEntry`
+- `crossReferenceNumber` — string ≤25
+- `readyToBook` — string ≤1
+- `exceptionManagement` — object → `Wf-xom-wf-ExceptionManagement`
+- `currentWPEntries` — array → `Wf-common-RelatedWorkpackage`
+- `relatedWorkpackages` — array → `Wf-common-RelatedWorkpackage`
+- `relatedWPCount` — object → `Wf-jl-RelatedWorkpackageCount`
+- `underWriting` — object → `Wf-cbm-Underwriting`
+- `cmnApprover` — array → `Wf-common-Approver`
+- `organizationId` — string ≤9
+- `bankId` — string ≤4
+- `parties` — array → `Wf-cbm-Party`
+- `obligations` — array → `Common-Ref`
+- `collateralItems` — array → `Wf-cbm-Collateral`
+- `comment` — object → `Wf-cbm-Comment`
+- `lender` — object → `Wf-cbm-Lender`
+- `collatGuarantees` — array → `Wf-cbm-CollateralGuarantee`
+- `primaryBorrower` — object → `Common-Ref`
+- `deal` — object → `Wf-cbm-Deal`
+- `guarantees` — array → `Wf-cbm-Guarantee`
+- `tmpOffsetEntry` — object → `Wf-cbm-OffsetEntry`
+- `customer` — object → `Common-Ref`
+- `obligor` — object → `Common-Ref`
+- `obligation` — object → `Wf-cbm-Obligation`
+- `requestComplete` — string ≤1
+- `readyToExecute` — string ≤1
+- `backOfficeComments` — object → `Wf-cbm-CommentText`
+- `financials` — array → `Wf-cbm-FinancialTransaction`
+- `financialObligations` — array → `Wf-cbm-Obligation`
+- `feeCharges` — array → `Wf-cbm-ChargeHeader`
+- `obligorNumber` — string ≤10
+- `finOffTotInd` — string ≤4
+- `txnLastRunDate` — string date
+- `txnIndChangeDate` — string date
+- `finChangeDate` — string date
+- `approver` — integer int64
+- `approverUserName` — string
+
+### `PUT /wp/feeManagement/{id}`  · 🛑 stateful/destructive
+_Update a Fee Management_
+Body `Wf-cbm-LoanAdminWorkPackage`:
+- `oid` — integer int64
+- `xoid` — string ≤19
+- `objectStatus` — string ≤1
+- `rootType` — integer int32
+- `wfType` — integer int32
+- `idalias` — integer int32
+- `updateUserId` — integer int64
+- `updateDate` — string date-time
+- `units` — array → `Wf-wum-Unit`
+- `readOnly` — boolean
+- `lockUserId` — integer int64
+- `lockedSinceTime` — string date-time
+- `attachments` — array → `Wf-wum-Attachment`
+- `cmAttachments` — array → `Wf-cm-Attachment`
+- `inStageSinceDate` — string date
+- `milestones` — array → `Wf-wum-Milestone`
+- `lastViewedTime` — string date-time
+- `lastViewedById` — integer int64
+- `closedDt` — string date-time
+- `copyDate` — string date
+- `copyUser` — integer ≤8 int64
+- `fromId` — string ≤15
+- `originalId` — string ≤15
+- `fromWp` — integer int64
+- `originalWp` — integer int64
+- `loadErrors` — array → `Wf-wum-LoadError`
+- `subType` — string ≤40
+- `wpSource` — string ≤40
+- `taskId` — integer int64
+- `parentTaskId` — integer int64
+- `eventNm` — string ≤255
+- `parentEventNm` — string ≤255
+- `eventFields` — object → `Wf-common-NameValuePairList`
+- `id` — string ≤15
+- `description` — string ≤255
+- `defaultOrg` — string ≤9
+- `masterBankNum` — string ≤4
+- `masterAppl` — string ≤4
+- `cusip` — array → `Wf-cbm-Cusip`
+- `bank` — object → `Wf-cbm-Bank`
+- `originatorOid` — integer int64
+- `originatedDt` — string date-time
+- `updatedDt` — string date
+- `jobListEntry` — object → `Wf-jl-WorkPackageEntry`
+- `crossReferenceNumber` — string ≤25
+- `readyToBook` — string ≤1
+- `exceptionManagement` — object → `Wf-xom-wf-ExceptionManagement`
+- `currentWPEntries` — array → `Wf-common-RelatedWorkpackage`
+- `relatedWorkpackages` — array → `Wf-common-RelatedWorkpackage`
+- `relatedWPCount` — object → `Wf-jl-RelatedWorkpackageCount`
+- `underWriting` — object → `Wf-cbm-Underwriting`
+- `cmnApprover` — array → `Wf-common-Approver`
+- `organizationId` — string ≤9
+- `bankId` — string ≤4
+- `parties` — array → `Wf-cbm-Party`
+- `obligations` — array → `Common-Ref`
+- `collateralItems` — array → `Wf-cbm-Collateral`
+- `comment` — object → `Wf-cbm-Comment`
+- `lender` — object → `Wf-cbm-Lender`
+- `collatGuarantees` — array → `Wf-cbm-CollateralGuarantee`
+- `primaryBorrower` — object → `Common-Ref`
+- `deal` — object → `Wf-cbm-Deal`
+- `guarantees` — array → `Wf-cbm-Guarantee`
+- `tmpOffsetEntry` — object → `Wf-cbm-OffsetEntry`
+- `customer` — object → `Common-Ref`
+- `obligor` — object → `Common-Ref`
+- `obligation` — object → `Wf-cbm-Obligation`
+- `requestComplete` — string ≤1
+- `readyToExecute` — string ≤1
+- `backOfficeComments` — object → `Wf-cbm-CommentText`
+- `financials` — array → `Wf-cbm-FinancialTransaction`
+- `financialObligations` — array → `Wf-cbm-Obligation`
+- `feeCharges` — array → `Wf-cbm-ChargeHeader`
+- `obligorNumber` — string ≤10
+- `finOffTotInd` — string ≤4
+- `txnLastRunDate` — string date
+- `txnIndChangeDate` — string date
+- `finChangeDate` — string date
+- `approver` — integer int64
+- `approverUserName` — string
+
+### `POST /createFinancial`  · create
+_Create Financial_
+Body `Wf-ws-servicing-ServicingUpdateFinancialRequest`:
+- `simulate` — string ≤10
+- **`financial`** — object → `Wf-cbm-FinancialTransaction`
+  - `oid` — integer int64
+  - `xoid` — string ≤19
+  - `objectStatus` — string ≤1
+  - `deleteInd` — boolean
+  - **`bankNumber`** — string ≤4
+  - **`application`** — string ≤4
+  - **`oblgrNumber`** — string ≤10
+  - **`oblnNumber`** — string ≤10
+  - `tranOrigin` — string ≤4
+  - `reasonCode` — string ≤4
+  - **`effectiveDate`** — string date
+  - `tranAmount` — number double
+  - `tranAmountCur` — string ≤3
+  - `baseEquivInfo` — object → `Wf-cbm-FxInfo`
+  - `baseEquivTranAmt` — number double
+  - `baseEquivTranAmtCur` — string ≤3
+  - `invoiceNumber` — integer ≤10 int64
+  - `offsets` — array → `Wf-cbm-OffsetEntry`
+  - **`transaction`** — string ≤32
+  - `xrefId` — string ≤50
+  - `comment` — object → `Wf-cbm-CommentText`
+  - `doPropagate` — boolean
+  - `propData` — object → `Wf-cbm-PropData`
+  - `selectedTransferFinancial` — object → `Common-Ref`
+  - `takenDownFromObln` — string ≤10
+  - `propPct` — number double
+  - `partOblgrNumber` — string ≤10
+  - `methodOfCollectionTypeCode` — string ≤4
+  - `balanceCode` — string ≤4
+  - `chargeCode` — string ≤4
+  - `noticeChgInd` — string ≤1
+  - `selInvoiceNumber` — integer ≤10 int64
+  - `defaultToBillDueDt` — boolean
+  - `escrowItemRequired` — string ≤1
+  - `escrowItems` — array → `Wf-cbm-EscrowItem`
+  - `disbursementDueDt` — string date
+  - `disbursementAmount` — number double
+  - `disbursementAmountCur` — string ≤3
+  - `currentDisbursementAmt` — number double
+  - `currentDisbursementAmtCur` — string ≤3
+  - `disbursementReasonCode` — string ≤4
+  - `openEscrowBalances` — array → `Wf-cbm-BalanceHeader`
+  - `selectedEscrowCloseOutBal` — object → `Common-Ref`
+  - `numSelEscBalances` — string
+  - `escrowItemCode` — string ≤4
+  - `escrowItemNo` — string ≤4
+  - `escrowSchedDisb` — array → `Wf-cbm-EscrowSchedDisb`
+  - `selectedEscrowSchedDisb` — object → `Common-Ref`
+  - `selectedInvDueDate` — string date
+  - `tmpSeq` — string ≤4
+  - `selectedObligation` — object → `Common-Ref`
+  - `chargeHeaders` — array → `Wf-cbm-ChargeHeader`
+  - `chargeHeader` — object → `Common-Ref`
+  - `selTrnsfrTran` — object → `Wf-cbm-TransferSched`
+  - `timestamp` — string date-time
+  - `standaloneOffsetObligations` — array → `Common-Ref`
+  - `selectedStandaloneObligation` — object → `Common-Ref`
+
+### `POST /createScheduledFinancial`  · create
+_Create Schedule Financial Activity_
+Body `Wf-ws-servicing-ServicingUpdateSchedFinancialRequest`:
+- `simulate` — string ≤10
+- **`scheduledFinancial`** — object → `Wf-cbm-ScheduledActivity`
+  - `deleteInd` — boolean
+  - **`bankNumber`** — string ≤4
+  - **`application`** — string ≤4
+  - **`oblgrNumber`** — string ≤10
+  - **`oblnNumber`** — string ≤10
+  - `tranOrigin` — string ≤4
+  - `reasonCode` — string ≤4
+  - **`effectiveDate`** — string date
+  - `tranAmount` — number double
+  - `tranAmountCur` — string ≤3
+  - `baseEquivInfo` — object → `Wf-cbm-FxInfo`
+  - `baseEquivTranAmt` — number double
+  - `baseEquivTranAmtCur` — string ≤3
+  - `invoiceNumber` — integer ≤10 int64
+  - `offsets` — array → `Wf-cbm-OffsetEntry`
+  - **`transaction`** — string ≤32
+  - `xrefId` — string ≤50
+  - `comment` — object → `Wf-cbm-CommentText`
+  - `doPropagate` — boolean
+  - `propData` — object → `Wf-cbm-PropData`
+  - `selectedTransferFinancial` — object → `Common-Ref`
+  - `takenDownFromObln` — string ≤10
+  - `propPct` — number double
+  - `partOblgrNumber` — string ≤10
+  - `methodOfCollectionTypeCode` — string ≤4
+  - `balanceCode` — string ≤4
+  - `chargeCode` — string ≤4
+  - `noticeChgInd` — string ≤1
+  - `selInvoiceNumber` — integer ≤10 int64
+  - `defaultToBillDueDt` — boolean
+  - `escrowItemRequired` — string ≤1
+  - `escrowItems` — array → `Wf-cbm-EscrowItem`
+  - `disbursementDueDt` — string date
+  - `disbursementAmount` — number double
+  - `disbursementAmountCur` — string ≤3
+  - `currentDisbursementAmt` — number double
+  - `currentDisbursementAmtCur` — string ≤3
+  - `disbursementReasonCode` — string ≤4
+  - `openEscrowBalances` — array → `Wf-cbm-BalanceHeader`
+  - `selectedEscrowCloseOutBal` — object → `Common-Ref`
+  - `numSelEscBalances` — string
+  - `escrowItemCode` — string ≤4
+  - `escrowItemNo` — string ≤4
+  - `escrowSchedDisb` — array → `Wf-cbm-EscrowSchedDisb`
+  - `selectedEscrowSchedDisb` — object → `Common-Ref`
+  - `selectedInvDueDate` — string date
+  - `tmpSeq` — string ≤4
+  - `selectedObligation` — object → `Common-Ref`
+  - `chargeHeaders` — array → `Wf-cbm-ChargeHeader`
+  - `chargeHeader` — object → `Common-Ref`
+  - `selTrnsfrTran` — object → `Wf-cbm-TransferSched`
+  - `timestamp` — string date-time
+  - `standaloneOffsetObligations` — array → `Common-Ref`
+  - `selectedStandaloneObligation` — object → `Common-Ref`
+  - `apprvlStatus` — string ≤4
+
+### `POST /jobs/updateAssignment`  · 🛑 stateful/destructive
+_Update Assignments_
+Body `Wf-ws-wpStatusUpdate-AssignmentUpdateRequest`:
+- `workpackages` — array → `Wf-ws-wpStatusUpdate-AssignmentUpdateRequestFields`
+
+### `POST /jobs/updateStatus`  · 🛑 stateful/destructive
+_Update Status_
+Body `Wf-ws-wpStatusUpdate-StatusUpdateRequest`:
+- `workpackages` — array → `Wf-ws-wpStatusUpdate-StatusUpdateRequestFields`
+
+### `POST /wp/nonFinancial`  · create
+_Create a new Non-Financial Maintenance_
+Body `Wf-cbm-LoanAdminWorkPackage`:
+- `oid` — integer int64
+- `xoid` — string ≤19
+- `objectStatus` — string ≤1
+- `rootType` — integer int32
+- `wfType` — integer int32
+- `idalias` — integer int32
+- `updateUserId` — integer int64
+- `updateDate` — string date-time
+- `units` — array → `Wf-wum-Unit`
+- `readOnly` — boolean
+- `lockUserId` — integer int64
+- `lockedSinceTime` — string date-time
+- `attachments` — array → `Wf-wum-Attachment`
+- `cmAttachments` — array → `Wf-cm-Attachment`
+- `inStageSinceDate` — string date
+- `milestones` — array → `Wf-wum-Milestone`
+- `lastViewedTime` — string date-time
+- `lastViewedById` — integer int64
+- `closedDt` — string date-time
+- `copyDate` — string date
+- `copyUser` — integer ≤8 int64
+- `fromId` — string ≤15
+- `originalId` — string ≤15
+- `fromWp` — integer int64
+- `originalWp` — integer int64
+- `loadErrors` — array → `Wf-wum-LoadError`
+- `subType` — string ≤40
+- `wpSource` — string ≤40
+- `taskId` — integer int64
+- `parentTaskId` — integer int64
+- `eventNm` — string ≤255
+- `parentEventNm` — string ≤255
+- `eventFields` — object → `Wf-common-NameValuePairList`
+- `id` — string ≤15
+- `description` — string ≤255
+- `defaultOrg` — string ≤9
+- `masterBankNum` — string ≤4
+- `masterAppl` — string ≤4
+- `cusip` — array → `Wf-cbm-Cusip`
+- `bank` — object → `Wf-cbm-Bank`
+- `originatorOid` — integer int64
+- `originatedDt` — string date-time
+- `updatedDt` — string date
+- `jobListEntry` — object → `Wf-jl-WorkPackageEntry`
+- `crossReferenceNumber` — string ≤25
+- `readyToBook` — string ≤1
+- `exceptionManagement` — object → `Wf-xom-wf-ExceptionManagement`
+- `currentWPEntries` — array → `Wf-common-RelatedWorkpackage`
+- `relatedWorkpackages` — array → `Wf-common-RelatedWorkpackage`
+- `relatedWPCount` — object → `Wf-jl-RelatedWorkpackageCount`
+- `underWriting` — object → `Wf-cbm-Underwriting`
+- `cmnApprover` — array → `Wf-common-Approver`
+- `organizationId` — string ≤9
+- `bankId` — string ≤4
+- `parties` — array → `Wf-cbm-Party`
+- `obligations` — array → `Common-Ref`
+- `collateralItems` — array → `Wf-cbm-Collateral`
+- `comment` — object → `Wf-cbm-Comment`
+- `lender` — object → `Wf-cbm-Lender`
+- `collatGuarantees` — array → `Wf-cbm-CollateralGuarantee`
+- `primaryBorrower` — object → `Common-Ref`
+- `deal` — object → `Wf-cbm-Deal`
+- `guarantees` — array → `Wf-cbm-Guarantee`
+- `tmpOffsetEntry` — object → `Wf-cbm-OffsetEntry`
+- `customer` — object → `Common-Ref`
+- `obligor` — object → `Common-Ref`
+- `obligation` — object → `Wf-cbm-Obligation`
+- `requestComplete` — string ≤1
+- `readyToExecute` — string ≤1
+- `backOfficeComments` — object → `Wf-cbm-CommentText`
+- `financialObligations` — array → `Wf-cbm-Obligation`
+- `obligorNumber` — string ≤10
+- `finOffTotInd` — string ≤4
+- `approver` — integer int64
+- `approverUserName` — string
+- `displayObligationMaint` — string ≤1
+- `displayCollateralMaint` — string ≤1
+
+### `PUT /wp/nonFinancial/{id}`  · 🛑 stateful/destructive
+_Update a Non-Financial Maintenance_
+Body `Wf-cbm-LoanAdminWorkPackage`:
+- `oid` — integer int64
+- `xoid` — string ≤19
+- `objectStatus` — string ≤1
+- `rootType` — integer int32
+- `wfType` — integer int32
+- `idalias` — integer int32
+- `updateUserId` — integer int64
+- `updateDate` — string date-time
+- `units` — array → `Wf-wum-Unit`
+- `readOnly` — boolean
+- `lockUserId` — integer int64
+- `lockedSinceTime` — string date-time
+- `attachments` — array → `Wf-wum-Attachment`
+- `cmAttachments` — array → `Wf-cm-Attachment`
+- `inStageSinceDate` — string date
+- `milestones` — array → `Wf-wum-Milestone`
+- `lastViewedTime` — string date-time
+- `lastViewedById` — integer int64
+- `closedDt` — string date-time
+- `copyDate` — string date
+- `copyUser` — integer ≤8 int64
+- `fromId` — string ≤15
+- `originalId` — string ≤15
+- `fromWp` — integer int64
+- `originalWp` — integer int64
+- `loadErrors` — array → `Wf-wum-LoadError`
+- `subType` — string ≤40
+- `wpSource` — string ≤40
+- `taskId` — integer int64
+- `parentTaskId` — integer int64
+- `eventNm` — string ≤255
+- `parentEventNm` — string ≤255
+- `eventFields` — object → `Wf-common-NameValuePairList`
+- `id` — string ≤15
+- `description` — string ≤255
+- `defaultOrg` — string ≤9
+- `masterBankNum` — string ≤4
+- `masterAppl` — string ≤4
+- `cusip` — array → `Wf-cbm-Cusip`
+- `bank` — object → `Wf-cbm-Bank`
+- `originatorOid` — integer int64
+- `originatedDt` — string date-time
+- `updatedDt` — string date
+- `jobListEntry` — object → `Wf-jl-WorkPackageEntry`
+- `crossReferenceNumber` — string ≤25
+- `readyToBook` — string ≤1
+- `exceptionManagement` — object → `Wf-xom-wf-ExceptionManagement`
+- `currentWPEntries` — array → `Wf-common-RelatedWorkpackage`
+- `relatedWorkpackages` — array → `Wf-common-RelatedWorkpackage`
+- `relatedWPCount` — object → `Wf-jl-RelatedWorkpackageCount`
+- `underWriting` — object → `Wf-cbm-Underwriting`
+- `cmnApprover` — array → `Wf-common-Approver`
+- `organizationId` — string ≤9
+- `bankId` — string ≤4
+- `parties` — array → `Wf-cbm-Party`
+- `obligations` — array → `Common-Ref`
+- `collateralItems` — array → `Wf-cbm-Collateral`
+- `comment` — object → `Wf-cbm-Comment`
+- `lender` — object → `Wf-cbm-Lender`
+- `collatGuarantees` — array → `Wf-cbm-CollateralGuarantee`
+- `primaryBorrower` — object → `Common-Ref`
+- `deal` — object → `Wf-cbm-Deal`
+- `guarantees` — array → `Wf-cbm-Guarantee`
+- `tmpOffsetEntry` — object → `Wf-cbm-OffsetEntry`
+- `customer` — object → `Common-Ref`
+- `obligor` — object → `Common-Ref`
+- `obligation` — object → `Wf-cbm-Obligation`
+- `requestComplete` — string ≤1
+- `readyToExecute` — string ≤1
+- `backOfficeComments` — object → `Wf-cbm-CommentText`
+- `financialObligations` — array → `Wf-cbm-Obligation`
+- `obligorNumber` — string ≤10
+- `finOffTotInd` — string ≤4
+- `approver` — integer int64
+- `approverUserName` — string
+- `displayObligationMaint` — string ≤1
+- `displayCollateralMaint` — string ≤1
+
+### `POST /wp/oblnRestructure`  · 🛑 stateful/destructive
+_Create a new Obligation Hierarchy Restructure_
+Body `Wf-cbm-LoanAdminWorkPackage`:
+- `oid` — integer int64
+- `xoid` — string ≤19
+- `objectStatus` — string ≤1
+- `rootType` — integer int32
+- `wfType` — integer int32
+- `idalias` — integer int32
+- `updateUserId` — integer int64
+- `updateDate` — string date-time
+- `units` — array → `Wf-wum-Unit`
+- `readOnly` — boolean
+- `lockUserId` — integer int64
+- `lockedSinceTime` — string date-time
+- `attachments` — array → `Wf-wum-Attachment`
+- `cmAttachments` — array → `Wf-cm-Attachment`
+- `inStageSinceDate` — string date
+- `milestones` — array → `Wf-wum-Milestone`
+- `lastViewedTime` — string date-time
+- `lastViewedById` — integer int64
+- `closedDt` — string date-time
+- `copyDate` — string date
+- `copyUser` — integer ≤8 int64
+- `fromId` — string ≤15
+- `originalId` — string ≤15
+- `fromWp` — integer int64
+- `originalWp` — integer int64
+- `loadErrors` — array → `Wf-wum-LoadError`
+- `subType` — string ≤40
+- `wpSource` — string ≤40
+- `taskId` — integer int64
+- `parentTaskId` — integer int64
+- `eventNm` — string ≤255
+- `parentEventNm` — string ≤255
+- `eventFields` — object → `Wf-common-NameValuePairList`
+- `id` — string ≤15
+- `description` — string ≤255
+- `defaultOrg` — string ≤9
+- `masterBankNum` — string ≤4
+- `masterAppl` — string ≤4
+- `cusip` — array → `Wf-cbm-Cusip`
+- `bank` — object → `Wf-cbm-Bank`
+- `originatorOid` — integer int64
+- `originatedDt` — string date-time
+- `updatedDt` — string date
+- `jobListEntry` — object → `Wf-jl-WorkPackageEntry`
+- `crossReferenceNumber` — string ≤25
+- `readyToBook` — string ≤1
+- `exceptionManagement` — object → `Wf-xom-wf-ExceptionManagement`
+- `currentWPEntries` — array → `Wf-common-RelatedWorkpackage`
+- `relatedWorkpackages` — array → `Wf-common-RelatedWorkpackage`
+- `relatedWPCount` — object → `Wf-jl-RelatedWorkpackageCount`
+- `underWriting` — object → `Wf-cbm-Underwriting`
+- `cmnApprover` — array → `Wf-common-Approver`
+- `organizationId` — string ≤9
+- `bankId` — string ≤4
+- `parties` — array → `Wf-cbm-Party`
+- `obligations` — array → `Common-Ref`
+- `collateralItems` — array → `Wf-cbm-Collateral`
+- `comment` — object → `Wf-cbm-Comment`
+- `lender` — object → `Wf-cbm-Lender`
+- `collatGuarantees` — array → `Wf-cbm-CollateralGuarantee`
+- `primaryBorrower` — object → `Common-Ref`
+- `deal` — object → `Wf-cbm-Deal`
+- `guarantees` — array → `Wf-cbm-Guarantee`
+- `tmpOffsetEntry` — object → `Wf-cbm-OffsetEntry`
+- `customer` — object → `Common-Ref`
+- `obligor` — object → `Common-Ref`
+- `obligation` — object → `Wf-cbm-Obligation`
+- `requestComplete` — string ≤1
+- `readyToExecute` — string ≤1
+- `backOfficeComments` — object → `Wf-cbm-CommentText`
+- `oblnRestructure` — object → `Wf-cbm-la-ObligationRestructure`
+- `obligorNumber` — string ≤10
+- `finOffTotInd` — string ≤4
+- `txnLastRunDate` — string date
+- `txnIndChangeDate` — string date
+- `finChangeDate` — string date
+- `approver` — integer int64
+- `approverUserName` — string
+
+### `PUT /wp/oblnRestructure/{id}`  · 🛑 stateful/destructive
+_Update an Obligation Hierarchy Restructure_
+Body `Wf-cbm-LoanAdminWorkPackage`:
+- `oid` — integer int64
+- `xoid` — string ≤19
+- `objectStatus` — string ≤1
+- `rootType` — integer int32
+- `wfType` — integer int32
+- `idalias` — integer int32
+- `updateUserId` — integer int64
+- `updateDate` — string date-time
+- `units` — array → `Wf-wum-Unit`
+- `readOnly` — boolean
+- `lockUserId` — integer int64
+- `lockedSinceTime` — string date-time
+- `attachments` — array → `Wf-wum-Attachment`
+- `cmAttachments` — array → `Wf-cm-Attachment`
+- `inStageSinceDate` — string date
+- `milestones` — array → `Wf-wum-Milestone`
+- `lastViewedTime` — string date-time
+- `lastViewedById` — integer int64
+- `closedDt` — string date-time
+- `copyDate` — string date
+- `copyUser` — integer ≤8 int64
+- `fromId` — string ≤15
+- `originalId` — string ≤15
+- `fromWp` — integer int64
+- `originalWp` — integer int64
+- `loadErrors` — array → `Wf-wum-LoadError`
+- `subType` — string ≤40
+- `wpSource` — string ≤40
+- `taskId` — integer int64
+- `parentTaskId` — integer int64
+- `eventNm` — string ≤255
+- `parentEventNm` — string ≤255
+- `eventFields` — object → `Wf-common-NameValuePairList`
+- `id` — string ≤15
+- `description` — string ≤255
+- `defaultOrg` — string ≤9
+- `masterBankNum` — string ≤4
+- `masterAppl` — string ≤4
+- `cusip` — array → `Wf-cbm-Cusip`
+- `bank` — object → `Wf-cbm-Bank`
+- `originatorOid` — integer int64
+- `originatedDt` — string date-time
+- `updatedDt` — string date
+- `jobListEntry` — object → `Wf-jl-WorkPackageEntry`
+- `crossReferenceNumber` — string ≤25
+- `readyToBook` — string ≤1
+- `exceptionManagement` — object → `Wf-xom-wf-ExceptionManagement`
+- `currentWPEntries` — array → `Wf-common-RelatedWorkpackage`
+- `relatedWorkpackages` — array → `Wf-common-RelatedWorkpackage`
+- `relatedWPCount` — object → `Wf-jl-RelatedWorkpackageCount`
+- `underWriting` — object → `Wf-cbm-Underwriting`
+- `cmnApprover` — array → `Wf-common-Approver`
+- `organizationId` — string ≤9
+- `bankId` — string ≤4
+- `parties` — array → `Wf-cbm-Party`
+- `obligations` — array → `Common-Ref`
+- `collateralItems` — array → `Wf-cbm-Collateral`
+- `comment` — object → `Wf-cbm-Comment`
+- `lender` — object → `Wf-cbm-Lender`
+- `collatGuarantees` — array → `Wf-cbm-CollateralGuarantee`
+- `primaryBorrower` — object → `Common-Ref`
+- `deal` — object → `Wf-cbm-Deal`
+- `guarantees` — array → `Wf-cbm-Guarantee`
+- `tmpOffsetEntry` — object → `Wf-cbm-OffsetEntry`
+- `customer` — object → `Common-Ref`
+- `obligor` — object → `Common-Ref`
+- `obligation` — object → `Wf-cbm-Obligation`
+- `requestComplete` — string ≤1
+- `readyToExecute` — string ≤1
+- `backOfficeComments` — object → `Wf-cbm-CommentText`
+- `oblnRestructure` — object → `Wf-cbm-la-ObligationRestructure`
+- `obligorNumber` — string ≤10
+- `finOffTotInd` — string ≤4
+- `txnLastRunDate` — string date
+- `txnIndChangeDate` — string date
+- `finChangeDate` — string date
+- `approver` — integer int64
+- `approverUserName` — string
+
+### `POST /wp/otherFinancials2`  · create
+_Create a new Other Financial_
+Body `Wf-cbm-LoanAdminWorkPackage`:
+- `oid` — integer int64
+- `xoid` — string ≤19
+- `objectStatus` — string ≤1
+- `rootType` — integer int32
+- `wfType` — integer int32
+- `idalias` — integer int32
+- `updateUserId` — integer int64
+- `updateDate` — string date-time
+- `units` — array → `Wf-wum-Unit`
+- `readOnly` — boolean
+- `lockUserId` — integer int64
+- `lockedSinceTime` — string date-time
+- `attachments` — array → `Wf-wum-Attachment`
+- `cmAttachments` — array → `Wf-cm-Attachment`
+- `inStageSinceDate` — string date
+- `milestones` — array → `Wf-wum-Milestone`
+- `lastViewedTime` — string date-time
+- `lastViewedById` — integer int64
+- `closedDt` — string date-time
+- `copyDate` — string date
+- `copyUser` — integer ≤8 int64
+- `fromId` — string ≤15
+- `originalId` — string ≤15
+- `fromWp` — integer int64
+- `originalWp` — integer int64
+- `loadErrors` — array → `Wf-wum-LoadError`
+- `subType` — string ≤40
+- `wpSource` — string ≤40
+- `taskId` — integer int64
+- `parentTaskId` — integer int64
+- `eventNm` — string ≤255
+- `parentEventNm` — string ≤255
+- `eventFields` — object → `Wf-common-NameValuePairList`
+- `id` — string ≤15
+- `description` — string ≤255
+- `defaultOrg` — string ≤9
+- `masterBankNum` — string ≤4
+- `masterAppl` — string ≤4
+- `cusip` — array → `Wf-cbm-Cusip`
+- `bank` — object → `Wf-cbm-Bank`
+- `originatorOid` — integer int64
+- `originatedDt` — string date-time
+- `updatedDt` — string date
+- `jobListEntry` — object → `Wf-jl-WorkPackageEntry`
+- `crossReferenceNumber` — string ≤25
+- `readyToBook` — string ≤1
+- `currentWPEntries` — array → `Wf-common-RelatedWorkpackage`
+- `relatedWorkpackages` — array → `Wf-common-RelatedWorkpackage`
+- `relatedWPCount` — object → `Wf-jl-RelatedWorkpackageCount`
+- `cmnApprover` — array → `Wf-common-Approver`
+- `organizationId` — string ≤9
+- `bankId` — string ≤4
+- `parties` — array → `Wf-cbm-Party`
+- `obligations` — array → `Common-Ref`
+- `comment` — object → `Wf-cbm-Comment`
+- `primaryBorrower` — object → `Common-Ref`
+- `tmpOffsetEntry` — object → `Wf-cbm-OffsetEntry`
+- `customer` — object → `Common-Ref`
+- `obligor` — object → `Common-Ref`
+- `obligation` — object → `Wf-cbm-Obligation`
+- `requestComplete` — string ≤1
+- `readyToExecute` — string ≤1
+- `backOfficeComments` — object → `Wf-cbm-CommentText`
+- `financials` — array → `Wf-cbm-FinancialTransaction`
+- `financialObligations` — array → `Wf-cbm-Obligation`
+- `obligorNumber` — string ≤10
+- `finOffTotInd` — string ≤4
+- `txnLastRunDate` — string date
+- `txnIndChangeDate` — string date
+- `finChangeDate` — string date
+- `approver` — integer int64
+- `approverUserName` — string
+
+### `PUT /wp/otherFinancials2/{id}`  · 🛑 stateful/destructive
+_Update an Other Financial_
+Body `Wf-cbm-LoanAdminWorkPackage`:
+- `oid` — integer int64
+- `xoid` — string ≤19
+- `objectStatus` — string ≤1
+- `rootType` — integer int32
+- `wfType` — integer int32
+- `idalias` — integer int32
+- `updateUserId` — integer int64
+- `updateDate` — string date-time
+- `units` — array → `Wf-wum-Unit`
+- `readOnly` — boolean
+- `lockUserId` — integer int64
+- `lockedSinceTime` — string date-time
+- `attachments` — array → `Wf-wum-Attachment`
+- `cmAttachments` — array → `Wf-cm-Attachment`
+- `inStageSinceDate` — string date
+- `milestones` — array → `Wf-wum-Milestone`
+- `lastViewedTime` — string date-time
+- `lastViewedById` — integer int64
+- `closedDt` — string date-time
+- `copyDate` — string date
+- `copyUser` — integer ≤8 int64
+- `fromId` — string ≤15
+- `originalId` — string ≤15
+- `fromWp` — integer int64
+- `originalWp` — integer int64
+- `loadErrors` — array → `Wf-wum-LoadError`
+- `subType` — string ≤40
+- `wpSource` — string ≤40
+- `taskId` — integer int64
+- `parentTaskId` — integer int64
+- `eventNm` — string ≤255
+- `parentEventNm` — string ≤255
+- `eventFields` — object → `Wf-common-NameValuePairList`
+- `id` — string ≤15
+- `description` — string ≤255
+- `defaultOrg` — string ≤9
+- `masterBankNum` — string ≤4
+- `masterAppl` — string ≤4
+- `cusip` — array → `Wf-cbm-Cusip`
+- `bank` — object → `Wf-cbm-Bank`
+- `originatorOid` — integer int64
+- `originatedDt` — string date-time
+- `updatedDt` — string date
+- `jobListEntry` — object → `Wf-jl-WorkPackageEntry`
+- `crossReferenceNumber` — string ≤25
+- `readyToBook` — string ≤1
+- `currentWPEntries` — array → `Wf-common-RelatedWorkpackage`
+- `relatedWorkpackages` — array → `Wf-common-RelatedWorkpackage`
+- `relatedWPCount` — object → `Wf-jl-RelatedWorkpackageCount`
+- `cmnApprover` — array → `Wf-common-Approver`
+- `organizationId` — string ≤9
+- `bankId` — string ≤4
+- `parties` — array → `Wf-cbm-Party`
+- `obligations` — array → `Common-Ref`
+- `comment` — object → `Wf-cbm-Comment`
+- `primaryBorrower` — object → `Common-Ref`
+- `tmpOffsetEntry` — object → `Wf-cbm-OffsetEntry`
+- `customer` — object → `Common-Ref`
+- `obligor` — object → `Common-Ref`
+- `obligation` — object → `Wf-cbm-Obligation`
+- `requestComplete` — string ≤1
+- `readyToExecute` — string ≤1
+- `backOfficeComments` — object → `Wf-cbm-CommentText`
+- `financials` — array → `Wf-cbm-FinancialTransaction`
+- `financialObligations` — array → `Wf-cbm-Obligation`
+- `obligorNumber` — string ≤10
+- `finOffTotInd` — string ≤4
+- `txnLastRunDate` — string date
+- `txnIndChangeDate` — string date
+- `finChangeDate` — string date
+- `approver` — integer int64
+- `approverUserName` — string
+
+### `POST /wp/otherMaintenance`  · create
+_Create a new Other Maintenance_
+Body `Wf-cbm-LoanAdminWorkPackage`:
+- `oid` — integer int64
+- `xoid` — string ≤19
+- `objectStatus` — string ≤1
+- `rootType` — integer int32
+- `wfType` — integer int32
+- `idalias` — integer int32
+- `updateUserId` — integer int64
+- `updateDate` — string date-time
+- `units` — array → `Wf-wum-Unit`
+- `readOnly` — boolean
+- `lockUserId` — integer int64
+- `lockedSinceTime` — string date-time
+- `attachments` — array → `Wf-wum-Attachment`
+- `cmAttachments` — array → `Wf-cm-Attachment`
+- `inStageSinceDate` — string date
+- `milestones` — array → `Wf-wum-Milestone`
+- `lastViewedTime` — string date-time
+- `lastViewedById` — integer int64
+- `closedDt` — string date-time
+- `copyDate` — string date
+- `copyUser` — integer ≤8 int64
+- `fromId` — string ≤15
+- `originalId` — string ≤15
+- `fromWp` — integer int64
+- `originalWp` — integer int64
+- `loadErrors` — array → `Wf-wum-LoadError`
+- `subType` — string ≤40
+- `wpSource` — string ≤40
+- `taskId` — integer int64
+- `parentTaskId` — integer int64
+- `eventNm` — string ≤255
+- `parentEventNm` — string ≤255
+- `eventFields` — object → `Wf-common-NameValuePairList`
+- `id` — string ≤15
+- `description` — string ≤255
+- `defaultOrg` — string ≤9
+- `masterBankNum` — string ≤4
+- `masterAppl` — string ≤4
+- `cusip` — array → `Wf-cbm-Cusip`
+- `bank` — object → `Wf-cbm-Bank`
+- `originatorOid` — integer int64
+- `originatedDt` — string date-time
+- `updatedDt` — string date
+- `jobListEntry` — object → `Wf-jl-WorkPackageEntry`
+- `crossReferenceNumber` — string ≤25
+- `readyToBook` — string ≤1
+- `currentWPEntries` — array → `Wf-common-RelatedWorkpackage`
+- `relatedWorkpackages` — array → `Wf-common-RelatedWorkpackage`
+- `relatedWPCount` — object → `Wf-jl-RelatedWorkpackageCount`
+- `cmnApprover` — array → `Wf-common-Approver`
+- `organizationId` — string ≤9
+- `bankId` — string ≤4
+- `parties` — array → `Wf-cbm-Party`
+- `obligations` — array → `Common-Ref`
+- `comment` — object → `Wf-cbm-Comment`
+- `primaryBorrower` — object → `Common-Ref`
+- `tmpOffsetEntry` — object → `Wf-cbm-OffsetEntry`
+- `customer` — object → `Common-Ref`
+- `obligor` — object → `Common-Ref`
+- `obligation` — object → `Wf-cbm-Obligation`
+- `requestComplete` — string ≤1
+- `readyToExecute` — string ≤1
+- `backOfficeComments` — object → `Wf-cbm-CommentText`
+- `otherMaintenance` — object → `Wf-cbm-la-OtherMaintenance`
+- `obligorNumber` — string ≤10
+- `approver` — integer int64
+- `approverUserName` — string
+
+### `PUT /wp/otherMaintenance/{id}`  · 🛑 stateful/destructive
+_Update an Other Maintenance_
+Body `Wf-cbm-LoanAdminWorkPackage`:
+- `oid` — integer int64
+- `xoid` — string ≤19
+- `objectStatus` — string ≤1
+- `rootType` — integer int32
+- `wfType` — integer int32
+- `idalias` — integer int32
+- `updateUserId` — integer int64
+- `updateDate` — string date-time
+- `units` — array → `Wf-wum-Unit`
+- `readOnly` — boolean
+- `lockUserId` — integer int64
+- `lockedSinceTime` — string date-time
+- `attachments` — array → `Wf-wum-Attachment`
+- `cmAttachments` — array → `Wf-cm-Attachment`
+- `inStageSinceDate` — string date
+- `milestones` — array → `Wf-wum-Milestone`
+- `lastViewedTime` — string date-time
+- `lastViewedById` — integer int64
+- `closedDt` — string date-time
+- `copyDate` — string date
+- `copyUser` — integer ≤8 int64
+- `fromId` — string ≤15
+- `originalId` — string ≤15
+- `fromWp` — integer int64
+- `originalWp` — integer int64
+- `loadErrors` — array → `Wf-wum-LoadError`
+- `subType` — string ≤40
+- `wpSource` — string ≤40
+- `taskId` — integer int64
+- `parentTaskId` — integer int64
+- `eventNm` — string ≤255
+- `parentEventNm` — string ≤255
+- `eventFields` — object → `Wf-common-NameValuePairList`
+- `id` — string ≤15
+- `description` — string ≤255
+- `defaultOrg` — string ≤9
+- `masterBankNum` — string ≤4
+- `masterAppl` — string ≤4
+- `cusip` — array → `Wf-cbm-Cusip`
+- `bank` — object → `Wf-cbm-Bank`
+- `originatorOid` — integer int64
+- `originatedDt` — string date-time
+- `updatedDt` — string date
+- `jobListEntry` — object → `Wf-jl-WorkPackageEntry`
+- `crossReferenceNumber` — string ≤25
+- `readyToBook` — string ≤1
+- `currentWPEntries` — array → `Wf-common-RelatedWorkpackage`
+- `relatedWorkpackages` — array → `Wf-common-RelatedWorkpackage`
+- `relatedWPCount` — object → `Wf-jl-RelatedWorkpackageCount`
+- `cmnApprover` — array → `Wf-common-Approver`
+- `organizationId` — string ≤9
+- `bankId` — string ≤4
+- `parties` — array → `Wf-cbm-Party`
+- `obligations` — array → `Common-Ref`
+- `comment` — object → `Wf-cbm-Comment`
+- `primaryBorrower` — object → `Common-Ref`
+- `tmpOffsetEntry` — object → `Wf-cbm-OffsetEntry`
+- `customer` — object → `Common-Ref`
+- `obligor` — object → `Common-Ref`
+- `obligation` — object → `Wf-cbm-Obligation`
+- `requestComplete` — string ≤1
+- `readyToExecute` — string ≤1
+- `backOfficeComments` — object → `Wf-cbm-CommentText`
+- `otherMaintenance` — object → `Wf-cbm-la-OtherMaintenance`
+- `obligorNumber` — string ≤10
+- `approver` — integer int64
+- `approverUserName` — string
+
+### `POST /wp/payments2`  · create
+_Create a new Payment_
+Body `Wf-cbm-LoanAdminWorkPackage`:
+- `oid` — integer int64
+- `xoid` — string ≤19
+- `objectStatus` — string ≤1
+- `rootType` — integer int32
+- `wfType` — integer int32
+- `idalias` — integer int32
+- `updateUserId` — integer int64
+- `updateDate` — string date-time
+- `units` — array → `Wf-wum-Unit`
+- `readOnly` — boolean
+- `lockUserId` — integer int64
+- `lockedSinceTime` — string date-time
+- `attachments` — array → `Wf-wum-Attachment`
+- `cmAttachments` — array → `Wf-cm-Attachment`
+- `inStageSinceDate` — string date
+- `milestones` — array → `Wf-wum-Milestone`
+- `lastViewedTime` — string date-time
+- `lastViewedById` — integer int64
+- `closedDt` — string date-time
+- `copyDate` — string date
+- `copyUser` — integer ≤8 int64
+- `fromId` — string ≤15
+- `originalId` — string ≤15
+- `fromWp` — integer int64
+- `originalWp` — integer int64
+- `loadErrors` — array → `Wf-wum-LoadError`
+- `subType` — string ≤40
+- `wpSource` — string ≤40
+- `taskId` — integer int64
+- `parentTaskId` — integer int64
+- `eventNm` — string ≤255
+- `parentEventNm` — string ≤255
+- `eventFields` — object → `Wf-common-NameValuePairList`
+- `id` — string ≤15
+- `description` — string ≤255
+- `defaultOrg` — string ≤9
+- `masterBankNum` — string ≤4
+- `masterAppl` — string ≤4
+- `cusip` — array → `Wf-cbm-Cusip`
+- `bank` — object → `Wf-cbm-Bank`
+- `originatorOid` — integer int64
+- `originatedDt` — string date-time
+- `updatedDt` — string date
+- `jobListEntry` — object → `Wf-jl-WorkPackageEntry`
+- `crossReferenceNumber` — string ≤25
+- `readyToBook` — string ≤1
+- `currentWPEntries` — array → `Wf-common-RelatedWorkpackage`
+- `relatedWorkpackages` — array → `Wf-common-RelatedWorkpackage`
+- `relatedWPCount` — object → `Wf-jl-RelatedWorkpackageCount`
+- `cmnApprover` — array → `Wf-common-Approver`
+- `organizationId` — string ≤9
+- `bankId` — string ≤4
+- `parties` — array → `Wf-cbm-Party`
+- `obligations` — array → `Common-Ref`
+- `comment` — object → `Wf-cbm-Comment`
+- `primaryBorrower` — object → `Common-Ref`
+- `tmpOffsetEntry` — object → `Wf-cbm-OffsetEntry`
+- `customer` — object → `Common-Ref`
+- `obligor` — object → `Common-Ref`
+- `obligation` — object → `Wf-cbm-Obligation`
+- `requestComplete` — string ≤1
+- `readyToExecute` — string ≤1
+- `backOfficeComments` — object → `Wf-cbm-CommentText`
+- `financials` — array → `Wf-cbm-FinancialTransaction`
+- `financialObligations` — array → `Wf-cbm-Obligation`
+- `obligorNumber` — string ≤10
+- `finOffTotInd` — string ≤4
+- `txnLastRunDate` — string date
+- `txnIndChangeDate` — string date
+- `finChangeDate` — string date
+- `approver` — integer int64
+- `approverUserName` — string
+
+### `PUT /wp/payments2/{id}`  · 🛑 stateful/destructive
+_Update a Payment_
+Body `Wf-cbm-LoanAdminWorkPackage`:
+- `oid` — integer int64
+- `xoid` — string ≤19
+- `objectStatus` — string ≤1
+- `rootType` — integer int32
+- `wfType` — integer int32
+- `idalias` — integer int32
+- `updateUserId` — integer int64
+- `updateDate` — string date-time
+- `units` — array → `Wf-wum-Unit`
+- `readOnly` — boolean
+- `lockUserId` — integer int64
+- `lockedSinceTime` — string date-time
+- `attachments` — array → `Wf-wum-Attachment`
+- `cmAttachments` — array → `Wf-cm-Attachment`
+- `inStageSinceDate` — string date
+- `milestones` — array → `Wf-wum-Milestone`
+- `lastViewedTime` — string date-time
+- `lastViewedById` — integer int64
+- `closedDt` — string date-time
+- `copyDate` — string date
+- `copyUser` — integer ≤8 int64
+- `fromId` — string ≤15
+- `originalId` — string ≤15
+- `fromWp` — integer int64
+- `originalWp` — integer int64
+- `loadErrors` — array → `Wf-wum-LoadError`
+- `subType` — string ≤40
+- `wpSource` — string ≤40
+- `taskId` — integer int64
+- `parentTaskId` — integer int64
+- `eventNm` — string ≤255
+- `parentEventNm` — string ≤255
+- `eventFields` — object → `Wf-common-NameValuePairList`
+- `id` — string ≤15
+- `description` — string ≤255
+- `defaultOrg` — string ≤9
+- `masterBankNum` — string ≤4
+- `masterAppl` — string ≤4
+- `cusip` — array → `Wf-cbm-Cusip`
+- `bank` — object → `Wf-cbm-Bank`
+- `originatorOid` — integer int64
+- `originatedDt` — string date-time
+- `updatedDt` — string date
+- `jobListEntry` — object → `Wf-jl-WorkPackageEntry`
+- `crossReferenceNumber` — string ≤25
+- `readyToBook` — string ≤1
+- `currentWPEntries` — array → `Wf-common-RelatedWorkpackage`
+- `relatedWorkpackages` — array → `Wf-common-RelatedWorkpackage`
+- `relatedWPCount` — object → `Wf-jl-RelatedWorkpackageCount`
+- `cmnApprover` — array → `Wf-common-Approver`
+- `organizationId` — string ≤9
+- `bankId` — string ≤4
+- `parties` — array → `Wf-cbm-Party`
+- `obligations` — array → `Common-Ref`
+- `comment` — object → `Wf-cbm-Comment`
+- `primaryBorrower` — object → `Common-Ref`
+- `tmpOffsetEntry` — object → `Wf-cbm-OffsetEntry`
+- `customer` — object → `Common-Ref`
+- `obligor` — object → `Common-Ref`
+- `obligation` — object → `Wf-cbm-Obligation`
+- `requestComplete` — string ≤1
+- `readyToExecute` — string ≤1
+- `backOfficeComments` — object → `Wf-cbm-CommentText`
+- `financials` — array → `Wf-cbm-FinancialTransaction`
+- `financialObligations` — array → `Wf-cbm-Obligation`
+- `obligorNumber` — string ≤10
+- `finOffTotInd` — string ≤4
+- `txnLastRunDate` — string date
+- `txnIndChangeDate` — string date
+- `finChangeDate` — string date
+- `approver` — integer int64
+- `approverUserName` — string
+
+### `POST /ping/echo`  · create
+_Ping Data Echo_
+Body `Wf-rs-api-sample-PingData`:
+- `string` — string ≤100
+- `integer` — integer int32
+- `decimal` — number double
+- `currency` — number double
+- `currencyCur` — string ≤3
+- `date` — string date
+- `dateTime` — string date-time
+- `boolean` — boolean
+- `propToMap` — string ≤10
+- `largeTxt` — object → `Wf-common-CommentText`
+- `modelItem` — object → `Wf-common-NameValuePair`
+- `listData` — array → `Wf-common-NameValuePair`
+- `refField` — object → `Common-Ref`
+- `refListField` — array → `Common-Ref`
+- `pingDataList` — array → `Wf-rs-api-sample-PingData`
+
+### `POST /wp/repricing2`  · 🛑 stateful/destructive
+_Create a new Repricing_
+Body `Wf-cbm-LoanAdminWorkPackage`:
+- `oid` — integer int64
+- `xoid` — string ≤19
+- `objectStatus` — string ≤1
+- `rootType` — integer int32
+- `wfType` — integer int32
+- `idalias` — integer int32
+- `updateUserId` — integer int64
+- `updateDate` — string date-time
+- `units` — array → `Wf-wum-Unit`
+- `readOnly` — boolean
+- `lockUserId` — integer int64
+- `lockedSinceTime` — string date-time
+- `attachments` — array → `Wf-wum-Attachment`
+- `cmAttachments` — array → `Wf-cm-Attachment`
+- `inStageSinceDate` — string date
+- `milestones` — array → `Wf-wum-Milestone`
+- `lastViewedTime` — string date-time
+- `lastViewedById` — integer int64
+- `closedDt` — string date-time
+- `copyDate` — string date
+- `copyUser` — integer ≤8 int64
+- `fromId` — string ≤15
+- `originalId` — string ≤15
+- `fromWp` — integer int64
+- `originalWp` — integer int64
+- `loadErrors` — array → `Wf-wum-LoadError`
+- `subType` — string ≤40
+- `wpSource` — string ≤40
+- `taskId` — integer int64
+- `parentTaskId` — integer int64
+- `eventNm` — string ≤255
+- `parentEventNm` — string ≤255
+- `eventFields` — object → `Wf-common-NameValuePairList`
+- `id` — string ≤15
+- `description` — string ≤255
+- `defaultOrg` — string ≤9
+- `masterBankNum` — string ≤4
+- `masterAppl` — string ≤4
+- `cusip` — array → `Wf-cbm-Cusip`
+- `bank` — object → `Wf-cbm-Bank`
+- `originatorOid` — integer int64
+- `originatedDt` — string date-time
+- `updatedDt` — string date
+- `jobListEntry` — object → `Wf-jl-WorkPackageEntry`
+- `crossReferenceNumber` — string ≤25
+- `readyToBook` — string ≤1
+- `exceptionManagement` — object → `Wf-xom-wf-ExceptionManagement`
+- `currentWPEntries` — array → `Wf-common-RelatedWorkpackage`
+- `relatedWorkpackages` — array → `Wf-common-RelatedWorkpackage`
+- `relatedWPCount` — object → `Wf-jl-RelatedWorkpackageCount`
+- `underWriting` — object → `Wf-cbm-Underwriting`
+- `cmnApprover` — array → `Wf-common-Approver`
+- `organizationId` — string ≤9
+- `bankId` — string ≤4
+- `parties` — array → `Wf-cbm-Party`
+- `obligations` — array → `Common-Ref`
+- `collateralItems` — array → `Wf-cbm-Collateral`
+- `comment` — object → `Wf-cbm-Comment`
+- `lender` — object → `Wf-cbm-Lender`
+- `collatGuarantees` — array → `Wf-cbm-CollateralGuarantee`
+- `primaryBorrower` — object → `Common-Ref`
+- `deal` — object → `Wf-cbm-Deal`
+- `guarantees` — array → `Wf-cbm-Guarantee`
+- `tmpOffsetEntry` — object → `Wf-cbm-OffsetEntry`
+- `customer` — object → `Common-Ref`
+- `obligor` — object → `Common-Ref`
+- `requestComplete` — string ≤1
+- `readyToExecute` — string ≤1
+- `backOfficeComments` — object → `Wf-cbm-CommentText`
+- `repricings` — array → `Wf-cbm-la-Repricing`
+- `obligorNumber` — string ≤10
+- `finOffTotInd` — string ≤4
+- `txnLastRunDate` — string date
+- `txnIndChangeDate` — string date
+- `finChangeDate` — string date
+- `approver` — integer int64
+- `approverUserName` — string
+
+### `PUT /wp/repricing2/{id}`  · 🛑 stateful/destructive
+_Update a Repricing_
+Body `Wf-cbm-LoanAdminWorkPackage`:
+- `oid` — integer int64
+- `xoid` — string ≤19
+- `objectStatus` — string ≤1
+- `rootType` — integer int32
+- `wfType` — integer int32
+- `idalias` — integer int32
+- `updateUserId` — integer int64
+- `updateDate` — string date-time
+- `units` — array → `Wf-wum-Unit`
+- `readOnly` — boolean
+- `lockUserId` — integer int64
+- `lockedSinceTime` — string date-time
+- `attachments` — array → `Wf-wum-Attachment`
+- `cmAttachments` — array → `Wf-cm-Attachment`
+- `inStageSinceDate` — string date
+- `milestones` — array → `Wf-wum-Milestone`
+- `lastViewedTime` — string date-time
+- `lastViewedById` — integer int64
+- `closedDt` — string date-time
+- `copyDate` — string date
+- `copyUser` — integer ≤8 int64
+- `fromId` — string ≤15
+- `originalId` — string ≤15
+- `fromWp` — integer int64
+- `originalWp` — integer int64
+- `loadErrors` — array → `Wf-wum-LoadError`
+- `subType` — string ≤40
+- `wpSource` — string ≤40
+- `taskId` — integer int64
+- `parentTaskId` — integer int64
+- `eventNm` — string ≤255
+- `parentEventNm` — string ≤255
+- `eventFields` — object → `Wf-common-NameValuePairList`
+- `id` — string ≤15
+- `description` — string ≤255
+- `defaultOrg` — string ≤9
+- `masterBankNum` — string ≤4
+- `masterAppl` — string ≤4
+- `cusip` — array → `Wf-cbm-Cusip`
+- `bank` — object → `Wf-cbm-Bank`
+- `originatorOid` — integer int64
+- `originatedDt` — string date-time
+- `updatedDt` — string date
+- `jobListEntry` — object → `Wf-jl-WorkPackageEntry`
+- `crossReferenceNumber` — string ≤25
+- `readyToBook` — string ≤1
+- `exceptionManagement` — object → `Wf-xom-wf-ExceptionManagement`
+- `currentWPEntries` — array → `Wf-common-RelatedWorkpackage`
+- `relatedWorkpackages` — array → `Wf-common-RelatedWorkpackage`
+- `relatedWPCount` — object → `Wf-jl-RelatedWorkpackageCount`
+- `underWriting` — object → `Wf-cbm-Underwriting`
+- `cmnApprover` — array → `Wf-common-Approver`
+- `organizationId` — string ≤9
+- `bankId` — string ≤4
+- `parties` — array → `Wf-cbm-Party`
+- `obligations` — array → `Common-Ref`
+- `collateralItems` — array → `Wf-cbm-Collateral`
+- `comment` — object → `Wf-cbm-Comment`
+- `lender` — object → `Wf-cbm-Lender`
+- `collatGuarantees` — array → `Wf-cbm-CollateralGuarantee`
+- `primaryBorrower` — object → `Common-Ref`
+- `deal` — object → `Wf-cbm-Deal`
+- `guarantees` — array → `Wf-cbm-Guarantee`
+- `tmpOffsetEntry` — object → `Wf-cbm-OffsetEntry`
+- `customer` — object → `Common-Ref`
+- `obligor` — object → `Common-Ref`
+- `requestComplete` — string ≤1
+- `readyToExecute` — string ≤1
+- `backOfficeComments` — object → `Wf-cbm-CommentText`
+- `repricings` — array → `Wf-cbm-la-Repricing`
+- `obligorNumber` — string ≤10
+- `finOffTotInd` — string ≤4
+- `txnLastRunDate` — string date
+- `txnIndChangeDate` — string date
+- `finChangeDate` — string date
+- `approver` — integer int64
+- `approverUserName` — string
+
+### `POST /reserveNumber`  · create
+_Reserve Number_
+Body `Wf-ws-reserveNumber-ReserveNumberRequest`:
+- **`correlationId`** — string ≤15
+- **`bankId`** — string ≤4
+- **`obligorNumber`** — string ≤10
+- **`reserveType`** — integer ≤4 int32
+- `reserveNumber` — string ≤10
+- **`expirationDays`** — integer ≤4 int32
+
+### `POST /createCustomer`  · create
+_Create Customer_
+Body `Wf-ws-reserveNumber-CreateCustomerRequest`:
+- **`organizationId`** — string ≤9
+- **`customer`** — object → `Wf-cbm-Party`
+  - `oid` — integer int64
+  - `xoid` — string ≤19
+  - `objectStatus` — string ≤1
+  - `payeeFreqs` — array → `Wf-cbm-PayeeFreq`
+  - `payeeServicers` — array → `Wf-cbm-PayeeServicer`
+  - `definition` — string ≤4
+  - `customerCFData` — array → `Wf-cbm-CustomerCFData`
+  - `shortName` — string ≤15
+  - `extSystemInfo` — object → `Wf-cbm-PartyExternalSystemInfo`
+  - `phones` — array → `Wf-cbm-Phone`
+  - `lei` — string ≤20
+  - `mei` — string ≤10
+  - `ssn` — string ≤9
+  - `taxId` — string ≤9
+  - `cifNumber` — string ≤17
+  - `birthDate` — string date
+  - `gender` — string ≤4
+  - `race1` — string ≤4
+  - `race2` — string ≤4
+  - `race3` — string ≤4
+  - `race4` — string ≤4
+  - `race5` — string ≤4
+  - `privacyCode` — string ≤4
+  - `languageId` — string ≤9
+  - `classCode` — string ≤4
+  - `contactDate` — string date
+  - `greeting` — string ≤8
+  - `complement` — string ≤8
+  - `dunsNumber` — string ≤9
+  - `routingTransitNumber` — string ≤9
+  - `wireEnabledInd` — boolean
+  - `additionalInfo` — object → `Wf-cbm-AdditionalInfo`
+  - `citizenship` — object → `Wf-cbm-Citizenship`
+  - `identifications` — array → `Wf-cbm-PartyIdentification`
+  - `orgLevelData` — object → `Wf-cbm-OrgLevelDataModel`
+  - `salesVolume` — number double
+  - `salesVolumeCur` — string ≤3
+  - **`name`** — object → `Wf-cbm-Name`
+    - `oid` — integer int64
+    - `xoid` — string ≤19
+    - `objectStatus` — string ≤1
+    - `nameContd` — string ≤40
+    - **`fullName`** — string ≤40
+  - `address` — object → `Wf-cbm-Address`
+  - `contactName` — object → `Wf-cbm-Name`
+  - `obligorRequired` — string ≤1
+  - `isInternal` — boolean
+
+### `POST /createObligor`  · create
+_Create Obligor_
+Body `Wf-ws-reserveNumber-CreateObligorRequest`:
+- **`obligor`** — object → `Wf-cbm-Obligor`
+  - `oid` — integer int64
+  - `xoid` — string ≤19
+  - `objectStatus` — string ≤1
+  - **`bankId`** — string ≤4
+  - **`shortName`** — string ≤15
+  - **`type`** — string ≤4
+  - `salesVolume` — number double
+  - `salesVolumeCur` — string ≤3
+  - `regWInd` — string ≤4
+  - `regOInd` — string ≤4
+  - `specialPurposeEntryFlg` — string ≤4
+  - `reviewDate` — string date
+  - `checkOption` — string ≤4
+  - `disbursementTapeFormat` — string ≤5
+  - `craBusinessType` — string ≤4
+  - `bankAssociationCode` — string ≤4
+  - `oldObgrNumber` — string ≤10
+  - `bankTax` — string ≤4
+  - `obgrTax` — string ≤4
+  - `statusCode` — string ≤4
+  - `statusDate` — string date
+  - `wireInstructionsRetrieved` — boolean
+  - `nextStatementDtdate` — string date
+  - `nextStatementDtincrement` — integer ≤4 int32
+  - `nextStatementDtfrequencyCode` — integer ≤4 int32
+  - `nextStatementDtlimitCode` — integer ≤4 int32
+  - `nextStatementDtcalendarCode` — integer ≤9 int64
+  - `nextStatementDtunlimitedDate` — string ≤10
+  - **`ilmId`** — string ≤9
+  - `probOfDfltPct` — number double
+  - `probOfDfltAssignDt` — string date
+  - `probOfDfltOfficer` — string ≤12
+  - `highRiskInd` — string ≤4
+  - `sourceOfPD` — string ≤4
+  - `stockExchange` — string ≤40
+  - `ticker` — string ≤10
+  - `smsaCode` — integer ≤4 int32
+  - `income` — number double
+  - `incomeCur` — string ≤3
+  - `censusTract` — number double
+  - `cusip` — string ≤9
+  - `obligorCFData` — array → `Wf-cbm-ObligorCFData`
+  - `highlyLeveragedTran` — string ≤4
+  - `portfolioTrackingCd` — string ≤4
+  - `obligorNumber` — string ≤10
+  - `orgLevelData` — object → `Wf-cbm-OrgLevelDataModel`
+  - `finStmt` — object → `Wf-cbm-FinStmt`
+  - `geographicInfo` — object → `Wf-cbm-GeographicInfo`
+  - `fxInfo` — object → `Wf-cbm-RsObligorFxInfo`
+  - `selectedPricingGridSource` — object → `Common-Ref`
+  - `selectedPricingGridSourceView` — object → `Common-Ref`
+
+### `POST /route`  · 🛑 stateful/destructive
+_Route Workpackage_
+Body `Wf-ws-autoroute-AutoRouteRequest`:
+- `autoRoutingFlags` — object → `Wf-ws-autoroute-Flags`
+- **`workpackage`** — object → `Wf-ws-autoroute-WpRoutingFields`
+  - **`id`** — string ≤15
+  - `targetStage` — string ≤50
+  - `owner` — string ≤13
+  - `queue` — string ≤50
+  - `targetDate` — string date-time
+- `units` — array → `Wf-ws-autoroute-UnitRoutingFields`
+
+### `POST /wp/syndiDealMaintenance`  · create
+_Create a new Deal Maintenance_
+Body `Wf-cbm-SyndiWorkPackage`:
+- `oid` — integer int64
+- `xoid` — string ≤19
+- `objectStatus` — string ≤1
+- `rootType` — integer int32
+- `wfType` — integer int32
+- `idalias` — integer int32
+- `updateUserId` — integer int64
+- `updateDate` — string date-time
+- `units` — array → `Wf-wum-Unit`
+- `readOnly` — boolean
+- `lockUserId` — integer int64
+- `lockedSinceTime` — string date-time
+- `attachments` — array → `Wf-wum-Attachment`
+- `cmAttachments` — array → `Wf-cm-Attachment`
+- `inStageSinceDate` — string date
+- `milestones` — array → `Wf-wum-Milestone`
+- `lastViewedTime` — string date-time
+- `lastViewedById` — integer int64
+- `closedDt` — string date-time
+- `copyDate` — string date
+- `copyUser` — integer ≤8 int64
+- `fromId` — string ≤15
+- `originalId` — string ≤15
+- `fromWp` — integer int64
+- `originalWp` — integer int64
+- `loadErrors` — array → `Wf-wum-LoadError`
+- `subType` — string ≤40
+- `wpSource` — string ≤40
+- `taskId` — integer int64
+- `parentTaskId` — integer int64
+- `eventNm` — string ≤255
+- `parentEventNm` — string ≤255
+- `eventFields` — object → `Wf-common-NameValuePairList`
+- `id` — string ≤15
+- `description` — string ≤255
+- `defaultOrg` — string ≤9
+- `masterBankNum` — string ≤4
+- `masterAppl` — string ≤4
+- `cusip` — array → `Wf-cbm-Cusip`
+- `bank` — object → `Wf-cbm-Bank`
+- `originatorOid` — integer int64
+- `originatedDt` — string date-time
+- `updatedDt` — string date
+- `jobListEntry` — object → `Wf-jl-WorkPackageEntry`
+- `crossReferenceNumber` — string ≤25
+- `readyToBook` — string ≤1
+- `exceptionManagement` — object → `Wf-xom-wf-ExceptionManagement`
+- `currentWPEntries` — array → `Wf-common-RelatedWorkpackage`
+- `relatedWorkpackages` — array → `Wf-common-RelatedWorkpackage`
+- `relatedWPCount` — object → `Wf-jl-RelatedWorkpackageCount`
+- `underWriting` — object → `Wf-cbm-Underwriting`
+- `cmnApprover` — array → `Wf-common-Approver`
+- `organizationId` — string ≤9
+- `bankId` — string ≤4
+- `parties` — array → `Wf-cbm-Party`
+- `collateralItems` — array → `Wf-cbm-Collateral`
+- `comment` — object → `Wf-cbm-Comment`
+- `primaryBorrower` — object → `Common-Ref`
+- `executeType` — string ≤1
+- `readyToExecute` — string ≤1
+- `primaryDeal` — object → `Wf-cbm-SyndiDeal`
+- `dealNumber` — string ≤9
+- `packageDateTS` — string date-time
+- `packageComment` — object → `Wf-cbm-CommentText`
+- `assignmentInfo` — object → `Wf-cbm-AssignmentInformation`
+- `originatedRequestTitle` — string ≤80
+- `lastRefreshCompleted` — string date-time
+- `isSeeded` — boolean
+- `seedAssignment` — object → `Wf-cbm-SeedAssignment`
+- `finOffTotInd` — string ≤4
+- `txnLastRunDate` — string date
+- `txnIndChangeDate` — string date
+- `finChangeDate` — string date
+- `obligations` — array → `Wf-cbm-Obligation`
+- `repricingIntentDays` — integer ≤4 int32
+- `financialIntentDays` — integer ≤4 int32
+
+### `PUT /wp/syndiDealMaintenance/{id}`  · 🛑 stateful/destructive
+_Update a Deal Maintenance_
+Body `Wf-cbm-SyndiWorkPackage`:
+- `oid` — integer int64
+- `xoid` — string ≤19
+- `objectStatus` — string ≤1
+- `rootType` — integer int32
+- `wfType` — integer int32
+- `idalias` — integer int32
+- `updateUserId` — integer int64
+- `updateDate` — string date-time
+- `units` — array → `Wf-wum-Unit`
+- `readOnly` — boolean
+- `lockUserId` — integer int64
+- `lockedSinceTime` — string date-time
+- `attachments` — array → `Wf-wum-Attachment`
+- `cmAttachments` — array → `Wf-cm-Attachment`
+- `inStageSinceDate` — string date
+- `milestones` — array → `Wf-wum-Milestone`
+- `lastViewedTime` — string date-time
+- `lastViewedById` — integer int64
+- `closedDt` — string date-time
+- `copyDate` — string date
+- `copyUser` — integer ≤8 int64
+- `fromId` — string ≤15
+- `originalId` — string ≤15
+- `fromWp` — integer int64
+- `originalWp` — integer int64
+- `loadErrors` — array → `Wf-wum-LoadError`
+- `subType` — string ≤40
+- `wpSource` — string ≤40
+- `taskId` — integer int64
+- `parentTaskId` — integer int64
+- `eventNm` — string ≤255
+- `parentEventNm` — string ≤255
+- `eventFields` — object → `Wf-common-NameValuePairList`
+- `id` — string ≤15
+- `description` — string ≤255
+- `defaultOrg` — string ≤9
+- `masterBankNum` — string ≤4
+- `masterAppl` — string ≤4
+- `cusip` — array → `Wf-cbm-Cusip`
+- `bank` — object → `Wf-cbm-Bank`
+- `originatorOid` — integer int64
+- `originatedDt` — string date-time
+- `updatedDt` — string date
+- `jobListEntry` — object → `Wf-jl-WorkPackageEntry`
+- `crossReferenceNumber` — string ≤25
+- `readyToBook` — string ≤1
+- `exceptionManagement` — object → `Wf-xom-wf-ExceptionManagement`
+- `currentWPEntries` — array → `Wf-common-RelatedWorkpackage`
+- `relatedWorkpackages` — array → `Wf-common-RelatedWorkpackage`
+- `relatedWPCount` — object → `Wf-jl-RelatedWorkpackageCount`
+- `underWriting` — object → `Wf-cbm-Underwriting`
+- `cmnApprover` — array → `Wf-common-Approver`
+- `organizationId` — string ≤9
+- `bankId` — string ≤4
+- `parties` — array → `Wf-cbm-Party`
+- `collateralItems` — array → `Wf-cbm-Collateral`
+- `comment` — object → `Wf-cbm-Comment`
+- `primaryBorrower` — object → `Common-Ref`
+- `executeType` — string ≤1
+- `readyToExecute` — string ≤1
+- `primaryDeal` — object → `Wf-cbm-SyndiDeal`
+- `dealNumber` — string ≤9
+- `packageDateTS` — string date-time
+- `packageComment` — object → `Wf-cbm-CommentText`
+- `assignmentInfo` — object → `Wf-cbm-AssignmentInformation`
+- `originatedRequestTitle` — string ≤80
+- `lastRefreshCompleted` — string date-time
+- `isSeeded` — boolean
+- `seedAssignment` — object → `Wf-cbm-SeedAssignment`
+- `finOffTotInd` — string ≤4
+- `txnLastRunDate` — string date
+- `txnIndChangeDate` — string date
+- `finChangeDate` — string date
+- `obligations` — array → `Wf-cbm-Obligation`
+- `repricingIntentDays` — integer ≤4 int32
+- `financialIntentDays` — integer ≤4 int32
+
+### `POST /wp/syndiDealPipeline`  · create
+_Create a new Deal Pipeline_
+Body `Wf-cbm-SyndiWorkPackage`:
+- `oid` — integer int64
+- `xoid` — string ≤19
+- `objectStatus` — string ≤1
+- `rootType` — integer int32
+- `wfType` — integer int32
+- `idalias` — integer int32
+- `updateUserId` — integer int64
+- `updateDate` — string date-time
+- `units` — array → `Wf-wum-Unit`
+- `readOnly` — boolean
+- `lockUserId` — integer int64
+- `lockedSinceTime` — string date-time
+- `attachments` — array → `Wf-wum-Attachment`
+- `cmAttachments` — array → `Wf-cm-Attachment`
+- `inStageSinceDate` — string date
+- `milestones` — array → `Wf-wum-Milestone`
+- `lastViewedTime` — string date-time
+- `lastViewedById` — integer int64
+- `closedDt` — string date-time
+- `copyDate` — string date
+- `copyUser` — integer ≤8 int64
+- `fromId` — string ≤15
+- `originalId` — string ≤15
+- `fromWp` — integer int64
+- `originalWp` — integer int64
+- `loadErrors` — array → `Wf-wum-LoadError`
+- `subType` — string ≤40
+- `wpSource` — string ≤40
+- `taskId` — integer int64
+- `parentTaskId` — integer int64
+- `eventNm` — string ≤255
+- `parentEventNm` — string ≤255
+- `eventFields` — object → `Wf-common-NameValuePairList`
+- `id` — string ≤15
+- `description` — string ≤255
+- `defaultOrg` — string ≤9
+- `masterBankNum` — string ≤4
+- `masterAppl` — string ≤4
+- `cusip` — array → `Wf-cbm-Cusip`
+- `bank` — object → `Wf-cbm-Bank`
+- `originatorOid` — integer int64
+- `originatedDt` — string date-time
+- `updatedDt` — string date
+- `jobListEntry` — object → `Wf-jl-WorkPackageEntry`
+- `crossReferenceNumber` — string ≤25
+- `readyToBook` — string ≤1
+- `exceptionManagement` — object → `Wf-xom-wf-ExceptionManagement`
+- `currentWPEntries` — array → `Wf-common-RelatedWorkpackage`
+- `relatedWorkpackages` — array → `Wf-common-RelatedWorkpackage`
+- `relatedWPCount` — object → `Wf-jl-RelatedWorkpackageCount`
+- `underWriting` — object → `Wf-cbm-Underwriting`
+- `cmnApprover` — array → `Wf-common-Approver`
+- `organizationId` — string ≤9
+- `bankId` — string ≤4
+- `parties` — array → `Wf-cbm-Party`
+- `obligations` — array → `Common-Ref`
+- `collateralItems` — array → `Wf-cbm-Collateral`
+- `comment` — object → `Wf-cbm-Comment`
+- `primaryBorrower` — object → `Common-Ref`
+- `executeType` — string ≤1
+- `readyToExecute` — string ≤1
+- `primaryDeal` — object → `Wf-cbm-SyndiDeal`
+- `dealNumber` — string ≤9
+- `packageDateTS` — string date-time
+- `packageComment` — object → `Wf-cbm-CommentText`
+- `assignmentInfo` — object → `Wf-cbm-AssignmentInformation`
+- `originatedRequestTitle` — string ≤80
+- `lastRefreshCompleted` — string date-time
+- `isSeeded` — boolean
+- `seedAssignment` — object → `Wf-cbm-SeedAssignment`
+- `finOffTotInd` — string ≤4
+- `txnLastRunDate` — string date
+- `txnIndChangeDate` — string date
+- `finChangeDate` — string date
+- `repricingIntentDays` — integer ≤4 int32
+- `financialIntentDays` — integer ≤4 int32
+
+### `PUT /wp/syndiDealPipeline/{id}`  · 🛑 stateful/destructive
+_Update a Deal Pipeline_
+Body `Wf-cbm-SyndiWorkPackage`:
+- `oid` — integer int64
+- `xoid` — string ≤19
+- `objectStatus` — string ≤1
+- `rootType` — integer int32
+- `wfType` — integer int32
+- `idalias` — integer int32
+- `updateUserId` — integer int64
+- `updateDate` — string date-time
+- `units` — array → `Wf-wum-Unit`
+- `readOnly` — boolean
+- `lockUserId` — integer int64
+- `lockedSinceTime` — string date-time
+- `attachments` — array → `Wf-wum-Attachment`
+- `cmAttachments` — array → `Wf-cm-Attachment`
+- `inStageSinceDate` — string date
+- `milestones` — array → `Wf-wum-Milestone`
+- `lastViewedTime` — string date-time
+- `lastViewedById` — integer int64
+- `closedDt` — string date-time
+- `copyDate` — string date
+- `copyUser` — integer ≤8 int64
+- `fromId` — string ≤15
+- `originalId` — string ≤15
+- `fromWp` — integer int64
+- `originalWp` — integer int64
+- `loadErrors` — array → `Wf-wum-LoadError`
+- `subType` — string ≤40
+- `wpSource` — string ≤40
+- `taskId` — integer int64
+- `parentTaskId` — integer int64
+- `eventNm` — string ≤255
+- `parentEventNm` — string ≤255
+- `eventFields` — object → `Wf-common-NameValuePairList`
+- `id` — string ≤15
+- `description` — string ≤255
+- `defaultOrg` — string ≤9
+- `masterBankNum` — string ≤4
+- `masterAppl` — string ≤4
+- `cusip` — array → `Wf-cbm-Cusip`
+- `bank` — object → `Wf-cbm-Bank`
+- `originatorOid` — integer int64
+- `originatedDt` — string date-time
+- `updatedDt` — string date
+- `jobListEntry` — object → `Wf-jl-WorkPackageEntry`
+- `crossReferenceNumber` — string ≤25
+- `readyToBook` — string ≤1
+- `exceptionManagement` — object → `Wf-xom-wf-ExceptionManagement`
+- `currentWPEntries` — array → `Wf-common-RelatedWorkpackage`
+- `relatedWorkpackages` — array → `Wf-common-RelatedWorkpackage`
+- `relatedWPCount` — object → `Wf-jl-RelatedWorkpackageCount`
+- `underWriting` — object → `Wf-cbm-Underwriting`
+- `cmnApprover` — array → `Wf-common-Approver`
+- `organizationId` — string ≤9
+- `bankId` — string ≤4
+- `parties` — array → `Wf-cbm-Party`
+- `obligations` — array → `Common-Ref`
+- `collateralItems` — array → `Wf-cbm-Collateral`
+- `comment` — object → `Wf-cbm-Comment`
+- `primaryBorrower` — object → `Common-Ref`
+- `executeType` — string ≤1
+- `readyToExecute` — string ≤1
+- `primaryDeal` — object → `Wf-cbm-SyndiDeal`
+- `dealNumber` — string ≤9
+- `packageDateTS` — string date-time
+- `packageComment` — object → `Wf-cbm-CommentText`
+- `assignmentInfo` — object → `Wf-cbm-AssignmentInformation`
+- `originatedRequestTitle` — string ≤80
+- `lastRefreshCompleted` — string date-time
+- `isSeeded` — boolean
+- `seedAssignment` — object → `Wf-cbm-SeedAssignment`
+- `finOffTotInd` — string ≤4
+- `txnLastRunDate` — string date
+- `txnIndChangeDate` — string date
+- `finChangeDate` — string date
+- `repricingIntentDays` — integer ≤4 int32
+- `financialIntentDays` — integer ≤4 int32
+
+### `POST /wp/syndiRepricing`  · 🛑 stateful/destructive
+_Create a new Repricing_
+Body `Wf-cbm-SyndiWorkPackage`:
+- `oid` — integer int64
+- `xoid` — string ≤19
+- `objectStatus` — string ≤1
+- `rootType` — integer int32
+- `wfType` — integer int32
+- `idalias` — integer int32
+- `updateUserId` — integer int64
+- `updateDate` — string date-time
+- `units` — array → `Wf-wum-Unit`
+- `readOnly` — boolean
+- `lockUserId` — integer int64
+- `lockedSinceTime` — string date-time
+- `attachments` — array → `Wf-wum-Attachment`
+- `cmAttachments` — array → `Wf-cm-Attachment`
+- `inStageSinceDate` — string date
+- `milestones` — array → `Wf-wum-Milestone`
+- `lastViewedTime` — string date-time
+- `lastViewedById` — integer int64
+- `closedDt` — string date-time
+- `copyDate` — string date
+- `copyUser` — integer ≤8 int64
+- `fromId` — string ≤15
+- `originalId` — string ≤15
+- `fromWp` — integer int64
+- `originalWp` — integer int64
+- `loadErrors` — array → `Wf-wum-LoadError`
+- `subType` — string ≤40
+- `wpSource` — string ≤40
+- `taskId` — integer int64
+- `parentTaskId` — integer int64
+- `eventNm` — string ≤255
+- `parentEventNm` — string ≤255
+- `eventFields` — object → `Wf-common-NameValuePairList`
+- `id` — string ≤15
+- `description` — string ≤255
+- `defaultOrg` — string ≤9
+- `masterBankNum` — string ≤4
+- `masterAppl` — string ≤4
+- `cusip` — array → `Wf-cbm-Cusip`
+- `bank` — object → `Wf-cbm-Bank`
+- `originatorOid` — integer int64
+- `originatedDt` — string date-time
+- `updatedDt` — string date
+- `jobListEntry` — object → `Wf-jl-WorkPackageEntry`
+- `crossReferenceNumber` — string ≤25
+- `readyToBook` — string ≤1
+- `exceptionManagement` — object → `Wf-xom-wf-ExceptionManagement`
+- `currentWPEntries` — array → `Wf-common-RelatedWorkpackage`
+- `relatedWorkpackages` — array → `Wf-common-RelatedWorkpackage`
+- `relatedWPCount` — object → `Wf-jl-RelatedWorkpackageCount`
+- `underWriting` — object → `Wf-cbm-Underwriting`
+- `cmnApprover` — array → `Wf-common-Approver`
+- `organizationId` — string ≤9
+- `bankId` — string ≤4
+- `parties` — array → `Wf-cbm-Party`
+- `collateralItems` — array → `Wf-cbm-Collateral`
+- `comment` — object → `Wf-cbm-Comment`
+- `primaryBorrower` — object → `Common-Ref`
+- `executeType` — string ≤1
+- `readyToExecute` — string ≤1
+- `primaryDeal` — object → `Wf-cbm-SyndiDeal`
+- `dealNumber` — string ≤9
+- `packageDateTS` — string date-time
+- `packageComment` — object → `Wf-cbm-CommentText`
+- `assignmentInfo` — object → `Wf-cbm-AssignmentInformation`
+- `originatedRequestTitle` — string ≤80
+- `lastRefreshCompleted` — string date-time
+- `isSeeded` — boolean
+- `seedAssignment` — object → `Wf-cbm-SeedAssignment`
+- `finOffTotInd` — string ≤4
+- `txnLastRunDate` — string date
+- `txnIndChangeDate` — string date
+- `finChangeDate` — string date
+- `obligations` — array → `Wf-cbm-Obligation`
+- `repricingIntentDays` — integer ≤4 int32
+- `financialIntentDays` — integer ≤4 int32
+
+### `PUT /wp/syndiRepricing/{id}`  · 🛑 stateful/destructive
+_Update a Repricing_
+Body `Wf-cbm-SyndiWorkPackage`:
+- `oid` — integer int64
+- `xoid` — string ≤19
+- `objectStatus` — string ≤1
+- `rootType` — integer int32
+- `wfType` — integer int32
+- `idalias` — integer int32
+- `updateUserId` — integer int64
+- `updateDate` — string date-time
+- `units` — array → `Wf-wum-Unit`
+- `readOnly` — boolean
+- `lockUserId` — integer int64
+- `lockedSinceTime` — string date-time
+- `attachments` — array → `Wf-wum-Attachment`
+- `cmAttachments` — array → `Wf-cm-Attachment`
+- `inStageSinceDate` — string date
+- `milestones` — array → `Wf-wum-Milestone`
+- `lastViewedTime` — string date-time
+- `lastViewedById` — integer int64
+- `closedDt` — string date-time
+- `copyDate` — string date
+- `copyUser` — integer ≤8 int64
+- `fromId` — string ≤15
+- `originalId` — string ≤15
+- `fromWp` — integer int64
+- `originalWp` — integer int64
+- `loadErrors` — array → `Wf-wum-LoadError`
+- `subType` — string ≤40
+- `wpSource` — string ≤40
+- `taskId` — integer int64
+- `parentTaskId` — integer int64
+- `eventNm` — string ≤255
+- `parentEventNm` — string ≤255
+- `eventFields` — object → `Wf-common-NameValuePairList`
+- `id` — string ≤15
+- `description` — string ≤255
+- `defaultOrg` — string ≤9
+- `masterBankNum` — string ≤4
+- `masterAppl` — string ≤4
+- `cusip` — array → `Wf-cbm-Cusip`
+- `bank` — object → `Wf-cbm-Bank`
+- `originatorOid` — integer int64
+- `originatedDt` — string date-time
+- `updatedDt` — string date
+- `jobListEntry` — object → `Wf-jl-WorkPackageEntry`
+- `crossReferenceNumber` — string ≤25
+- `readyToBook` — string ≤1
+- `exceptionManagement` — object → `Wf-xom-wf-ExceptionManagement`
+- `currentWPEntries` — array → `Wf-common-RelatedWorkpackage`
+- `relatedWorkpackages` — array → `Wf-common-RelatedWorkpackage`
+- `relatedWPCount` — object → `Wf-jl-RelatedWorkpackageCount`
+- `underWriting` — object → `Wf-cbm-Underwriting`
+- `cmnApprover` — array → `Wf-common-Approver`
+- `organizationId` — string ≤9
+- `bankId` — string ≤4
+- `parties` — array → `Wf-cbm-Party`
+- `collateralItems` — array → `Wf-cbm-Collateral`
+- `comment` — object → `Wf-cbm-Comment`
+- `primaryBorrower` — object → `Common-Ref`
+- `executeType` — string ≤1
+- `readyToExecute` — string ≤1
+- `primaryDeal` — object → `Wf-cbm-SyndiDeal`
+- `dealNumber` — string ≤9
+- `packageDateTS` — string date-time
+- `packageComment` — object → `Wf-cbm-CommentText`
+- `assignmentInfo` — object → `Wf-cbm-AssignmentInformation`
+- `originatedRequestTitle` — string ≤80
+- `lastRefreshCompleted` — string date-time
+- `isSeeded` — boolean
+- `seedAssignment` — object → `Wf-cbm-SeedAssignment`
+- `finOffTotInd` — string ≤4
+- `txnLastRunDate` — string date
+- `txnIndChangeDate` — string date
+- `finChangeDate` — string date
+- `obligations` — array → `Wf-cbm-Obligation`
+- `repricingIntentDays` — integer ≤4 int32
+- `financialIntentDays` — integer ≤4 int32
+
+### `POST /taskProcessor/ddaAba`  · 🛑 stateful/destructive
+_ddaAba_
+- (no request body schema)
+
+### `POST /taskProcessor/exceptionRefresh`  · 🛑 stateful/destructive
+_Refresh Batch Exceptions_
+- (no request body schema)
+
+### `POST /taskProcessor/extracts`  · 🛑 stateful/destructive
+_Extract Data_
+Body `Wf-ws-taskProcessor-TaskProcessorRequest`:
+- `arguments` — array → `Wf-common-NameValuePair`
+
+### `POST /taskProcessor/validValueImport`  · 🛑 stateful/destructive
+_Import Valid Values_
+- (no request body schema)
+
+### `POST /taskProcessor/wireAba`  · 🛑 stateful/destructive
+_wireAba_
+- (no request body schema)
+
+### `POST /updateFedRefNumber`  · 🛑 stateful/destructive
+_Update Wire Fed Reference Number_
+Body `Wf-ws-servicing-UpdateFedRefNumberRequest`:
+- **`fedReferenceNumber`** — string ≤22
+- `offsetTrackingNumber` — string ≤15
+- **`processDate`** — string date-time
+- `uuid` — string ≤36
+
+### `POST /wp/userProfileAdmin`  · create
+_Create a new User Profile Administration_
+Body `Wf-up-UserProfile`:
+- `oid` — integer int64
+- `xoid` — string ≤19
+- `objectStatus` — string ≤1
+- `rootType` — integer int32
+- `wfType` — integer int32
+- `idalias` — integer int32
+- `updateUserId` — integer int64
+- `updateDate` — string date-time
+- `readOnly` — boolean
+- `lockUserId` — integer int64
+- `lockedSinceTime` — string date-time
+- `lastViewedTime` — string date-time
+- `lastViewedById` — integer int64
+- `loadErrors` — array → `Wf-wum-LoadError`
+- `subType` — string ≤40
+- `wpSource` — string ≤40
+- `taskId` — integer int64
+- `parentTaskId` — integer int64
+- `eventNm` — string ≤255
+- `parentEventNm` — string ≤255
+- `eventFields` — object → `Wf-common-NameValuePairList`
+- `id` — integer int64
+- **`userId`** — string ≤8
+- `activeInd` — string ≤1
+- **`primaryName`** — object → `Wf-up-Name`
+  - `oid` — integer int64
+  - `xoid` — string ≤19
+  - `objectStatus` — string ≤1
+  - **`first`** — string ≤80
+  - **`last`** — string ≤80
+  - `suffix` — string ≤8
+- `roles` — array → `Common-RootRef`
+- **`defaultBank`** — string ≤6
+- **`defaultAppl`** — string ≤6
+- `debugEndTime` — string date
+- `editableQueues` — array → `Common-RootRef`
+- `viewableQueues` — array → `Common-RootRef`
+- **`selectedQueueGroups`** — array → `Common-RootRef`
+  - `oid` — integer int64
+  - `linkURL` — string
+- **`defaultQueue`** — object → `Common-RootRef`
+  - `oid` — integer int64
+  - `linkURL` — string
+- `debugMinutes` — integer ≤3 int32
+- `defaultOriginUnit` — string ≤5
+- `defaultBatchId` — string ≤8
+- **`defaultOrg`** — string ≤9
+- `email` — object → `Wf-up-Email`
+- `officerId` — string ≤20
+- `alertSubscriptions` — array → `Wf-up-RsAlertSubscription`
+- `selectedOverrideConditions` — array → `Wf-up-OverrideCondition`
+- `copyFrom` — object → `Wf-up-CopyInformation`
+- `loginTime` — string date-time
+- `priorLoginTime` — string date-time
+- `webServiceLoginDay` — string date
+- `createdTime` — string date-time
+- **`timezone`** — string ≤40
+- `segDutyDisabled` — string ≤1
+- `jobTitle` — string ≤100
+- `contextClass` — string ≤4
+- `selectedContextGroups` — array → `Wf-up-RsContextEntry`
+- `selectedLimits` — array → `Wf-cfg-Limit`
+- `authorityPrimary` — string ≤30
+- `authoritySecondary` — string ≤30
+- `authorityCategory` — string ≤30
+- `userType` — string ≤40
+- `companyAffiliation` — string ≤40
+
+### `POST /wp/userProfileAdmin/{id}`  · create
+_Update a User Profile Administration, replacing lists_
+Body `Wf-up-UserProfile`:
+- `oid` — integer int64
+- `xoid` — string ≤19
+- `objectStatus` — string ≤1
+- `rootType` — integer int32
+- `wfType` — integer int32
+- `idalias` — integer int32
+- `updateUserId` — integer int64
+- `updateDate` — string date-time
+- `readOnly` — boolean
+- `lockUserId` — integer int64
+- `lockedSinceTime` — string date-time
+- `lastViewedTime` — string date-time
+- `lastViewedById` — integer int64
+- `loadErrors` — array → `Wf-wum-LoadError`
+- `subType` — string ≤40
+- `wpSource` — string ≤40
+- `taskId` — integer int64
+- `parentTaskId` — integer int64
+- `eventNm` — string ≤255
+- `parentEventNm` — string ≤255
+- `eventFields` — object → `Wf-common-NameValuePairList`
+- `id` — integer int64
+- **`userId`** — string ≤8
+- `activeInd` — string ≤1
+- **`primaryName`** — object → `Wf-up-Name`
+  - `oid` — integer int64
+  - `xoid` — string ≤19
+  - `objectStatus` — string ≤1
+  - **`first`** — string ≤80
+  - **`last`** — string ≤80
+  - `suffix` — string ≤8
+- `roles` — array → `Common-RootRef`
+- **`defaultBank`** — string ≤6
+- **`defaultAppl`** — string ≤6
+- `debugEndTime` — string date
+- `editableQueues` — array → `Common-RootRef`
+- `viewableQueues` — array → `Common-RootRef`
+- **`selectedQueueGroups`** — array → `Common-RootRef`
+  - `oid` — integer int64
+  - `linkURL` — string
+- **`defaultQueue`** — object → `Common-RootRef`
+  - `oid` — integer int64
+  - `linkURL` — string
+- `debugMinutes` — integer ≤3 int32
+- `defaultOriginUnit` — string ≤5
+- `defaultBatchId` — string ≤8
+- **`defaultOrg`** — string ≤9
+- `email` — object → `Wf-up-Email`
+- `officerId` — string ≤20
+- `alertSubscriptions` — array → `Wf-up-RsAlertSubscription`
+- `selectedOverrideConditions` — array → `Wf-up-OverrideCondition`
+- `copyFrom` — object → `Wf-up-CopyInformation`
+- `loginTime` — string date-time
+- `priorLoginTime` — string date-time
+- `webServiceLoginDay` — string date
+- `createdTime` — string date-time
+- **`timezone`** — string ≤40
+- `segDutyDisabled` — string ≤1
+- `jobTitle` — string ≤100
+- `contextClass` — string ≤4
+- `selectedContextGroups` — array → `Wf-up-RsContextEntry`
+- `selectedLimits` — array → `Wf-cfg-Limit`
+- `authorityPrimary` — string ≤30
+- `authoritySecondary` — string ≤30
+- `authorityCategory` — string ≤30
+- `userType` — string ≤40
+- `companyAffiliation` — string ≤40
+
+### `PUT /wp/userProfileAdmin/{id}`  · 🛑 stateful/destructive
+_Update a User Profile Administration_
+Body `Wf-up-UserProfile`:
+- `oid` — integer int64
+- `xoid` — string ≤19
+- `objectStatus` — string ≤1
+- `rootType` — integer int32
+- `wfType` — integer int32
+- `idalias` — integer int32
+- `updateUserId` — integer int64
+- `updateDate` — string date-time
+- `readOnly` — boolean
+- `lockUserId` — integer int64
+- `lockedSinceTime` — string date-time
+- `lastViewedTime` — string date-time
+- `lastViewedById` — integer int64
+- `loadErrors` — array → `Wf-wum-LoadError`
+- `subType` — string ≤40
+- `wpSource` — string ≤40
+- `taskId` — integer int64
+- `parentTaskId` — integer int64
+- `eventNm` — string ≤255
+- `parentEventNm` — string ≤255
+- `eventFields` — object → `Wf-common-NameValuePairList`
+- `id` — integer int64
+- **`userId`** — string ≤8
+- `activeInd` — string ≤1
+- **`primaryName`** — object → `Wf-up-Name`
+  - `oid` — integer int64
+  - `xoid` — string ≤19
+  - `objectStatus` — string ≤1
+  - **`first`** — string ≤80
+  - **`last`** — string ≤80
+  - `suffix` — string ≤8
+- `roles` — array → `Common-RootRef`
+- **`defaultBank`** — string ≤6
+- **`defaultAppl`** — string ≤6
+- `debugEndTime` — string date
+- `editableQueues` — array → `Common-RootRef`
+- `viewableQueues` — array → `Common-RootRef`
+- **`selectedQueueGroups`** — array → `Common-RootRef`
+  - `oid` — integer int64
+  - `linkURL` — string
+- **`defaultQueue`** — object → `Common-RootRef`
+  - `oid` — integer int64
+  - `linkURL` — string
+- `debugMinutes` — integer ≤3 int32
+- `defaultOriginUnit` — string ≤5
+- `defaultBatchId` — string ≤8
+- **`defaultOrg`** — string ≤9
+- `email` — object → `Wf-up-Email`
+- `officerId` — string ≤20
+- `alertSubscriptions` — array → `Wf-up-RsAlertSubscription`
+- `selectedOverrideConditions` — array → `Wf-up-OverrideCondition`
+- `copyFrom` — object → `Wf-up-CopyInformation`
+- `loginTime` — string date-time
+- `priorLoginTime` — string date-time
+- `webServiceLoginDay` — string date
+- `createdTime` — string date-time
+- **`timezone`** — string ≤40
+- `segDutyDisabled` — string ≤1
+- `jobTitle` — string ≤100
+- `contextClass` — string ≤4
+- `selectedContextGroups` — array → `Wf-up-RsContextEntry`
+- `selectedLimits` — array → `Wf-cfg-Limit`
+- `authorityPrimary` — string ≤30
+- `authoritySecondary` — string ≤30
+- `authorityCategory` — string ≤30
+- `userType` — string ≤40
+- `companyAffiliation` — string ≤40

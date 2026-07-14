@@ -1,0 +1,12 @@
+/* ── BRAND TOKENS — single source of truth for every widget ──────────────────
+   Rebrand for another client = edit THIS file, then `node scripts/build-widget.mjs`.
+   build-widget.mjs injects this block in place of the BRAND placeholder comment
+   in each widget/*.html. Keep it to CSS custom properties only. */
+:root{
+  --truist:#2D1A47; --navy:#1B2D5B; --slate:#D6D3D1; --muted:#5C5A60; --paper:#fff; --off:#FAF8FB; --body:#1A1A1A; --line:#ECE9EF;
+  --pass:#1F7A3A; --watch:#B45309; --breach:#A8211B;
+  --pass-bg:rgba(31,122,58,.10); --watch-bg:rgba(180,83,9,.10); --breach-bg:rgba(168,33,27,.10);
+  --tint:#F4F1F8; /* faint brand wash for branded (no-signal) cards */
+  --font:"DM Sans","Inter","SF Pro Text","Segoe UI",system-ui,sans-serif;
+}
+:root.dark{ --paper:#1c1b1f; --off:#26242b; --body:#ECEAF0; --slate:#3a3740; --muted:#A8A5AE; --line:#33313a; --truist:#C9B8E0; --navy:#9fb3e0; --tint:#272431; }
